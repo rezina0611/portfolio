@@ -1,1 +1,28 @@
+{
+    "editor.mouseWheelZoom": true,
+    "editor.wordWrap": "on",            //자동 줄 바꿈
 
+    // 크로스브라우징을 위한 prefix 설정
+    "liveSassCompile.settings.autoprefix": [
+        "> 1%", 
+        "last 2 versions"
+    ],
+
+    "liveSassCompile.settings.formats":[
+        {
+            "format": "expanded",       //expanded 스타일(가독성)의 css로 컴파일하겠다는 뜻
+            "extensionName": ".css",    //컴파일된 파일 확장자를 .css로 지정
+            "savePath": "~/../css"     //컴파일된 파일 저장경로
+        },
+        {
+            "format": "compressed", //compressed 스타일(압축)의 css로 컴파일하겠다는 뜻(min)
+            "extensionName": ".min.css",  // 컴파일된 파일 압축확장자를 min.css로 지정
+            "savePath": "~/../css"     //작업한 scss파일 + min.css 저장 경로
+        }
+    ],
+    // "liveSassCompile.settings.excludeList": [
+    //     "**/node_modules/**",
+    //     ".vscode/**"
+    // ],
+    "liveSassCompile.settings.generateMap": false
+}
