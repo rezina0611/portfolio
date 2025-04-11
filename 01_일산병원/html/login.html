@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>Login</title>
+<meta charset="UTF-8">
+<meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="ui_event" content="true" />
+
+<link rel="stylesheet" href="./css/fontawesome6-all.css">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/comm.css">
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery-3.7.0.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/jquery-ui.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/jquery-ui.min.js"></script>
+<!-- <script>
+    $( document ).ready(function() {
+        $('.popup-pw').on('click', function() {
+            //$('.popup-dialog').toggleClass('open');
+            $('.popup-dialog').addClass('open');
+            $('.popup-dialog-mask').fadeIn(150);
+
+            //$( "#dragMe" ).draggable();
+        });
+
+        $('.dialog-close').on('click', function() {
+            $('.popup-dialog').removeClass('open');
+            $('.popup-dialog-mask').fadeOut(150);
+        });
+
+        function layer_popup(el){
+            var $el = $(el);    //레이어의 id를 $el 변수에 저장
+
+            var $elWidth = ~~($el.outerWidth()),
+                $elHeight = ~~($el.outerHeight()),
+                docWidth = $(document).width(),
+                docHeight = $(document).height();
+
+            // 화면의 중앙에 레이어를 띄운다.
+            if ($elHeight < docHeight || $elWidth < docWidth) {
+                $el.css({
+                    marginTop: -$elHeight /2,
+                    marginLeft: -$elWidth/2
+                })
+            } else {
+                $el.css({top: 0, left: 0});
+            }
+        }
+    });
+
+    //document.getElementById("dragMe").style.resize = "both";
+</script>
+<script>
+     document.addEventListener('DOMContentLoaded', function () {
+        // 마우스의 위치값 저장
+        let x = 0;
+        let y = 0;
+
+        // 대상 Element 가져옴
+        const ele = document.getElementById('dragMe');
+
+        // 마우스 누른 순간 이벤트
+        const mouseDownHandler = function (e) {
+            // 누른 마우스 위치값을 가져와 저장
+            x = e.clientX;
+            y = e.clientY;
+
+            // 마우스 이동 및 해제 이벤트를 등록
+            document.addEventListener('mousemove', mouseMoveHandler);
+            document.addEventListener('mouseup', mouseUpHandler);
+        };
+
+        const mouseMoveHandler = function (e) {
+            // 마우스 이동시 초기 위치와의 거리차 계산
+            const dx = e.clientX - x;
+            const dy = e.clientY - y;
+
+            // 마우스 이동 거리 만큼 Element의 top, left 위치값에 반영
+            ele.style.top = `${ele.offsetTop + dy}px`;
+            ele.style.left = `${ele.offsetLeft + dx}px`;
+
+            // 기준 위치 값을 현재 마우스 위치로 update
+            x = e.clientX;
+            y = e.clientY;
+        };
+
+        const mouseUpHandler = function () {
+            // 마우스가 해제되면 이벤트도 같이 해제
+            document.removeEventListener('mousemove', mouseMoveHandler);
+            document.removeEventListener('mouseup', mouseUpHandler);
+        };
+
+        ele.addEventListener('mousedown', mouseDownHandler);
+    });
+</script> -->
+</head>
+<!-- <div class="popup-dialog-mask"></div>
+<div class="popup-dialog shadow" id="dragMe" style="top:315px; left:760px;">
+    <div class="modal">
+        <div class="dialog-title bg-green text-white dialog-title-focus" unselectable="on" style="user-select: none;">비밀번호 변경</div>
+        <div class="dialog-body">
+            sfdsdfsdf<br>
+            sfdsdfsdf<br>
+            sfdsdfsdf<br>
+            sfdsdfsdf<br>
+            sfdsdfsdf<br>
+            sfdsdfsdf<br>
+            sfdsdfsdf<br>
+            sfdsdfsdf<br>
+            sfdsdfsdf<br>
+        </div>
+        <div class="dialog-close" style="user-select: none; color: rgb(255, 255, 255);"></div>
+    </div>
+</div> -->
+
+<body>
+    <div class="fz-login-wrap">
+        <div class="left">
+            <div>
+                <a href="https://www.nhimc.or.kr/" target="_blank">
+                    <img src="./images/logo.png" alt="국민건강보험 일산병원">
+                </a>
+            </div>
+
+            <div class="form-login-w">
+                <div class="login-box" id="login">
+                    <div class="login-header">
+                        <h4 class="login-logo">로그인</h4>
+                    </div>
+                    <div class="login-body">
+                        <form name="loginForm" method="post" action="#" autocomplete="off">
+                            <div class="form-group">
+                                <label class="control-label" for="id">
+                                    <input type="text" class="input" id="id" name="id" placeholder="아이디" autocomplete="id">
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="password">
+                                    <input type="password" class="input" id="password" name="pswd" autocomplete="new-password" value="*********">
+                                </label>
+                            </div>
+                            <div class="form-group remember">
+                                <label class="styled check-blue h5">
+                                    <input type="checkbox" name="remember_me" value="true" checked>
+                                    <i><span>아이디, 비번 저장</span></i>
+                                </label>
+                            </div>
+                            <button type="button" class="button login big">로그인</button>
+                        </form>
+                    </div>
+                    <div class="login-footer">
+                        <ul>
+                            <li><a href="#none" id="popup-use">이용약관</a></li>
+                            <li><a href="#none" id="popup-policy">개인정보 보호정책</a></li>
+                            <!-- <li><a href="#none" class="popup-pw">비밀번호변경</a></li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="right">
+            <div class="bg"></div>
+            <!-- <img src="./images/login/login_main_img.jpg"> -->
+        </div>
+    </div>
+</body>
+</html>

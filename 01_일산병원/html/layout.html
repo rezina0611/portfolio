@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>layout</title>
+<meta charset="UTF-8">
+<meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="ui_event" content="true" />
+
+<link rel="stylesheet" href="./css/fontawesome6-all.css">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/comm.css">
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery-3.7.0.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/jquery-ui.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/script.js"></script>
+</head>
+<body>
+<!--fz-wrapper-->
+<div class="fz-wrapper">
+    <!--fz-side-wrapper-->
+    <aside class="fz-side-wrapper"> <!--collapse-->
+        <!--폈을때-->
+        <a class="fz-side-logo open" href="#none">
+            <span class="fz-side-logo-img">
+                <img src="./images/logo@2x.png" alt="국민건강보험 일산병원">
+            </span>
+        </a>
+
+        <!--접혔을때-->
+        <a class="fz-side-logo close" href="#none">
+            <span class="fz-side-logo-text">
+                <img src="./images/sig_repre_img03.png" alt="일산병원">
+            </span>
+        </a>
+        <div class="fz-side-function">
+            <span class="fz-side-logo-text collapseSide">
+                <span class="menu-opens"><img src="./images/ico_arrow_left@2x.png">  <!--폈을때--></span>
+                
+                <span class="menu-collapses"><img src="./images/ico_menu@2x.png">  <!--접혔을때--></span>
+            </span>
+        </div>
+        
+        <div class="fz-side-info">
+            <div class="flex justify-content-between align-items-center mb-5">
+                <div class="user-info">
+                    <strong class="js-user-name js-mouseover">김관리</strong>
+                    <span class="js-version">신경정신과</span>
+                </div>
+                <button class="logout">
+                    <img src="./images/ico_logout@2x.png" title="로그아웃">
+                </button>
+            </div>
+            <button class="button w-100" onclick="fnShowPop('re_pwd')">비밀번호 변경</button>
+        </div>
+        <div class="fz-side-menu">
+            <nav class="fz-side-nav" role="navigation">
+                <ul class="fz-side-nav-list">
+                    <li>
+                        <a href="#none">
+                            <img src="./images/ico_sb_01@2x.png" title="환자관리">
+                            <span class="link-text">환자관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <img src="./images/ico_sb_02@2x.png" title="위험알림 발송현황">
+                            <span class="link-text">위험알림 발송현황</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <img src="./images/ico_sb_03@2x.png" title="센서기기관리">
+                            <span class="link-text">센서기기관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <input id="group-2" type="checkbox" checked>
+                        <label for="group-2">
+                            <img src="./images/ico_sb_setting@2x.png" title="설정">
+                            <span class="link-text">설정</span>
+                        </label>
+                        <ul class="group-list">
+                            <li><a href="#none"> 사용자관리 </a></li>
+                            <li><a href="#none"> 권한관리</a></li>
+                            <li><a href="#none"> 코드관리</a></li>
+                            <li><a href="#none"> 구역관리</a></li>
+                            <li><a href="#none"> 접속이력관리</a></li>
+                            <li><a href="#none"> 수집데이터 관리</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+    <!--//fz-side-wrapper-->
+
+    <!--fz-content-wrapper-->
+    <div class="fz-content-wrapper">
+        <ul class="fz-crumb flex">
+            <li>
+                <a href="#none">
+                    <img src="./images/ico_home@2x.png" alt="홈">
+                </a>
+            </li>
+            <li><span>Flex System</span></li>
+        </ul>
+        <div class="fz-container flex-box">
+            컨텐츠 영역
+        </div>
+    </div>
+    <!--//fz-content-wrapper-->
+</div>
+<!--//fz-wrapper-->
+<div class="popup-dialog-mask"></div>
+<!--비밀번호변경 popup-->
+<div class="popup-dialog dialog-sm rounded shadow" id="re_pwd">
+    <div class="dialog-title">비밀번호변경</div>
+    <div class="dialog-body">
+        <p class="text-center">보안을 위해 최소 3개월 마다 비밀번호를 변경해주세요.</p>
+        <form name="" action="" method="">
+            <div class="input-group">
+                <div class="inner-input-group flex align-items-center eye">
+                    <label class="required w-92">현재 비밀번호</label>
+                    <input type="password" class="input" placeholder="입력하세요">
+                    <i class="fa fa-eye-slash fa-sm eyes"></i>
+                    <!-- <i class="fas fa-eye-slash"></i> -->
+                </div>
+            </div>
+            <div class="input-group mb3">
+                <p>※ 현재 비밀번호를 입력하세요.</p>
+            </div>
+            <div class="input-group mb2">
+                <div class="inner-input-group flex align-items-center eye">
+                    <label class="required w-92">변경 비밀번호</label>
+                    <input type="password" class="input" placeholder="입력하세요">
+                    <i class="fa fa-eye-slash fa-sm eyes"></i>
+                </div>
+            </div>
+            <div class="input-group mb1">
+                <div class="inner-input-group flex align-items-center eye">
+                    <label class="required w-92">비밀번호 확인</label>
+                    <input type="password" class="input" placeholder="입력하세요">
+                    <i class="fa fa-eye-slash fa-sm eyes"></i>
+                </div>
+            </div>
+            <p class="pt-0">※ 비밀번호를 다시한번 입력하세요</p>
+        </form>
+    </div>
+    <div class="dialog-buttons">
+        <button class="button gray">취소</button>
+        <button class="button primary">변경</button>
+    </div>
+    <div class="dialog-close" onclick="fnHidePop('re_pwd')"></div>
+</div>
+</body>
+</html>

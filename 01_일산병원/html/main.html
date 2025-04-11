@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>메인(병실구역)</title>
+<meta charset="UTF-8">
+<meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="ui_event" content="true" />
+
+<link rel="stylesheet" href="./css/fontawesome6-all.css">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/comm.css">
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery-3.7.0.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/jquery-ui.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/script.js"></script>
+<script>
+    $(function(){
+        $( window ).resize(function() {
+            //창크기 변화 감지
+        });
+    });
+</script>
+</head>
+<body>
+<!--fz-wrapper-->
+<div class="fz-wrapper">
+    <!--fz-side-wrapper-->
+    <aside class="fz-side-wrapper"> <!--collapse-->
+        <!--폈을때-->
+        <a class="fz-side-logo open" href="#none">
+            <span class="fz-side-logo-img">
+                <img src="./images/logo@2x.png" alt="국민건강보험 일산병원">
+            </span>
+        </a>
+
+        <!--접혔을때-->
+        <a class="fz-side-logo close" href="#none">
+            <span class="fz-side-logo-text">
+                <img src="./images/sig_repre_img03.png" alt="일산병원">
+            </span>
+        </a>
+        <div class="fz-side-function">
+            <span class="fz-side-logo-text collapseSide">
+                <span class="menu-opens"><img src="./images/ico_arrow_left@2x.png">  <!--폈을때--></span>
+                
+                <span class="menu-collapses"><img src="./images/ico_menu@2x.png">  <!--접혔을때--></span>
+            </span>
+        </div>
+        
+        <div class="fz-side-info">
+            <div class="flex justify-content-between align-items-center mb-5">
+                <div class="user-info">
+                    <strong class="js-user-name js-mouseover">김관리</strong>
+                    <span class="js-version">신경정신과</span>
+                </div>
+                <button class="logout">
+                    <img src="./images/ico_logout@2x.png" title="로그아웃">
+                </button>
+            </div>
+            <button class="button w-100" onclick="fnShowPop('re_pwd')">비밀번호 변경</button>
+        </div>
+        <div class="fz-side-menu">
+            <nav class="fz-side-nav" role="navigation">
+                <ul class="fz-side-nav-list">
+                    <li>
+                        <a href="#none">
+                            <img src="./images/ico_sb_01@2x.png" title="환자관리">
+                            <span class="link-text">환자관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <img src="./images/ico_sb_02@2x.png" title="위험알림 발송현황">
+                            <span class="link-text">위험알림 발송현황</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <img src="./images/ico_sb_03@2x.png" title="센서기기관리">
+                            <span class="link-text">센서기기관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <input id="group-2" type="checkbox" checked>
+                        <label for="group-2">
+                            <img src="./images/ico_sb_setting@2x.png" alt="설정">
+                            <span class="link-text">설정</span>
+                        </label>
+                        <ul class="group-list">
+                            <li><a href="#none"> 사용자관리 </a></li>
+                            <li><a href="#none"> 권한관리</a></li>
+                            <li><a href="#none"> 코드관리</a></li>
+                            <li><a href="#none"> 구역관리</a></li>
+                            <li><a href="#none"> 접속이력관리</a></li>
+                            <li><a href="#none"> 수집데이터 관리</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+    <!--//fz-side-wrapper-->
+
+    <!--fz-content-wrapper-->
+    <div class="fz-content-wrapper">
+        <ul class="fz-crumb flex" style="display: none !important;">
+            <li>
+                <a href="#none">
+                    <img src="./images/ico_home@2x.png" alt="홈">
+                </a>
+            </li>
+            <li><span>Flex System</span></li>
+        </ul>
+        <div class="fz-container flex-box">
+            <div class="flex align-items-center justify-content-center">
+                <div class="mr-3 mb-0 page-title">본관 122병동</div>
+                <button class="button primary round8">전체영상보기</button>
+            </div>
+            
+            <div class="fz-row row">
+                <div class="left">
+                    <img src="./images/view-map_preview_rev_1.png" alt="병실구역 조감도 영역" style="width: 820px;">
+                    <!--style="width: 805px;" style="max-width: 100%; height: auto;"-->
+                </div>
+                <div class="right">
+                    <div class="fz-card round-20 padding-20-24">
+                        <div class="fz-card-header no-border interval">
+                            <span class="title p-0">알림현황</span>
+                            <button class="button gray small m-0">more <img src="./images/ico_arrow_right@2x.png"></button>
+                        </div>
+                        <div class="fz-card-body no-bg p0">
+                            <div class="part-index">
+                                <div class="total bg-white-alpha">
+                                    <span class="tit">ALL</span>
+                                    <span class="count">65</span>
+                                </div>
+                                <div class="total bg-blue">
+                                    <span class="tit">해결</span>
+                                    <span class="count">56</span>
+                                </div>
+                                <div class="total bg-gray">
+                                    <span class="tit">무시</span>
+                                    <span class="count">5</span>
+                                </div>
+                                <div class="total bg-red">
+                                    <span class="tit">위험</span>
+                                    <span class="count">3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fz-card round-20 padding-20-24">
+                        <div class="fz-card-header no-border interval">
+                            <span class="title p-0">환자현황</span>
+                            <button class="button gray small m-0">more <img src="./images/ico_arrow_right@2x.png"></button>
+                        </div>
+                        <div class="fz-card-body no-bg p0">
+                            <div class="part-index">
+                                <div class="total bg-white-alpha">
+                                    <span class="tit">ALL</span>
+                                    <span class="count">65</span>
+                                </div>
+                                <div class="total bg-blue">
+                                    <span class="tit">양호</span>
+                                    <span class="count">56</span>
+                                </div>
+                                <div class="total bg-yellow">
+                                    <span class="tit">주의</span>
+                                    <span class="count">5</span>
+                                </div>
+                                <div class="total bg-red">
+                                    <span class="tit">위험</span>
+                                    <span class="count">3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="fz-card round-20 padding-20-24">
+                        <div class="fz-card-header no-border interval">
+                            <span class="title p-0">구역현황</span>
+                            <button class="button gray small m-0">more <img src="./images/ico_arrow_right@2x.png"></button>
+                        </div>
+                        <div class="fz-card-body no-bg p0">
+                            <div class="part-index">
+                                <div class="total bg-white-alpha">
+                                    <span class="tit">ALL</span>
+                                    <span class="count">17</span>
+                                </div>
+                                <div class="total bg-white-alpha">
+                                    <span class="tit">병실</span>
+                                    <span class="count">11</span>
+                                </div>
+                                <div class="total bg-white-alpha">
+                                    <span class="tit small">화장실/세면실</span>
+                                    <span class="count">64</span>
+                                </div>
+                                <div class="total bg-white-alpha">
+                                    <span class="tit">기타</span>
+                                    <span class="count">3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="fz-card round-20 padding-20-24">
+                        <div class="fz-card-header no-border interval">
+                            <span class="title p-0">기기현황</span>
+                            <button class="button gray small m-0">more <img src="./images/ico_arrow_right@2x.png"></button>
+                        </div>
+                        <div class="fz-card-body no-bg p0">
+                            <div class="part-index">
+                                <div class="total bg-white-alpha">
+                                    <span class="tit">Watch</span>
+                                    <span class="count block text-right">
+                                        <span class="small">30 / <span class="value">26</spna></span>
+                                    </span>
+                                </div>
+                                <div class="total bg-white-alpha">
+                                    <span class="tit">Band</span>
+                                    <span class="count block text-right">
+                                        <span class="small">30 / <span class="value">26</spna></span>
+                                    </span>
+                                </div>
+                                <div class="total bg-white-alpha">
+                                    <span class="tit">Radar</span>
+                                    <span class="count block text-right">
+                                        <span class="small">30 / <span class="value">26</spna></span>
+                                    </span>
+                                </div>
+                                <div class="total bg-white-alpha">
+                                    <span class="tit">CCTV</span>
+                                    <span class="count block text-right">
+                                        <span class="small">30 / <span class="value">26</spna></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fz-row justify-content-between">
+                <div class="fz-card round-20 padding-15-20 w-100 mb-0">
+                    <div class="fz-card-header no-border round-square">
+                        <button class="button" alt="이전">
+                            <img src="./images/ico_arrow_left@2x.png">
+                        </button>
+                        <span>1261호 (3인실)</span>
+                        <button class="button" alt="다음">
+                            <img src="./images/ico_arrow_right@2x.png">
+                        </button>
+                    </div>
+                    <div class="fz-card-body no-bg p-0 pt-2">
+                        <div class="fz-row">
+                            <div class="fi9of12 fi-md pl-0 pr-6">
+                                <table class="styled fixed hover middle table1">
+                                    <colgroup>
+                                        <col style="width: 10%;">
+                                        <col>
+                                        <col style="width: 5%;"><col style="width: 13%;">
+                                        <col>
+                                        <col style="width: 10%;"><col style="width: 10%;"><col style="width: 12%;"><col style="width: 10%;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>정상</th>
+                                            <th class="text-left">ID</th>
+                                            <th>성별</th>
+                                            <th>나이</th>
+                                            <th class="text-left">진단명</th>
+                                            <th>Heart Rate</th>
+                                            <th>Stress Inde</th>
+                                            <th>Respiratory Rate </th>
+                                            <th>Radar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td class="text-left">환자ID</td>
+                                            <td>남</td>
+                                            <td>52</td>
+                                            <td class="text-left">신경쇠약</td>
+                                            <td><span class="text-green">00</span></td>
+                                            <td><span class="text-green">00</span></td>
+                                            <td><span class="text-green">00</span></td>
+                                            <td><span class="badge bg-green circled"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td class="text-left">환자ID</td>
+                                            <td>남</td>
+                                            <td>48</td>
+                                            <td class="text-left">공황장애</td>
+                                            <td><span class="text-green">00</span></td>
+                                            <td><span class="text-green">00</span></td>
+                                            <td><span class="text-green">00</span></td>
+                                            <td><span class="badge bg-green circled"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td class="text-left">환자ID</td>
+                                            <td>남</td>
+                                            <td>23</td>
+                                            <td class="text-left">불면증</td>
+                                            <td><span class="text-green">00</span></td>
+                                            <td><span class="text-green">00</span></td>
+                                            <td><span class="text-green">00</span></td>
+                                            <td><span class="badge bg-yellow circled"></span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="fi2of12 fi-md p-0">
+                                <div class="fz-card no-bg mb-0">
+                                    <div class="fz-card-header justify-content-end no-border no-bg pt-0 pb-0 mb-1">
+                                        <span style="display: none;">CCTV</span>
+                                        <span class="badge bg-green circled"></span>
+                                    </div>
+                                    <div class="cctv">
+                                        <button href="#none" onclick="fnShowPop('re_cctv')"> 
+                                            <i class="fa-solid fa-camera-cctv fa-2x text-white"></i>
+                                            <canvas class="img-responsive" style="touch-action: none; cursor: inherit;"></canvas>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//fz-content-wrapper-->
+</div>
+<!--//fz-wrapper-->
+
+<div class="popup-dialog-mask"></div>
+<!--비밀번호변경 popup-->
+<div class="popup-dialog dialog-sm rounded shadow" id="re_pwd">
+    <div class="dialog-title">비밀번호변경</div>
+    <div class="dialog-body">
+        <p class="text-center">보안을 위해 최소 3개월 마다 비밀번호를 변경해주세요.</p>
+        <form name="" action="" method="">
+            <div class="input-group">
+                <div class="inner-input-group flex align-items-center eye">
+                    <label class="required w-92">현재 비밀번호</label>
+                    <input type="password" class="input" placeholder="입력하세요">
+                    <i class="fa fa-eye-slash fa-sm eyes"></i>
+                    <!-- <i class="fas fa-eye-slash"></i> -->
+                </div>
+            </div>
+            <div class="input-group mb3">
+                <p>※ 현재 비밀번호를 입력하세요.</p>
+            </div>
+            <div class="input-group mb2">
+                <div class="inner-input-group flex align-items-center eye">
+                    <label class="required w-92">변경 비밀번호</label>
+                    <input type="password" class="input" placeholder="입력하세요">
+                    <i class="fa fa-eye-slash fa-sm eyes"></i>
+                </div>
+            </div>
+            <div class="input-group mb1">
+                <div class="inner-input-group flex align-items-center eye">
+                    <label class="required w-92">비밀번호 확인</label>
+                    <input type="password" class="input" placeholder="입력하세요">
+                    <i class="fa fa-eye-slash fa-sm eyes"></i>
+                </div>
+            </div>
+            <p class="pt-0">※ 비밀번호를 다시한번 입력하세요</p>
+        </form>
+    </div>
+    <div class="dialog-buttons">
+        <button class="button gray">취소</button>
+        <button class="button primary">변경</button>
+    </div>
+    <div class="dialog-close" onclick="fnHidePop('re_pwd')"></div>
+</div>
+
+<!--CCTV 확대보기 popup-->
+<div class="popup-dialog dialog-lg rounded shadow" id="re_cctv">
+    <div class="dialog-title">
+        1261호 (3인실)
+    </div>
+    <div class="dialog-body"> 
+        <div class="cctv no-border">
+            <canvas class="img-responsive" style="touch-action: none; cursor: inherit;"></canvas>
+        </div>
+        <div class="fz-card w-100 no-bg mt-4">
+            <div class="fz-card-header no-border round-square">
+                <button class="button" alt="이전">
+                    <img src="./images/ico_arrow_left.png">
+                </button>
+                <span>1261호 (3인실)</span>
+                <button class="button" alt="다음">
+                    <img src="./images/ico_arrow_right.png">
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="dialog-resizer" unselectable="on" style="user-select: none;"></div> -->
+    <div class="dialog-close" onclick="fnHidePop('re_cctv')"></div>
+</div>
+</body>
+</html>

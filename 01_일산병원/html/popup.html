@@ -1,0 +1,2461 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>팝업</title>
+<meta charset="UTF-8">
+<meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="ui_event" content="true" />
+
+<link rel="stylesheet" href="./css/fontawesome6-all.css">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/comm.css">
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery-3.7.0.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/jquery-ui.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/script.js"></script>
+</head>
+<body>
+<!--fz-wrapper-->
+<div class="fz-wrapper">
+
+    <!--fz-content-wrapper-->
+    <div class="fz-content-wrapper">
+        <ul class="fz-crumb" style="display: none;">
+            <li><a href="/"><i class="fas fa-home fa-lg"></i></a></li>
+            <li><span>팝업</span></li>
+        </ul>
+        <div class="fz-container flex-box">
+            <div class="flex align-items-center justify-content-center">
+                <div class="text-center mr-3 mb-0 page-title">팝업 샘플</div>
+            </div>
+            <br>
+            <button class="button primary" onclick="fnShowPop('re_pwd')">비밀번호변경</button> &nbsp;
+            <button class="button primary" onclick="fnShowPop('re_cctv')">CCTV확대보기</button> &nbsp;
+            <button class="button primary" onclick="fnShowPop('re_preview')">환자정보 미리보기</button> &nbsp;
+            <button class="button primary" onclick="fnShowPop('re_info')">환자정보(정보입력 전)</button> &nbsp;
+            <button class="button primary" onclick="fnShowPop('re_info_after')">환자정보(정보입력 후)</button> &nbsp;
+            <button class="button primary" onclick="fnShowPop('re_sensor_search')">센서기기 찾기</button> &nbsp;
+            <button class="button primary" onclick="fnShowPop('re_sensor_add')">센서기기 등록</button> &nbsp;
+            <button class="button primary" onclick="fnShowPop('re_sensor_detail')">센서기기 상세/수정</button> &nbsp;
+            <button class="button primary" onclick="fnShowPop('re_User_reg')">사용자등록</button> &nbsp;
+            <button class="button primary" onclick="fnShowPop('re_group_plue')">권한그룹추가</button> &nbsp;
+            <button class="button primary" onclick="fnShowPop('re_danger')">위험알림</button> &nbsp;
+            <button class="button primary" onclick="fnShowPop('re_danger_alarm')">위험알림 조치</button> &nbsp;
+            <button class="button primary" onclick="fnShowPop('re_disregard')">무시</button> &nbsp;
+            <button class="button primary" onclick="fnShowPop('re_action')">조치완료</button> &nbsp;
+            <br><br>
+            <button class="button primary" onclick="fnShowPop('re_terms')">이용약관(작업예정)</button> &nbsp;
+            <button class="button primary" onclick="fnShowPop('re_privacy')">개인정보 보호정책(작업예정)</button> 
+        </div>
+    </div>
+    <!--//fz-content-wrapper-->
+</div>
+<!--//fz-wrapper-->
+<div class="popup-dialog-mask"></div>
+<!--비밀번호변경 popup-->
+<div class="popup-dialog dialog-sm rounded shadow" id="re_pwd">
+    <div class="dialog-title">비밀번호변경</div>
+    <div class="dialog-body">
+        <p class="text-center">보안을 위해 최소 3개월 마다 비밀번호를 변경해주세요.</p>
+        <form name="" action="" method="">
+            <div class="input-group">
+                <div class="inner-input-group flex align-items-center eye">
+                    <label class="required w-92">현재 비밀번호</label>
+                    <input type="password" class="input" placeholder="입력하세요">
+                    <i class="fa fa-eye-slash fa-sm eyes"></i>
+                    <!-- <i class="fas fa-eye-slash"></i> -->
+                </div>
+            </div>
+            <div class="input-group mb3">
+                <p>※ 현재 비밀번호를 입력하세요.</p>
+            </div>
+            <div class="input-group mb2">
+                <div class="inner-input-group flex align-items-center eye">
+                    <label class="required w-92">변경 비밀번호</label>
+                    <input type="password" class="input" placeholder="입력하세요">
+                    <i class="fa fa-eye-slash fa-sm eyes"></i>
+                </div>
+            </div>
+            <div class="input-group mb1">
+                <div class="inner-input-group flex align-items-center eye">
+                    <label class="required w-92">비밀번호 확인</label>
+                    <input type="password" class="input" placeholder="입력하세요">
+                    <i class="fa fa-eye-slash fa-sm eyes"></i>
+                </div>
+            </div>
+            <p class="pt-0">※ 비밀번호를 다시한번 입력하세요</p>
+        </form>
+    </div>
+    <div class="dialog-buttons">
+        <button class="button gray">취소</button>
+        <button class="button primary">변경</button>
+    </div>
+    <div class="dialog-close" onclick="fnHidePop('re_pwd')"></div>
+</div>
+
+<!--CCTV 확대보기 popup-->
+<div class="popup-dialog dialog-lg rounded shadow" id="re_cctv" style="z-index: 2050;">
+    <div class="dialog-title">
+        1261호 (3인실)
+    </div>
+    <div class="dialog-body"> 
+        <div class="cctv no-border">
+            <canvas class="img-responsive" style="touch-action: none; cursor: inherit;"></canvas>
+        </div>
+        <div class="fz-card w-100 no-bg mt-4">
+            <div class="fz-card-header no-border round-square">
+                <button class="button" alt="이전">
+                    <img src="./images/ico_arrow_left.png">
+                </button>
+                <span>1261호 (3인실)</span>
+                <button class="button" alt="다음">
+                    <img src="./images/ico_arrow_right.png">
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="dialog-close" onclick="fnHidePop('re_cctv')"></div>
+</div>
+
+<!--환자정보 미리보기-->
+<div class="popup-dialog dialog-sm rounded shadow" id="re_preview">
+    <div class="dialog-title">환자정보 미리보기</div>
+    <div class="dialog-body pt-0">
+        <ul class="list-group info">
+            <li class="list-group-item">
+                <div class="tit">ID</div>
+                <div class="id">환자 ID</div>
+            </li>
+            <li class="list-group-item">
+                <div class="tit">성별</div>
+                <div>남</div>
+            </li>
+            <li class="list-group-item">
+                <div class="tit">나이</div>
+                <div>52</div>
+            </li>
+            <li class="list-group-item">
+                <div class="tit">입원실</div>
+                <div>1206호</div>
+            </li>
+            <li class="list-group-item">
+                <div class="tit">침상</div>
+                <div>3</div>
+            </li>
+            <li class="list-group-item">
+                <div class="tit">Heart Rate</div>
+                <div><span class="text-green">00</span></div>
+            </li>
+            <li class="list-group-item">
+                <div class="tit">Stress Index</div>
+                <div><span class="text-green">52</span></div>
+            </li>
+            <li class="list-group-item">
+                <div class="tit">Respiratory Rate</div>
+                <div><span class="text-green">1206호</span></div>
+            </li>
+            <li class="list-group-item">
+                <div class="tit">Radar</div>
+                <div><span class="badge bg-green circled"></span></div>
+            </li>
+            <li class="list-group-item">
+                <div class="tit">진단명</div>
+                <div>신경쇠약</div>
+            </li>
+        </ul>
+    </div>
+    <div class="dialog-close" onclick="fnHidePop('re_preview')"></div>
+</div>
+
+<!--환자정보 (정보입력 전) -->
+<div class="popup-dialog dialog-960 rounded shadow" id="re_info">
+    <div class="dialog-title">환자정보(정보입력 전)</div>
+    <div class="dialog-body">
+        <div class="input-group mb-3">
+            <div class="inner-input-group flex align-items-center">
+                <label class="required">환자 ID</label>
+                <div class="input-group">
+                    <input type="text" name="" class="input">
+                    <button type="button" class="button input styled primary">중복확인</button>
+                </div>
+            </div>
+            
+            <div class="inner-input-group flex align-items-center ml5">
+                <label>생년월일</label>
+                <input type="date" name="" class="input">
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <div class="inner-input-group flex align-items-center">
+                <label>성별</label>
+                <div class="flex">
+                    <label class="styled ch_styled" >
+                        <input type="radio" name="m1">
+                        <i><span>남</span></i>
+                    </label>
+                    <label class="styled ch_styled ml2">
+                        <input type="radio" name="m1" >
+                        <i><span>여</span></i>
+                    </label>
+                </div>
+            </div>
+            <div class="inner-input-group flex align-items-center ml5">
+                <label>진단명</label>
+                <input type="text" class="input" placeholder="진단명 입력하세요">
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <div class="inner-input-group flex align-items-center">
+                <label>자해/자살 <br>발생여부</label>
+                <div class="input-group flex">
+                    <label class="styled ch_styled">
+                        <input type="radio" name="self" value="no" checked>
+                        <i><span>N</span></i>
+                    </label>
+                    <label class="styled ch_styled ml2">
+                        <input type="radio" name="self" value="yes">
+                        <i><span>Y</span></i>
+                    </label>
+                    <input type="text" class="input ml2" name="textbox" placeholder="입력하세요" disabled>
+                </div>
+            </div>
+            <div class="inner-input-group flex align-items-center ml5">
+                <label>타해 발생여부</label>
+                <div class="input-group flex">
+                    <label class="styled ch_styled">
+                        <input type="radio" name="Tahae" value="no">
+                        <i><span>N</span></i>
+                    </label>
+                    <label class="styled ch_styled ml2">
+                        <input type="radio" name="Tahae" value="yes" checked>
+                        <i><span>Y</span></i>
+                    </label>
+                    <input type="text" class="input ml2" name="textbox2" placeholder="입력하세요">
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="inner-input-group flex align-items-center">
+                <label>C-SSRS</label>
+                <input type="text" name="" class="input" placeholder="입력하세요">
+            </div>
+            
+            <div class="inner-input-group flex align-items-center ml5">
+                <label>KIVS</label>
+                <input type="text" name="" class="input" placeholder="입력하세요">
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <div class="inner-input-group flex align-items-center">
+                <label>CGI-S</label>
+                <input type="text" name="" class="input" autocomplete="off" placeholder="입력하세요">
+            </div>
+            
+            <div class="inner-input-group flex align-items-center ml5">
+                <label>HoNOS</label>
+                <input type="text" name="" class="input" autocomplete="off" placeholder="입력하세요">
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <div class="inner-input-group flex align-items-center">
+                <label>MADRS</label>
+                <input type="text" name="" class="input" placeholder="입력하세요">
+            </div>
+            
+            <div class="inner-input-group flex align-items-center ml5">
+                <label>비고</label>
+                <input type="text" name="" class="input" placeholder="입력하세요">
+            </div>
+        </div>
+
+        <hr>
+        <div class="input-group mb-3 mt-3">
+            <div class="inner-input-group flex align-items-center">
+                <label>Watch ID</label>
+                <!--Watch ID fitrocker 연동 정보로 자동출력 수정불가-->
+                <input type="text" name="" class="input" value="WI00001" readonly>
+            </div>
+            
+            <div class="inner-input-group flex align-items-center ml5">
+                <label>Watch SN</label>
+                <input type="text" name="" class="input" placeholder="입력하세요">
+            </div>
+        </div>            
+        <div class="input-group mb-0">
+            <div class="inner-input-group flex align-items-center">
+                <label>Heart Rate</label>
+                <div class="box no-bottom-radius mb-0">
+                    <span class="fi8of12"><img src="./images/semple.png" style="width: 80%;"></span>
+                    <span class="fi2of12 text-right">21분전 <br>평균 000</span>
+                    <span class="fi2of12 text-green text-center h4 mb-0">75</span>
+                </div>
+            </div>
+        </div>
+        <div class="input-group mb-0">
+            <div class="inner-input-group flex align-items-center">
+                <label>Stress Index</label>
+                <div class="box no-border mb-0">
+                    <span class="fi8of12"><img src="./images/semple.png" style="width: 80%;"></span>
+                    <span class="fi2of12 text-right">21분전 <br>평균 000</span>
+                    <span class="fi2of12 text-green text-center h4 mb-0">36</span>
+                </div>
+            </div> 
+        </div>
+        <div class="input-group mb-1">
+            <div class="inner-input-group flex align-items-center">
+                <label>Respiratory Rate<br>(brmp)</label>
+                <div class="box no-top-radius">
+                    <span class="fi8of12"><img src="./images/semple.png" style="width: 80%;"></span>
+                    <span class="fi2of12 text-right">21분전 <br>평균 000</span>
+                    <span class="fi2of12 text-yellow text-center h4 mb-0">18</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group mb-2">
+            <div class="inner-input-group block align-items-center">
+                <div class="flex align-items-center mb-2">
+                    <label class="w-115">Band ID</label>
+                    <div class="search-group">
+                        <input type="text" name="" class="input" value="B123456">
+                        <span class="search">
+                            <img src="./images/ico_search_grey@2x.png" alt="검색">
+                        </span>
+                    </div>
+                </div>
+                <div class="flex align-items-center mb-2">
+                    <label class="w-115">입원실</label>
+                    <div class="input-group">
+                        <select class="input mr2" name="" title="입원실">
+                            <option value="" selected="">선택하세요</option>
+                            <option value="1201">1201호실</option>
+                            <option value="1202">1202호실</option>
+                            <option value="1203">1203호실</option>
+                            <option value="1204">1204호실</option>
+                            <option value="1205">1205호실</option>
+                            <option value="1206">1206호실</option>
+                            <option value="1207">1207호실</option>
+                            <option value="1208">1208호실</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex align-items-center mb-2">
+                    <label class="w-115">침상위치</label>
+                    <div class="input-group">
+                        <select class="input" name="" title="침상위치">
+                            <option value="" selected="">선택하세요</option>
+                            <option value="1">1번</option>
+                            <option value="2">2번</option>
+                            <option value="3">3번</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex align-items-center">
+                    <label class="w-115">Radar</label>
+                    <!--침상위치 선택 시 Radar 정보 출력-->
+                    <div class="input-group">
+                        <div class="input text-gray">Radar 매칭을 위해 병실과 침상위치를 선택하세요.</div>
+                        <!-- <input type="text" name="" class="input" placeholder="Radar 매칭을 위해 병실과 침상위치를 선택하세요."> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="inner-input-group flex align-items-flex-start ml5">
+                <label class="mt-3">현재위치</label>
+                <!--현재위치 정보 출력 - Band 등록 시 해당 밴드 정보를 토대로 현재위치 표시-->
+                <div class="input pl-2 pr-2" style="height: 170px;">
+                    <div class="mb-1 text-gray">위치 탐색을 위해 Band ID를 검색하세요.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dialog-buttons">
+        <button class="button gray">취소</button>
+        <button class="button primary">저장</button>
+    </div>
+    <div class="dialog-close" onclick="fnHidePop('re_info')"></div>
+</div>
+
+<!--환자정보 (정보입력 후) -->
+<div class="popup-dialog dialog-960 rounded shadow" id="re_info_after">
+    <div class="dialog-title">환자정보 (정보입력 후)</div>
+    <div class="dialog-body">
+        <div class="input-group mb-3">
+            <div class="inner-input-group flex align-items-center">
+                <label class="required">환자 ID</label>
+                <div class="input-group">
+                    <input type="text" name="" class="input" value="AIRP0001">
+                    <button type="button" class="button input styled primary">중복확인</button>
+                </div>
+            </div>
+            
+            <div class="inner-input-group flex align-items-center ml5">
+                <label>생년월일</label>
+                <input type="date" name="" class="input" value="2023-08-09">
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <div class="inner-input-group flex align-items-center">
+                <label>성별</label>
+                <div class="flex">
+                    <label class="styled ch_styled" >
+                        <input type="radio" name="m1">
+                        <i><span>남</span></i>
+                    </label>
+                    <label class="styled ch_styled ml2">
+                        <input type="radio" name="m1" checked>
+                        <i><span>여</span></i>
+                    </label>
+                </div>
+            </div>
+            <div class="inner-input-group flex align-items-center ml5">
+                <label>진단명</label>
+                <input type="text" class="input" value="정신지체 1급">
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <div class="inner-input-group flex align-items-center">
+                <label>자해/자살 <br>발생여부</label>
+                <div class="input-group flex">
+                    <label class="styled ch_styled">
+                        <input type="radio" name="self" value="no" checked>
+                        <i><span>N</span></i>
+                    </label>
+                    <label class="styled ch_styled ml2">
+                        <input type="radio" name="self" value="yes">
+                        <i><span>Y</span></i>
+                    </label>
+                    <input type="text" class="input ml2" name="textbox" placeholder="입력하세요" disabled>
+                </div>
+            </div>
+            <div class="inner-input-group flex align-items-center ml5">
+                <label>타해 발생여부</label>
+                <div class="input-group flex">
+                    <label class="styled ch_styled">
+                        <input type="radio" name="Tahae" value="no">
+                        <i><span>N</span></i>
+                    </label>
+                    <label class="styled ch_styled ml2">
+                        <input type="radio" name="Tahae" value="yes" checked>
+                        <i><span>Y</span></i>
+                    </label>
+                    <input type="text" class="input ml2" name="textbox2" value="폭력행사">
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="inner-input-group flex align-items-center">
+                <label>C-SSRS</label>
+                <input type="text" name="" class="input" value="00">
+            </div>
+            
+            <div class="inner-input-group flex align-items-center ml5">
+                <label>KIVS</label>
+                <input type="text" name="" class="input" value="00">
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <div class="inner-input-group flex align-items-center">
+                <label>CGI-S</label>
+                <input type="text" name="" class="input" autocomplete="off" value="00">
+            </div>
+            
+            <div class="inner-input-group flex align-items-center ml5">
+                <label>HoNOS</label>
+                <input type="text" name="" class="input" autocomplete="off" value="00">
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <div class="inner-input-group flex align-items-center">
+                <label>MADRS</label>
+                <input type="text" name="" class="input" value="00">
+            </div>
+            
+            <div class="inner-input-group flex align-items-center ml5">
+                <label>비고</label>
+                <input type="text" name="" class="input" value="00">
+            </div>
+        </div>
+
+        <hr>
+        <div class="input-group mb-3 mt-3">
+            <div class="inner-input-group flex align-items-center">
+                <label>Watch ID</label>
+                <!-- Watch ID fitrocker 연동 정보로 자동출력 수정불가 -->
+                <input type="text" name="" class="input" value="WI00001" readonly>
+            </div>
+            
+            <div class="inner-input-group flex align-items-center ml5">
+                <label>Watch SN</label>
+                <input type="text" name="" class="input" value="GA01W0001">
+            </div>
+        </div>            
+        <div class="input-group mb-0">
+            <div class="inner-input-group flex align-items-center">
+                <label>Heart Rate</label>
+                <div class="box no-bottom-radius mb-0">
+                    <span class="fi8of12"><img src="./images/semple.png" style="width: 80%;"></span>
+                    <span class="fi2of12 text-right">21분전 <br>평균 000</span>
+                    <span class="fi2of12 text-green text-center h4 mb-0">75</span>
+                </div>
+            </div>
+        </div>
+        <div class="input-group mb-0">
+            <div class="inner-input-group flex align-items-center">
+                <label>Stress Index</label>
+                <div class="box no-border mb-0">
+                    <span class="fi8of12"><img src="./images/semple.png" style="width: 80%;"></span>
+                    <span class="fi2of12 text-right">21분전 <br>평균 000</span>
+                    <span class="fi2of12 text-green text-center h4 mb-0">36</span>
+                </div>
+            </div> 
+        </div>
+        <div class="input-group mb-1">
+            <div class="inner-input-group flex align-items-center">
+                <label>Respiratory Rate<br>(brmp)</label>
+                <div class="box no-top-radius">
+                    <span class="fi8of12"><img src="./images/semple.png" style="width: 80%;"></span>
+                    <span class="fi2of12 text-right">21분전 <br>평균 000</span>
+                    <span class="fi2of12 text-yellow text-center h4 mb-0">18</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group mb-2">
+            <div class="inner-input-group block align-items-center">
+                <div class="flex align-items-center mb-2">
+                    <label class="w-115">Band ID</label>
+                    <div class="search-group">
+                        <input type="text" name="" class="input" value="B123456">
+                        <span class="search">
+                            <img src="./images/ico_search_grey@2x.png" alt="검색">
+                        </span>
+                    </div>
+                </div>
+                <div class="flex align-items-center mb-2">
+                    <label class="w-115">입원실</label>
+                    <div class="input-group">
+                        <select class="input mr2" name="" title="입원실">
+                            <option value="">선택하세요</option>
+                            <option value="1201">1201호실</option>
+                            <option value="1202">1202호실</option>
+                            <option value="1203">1203호실</option>
+                            <option value="1204">1204호실</option>
+                            <option value="1205">1205호실</option>
+                            <option value="1206" selected="">1206호실</option>
+                            <option value="1207">1207호실</option>
+                            <option value="1208">1208호실</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex align-items-center mb-2">
+                    <label class="w-115">침상위치</label>
+                    <div class="input-group">
+                        <select class="input" name="" title="침상위치">
+                            <option value="">선택하세요</option>
+                            <option value="1">1번</option>
+                            <option value="2">2번</option>
+                            <option value="3" selected="">3번</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex align-items-center">
+                    <label class="w-115">Radar</label>
+                    <div class="input-group">
+                        <!-- 침상위치 선택 시 Radar 자동매칭- 상태 및 위험내용 출력- 상태에 따라 컬러 다르게 출력
+                            양호일때 녹색색상 class="text-green",  불량일때 빨강색상 class="text-danger" -->
+                        <div class="input text-green">양호(정상)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="inner-input-group flex align-items-flex-start ml5">
+                <label class="mt-3">현재위치</label>
+                <!-- 현재위치 정보 출력
+                    - Band 데이터 기준 현재위치 출력
+                    - 위치명 : CCTV 위험도 상태에 따라 색상으로 표시 
+                    - CCTV (캡쳐이미지) : 화면 새로고침 시 새로운 캡쳐 이미지로 업데이트 (CCTV 썸네일 클릭 시 확대보기 레이어팝업 출력)
+                -->
+                <div class="input pl-2 pr-2" style="height: 170px;">
+                    <div class="mb-1 text-green">1207호실</div>
+                    <div class="cctv">
+                        <button type="button" style="height: 130px;"> 
+                            <canvas class="img-responsive" style="touch-action: none; cursor: inherit;"></canvas>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dialog-buttons">
+        <button class="button gray">취소</button>
+        <button class="button primary">저장</button>
+    </div>
+    <div class="dialog-close" onclick="fnHidePop('re_info_after')"></div>
+</div>
+
+<!--센서기기 찾기-->
+<div class="popup-dialog dialog-sm rounded shadow" id="re_sensor_search">
+    <div class="dialog-title">센서기기 찾기</div>
+    <div class="dialog-body">
+        <form name="" action="" method="">
+            <div class="input-group block mb-3">
+                <div class="inner-input-group flex align-items-center mb-2">
+                    <label class="w-92">구분</label>
+                    <select class="input mr2" name="" autocomplete="off" title="입원실">
+                        <option value="">선택하세요</option>
+                        <option value="Band" selected="">Band</option>
+                        <option value="Watch">Watch</option>
+                        <option value="Radar">Radar</option>
+                        <option value="CCTV">CCTV</option>
+                    </select>
+                </div>
+                
+                <div class="inner-input-group flex align-items-center">
+                    <label class="w-92">기기 ID</label>
+                    <div class="search-group">
+                        <input type="text" name="" class="input" value="B" autocomplete="off">
+                        <span class="search">
+                            <img src="./images/ico_search_grey@2x.png" alt="검색">
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <!-- <ul class="list-group search">
+                    <li class="list-group-item active">B00001</li>
+                    <li class="list-group-item">B00002</li>
+                    <li class="list-group-item">B00003</li>
+                    <li class="list-group-item">B00004</li>
+                    <li class="list-group-item">B00005</li>
+                    <li class="list-group-item">B00006</li>
+                    <li class="list-group-item">B00007</li>
+                    <li class="list-group-item">B00008</li>
+                </ul> -->
+
+                <div class="list-group search">
+                    <a href="#none" class="list-group-item">B00001</a>
+                    <a href="#none" class="list-group-item">B00002</a>
+                    <a href="#none" class="list-group-item">B00003</a>
+                    <a href="#none" class="list-group-item">B00004</a>
+                    <a href="#none" class="list-group-item">B00005</a>
+                    <a href="#none" class="list-group-item">B00006</a>
+                    <a href="#none" class="list-group-item">B00007</a>
+                    <a href="#none" class="list-group-item">B00008</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="dialog-buttons">
+        <button class="button gray">취소</button>
+        <button class="button primary">등록</button>
+    </div>
+    <div class="dialog-close" onclick="fnHidePop('re_sensor_search')"></div>
+</div> 
+
+
+<!--센서기기 등록-->
+<div class="popup-dialog dialog-sm rounded shadow" id="re_sensor_add">
+    <div class="dialog-title">센서기기 등록 </div>
+    <div class="dialog-body">
+        <form name="" action="" method="">
+            <div class="input-group block">
+                <div class="inner-input-group flex align-items-center mb-2">
+                    <label class="required w-92">구분</label>
+                    <select class="input mr2" title="입원실">
+                        <option value="" selected="">선택하세요</option>
+                        <option value="Watch">Watch</option>
+                        <option value="Band">Band</option>
+                        <option value="Radar">Radar</option>
+                        <option value="CCTV">CCTV</option>
+                    </select>
+                </div>
+                <div class="inner-input-group flex align-items-center mb-2">
+                    <label class="required w-92">센서기기 key</label>
+                    <div class="input-group">
+                        <input type="text" class="input" placeholder="입력하세요">
+                        <button type="button" class="button input primary">중복확인</button>
+                    </div>
+                </div>
+                <div class="inner-input-group flex align-items-center mb-2">
+                    <label class="required w-92">센서기기 ID</label>
+                    <div class="input-group">
+                        <input type="text" class="input" placeholder="입력하세요">
+                        <button type="button" class="button input primary">중복확인</button>
+                    </div>
+                </div>
+                <div class="inner-input-group flex align-items-center mb-2">
+                    <label class="required w-92">상태</label>
+                    <div class="input-group">
+                        <label class="skinned-switch on-blue off-gray normal" style="width: 72px; height: 32px;">
+                            <input type="checkbox" checked="checked">
+                            <span data-on="ON" data-off="OFF"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="inner-input-group">
+                    <label class="required mb-2">비고</label>
+                    <textarea class="input" rows="4" placeholder="입력하세요"></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="dialog-buttons">
+        <button class="button gray">취소</button>
+        <button class="button primary">등록</button>
+    </div>
+    <div class="dialog-close" onclick="fnHidePop('re_sensor_add')"></div>
+</div>
+
+<!--센서기기 상세/수정-->
+<div class="popup-dialog dialog-sm rounded shadow" id="re_sensor_detail">
+    <div class="dialog-title">센서기기 상세/수정</div>
+    <div class="dialog-body">
+        <div class="input-group block">
+            <div class="inner-input-group flex align-items-center mb-2">
+                <label class="required w-92">구분</label>
+                <select class="input mr2" name="" title="입원실">
+                    <option value="" selected="">선택하세요</option>
+                    <option value="Watch">Watch</option>
+                    <option value="Band">Band</option>
+                    <option value="Radar">Radar</option>
+                    <option value="CCTV">CCTV</option>
+                </select>
+            </div>
+            <div class="inner-input-group flex align-items-center mb-2">
+                <label class="required w-92">센서기기 key</label>
+                <div class="input-group">
+                    <input type="text" name="" class="input" value="WI00001">
+                    <button type="button" class="button input styled primary">중복확인</button>
+                </div>
+            </div>
+            <div class="inner-input-group flex align-items-center mb-2">
+                <label class="required w-92">센서기기 ID</label>
+                <div class="input-group">
+                    <input type="text" name="" class="input" value="WI00001">
+                    <button type="button" class="button input styled primary">중복확인</button>
+                </div>
+            </div>
+            <div class="inner-input-group flex align-items-center mb-2">
+                <label class="required w-92">상태</label>
+                <div class="input-group">
+                    <label class="skinned-switch on-blue off-gray normal" style="width: 72px; height: 32px;">
+                        <input type="checkbox" checked="checked">
+                        <span data-on="ON" data-off="OFF"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="inner-input-group">
+                <label class="required mb-2">비고</label>
+                <textarea class="input" rows="4">수리완료 후 환자에게 전달완료</textarea>
+            </div>
+        </div>
+    </div>
+    <div class="dialog-buttons">
+        <button class="button gray">취소</button>
+        <button class="button primary">수정</button>
+    </div>
+    <div class="dialog-resizer" unselectable="on" style="user-select: none;"></div>
+    <div class="dialog-close" onclick="fnHidePop('re_sensor_detail')"></div>
+</div>
+
+<!--사용자등록-->
+<div class="popup-dialog dialog-sm rounded shadow" id="re_User_reg">
+    <div class="dialog-title">사용자등록</div>
+    <div class="dialog-body pt-0">
+        <form name="" action="" method="">
+            <div class="input-group block">
+                <div class="inner-input-group flex align-items-center mb-2">
+                    <label class="required w-92">구분</label>
+                    <select class="input mr2" title="입원실">
+                        <option value="" selected="">선택하세요</option>
+                        <option value="doctor">의사</option>
+                        <option value="nurse">간호사</option>
+                        <option value="etc">기타</option>
+                    </select>
+                </div>
+                <div class="inner-input-group flex align-items-center mb-2">
+                    <label class="required w-92">권한</label>
+                    <select class="input mr2" title="입원실">
+                        <option value="" selected="">선택하세요</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </div>
+                <div class="inner-input-group flex align-items-center mb-2">
+                    <label class="required w-92">이름</label>
+                    <input type="text" class="input" placeholder="입력하세요">
+                </div>
+                <div class="inner-input-group flex align-items-center">
+                    <label class="required w-92">사용자ID</label>
+                    <div class="input-group">
+                        <input type="text" class="input" placeholder="입력하세요">
+                        <button type="button" class="button input primary">중복확인</button>
+                    </div>
+                </div>
+                <p class="mb-2 pt-0">※ 아이디: 영문,숫자 6~12자</p>
+
+                <div class="inner-input-group flex align-items-center mb-2">
+                    <label class="required w-92">이메일</label>
+                    <div class="input-group">
+                        <input type="text" class="input" placeholder="입력하세요">
+                        <button type="button" class="button input primary">중복확인</button>
+                    </div>
+                </div>
+                <div class="inner-input-group flex align-items-center eye">
+                    <label class="required w-92">비밀번호</label>
+                    <input type="password" class="input" placeholder="입력하세요">
+                    <i class="fa fa-eye-slash fa-sm eyes"></i>
+                </div>
+                <p class="mb-2 pt-0">※ 비번: 영문, 숫자, 특수문자 포함 10~12자</p>
+                <div class="inner-input-group flex align-items-center eye">
+                    <label class="required w-92">비밀번호 확인</label>
+                    <input type="password" class="input" placeholder="입력하세요">
+                    <i class="fa fa-eye-slash fa-sm eyes"></i>
+                </div>
+                <p class="mb-2 pt-0">※ 비밀번호를 다시한번 입력하세요</p>
+                <div class="inner-input-group">
+                    <label class="required mb-2">비고</label>
+                    <textarea class="input" rows="4" placeholder="입력하세요"></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="dialog-buttons">
+        <button class="button gray">취소</button>
+        <button class="button primary">등록</button>
+    </div>
+    <div class="dialog-close" onclick="fnHidePop('re_User_reg')"></div>
+</div>
+
+<!--권한그룹추가-->
+<div class="popup-dialog dialog-sm rounded shadow" id="re_group_plue">
+    <div class="dialog-title">권한그룹추가</div>
+    <div class="dialog-body pt-0">
+        <div class="flex justify-content-end mb-2">
+            <button type="button" class="button ico_add" onclick='rowAdd()'>추가</button>
+        </div>
+        
+        <table class="styled fixed hover middle table2 p-b"> 
+            <colgroup>
+                <col style="width: 12%;">
+                <col>
+                <col style="width: 15%;">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th class="text-left">권한그룹</th>
+                    <th>삭제</th>
+                </tr>
+            </thead>
+        </table>
+        <div style="height: 220px; overflow-y: auto;">
+            <table class="styled fixed hover middle table2 p-b" id="myTable"> 
+                <colgroup>
+                    <col style="width: 12%;">
+                    <col>
+                    <col style="width: 15%;">
+                </colgroup>
+                <!-- <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th class="text-left">권한그룹</th>
+                        <th>삭제</th>
+                    </tr>
+                </thead> -->
+                <tbody>
+                    <tr class="text-gray">
+                        <td>1</td>
+                        <td class="text-left">Super admin</td>
+                        <td></td>
+                    </tr>
+                    <tr class="text-gray">
+                        <td>2</td>
+                        <td class="text-left">
+                            <input type="text" class="input" value="admin">
+                        </td>
+                        <td>
+                            <button class="button gray" disabled>
+                                <img src="./images/ico_trash@2x.png" style="opacity: 23%;">
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="text-gray">
+                        <td>3</td>
+                        <td class="text-left">
+                            <input type="text" class="input" value="user">
+                        </td>
+                        <td>
+                            <button class="button gray" onclick="rowDel(this);" title="삭제">
+                                <img src="./images/ico_trash@2x.png">
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="text-gray">
+                        <td>4</td>
+                        <td class="text-left">
+                            <input type="text" class="input" placeholder="입력하세요">
+                        </td>
+                        <td>
+                            <button class="button gray" onclick="rowDel(this);" title="삭제">
+                                <img src="./images/ico_trash@2x.png">
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="dialog-buttons">
+        <button class="button gray">취소</button>
+        <button class="button primary">등록</button>
+    </div>
+    <div class="dialog-close" onclick="fnHidePop('re_group_plue')"></div>
+</div>
+
+
+<!--위험알림 팝업-->
+<div class="popup-dialog dialog-960 rounded shadow" id="re_danger">
+    <div class="dialog-title bg-danger">위험알림</div>
+    <div class="dialog-body m-0 p-0">
+        <section class="fz-tabs-ex tab-right fade danger">
+            <span class="total">알림 3건</span>
+
+            <div class="tab-headers d-alarm">
+                <label class="tab-label">
+                    <input name="sample_tab1" type="radio" class="tab-input" checked="checked">
+                    <span class="tit-red">1자해 위험 : 1206호실</span>
+                    <span class="text-white">환자 ID (1206호실 / 침상3)</span>
+                    <span class="text-white">위험행동 징후 위험</span>
+                </label>
+
+                <label class="tab-label">
+                    <input name="sample_tab1" type="radio" class="tab-input" >
+                    <span class="tit-red">2타해 위험 : 화장실 1</span>
+                    <span class="text-white">환자 ID (1201호실 / 침상2)</span>
+                    <span class="text-white">위험행동 징후 위험</span>
+                </label>
+
+                <label class="tab-label">
+                    <input name="sample_tab1" type="radio" class="tab-input">
+                    <span class="tit-red">3타해 위험 : 1208호실</span>
+                    <span class="text-white">환자 ID (1206호실 / 침상1)</span>
+                    <span class="text-white">위험행동전 시선 징후 위험</span>
+                </label>
+
+                <label class="tab-label">
+                    <input name="sample_tab1" type="radio" class="tab-input">
+                    <span class="tit-red">4타해 위험 : 1208호실</span>
+                    <span class="text-white">환자 ID (1206호실 / 침상1)</span>
+                    <span class="text-white">위험행동전 시선 징후 위험</span>
+                </label>
+
+                <label class="tab-label">
+                    <input name="sample_tab1" type="radio" class="tab-input">
+                    <span class="tit-red">5타해 위험 : 1208호실</span>
+                    <span class="text-white">환자 ID (1206호실 / 침상1)</span>
+                    <span class="text-white">위험행동전 시선 징후 위험</span>
+                </label>
+
+                <label class="tab-label">
+                    <input name="sample_tab1" type="radio" class="tab-input">
+                    <span class="tit-red">6타해 위험 : 1208호실</span>
+                    <span class="text-white">환자 ID (1206호실 / 침상1)</span>
+                    <span class="text-white">위험행동전 시선 징후 위험</span>
+                </label>
+            </div>
+
+            <div class="tab-contents">
+                <div class="content" alt="1">
+                    <div class="tit-danger">1자해 위험 : 1206호실</div>
+                    <div class="time-tit">2023.08.13 13:08:36</div>
+                    <div class="d-flex-baseline tit">
+                        <span class="text-underline">환자 ID</span>
+                        <span>1206호 / 침상 3</span>
+                    </div>
+                    <div class="input-group mb-0">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>Heart Rate</label>
+                            <div class="box no-bottom-radius mb-0">
+                                <span class="fi10of12"><img src="./images/semple.png" style="width: 100%;"></span>
+                                <span class="fi2of12 text-green text-center h4 mb-0">75</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-0">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>Stress Index</label>
+                            <div class="box no-border mb-0">
+                                <span class="fi10of12"><img src="./images/semple.png" style="width: 100%;"></span>
+                                <span class="fi2of12 text-green text-center h4 mb-0">36</span>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>Respiratory Rate<br>(brmp)</label>
+                            <div class="box no-top-radius mb-0">
+                                <span class="fi10of12"><img src="./images/semple.png" style="width: 100%;"></span>
+                                <span class="fi2of12 text-yellow text-center h4 mb-0">18</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>Radar</label>
+                            <div class="box mb-0" style="height: 36px;">
+                                <span class="text-danger">위험행동 징후 위험</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-0">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>CCTV</label>
+                            <div class="box disregard mb-0 p-1">
+                                <div class="mr-3">
+                                    <div class="cctv">
+                                        <a href="#none" style="height: 90px; width: 160px;" onclick="fnShowPop('re_cctv')"> 
+                                            <!-- <i class="fa-solid fa-camera-cctv fa-2x text-white"></i> -->
+                                            <canvas class="img-responsive" style="touch-action: none; cursor: inherit;"></canvas>
+                                        </a>
+                                    </div>
+                                </div>
+                                <span class="text-yellow text-left">위험행동전 시선 징후 주의</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content" alt="2">
+                    <div class="tit-danger">2타해 위험 : 화장실1</div>
+                    <div class="time-tit">2023.08.13 13:08:36</div>
+                    <div class="d-flex-baseline tit">
+                        <span class="text-underline">환자 ID</span>
+                        <span>1206호 / 침상 3</span>
+                    </div>
+                    <div class="input-group mb-0">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>Heart Rate</label>
+                            <div class="box no-bottom-radius mb-0">
+                                <span class="fi10of12"><img src="./images/semple.png" style="width: 100%;"></span>
+                                <span class="fi2of12 text-green text-center h4 mb-0">75</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-0">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>Stress Index</label>
+                            <div class="box no-border mb-0">
+                                <span class="fi10of12"><img src="./images/semple.png" style="width: 100%;"></span>
+                                <span class="fi2of12 text-green text-center h4 mb-0">36</span>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>Respiratory Rate<br>(brmp)</label>
+                            <div class="box no-top-radius mb-0">
+                                <span class="fi10of12"><img src="./images/semple.png" style="width: 100%;"></span>
+                                <span class="fi2of12 text-yellow text-center h4 mb-0">18</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>Radar</label>
+                            <div class="box mb-0" style="height: 36px;">
+                                <span class="text-danger">위험행동 징후 위험</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-0">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>CCTV</label>
+                            <div class="box disregard mb-0 p-1">
+                                <div class="mr-3">
+                                    <div class="cctv">
+                                        <a href="#none" style="height: 90px; width: 160px;"> 
+                                            <!-- <i class="fa-solid fa-camera-cctv fa-2x text-white"></i> -->
+                                            <canvas class="img-responsive" style="touch-action: none; cursor: inherit;"></canvas>
+                                        </a>
+                                    </div>
+                                </div>
+                                <span class="text-yellow text-left">위험행동전 시선 징후 주의</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content" alt="3">
+                    <div class="tit-danger">3타해 위험 : 1208호실</div>
+                    <div class="time-tit">2023.08.13 13:08:36</div>
+                    <div class="d-flex-baseline tit">
+                        <span class="text-underline">환자 ID</span>
+                        <span>1206호 / 침상 3</span>
+                    </div>
+                    <div class="input-group mb-0">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>Heart Rate</label>
+                            <div class="box no-bottom-radius mb-0">
+                                <span class="fi10of12"><img src="./images/semple.png" style="width: 100%;"></span>
+                                <span class="fi2of12 text-green text-center h4 mb-0">75</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-0">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>Stress Index</label>
+                            <div class="box no-border mb-0">
+                                <span class="fi10of12"><img src="./images/semple.png" style="width: 100%;"></span>
+                                <span class="fi2of12 text-green text-center h4 mb-0">36</span>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>Respiratory Rate<br>(brmp)</label>
+                            <div class="box no-top-radius mb-0">
+                                <span class="fi10of12"><img src="./images/semple.png" style="width: 100%;"></span>
+                                <span class="fi2of12 text-yellow text-center h4 mb-0">18</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>Radar</label>
+                            <div class="box mb-0" style="height: 36px;">
+                                <span class="text-danger">위험행동 징후 위험</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-0">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>CCTV</label>
+                            <div class="box disregard mb-0 p-1">
+                                <div class="mr-3">
+                                    <div class="cctv">
+                                        <a href="#none" style="height: 90px; width: 160px;"> 
+                                            <!-- <i class="fa-solid fa-camera-cctv fa-2x text-white"></i> -->
+                                            <canvas class="img-responsive" style="touch-action: none; cursor: inherit;"></canvas>
+                                        </a>
+                                    </div>
+                                </div>
+                                <span class="text-yellow text-left">위험행동전 시선 징후 주의</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content" alt="4">
+                    <div class="tit-danger">4타해 위험 : 1208호실</div>
+                    <div class="time-tit">2023.08.13 13:08:36</div>
+                    <div class="d-flex-baseline tit">
+                        <span class="text-underline">환자 ID</span>
+                        <span>1206호 / 침상 3</span>
+                    </div>
+                    <div class="input-group mb-0">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>Heart Rate</label>
+                            <div class="box no-bottom-radius mb-0">
+                                <span class="fi10of12"><img src="./images/semple.png" style="width: 100%;"></span>
+                                <span class="fi2of12 text-green text-center h4 mb-0">75</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-0">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>Stress Index</label>
+                            <div class="box no-border mb-0">
+                                <span class="fi10of12"><img src="./images/semple.png" style="width: 100%;"></span>
+                                <span class="fi2of12 text-green text-center h4 mb-0">36</span>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>Respiratory Rate<br>(brmp)</label>
+                            <div class="box no-top-radius mb-0">
+                                <span class="fi10of12"><img src="./images/semple.png" style="width: 100%;"></span>
+                                <span class="fi2of12 text-yellow text-center h4 mb-0">18</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>Radar</label>
+                            <div class="box mb-0" style="height: 36px;">
+                                <span class="text-danger">위험행동 징후 위험</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-0">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>CCTV</label>
+                            <div class="box disregard mb-0 p-1">
+                                <div class="mr-3">
+                                    <div class="cctv">
+                                        <a href="#none" style="height: 90px; width: 160px;"> 
+                                            <!-- <i class="fa-solid fa-camera-cctv fa-2x text-white"></i> -->
+                                            <canvas class="img-responsive" style="touch-action: none; cursor: inherit;"></canvas>
+                                        </a>
+                                    </div>
+                                </div>
+                                <span class="text-yellow text-left">위험행동전 시선 징후 주의</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content" alt="5">
+                    <div class="tit-danger">5타해 위험 : 1208호실</div>
+                    <div class="time-tit">2023.08.13 13:08:36</div>
+                    <div class="d-flex-baseline tit">
+                        <span class="text-underline">환자 ID</span>
+                        <span>1206호 / 침상 3</span>
+                    </div>
+                    <div class="input-group mb-0">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>Heart Rate</label>
+                            <div class="box no-bottom-radius mb-0">
+                                <span class="fi10of12"><img src="./images/semple.png" style="width: 100%;"></span>
+                                <span class="fi2of12 text-green text-center h4 mb-0">75</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-0">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>Stress Index</label>
+                            <div class="box no-border mb-0">
+                                <span class="fi10of12"><img src="./images/semple.png" style="width: 100%;"></span>
+                                <span class="fi2of12 text-green text-center h4 mb-0">36</span>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>Respiratory Rate<br>(brmp)</label>
+                            <div class="box no-top-radius mb-0">
+                                <span class="fi10of12"><img src="./images/semple.png" style="width: 100%;"></span>
+                                <span class="fi2of12 text-yellow text-center h4 mb-0">18</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>Radar</label>
+                            <div class="box mb-0" style="height: 36px;">
+                                <span class="text-danger">위험행동 징후 위험</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-0">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>CCTV</label>
+                            <div class="box disregard mb-0 p-1">
+                                <div class="mr-3">
+                                    <div class="cctv">
+                                        <a href="#none" style="height: 90px; width: 160px;"> 
+                                            <!-- <i class="fa-solid fa-camera-cctv fa-2x text-white"></i> -->
+                                            <canvas class="img-responsive" style="touch-action: none; cursor: inherit;"></canvas>
+                                        </a>
+                                    </div>
+                                </div>
+                                <span class="text-yellow text-left">위험행동전 시선 징후 주의</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content" alt="6">
+                    <div class="tit-danger">6타해 위험 : 1208호실</div>
+                    <div class="time-tit">2023.08.13 13:08:36</div>
+                    <div class="d-flex-baseline tit">
+                        <span class="text-underline">환자 ID</span>
+                        <span>1206호 / 침상 3</span>
+                    </div>
+                    <div class="input-group mb-0">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>Heart Rate</label>
+                            <div class="box no-bottom-radius mb-0">
+                                <span class="fi10of12"><img src="./images/semple.png" style="width: 100%;"></span>
+                                <span class="fi2of12 text-green text-center h4 mb-0">75</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-0">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>Stress Index</label>
+                            <div class="box no-border mb-0">
+                                <span class="fi10of12"><img src="./images/semple.png" style="width: 100%;"></span>
+                                <span class="fi2of12 text-green text-center h4 mb-0">36</span>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>Respiratory Rate<br>(brmp)</label>
+                            <div class="box no-top-radius mb-0">
+                                <span class="fi10of12"><img src="./images/semple.png" style="width: 100%;"></span>
+                                <span class="fi2of12 text-yellow text-center h4 mb-0">18</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>Radar</label>
+                            <div class="box mb-0" style="height: 36px;">
+                                <span class="text-danger">위험행동 징후 위험</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-0">
+                        <div class="inner-input-group flex align-items-center">
+                            <label>CCTV</label>
+                            <div class="box disregard mb-0 p-1">
+                                <div class="mr-3">
+                                    <div class="cctv">
+                                        <a href="#none" style="height: 90px; width: 160px;"> 
+                                            <!-- <i class="fa-solid fa-camera-cctv fa-2x text-white"></i> -->
+                                            <canvas class="img-responsive" style="touch-action: none; cursor: inherit;"></canvas>
+                                        </a>
+                                    </div>
+                                </div>
+                                <span class="text-yellow text-left">위험행동전 시선 징후 주의</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dialog-buttons text-center mt-2">
+                    <button type="button" class="button primary" onclick="fnShowPop('re_danger_alarm')">조치</button>
+                    <button type="button" class="button gray" onclick="fnShowPop('re_disregard')">무시</button>
+                    <button type="button" class=" button white outline" onclick="fnHidePop('re_danger')">닫기</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- <div class="dialog-resizer" unselectable="on" style="user-select: none;"></div> -->
+    <div class="dialog-close" onclick="fnHidePop('re_danger')"></div>
+</div>
+
+<!--위험알림 조치-->
+<div class="popup-dialog dialog-sm rounded shadow" id="re_danger_alarm">
+    <div class="dialog-title">위험알림 조치 </div>
+    <div class="dialog-body pb-0">
+        <div class="input-group block mb-3">
+            <div class="inner-input-group flex align-items-center mb-2">
+                <label class="required w-92">구분</label>
+                <select class="input mr2" name="" autocomplete="off" title="입원실">
+                    <option value="" selected="">선택하세요</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+            </div>
+            <div class="inner-input-group flex align-items-center mb-2">
+                <label class="required w-92">조치자</label>
+                <div class="input-group">
+                    <input type="text" name="" class="input" autocomplete="off" placeholder="입력하세요">
+                </div>
+            </div>
+            <div class="inner-input-group flex align-items-center mb-2">
+                <label class="required w-92">방법</label>
+                <div class="input-group block">
+                    <label class="styled ch_styled mb-2 w-100">
+                        <input type="checkbox" name="m1" checked>
+                        <i><span class="ml2">통합알람시스템</span></i>
+                    </label>
+                    <label class="styled ch_styled mb-2 w-100">
+                        <input type="checkbox" name="m1">
+                        <i><span class="ml2">반응형 인지행동치료</span></i>
+                    </label>
+                    <label class="styled ch_styled w-100">
+                        <input type="checkbox" name="m1">
+                        <i><span class="ml2">서큘레이팅 로봇</span></i>
+                    </label>
+                </div>
+            </div>
+            <div class="inner-input-group">
+                <label class="required mb-2">내용</label>
+                <div class="input-group">
+                    <textarea class="input" rows="4" placeholder="입력하세요"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dialog-buttons">
+        <button class="button gray">취소</button>
+        <button class="button primary">조치완료</button>
+    </div>
+    <!-- <div class="dialog-resizer" unselectable="on" style="user-select: none;"></div> -->
+    <div class="dialog-close" onclick="fnHidePop('re_danger_alarm')"></div>
+</div>
+
+<!--무시 팝업-->
+<div class="popup-dialog dialog-640 rounded shadow" id="re_disregard">
+    <div class="dialog-title">무시</div>
+    <div class="dialog-body">
+        <div class="time-tit">2023.08.13 13:08:36</div>
+        <div class="d-flex-baseline tit">
+            <span class="text-underline">환자 ID</span>
+            <span>1206호 / 침상 3</span>
+        </div>
+        <div class="input-group mb-0">
+            <div class="inner-input-group flex align-items-center">
+                <label>Heart Rate</label>
+                <div class="box no-bottom-radius mb-0">
+                    <span class="fi10of12"><img src="./images/semple.png" style="width: 100%;"></span>
+                    <span class="fi2of12 text-green text-center h4 mb-0">75</span>
+                </div>
+            </div>
+        </div>
+        <div class="input-group mb-0">
+            <div class="inner-input-group flex align-items-center">
+                <label>Stress Index</label>
+                <div class="box no-border mb-0">
+                    <span class="fi10of12"><img src="./images/semple.png" style="width: 100%;"></span>
+                    <span class="fi2of12 text-green text-center h4 mb-0">36</span>
+                </div>
+            </div> 
+        </div>
+        <div class="input-group mb-2">
+            <div class="inner-input-group flex align-items-center">
+                <label>Respiratory Rate<br>(brmp)</label>
+                <div class="box no-top-radius mb-0">
+                    <span class="fi10of12"><img src="./images/semple.png" style="width: 100%;"></span>
+                    <span class="fi2of12 text-yellow text-center h4 mb-0">18</span>
+                </div>
+            </div>
+        </div>
+        <div class="input-group mb-2">
+            <div class="inner-input-group flex align-items-center">
+                <label>Radar</label>
+                <div class="box mb-0" style="height: 36px;">
+                    <span class="text-green">양호</span>
+                </div>
+            </div>
+        </div>
+        <div class="input-group mb-4">
+            <div class="inner-input-group flex align-items-center">
+                <label>CCTV</label>
+                <div class="box disregard mb-0 p-1">
+                    <div class="mr-3">
+                        <div class="cctv">
+                            <button style="width: 160px; height: 90px;"> 
+                                <!-- <i class="fa-solid fa-camera-cctv fa-2x text-white"></i> -->
+                                <canvas class="img-responsive" style="touch-action: none; cursor: inherit;"></canvas>
+                            </button>
+                        </div>
+                    </div>
+                    <span class="text-green text-left">양호</span>
+                </div>
+            </div>
+        </div>
+
+        <ul class="list-group info">
+            <li class="list-group-item">
+                <div class="tit">조치자</div>
+                <div>김의사</div>
+            </li>
+            <li class="list-group-item">
+                <div class="tit">조치일시</div>
+                <div>2023.08.13 13:25:20</div>
+            </li>
+            <li class="list-group-item">
+                <div class="tit">조치방법</div>
+                <div></div>
+            </li>
+            <li class="list-group-item">
+                <div class="tit">조치내용</div>
+                <div>금방 해결되어 알림 무시</div>
+            </li>
+        </ul>
+    </div>
+    <div class="dialog-buttons">
+        <button class="button gray">닫기</button>
+        <button class="button primary">수정</button>
+    </div>
+    <div class="dialog-close" onclick="fnHidePop('re_disregard')"></div>
+</div>
+
+<!--조치완료 팝업-->
+<div class="popup-dialog dialog-640 rounded shadow" id="re_action">
+    <div class="dialog-title bg-green-darker">조치완료</div>
+    <div class="dialog-body">
+        <div class="time-tit">2023.08.13 13:08:36</div>
+        <div class="d-flex-baseline tit">
+            <span class="text-underline">환자 ID</span>
+            <span>1206호 / 침상 3</span>
+        </div>
+        <div class="input-group mb-0">
+            <div class="inner-input-group flex align-items-center">
+                <label>Heart Rate</label>
+                <div class="box no-bottom-radius mb-0">
+                    <span class="fi10of12"><img src="./images/semple.png" style="width: 100%;"></span>
+                    <span class="fi2of12 text-green text-center h4 mb-0">75</span>
+                </div>
+            </div>
+        </div>
+        <div class="input-group mb-0">
+            <div class="inner-input-group flex align-items-center">
+                <label>Stress Index</label>
+                <div class="box no-border mb-0">
+                    <span class="fi10of12"><img src="./images/semple.png" style="width: 100%;"></span>
+                    <span class="fi2of12 text-green text-center h4 mb-0">36</span>
+                </div>
+            </div> 
+        </div>
+        <div class="input-group mb-2">
+            <div class="inner-input-group flex align-items-center">
+                <label>Respiratory Rate<br>(brmp)</label>
+                <div class="box no-top-radius mb-0">
+                    <span class="fi10of12"><img src="./images/semple.png" style="width: 100%;"></span>
+                    <span class="fi2of12 text-yellow text-center h4 mb-0">18</span>
+                </div>
+            </div>
+        </div>
+        <div class="input-group mb-2">
+            <div class="inner-input-group flex align-items-center">
+                <label>Radar</label>
+                <div class="box mb-0" style="height: 36px;">
+                    <span class="text-green">양호</span>
+                </div>
+            </div>
+        </div>
+        <div class="input-group mb-4">
+            <div class="inner-input-group flex align-items-center">
+                <label>CCTV</label>
+                <div class="box disregard mb-0 p-1">
+                    <div class="mr-3">
+                        <div class="cctv">
+                            <button style="width: 160px; height: 90px;"> 
+                                <!-- <i class="fa-solid fa-camera-cctv fa-2x text-white"></i> -->
+                                <canvas class="img-responsive" style="touch-action: none; cursor: inherit;"></canvas>
+                            </button>
+                        </div>
+                    </div>
+                    <span class="text-green text-left">양호</span>
+                </div>
+            </div>
+        </div>
+
+        <ul class="list-group info">
+            <li class="list-group-item">
+                <div class="tit">조치자</div>
+                <div>김의사</div>
+            </li>
+            <li class="list-group-item">
+                <div class="tit">조치일시</div>
+                <div>2023.08.13 13:25:20</div>
+            </li>
+            <li class="list-group-item">
+                <div class="tit">조치방법</div>
+                <div>통합알람시스템 / 반응형 인지행동치료 / 서큘레이팅 로봇</div>
+            </li>
+            <li class="list-group-item">
+                <div class="tit">조치내용</div>
+                <div>금방 해결되어 알림 무시</div>
+            </li>
+        </ul>
+    </div>
+    <div class="dialog-buttons">
+        <button class="button gray">닫기</button>
+        <button class="button primary">수정</button>
+    </div>
+    <div class="dialog-close" onclick="fnHidePop('re_action')"></div>
+</div>
+
+<!--이용약관-->
+<div class="popup-dialog White dialog-960 rounded shadow" id="re_terms">
+    <div class="dialog-title">
+        이용약관
+    </div>
+    <div class="dialog-body" style="height: 700px;"> 
+        <div class="mb-4">
+            <div class="cnt_in">
+                <span class="h_exp">제1장 총칙</span>
+                <div class="bg-box">
+                    <ul class="hangle-list">
+                        <li>
+                            <div class="han-tt">
+                                제1조 목적
+                            </div>
+                            <div class="nor-c">
+                                이 약관은 국민건강보험공단 일산병원(이하 "병원"이라 한다)에서 운영하는 인터넷 홈페이지의
+                                서비스(이하 "서비스"라 한다)를 이용함에 있어 사이트와 이용자의 권리 의무 및
+                                책임사항을 규정함을 목적으로 합니다.
+                            </div>
+                        </li>
+                        <li>
+                            <div class="han-tt">
+                                제2조 용어정의
+                            </div>
+                            <div class="nor-c">
+                                <ul class="number-sm-circle-list">
+                                    <li>
+                                        <div class="n-txt-con">
+                                            <p class="txt">
+                                                이 약관에서 사용하는 용어의 정의는 다음과 같습니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="n-txt-con">
+                                            <i class="num">①</i>
+                                            <p class="txt">
+                                                "사이트"라 함은 병원이 컴퓨터 등 정보통신 설비를 이용하여 제공할 수 있도록
+                                                설정한 가상의 공간을 말합니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="n-txt-con">
+                                            <i class="num">②</i>
+                                            <p class="txt">
+                                                "서비스"라 함은 병원의 홈페이지 및 병원이 운영하는 인터넷사이트 등에서
+                                                제공하는 인터넷상의 모든 서비스를 말합니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="n-txt-con">
+                                            <i class="num">③</i>
+                                            <p class="txt">
+                                                "회원(이용자)"이라 함은 본 약관에 동의하고, 인터넷 홈페이지에 로그인하여 본
+                                                약관에 따라 병원이 제공하는 서비스를 받는 자를 말합니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="n-txt-con">
+                                            <i class="num">④</i>
+                                            <p class="txt">
+                                                "운영자"라 함은 서비스의 전반적인 관리와 원활한 운영을 위하여 병원에서 선정한
+                                                사람을 말합니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="n-txt-con">
+                                            <i class="num">⑤</i>
+                                            <p class="txt">
+                                                "ID"라 함은 회원이 서비스에 제공받기 위하여 본 사이트로 접속할 수 있는
+                                                Login 명을 의미하며 한글, 영문과 숫자의 조합으로 6자에서 12자 사이로
+                                                합니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="n-txt-con">
+                                            <i class="num">⑥</i>
+                                            <p class="txt">
+                                                "비밀번호"라 함은 회원의 비밀보호 및 회원 본인임을 확인하고 서비스에 제공되는
+                                                각종 정보의 보안을 위해 회원 자신이 설정하며 회사가 승인하는 영문과 숫자의
+                                                혼합 등으로
+                                                9자에서 12자 사이로 표기한 암호문자를 말합니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="n-txt-con">
+                                            <i class="num">⑦</i>
+                                            <p class="txt">
+                                                "개인정보"라 함은 당해 정보에 포함되어 있는 성명, 주민등록번호 등의 사항에
+                                                의하여 특정 개인을 식별할 수 있는 정보를 말합니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="han-tt">
+                                제3조 약관의 게시 및 변경
+                            </div>
+                            <div class="nor-c">
+                                <ul class="number-sm-circle-list">
+                                    <li>
+                                        <div class="n-txt-con">
+                                            <p class="txt">
+                                                이 약관에서 사용하는 용어의 정의는 다음과 같습니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="n-txt-con">
+                                            <i class="num">①</i>
+                                            <p class="txt">
+                                                이 약관은 병원이 서비스 화면에 공지하거나 기타의 방법으로 회원에게 통보함으로써
+                                                그 효력이 발생합니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="n-txt-con">
+                                            <i class="num">②</i>
+                                            <p class="txt">
+                                                병원은 불가피한 사정이 있는 경우 관계법령을 위배하지 않는 범위에서 본 약관을
+                                                개정할 수 있습니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="n-txt-con">
+                                            <i class="num">③</i>
+                                            <p class="txt">
+                                                병원은 사정상 변경의 경우와 영업상 중요사유가 발생한 경우에는 이 약관을 변경할
+                                                수 있으며, 변경된 약관은 전항과 같은 방법으로 공지 또는 통보함으로써 효력을
+                                                발생합니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="n-txt-con">
+                                            <i class="num">④</i>
+                                            <p class="txt">
+                                                이 약관에서 정하지 아니한 사항과 이 약관의 해석에 관하여는 관계법령 또는
+                                                상관례에 따릅니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="han-tt">
+                                제4조 서비스의 내용 및 변경
+                            </div>
+                            <div class="nor-c">
+                                <ul class="number-sm-circle-list">
+                                    <li>
+                                        <div class="n-txt-con">
+                                            <i class="num">①</i>
+                                            <p class="txt">
+                                                병원은 다음의 서비스를 제공합니다.
+                                            </p>
+                                        </div>
+                                        <ul>
+                                            <li>
+                                                <div class="n-txt-con">
+                                                    <i class="num">a.</i>
+                                                    <p class="txt">
+                                                        병원에서 제공하는 일반 안내 서비스
+                                                    </p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="n-txt-con">
+                                                    <i class="num">b.</i>
+                                                    <p class="txt">
+                                                        외래 진료예약 관련 서비스
+                                                    </p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="n-txt-con">
+                                                    <i class="num">c.</i>
+                                                    <p class="txt">
+                                                        병원에서 제공하는 각종 증명서 발급 서비스
+                                                    </p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="n-txt-con">
+                                                    <i class="num">d.</i>
+                                                    <p class="txt">
+                                                        기타 병원이 정하는 서비스
+                                                    </p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <div class="n-txt-con">
+                                            <i class="num">②</i>
+                                            <p class="txt">
+                                                병원은 불가피한 사정이 있는 경우 제공하는 서비스의 내용을 변경할 수 있으며,
+                                                이 경우 변경된 서비스의 내용 및 제공일자를 명시하여 서비스 화면에 공지하거나
+                                                기타의 방법으로
+                                                회원에게 통보합니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="n-txt-con">
+                                            <i class="num">③</i>
+                                            <p class="txt">
+                                                병원은 서비스 내용의 변경으로 인하여 이용자가 입은 손해에 대하여 배상하지
+                                                아니합니다. 단, 병원의 고의 또는 중과실이 있는 경우에는 그러하지 아니합니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="han-tt">
+                                제5조 서비스의 중단
+                            </div>
+                            <div class="nor-c">
+                                <ul class="number-sm-circle-list">
+                                    <li>
+                                        <div class="n-txt-con">
+                                            <i class="num">①</i>
+                                            <p class="txt">
+                                                병원은 시스템 등 장치의 보수점검 및 고장, 일시적 통신장애, 서비스 개발,
+                                                시스템 정기점검, 긴급조치 등 불가피한 사유에 의해 서비스 제공이 일정기간 동안
+                                                제한 또는 중단될 수
+                                                있습니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="n-txt-con">
+                                            <i class="num">②</i>
+                                            <p class="txt">
+                                                병원은 제1항의 사유로 서비스 제공이 일시적으로 중단됨으로 인하여 이용자 또는
+                                                제3자 가입은 손해에 대하여는 배상하지 아니합니다. 단, 병원의 고의 또는
+                                                중과실이 있는 경우에는
+                                                그러하지 아니합니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="mb-4">
+            <div class="cnt_in">
+                <span class="h_exp">제2장 회원의 가입 및 탈퇴</span>
+                <div class="bg-box gray">
+                    <ul class="hangle-list">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="mb-4">
+            <div class="cnt_in">
+                <span class="h_exp">제3장 개인정보의 보호</span>
+                <div class="bg-box gray">
+                    <ul class="hangle-list">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="mb-4">
+            <div class="cnt_in">
+                <span class="h_exp">제4장 인터넷 진료예약 서비스에 관한 책임의 제한</span>
+                <div class="bg-box gray">
+                    <ul class="hangle-list">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="mb-4">
+            <div class="cnt_in">
+                <span class="h_exp">제5장 병원 및 이용자의 의무</span>
+                <div class="bg-box gray">
+                    <ul class="hangle-list">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="mb-4">
+            <div class="cnt_in">
+                <span class="h_exp">제6장 기타</span>
+                <div class="bg-box gray">
+                    <ul class="hangle-list">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dialog-close" onclick="fnHidePop('re_terms')"></div>
+</div>
+
+<!--개인정보 보호정책-->
+<div class="popup-dialog White dialog-960 rounded shadow" id="re_privacy">
+    <div class="dialog-title">
+        개인정보 보호정책
+    </div>
+    <div class="dialog-body" style="height: 700px;"> 
+        <div class="mb-4">
+            <h5 class="mb-1">국민건강보험 일산병원 개인정보 처리방침</h5>
+            <div class="privacyBox bg-gray-dark">
+                국민건강보험 일산병원(이하 “일산병원”)은 고객의 개인정보를 소중하게 생각하고, 개인정보의 안전한 보호를 위하여 항상 최선의
+                노력을 다하고 있습니다. 일산병원이 취급하는 모든 개인정보는 개
+                인정보 보호법 또는 관련법령에 근거하여 수집·보유 및 처리되며, 고객의 권익을 보호하고 개인정보 관련 이용자의 고충을 원활하게
+                처리할 수 있도록 일산병원은 다음과 같은 「개인정보 처리방침」
+                을 수립하여 공개하고 있습니다.
+            </div>
+        </div>
+        <div class="mb-4">
+            <div class="textArea">
+                <h5 class="h_exp">1. 개인정보의 처리목적, 보유기간, 처리하는 개인정보의 항목</h5>
+                <div class="privacyBox bg-gray-dark">
+                    <ul class="hangle-list">
+                        <li>
+                            <span class="num_01">가. </span>
+                            일산병원이 「개인정보 보호법」 제32조에 따라 등록 공개하는 개인정보파일의 처리목적, 보유기간 및 처리하는 개인정보의 항목은 다음과 같습니다.
+                            <ul class="list_dot">
+                                <li>
+                                    <span>개인정보파일 내역</span>
+                                    <!-- <a href="/com/siteFile/singleFileDownload.do?dir=static&amp;fileNm=downloadv38.pdf" class="btn btn_st01 r-icon-down"><span>다운로드</span></a> -->
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="num_01">나. </span>
+                            일산병원의 개인정보파일 현황은 아래의 방법으로 확인하실 수 있습니다.
+                            <ul class="list_dot">
+                                <li>
+                                    서비스 제공을 목적으로 앱 이용을 위해 아래와 같은 권한을 요구합니다.
+                                </li>
+                                <li>
+                                    개인정보보호 포털(<a href="http://www.privacy.go.kr" target="_blank" title="개인정보보호 포털"> <span>www.privacy.go.kr</span></a>) → 민원마당 → 개인정보의 열람 등 요구<br> → 개인정보파일 목록 검색→ 기관명에 “국민건강보험공단” 입력 후 조회
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="num_01">다. </span>
+                            일산병원 앱에서 처리하는 개인정보의 목적, 이용기간 및 처리하는 항목
+                            <ul class="list_dot nor-c">
+                                <li>
+                                    서비스 제공을 목적으로 앱 이용을 위해 아래와 같은 권한을 요구합니다.
+                                </li>
+                                <li>
+                                    이용기간 : 이용목적 달성 시 즉시 파기
+                                    <div class="n-txt-con block mt-2">
+                                        <i class="num">① android.permission.CAMERA</i>
+                                        <ul class="pl-4">
+                                            <li>
+                                                <p class="txt">
+                                                    - 앱은 바코드 인식을 위하여 권한을 사용하며 이외의 용도로는
+                                                    사용하지 않습니다.
+                                                </p>
+                                            </li>
+                                        </ul>
+                                        <i class="num">② android.permission.RECORD_AUDIO</i>
+                                        <ul class="pl-4">
+                                            <li>
+                                                <p class="txt">
+                                                    - 앱은 음성녹음을 위하여 권한을 사용하며 이외의 용도로는
+                                                    사용하지 않습니다.
+                                                </p>
+                                            </li>
+                                        </ul>
+                                        <i class="num">③ android.permission.READ_PHONE_STATE</i>
+                                        <ul class="pl-4">
+                                            <li>
+                                                <p class="txt">
+                                                    - 앱은 휴대폰 상태 확인을 위하여 권한을 사용하며 이외의
+                                                    용도로는 사용하지 않습니다.
+                                                </p>
+                                            </li>
+                                        </ul>
+                                        <i class="num">④ android.permission.READ_CONTACTS</i>
+                                        <ul class="pl-4">
+                                            <li>
+                                                <p class="txt">
+                                                    - 앱은 연락처 확인을 위하여 권한을 사용하며 이외의 용도로는
+                                                    사용하지 않습니다.
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="mb-4">
+            <div class="textArea">
+                <h5 class="h_exp">2. 개인정보의 제3자 제공</h5>
+                <div class="privacyBox bg-gray-dark">
+                    <ul class="hangle-list">
+                        <li>
+                            <span class="num_01">가. </span>
+                            일산병원은 업무와 관련이 없는 경우「개인정보 보호법」제18조에 따라 원칙적으로 정보주체의 개인정보를
+                            제3자에게 제공하지 않으며, 법이 허용하는 다음의 예외적인 사항에 한하여 제공하
+                            고 있습니다. 이 경우에도 정보주체 또는 제3자의 이익을 부당하게 침해할 우려가 있는 경우 제공을 제한하고 있습니다.
+                            <div class="bg-box mt-2">
+                                <ul class="list_dot nor-c">
+                                    <li class="no-bg">
+                                        <div class="n-txt-con">
+                                            <i class="num">①</i>
+                                            <p class="txt">
+                                                정보주체로부터 별도의 동의를 받은 경우
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="no-bg">
+                                        <div class="n-txt-con">
+                                            <i class="num">②</i>
+                                            <p class="txt">
+                                                다른 법률에 특별한 규정이 있는 경우
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="no-bg">
+                                        <div class="n-txt-con">
+                                            <i class="num">③</i>
+                                            <p class="txt">
+                                                정보주체 또는 법정대리인이 의사표시를 할 수 없는 상태에 있거나 주소불명 등으로
+                                                사전 동의를 받을 수 없는 경우로서 명백히 정보주체 또는 제3자의 급박한 생명,
+                                                신체, 재산의
+                                                이익을 위하여 필요하다고 인정되는 경우
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="no-bg">
+                                        <div class="n-txt-con">
+                                            <i class="num">④</i>
+                                            <p class="txt">
+                                                개인정보를 목적 외의 용도로 이용하거나 이를 제3자에게 제공하지 아니하면 다른
+                                                법률에서 정하는 소관 업무를 수행할 수 없는 경우로서 보호위원회의 심의·의결을
+                                                거친 경우
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="no-bg">
+                                        <div class="n-txt-con">
+                                            <i class="num">⑤</i>
+                                            <p class="txt">
+                                                조약, 그 밖의 국제협정의 이행을 위하여 외국정부 또는 국제기구에 제공하기
+                                                위하여 필요한 경우
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="no-bg">
+                                        <div class="n-txt-con">
+                                            <i class="num">⑥</i>
+                                            <p class="txt">
+                                                범죄의 수사와 공소의 제기 및 유지를 위하여 필요한 경우
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="no-bg">
+                                        <div class="n-txt-con">
+                                            <i class="num">⑦</i>
+                                            <p class="txt">
+                                                법원의 재판업무 수행을 위하여 필요한 경우
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="no-bg">
+                                        <div class="n-txt-con">
+                                            <i class="num">⑧</i>
+                                            <p class="txt">
+                                                형(形) 및 감호, 보호처분의 집행을 위하여 필요한 경우
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="num_01">나. </span>
+                            일산병원은 위의 경우 타 기관에 개인정보를 연계·제공할 수 있습니다. 이 경우 개인정보를 이용하거나
+                            제공받고자 하는 기관에게 이용목적, 이용기간, 이용형태 등을 제한하거나, 개인정보의
+                            안전성 확보를 위하여 필요한 구체적인 조치를 마련하도록 요청하며, 연계·제공되는 개인정보는 이용 및
+                            제공목적에 맞게 최소한으로 제공합니다. 또한 연계·제공되는 개인정보의 보유기간을
+                            명확히 지정토록 하고 있습니다.
+                        </li>
+                        <li>
+                            <span class="num_01">다. </span>
+                            일산병원이 법률에 근거하여 제3자에게 제공하는 개인정보는 다음과 같습니다.
+                            <div class="bg-box mt-2">
+                                <ul class="list_dia mb-4">
+                                    <li>
+                                        <strong>개인정보 제3자 제공내역</strong>
+                                        <div class="mt-3">
+                                            <table class="styled fixed hover striped middle">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">제공받는 자</th>
+                                                        <th scope="col">이용 목적</th>
+                                                        <th scope="col">개인정보 항목</th>
+                                                        <th scope="col">근거</th>
+                                                        <th scope="col">이용 및 보유기간</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            국민건강보험공단,<br>
+                                                            건강보험심사평가원,<br>
+                                                            의료급여 보장기관,<br>
+                                                            법원, 근로복지공단,<br>
+                                                            자동차보험회사, 지방병무청, <br>
+                                                            학교안전공제회, 보훈병원장, <br>
+                                                            국민연금공단, <br>
+                                                            의료분쟁조정중재원,<br>
+                                                            시·군·구청
+                                                        </td>
+                                                        <td>
+                                                            급여비용 심사,<br>
+                                                            지급대상여부 확인,<br>
+                                                            요양급여의 적정성 평가,<br>
+                                                            가감지급 등
+                                                        </td>
+                                                        <td>
+                                                            성명, 집주소, 직장주소,<br>
+                                                            집연락처, 직장연락처,<br>
+                                                            핸드폰번호, 생년월일,<br>
+                                                            이메일, 성별, 나이, 주민등록번호,<br>
+                                                            외국인등록번호, 진료내역,<br>
+                                                            진료기록부 사본, 보험자격,<br>
+                                                            처방전 교부내역, 자동차보험정보,<br>
+                                                            산업재해보상보험정보,<br>
+                                                            산정특례번호, 중증등록번호,<br>
+                                                            검진결과
+                                                        </td>
+                                                        <td>
+                                                            의료법 제21조,<br>
+                                                            국민건강보험법 제14조,<br>
+                                                            제47조, 제48조, 제52조,<br>
+                                                            제63조, 제96조,<br>
+                                                            동법 시행령 제25조,<br>
+                                                            동법 시행규칙 제19조,<br>
+                                                            의료급여법 제11조, 제11조의3,<br>
+                                                            동법 시행규칙 제20조,<br>
+                                                            산업안전재해보상보험법 제45조,<br>
+                                                            제118조, 동법시행규칙 제27조,<br>
+                                                            자동차손해배상보장법 제12조,<br>
+                                                            제12조의2, 제14조,<br>
+                                                            동법시행규칙 제6조의2
+                                                        </td>
+                                                        <td>
+                                                            이용 목적 달성 또는<br>
+                                                            보유기간 경과 시
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>관할 보건소</td>
+                                                        <td>
+                                                            감염병의 신고<br>
+                                                            모자보건 신고
+                                                        </td>
+                                                        <td>
+                                                            성명, 집주소, 직장주소,<br>
+                                                            집연락처, 직장연락처,<br>
+                                                            핸드폰번호, 주민등록번호,<br>
+                                                            감염병 발생 신고서 항목,<br>
+                                                            후천성면역결핍바이러스<br>
+                                                            감염인·후천성<br>
+                                                            면역 결핍증 환자 발견<br>
+                                                            (사망)신고서 작성항목,<br>
+                                                            임산부신생아 사망사산 보고 항목,<br>
+                                                            미숙아 및 선천성이상아의<br>
+                                                            출생보고 항목
+                                                        </td>
+                                                        <td>
+                                                            감염병의 예방 및 관리에 관한<br>
+                                                            법률 제11조,<br>
+                                                            동법 시행규칙 제6조,<br>
+                                                            후천성면역결핍증예방법 제5조,<br>
+                                                            동법시행규칙 제2조,<br>
+                                                            성매개감염병 및 후천성면역결핍증 <br>
+                                                            건강진단규칙 제7조,<br>
+                                                            혈액관리법 제8조, 제10조,<br>
+                                                            동법 시행규칙 제13조,<br>
+                                                            모자보건법 제8조
+                                                        </td>
+                                                        <td>
+                                                            이용 목적 달성 또는 <br>
+                                                            보유기간 경과 시
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>통계청</td>
+                                                        <td>모자보건 신고</td>
+                                                        <td>
+                                                            임산부신생아<br>
+                                                            사망사산 보고 항목
+                                                        </td>
+                                                        <td>
+                                                            통계법 제17조, 제25조, 제26조
+                                                        </td>
+                                                        <td>
+                                                            이용 목적 달성 또는 <br>
+                                                            보유기간 경과 시
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>중앙암등록본부</td>
+                                                        <td>암환자 등록</td>
+                                                        <td>
+                                                            주민등록번호,<br>
+                                                            진료기록부 사본
+                                                        </td>
+                                                        <td>
+                                                            암관리법 제14조
+                                                        </td>
+                                                        <td>
+                                                            이용 목적 달성 또는 <br>
+                                                            보유기간 경과 시
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            중앙응급의료센터
+                                                        </td>
+                                                        <td>
+                                                            응급의료정보<br>
+                                                            통신망 구축
+                                                        </td>
+                                                        <td>
+                                                            성명, 나이, 성별, <br>
+                                                            진료접수정보, 진료내역
+                                                        </td>
+                                                        <td>응급의료에 관한 법률 제15조
+                                                        </td>
+                                                        <td>
+                                                            이용 목적 달성 또는 <br>
+                                                            보유기간 경과 시
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            환자 이송 의료기관
+                                                        </td>
+                                                        <td>
+                                                            타병원 환자이송
+                                                        </td>
+                                                        <td>
+                                                            성명, 생년월일, 성별, 주소,<br>
+                                                            보호자성명, 보호자주소,<br>
+                                                            보호자 전화번호, 진료기록부 사본
+                                                        </td>
+                                                        <td>
+                                                            응급의료에 관한 법률 제11조,<br>
+                                                            동법시행규칙 제4조
+                                                        </td>
+                                                        <td>
+                                                            이용 목적 달성 또는 <br>
+                                                            보유기간 경과 시
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>대한적십자사</td>
+                                                        <td>혈액정보 통보</td>
+                                                        <td>
+                                                            성명, 주민등록번호, 주소,<br>
+                                                            전화번호, 혈액형,<br>
+                                                            헌혈혈액 검사 결과
+                                                        </td>
+                                                        <td>
+                                                            혈액관리법 시행규칙<br>
+                                                            제11조의 4
+                                                        </td>
+                                                        <td>
+                                                            이용 목적 달성 또는 <br>
+                                                            보유기간 경과 시
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>장기구득기관</td>
+                                                        <td>
+                                                            장기이식(기증) 시<br>
+                                                            진료정보 제공
+                                                        </td>
+                                                        <td>
+                                                            성명, 주민등록번호,<br>
+                                                            집주소, 직장주소, 전화번호,<br>
+                                                            뇌사판정신청서 항목
+                                                        </td>
+                                                        <td>
+                                                            장기 등 이식에 관한 법률 제17조,<br>
+                                                            동법 시행규칙 제11조
+                                                        </td>
+                                                        <td>
+                                                            이용 목적 달성 또는 <br>
+                                                            보유기간 경과 시
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>종합검진 계약업체</td>
+                                                        <td>검진결과 통보</td>
+                                                        <td>
+                                                            성명, 주민등록번호,<br>
+                                                            종합검진결과
+                                                        </td>
+                                                        <td>정보주체의 동의</td>
+                                                        <td>
+                                                            이용 목적 달성 또는 <br>
+                                                            보유기간 경과 시
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>학생검진 계약학교</td>
+                                                        <td>검진결과 통보</td>
+                                                        <td>성명, 생년월일, 검진결과</td>
+                                                        <td>학교보건법제7조</td>
+                                                        <td>
+                                                            이용 목적 달성 또는 <br>
+                                                            보유기간 경과 시
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>일산동구청</td>
+                                                        <td>
+                                                            장례 관련 <br>
+                                                            보고의무 준수
+                                                        </td>
+                                                        <td>
+                                                            사망자(성명, 생년월일),<br>
+                                                            신청인(이름, 집연락처, 핸드폰번호)
+                                                        </td>
+                                                        <td>장사 등에 관한 법률 제37조</td>
+                                                        <td>
+                                                            이용 목적 달성 또는 <br>
+                                                            보유기간 경과 시
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <p class="txt mt-1 pl-0">
+                                    또한, 병원은 정보주체의 특별한 요청이 없는 한 원활한 진료를 위하여 필요 최소한의 범위 내에서
+                                    환자의 한정된 가족 및 법정대리인 등에게 환자상태를 설명하는 경우가 있습니다.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="mb-4">
+            <div class="textArea">
+                <h5 class="h_exp">3. 개인정보처리의 위탁</h5>
+                <div class="privacyBox bg-gray-dark">
+                    <ul class="hangle-list">
+                        <li>
+                            <span class="num_01">가. </span>
+                            일산병원은 개인정보 처리 업무를 위탁하는 경우「개인정보보호법」제26조에 따라 다음의 내용이 포함된
+                            문서에 의하여 처리하고 있습니다.
+                            <div class="bg-box mt-2">
+                                <ul class="list_dot nor-c">
+                                    <li class="no-bg">
+                                        <div class="n-txt-con">
+                                            <i class="num">①</i>
+                                            <p class="txt">
+                                                위탁업무 수행 목적 외 개인정보의 처리 금지에 관한 사항
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="no-bg">
+                                        <div class="n-txt-con">
+                                            <i class="num">②</i>
+                                            <p class="txt">
+                                                개인정보의 관리적·기술적 보호 조치에 관한 사항
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="no-bg">
+                                        <div class="n-txt-con">
+                                            <i class="num">③</i>
+                                            <p class="txt">
+                                                위탁업무의 목적 및 범위
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="no-bg">
+                                        <div class="n-txt-con">
+                                            <i class="num">④</i>
+                                            <p class="txt">
+                                                재위탁 제한에 관한 사항
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="no-bg">
+                                        <div class="n-txt-con">
+                                            <i class="num">⑤</i>
+                                            <p class="txt">
+                                                개인정보에 대한 접근 제한 등 안전성 확보조치에 관한 사항
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="no-bg">
+                                        <div class="n-txt-con">
+                                            <i class="num">⑥</i>
+                                            <p class="txt">
+                                                위탁업무와 관련하여 보유하고 있는 개인정보의 관리 현황 점검 등 감독에 관한
+                                                사항
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="no-bg">
+                                        <div class="n-txt-con">
+                                            <i class="num">⑦</i>
+                                            <p class="txt">
+                                                수탁자가 준수하여야 할 의무를 위반한 경우 손해배상 등 책임에 관한 사항
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="num_01">나. </span>
+                            일산병원은 다음과 같이 개인정보 처리업무를 위탁하고 있으며, 수탁자가 개인정보를 안전하게 처리하는지를 감독하고 있습니다.
+                        </li>
+                        <li>
+                            <span class="num_01">다. </span>
+                            위탁업무의 내용이나 수탁자가 변경된 경우에는 본 개인정보 처리방침을 통하여 공개하고 있습니다.
+                            <div class="bg-box mt-2">
+                                <ul class="list_dot nor-c">
+                                    <li class="no-bg">
+                                        <span>수탁자 및 위탁업무 내역</span>
+                                        <a href="/com/siteFile/singleFileDownload.do?dir=static&amp;fileNm=downloadv38.xlsx" class="button blue"><span>다운로드</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="mb-4">
+            <div class="textArea">
+                <h5 class="h_exp">4. 정보주체 및 법정대리인의 권리·의무 및 행사방법</h5>
+            </div>
+        </div>
+        <div class="mb-4">
+            <div class="textArea">
+                sdfsfd
+            </div>
+        </div>
+    </div>
+    <div class="dialog-close" onclick="fnHidePop('re_privacy')"></div>
+</div>
+</body>
+</html>
