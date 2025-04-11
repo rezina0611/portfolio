@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>경기도사회서비스원 통합사회정보시스템</title>
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/layout.css">
+<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/content.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/datepicker.css">  <!-- 제이쿼리 달력 css-->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./js/jquery.placeholder.min.js"></script><!-- 제이쿼리 placeholder-->
+<script src="./js/datepicker.js"></script><!-- 제이쿼리 달력 js-->
+<script src="./js/datepicker-ko.js"></script><!-- 제이쿼리 달력 datepicker 한국어로 -->
+<script src="./js/script.js"></script>
+<script>
+	$(function() {
+		$.datepicker.setDefaults($.datepicker.regional['ko']); //datepicker 한국어로 사용하기 위한 언어설정
+		$('.datepicker01').datepicker();
+		$('.datepicker02').datepicker();
+	});
+</script>
+
+</head>
+<div class="mask"></div>
+<div class="modal">
+	<div class="layerpopupArea">
+		<span class="close">&times;</span>
+		<!-- Modal content -->
+	    <div id="personalItem01" class="modal-content">	
+	    	<h4>비밀번호 변경</h4>
+	    	<div class="card-content">
+	    		<div class="tar fs12 mb_5"><span class="red">*</span>필수입력항목</div>
+	    		<div class="regist-form">
+	    			<table>
+						<colgroup>
+							<col width="25%"><col width="">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">현재 비밀번호 <span class="red">*</span></th>
+								<td><input type="text" class="form-control" title="아이디 입력해주세요" name="id"></td>
+							</tr>
+							<tr>
+								<th scope="row">새 비밀번호 <span class="red">*</span></th>
+								<td>
+									<input type="text" class="form-control" title="이름 입력해주세요" name="name">
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">새 비밀번호 확인 <span class="red">*</span></th>
+								<td><input type="text" class="form-control" title="이메일주소 입력해주세요" name="email"></td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    		<div class="red fs12 mt_5">비밀번호는 8자 ~ 20자, 영문, 숫자, 특수문자 사용가능</div>
+	    		<div class="tar mt_30">
+	    			<button type="button" class="btn btn-secondary" id="close">취소</button>
+	    			<button type="button" class="btn btn-info">확인</button>
+	    		</div>
+	    	</div>
+		</div>
+
+		<!-- Modal content -->
+	    <div id="personalItem02" class="modal-content">
+	    	<h4>나의정보</h4>
+	    	<div class="card-content">
+	    		<div class="tar fs12 mb_5"><span class="red">*</span>필수입력항목</div>
+	    		<div class="regist-form">
+	    			<table>
+						<colgroup>
+							<col width="20%"><col width="">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">소속 <span class="red">*</span></th>
+								<td class="tal">기획예산팀</td>
+							</tr>
+							<tr>
+								<th scope="row">이름 <span class="red">*</span></th>
+								<td class="tal">홍길동</td>
+							</tr>
+							<tr>
+								<th scope="row">직급/직책 <span class="red">*</span></th>
+								<td class="tal">팀장</td>
+							</tr>
+							<tr>
+								<th scope="row">이메일주소 <span class="red">*</span></th>
+								<td class="tal">awsdert@gg.pass.or.kr</td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    		<div class="tar mt_30">
+	    			<button type="button" class="btn btn-secondary" id="close">취소</button>
+	    			<button type="button" class="btn btn-info">확인</button>
+	    		</div>
+	    	</div>
+		</div>
+		<!-- //Modal content -->
+	</div>
+</div>
+<body class="bg">  <!--style="overflow-y:hidden; overflow-x:auto;"--> 
+	<!--wrapper-->
+	<div class="wrapper">
+		<!-- Header -->
+		<div id="header">
+            <div class="skip">상단메뉴</div>
+            <div class="header-top main-width">
+                <div class="container navbar">
+                    <div class="inner-container">
+                        <div>
+                            <h1 class="logo">
+                                <img src="./images/logo.png" alt="경기도사회서비스원"><br><span>통합사회정보시스템</span>
+                            </h1>
+                        </div>
+                       
+                       <div class="gnb">
+                            <div class="skip">상단메뉴</div>
+                            <!--하위메뉴가 없는 메뉴는 해당li태그에 class="nosub" 넣어주세요-->
+                            <ul class="depth1">
+                                <li class="nosub"><a href="./home(대시보드).html">홈</a></li>
+                                <li class="nosub"><a href="./예산집행율조회.html">예산집행율</a></li>
+                                <li class="nosub"><a href="./종사자현황_(고용형태별)조회.html">종사자현황</a></li>
+                                <li class="nosub"><a href="./종합재가센터_운영현황목록.html">종합재가센터</a></li>
+                                <li><a href="#none">국공립시설</a>
+                                	<ul class="depth2">
+                                		<li><a href="./국공립시설_운영현황목록(어린이집).html">어린이집</a></li>
+                                		<li><a href="./국공립시설_운영현황목록(다함께돌봄).html">다함께돌봄센터</a></li>
+                                	</ul>
+                                </li>
+                                <li><a href="#none">공공센터</a>
+                                	<ul class="depth2">
+                                		<li><a href="./공공센터_대체인력지원사업_운영현황.html">대체인력지원사업</a></li>
+                                		<li><a href="./공공센터_노인보호전문기관_운영현황.html">노인보호전문기관</a></li>
+                                		<li><a href="./공공센터_노인종합상담센터_운영현황.html">노인종합상담센터</a></li>
+                                		<li><a href="./공공센터_노인일자리지원센터_운영현황.html">노인일자리지원센터</a></li>
+                                		<li><a href="./공공센터_지역사회서비스지원단_운영현황.html">지역사회서비스지원단</a></li>
+                                		<li><a href="./공공센터_장기요양요원지원센터_운영현황.html">장기요양요원지원센터</a></li>
+                                	</ul>
+                                </li>
+                                <li class="nosub"><a href="./개인인사정보_개인휴가조회.html">개인인사정보</a></li>
+                                <li class="nosub"><a href="./통합결재_통합문서목록.html">통합결재</a></li>
+                                <li class="nosub"><a href="./설문조사_진행가능한설문.html">설문조사</a></li>
+                                <li class="nosub"><a href="http://pub_lms-lite.tigensoft.co.kr:9090/_front/" target="_blank" title="새창열림">교육관리 <i class="far fa-window-restore"></i></a></li>
+                                <li><a href="#none">관리자</a>
+                                    <ul class="depth2">
+                                        <li><a href="./인사관리_인사사항조회.html">인사관리</a></li>
+                                        <li><a href="./자산관리.html">자산관리</a></li>
+                                        <li><a href="./대용량메일발송.html">대용량메일발송</a></li>
+                                        <li><a href="./통합메시지.html">통합메시지</a></li>
+                                        <li><a href="./설문조사관리.html">설문조사관리</a></li>
+                                        <li><a href="./통합메시지발송.html">통합메시지발송</a></li>
+                                        <li><a href="./통합메시지기준관리.html">통합메시지기준관리</a></li>
+                                    </ul>
+                                </li>
+                             </ul>
+                        </div>
+
+                        <div class="info">
+                            <a href="#none" title="펼치기" class="off">
+                                <i class="fas fa-user-cog fa-lg"></i>
+                                <span class="fs13">홍길동팀장 </span><br><span class="fs11">(기획예산팀)</span>
+                            </a>
+                            <ul>
+                                <li><a href="#none" class="openPopup" data-target="personalItem01"><i class="fas fa-user mr_5"></i> 비밀번호변경</a></li>
+                                <li><a href="#none" class="openPopup" data-target="personalItem02"><i class="fas fa-key mr_5"></i> 나의정보</a></li>
+                                <li><a href="./권한변경_공통.html"><i class="fas fa-key mr_5"></i> 권한설정</a></li>
+                                <li><a href="#none"><i class="fas fa-power-off mr_5"></i> 로그아웃</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<!-- //Header -->
+		<!--gside-->
+		<div class="gside">
+	        <div class="skip">레프트메뉴 영역</div>
+	        <!--li태그에 nochild 클래스가 있으면 하위메뉴가 없다는 뜻-->
+	        <div class="skip">통합결재</div>
+	        <ul>
+	            <li class="nochild"><a href="./통합결재_통합문서목록.html">통합문서</a></li>
+	            <li class="nochild"><a href="./통합결재_결재할문서.html">결재할문서</a></li>
+	            <li class="nochild"><a href="./통합결재_작성문서.html" class="on">작성문서</a></li>
+	            <li class="nochild"><a href="./통합결재_임시저장문서.html">임시저장문서</a></li>
+	        </ul>
+	    </div>
+		<!--//gside-->
+		<!--content-->
+		<div class="content">
+			<div class="skip">컨텐츠 영역</div>
+			<!--content-wrapper-->
+			<div class="content-wrapper">
+				<!--cont-header-->
+				<div class="cont-header">
+					<div class="cont-header-left">
+						<h3 class="Depth2_title">통합결재</h3>
+						<ul class="breadcrumb d_iblock">
+							<li>홈 <i class="fas fa-angle-right"></i></li>
+							<li>통합결재 <i class="fas fa-angle-right"></i></li>
+							<li>작성문서</li>
+						</ul>
+					</div>
+				</div>
+				<!--//cont-header-->
+				<!--content-body-->
+				<div class="content-body">
+					<div class="card-header">
+						<h4 class="Depth3_title">작성문서</h4>
+					</div>	
+					<div class="card-body">
+						<!-- 검색 -->
+						<script>
+							function SearchInfo()	{
+								obj_FM = document.getElementById("Search_Info_lit");
+								obj_FM.style.display='block';
+							}
+
+							function Search_close() {
+								obj_close = document.getElementById("Search_Info_lit");
+								obj_close.style.display='none';
+							}
+						</script>
+						<div class="search-area">
+							<table>
+								<colgroup>
+									<col width="13%"><col width="*">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">문서검색</th>
+										<td>
+											<div class="flow_search">
+												<input type="text" id="search_val" name="param_vo.search_val" value="" onclick="JavaScript:Chk_clean();" class="form-control">
+												<span class="arrow" onclick="SearchInfo();" style="cursor:pointer;"><i class="fas fa-chevron-circle-down" title="열기"></i></span>
+
+												<div id="Search_Info_lit">
+													<div onclick="Search_close();"><i class="fas fa-times-circle" title="닫기" style="cursor:pointer;"></i></div>
+													<div class="Search_Info_lit_area">
+														<div class="s_tit">제  목</div>
+														<div class="in"><input type="text" id="search_title" name="param_vo.search_title" value="" class="form-control"></div>
+														<div class="s_tit">작성자 :</div>
+														<div class="in"><input type="text" id="search_title" name="param_vo.search_title" value="" class="form-control"></div>
+														<div class="s_tit">문서번호 :</div>
+														<div class="in"><input type="text" id="search_title" name="param_vo.search_title" value="" class="form-control"></div>
+														<div class="s_tit">작성일 :</div>
+														<div class="in">
+															<input type="text" class="form-control datepicker01" id="search_day_from" name="param_vo.search_day_from" value="2021-11-05" style="width:116px;" />
+															<img onclick="javascript:$('#search_day_from').datepicker('show')" src="./images/ico_calender.gif" alt="작성일" title="작성일" align="absmiddle" style="cursor:pointer">
+															<div class="f_left mr_5 mt_5"> ~ </div>
+															<input type="text" class="form-control datepicker02" id="search_day_to" name="param_vo.search_day_to" value="2021-11-05" style="width:116px;" />
+															<img onclick="javascript:$('#search_day_to').datepicker('show')" src="./images/ico_calender.gif" alt="작성일" title="작성일" align="absmiddle" style="cursor:pointer">
+														</div>
+														<div class="s_tit">문서 서식명 :</div>
+														<div class="in">
+															<select id="search_wf_title" name="param_vo.search_wf_title" class="select"> 
+											        			<option value="">== 전체 ==</option>
+											        			<option value="1037">[1037]경조금/화환 신청서-거래처</option>
+											        			<option value="1005">[1005]경조금/화환 신청서-직원</option>
+											        			<option value="1023">[1023]공유 폴더 생성증량 요청서</option>
+											        			<option value="1021">[1021]구매 품의서</option>
+											        			<option value="1006">[1006]리조트 이용신청서</option>
+											        			<option value="1045">[1045]명함신청서</option>
+											        			<option value="1044">[1044]법인차량 배차 신청서</option>
+											        			<option value="1019">[1019]법인카드 신청서</option>
+											        			<option value="1010">[1010]사무용품신청서</option>
+											        			<option value="1038">[1038]사외근무/출입카드미인식 확인서</option>
+											        			<option value="1024">[1024]시스템 권한 신청서</option>
+											        			<option value="1017">[1017]신규고객등록</option>
+											        			<option value="1003">[1003]신용평가 신청서</option>
+											        			<option value="1035">[1035]야근 식대/교통비 신청서</option>
+											        			<option value="1042">[1042]업무연락(인사팀 전용)</option>
+											        			<option value="1009">[1009]우편물 발송 의뢰서</option>
+											        			<option value="1014">[1014]입사/전보 사전준비 협조의뢰서</option>
+											        			<option value="1008">[1008]접대비 승인 신청서</option>
+											        			<option value="1041">[1041]주차요금 처리 요청서</option>
+											        			<option value="1039">[1039]채용의뢰 협조전</option>
+											        			<option value="1043">[1043]채용의뢰 협조전</option>
+											        			<option value="1018">[1018]청구서 발행 요청서</option>
+											        			<option value="1020">[1020]출장결과 보고서</option>
+											        			<option value="1040">[1040]출장결과 보고서</option>
+											        			<option value="1016">[1016]출장신청서</option>
+											        			<option value="1015">[1015]출장신청서</option>
+											        			<option value="1034">[1034]카페테리아 복지 신청서</option>
+											        			<option value="1002">[1002]협조의뢰서</option>
+											        			<option value="1004">[1004]휴가 신청서</option>
+											        			<option value="1036">[1036]Creative Division 업무 의뢰서</option>
+											        			<option value="1025">[1025]IT 소모품 신청서</option>
+											        		</select>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="Search_detail">
+												<button type="button" class="btn btn-info mb_0" onclick="fnSearch()">검색</button>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!--// 검색 -->
+						<!-- 버튼영역 -->
+						<div class="pr mt_30">
+							<div class="list-top">
+								<button type="button" class="btn btn-enro" onclick="create();"> 문서작성</button>   <!--통합결재_문서작성양식_선택.html-->
+							</div>
+						</div>
+						<!-- //버튼영역 -->
+						<div class="table_bbs_list">
+							<table>
+								<colgroup>
+									<col width="7%">
+									<col width="12%">
+									<col width="10%">
+									<col width="*">
+									<col width="12%">
+									<col width="11%">
+									<col width="10%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">순번</th>
+									    <th scope="col">문서번호</th>
+									    <th scope="col">작성자</th>
+									    <th scope="col">제  목</th>
+									    <th scope="col">작성일</a></th>
+									    <th scope="col">문서서식</a></th>
+									    <th scope="col">구분</a></th>
+								    </tr>
+							    </thead>
+								<tbody>
+									<tr>
+										<td>77</td>
+										<td>21-10-0001</td>
+										<td>홍길동</td>
+										<td class="tal">업무연락(인사팀 전용) test</td>
+										<td>2021-10-14</td>
+										<td>1042</td>
+										<td>진행중</td>
+									</tr>
+									<tr>
+										<td>77</td>
+										<td>21-10-0001</td>
+										<td>홍길동</td>
+										<td class="tal">업무연락(인사팀 전용)</td>
+										<td>2021-10-14</td>
+										<td>1042</td>
+										<td>진행중</td>
+									</tr>
+									<tr>
+										<td>77</td>
+										<td>21-10-0001</td>
+										<td>홍길동</td>
+										<td class="tal">경조금/화환 신청서-직원</td>
+										<td>2021-10-14</td>
+										<td>1042</td>
+										<td>진행중</td>
+									</tr>
+									<tr>
+										<td>77</td>
+										<td>21-10-0001</td>
+										<td>홍길동</td>
+										<td class="tal">업무연락(인사팀 전용) test</td>
+										<td>2021-10-14</td>
+										<td>1042</td>
+										<td>진행중</td>
+									</tr>
+									<tr>
+										<td>77</td>
+										<td>21-10-0001</td>
+										<td>홍길동</td>
+										<td class="tal">업무연락(인사팀 전용)</td>
+										<td>2021-10-14</td>
+										<td>1042</td>
+										<td>진행중</td>
+									</tr>
+									<tr>
+										<td>77</td>
+										<td>21-10-0001</td>
+										<td>홍길동</td>
+										<td class="tal">경조금/화환 신청서-직원</td>
+										<td>2021-10-14</td>
+										<td>1042</td>
+										<td>진행중</td>
+									</tr>
+									<tr>
+										<td>77</td>
+										<td>21-10-0001</td>
+										<td>홍길동</td>
+										<td class="tal">업무연락(인사팀 전용) test</td>
+										<td>2021-10-14</td>
+										<td>1042</td>
+										<td>진행중</td>
+									</tr>
+									<tr>
+										<td>77</td>
+										<td>21-10-0001</td>
+										<td>홍길동</td>
+										<td class="tal">업무연락(인사팀 전용)</td>
+										<td>2021-10-14</td>
+										<td>1042</td>
+										<td>진행중</td>
+									</tr>
+									<tr>
+										<td>77</td>
+										<td>21-10-0001</td>
+										<td>홍길동</td>
+										<td class="tal">경조금/화환 신청서-직원</td>
+										<td>2021-10-14</td>
+										<td>1042</td>
+										<td>진행중</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- 페이징 -->
+						<div class="bbs_page">
+							<ul class="pagination">
+								<li class="page-item"><a class="page-link" href="#">« Prev</a></li>
+								<li class="page-item"><a class="page-link" href="#">Prev</a></li>
+								<li class="page-item"><a class="page-link" href="#">1</a></li>
+								<li class="page-item"><a class="page-link" href="#">2</a></li>
+								<li class="page-item active"><a class="page-link" href="#">3</a></li>
+								<li class="page-item"><a class="page-link" href="#">4</a></li>
+								<li class="page-item"><a class="page-link" href="#">5</a></li>
+								<li class="page-item"><a class="page-link" href="#">6</a></li>
+								<li class="page-item"><a class="page-link" href="#">7</a></li>
+								<li class="page-item"><a class="page-link" href="#">8</a></li>
+								<li class="page-item"><a class="page-link" href="#">9</a></li>
+								<li class="page-item"><a class="page-link" href="#">10</a></li>
+								<li class="page-item"><a class="page-link" href="#">Next</a></li>
+								<li class="page-item"><a class="page-link" href="#">Next »</a></li>
+							</ul>
+						</div>
+						<!-- //페이징 -->
+					</div>
+				</div>
+				<!--//content-body-->
+			</div><!--//content-wrapper-->
+		</div><!--//content-->
+	</div><!--//wrapper-->
+</body>
+</html>

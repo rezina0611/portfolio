@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>재직증명서 출력용</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css"> 
+<style type="text/css">
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    font-weight:normal; font-style:normal;
+    /*font-family:굴림;*/
+    font-family: 'Noto Sans KR', sans-serif;
+}
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.paper {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 20mm; /* set contents area */
+    margin: 10mm auto;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.print_content {
+    padding: 0;
+    /*border: 1px #888 dotted;*/
+    height: 257mm;
+}
+
+p.HStyle0
+	{margin-top:0.0pt; margin-bottom:0.0pt; text-align:center; text-indent:0.0pt; line-height:160%; font-size:12.0pt; /*font-family:"굴림";*/ font-family: 'Noto Sans KR', sans-serif;/* font-weight:600; *//*letter-spacing:0;*/ color:#000000;}
+table{width:100%; border-collapse:collapse; border: solid #000000 0.5pt; font-family: 'Noto Sans KR', sans-serif;}
+table td{/*border-left:solid #000000 1.1pt; */border-top:solid #000000 0.4pt; border-right:solid #000000 0.4pt;border-bottom:solid #000000 0.4pt; padding:1.4pt 5.1pt 1.4pt 5.1pt;}
+table td p{text-align:center;}
+.seomyeong{position:absolute; top:20px; left:20px; width:90px;}
+.seomyeong > div{border: solid #000 1pt; padding:2pt;}
+
+.table {width:55%; margin:0 auto;}
+.table > table{}
+.table > table > td{border:none;}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+@media print {
+    html, body {
+        width: 210mm;
+        height: 297mm;
+        background: #fff;
+    }
+    .paper {
+        margin: 0;
+        border: initial;
+        border-radius: initial;
+        width: initial;
+        min-height: initial;
+        box-shadow: initial;
+        background: initial;
+        page-break-after: always;
+    }
+}
+
+
+</style>
+</head>
+
+<body>
+	<div>
+	    <div class="paper">
+	        <div class="print_content">
+	        	<div CLASS=HStyle0 STYLE='text-align:center;'>
+	        		<TABLE border="1" cellspacing="0" cellpadding="0">
+        				<TR>
+							<TD colspan="10" valign="middle" style='width:523px;height:75px;'>
+								<P><SPAN STYLE='font-size:35pt;font-family:"HY헤드라인M";text-align:center; font-weight:bold;'>재 직 증 명 서</SPAN></P>
+							</TD>
+							<TD valign="middle" style='width:150px;height:75px;'>
+								<P><SPAN STYLE='font-size:12pt;'>제 2020 - 03 호</SPAN></P>
+							</TD>
+						</TR>
+						<TR>
+							<TD valign="middle" style='width:112px;height:44px;'>
+								<P class="HStyle0">기 관 명</P>
+							</TD>
+							<TD colspan="10" valign="middle" style='width:561px;height:44px;'>
+								<P class="HStyle0">재단법인 경기도사회서비스원</P>
+							</TD>
+						</TR>
+						<TR>
+							<TD valign="middle" style='width:112px;height:44px;'>
+								<P class="HStyle0">주&nbsp;&nbsp;&nbsp; 소</P>
+							</TD>
+							<TD colspan="10" valign="middle" style='width:561px;height:44px;'>
+								<P class="HStyle0">경기도 수원시 장안구 경수대로 1150, 건강증진센터 1층</P>
+							</TD>
+						</TR>
+						<TR>
+							<TD valign="middle" style='width:112px;height:44px;'>
+								<P class="HStyle0">전화번호</P>
+							</TD>
+							<TD colspan="3" valign="middle" style='width:224px;height:44px;'>
+								<P class="HStyle0">(031) 267-9389</P>
+							</TD>
+							<TD colspan="4" valign="middle" style='width:112px;height:44px;'>
+								<P class="HStyle0">FAX</P>
+							</TD>
+							<TD colspan="3" valign="middle" style='width:225px;height:44px;'>
+								<P class="HStyle0">(070)8280-0090</P>
+							</TD>
+						</TR>
+	        		</TABLE>
+
+	        		<TABLE border="1" cellspacing="0" cellpadding="0">
+	        			<TR>
+							<TD rowspan="3" valign="middle" style='width:112px;height:131px;'>
+								<P class="HStyle0">인적사항</P>
+							</TD>
+							<TD valign="middle" style='width:129px;height:44px;'>
+								<P class="HStyle0">성&nbsp;&nbsp;&nbsp; 명</P>
+							</TD>
+							<TD colspan="9" valign="middle" style='width:432;height:44px;'>
+								<P class="HStyle0">&nbsp;</P>
+							</TD>
+						</TR>
+						<TR>
+							<TD valign="middle" style='width:129px;height:44px;'>
+								<P class="HStyle0">생년월일</P>
+							</TD>
+							<TD colspan="3" valign="middle" style='width:140px;height:44px;'>
+								<P class="HStyle0">&nbsp;</P>
+							</TD>
+							<TD colspan="4" valign="middle" style='width:127px;height:44px;'>
+								<P class="HStyle0"> 주민등록번호</P>
+							</TD>
+							<TD colspan="2" valign="middle" style='width:165px;height:44px;'>
+								<P class="HStyle0">&nbsp;</P>
+							</TD>
+						</TR>
+						<TR>
+							<TD valign="middle" style='width:129px;height:44px;'>
+								<P class="HStyle0">주&nbsp;&nbsp;&nbsp; 소</P>
+							</TD>
+							<TD colspan="9" valign="middle" style='width:432px;height:44px;'>
+								<P class="HStyle0">&nbsp;</P>
+							</TD>
+						</TR>
+					</table>
+
+					<TABLE border="1" cellspacing="0" cellpadding="0">
+						<TR>
+							<TD rowspan="5" valign="middle" style='width:112px;height:218px;border:solid #000000 0.4pt;'>
+								<P class="HStyle0">근무경력</P>
+							</TD>
+							<TD colspan="5" valign="middle" style='width:273px;height:44px;border:solid #000000 0.4pt;'>
+								<P class="HStyle0">근무기간</P>
+							</TD>
+							<TD colspan="3" valign="middle" style='width:123px;height:44px;border:solid #000000 0.4pt;'>
+								<P class="HStyle0">직위</P>
+							</TD>
+							<TD colspan="2" valign="middle" style='width:165px;height:44px;border:solid #000000 0.4pt;;'>
+								<P class="HStyle0">담당업무</P>
+							</TD>
+						</TR>
+						<TR>
+							<TD colspan="5" valign="middle" style='width:273px;height:44px;'>
+								<P class="HStyle0">&nbsp;</P>
+							</TD>
+							<TD colspan="3" valign="middle" style='width:123px;height:44px;'>
+								<P class="HStyle0">&nbsp;</P>
+							</TD>
+							<TD colspan="2" valign="middle" style='width:165px;height:44px;'>
+								<P class="HStyle0">&nbsp;</P>
+							</TD>
+						</TR>
+						<TR>
+							<TD colspan="5" valign="middle" style='width:273px;height:44px;'>
+								<P class="HStyle0">&nbsp;</P>
+							</TD>
+							<TD colspan="3" valign="middle" style='width:123px;height:44px;'>
+								<P class="HStyle0">&nbsp;</P>
+							</TD>
+							<TD colspan="2" valign="middle" style='width:165px;height:44px;'>
+								<P class="HStyle0">&nbsp;</P>
+							</TD>
+						</TR>
+						<TR>
+							<TD colspan="5" valign="middle" style='width:273px;height:44px;'>
+								<P class="HStyle0">&nbsp;</P>
+							</TD>
+							<TD colspan="3" valign="middle" style='width:123px;height:44px;'>
+								<P class="HStyle0">&nbsp;</P>
+							</TD>
+							<TD colspan="2" valign="middle" style='width:165px;height:44px;'>
+								<P class="HStyle0">&nbsp;</P>
+							</TD>
+						</TR>
+						<TR>
+							<TD colspan="5" valign="middle" style='width:273px;height:44px;'>
+								<P class="HStyle0">&nbsp;</P>
+							</TD>
+							<TD colspan="3" valign="middle" style='width:123px;height:44px;'>
+								<P class="HStyle0">&nbsp;</P>
+							</TD>
+							<TD colspan="2" valign="middle" style='width:165px;height:44px;'>
+								<P class="HStyle0">&nbsp;</P>
+							</TD>
+						</TR>
+	        		</table>
+
+	        		<TABLE border="1" cellspacing="0" cellpadding="0">
+	        			<TR>
+							<TD valign="middle" style='width:112px;height:44px;border:solid #000000 0.4pt;'>
+								<P class="HStyle0">입사일자</P>
+							</TD>
+							<TD colspan="2" valign="middle" style='width:212px;height:44px;border:solid #000000 0.4pt;'>
+								<P class="HStyle0">&nbsp;</P>
+							</TD>
+							<TD colspan="4" valign="middle" style='width:120px;height:44px;border:solid #000000 0.4pt;'>
+								<P class="HStyle0">퇴직일자</P>
+							</TD>
+							<TD colspan="4" valign="middle" style='width:228px;height:44px;border:solid #000000 0.4pt;'>
+								<P class="HStyle0">&nbsp;</P>
+							</TD>
+						</TR>
+						<TR>
+							<TD valign="middle" style='width:112px;height:44px;'>
+								<P class="HStyle0">용&nbsp;&nbsp;&nbsp; 도</P>
+							</TD>
+							<TD colspan="10" valign="middle" style='width:561px;height:44px;'>
+								<P class="HStyle0">기관제출용</P>
+							</TD>
+						</TR>
+						<TR>
+							<TD valign="middle" style='width:112px;height:44px;border-bottom:solid #000000 1.1pt;'>
+								<P class="HStyle0">기&nbsp;&nbsp;&nbsp; 타</P>
+							</TD>
+							<TD colspan="10" valign="middle" style='width:561px;height:44px;border-bottom:solid #000000 1.1pt;'>
+								<P class="HStyle0">-</P>
+							</TD>
+						</TR>
+						<TR>
+							<TD colspan="11" valign="middle" style='width:673px;height:252px;border-top:solid #000000 1.5pt; position:relative;'>
+								<div class="seomyeong">
+									<div>담당확인</div>
+									<div style="height:70px;">&nbsp;</div>
+								</div>
+								<P style='font-size:16.0pt; font-weight:bold;'>위와 같이 증명함</P>
+								<P style='font-size:14pt;'>2021년&nbsp;&nbsp;&nbsp;&nbsp; 월&nbsp;&nbsp;&nbsp;&nbsp; 일</P>
+
+								<div class="table">
+									<table border="0" cellspacing="0" cellpadding="0" style="border:0;">
+										<tr>
+											<td style="border:0; width:35px; padding:0;">
+												<P CLASS=HStyle0 STYLE='text-align:right;line-height:100%;'>재단</P>
+												<P CLASS=HStyle0 STYLE='text-align:right;line-height:100%;'>법인</P>
+											</td>
+											<td style="border:0; width:360px; padding:0; font-size:26.0pt;font-family:HY헤드라인M; letter-spacing:-5px;line-height:150%; font-weight:bold;">경기도사회서비스원장</td>
+										</tr>
+									</table>
+								</div>
+							</TD>
+						</TR>
+	        		</table>
+	        	</div>
+	        </div>    
+	    </div>
+	</div>
+</body>
+</html>

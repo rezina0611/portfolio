@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>경기도사회서비스원 통합사회정보시스템 로그인</title>
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/layout.css">
+<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/content.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/datepicker.css">  <!-- 제이쿼리 달력 css-->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./js/jquery.placeholder.min.js"></script><!-- 제이쿼리 placeholder-->
+<script src="./js/datepicker.js"></script><!-- 제이쿼리 달력 js-->
+<script src="./js/datepicker-ko.js"></script><!-- 제이쿼리 달력 datepicker 한국어로 -->
+<script src="./js/script.js"></script>
+<script>
+	$(function() {
+		$.datepicker.setDefaults($.datepicker.regional['ko']); //datepicker 한국어로 사용하기 위한 언어설정
+		$('.datepicker01').datepicker();
+		$('.datepicker02').datepicker();
+	});
+</script>
+
+</head>
+<div class="mask"></div>
+<div class="modal">
+	<div class="layerpopupArea">
+		<span class="close">&times;</span>
+		<!-- Modal content -->
+	    <div  id="personalItem01" class="modal-content">	
+	    	<h4>비밀번호 변경</h4>
+	    	<div class="card-content">
+	    		<div class="tar fs12 mb_5"><span class="red">*</span>필수입력항목</div>
+	    		<div class="regist-form">
+	    			<table>
+						<colgroup>
+							<col width="25%"><col width="">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">현재 비밀번호 <span class="red">*</span></th>
+								<td><input type="text" class="form-control" title="아이디 입력해주세요" name="id"></td>
+							</tr>
+							<tr>
+								<th scope="row">새 비밀번호 <span class="red">*</span></th>
+								<td>
+									<input type="text" class="form-control" title="이름 입력해주세요" name="name">
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">새 비밀번호 확인 <span class="red">*</span></th>
+								<td><input type="text" class="form-control" title="이메일주소 입력해주세요" name="email"></td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    		<div class="red fs12 mt_5">비밀번호는 8자 ~ 20자, 영문, 숫자, 특수문자 사용가능</div>
+	    		<div class="tar mt_30">
+	    			<button type="button" class="btn btn-secondary" id="close">취소</button>
+	    			<button type="button" class="btn btn-info">확인</button>
+	    		</div>
+	    	</div>
+		</div>
+
+		<!-- Modal content -->
+	    <div  id="personalItem02" class="modal-content">
+	    	<h4>나의정보</h4>
+	    	<div class="card-content">
+	    		<div class="tar fs12 mb_5"><span class="red">*</span>필수입력항목</div>
+	    		<div class="regist-form">
+	    			<table>
+						<colgroup>
+							<col width="20%"><col width="">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">소속 <span class="red">*</span></th>
+								<td class="tal">기획예산팀</td>
+							</tr>
+							<tr>
+								<th scope="row">이름 <span class="red">*</span></th>
+								<td class="tal">홍길동</td>
+							</tr>
+							<tr>
+								<th scope="row">직급/직책 <span class="red">*</span></th>
+								<td class="tal">팀장</td>
+							</tr>
+							<tr>
+								<th scope="row">이메일주소 <span class="red">*</span></th>
+								<td class="tal">awsdert@gg.pass.or.kr</td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    		<div class="tar mt_30">
+	    			<button type="button" class="btn btn-secondary" id="close">취소</button>
+	    			<button type="button" class="btn btn-info">확인</button>
+	    		</div>
+	    	</div>
+		</div>
+		<!-- //Modal content -->
+	</div>
+</div>
+<script>
+	function Enro(){document.getElementById("Enro_popup").style.display='inline'}
+	function close_Enro(){document.getElementById("Enro_popup").style.display='none'}
+</script>
+<!--시설등록 팝업-->
+<div id="Enro_popup" class="modal_pop" style="top:15%;">
+	<div class="layerpopupArea">
+		<span class="close" onclick="close_Enro();">&times;</span>
+		<!-- Modal content Performance 실적 권한 변경-->
+	    <div id="Performance" class="modal-content-pop">
+	    	<h4>종합재가센터 시설정보</h4>
+	    	<div class="card-content">
+
+	    		<div class="table_bbs_write">
+	    			<table>
+						<colgroup>
+							<col width="13%"><col width="">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">센터명</th>
+								<td><input type="text" class="form-control" id="centername" name="param_vo.centername" value="남양주 종합재가센터"></td>
+							</tr>
+							<tr>
+								<th scope="row">개소일</th>
+								<td>
+									<input type="text" class="form-control mr_5 datepicker01" id="wedd_dt" name="param_vo.wedd_dt" value="" style="width:200px; margin-right:5px;" />
+									<img onclick="javascript:$('#wedd_dt').datepicker('show')" src="./images/ico_calender.gif" alt="개소일" title="개소일" align="absmiddle" style="cursor:pointer">
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">시설유형</th>
+								<td><input type="text" class="form-control" id="type" name="param_vo.type" value="기본형"></td>
+							</tr>
+							<tr>
+								<th scope="row">운영사업</th>
+								<td>
+									<div class="checks mb_5">
+										<input type="checkbox" name="" id="home-care" checked><label for="home-care">방문요양</label>
+									</div>
+									<div class="checks mb_5">
+										<input type="checkbox" name="" id="visit_bath" checked><label for="visit_bath">방문목욕</label>
+									</div>
+									<div class="checks mb_5">
+										<input type="checkbox" name="" id="child_sup" checked><label for="child_sup">아동지원</label>
+									</div>
+									<div class="checks mb_5">
+										<input type="checkbox" name="" id="Em_bi_care" checked><label for="Em_bi_care">긴급새돌봄</label>
+									</div>
+									<div class="checks">
+										<input type="checkbox" name="" id="cu_care" checked><label for="cu_care">노인맞춤돌봄</label>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    		<div class="tar mt_10">
+	    			<button type="button" class="btn btn-secondary" onclick="close_Enro();">취소</button>
+	    			<button type="button" class="btn btn-info">저장</button>
+	    		</div>
+	    	</div>
+		</div>
+		<!-- //Modal content -->
+	</div>
+</div>
+<!--//시설등록 팝업-->
+<body class="bg">  <!--style="overflow-y:hidden; overflow-x:auto;"--> 
+	<!--wrapper-->
+	<div class="wrapper">
+		<!-- Header -->
+        <div id="header">
+            <div class="skip">상단메뉴</div>
+            <div class="header-top main-width">
+                <div class="container navbar">
+                    <div class="inner-container">
+                        <div>
+                            <h1 class="logo">
+                                <img src="./images/logo.png" alt="경기도사회서비스원"><br><span>통합사회정보시스템</span>
+                            </h1>
+                        </div>
+                       
+                       <div class="gnb">
+                            <div class="skip">상단메뉴</div>
+                            <!--하위메뉴가 없는 메뉴는 해당li태그에 class="nosub" 넣어주세요-->
+                            <ul class="depth1">
+                                <li class="nosub"><a href="./home(대시보드).html">홈</a></li>
+                                <li class="nosub"><a href="./예산집행율조회.html">예산집행율</a></li>
+                                <li class="nosub"><a href="./종사자현황_(고용형태별)조회.html">종사자현황</a></li>
+                                <li class="nosub"><a href="./종합재가센터_운영현황목록.html">종합재가센터</a></li>
+                                <li><a href="#none">국공립시설</a>
+                                	<ul class="depth2">
+                                		<li><a href="./국공립시설_운영현황목록(어린이집).html">어린이집</a></li>
+                                		<li><a href="./국공립시설_운영현황목록(다함께돌봄).html">다함께돌봄센터</a></li>
+                                	</ul>
+                                </li>
+                                <li><a href="#none">공공센터</a>
+                                	<ul class="depth2">
+                                		<li><a href="./공공센터_대체인력지원사업_운영현황.html">대체인력지원사업</a></li>
+                                		<li><a href="./공공센터_노인보호전문기관_운영현황.html">노인보호전문기관</a></li>
+                                		<li><a href="./공공센터_노인종합상담센터_운영현황.html">노인종합상담센터</a></li>
+                                		<li><a href="./공공센터_노인일자리지원센터_운영현황.html">노인일자리지원센터</a></li>
+                                		<li><a href="./공공센터_지역사회서비스지원단_운영현황.html">지역사회서비스지원단</a></li>
+                                		<li><a href="./공공센터_장기요양요원지원센터_운영현황.html">장기요양요원지원센터</a></li>
+                                	</ul>
+                                </li>
+                                <li class="nosub"><a href="./개인인사정보_개인휴가조회.html">개인인사정보</a></li>
+                                <li class="nosub"><a href="./통합결재_통합문서목록.html">통합결재</a></li>
+                                <li class="nosub"><a href="./설문조사_진행가능한설문.html">설문조사</a></li>
+                                <li class="nosub"><a href="http://pub_lms-lite.tigensoft.co.kr:9090/_front/" target="_blank" title="새창열림">교육관리 <i class="far fa-window-restore"></i></a></li>
+                                <li><a href="#none">관리자</a>
+                                    <ul class="depth2">
+                                        <li><a href="./인사관리_인사사항조회.html">인사관리</a></li>
+                                        <li><a href="./자산관리.html">자산관리</a></li>
+                                        <li><a href="./대용량메일발송.html">대용량메일발송</a></li>
+                                        <li><a href="./통합메시지.html">통합메시지</a></li>
+                                        <li><a href="./설문조사관리.html">설문조사관리</a></li>
+                                        <li><a href="./통합메시지발송.html">통합메시지발송</a></li>
+                                        <li><a href="./통합메시지기준관리.html">통합메시지기준관리</a></li>
+                                    </ul>
+                                </li>
+                             </ul>
+                        </div>
+
+                        <div class="info">
+                            <a href="#none" title="펼치기" class="off">
+                                <i class="fas fa-user-cog fa-lg"></i>
+                                <span class="fs13">홍길동팀장 </span><br><span class="fs11">(기획예산팀)</span>
+                            </a>
+                            <ul>
+                                <li><a href="#none" class="openPopup" data-target="personalItem01"><i class="fas fa-user mr_5"></i> 비밀번호변경</a></li>
+                                <li><a href="#none" class="openPopup" data-target="personalItem02"><i class="fas fa-key mr_5"></i> 나의정보</a></li>
+                                <li><a href="./권한변경_공통.html"><i class="fas fa-key mr_5"></i> 권한설정</a></li>
+                                <li><a href="#none"><i class="fas fa-power-off mr_5"></i> 로그아웃</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //Header -->
+		<!--gside-->
+	    <div class="gside">
+	        <div class="skip">레프트메뉴 영역</div>
+	        <!--li태그에 nochild 클래스가 있으면 하위메뉴가 없다는 뜻-->
+	        <div class="skip">종합재가센터</div>
+	        <ul>
+	            <li class="nochild"><a href="./종합재가센터_운영현황목록.html">종합재가센터 운영현황</a></li>
+	            <li><a href="./종합재가센터_실적현황상세.html" class="on">종합재가센터 실적현황</a>
+	                <ul>
+	                    <li><a href="./종합재가센터_실적현황(재가장기요양이용자명단조회).html">재가장기요양이용자</a></li>
+	                </ul>
+	            </li>
+	        </ul>
+	    </div>
+	    <!--//gside-->
+		<!--content-->
+		<div class="content">
+			<div class="skip">컨텐츠 영역</div>
+			<!--content-wrapper-->
+			<div class="content-wrapper">
+				<!--cont-header-->
+				<div class="cont-header">
+					<div class="cont-header-left">
+						<h3 class="Depth2_title">종합재가센터 실적현황</h3>
+						<ul class="breadcrumb d_iblock">
+							<li>홈 <i class="fas fa-angle-right"></i></li>
+							<li>종합재가센터 <i class="fas fa-angle-right"></i></li>
+							<li>실적현황</li>
+						</ul>
+					</div>
+				</div>
+				<!--//cont-header-->
+				<!--content-body-->
+				<div class="content-body">
+					<div class="card-header">
+						<h4 class="Depth3_title">서비스 유형별 이용자 및 제공현황</h4>
+						<div class="heading-elements">
+							<button type="button" class="btn btn-info" onclick="Enro();">시설정보수정</button>
+							<button type="button" class="btn btn-primary"><i class="fas fa-search"></i> 조회</button>
+						</div>
+					</div>	
+					<div class="card-body">
+						<!-- 검색 -->
+						<div class="search-area">
+							<table>
+								<colgroup>
+									<col width="13%">
+									<col width="*">
+									<col width="13%">
+									<col width="*">
+									<col width="13%">
+									<col width="*">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">실적기준</th>
+										<td colspan="3">
+											<div class="selectbox">
+												<select name="" title="" class="select">
+													<option value="2019" selected="selected">2019</option>
+													<option value="2025">2025</option>
+													<option value="2024">2024</option>
+													<option value="2023">2023</option>
+													<option value="2022">2022</option>
+													<option value="2021">2021</option>
+													<option value="2020">2020</option>
+												</select>
+											</div>
+											<div class="selectbox">
+												<select name="" title="" class="select">
+													<option value="전체">전체</option>
+													<option value="12">12월</option>
+													<option value="11" selected="selected">11월</option>
+													<option value="10">10월</option>
+													<option value="09">09월</option>
+													<option value="08">08월</option>
+													<option value="07">07월</option>
+													<option value="06">06월</option>
+													<option value="05">05월</option>
+													<option value="04">04월</option>
+													<option value="03">03월</option>
+													<option value="02">02월</option>
+													<option value="01">01월</option>
+												</select>
+											</div>
+											<div class="checks f_left mt_10"><input type="checkbox" id="all_month" name="param_vo.all_month" value="Y"> <label for="all_month">전체월</label></div>
+										</td>
+										<th scope="row">센터명</th>
+										<td class="padding">
+											남양주 종합재가센터
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">개소일</th>
+										<td class="padding">
+											2021년 03월 12일
+										</td>
+										<th scope="row">운영사업</th>
+										<td class="padding">
+											방문요양, 방문목욕
+										</td>
+										<th scope="row">시설유형</th>
+										<td class="padding">
+											기본형
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!--// 검색 -->
+						
+						<table class="fixedHeader mt_30">
+							<colgroup>
+								<col width="4%"><!--기준년-->
+								<col width="4%"><!--기준월-->
+								<col width="5%"><!--총계-->
+								<col width="5%">
+								<col width="5%">
+								<col width="5%">
+								<col width="5%">
+								<col width="5%">
+								<col width="5%">
+								<col width="5%">
+								<col width="5%">
+								<col width="5%">
+								<col width="5%">
+								<col width="5%">
+								<col width="5%">
+								<col width="5%">
+								<col width="5%">
+								<col width="5%">
+								<col width="5%">
+								<col width="5%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" rowspan="3">기준년</th>
+									<th scope="col" rowspan="3">기준월</th>
+									<th scope="col" rowspan="2" colspan="2">총계<br>(A+B+C+D+E)</th>
+									<th scope="col" colspan="8">(A)장기요양</th>
+									<th scope="col" colspan="2" rowspan="2">(B)가사간병</th>
+									<th scope="col" colspan="2" rowspan="2">(C)장애인활동지원</th>
+									<th scope="col" colspan="2" rowspan="2">(D)노인맞춤돌봄</th>
+									<th scope="col" colspan="2">(E)기타</th>
+								</tr>
+								<tr>
+									<th scope="col" colspan="2" class="borth">방문요양</th>
+									<th scope="col" colspan="2">방문목욕</th>
+									<th scope="col" colspan="2">방문간호</th>
+									<th scope="col" colspan="2">아동지원</th>
+									<th scope="col" colspan="2">지역사회동합돌봄</th>
+								</tr>
+								<tr>
+									<th scope="col" class="borth">이용자수</th>
+									<th scope="col">제공횟수</th>
+									<!--방문요양-->
+									<th scope="col" class="borth">이용자수</th>
+									<th scope="col">제공횟수</th>
+									<!--방문목욕-->
+									<th scope="col">이용자수</th>
+									<th scope="col">제공횟수</th>
+									<!--방문간호-->
+									<th scope="col">이용자수</th>
+									<th scope="col">제공횟수</th>
+									<!--아동지원-->
+									<th scope="col">이용자수</th>
+									<th scope="col">제공횟수</th>
+
+									<th scope="col">실인원</th>
+									<th scope="col">제공횟수</th>
+									<th scope="col">실인원</th>
+									<th scope="col">제공횟수</th>
+									<th scope="col">실인원</th>
+									<th scope="col">제공횟수</th>
+									<th scope="col">실인원</th>
+									<th scope="col">제공횟수</th>
+								</tr>
+							</thead>
+						</table>
+						<div class="table_bbs_list_y" style="height:100px;">
+							<table>
+								<colgroup>
+									<col width="4%"><!--기준년-->
+									<col width="4%"><!--기준월-->
+									<col width="5%"><!--총계-->
+									<col width="5%">
+									<col width="5%">
+									<col width="5%">
+									<col width="5%">
+									<col width="5%">
+									<col width="5%">
+									<col width="5%">
+									<col width="5%">
+									<col width="5%">
+									<col width="5%">
+									<col width="5%">
+									<col width="5%">
+									<col width="5%">
+									<col width="5%">
+									<col width="5%">
+									<col width="5%">
+									<col width="5%">
+								</colgroup>
+								<tbody>
+									<tr class="sogye">
+										<td colspan="2">총계</td>
+										<!-- <td></td> -->
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>2021</td>
+										<td>12</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						
+
+						<script>
+							$(document).ready(function(){
+								//사업구분 추가 버튼
+								$(document).on("click","button[id=rowth_Add]",function(){
+									var addStaffText = '<tr class="nu03">'+
+									'<td><input type="text" class="form-control" placeholder="사업구분입력"></td>'+
+									'<td class="tal"><div class="box"><div class="inputbox"><input type="text" class="form-control" placeholder="해당영역 클릭시 입력가능"></div><button type="button" id="rowtd_Add3" class="btn-add">+</button></div></td>'+
+									'<td><input type="text" class="form-control w100 tac" value=""></td>'+
+									'<td><input type="text" class="form-control w100 tac" value=""></td>'+
+									'</tr>';
+
+									var trHtml = $( "#division tr:last" ); //last를 사용하여 마지막 태그 호출
+
+									trHtml.after(addStaffText); //마지막 trStaff명 뒤에 붙인다.
+
+	                			});
+
+	                			//사업구분 추가시 사업명 추가 버튼
+								$(document).on("click","button[id=rowtd_Add3]",function(){
+
+									var $this = $(this);  //클릭된 rowtd_Add3 요소
+									var trClass1 = $this .parent().parent().parent().attr('class');  // rowtd_Add2의 부모의 부모 속성중 class 속성의 값을 가져옴
+
+									console.log(trClass1);
+
+									var addStaffText1 = '<tr class="nu04">'+
+									'<td></td>'+
+									'<td><input type="text" class="form-control" placeholder="사업명입력"></td>'+
+									'<td><input type="text" class="form-control w100 tac" value=""></td>'+
+									'<td><input type="text" class="form-control w100 tac" value=""></td>'+
+									'</tr>';
+
+									var trHtml1 = $( "#division tbody tr." + trClass1 + ":last" ); //last를 사용하여 마지막 태그 호출
+
+									trHtml1.after(addStaffText1); //마지막 trStaff명 뒤에 붙인다.
+								});
+
+
+	                			//사업명 추가 버튼
+								$(document).on("click","button[id=rowtd_Add2]",function(){
+
+									var $this = $(this);  //클릭된 rowtd_Add2 요소
+									var trClass = $this .parent().parent().attr('class');  // rowtd_Add2의 부모의 부모 속성중 class 속성의 값을 가져옴
+
+									console.log(trClass);
+
+									var addStaffText = '<tr>'+
+									'<td class="tal"></td>'+
+									'<td class="tal"><input type="text" class="form-control" placeholder="서비스명입력"></td>'+
+									'<td><input type="text" class="form-control w100 tac" value=""></td>'+
+									'<td><input type="text" class="form-control w100 tac" value=""></td>'+
+									'</tr>';
+									
+									//var trHtml = $( "#division tbody tr:nth-child(5)" );  //tbody tr 기준으로 5번째 마지막 태그 호출
+									var obj = $( "#division tbody tr." + trClass + ":last" );
+									//var obj2 = $( "#division tbody tr#nu02:last" );
+
+									obj.after(addStaffText); //마지막 뒤에 붙인다.
+
+	                			});
+
+							});
+						</script>
+						<!-- <h6 class="fs15 bold mt_30">서비스 유형별 이용자 및 제공현황</h6> -->
+						<div class="table_bbs_list mt_30">
+							<table id="division">
+								<colgroup> <!--100/4개 => 25-->
+									<col width="25%">
+									<col width="*">
+									<col width="20%">
+									<col width="20%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col" rowspan="2">서비스구분 <button type="button" id='rowth_Add' class="btn-sm btn-add">+</button></th>
+										<th scope="col" rowspan="2">서비스명 </th>
+										<th scope="col" colspan="2">서비스 이용 현황</th>
+									</tr>
+									<tr>
+										<th scope="col" class="borth">이용자수(명)</th>
+										<th scope="col">제공수(건)</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="sogye">
+										<td></td>
+										<td class="tal">소계</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr class="sogye">
+										<td></td>
+										<td class="tal">장기요양소계</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr class="nu01">
+										<td class="tal">장기요양 <button type="button" id='rowtd_Add2' class="btn-sm btn-add">+</button></td>
+										<td class="tal">방문요양 </td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr class="nu01">
+										<td class="tal"></td>
+										<td class="tal">장기목욕</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr class="nu01">
+										<td class="tal"></td>
+										<td class="tal borth">방문간호</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr class="nu01">
+										<td class="tal"></td>
+										<td class="tal borth">이동지원</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									
+									
+									<tr class="nu02">
+										<td class="tal">가사간병 </td>
+										<td class="tal"></td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr class="nu03">
+										<td class="tal">장애인활동지원</td>
+										<td class="tal"></td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr class="nu04">
+										<td class="tal">노인맞춤돌봄 <button type="button" id='rowtd_Add2' class="btn-sm btn-add">+</button></td>
+										<td class="tal"></td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr class="nu05">
+										<td class="tal">기타 <button type="button" id='rowtd_Add2' class="btn-sm btn-add">+</button></td>
+										<td class="tal">지역사회통합돌봄</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div class="tar">
+							<!-- <button type="button" class="btn btn-info">목록</button>
+							<button type="button" class="btn btn-secondary">취소</button> -->
+							<button type="button" class="btn btn-info">저장</button>
+						</div>
+					</div>
+				</div>
+				<!--//content-body-->
+			</div><!--//content-wrapper-->
+		</div><!--//content-->
+	</div><!--//wrapper-->
+</body>
+</html>
