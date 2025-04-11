@@ -110,36 +110,51 @@
 	</div>
 </div>
 
-<body class="bg pt_0">
+<body class="bg_login pt_0">
 	<div class="wrapper">
-		<h1 class="logo mt_30 ml_30"><img src="./images/logo.png" alt="로고"></h1>
+		<h1 class="login_logo mt_30 ml_30" style="float:none;"><img src="./images/login_Logo.png" alt="로고"></h1>
 
 		<!-- Container -->
-		<div class="container">
+		<div class="container m200">
 			<div class="login">
 				<div class="tit">
 					<h2>통합사회정보시스템</h2>
 				</div>
 				<div class="con">
-					<!--<div class="tal mb_10 fs15" style="color:#000;">로그인</div>-->
+					<div class="tac mb_20"><h3>로그인</h3></div>
 					<form id="loginForm" name="loginForm" method="">
-						<p><label for="userid" class="skip">아이디</label><input type="text" id="userid" name="usrID" placeholder="아이디입력"></p>
-						<p><label for="userpw" class="skip">비밀번호</label><input type="password" id="userpw" name="usrPass" placeholder="비밀번호입력"></p>
-						<a href="#none" id="btnLogin" class="btnLogin"><img src="./images/btn_mnglogin02.png" alt="로그인"></a>
-						<p class="id-save"><input id="save" class="save" type="checkbox" name="save_login_info" value="1"> <label class="save" for="save">아이디 저장</label></p>
+						<div class="id_pw_wrap">
+							<div id="id_line" class="input_row">
+								<div id="id_cell" class="icon_cell">
+									<span class="icon_id"><span class="skip">아이디</span></span>
+								</div>
+								<input type="text" id="id" name="id" placeholder="아이디" title="아이디" class="input_text" maxlength="41" value="">
+							</div>
+							<div id="pw_line" class="input_row">
+								<div class="icon_cell" id="pw_cell">
+                                    <span class="icon_pw"><span class="skip">비밀번호</span></span>
+                                </div>
+                                <input type="password" id="pw" name="pw" placeholder="비밀번호" title="비밀번호" class="input_text" maxlength="16">
+							</div>
+						</div>
+
+						<!-- <p><label for="userid" class="skip">아이디</label><input type="text" id="userid" name="usrID" placeholder="아이디"></p>
+						<p><label for="userpw" class="skip">비밀번호</label><input type="password" id="userpw" name="usrPass" placeholder="비밀번호"></p> -->
+						<div href="#none" id="btnLogin" class="btnLogin">
+							<button type="button" class="buttonClass">로그인</button>
+						</div>
+						<p class="id-save"><input id="save" class="save" type="checkbox" name="save_login_info" value="1" checked> <label class="save" for="save">아이디 저장</label></p>
 						<ul class="lost_pass">
-							<li><a href="#none" class="openPopup" data-target="personalItem01">비밀번호 찾기</a></li>
+							<li><a href="#none" class="openPopup" data-target="personalItem01">비밀번호 변경</a></li>
 							<li><a href="#none" class="openPopup" data-target="personalItem02">계정신청</a></li>
-							<!-- <li><button title="비밀번호 변경" class="openPopup" data-target="personalItem01">비밀번호 변경</button></li>
-							<li><button title="권한설정" class="openPopup" data-target="personalItem02">권한설정</button></li> -->
 						</ul>
 					</form>
-					<p class="fs11 mt_10 red tal">이 사이트는 Chrome 브라우저, 해상도 1920*1080에 최적화되어 있습니다.</p>
 				</div>
+				<p class="fs12 mt_20 colorf5 tac bold">이 사이트는 Chrome 브라우저, 해상도 1920*1080에 최적화되어 있습니다.</p>
 			</div>
 		</div>
 		<!-- //Container -->
-		<div class="tac mt_100 fs12">CPOYRIGHTS© 경기도사회서비스원. ALL RIGHTS RESERVED.</div>
+		<div class="copyright">CPOYRIGHTS© 경기도사회서비스원. ALL RIGHTS RESERVED.</div>
 	</div>
 </body>
 </html>

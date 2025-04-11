@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>경기도사회서비스원 통합사회정보시스템</title>
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/layout.css">
+<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/content.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/datepicker.css">  <!-- 제이쿼리 달력 css-->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./js/jquery.placeholder.min.js"></script><!-- 제이쿼리 placeholder-->
+<script src="./js/datepicker.js"></script><!-- 제이쿼리 달력 js-->
+<script src="./js/datepicker-ko.js"></script><!-- 제이쿼리 달력 datepicker 한국어로 -->
+<script src="./js/script.js"></script>
+<script>
+	$(function() {
+		$.datepicker.setDefaults($.datepicker.regional['ko']); //datepicker 한국어로 사용하기 위한 언어설정
+		$('.datepicker01').datepicker();
+		$('.datepicker02').datepicker();
+	});
+</script>
+
+</head>
+<div class="mask"></div>
+<div class="modal">
+	<div class="layerpopupArea">
+		<span class="close">&times;</span>
+		<!-- Modal content -->
+	    <div  id="personalItem01" class="modal-content">	
+	    	<h4>비밀번호 변경</h4>
+	    	<div class="card-content">
+	    		<div class="tar fs12 mb_5"><span class="red">*</span>필수입력항목</div>
+	    		<div class="regist-form">
+	    			<table>
+						<colgroup>
+							<col width="25%"><col width="">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">현재 비밀번호 <span class="red">*</span></th>
+								<td><input type="text" class="form-control" title="아이디 입력해주세요" name="id"></td>
+							</tr>
+							<tr>
+								<th scope="row">새 비밀번호 <span class="red">*</span></th>
+								<td>
+									<input type="text" class="form-control" title="이름 입력해주세요" name="name">
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">새 비밀번호 확인 <span class="red">*</span></th>
+								<td><input type="text" class="form-control" title="이메일주소 입력해주세요" name="email"></td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    		<div class="red fs12 mt_5">비밀번호는 8자 ~ 20자, 영문, 숫자, 특수문자 사용가능</div>
+	    		<div class="tar mt_30">
+	    			<button type="button" class="btn btn-secondary" id="close">취소</button>
+	    			<button type="button" class="btn btn-info">확인</button>
+	    		</div>
+	    	</div>
+		</div>
+
+		<!-- Modal content -->
+	    <div  id="personalItem02" class="modal-content">
+	    	<h4>나의정보</h4>
+	    	<div class="card-content">
+	    		<div class="tar fs12 mb_5"><span class="red">*</span>필수입력항목</div>
+	    		<div class="regist-form">
+	    			<table>
+						<colgroup>
+							<col width="20%"><col width="">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">소속 <span class="red">*</span></th>
+								<td class="tal">기획예산팀</td>
+							</tr>
+							<tr>
+								<th scope="row">이름 <span class="red">*</span></th>
+								<td class="tal">홍길동</td>
+							</tr>
+							<tr>
+								<th scope="row">직급/직책 <span class="red">*</span></th>
+								<td class="tal">팀장</td>
+							</tr>
+							<tr>
+								<th scope="row">이메일주소 <span class="red">*</span></th>
+								<td class="tal">awsdert@gg.pass.or.kr</td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    		<div class="tar mt_30">
+	    			<button type="button" class="btn btn-secondary" id="close">취소</button>
+	    			<button type="button" class="btn btn-info">확인</button>
+	    		</div>
+	    	</div>
+		</div>
+		<!-- //Modal content -->
+	</div>
+</div>
+
+<body class="bg">  <!--style="overflow-y:hidden; overflow-x:auto;"--> 
+	<!--wrapper-->
+	<div class="wrapper">
+		<!-- Header -->
+        <div id="header">
+            <div class="skip">상단메뉴</div>
+            <div class="header-top main-width">
+                <div class="container navbar">
+                    <div class="inner-container">
+                        <div>
+                            <h1 class="logo">
+                                <img src="./images/logo.png" alt="경기도사회서비스원"><br><span>통합사회정보시스템</span>
+                            </h1>
+                        </div>
+                       
+                       <div class="gnb">
+                            <div class="skip">상단메뉴</div>
+                            <!--하위메뉴가 없는 메뉴는 해당li태그에 class="nosub" 넣어주세요-->
+                            <ul class="depth1">
+                                <li class="nosub"><a href="./home(대시보드).html">홈</a></li>
+                                <li class="nosub"><a href="./예산집행율조회.html">예산집행율</a></li>
+                                <li class="nosub"><a href="./종사자현황_(고용형태별)조회.html">종사자현황</a></li>
+                                <li class="nosub"><a href="./종합재가센터_운영현황목록.html">종합재가센터</a></li>
+                                <li><a href="#none">국공립시설</a>
+                                	<ul class="depth2">
+                                		<li><a href="./국공립시설_운영현황목록(어린이집).html">어린이집</a></li>
+                                		<li><a href="./국공립시설_운영현황목록(다함께돌봄).html">다함께돌봄센터</a></li>
+                                	</ul>
+                                </li>
+                                <li><a href="#none">공공센터</a>
+                                	<ul class="depth2">
+                                		<li><a href="./공공센터_대체인력지원사업_운영현황.html">대체인력지원사업</a></li>
+                                		<li><a href="./공공센터_노인보호전문기관_운영현황.html">노인보호전문기관</a></li>
+                                		<li><a href="./공공센터_노인종합상담센터_운영현황.html">노인종합상담센터</a></li>
+                                		<li><a href="./공공센터_노인일자리지원센터_운영현황.html">노인일자리지원센터</a></li>
+                                		<li><a href="./공공센터_지역사회서비스지원단_운영현황.html">지역사회서비스지원단</a></li>
+                                		<li><a href="./공공센터_장기요양요원지원센터_운영현황.html">장기요양요원지원센터</a></li>
+                                	</ul>
+                                </li>
+                                <li class="nosub"><a href="./개인인사정보_개인휴가조회.html">개인인사정보</a></li>
+                                <li class="nosub"><a href="./통합결재_통합문서목록.html">통합결재</a></li>
+                                <li class="nosub"><a href="./설문조사_진행가능한설문.html">설문조사</a></li>
+                                <li class="nosub"><a href="http://pub_lms-lite.tigensoft.co.kr:9090/_front/" target="_blank" title="새창열림">교육관리 <i class="far fa-window-restore"></i></a></li>
+                                <li><a href="#none">관리자</a>
+                                    <ul class="depth2">
+                                        <li><a href="./인사관리_인사사항조회.html">인사관리</a></li>
+                                        <li><a href="./자산관리.html">자산관리</a></li>
+                                        <li><a href="./대용량메일발송.html">대용량메일발송</a></li>
+                                        <li><a href="./통합메시지.html">통합메시지</a></li>
+                                        <li><a href="./설문조사관리.html">설문조사관리</a></li>
+                                        <li><a href="./통합메시지발송.html">통합메시지발송</a></li>
+                                        <li><a href="./통합메시지기준관리.html">통합메시지기준관리</a></li>
+                                    </ul>
+                                </li>
+                             </ul>
+                        </div>
+
+                        <div class="info">
+                            <a href="#none" title="펼치기" class="off">
+                                <i class="fas fa-user-cog fa-lg"></i>
+                                <span class="fs13">홍길동팀장 </span><br><span class="fs11">(기획예산팀)</span>
+                            </a>
+                            <ul>
+                                <li><a href="#none" class="openPopup" data-target="personalItem01"><i class="fas fa-user mr_5"></i> 비밀번호변경</a></li>
+                                <li><a href="#none" class="openPopup" data-target="personalItem02"><i class="fas fa-key mr_5"></i> 나의정보</a></li>
+                                <li><a href="./권한변경_공통.html"><i class="fas fa-key mr_5"></i> 권한설정</a></li>
+                                <li><a href="#none"><i class="fas fa-power-off mr_5"></i> 로그아웃</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //Header -->
+		<!--gside-->
+	    <div class="gside">
+	        <div class="skip">레프트메뉴 영역</div>
+	        <!--li태그에 nochild 클래스가 있으면 하위메뉴가 없다는 뜻으로 nochild를 넣어줘야 합니다.-->
+	        <div class="skip">공공센터</div>
+	        <ul>
+	            <li class="nochild"><a href="./공공센터_노인종합상담센터_운영현황.html">노인종합상담센터 운영현황</a></li>
+	            <li class="nochild"><a href="./공공센터_노인종합상담센터_실적현황.html" class="on">노인종합상담센터 실적현황</a></li>
+	        </ul>
+	    </div>
+	    <!--//gside-->
+		<!--content-->
+		<div class="content">
+			<div class="skip">컨텐츠 영역</div>
+			<!--content-wrapper-->
+			<div class="content-wrapper">
+				<!--cont-header-->
+				<div class="cont-header">
+					<div class="cont-header-left">
+						<h3 class="Depth2_title">노인종합상담센터</h3>
+						<ul class="breadcrumb d_iblock">
+							<li>홈 <i class="fas fa-angle-right"></i></li>
+							<li>노인종합상담센터 <i class="fas fa-angle-right"></i></li>
+							<li>실적현황</li>
+						</ul>
+					</div>
+				</div>
+				<!--//cont-header-->
+				<!--content-body-->
+				<div class="content-body">
+					<div class="card-header">
+						<h4 class="Depth3_title">실적현황</h4>
+						<div class="heading-elements">
+							<button type="button" class="btn btn-primary"><i class="fas fa-search"></i> 조회</button>
+						</div>
+					</div>	
+					<div class="card-body">
+						<!--검색-->
+						<div class="search-area">
+							<table>
+								<colgroup>
+									<col width="13%"><col>
+									<col width="13%"><col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">실적기준</th>
+										<td>
+											<div class="selectbox">
+												<select name="" title="" class="select">
+													<option value="2021" selected="selected">2021</option>
+													<option value="2025">2025</option>
+													<option value="2024">2024</option>
+													<option value="2023">2023</option>
+													<option value="2022">2022</option>
+												</select>
+											</div>
+											<div class="selectbox">
+												<select name="" title="" class="select">
+													<option value="12">12월</option>
+													<option value="11" selected="selected">11월</option>
+													<option value="10">10월</option>
+													<option value="09">09월</option>
+													<option value="08">08월</option>
+													<option value="07">07월</option>
+													<option value="06">06월</option>
+													<option value="05">05월</option>
+													<option value="04">04월</option>
+													<option value="03">03월</option>
+													<option value="02">02월</option>
+													<option value="01">01월</option>
+												</select>
+											</div>
+										</td>
+										<th scope="row">시설명</th>
+										<td>00돌봄센터</td>
+									</tr>
+									<tr>
+										<th scope="row">최종수정자</th>
+										<td class="padding">
+											홍길동
+										</td>
+										<th scope="row">최종수정일</th>
+										<td class="padding">2021.12.13</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!--//검색-->
+						
+						<!--mt_20 w100p-->
+						<div class="mt_20 w100p">
+							<!--1-->
+							<div class="d-flex j-space-between">
+								<div class="f_left box-area">
+									<h6 class="mt_15">◆ 1-1. 성별 (개인상담, 집단상담 참석자)</h6>
+									<div class="table_bbs_list">
+										<table>
+											<colgroup>
+												<col width="16.6%"><col width="16.6%"><col width="16.6%"><col width="16.6%"><col width="16.6%">
+												<col width="16.6%">
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col" colspan="2" class="pt_20 pb_19">계</th>
+													<th scope="col" colspan="2" class="pt_20 pb_19">남성</th>
+													<th scope="col" colspan="2" class="pt_20 pb_19">여성</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="bg00B0F0"><input type="text" name="" disabled value="10" class="form-control w80p tar "> 명</td>
+													<td class="bgFFFF00"><input type="text" name="" disabled value="10" class="form-control w80p tar "> 건</td>
+													<td><input type="text" name="" class="form-control w80p tar"> 명</td>
+													<td><input type="text" name="" class="form-control w80p tar"> 건</td>
+													<td><input type="text" name="" class="form-control w80p tar"> 명</td>
+													<td><input type="text" name="" class="form-control w80p tar"> 건</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="f_left box-area">
+									<h6 class="mt_15">◆ 1-2. 내담자와의 관계</h6>
+									<div class="table_bbs_list">
+										<table>
+											<colgroup>
+												<col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%">
+												<col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%">
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col" rowspan="2">계</th>
+													<th scope="col" rowspan="2">본인</th>
+													<th scope="col" colspan="6" class="pt_5 pb_5">본인외</th>
+												</tr>
+												<tr>
+													<th scope="col" class="borth pt_5 pb_5">소계</th>
+													<th scope="col" class="pt_5 pb_5">배우자</th>
+													<th scope="col" class="pt_5 pb_5">자녀</th>
+													<th scope="col" class="pt_5 pb_5">친인척</th>
+													<th scope="col" class="pt_5 pb_5">이웃</th>
+													<th scope="col" class="pt_5 pb_5">유관기관</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="bgFFFF00"><input type="text" name="" value="10" class="form-control w75p tar " disabled> 건</td>
+													<td><input type="text" name="" value="5" class="form-control w75p tar"> 건</td>
+													<td><input type="text" name="" value="1" class="form-control w75p tar" disabled> 건</td>
+													<td><input type="text" name="" value="1" class="form-control w75p tar"> 건</td>
+													<td><input type="text" name="" value="1" class="form-control w75p tar"> 건</td>
+													<td><input type="text" name="" value="1" class="form-control w75p tar"> 건</td>
+													<td><input type="text" name="" value="1" class="form-control w75p tar"> 건</td>
+													<td><input type="text" name="" value="1" class="form-control w75p tar"> 건</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+
+							<!--1-3-->
+							<div class="w100p clear box-area">
+								<h6 class="mt_15">◆ 1-3. 연령별 현황</h6>
+								<div class="table_bbs_list">
+									<table>
+										<colgroup>
+											<col width="8.3%"><col width="8.3%"><col width="8.3%"><col width="8.3%"><col width="8.3%">
+											<col width="8.3%"><col width="8.3%"><col width="8.3%"><col width="8.3%"><col width="8.3%">
+											<col width="8.3%"><col width="8.3%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" colspan="2" rowspan="2">계</th>
+												<th scope="col" colspan="10">연령</th>
+											</tr>
+											<tr>
+												<th scope="col" colspan="2" class="borth">60대 미만</th>
+												<th scope="col" colspan="2">60대</th>
+												<th scope="col" colspan="2">70대</th>
+												<th scope="col" colspan="2">80대</th>
+												<th scope="col" colspan="2">90대 이상</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="bg00B0F0"><input type="text" name="" value="10" class="form-control w80p tar " disabled> 명</td>
+												<td class="bgFFFF00"><input type="text" name="" value="10" class="form-control w80p tar " disabled> 건</td>
+												<td><input type="text" name="" value="2" class="form-control w80p tar"> 명</td>
+												<td><input type="text" name="" value="2" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="2" class="form-control w80p tar"> 명</td>
+												<td><input type="text" name="" value="2" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="2" class="form-control w80p tar"> 명</td>
+												<td><input type="text" name="" value="2" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="2" class="form-control w80p tar"> 명</td>
+												<td><input type="text" name="" value="2" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="2" class="form-control w80p tar"> 명</td>
+												<td><input type="text" name="" value="2" class="form-control w80p tar"> 건</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!--2-->
+							<div class="w100p box-area mt_30">
+								<h6 class="mt_15">◆ 2. 상담경위</h6>
+								<div class="table_bbs_list">
+									<table>
+										<colgroup>
+											<col width="5.8%"><col width="5.8%"><col width="5.8%"><col width="5.8%"><col width="5.8%">
+											<col width="5.8%"><col width="5.8%"><col width="5.8%"><col width="5.8%"><col width="5.8%">
+											<col width="5.8%"><col width="5.8%"><col width="5.8%"><col width="5.8%"><col width="5.8%">
+											<col width="5.8%"><col width="5.8%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" rowspan="3">계</th>
+												<th scope="col" colspan="14">신규내담자</th>
+												<!-- <th scope="col">내부의뢰</th>
+												<th scope="col">소계</th>
+												<th scope="col">정신건강자살예방센터</th>
+												<th scope="col">노인보호전문기관</th>
+												<th scope="col">보호건소방문간호</th>
+												<th scope="col">일자리관련기관</th>
+												<th scope="col">법률기관</th>
+												<th scope="col">성폭력,가정폭력상담소</th>
+												<th scope="col">치매관련기관</th>
+												<th scope="col">건강가정다문화가정지원센터</th>
+												<th scope="col">재가노인관련기관</th>
+												<th scope="col">행정기관(무한돌봄)</th>
+												<th scope="col">기타</th> -->
+												<th scope="col" rowspan="3">발굴<br>(자발적신청,외부발굴 등)</th>
+												<th scope="col" rowspan="3">기존 내담자</th>
+											</tr>
+											<tr>
+												<!-- <th scope="col">계</th> -->
+												<th scope="col" rowspan="2" class="borth">소계</th>
+												<th scope="col" rowspan="2">내부의뢰</th>
+												<th scope="col" colspan="12">외부의뢰</th>
+												<!-- <th scope="col">정신건강자살예방센터</th>
+												<th scope="col">노인보호전문기관</th>
+												<th scope="col">보호건소방문간호</th>
+												<th scope="col">일자리관련기관</th>
+												<th scope="col">법률기관</th>
+												<th scope="col">성폭력,가정폭력상담소</th>
+												<th scope="col">치매관련기관</th>
+												<th scope="col">건강가정다문화가정지원센터</th>
+												<th scope="col">재가노인관련기관</th>
+												<th scope="col">행정기관(무한돌봄)</th>
+												<th scope="col">기타</th> -->
+												<!-- <th scope="col">발굴(자발적신청,외부발굴 등)</th>
+												<th scope="col">기존 내담자</th> -->
+											</tr>
+											<tr>
+												<!-- <th scope="col">계</th> -->
+												<!-- <th scope="col">소계</th> -->
+												<!-- <th scope="col">내부의뢰</th> -->
+												<th scope="col" class="borth">소계</th>
+												<th scope="col">정신건강자살예방센터</th>
+												<th scope="col">노인보호<br>전문기관</th>
+												<th scope="col">보건소<br>방문간호</th>
+												<th scope="col">일자리<br>관련기관</th>
+												<th scope="col">법률기관</th>
+												<th scope="col">성폭력,<br>가정폭력<br>상담소</th>
+												<th scope="col">치매<br>관련기관</th>
+												<th scope="col">건강가정<br>다문화가정<br>지원센터</th>
+												<th scope="col">재가노인<br>관련기관</th>
+												<th scope="col">행정기관<br>(무한돌봄)</th>
+												<th scope="col">기타</th>
+												<!-- <th scope="col">발굴(자발적신청,외부발굴 등)</th>
+												<th scope="col">기존 내담자</th> -->
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="bg00B0F0"><input type="text" name="" value="10" class="form-control w75p tar " disabled> 명</td>
+												<td><input type="text" name="" value="5" class="form-control w75p tar" disabled> 명</td>
+												<td><input type="text" name="" value="2" class="form-control w75p tar"> 명</td>
+												<td><input type="text" name="" value="3" class="form-control w75p tar" disabled> 명</td>
+												<td><input type="text" name="" value="1" class="form-control w75p tar"> 명</td>
+												<td><input type="text" name="" value="0" class="form-control w75p tar"> 명</td>
+												<td><input type="text" name="" value="0" class="form-control w75p tar"> 명</td>
+												<td><input type="text" name="" value="0" class="form-control w75p tar"> 명</td>
+												<td><input type="text" name="" value="0" class="form-control w75p tar"> 명</td>
+												<td><input type="text" name="" value="0" class="form-control w75p tar"> 명</td>
+												<td><input type="text" name="" value="0" class="form-control w75p tar"> 명</td>
+												<td><input type="text" name="" value="0" class="form-control w75p tar"> 명</td>
+												<td><input type="text" name="" value="0" class="form-control w75p tar"> 명</td>
+												<td><input type="text" name="" value="0" class="form-control w75p tar"> 명</td>
+												<td><input type="text" name="" value="0" class="form-control w75p tar"> 명</td>
+												<td><input type="text" name="" value="2" class="form-control w75p tar"> 명</td>
+												<td><input type="text" name="" value="3" class="form-control w75p tar"> 명</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!--3-->
+							<div class="w100p box-area mt_30">
+								<h6 class="mt_15">◆ 3. 상담방법</h6>
+								<div class="table_bbs_list">
+									<table>
+										<colgroup>
+											<col width="10%"><col width="10%"><col width="10%"><col width="10%"><col width="10%">
+											<col width="10%"><col width="10%"><col width="10%"><col width="10%"><col width="10%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" rowspan="2">계</th>
+												<th scope="col" colspan="6">개인상담</th>
+												<th scope="col" colspan="3">집단상담</th>
+											</tr>
+											<tr>
+												<th scope="col" class="borth">소계</th>
+												<th scope="col">내방</th>
+												<th scope="col">방문</th>
+												<th scope="col">전화</th>
+												<th scope="col">온라인</th>
+												<th scope="col">기타</th>
+												<th scope="col">소계</th>
+												<th scope="col">대면</th>
+												<th scope="col">온라인</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="bgFFFF00"><input type="text" name="" value="10" class="form-control w80p tar" disabled> 건</td>
+												<td class="bgD1CCE2"><input type="text" name="" value="10" class="form-control w80p tar " disabled> 건</td>
+												<td><input type="text" name="" value="5" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="3" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="2" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="0" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="0" class="form-control w80p tar"> 건</td>
+												<td class="bgA0E8D0"><input type="text" name="" value="10" class="form-control w80p tar " disabled> 건</td>
+												<td><input type="text" name="" value="5" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="5" class="form-control w80p tar"> 건</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!--4-1-->
+							<div class="w100p box-area mt_30">
+								<h6 class="mt_15">◆ 4-1. 상담주제(개인상담 주호소문제+ 집단상담 상담종류 = 월 상담건수)</h6>
+								<div class="table_bbs_list ofl_xscroll">
+									<table>
+										<colgroup> <!--100/25-->
+											<col style="width:100px;"><col style="width:100px;"><col style="width:100px;"><col style="width:100px;"><col style="width:100px;">
+											<col style="width:100px;"><col style="width:100px;"><col style="width:100px;"><col style="width:100px;"><col style="width:100px;">
+											<col style="width:100px;"><col style="width:100px;"><col style="width:100px;"><col style="width:100px;"><col style="width:100px;">
+											<col style="width:100px;"><col style="width:100px;"><col style="width:100px;"><col style="width:100px;"><col style="width:100px;">
+											<col style="width:100px;"><col style="width:100px;"><col style="width:100px;"><col style="width:100px;"><col style="width:100px;">
+											<col style="width:100px;">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" rowspan="2">계</th>
+												<th scope="col" colspan="17">개인상담</th>
+												<th scope="col" colspan="8">집단상담</th>
+											</tr>
+											<tr>
+												<th scope="col" class="borth">소계</th>
+												<th scope="col">심리정서</th>
+												<th scope="col">대인관계</th>
+												<th scope="col">치매</th>
+												<th scope="col">중독</th>
+												<th scope="col">정신건강장애</th>
+												<th scope="col">자살</th>
+												<th scope="col">건강</th>
+												<th scope="col">경제</th>
+												<th scope="col">생활</th>
+												<th scope="col">성</th>
+												<th scope="col">부부</th>
+												<th scope="col">가족</th>
+												<th scope="col">학대</th>
+												<th scope="col">노년생애준비</th>
+												<th scope="col">재난</th>
+												<th scope="col">기타</th>
+
+												<th scope="col">소계</th>
+												<th scope="col">사별애도</th>
+												<th scope="col">죽음준비</th>
+												<th scope="col">관계개선<br>의사소통</th>
+												<th scope="col">심리정서</th>
+												<th scope="col">자아통합</th>
+												<th scope="col">치매예방</th>
+												<th scope="col">기타</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="bgFFFF00"><input type="text" name="" value="5" class="form-control w80p tar" disabled> 건</td>
+												<td class="bgD1CCE2"><input type="text" name="" value="3" class="form-control w80p tar" disabled> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td class="bgA0E8D0"><input type="text" name="" value="1" class="form-control w80p tar" disabled> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!--4-2-->
+							<div class="w100p box-area mt_30">
+								<h6 class="mt_15">◆ 4-2. 연계(내부, 외부)</h6>
+								<div class="table_bbs_list ofl_xscroll">
+									<table>
+										<colgroup> <!--100/20-->
+											<col style="width:100px;"><col style="width:100px;"><col style="width:100px;"><col style="width:100px;"><col style="width:100px;">
+											<col style="width:100px;"><col style="width:100px;"><col style="width:100px;"><col style="width:100px;"><col style="width:100px;">
+											<col style="width:100px;"><col style="width:100px;"><col style="width:100px;"><col style="width:100px;"><col style="width:100px;">
+											<col style="width:100px;"><col style="width:100px;"><col style="width:100px;"><col style="width:100px;"><col style="width:100px;">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" rowspan="2">계</th>
+												<th scope="col" colspan="7">내부연계(수행기관)</th>
+												<th scope="col" colspan="12">외부연계</th>
+											</tr>
+											<tr>
+												<th scope="col" class="borth">소계</th>
+												<th scope="col">여가</th>
+												<th scope="col">법률,세무</th>
+												<th scope="col">경제후원</th>
+												<th scope="col">취업,일자리</th>
+												<th scope="col">생활,식생활,주거</th>
+												<th scope="col">기타</th>
+
+												<th scope="col">소계</th>
+												<th scope="col">정신건강자살예방센터</th>
+												<th scope="col">노인보호<br>전문기관</th>
+												<th scope="col">보건소<br>방문간호</th>
+												<th scope="col">일자리<br>관련기관</th>
+												<th scope="col">법률기관</th>
+												<th scope="col">성폭력,<br>가정폭력<br>상담소</th>
+												<th scope="col">치매<br>관려기관</th>
+												<th scope="col">건강가정<br>다문화가정</th>
+												<th scope="col">재가노인관련기관</th>
+												<th scope="col">행정기관<br>(무한돌봄)</th>
+												<th scope="col">기타</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><input type="text" name="" value="10" class="form-control w80p tar" disabled> 건</td>
+												<td><input type="text" name="" value="10" class="form-control w80p tar" disabled> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="10" class="form-control w80p tar" disabled> 건</td>
+												<td><input type="text" name="" value="3" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="2" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!--4-3-->
+							<div class="w100p box-area mt_30">
+								<h6 class="mt_15">◆ 4-3. 상담진행현황(지속상담 = 개인상담 + 집단상담 진행 건)</h6>
+								<div class="table_bbs_list">
+									<table>
+										<colgroup><!--100/7-->
+											<col width="14.2%"><col width="14.2%"><col width="14.2%"><col width="14.2%"><col width="14.2%">
+											<col width="14.2%"><col width="14.2%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" rowspan="2">계</th>
+												<th scope="col" rowspan="2">정보제공상담</th>
+												<th scope="col" colspan="5">지속상담</th>
+											</tr>
+											<tr>
+												<th scope="col" class="borth">소계</th>
+												<th scope="col">10회기이내</th>
+												<th scope="col">20회기이내</th>
+												<th scope="col">20회기 이상<br>30회기 미만</th>
+												<th scope="col">30회기 이상</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="bgFFFF00"><input type="text" name="" value="5" class="form-control w80p tar" disabled> 건</td>
+												<td><input type="text" name="" value="3" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="3" class="form-control w80p tar" disabled> 건</td>
+												<td><input type="text" name="" value="5" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="2" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="3" class="form-control w80p tar"> 건</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!--4-4-->
+							<div class="w100p box-area mt_30">
+								<h6 class="mt_15">◆ 4-4. 심리검사(노인상담별척도 건 추가)</h6>
+								<div class="table_bbs_list">
+									<table>
+										<colgroup><!--100/12-->
+											<col width="8.3%"><col width="8.3%"><col width="8.3%"><col width="8.3%"><col width="8.3%">
+											<col width="8.3%"><col width="8.3%"><col width="8.3%"><col width="8.3%"><col width="8.3%">
+											<col width="8.3%"><col width="8.3%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">계</th>
+												<th scope="col">노인상담<br>선별적도</th>
+												<th scope="col">DUKE-AD<br>간략우울</th>
+												<th scope="col">GDS-KR<br>노인우울</th>
+												<th scope="col">GDS-SI<br>노인우울<br>자살사고</th>
+												<th scope="col">불안</th>
+												<th scope="col">스트레스</th>
+												<th scope="col">사별스트레스</th>
+												<th scope="col">대인관계변화</th>
+												<th scope="col">부부의사소통</th>
+												<th scope="col">치매관련검사</th>
+												<th scope="col">기타</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><input type="text" name="" value="15" class="form-control w80p tar" disabled> 건</td>
+												<td><input type="text" name="" value="5" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="3" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="2" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="3" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="2" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="5" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="3" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!--5-->
+							<div class="w100p box-area mt_30">
+								<h6 class="mt_15">◆ 5. 마음나눔봉사단 활동</h6>
+								<div class="table_bbs_list">
+									<table>
+										<colgroup><!--100/7-->
+											<col width="14.2%"><col width="14.2%"><col width="14.2%"><col width="14.2%"><col width="14.2%">
+											<col width="14.2%"><col width="14.2%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">계</th>
+												<th scope="col">사후관리-안부확인(방문)</th>
+												<th scope="col">사후관리-안부확인(전화)</th>
+												<th scope="col">심리검사</th>
+												<th scope="col">연계상담동행</th>
+												<th scope="col">홍보활동</th>
+												<th scope="col">기타</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><input type="text" name="" value="10" class="form-control w80p tar" disabled> 건</td>
+												<td><input type="text" name="" value="3" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="3" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="3" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="0" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="0" class="form-control w80p tar"> 건</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!--6-->
+							<div class="w100p box-area mt_30">
+								<h6 class="mt_15">◆ 6. 네트워크 활동</h6>
+								<div class="table_bbs_list">
+									<table>
+										<colgroup><!--100/7-->
+											<col width="14.2%"><col width="14.2%"><col width="14.2%"><col width="14.2%"><col width="14.2%">
+											<col width="14.2%"><col width="14.2%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">계</th>
+												<th scope="col">권역 네트워크회의</th>
+												<th scope="col">수행기관 네트워크회의</th>
+												<th scope="col">실무회의</th>
+												<th scope="col">기관내부 사례회의</th>
+												<th scope="col">지역사회 네트워크회의</th>
+												<th scope="col">기타</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><input type="text" name="" value="10" class="form-control w80p tar" disabled> 건</td>
+												<td><input type="text" name="" value="3" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="3" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="3" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="0" class="form-control w80p tar"> 건</td>
+												<td><input type="text" name="" value="0" class="form-control w80p tar"> 건</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!--7-1-->
+							<div class="w100p box-area mt_30">
+								<h6 class="mt_15">◆ 7-1. 대상</h6>
+								<div class="table_bbs_list">
+									<table>
+										<colgroup><!--100/12-->
+											<col width="8.3%"><col width="8.3%"><col width="8.3%"><col width="8.3%"><col width="8.3%">
+											<col width="8.3%"><col width="8.3%"><col width="8.3%"><col width="8.3%"><col width="8.3%">
+											<col width="8.3%"><col width="8.3%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" colspan="2">계</th>
+												<th scope="col" colspan="2">노인</th>
+												<th scope="col" colspan="2">일반주민</th>
+												<th scope="col" colspan="2">소속기관</th>
+												<th scope="col" colspan="2">유관기관</th>
+												<th scope="col" colspan="2">기타</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="bgFAACAC"><input type="text" name="" value="15" class="form-control w80p tar" disabled>  회</td>
+												<td class="bg8989FF"><input type="text" name="" value="10" class="form-control w80p tar" disabled>  명</td>
+												<td><input type="text" name="" value="5" class="form-control w80p tar">  회</td>
+												<td><input type="text" name="" value="3" class="form-control w80p tar">  명</td>
+												<td><input type="text" name="" value="2" class="form-control w80p tar">  회</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar">  명</td>
+												<td><input type="text" name="" value="3" class="form-control w80p tar">  회</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar">  명</td>
+												<td><input type="text" name="" value="2" class="form-control w80p tar">  회</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar">  명</td>
+												<td><input type="text" name="" value="3" class="form-control w80p tar">  회</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar">  명</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!--7-2-->
+							<div class="w100p box-area mt_30">
+								<h6 class="mt_15">◆ 7-2. 진행형태</h6>
+								<div class="table_bbs_list">
+									<table>
+										<colgroup>
+											<col width="16.6%"><col width="16.6%"><col width="16.6%">
+											<col width="16.6%"><col width="16.6%"><col width="16.6%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" colspan="2">계</th>
+												<th scope="col" colspan="2">상담사</th>
+												<th scope="col" colspan="2">강사</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="bgFAACAC"><input type="text" name="" value="15" class="form-control w80p tar" disabled>  회</td>
+												<td class="bg8989FF"><input type="text" name="" value="10" class="form-control w80p tar" disabled>  명</td>
+												<td><input type="text" name="" value="3" class="form-control w80p tar">  회</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar">  명</td>
+												<td><input type="text" name="" value="2" class="form-control w80p tar">  회</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar">  명</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!--7-3-->
+							<div class="w100p box-area mt_30">
+								<h6 class="mt_15">◆ 7-3. 내용</h6>
+								<div class="table_bbs_list">
+									<table>
+										<colgroup><!--100/16-->
+											<col width="6.25%"><col width="6.25%"><col width="6.25%"><col width="6.25%"><col width="6.25%">
+											<col width="6.25%"><col width="6.25%"><col width="6.25%"><col width="6.25%"><col width="6.25%">
+											<col width="6.25%"><col width="6.25%"><col width="6.25%"><col width="6.25%"><col width="6.25%">
+											<col width="6.25%">
+										</colgroup>
+										<thead>
+											<tr>
+												<thead>
+													<th scope="col" colspan="2">계</th>
+													<th scope="col" colspan="2">심리정서</th>
+													<th scope="col" colspan="2">관계개선</th>
+													<th scope="col" colspan="2">사별애도</th>
+													<th scope="col" colspan="2">죽음준비</th>
+													<th scope="col" colspan="2">치매예방</th>
+													<th scope="col" colspan="2">학대예방</th>
+													<th scope="col" colspan="2">기타</th>
+												</thead>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="bgFAACAC"><input type="text" name="" value="15" class="form-control w75p tar" disabled>  회</td>
+												<td class="bg8989FF"><input type="text" name="" value="10" class="form-control w75p tar" disabled>  명</td>
+												<td><input type="text" name="" value="4" class="form-control w75p tar">  회</td>
+												<td><input type="text" name="" value="3" class="form-control w75p tar">  명</td>
+												<td><input type="text" name="" value="2" class="form-control w75p tar">  회</td>
+												<td><input type="text" name="" value="1" class="form-control w75p tar">  명</td>
+												<td><input type="text" name="" value="1" class="form-control w75p tar">  회</td>
+												<td><input type="text" name="" value="2" class="form-control w75p tar">  명</td>
+												<td><input type="text" name="" value="3" class="form-control w75p tar">  회</td>
+												<td><input type="text" name="" value="4" class="form-control w75p tar">  명</td>
+												<td><input type="text" name="" value="1" class="form-control w75p tar">  회</td>
+												<td><input type="text" name="" value="2" class="form-control w75p tar">  명</td>
+												<td><input type="text" name="" value="1" class="form-control w75p tar">  회</td>
+												<td><input type="text" name="" value="2" class="form-control w75p tar">  명</td>
+												<td><input type="text" name="" value="0" class="form-control w75p tar">  회</td>
+												<td><input type="text" name="" value="1" class="form-control w75p tar">  명</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<div class="w100p box-area mt_30">
+								<h6 class="mt_15">◆ 8. 홍보</h6>
+								<div class="table_bbs_list">
+									<table>
+										<colgroup><!--100/11-->
+											<col width="9%"><col width="9%"><col width="9%"><col width="9%"><col width="9%">
+											<col width="9%"><col width="9%"><col width="9%"><col width="9%"><col width="9%">
+											<col width="9%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" colspan="3">계</th>
+												<th scope="col">대중매체홍보</th>
+												<th scope="col">인터넷 홍보</th>
+												<th scope="col">설치물 활용</th>
+												<th scope="col" colspan="2">직접 활동</th>
+												<th scope="col" colspan="2">홍보물품 및 자료제작</th>
+												<th scope="col">기타</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><input type="text" name="" value="30" class="form-control w80p tar" disabled>  회</td>
+												<td><input type="text" name="" value="20" class="form-control w80p tar" disabled>  명</td>
+												<td><input type="text" name="" value="10" class="form-control w80p tar" disabled>  개</td>
+												<td><input type="text" name="" value="20" class="form-control w80p tar"> 회</td>
+												<td><input type="text" name="" value="5" class="form-control w80p tar">  회</td>
+												<td><input type="text" name="" value="3" class="form-control w80p tar">  회</td>
+												<td><input type="text" name="" value="2" class="form-control w80p tar">  회</td>
+												<td><input type="text" name="" value="20" class="form-control w80p tar"> 명</td>
+												<td><input type="text" name="" value="1" class="form-control w80p tar">  회</td>
+												<td><input type="text" name="" value="10" class="form-control w80p tar">  개</td>
+												<td><input type="text" name="" value="0" class="form-control w80p tar">  회</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!--//mt_20 w100p-->
+						
+						<div class="tar mt_30">
+							<!-- <button type="button" class="btn btn-info">수정</button> -->
+							<button type="button" class="btn btn-info">저장</button>
+						</div>
+					</div>
+				</div>
+				<!--//content-body-->
+			</div><!--//content-wrapper-->
+		</div><!--//content-->
+	</div><!--//wrapper-->
+</body>
+</html>

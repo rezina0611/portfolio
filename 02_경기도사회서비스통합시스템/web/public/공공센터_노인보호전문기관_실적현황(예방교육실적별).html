@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>경기도사회서비스원 통합사회정보시스템</title>
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/layout.css">
+<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/content.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/datepicker.css">  <!-- 제이쿼리 달력 css-->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./js/jquery.placeholder.min.js"></script><!-- 제이쿼리 placeholder-->
+<script src="./js/datepicker.js"></script><!-- 제이쿼리 달력 js-->
+<script src="./js/datepicker-ko.js"></script><!-- 제이쿼리 달력 datepicker 한국어로 -->
+<script src="./js/script.js"></script>
+<script>
+	$(function() {
+		$.datepicker.setDefaults($.datepicker.regional['ko']); //datepicker 한국어로 사용하기 위한 언어설정
+		$('.datepicker01').datepicker();
+		$('.datepicker02').datepicker();
+	});
+</script>
+
+</head>
+<div class="mask"></div>
+<div class="modal">
+	<div class="layerpopupArea">
+		<span class="close">&times;</span>
+		<!-- Modal content -->
+	    <div  id="personalItem01" class="modal-content">	
+	    	<h4>비밀번호 변경</h4>
+	    	<div class="card-content">
+	    		<div class="tar fs12 mb_5"><span class="red">*</span>필수입력항목</div>
+	    		<div class="regist-form">
+	    			<table>
+						<colgroup>
+							<col width="25%"><col width="">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">현재 비밀번호 <span class="red">*</span></th>
+								<td><input type="text" class="form-control" title="아이디 입력해주세요" name="id"></td>
+							</tr>
+							<tr>
+								<th scope="row">새 비밀번호 <span class="red">*</span></th>
+								<td>
+									<input type="text" class="form-control" title="이름 입력해주세요" name="name">
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">새 비밀번호 확인 <span class="red">*</span></th>
+								<td><input type="text" class="form-control" title="이메일주소 입력해주세요" name="email"></td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    		<div class="red fs12 mt_5">비밀번호는 8자 ~ 20자, 영문, 숫자, 특수문자 사용가능</div>
+	    		<div class="tar mt_30">
+	    			<button type="button" class="btn btn-secondary" id="close">취소</button>
+	    			<button type="button" class="btn btn-info">확인</button>
+	    		</div>
+	    	</div>
+		</div>
+
+		<!-- Modal content -->
+	    <div  id="personalItem02" class="modal-content">
+	    	<h4>나의정보</h4>
+	    	<div class="card-content">
+	    		<div class="tar fs12 mb_5"><span class="red">*</span>필수입력항목</div>
+	    		<div class="regist-form">
+	    			<table>
+						<colgroup>
+							<col width="20%"><col width="">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">소속 <span class="red">*</span></th>
+								<td class="tal">기획예산팀</td>
+							</tr>
+							<tr>
+								<th scope="row">이름 <span class="red">*</span></th>
+								<td class="tal">홍길동</td>
+							</tr>
+							<tr>
+								<th scope="row">직급/직책 <span class="red">*</span></th>
+								<td class="tal">팀장</td>
+							</tr>
+							<tr>
+								<th scope="row">이메일주소 <span class="red">*</span></th>
+								<td class="tal">awsdert@gg.pass.or.kr</td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    		<div class="tar mt_30">
+	    			<button type="button" class="btn btn-secondary" id="close">취소</button>
+	    			<button type="button" class="btn btn-info">확인</button>
+	    		</div>
+	    	</div>
+		</div>
+		<!-- //Modal content -->
+	</div>
+</div>
+
+<body class="bg">  <!--style="overflow-y:hidden; overflow-x:auto;"--> 
+	<!--wrapper-->
+	<div class="wrapper">
+		<!-- Header -->
+        <div id="header">
+            <div class="skip">상단메뉴</div>
+            <div class="header-top main-width">
+                <div class="container navbar">
+                    <div class="inner-container">
+                        <div>
+                            <h1 class="logo">
+                                <img src="./images/logo.png" alt="경기도사회서비스원"><br><span>통합사회정보시스템</span>
+                            </h1>
+                        </div>
+                       
+                       <div class="gnb">
+                            <div class="skip">상단메뉴</div>
+                            <!--하위메뉴가 없는 메뉴는 해당li태그에 class="nosub" 넣어주세요-->
+                            <ul class="depth1">
+                                <li class="nosub"><a href="./home(대시보드).html">홈</a></li>
+                                <li class="nosub"><a href="./예산집행율조회.html">예산집행율</a></li>
+                                <li class="nosub"><a href="./종사자현황_(고용형태별)조회.html">종사자현황</a></li>
+                                <li class="nosub"><a href="./종합재가센터_운영현황목록.html">종합재가센터</a></li>
+                                <li><a href="#none">국공립시설</a>
+                                	<ul class="depth2">
+                                		<li><a href="./국공립시설_운영현황목록(어린이집).html">어린이집</a></li>
+                                		<li><a href="./국공립시설_운영현황목록(다함께돌봄).html">다함께돌봄센터</a></li>
+                                	</ul>
+                                </li>
+                                <li><a href="#none">공공센터</a>
+                                	<ul class="depth2">
+                                		<li><a href="./공공센터_대체인력지원사업_운영현황.html">대체인력지원사업</a></li>
+                                		<li><a href="./공공센터_노인보호전문기관_운영현황.html">노인보호전문기관</a></li>
+                                		<li><a href="./공공센터_노인종합상담센터_운영현황.html">노인종합상담센터</a></li>
+                                		<li><a href="./공공센터_노인일자리지원센터_운영현황.html">노인일자리지원센터</a></li>
+                                		<li><a href="./공공센터_지역사회서비스지원단_운영현황.html">지역사회서비스지원단</a></li>
+                                		<li><a href="./공공센터_장기요양요원지원센터_운영현황.html">장기요양요원지원센터</a></li>
+                                	</ul>
+                                </li>
+                                <li class="nosub"><a href="./개인인사정보_개인휴가조회.html">개인인사정보</a></li>
+                                <li class="nosub"><a href="./통합결재_통합문서목록.html">통합결재</a></li>
+                                <li class="nosub"><a href="./설문조사_진행가능한설문.html">설문조사</a></li>
+                                <li class="nosub"><a href="http://pub_lms-lite.tigensoft.co.kr:9090/_front/" target="_blank" title="새창열림">교육관리 <i class="far fa-window-restore"></i></a></li>
+                                <li><a href="#none">관리자</a>
+                                    <ul class="depth2">
+                                        <li><a href="./인사관리_인사사항조회.html">인사관리</a></li>
+                                        <li><a href="./자산관리.html">자산관리</a></li>
+                                        <li><a href="./대용량메일발송.html">대용량메일발송</a></li>
+                                        <li><a href="./통합메시지.html">통합메시지</a></li>
+                                        <li><a href="./설문조사관리.html">설문조사관리</a></li>
+                                        <li><a href="./통합메시지발송.html">통합메시지발송</a></li>
+                                        <li><a href="./통합메시지기준관리.html">통합메시지기준관리</a></li>
+                                    </ul>
+                                </li>
+                             </ul>
+                        </div>
+
+                        <div class="info">
+                            <a href="#none" title="펼치기" class="off">
+                                <i class="fas fa-user-cog fa-lg"></i>
+                                <span class="fs13">홍길동팀장 </span><br><span class="fs11">(기획예산팀)</span>
+                            </a>
+                            <ul>
+                                <li><a href="#none" class="openPopup" data-target="personalItem01"><i class="fas fa-user mr_5"></i> 비밀번호변경</a></li>
+                                <li><a href="#none" class="openPopup" data-target="personalItem02"><i class="fas fa-key mr_5"></i> 나의정보</a></li>
+                                <li><a href="./권한변경_공통.html"><i class="fas fa-key mr_5"></i> 권한설정</a></li>
+                                <li><a href="#none"><i class="fas fa-power-off mr_5"></i> 로그아웃</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //Header -->
+		<!--gside-->
+	    <div class="gside">
+	        <div class="skip">레프트메뉴 영역</div>
+	        <!--li태그에 nochild 클래스가 있으면 하위메뉴가 없다는 뜻으로 nochild를 넣어줘야 합니다.-->
+	        <div class="skip">공공센터</div>
+	        <ul>
+	            <li class="nochild"><a href="./공공센터_노인보호전문기관_운영현황.html">노인보호전문기관 운영현황</a></li>
+	            <li><a href="#none" class="on">노인보호전문기관 실적현황</a>
+	            	<ul>
+	            		<li><a href="./공공센터_노인보호전문기관_실적현황(사업실적별).html">사업실적별</a></li>
+	            		<li><a href="./공공센터_노인보호전문기관_실적현황(사례현황별).html">사례현황별</a></li>
+	            		<li><a href="./공공센터_노인보호전문기관_실적현황(예방교육실적별).html" class="on">예방교육실적별</a></li>
+	            		<li><a href="./공공센터_노인보호전문기관_실적현황(인권교육실적별).html">인권교육실적별</a></li>
+	            		<li><a href="./공공센터_노인보호전문기관_실적현황(홍보실적별).html">홍보실적별</a></li>
+	            	</ul>
+	            </li>
+	        </ul>
+	    </div>
+	    <!--//gside-->
+		<!--content-->
+		<div class="content">
+			<div class="skip">컨텐츠 영역</div>
+			<!--content-wrapper-->
+			<div class="content-wrapper">
+				<!--cont-header-->
+				<div class="cont-header">
+					<div class="cont-header-left">
+						<h3 class="Depth2_title">노인보호전문기관</h3>
+						<ul class="breadcrumb d_iblock">
+							<li>홈 <i class="fas fa-angle-right"></i></li>
+							<li>노인보호전문기관 <i class="fas fa-angle-right"></i></li>
+							<li>실적현황</li>
+						</ul>
+					</div>
+				</div>
+				<!--//cont-header-->
+				<!--content-body-->
+				<div class="content-body">
+					<div class="card-header">
+						<h4 class="Depth3_title">실적현황</h4>
+						<div class="heading-elements">
+							<!-- <button type="button" class="btn btn-secondary"><i class="fas fa-redo-alt"></i> 검색조건 초기화</button> -->
+							<button type="button" class="btn btn-primary"><i class="fas fa-search"></i> 조회</button>
+						</div>
+					</div>	
+					<div class="card-body">
+						<!--검색-->
+						<div class="search-area">
+							<table>
+								<colgroup>
+									<col width="13%"><col>
+									<col width="13%"><col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">실적기준 년/월</th>
+										<td>
+											<div class="selectbox">
+												<select name="" title="" class="select">
+													<option value="2021" selected="selected">2021</option>
+													<option value="2025">2025</option>
+													<option value="2024">2024</option>
+													<option value="2023">2023</option>
+													<option value="2022">2022</option>
+												</select>
+											</div>
+											<div class="selectbox">
+												<select name="" title="" class="select">
+													<option value="전체">전체</option>
+													<option value="12">12월</option>
+													<option value="11" selected="selected">11월</option>
+													<option value="10">10월</option>
+													<option value="09">09월</option>
+													<option value="08">08월</option>
+													<option value="07">07월</option>
+													<option value="06">06월</option>
+													<option value="05">05월</option>
+													<option value="04">04월</option>
+													<option value="03">03월</option>
+													<option value="02">02월</option>
+													<option value="01">01월</option>
+												</select>
+											</div>
+										</td>
+										<th scope="row">시설명</th>
+										<td>00돌봄센터</td>
+									</tr>
+									<tr>
+										<th scope="row">최종수정자</th>
+										<td class="padding">
+											홍길동
+										</td>
+										<th scope="row">최종수정일</th>
+										<td class="padding">2021.12.13</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!--//검색-->
+						<!--버튼영역-->
+						<div class="pr mt_30 tar box-area w100p">
+							<h6 class="f_left mt_15">◆ 예방교육실적별</h6>
+							<button type="button" class="btn btn-completed"><i class="fas fa-download"></i> 엑셀다운로드</button>
+							<button type="button" class="btn btn-completed"><i class="fas fa-upload"></i> 엑셀업로드</button>
+							<button type="button" class="btn btn-info"><i class="far fa-file-excel"></i> 엑셀템플릿</button>
+						</div>
+						<!--//버튼영역-->
+
+						<!-- <table class="fixedHeader">
+							<colgroup>
+								<col width="6%"><col width="19%"><col width="6%"><col width="4%">
+								<col width="5%"><col width="5%"><col width="5%"><col width="5%"><col width="5%">
+								<col width="5%"><col width="5%"><col width="5%"><col width="5%"><col width="5%">
+								<col width="5%"><col width="5%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">대분류</th>
+									<th scope="col">중분류</th>
+									<th scope="col">소분류</th>
+									<th scope="col"></th>
+									<th scope="col">1월</th>
+									<th scope="col">2월</th>
+									<th scope="col">3월</th>
+									<th scope="col">4월</th>
+									<th scope="col">5월</th>
+									<th scope="col">6월</th>
+									<th scope="col">7월</th>
+									<th scope="col">8월</th>
+									<th scope="col">9월</th>
+									<th scope="col">10월</th>
+									<th scope="col">11월</th>
+									<th scope="col">12월</th>
+								</tr>
+							</thead>
+						</table> -->
+						<script>
+							//수정버튼 클릭시
+							function old_sujeong(){
+								$("#old-Table tr td").not(".fix").empty();
+
+								//td 안에 <input type='text' name='' class='form-control'>  생성
+								$("#old-Table tr td").not(".fix").html("<input type='text' name='num' class='form-control' value=''>");
+
+							}
+
+
+							//취소일 경우
+							let oldTable = "";
+
+							$(document).ready(function() {
+								oldTable = $("#old-Table").html(); //html() : 선택한 요소안의 내용르 가져오거나, 다른내용으로 바꾼다
+							});
+
+							function old_cancel(){
+								$("#old-Table").empty();
+								$("#old-Table").append(oldTable);
+							}
+									
+						</script>
+						<div class="table_bbs_list ofl_yscroll" style="height:700px;">
+							<table>
+								<colgroup>
+									<col width="7%"><col width="18%"><col width="6%"><col width="4%">
+									<col width="5%"><col width="5%"><col width="5%"><col width="5%"><col width="5%">
+									<col width="5%"><col width="5%"><col width="5%"><col width="5%"><col width="5%">
+									<col width="5%"><col width="5%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">대분류</th>
+										<th scope="col">중분류</th>
+										<th scope="col">소분류</th>
+										<th scope="col"></th>
+										<th scope="col">1월</th>
+										<th scope="col">2월</th>
+										<th scope="col">3월</th>
+										<th scope="col">4월</th>
+										<th scope="col">5월</th>
+										<th scope="col">6월</th>
+										<th scope="col">7월</th>
+										<th scope="col">8월</th>
+										<th scope="col">9월</th>
+										<th scope="col">10월</th>
+										<th scope="col">11월</th>
+										<th scope="col">12월</th>
+									</tr>
+								</thead>
+								<tbody id="old-Table">
+									<tr>
+										<td rowspan="34" class="fix">신고의무자</td>
+										<td rowspan="2" class="fix">구급대의대원</td>
+										<td class="fix"></td>
+										<td class="fix">회</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<!-- <td class="borth">구급대의대원</td> -->
+										<td class="borth fix"></td>
+										<td class="fix">명</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<td rowspan="2" class="borth fix">의료인</td>
+										<td class="fix"></td>
+										<td class="fix">회</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<!-- <td class="borth">의료인</td> -->
+										<td class="borth fix"></td>
+										<td class="fix">명</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<td rowspan="2" class="borth fix">노인복지시설종사자 및 노인복지상담원</td>
+										<td class="fix"></td>
+										<td class="fix">회</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<!-- <td class="borth">노인복지시설종사자 및 노인복지상담원</td> -->
+										<td class="borth fix"></td>
+										<td class="fix">명</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<td rowspan="2" class="borth fix">장애인시설, 장애노인상담</td>
+										<td class="fix"></td>
+										<td class="fix">회</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<!-- <td class="borth">장애인시설, 장애노인상담</td> -->
+										<td class="borth fix"></td>
+										<td class="fix">명</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<td rowspan="2" class="borth fix">가정폭력상담기관종사자</td>
+										<td class="fix"></td>
+										<td class="fix">회</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<!-- <td class="borth">가정폭력상담기관종사자</td> -->
+										<td class="borth fix"></td>
+										<td class="fix">명</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<td rowspan="2" class="borth fix">사회복지전담 공무원</td>
+										<td class="fix"></td>
+										<td class="fix">회</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<!-- <td class="borth">사회복지전담 공무원</td> -->
+										<td class="borth fix"></td>
+										<td class="fix">명</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<td rowspan="2" class="borth fix">사회복지관, 부랑인 및 <br>노숙인 보호시설 관련 종사자</td>
+										<td class="fix"></td>
+										<td class="fix">회</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<!-- <td class="borth">사회복지관, 부랑인 및 노숙인 보호시설 관련 종사자</td> -->
+										<td class="borth fix"></td>
+										<td class="fix">명</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<td rowspan="2" class="borth fix">재가장기요양기관종사자</td>
+										<td class="fix"></td>
+										<td class="fix">회</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<!-- <td class="borth">재가장기요양기관종사자</td> -->
+										<td class="borth fix"></td>
+										<td class="fix">명</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<td rowspan="2" class="borth fix">건강가정지원센터종사자</td>
+										<td class="fix"></td>
+										<td class="fix">회</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<!-- <td class="borth">건강가정지원센터종사자</td> -->
+										<td class="borth fix"></td>
+										<td class="fix">명</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<td rowspan="2" class="borth fix">방문요양서비스종사자</td>
+										<td class="fix"></td>
+										<td class="fix">회</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<!-- <td class="borth">방문요양서비스종사자</td> -->
+										<td class="borth fix"></td>
+										<td class="fix">명</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<td rowspan="2" class="borth fix">다문화가족지원센터종사자</td>
+										<td class="fix"></td>
+										<td class="fix">회</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<!-- <td class="borth">다문화가족지원센터종사자</td> -->
+										<td class="borth fix"></td>
+										<td class="fix">명</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<td rowspan="2" class="borth fix">성폭력피해상담소 및 <br>성폭력피해자보호시설의종사자</td>
+										<td class="fix"></td>
+										<td class="fix">회</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<!-- <td class="borth">성폭력피해상담소 및 성폭력피해자보호시설의종사자</td> -->
+										<td class="borth fix"></td>
+										<td class="fix">명</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<td rowspan="2" class="borth fix">응급구조사</td>
+										<td class="fix"></td>
+										<td class="fix">회</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<!-- <td class="borth">응급구조사</td> -->
+										<td class="borth fix"></td>
+										<td class="fix">명</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<td rowspan="2" class="borth fix">의료기사</td>
+										<td class="fix"></td>
+										<td class="fix">회</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<!-- <td class="borth">의료기사</td> -->
+										<td class="borth fix"></td>
+										<td class="fix">명</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<td rowspan="2" class="borth fix">국민건강보험공단 소속 요양직 직원</td>
+										<td class="fix"></td>
+										<td class="fix">회</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<!-- <td class="borth">국민건강보험공단 소속 요양직 직원</td> -->
+										<td class="borth fix"></td>
+										<td class="fix">명</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<td rowspan="2" class="borth fix">지역보건의료기관의 장과 종사자</td>
+										<td class="fix"></td>
+										<td class="fix">회</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<!-- <td class="borth">지역보건의료기관의 장과 종사자</td> -->
+										<td class="borth fix"></td>
+										<td class="fix">명</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<td rowspan="2" class="borth fix">노인복지시설 설치 및 <br>관리 업무 담당 공무원</td>
+										<td class="fix"></td>
+										<td class="fix">회</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td></td> -->
+										<!-- <td class="borth">노인복지시설 설치 및 관리 업무 담당 공무원</td> -->
+										<td class="borth fix"></td>
+										<td class="fix">명</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<td rowspan="18" class="fix">비신고의무자</td>
+										<td rowspan="8" class="fix">일반인</td>
+										<td rowspan="2" class="fix">미취학</td>
+										<td class="fix">회</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td>비신고의무자</td> -->
+										<!-- <td>일반인</td> -->
+										<!-- <td>미취학</td> -->
+										<td class="borth fix">명</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td>비신고의무자</td> -->
+										<!-- <td>일반인</td> -->
+										<td rowspan="2" class="borth fix">학생</td>
+										<td class="fix">회</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td>비신고의무자</td> -->
+										<!-- <td>일반인</td> -->
+										<!-- <td>학생</td> -->
+										<td class="borth fix">명</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td>비신고의무자</td> -->
+										<!-- <td>일반인</td> -->
+										<td rowspan="2" class="borth fix">성인.중장년</td>
+										<td class="fix">회</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td>비신고의무자</td>
+										<td>일반인</td> -->
+										<!-- <td>성인.중장년</td> -->
+										<td class="borth fix">명</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td>비신고의무자</td>
+										<td>일반인</td> -->
+										<td rowspan="2" class="borth fix">노인</td>
+										<td class="fix">회</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td>비신고의무자</td>
+										<td>일반인</td> -->
+										<!-- <td>노인</td> -->
+										<td class="borth fix">명</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td>비신고의무자</td> -->
+										<td rowspan="8" class="borth fix">관련기관종사자</td>
+										<td rowspan="2" class="fix">관공서</td>
+										<td class="fix">회</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td>비신고의무자</td> -->
+										<!-- <td>관련기관종사자</td> -->
+										<!-- <td>관공서</td> -->
+										<td class="borth fix">명</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td>비신고의무자</td> -->
+										<!-- <td>관련기관종사자</td> -->
+										<td rowspan="2" class="borth fix">경찰서</td>
+										<td class="fix">회</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td>비신고의무자</td> -->
+										<!-- <td>관련기관종사자</td> -->
+										<!-- <td>경찰서</td> -->
+										<td class="borth fix">명</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td>비신고의무자</td> -->
+										<!-- <td>관련기관종사자</td> -->
+										<td rowspan="2" class="borth fix">사회복지관련기관</td>
+										<td class="fix">회</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td>비신고의무자</td> -->
+										<!-- <td>관련기관종사자</td> -->
+										<!-- <td>사회복지관련기관</td> -->
+										<td class="borth fix">명</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td>비신고의무자</td> -->
+										<!-- <td>관련기관종사자</td> -->
+										<td rowspan="2" class="borth fix">기타관련기관</td>
+										<td class="fix">회</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td>비신고의무자</td> -->
+										<!-- <td>관련기관종사자</td> -->
+										<!-- <td>기타관련기관</td> -->
+										<td class="borth fix">명</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td>비신고의무자</td> -->
+										<td rowspan="2" class="borth fix">지킴이 및 자원봉사자</td>
+										<td class="fix"></td>
+										<td class="fix">회</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td>비신고의무자</td> -->
+										<!-- <td>지킴이 및 자원봉사자</td> -->
+										<td class="borth fix"></td>
+										<td class="fix">명</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<td colspan="3" rowspan="2" class="fix">총계</td>
+										<td class="fix">회</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<!-- <td colspan="3">총계</td> -->
+										<td class="borth fix">명</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+										<td>1</td>
+										<td>2</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+							
+						<div class="tar mt_30">
+							<button type="button" class="btn btn-info" onclick="old_sujeong();">수정</button>
+							<button type="button" class="btn btn-secondary" onclick="old_cancel();">취소</button>
+							<button type="button" class="btn btn-info">저장</button>
+						</div>
+
+					</div>
+				</div>
+				<!--//content-body-->
+			</div><!--//content-wrapper-->
+		</div><!--//content-->
+	</div><!--//wrapper-->
+</body>
+</html>
