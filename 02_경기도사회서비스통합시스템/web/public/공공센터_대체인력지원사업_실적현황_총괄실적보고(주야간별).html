@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>경기도사회서비스원 통합사회정보시스템</title>
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/layout.css">
+<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/content.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/datepicker.css">  <!-- 제이쿼리 달력 css-->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./js/jquery.placeholder.min.js"></script><!-- 제이쿼리 placeholder-->
+<script src="./js/datepicker.js"></script><!-- 제이쿼리 달력 js-->
+<script src="./js/datepicker-ko.js"></script><!-- 제이쿼리 달력 datepicker 한국어로 -->
+<script src="./js/script.js"></script>
+<script>
+	$(function() {
+		$.datepicker.setDefaults($.datepicker.regional['ko']); //datepicker 한국어로 사용하기 위한 언어설정
+		$('.datepicker01').datepicker();
+		$('.datepicker02').datepicker();
+	});
+</script>
+
+</head>
+<div class="mask"></div>
+<div class="modal">
+	<div class="layerpopupArea">
+		<span class="close">&times;</span>
+		<!-- Modal content -->
+	    <div  id="personalItem01" class="modal-content">	
+	    	<h4>비밀번호 변경</h4>
+	    	<div class="card-content">
+	    		<div class="tar fs12 mb_5"><span class="red">*</span>필수입력항목</div>
+	    		<div class="regist-form">
+	    			<table>
+						<colgroup>
+							<col width="25%"><col width="">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">현재 비밀번호 <span class="red">*</span></th>
+								<td><input type="text" class="form-control" title="아이디 입력해주세요" name="id"></td>
+							</tr>
+							<tr>
+								<th scope="row">새 비밀번호 <span class="red">*</span></th>
+								<td>
+									<input type="text" class="form-control" title="이름 입력해주세요" name="name">
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">새 비밀번호 확인 <span class="red">*</span></th>
+								<td><input type="text" class="form-control" title="이메일주소 입력해주세요" name="email"></td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    		<div class="red fs12 mt_5">비밀번호는 8자 ~ 20자, 영문, 숫자, 특수문자 사용가능</div>
+	    		<div class="tar mt_30">
+	    			<button type="button" class="btn btn-secondary" id="close">취소</button>
+	    			<button type="button" class="btn btn-info">확인</button>
+	    		</div>
+	    	</div>
+		</div>
+
+		<!-- Modal content -->
+	    <div  id="personalItem02" class="modal-content">
+	    	<h4>나의정보</h4>
+	    	<div class="card-content">
+	    		<div class="tar fs12 mb_5"><span class="red">*</span>필수입력항목</div>
+	    		<div class="regist-form">
+	    			<table>
+						<colgroup>
+							<col width="20%"><col width="">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">소속 <span class="red">*</span></th>
+								<td class="tal">기획예산팀</td>
+							</tr>
+							<tr>
+								<th scope="row">이름 <span class="red">*</span></th>
+								<td class="tal">홍길동</td>
+							</tr>
+							<tr>
+								<th scope="row">직급/직책 <span class="red">*</span></th>
+								<td class="tal">팀장</td>
+							</tr>
+							<tr>
+								<th scope="row">이메일주소 <span class="red">*</span></th>
+								<td class="tal">awsdert@gg.pass.or.kr</td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    		<div class="tar mt_30">
+	    			<button type="button" class="btn btn-secondary" id="close">취소</button>
+	    			<button type="button" class="btn btn-info">확인</button>
+	    		</div>
+	    	</div>
+		</div>
+		<!-- //Modal content -->
+	</div>
+</div>
+
+<body class="bg">  <!--style="overflow-y:hidden; overflow-x:auto;"--> 
+	<!--wrapper-->
+	<div class="wrapper">
+		<!-- Header -->
+        <div id="header">
+            <div class="skip">상단메뉴</div>
+            <div class="header-top main-width">
+                <div class="container navbar">
+                    <div class="inner-container">
+                        <div>
+                            <h1 class="logo">
+                                <img src="./images/logo.png" alt="경기도사회서비스원"><br><span>통합사회정보시스템</span>
+                            </h1>
+                        </div>
+                       
+                       <div class="gnb">
+                            <div class="skip">상단메뉴</div>
+                            <!--하위메뉴가 없는 메뉴는 해당li태그에 class="nosub" 넣어주세요-->
+                            <ul class="depth1">
+                                <li class="nosub"><a href="./home(대시보드).html">홈</a></li>
+                                <li class="nosub"><a href="./예산집행율조회.html">예산집행율</a></li>
+                                <li class="nosub"><a href="./종사자현황_(고용형태별)조회.html">종사자현황</a></li>
+                                <li class="nosub"><a href="./종합재가센터_운영현황목록.html">종합재가센터</a></li>
+                                <li><a href="#none">국공립시설</a>
+                                	<ul class="depth2">
+                                		<li><a href="./국공립시설_운영현황목록(어린이집).html">어린이집</a></li>
+                                		<li><a href="./국공립시설_운영현황목록(다함께돌봄).html">다함께돌봄센터</a></li>
+                                	</ul>
+                                </li>
+                                <li><a href="#none">공공센터</a>
+                                	<ul class="depth2">
+                                		<li><a href="./공공센터_대체인력지원사업_운영현황.html">대체인력지원사업</a></li>
+                                		<li><a href="./공공센터_노인보호전문기관_운영현황.html">노인보호전문기관</a></li>
+                                		<li><a href="./공공센터_노인종합상담센터_운영현황.html">노인종합상담센터</a></li>
+                                		<li><a href="./공공센터_노인일자리지원센터_운영현황.html">노인일자리지원센터</a></li>
+                                		<li><a href="./공공센터_지역사회서비스지원단_운영현황.html">지역사회서비스지원단</a></li>
+                                		<li><a href="./공공센터_장기요양요원지원센터_운영현황.html">장기요양요원지원센터</a></li>
+                                	</ul>
+                                </li>
+                                <li class="nosub"><a href="./개인인사정보_개인휴가조회.html">개인인사정보</a></li>
+                                <li class="nosub"><a href="./통합결재_통합문서목록.html">통합결재</a></li>
+                                <li class="nosub"><a href="./설문조사_진행가능한설문.html">설문조사</a></li>
+                                <li class="nosub"><a href="http://pub_lms-lite.tigensoft.co.kr:9090/_front/" target="_blank" title="새창열림">교육관리 <i class="far fa-window-restore"></i></a></li>
+                                <li><a href="#none">관리자</a>
+                                    <ul class="depth2">
+                                        <li><a href="./인사관리_인사사항조회.html">인사관리</a></li>
+                                        <li><a href="./자산관리.html">자산관리</a></li>
+                                        <li><a href="./대용량메일발송.html">대용량메일발송</a></li>
+                                        <li><a href="./통합메시지.html">통합메시지</a></li>
+                                        <li><a href="./설문조사관리.html">설문조사관리</a></li>
+                                        <li><a href="./통합메시지발송.html">통합메시지발송</a></li>
+                                        <li><a href="./통합메시지기준관리.html">통합메시지기준관리</a></li>
+                                    </ul>
+                                </li>
+                             </ul>
+                        </div>
+
+                        <div class="info">
+                            <a href="#none" title="펼치기" class="off">
+                                <i class="fas fa-user-cog fa-lg"></i>
+                                <span class="fs13">홍길동팀장 </span><br><span class="fs11">(기획예산팀)</span>
+                            </a>
+                            <ul>
+                                <li><a href="#none" class="openPopup" data-target="personalItem01"><i class="fas fa-user mr_5"></i> 비밀번호변경</a></li>
+                                <li><a href="#none" class="openPopup" data-target="personalItem02"><i class="fas fa-key mr_5"></i> 나의정보</a></li>
+                                <li><a href="./권한변경_공통.html"><i class="fas fa-key mr_5"></i> 권한설정</a></li>
+                                <li><a href="#none"><i class="fas fa-power-off mr_5"></i> 로그아웃</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //Header -->
+		<!--gside-->
+	    <div class="gside">
+	        <div class="skip">레프트메뉴 영역</div>
+	        <!--li태그에 nochild 클래스가 있으면 하위메뉴가 없다는 뜻으로 nochild를 넣어줘야 합니다.-->
+	        <div class="skip">공공센터</div>
+	        <ul>
+	            <li class="nochild"><a href="./공공센터_대체인력지원사업_운영현황.html">대체인력지원사업 운영현황</a></li>
+	            <li><a href="#none" class="on">대체인력지원사업 실적현황</a>
+	                <ul>
+	                    <li><a href="./공공센터_대체인력지원사업_실적현황_총괄실적보고(유형별).html" class="on">총괄실적보고</a></li>
+	                    <li><a href="./공공센터_대체인력지원사업_실적현황_국비사업내역.html">국비사업내역</a></li>
+	                    <li><a href="./공공센터_대체인력지원사업_실적현황_도비사업내역.html">도비사업내역</a></li>
+	                </ul>
+	            </li>
+	            <li class="nochild"><a href="./공공센터_대체인력지원사업_경기복지이으미배치현황.html">경기복지이으미 배치현황</a></li>
+	            <li><a href="#none">대체인력 급여지급내역</a>
+	                <ul>
+	                    <li><a href="./공공센터_대체인력지원사업_대체인력급여지급내역(국비).html">국비</a></li>
+	                    <li><a href="./공공센터_대체인력지원사업_대체인력급여지급내역(도비).html">도비</a></li>
+	                </ul>
+	            </li>
+	            <li><a href="#none">대체인력지원사업 기준관리</a>
+	                <ul>
+	                    <li><a href="./공공센터_대체인력지원사업_기준관리_대체인력시설유형관리.html">대체인력시설유형관리</a></li>
+	                    <li><a href="./공공센터_대체인력지원사업_기준관리_경기복지이으미인력폴관리.html">경기복지이으미 인력폴관리</a></li>
+	                </ul>
+	            </li>
+	        </ul>
+	    </div>
+	    <!--//gside-->
+		<!--content-->
+		<div class="content">
+			<div class="skip">컨텐츠 영역</div>
+			<!--content-wrapper-->
+			<div class="content-wrapper">
+				<!--cont-header-->
+				<div class="cont-header">
+					<div class="cont-header-left">
+						<h3 class="Depth2_title">대체인력지원사업 실적현황</h3>
+						<ul class="breadcrumb d_iblock">
+							<li>홈 <i class="fas fa-angle-right"></i></li>
+							<li>대체인력지원사업 <i class="fas fa-angle-right"></i></li>
+							<li>실적현황(총괄실적보고)</li>
+						</ul>
+					</div>
+				</div>
+				<!--//cont-header-->
+				<!--content-body-->
+				<div class="content-body">
+					<div class="card-header">
+						<h4 class="Depth3_title">총괄실적보고</h4>
+						<div class="heading-elements">
+							<!-- <button type="button" class="btn btn-secondary"><i class="fas fa-redo-alt"></i> 검색조건 초기화</button> -->
+							<button type="button" class="btn btn-primary"><i class="fas fa-search"></i> 조회</button>
+						</div>
+					</div>	
+					<div class="card-body">
+						<!--검색-->
+						<div class="search-area">
+							<table>
+								<colgroup>
+									<col width="13%"><col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">실적기준 년/월</th>
+										<td>
+											<div class="selectbox">
+												<select name="" title="" class="select">
+													<option value="2021" selected="selected">2021</option>
+													<option value="2025">2025</option>
+													<option value="2024">2024</option>
+													<option value="2023">2023</option>
+													<option value="2022">2022</option>
+												</select>
+											</div>
+											<div class="selectbox">
+												<select name="" title="" class="select">
+													<option value="전체">전체</option>
+													<option value="12">12월</option>
+													<option value="11" selected="selected">11월</option>
+													<option value="10">10월</option>
+													<option value="09">09월</option>
+													<option value="08">08월</option>
+													<option value="07">07월</option>
+													<option value="06">06월</option>
+													<option value="05">05월</option>
+													<option value="04">04월</option>
+													<option value="03">03월</option>
+													<option value="02">02월</option>
+													<option value="01">01월</option>
+												</select>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">보고구분</th>
+										<td>
+											<div class="selectbox">
+												<select name="" title="" class="select" onchange="window.open(value,'_blank');">
+													<option value="공공센터_대체인력지원사업_실적현황_총괄실적보고(유형별).html">유형별</option>
+													<option value="공공센터_대체인력지원사업_실적현황_총괄실적보고(신청사유별).html">신청사유별</option>
+													<option value="공공센터_대체인력지원사업_실적현황_총괄실적보고(직종별).html">직종별</option>
+													<option value="공공센터_대체인력지원사업_실적현황_총괄실적보고(파견현황별).html">파견현황별</option>
+													<option value="공공센터_대체인력지원사업_실적현황_총괄실적보고(파견일수별).html">파견일수별</option>
+													<option value="공공센터_대체인력지원사업_실적현황_총괄실적보고(주야간별).html" selected>주야간별</option>
+													<option value="공공센터_대체인력지원사업_실적현황_총괄실적보고(시군별).html">시군별</option>
+												</select>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!--//검색-->
+						<!--버튼영역-->
+						<div class="pr mt_30 tar box-area w100p">
+							<h6 class="f_left mt_15">◆ 주야간별</h6>
+							<button type="button" class="btn btn-completed"><i class="fas fa-download"></i> 엑셀다운로드</button>
+							<button type="button" class="btn btn-completed"><i class="fas fa-upload"></i> 엑셀업로드</button>
+							<button type="button" class="btn btn-info"><i class="far fa-file-excel"></i> 엑셀템플릿</button>
+						</div>
+						<!--//버튼영역-->
+
+						<!-- <table class="fixedHeader">
+							<colgroup>
+								<col width="20%"><col width="20%"><col width="20%"><col width="20%"><col width="20%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">월</th>
+									<th scope="col">구분</th>
+									<th scope="col">합계</th>
+									<th scope="col">주간</th>
+									<th scope="col">야간</th>
+								</tr>
+							</thead>
+						</table> -->
+						<script>
+							//수정버튼 클릭시
+							function op_corr4(){
+								$("#myTable4 tr td").not(".fix").empty();
+
+								$("#myTable4 tr td").not(".fix").html("<input type='text' name='' class='form-control'>");
+							}
+
+							//취소일 경우
+							let originmyTable = "";
+
+							$(document).ready(function() {
+								originmyTable = $("#myTable4").html(); //html() : 선택한 요소안의 내용르 가져오거나, 다른내용으로 바꾼다
+							});
+
+							function cancel4(){
+								$("#myTable4").empty();
+								$("#myTable4").append(originmyTable);
+							}
+
+						</script>
+						<div class="data_ta_list" style="height:600px;">
+							<table>
+								<colgroup>
+									<col width="20%"><col width="20%"><col width="20%"><col width="20%"><col width="20%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">월</th>
+										<th scope="col">구분</th>
+										<th scope="col">합계</th>
+										<th scope="col">주간</th>
+										<th scope="col">야간</th>
+									</tr>
+								</thead>
+								<tbody id="myTable4">
+									<tr class="sogye-bg">
+										<td class="bold fix" rowspan="3">누계</td>
+										<td class="bold fix">국비</td>
+										<td>8</td>
+										<td>8</td>
+										<td>-</td>
+									</tr>
+									<tr class="sogye-bg">
+										<td class="bold fix borth">도비</td>
+										<td>14</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="sogye-bg">
+										<td class="bold fix borth">계</td>
+										<td>22</td>
+										<td>15</td>
+										<td>8</td>
+									</tr>
+									<tr>
+										<td class="bold fix" rowspan="3">1월</td>
+										<td class="bold fix">국비</td>
+										<td>1</td>
+										<td>1</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix borth">도비</td>
+										<td>1</td>
+										<td>1</td>
+										<td>1</td>
+									</tr>
+									<tr>
+										<td class="bold fix borth">계</td>
+										<td>2</td>
+										<td>1</td>
+										<td>1</td>
+									</tr>
+									<tr>
+										<td class="bold fix" rowspan="3">2월</td>
+										<td class="bold fix">국비</td>
+										<td>1</td>
+										<td>1</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix borth">도비</td>
+										<td>2</td>
+										<td>1</td>
+										<td>1</td>
+									</tr>
+									<tr>
+										<td class="bold fix borth">계</td>
+										<td>3</td>
+										<td>2</td>
+										<td>1</td>
+									</tr>
+									<tr>
+										<td class="bold fix" rowspan="3">3월</td>
+										<td class="bold fix">국비</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix borth">도비</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix borth">계</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix" rowspan="3">4월</td>
+										<td class="bold fix">국비</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix borth">도비</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix borth">계</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix" rowspan="3">5월</td>
+										<td class="bold fix">국비</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix borth">도비</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix borth">계</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix" rowspan="3">6월</td>
+										<td class="bold fix">국비</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix borth">도비</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix borth">계</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix" rowspan="3">7월</td>
+										<td class="bold fix">국비</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix borth">도비</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix borth">계</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix" rowspan="3">8월</td>
+										<td class="bold fix">국비</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix borth">도비</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix borth">계</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix" rowspan="3">9월</td>
+										<td class="bold fix">국비</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix borth">도비</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix borth">계</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix" rowspan="3">10월</td>
+										<td class="bold fix">국비</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix borth">도비</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix borth">계</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix" rowspan="3">11월</td>
+										<td class="bold fix">국비</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix borth">도비</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix borth">계</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix" rowspan="3">12월</td>
+										<td class="bold fix">국비</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix borth">도비</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="bold fix borth">계</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="tar mt_30">
+							<button type="button" class="btn btn-info" onclick="op_corr4();">수정</button>
+							<button type="button" class="btn btn-secondary" onclick="cancel4();">취소</button>
+							<button type="button" class="btn btn-info">저장</button>
+						</div>
+					</div>
+				</div>
+				<!--//content-body-->
+			</div><!--//content-wrapper-->
+		</div><!--//content-->
+	</div><!--//wrapper-->
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>급여명세서 출력용</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css"> 
+<style type="text/css">
+body {
+    width: 100%;height: 100%;
+    margin: 0;padding: 0;
+    background-color: #fff;
+    font-weight:normal; font-style:normal;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.paper {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 30mm;
+    margin: 10mm auto;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.print_content {
+    padding: 0;
+    height: 257mm;
+}
+
+.tac{text-align:center !important;}
+.tar{text-align:right !important;}
+.tal{text-align:left !important;}
+.p_date{padding-right:30px;}
+.yellow{background-color:#FFFF00; color:red;}
+.txt{font-size:11px; padding-top:10px;}
+p.HStyle0{
+	margin:0; text-align:center; text-indent:0.0pt; 
+	line-height:140%; font-size:11.0pt; font-family: 'Noto Sans KR', sans-serif;/* font-weight:600; *//*letter-spacing:0;*/ color:#000000;}
+table{width:100%; border-collapse:collapse; 
+	  border: solid #000000 0.5pt;
+	  font-family: 'Noto Sans KR', sans-serif;
+	}
+table td{
+	/*border-left:solid #000000 1.1pt; */
+	/*border-top:solid #000000 0.4pt;*/
+	border-right:solid #000000 0.4pt;
+	border-bottom:solid #000000 0.4pt; 
+	padding:2pt 5.1pt 2pt 5.1pt;
+	font-size:12px;
+}
+table td p{text-align:center;}
+.seomyeong{position:absolute; top:20px; left:20px; width:90px;}
+.seomyeong > div{border: solid #000 1pt; padding:2pt;}
+
+.table {width:55%; margin:0 auto;}
+.table > table{}
+.table > table > td{border:none;}
+
+@page {
+    size: A4;
+	margin: 0;
+}
+@media print {
+    html, body {
+        width: 210mm;height: 297mm;
+        background: #fff;
+    }
+    .paper {
+        margin: 0;
+        border: initial;
+        border-radius: initial;
+        width: initial;
+        min-height: initial;
+        box-shadow: initial;
+        background: initial;
+        page-break-after: always;
+    }
+}
+</style>
+</head>
+
+<body>
+	<div>
+	    <div class="paper">
+	        <div class="print_content">
+	        	<div CLASS="HStyle0 tac">
+	        		<TABLE border="0" cellspacing="0" cellpadding="0">
+        				<TR>
+							<TD colspan="5" valign="middle" >
+								<SPAN STYLE='font-size:20pt;font-family:"HY헤드라인M";text-align:center; font-weight:bold;'>급 여 명 세 서</SPAN>
+								<p class="tar p_date" >지급일 : </p>
+							</TD>
+							<!-- <TD valign="middle" style='width:150px;height:75px;'>
+								<P><SPAN STYLE='font-size:12pt;'>제 2020 - 03 호</SPAN></P>
+							</TD> -->
+						</TR>
+						<TR>
+							<TD valign="middle" style='width:100px;height:40px;'>부서명(기관명)</TD>
+							<TD valign="middle" style='width:120px;'></TD>
+							<TD valign="middle">호 봉</TD>
+							<TD colspan="2" valign="middle"></TD>
+						</TR>
+						<TR>
+							<TD valign="middle" style='height:40px;'>성명</TD>
+							<TD valign="middle"></TD>
+							<TD valign="middle">직급</TD>
+							<TD colspan="2" valign="middle"></TD>
+						</TR>
+						<TR>
+							<TD colspan="5" valign="middle" style='width:100%;height:15px;padding:0;'></TD>
+						</TR>
+						<TR>
+							<TD colspan="5" valign="middle" style='height:25px; background:#FBE5D7;'>세 부 내 역</TD>
+						</TR>
+						<TR>
+							<TD colspan="3" valign="middle">지 &nbsp; 급</TD>
+							<TD colspan="2" valign="middle">공 &nbsp; 제</TD>
+						</TR>
+						<TR>
+							<TD colspan="2" valign="middle">입금항목</TD>
+							<TD valign="middle">지급금액(원)</TD>
+							<TD valign="middle">공제항목</TD>
+							<TD valign="middle">공제금액(원)</TD>
+						</TR>
+						<TR>
+							<TD rowspan="10" valign="middle">매월 지급</TD>
+							<TD valign="middle">기본급</TD>
+							<TD valign="middle">&nbsp;</TD>
+							<TD valign="middle">소득세</TD>
+							<TD valign="middle">&nbsp;</TD>
+						</TR>
+						<TR>
+							<!-- <TD valign="middle">매월 지급</TD> -->
+							<TD valign="middle">직책수당</TD>
+							<TD valign="middle">&nbsp;</TD>
+							<TD valign="middle" class="yellow">기타소득세</TD>
+							<TD valign="middle">&nbsp;</TD>
+						</TR>
+						<TR>
+							<!-- <TD valign="middle">매월 지급</TD> -->
+							<TD valign="middle">정액급식비</TD>
+							<TD valign="middle">&nbsp;</TD>
+							<TD valign="middle">국민연금</TD>
+							<TD valign="middle">&nbsp;</TD>
+						</TR>
+						<TR>
+							<!-- <TD valign="middle">매월 지급</TD> -->
+							<TD valign="middle">지급보조비</TD>
+							<TD valign="middle">&nbsp;</TD>
+							<TD valign="middle">고용보험</TD>
+							<TD valign="middle">&nbsp;</TD>
+						</TR>
+						<TR>
+							<!-- <TD valign="middle">매월 지급</TD> -->
+							<TD valign="middle">가족수당</TD>
+							<TD valign="middle">&nbsp;</TD>
+							<TD valign="middle">건강보험</TD>
+							<TD valign="middle">&nbsp;</TD>
+						</TR>
+						<TR>
+							<!-- <TD valign="middle">매월 지급</TD> -->
+							<TD valign="middle" class="yellow">생활임금 보전액</TD>
+							<TD valign="middle">&nbsp;</TD>
+							<TD valign="middle">장기요양보험</TD>
+							<TD valign="middle">&nbsp;</TD>
+						</TR>
+						<TR>
+							<!-- <TD valign="middle">매월 지급</TD> -->
+							<TD valign="middle" class="yellow">연장근로수당</TD>
+							<TD valign="middle">&nbsp;</TD>
+							<TD valign="middle">&nbsp;</TD>
+							<TD valign="middle">&nbsp;</TD>
+						</TR>
+						<TR>
+							<!-- <TD valign="middle">매월 지급</TD> -->
+							<TD valign="middle" class="yellow">야간근로수당</TD>
+							<TD valign="middle">&nbsp;</TD>
+							<TD valign="middle">&nbsp;</TD>
+							<TD valign="middle">&nbsp;</TD>
+						</TR>
+						<TR>
+							<!-- <TD valign="middle">매월 지급</TD> -->
+							<TD valign="middle">&nbsp;</TD>
+							<TD valign="middle">&nbsp;</TD>
+							<TD valign="middle">&nbsp;</TD>
+							<TD valign="middle">&nbsp;</TD>
+						</TR>
+						<TR>
+							<!-- <TD valign="middle">매월 지급</TD> -->
+							<TD valign="middle">&nbsp;</TD>
+							<TD valign="middle">&nbsp;</TD>
+							<TD valign="middle">&nbsp;</TD>
+							<TD valign="middle">&nbsp;</TD>
+						</TR>
+						<TR>
+							<TD rowspan="4" valign="middle">격월 또는 <br>부정기 지급</TD>
+							<TD valign="middle" class="yellow">비정규직공정수당</TD>
+							<TD valign="middle">&nbsp;</TD>
+							<TD valign="middle">&nbsp;</TD>
+							<TD valign="middle">&nbsp;</TD>
+						</TR>
+						<TR>
+							<!-- <TD valign="middle">격월 또는 부정기 지급</TD> -->
+							<TD valign="middle">명절수당</TD>
+							<TD valign="middle">&nbsp;</TD>
+							<TD valign="middle">&nbsp;</TD>
+							<TD valign="middle">&nbsp;</TD>
+						</TR>
+						<TR>
+							<!-- <TD valign="middle">격월 또는 부정기 지급</TD> -->
+							<TD valign="middle"></TD>
+							<TD valign="middle">&nbsp;</TD>
+							<TD valign="middle">&nbsp;</TD>
+							<TD valign="middle">&nbsp;</TD>
+						</TR>
+						<TR>
+							<!-- <TD valign="middle">격월 또는 부정기 지급</TD> -->
+							<TD valign="middle">&nbsp;</TD>
+							<TD valign="middle">&nbsp;</TD>
+							<TD valign="middle">&nbsp;</TD>
+							<TD valign="middle">&nbsp;</TD>
+						</TR>
+						<TR>
+							<TD colspan="2" valign="middle">지급액 합계</TD>
+							<!-- <TD valign="middle"></TD> -->
+							<TD valign="middle"></TD>
+							<TD valign="middle">공제액 합계</TD>
+							<TD valign="middle"></TD>
+						</TR>
+						<TR>
+							<TD colspan="2" valign="middle" style='border-bottom:0; border-right:0;'></TD>
+							<!-- <TD valign="middle"></TD> -->
+							<TD valign="middle" style='border-bottom:0;'></TD>
+							<TD valign="middle">실수령액(원)</TD>
+							<TD valign="middle"></TD>
+						</TR>
+						<TR>
+							<TD colspan="5" valign="middle" style='height:15px;'></TD>
+						</TR>
+						<TR>
+							<TD colspan="5" valign="middle" style='height:30px; background:#FBE5D7;'>계 산 방 법</TD>
+						</TR>
+						<TR>
+							<TD valign="middle">구분</TD>
+							<TD colspan="3" valign="middle" class="yellow">산출식 또는 산출방법</TD>
+							<TD valign="middle">지급액(원)</TD>
+						</TR>
+						<TR>
+							<TD valign="middle">생활임금 보전액</TD>
+							<TD colspan="3" valign="middle" class="yellow"></TD>
+							<TD valign="middle"></TD>
+						</TR>
+						<TR>
+							<TD valign="middle">연장근로수당</TD>
+							<TD colspan="3" valign="middle" class="yellow"></TD>
+							<TD valign="middle"></TD>
+						</TR>
+						<TR>
+							<TD valign="middle">야간근로수당</TD>
+							<TD colspan="3" valign="middle" class="yellow"></TD>
+							<TD valign="middle"></TD>
+						</TR>
+						<TR>
+							<TD valign="middle">가족수당</TD>
+							<TD colspan="3" valign="middle" class="yellow"></TD>
+							<TD valign="middle"></TD>
+						</TR>
+						<TR>
+							<TD valign="middle">명절비</TD>
+							<TD colspan="3" valign="middle" class="yellow"></TD>
+							<TD valign="middle"></TD>
+						</TR>
+	        		</TABLE>
+	        		<div class="tal txt">* 해당 양식은 예시이므로 각 기관에서 지급하고 있는 항목으로 작성해주시기 바랍니다.</div>
+	        	</div>
+	        </div>    
+	    </div>
+	</div>
+</body>
+</html>

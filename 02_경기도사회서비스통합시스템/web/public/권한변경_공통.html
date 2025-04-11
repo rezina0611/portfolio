@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>경기도사회서비스원 통합사회정보시스템</title>
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/layout.css">
+<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/content.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/datepicker.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./js/jquery.placeholder.min.js"></script>
+<script src="./js/datepicker.js"></script>
+<script src="./js/datepicker-ko.js"></script><!-- datepicker 한국어로 -->
+<script src="./js/script.js"></script>
+<script>
+	$(function() {
+		$.datepicker.setDefaults($.datepicker.regional['ko']); //datepicker 한국어로 사용하기 위한 언어설정
+		$('.datepicker01').datepicker();
+		$('.datepicker02').datepicker();
+	});
+</script>
+<script> 
+     function addcate(){
+        document.getElementById("modal_pop").style.display='inline'
+     }
+
+     function closeCtrlCate(){
+     	document.getElementById("modal_pop").style.display='none'
+     }
+</script> 
+</head>
+<div class="mask"></div>
+<div class="modal">
+    <div class="layerpopupArea">
+        <span class="close">&times;</span>
+        <!-- Modal content -->
+        <div  id="personalItem01" class="modal-content">    
+            <h4>비밀번호 변경</h4>
+            <div class="card-content">
+                <div class="tar fs12 mb_5"><span class="red">*</span>필수입력항목</div>
+                <div class="regist-form">
+                    <table>
+                        <colgroup>
+                            <col width="25%"><col width="">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">현재 비밀번호 <span class="red">*</span></th>
+                                <td><input type="text" class="form-control" title="아이디 입력해주세요" name="id"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">새 비밀번호 <span class="red">*</span></th>
+                                <td>
+                                    <input type="text" class="form-control" title="이름 입력해주세요" name="name">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">새 비밀번호 확인 <span class="red">*</span></th>
+                                <td><input type="text" class="form-control" title="이메일주소 입력해주세요" name="email"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="red fs12 mt_5">비밀번호는 8자 ~ 20자, 영문, 숫자, 특수문자 사용가능</div>
+                <div class="tar mt_30">
+                    <button type="button" class="btn btn-secondary" id="close">취소</button>
+                    <button type="button" class="btn btn-info">확인</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal content -->
+        <div  id="personalItem02" class="modal-content">
+            <h4>나의정보</h4>
+            <div class="card-content">
+                <div class="tar fs12 mb_5"><span class="red">*</span>필수입력항목</div>
+                <div class="regist-form">
+                    <table>
+                        <colgroup>
+                            <col width="20%"><col width="">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">소속 <span class="red">*</span></th>
+                                <td class="tal">기획예산팀</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">이름 <span class="red">*</span></th>
+                                <td class="tal">홍길동</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">직급/직책 <span class="red">*</span></th>
+                                <td class="tal">팀장</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">이메일주소 <span class="red">*</span></th>
+                                <td class="tal">awsdert@gg.pass.or.kr</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tar mt_30">
+                    <button type="button" class="btn btn-secondary" id="close">취소</button>
+                    <button type="button" class="btn btn-info">확인</button>
+                </div>
+            </div>
+        </div>
+        <!-- //Modal content -->
+    </div>
+</div>
+
+<div class="modal_pop" id="modal_pop">
+	<div class="layerpopupArea">
+		<span class="close" onclick="closeCtrlCate();">&times;</span>
+		<!-- Modal content Performance 실적 권한 변경-->
+	    <div id="Performance" class="modal-content-pop">
+	    	<h4>권한변경</h4>
+	    	<div class="card-content">
+	    		<div class="tal fs14 mb_10 bold">박길동주무관 (아동보육팀)</div>
+	    		<div class="regist-form">
+	    			<table>
+						<colgroup>
+							<col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%">
+							<col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th class="tac" scope="col"></th>
+								<th class="tac" scope="col">전체</th>
+								<th class="tac" scope="col">조회</th>
+								<th class="tac" scope="col">등록</th>
+								<th class="tac" scope="col">수정</th>
+								<th class="tac" scope="col">삭제</th>
+								<th class="tac" scope="col">엑셀<br>업로드</th>
+								<th class="tac" scope="col">엑셀<br>다운로드</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">실적현황</th>
+								<td><input type="checkbox" id="ex_chk"></td>
+								<td><input type="checkbox" id="ex_chk"></td>
+								<td><input type="checkbox" id="ex_chk"></td>
+								<td><input type="checkbox" id="ex_chk"></td>
+								<td><input type="checkbox" id="ex_chk"></td>
+								<td><input type="checkbox" id="ex_chk"></td>
+								<td><input type="checkbox" id="ex_chk"></td>
+							</tr>
+							<tr>
+								<th scope="row">실적등록</th>
+								<td><input type="checkbox" id="ex_chk" checked></td>
+								<td><input type="checkbox" id="ex_chk" checked></td>
+								<td><input type="checkbox" id="ex_chk" checked></td>
+								<td><input type="checkbox" id="ex_chk" checked></td>
+								<td>-</td>
+								<td><input type="checkbox" id="ex_chk" checked></td>
+								<td><input type="checkbox" id="ex_chk" checked></td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    		<div class="tar mt_30">
+	    			<button type="button" class="btn btn-secondary" onclick="closeCtrlCate();">취소</button>
+	    			<button type="button" class="btn btn-info">확인</button>
+	    		</div>
+	    	</div>
+		</div>
+		<!-- //Modal content -->
+	</div>
+</div>
+
+<body class="bg">  <!--style="overflow-y:hidden; overflow-x:auto;"--> 
+	<!--wrapper-->
+	<div class="wrapper">
+		<!-- Header -->
+        <div id="header">
+            <div class="skip">상단메뉴</div>
+            <div class="header-top main-width">
+                <div class="container navbar">
+                    <div class="inner-container">
+                        <div>
+                            <h1 class="logo">
+                                <img src="./images/logo.png" alt="경기도사회서비스원"><br><span>통합사회정보시스템</span>
+                            </h1>
+                        </div>
+                       
+                       <div class="gnb">
+                            <div class="skip">상단메뉴</div>
+                            <!--하위메뉴가 없는 메뉴는 해당li태그에 class="nosub" 넣어주세요-->
+                            <ul class="depth1">
+                                <li class="nosub"><a href="./home(대시보드).html">홈</a></li>
+                                <li class="nosub"><a href="./예산집행율조회.html">예산집행율</a></li>
+                                <li class="nosub"><a href="./종사자현황_(고용형태별)조회.html">종사자현황</a></li>
+                                <li class="nosub"><a href="./종합재가센터_운영현황목록.html">종합재가센터</a></li>
+                                <li><a href="#none">국공립시설</a>
+                                	<ul class="depth2">
+                                		<li><a href="./국공립시설_운영현황목록(어린이집).html">어린이집</a></li>
+                                		<li><a href="./국공립시설_운영현황목록(다함께돌봄).html">다함께돌봄센터</a></li>
+                                	</ul>
+                                </li>
+                                <li><a href="#none">공공센터</a>
+                                	<ul class="depth2">
+                                		<li><a href="./공공센터_대체인력지원사업_운영현황.html">대체인력지원사업</a></li>
+                                		<li><a href="./공공센터_노인보호전문기관_운영현황.html">노인보호전문기관</a></li>
+                                		<li><a href="./공공센터_노인종합상담센터_운영현황.html">노인종합상담센터</a></li>
+                                		<li><a href="./공공센터_노인일자리지원센터_운영현황.html">노인일자리지원센터</a></li>
+                                		<li><a href="./공공센터_지역사회서비스지원단_운영현황.html">지역사회서비스지원단</a></li>
+                                		<li><a href="./공공센터_장기요양요원지원센터_운영현황.html">장기요양요원지원센터</a></li>
+                                	</ul>
+                                </li>
+                                <li class="nosub"><a href="./개인인사정보_개인휴가조회.html">개인인사정보</a></li>
+                                <li class="nosub"><a href="./통합결재_통합문서목록.html">통합결재</a></li>
+                                <li class="nosub"><a href="./설문조사_진행가능한설문.html">설문조사</a></li>
+                                <li class="nosub"><a href="http://pub_lms-lite.tigensoft.co.kr:9090/_front/" target="_blank" title="새창열림">교육관리 <i class="far fa-window-restore"></i></a></li>
+                                <li><a href="#none">관리자</a>
+                                    <ul class="depth2">
+                                        <li><a href="./인사관리_인사사항조회.html">인사관리</a></li>
+                                        <li><a href="./자산관리.html">자산관리</a></li>
+                                        <li><a href="./대용량메일발송.html">대용량메일발송</a></li>
+                                        <li><a href="./통합메시지.html">통합메시지</a></li>
+                                        <li><a href="./설문조사관리.html">설문조사관리</a></li>
+                                        <li><a href="./통합메시지발송.html">통합메시지발송</a></li>
+                                        <li><a href="./통합메시지기준관리.html">통합메시지기준관리</a></li>
+                                    </ul>
+                                </li>
+                             </ul>
+                        </div>
+
+                        <div class="info">
+                            <a href="#none" title="펼치기" class="off">
+                                <i class="fas fa-user-cog fa-lg"></i>
+                                <!-- <span> 박길동팀장 (아동보육팀)</span> -->
+                                <span class="fs13"> 박길동팀장 </span><br><span class="fs11">(기획예산팀)</span>
+                            </a>
+                            <ul>
+                                <li><a href="#none" class="openPopup" data-target="personalItem01"><i class="fas fa-user mr_5"></i> 비밀번호변경</a></li>
+                                <li><a href="#none" class="openPopup" data-target="personalItem02"><i class="fas fa-key mr_5"></i> 나의정보</a></li>
+                                <li><a href="#none"><i class="fas fa-key mr_5"></i> 권한설정</a></li>
+                                <li><a href="#none"><i class="fas fa-power-off mr_5"></i> 로그아웃</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //Header -->
+		<!--gside-->
+		<div class="gside">
+			<div class="skip">레프트메뉴 영역</div>
+			<ul>
+				<li class="nochild"><a href="#none">권한변경</a></li>
+				<!--<li class="nochild"><a href="#none">Depth2</a></li>
+				<li class="nochild"><a href="#none">Depth2</a></li>
+				<li><a href="#none">Depth2</a>
+					<ul>
+						<li><a href="#none">- Depth3메뉴</a></li>
+						<li><a href="#none">- Depth3메뉴</a></li>
+						<li><a href="#none">- Depth3메뉴</a></li>
+						<li><a href="#none">- Depth3메뉴</a></li>
+						<li><a href="#none">- Depth3메뉴</a></li>
+					</ul>
+				</li>
+				<li><a href="#none" class="open">Depth2</a>
+					<ul style="display:block;">
+						<li><a href="#none">- Depth3메뉴Depth3메뉴Depth3메뉴</a></li>
+						<li><a href="#none">- Depth3메뉴</a></li>
+						<li><a href="#none">- Depth3메뉴</a></li>
+						<li><a href="#none">- Depth3메뉴</a></li>
+						<li><a href="#none">- Depth3메뉴</a></li>
+					</ul>
+				</li>
+				<li><a href="#none">Depth2</a>
+					<ul>
+						<li><a href="#none">- Depth3메뉴</a></li>
+						<li><a href="#none">- Depth3메뉴</a></li>
+						<li><a href="#none">- Depth3메뉴</a></li>
+						<li><a href="#none">- Depth3메뉴</a></li>
+						<li><a href="#none">- Depth3메뉴</a></li>
+					</ul>
+				</li>
+				<li class="nochild"><a href="#none">Depth2</a></li>
+				<li class="nochild"><a href="#none">Depth2</a></li>-->
+			</ul>
+		</div>
+		<!--//gside-->
+		<!--content-->
+		<div class="content">
+			<div class="skip">컨텐츠 영역</div>
+			<!--content-wrapper-->
+			<div class="content-wrapper">
+				<!--cont-header-->
+				<div class="cont-header">
+					<div class="cont-header-left">
+						<h3 class="Depth2_title">권한변경</h3>
+						<ul class="breadcrumb d_iblock">
+							<li>아동보육팀 <i class="fas fa-angle-right"></i></li>
+							<li>영유아-다함께돌봄(홈) <i class="fas fa-angle-right"></i></li>
+							<li>권한변경</li>
+						</ul>
+					</div>
+				</div>
+				<!--//cont-header-->
+				<!--content-body-->
+				<div class="content-body">
+					<div class="card-header">
+						<h4 class="Depth3_title">권한변경</h4>
+						<div class="heading-elements">
+							<button type="button" class="btn btn-secondary"><i class="fas fa-redo-alt"></i> 검색조건 초기화</button>
+							<button type="button" class="btn btn-primary"><i class="fas fa-search"></i> 조회</button>
+						</div>
+					</div>	
+					<div class="card-body">
+						<!-- 검색 -->
+						<div class="search-area">
+							<table>
+								<colgroup>
+									<col width="9%"><col width="24.333%"><col width="9%"><col width="24.333%"><col width="9%"><col width="24.333%">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">소속</th>
+										<td>아동보육팀</td>
+										<th scope="row">이름</th>
+										<td><input type="text" class="form-control w200" title="" value="" name=""></td>
+										<th scope="row">ID</th>
+										<td><input type="text" class="form-control w200" title="" value="" name=""></td>
+									</tr>
+									<tr>
+										<th scope="row">이메일주소</th>
+										<td><input type="text" class="form-control w200" title="" value="" name=""></td>
+										<th scope="row">사용여부</th>
+										<td colspan="3">
+											<div class="selectbox">
+												<select name="" title="" class="select">
+													<option value="" selected="selected">전체</option>
+													<option value="">사용중</option>
+													<option value="">사용중지</option>
+												</select>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!--// 검색 -->
+						<!-- 버튼영역 -->
+						<div class="pr mt_30">
+							<small class="text-muted">총 <b class="orange bold">100</b>건</small>
+							<!--<div class="d_inline">기능버튼영역</div>-->
+							<div class="pa list-top" style="right:0; top:-10px;">
+								<!--<button type="button" class="btn btn-light btn-sm">10개씩보기</button>-->
+								<select class="select" id="article-limit" name="articleLimit" title="보여질 게시물 개수를 선택하세요.">
+									<option value="전체">전체보기</option>
+									<option value="50">50개씩보기</option>
+									<option value="40">40개씩보기</option>
+									<option value="30">30개씩보기</option>
+									<option value="20">20개씩보기</option>
+									<option value="10" selected="">10개씩보기</option>
+								</select>
+							</div>
+						</div>
+						<!-- //버튼영역 -->
+						<div class="table_bbs_list">
+							<table>
+								<colgroup>
+									<col width="6%"><!--no-->
+									<col width="8%"><!--소속-->
+									<col width="8%"><!--이름-->
+									<col width="8%"><!--직급/직책-->
+									<col width="9%"><!--ID-->
+									<col width="16%"><!--이메일주소-->
+									<col width="12%"><!--권한-->
+									<col width="13%"><!--권한-->
+									<col width="11%"><!--최종수정일시-->
+									<col width="9%"><!--사용여부-->
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col" rowspan="2">No</th>
+										<th scope="col" rowspan="2">소속</th>
+										<th scope="col" rowspan="2">이름</th>
+										<th scope="col" rowspan="2">직급/직책</th>
+										<th scope="col" rowspan="2">ID</th>
+										<th scope="col" rowspan="2">이메일주소</th>
+										<th scope="col" colspan="2">권한</th>
+										<th scope="col" rowspan="2">최종수정일시</th>
+										<th scope="col" rowspan="2">사용여부</th>
+									</tr>
+									<tr>
+										<th scope="col" class="borth">1depth</th>
+										<th scope="col">2depth</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>100</td>
+										<td>노인요양팀</td>
+										<td>이길동</td>
+										<td>팀장</td>
+										<td>Asdfg44</td>
+										<td>jin76@daum.net</td>
+										<td>종합재가센터</td>
+										<td>
+											<div class="f_left w50p"><button type="button" class="badge bg-blue" onclick="addcate()">실적현황</button></div>
+											<div class="f_left w50p"><button type="button" class="badge bg-blue" onclick="addcate()">실적등록</button></div>
+										</td>
+										<td>2021-06-30 14:18</td>
+										<td><a href="#none"><span class="badge bg-light-gray">사용중지</span></a></td>
+									</tr>
+									<tr>
+										<td>100</td>
+										<td>노인요양팀</td>
+										<td>이길동</td>
+										<td>팀장</td>
+										<td>Asdfg44</td>
+										<td>jin76@daum.net</td>
+										<td>종합재가센터</td>
+										<td>
+											<div class="f_left w50p">&nbsp;</div>
+											<div class="f_left w50p"><button type="button" class="badge bg-blue">실적등록</button></div>
+										</td>
+										<td>2021-06-30 14:18</td>
+										<td>사용중지</td>
+									</tr>
+									<tr>
+										<td>100</td>
+										<td>노인요양팀</td>
+										<td>이길동</td>
+										<td>팀장</td>
+										<td>Asdfg44</td>
+										<td>jin76@daum.net</td>
+										<td>종합재가센터</td>
+										<td>
+											<div class="f_left w50p">&nbsp;</div>
+											<div class="f_left w50p"><button type="button" class="badge bg-blue">실적등록</button></div>
+										</td>
+										<td>2021-06-30 14:18</td>
+										<td><button type="button" class="badge bg-light-gray">사용중지</button></td>
+									</tr>
+									<tr>
+										<td>100</td>
+										<td>노인요양팀</td>
+										<td>이길동</td>
+										<td>팀장</td>
+										<td>Asdfg44</td>
+										<td>jin76@daum.net</td>
+										<td>종합재가센터</td>
+										<td>
+											<div class="f_left w50p">&nbsp;</div>
+											<div class="f_left w50p"><button type="button" class="badge bg-blue">실적등록</button></div>
+										</td>
+										<td>2021-06-30 14:18</td>
+										<td><button type="button" class="badge bg-light-gray">사용중지</button></td>
+									</tr>
+									<tr>
+										<td>100</td>
+										<td>노인요양팀</td>
+										<td>이길동</td>
+										<td>팀장</td>
+										<td>Asdfg44</td>
+										<td>jin76@daum.net</td>
+										<td>종합재가센터</td>
+										<td>
+											<div class="f_left w50p">&nbsp;</div>
+											<div class="f_left w50p"><button type="button" class="badge bg-blue">실적등록</button></div>
+										</td>
+										<td>2021-06-30 14:18</td>
+										<td><button type="button" class="badge bg-light-gray">사용중지</button></td>
+									</tr>
+									<tr>
+										<td>100</td>
+										<td>노인요양팀</td>
+										<td>이길동</td>
+										<td>팀장</td>
+										<td>Asdfg44</td>
+										<td>jin76@daum.net</td>
+										<td>종합재가센터</td>
+										<td>
+											<div class="f_left w50p">&nbsp;</div>
+											<div class="f_left w50p"><button type="button" class="badge bg-blue">실적등록</button></div>
+										</td>
+										<td>2021-06-30 14:18</td>
+										<td><button type="button" class="badge bg-light-gray">사용중지</button></td>
+									</tr>
+									<tr>
+										<td>100</td>
+										<td>노인요양팀</td>
+										<td>이길동</td>
+										<td>팀장</td>
+										<td>Asdfg44</td>
+										<td>jin76@daum.net</td>
+										<td>종합재가센터</td>
+										<td>
+											<div class="f_left w50p">&nbsp;</div>
+											<div class="f_left w50p"><span class="badge bg-blue">실적등록</span></div>
+										</td>
+										<td>2021-06-30 14:18</td>
+										<td><button type="button" class="badge bg-light-gray">사용중지</button></td>
+									</tr>
+									<tr>
+										<td>100</td>
+										<td>노인요양팀</td>
+										<td>이길동</td>
+										<td>팀장</td>
+										<td>Asdfg44</td>
+										<td>jin76@daum.net</td>
+										<td>종합재가센터</td>
+										<td>
+											<div class="f_left w50p">&nbsp;</div>
+											<div class="f_left w50p"><span class="badge bg-blue">실적등록</span></div>
+										</td>
+										<td>2021-06-30 14:18</td>
+										<td><button type="button" class="badge bg-light-gray">사용중지</button></td>
+									</tr>
+									<tr>
+										<td>100</td>
+										<td>노인요양팀</td>
+										<td>이길동</td>
+										<td>팀장</td>
+										<td>Asdfg44</td>
+										<td>jin76@daum.net</td>
+										<td>종합재가센터</td>
+										<td>
+											<div class="f_left w50p">&nbsp;</div>
+											<div class="f_left w50p"><span class="badge bg-blue">실적등록</span></div>
+										</td>
+										<td>2021-06-30 14:18</td>
+										<td><button type="button" class="badge bg-light-gray">사용중지</button></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- 페이징 -->
+						<div class="bbs_page">
+							<ul class="pagination">
+								<li class="page-item"><a class="page-link" href="#">« Prev</a></li>
+								<li class="page-item"><a class="page-link" href="#">Prev</a></li>
+								<li class="page-item"><a class="page-link" href="#">1</a></li>
+								<li class="page-item"><a class="page-link" href="#">2</a></li>
+								<li class="page-item active"><a class="page-link" href="#">3</a></li>
+								<li class="page-item"><a class="page-link" href="#">4</a></li>
+								<li class="page-item"><a class="page-link" href="#">5</a></li>
+								<li class="page-item"><a class="page-link" href="#">6</a></li>
+								<li class="page-item"><a class="page-link" href="#">7</a></li>
+								<li class="page-item"><a class="page-link" href="#">8</a></li>
+								<li class="page-item"><a class="page-link" href="#">9</a></li>
+								<li class="page-item"><a class="page-link" href="#">10</a></li>
+								<li class="page-item"><a class="page-link" href="#">Next</a></li>
+								<li class="page-item"><a class="page-link" href="#">Next »</a></li>
+							</ul>
+						</div>
+						<!-- //페이징 -->
+					</div>
+				</div>
+				<!--//content-body-->
+			</div><!--//content-wrapper-->
+		</div><!--//content-->
+	</div><!--//wrapper-->
+</body>
+</html>
