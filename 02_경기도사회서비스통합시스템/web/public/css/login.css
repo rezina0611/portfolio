@@ -1,0 +1,215 @@
+@charset "utf-8";
+
+@import url('https://webfontworld.github.io/gyeonggi/GyeonggiTitle.css');
+
+body.bg_login{
+  background: url(../images/bg_login_2.png) no-repeat center top;
+  background-size:cover;
+  width:100%; height:100vh;
+  overflow-x:hidden;
+  overflow-y:hidden;
+}
+
+.login_logo {}
+.colorf5{color:#f56532 !important;}
+
+.container.m200{margin:160px 0;}
+
+.login{width:500px;margin:0 auto; text-align:center;color:#fff;}
+
+@media (max-width: 1400px) {
+  .login {margin-left:20%;}
+}
+
+.login .tit > h2{font-size:36px; /*font-weight:550;*/ position: relative; 
+  font-family:'GyeonggiTitle'; display:block; color:#31353d;}
+.login .con {
+  margin-top:50px; background:#fff; padding:20px 20px 0 20px; 
+  border:1px solid #dce1e7;
+  border-radius:5px;
+  /* box-shadow:5px 5px 15px 0px #C5C5C5;
+  -webkit-box-shadow:5px 5px 15px 0px #C5C5C5;
+  -moz-box-shadow:5px 5px 15px 0px #C5C5C5;*/
+}
+.login .con h3{
+  font-size:24px;
+  font-weight:600; 
+  position:relative;
+  letter-spacing:-1px;
+  display:block;
+  padding-top:15px;
+  color:#000;
+}
+.login .con form{padding:30px; position: relative;}
+.login .con form p{margin-bottom:5px;}
+/*.login .con form input[type='text'], 
+.login .con form input[type='password']{line-height:50px;height:46px;width:75%;
+  padding:0 2%;color:#333;box-sizing: border-box; background-repeat: no-repeat;
+  border: 1px solid #d9e0e0; border-radius:5px;
+}*/
+.login .con form input::focus{border:1px solid #ccc; background-image:none;}
+/*.login .con form input::-webkit-input-placeholder{
+  background-size: contain;
+  background-position:1px center;
+  background-repeat: no-repeat;
+  text-align: left; padding-left:20px;
+  text-indent: 0;
+}
+*/
+/*.login .con form input[type='text']::-webkit-input-placeholder
+{background-image: url('../images/ico_login_user.png'); padding-left:25px;}
+
+.login .con form input[type='password']::-webkit-input-placeholder
+{background-image: url('../images/ico_login_pw.png');  padding-left:25px;}*/
+
+/*크롬브라우저 focus시 css 검은색 라인 제거하기*/
+input:focus, select:focus, option:focus, textarea:focus, button:focus{
+  outline: none;
+}
+/* Change the color to your own background color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+   transition: background-color 5000s ease-in-out 0s;
+   -webkit-transition: background-color 9999s ease-out;
+   -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+   -webkit-text-fill-color: #000 !important;
+}
+
+.login .con form label{
+  width:17%;
+  display:inline-block;
+  font-size:16px;
+  text-align:left;
+}
+.login .con form p {width: 100%;text-align: left;}
+.login .con form p:first-child{margin-bottom:6px; }
+.login .con form .btnLogin{position: absolute;right:28px;top:30px;font-size:16px;}
+.login .con form p.id-save{margin-top:10px; overflow:hidden;}
+.login .con form p.id-save input[type='checkbox']{}
+.login .con form p.id-save label{width:35%; font-size:14px; color:#000;}
+.login .con .lost_pass{
+  padding-top:20px; margin-top:20px;
+  text-align:right; border-top: 1px solid #eee;
+}
+.login .con .lost_pass > li {
+  display:inline-block;
+  margin: 0 5px 0 5px;
+  position: relative;
+}
+.login .con .lost_pass > li > a{
+  display:inline-block;
+  border-radius:5px;
+  border: 1px solid #dce1e7;
+  width:120px; height:36px; line-height:36px;
+  text-align:center;
+  padding:0 10px;
+  font-size:13px;
+  color:#555;
+  font-weight: bold;
+}
+.buttonClass{
+  display:inline-block;
+  width:95px; height:98px;
+  color:#fff; font-size:17px;
+  font-weight:bold;
+  border-radius:4px;
+  /*background:linear-gradient(#5593d3, #3378c1);*/
+  background:#3378c1;
+}
+
+.copyright{
+  text-align:center;
+  font-weight:bold;
+  color:#707070;
+  font-size:12px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+
+
+
+
+.id_pw_wrap .input_row {
+  display: table;
+  table-layout: fixed;
+  width: 75%;
+  padding:9px 17px 8px;
+  box-sizing: border-box;
+}
+.id_pw_wrap .input_row:first-child {
+  border-radius: 5px;
+  box-shadow: none;
+}
+.input_row+.input_row {
+ margin-top:2px;
+}
+.input_row {
+ position:relative;
+ display:block;
+ height:100%;
+ border:1px solid #dadada;
+ border-radius:5px;
+ box-sizing:border-box;
+ text-align:left;
+ box-shadow:0 2px 6px 0 rgba(68,68,68,.08);
+}
+.id_pw_wrap .input_row .icon_cell {
+  display: table-cell;
+  width: 24px;
+  vertical-align: middle;
+}
+
+.id_pw_wrap .input_row .icon_cell .icon_id,
+.id_pw_wrap .input_row .icon_cell .icon_pw{
+  background-image: url(https://ssl.pstatic.net/static/nid/login/m_sp_01_login_008d5216.png);
+  background-size: 266px 225px;
+  background-repeat: no-repeat;
+}
+.id_pw_wrap .input_row .icon_cell .icon_id,
+.id_pw_wrap .input_row .icon_cell .icon_pw{
+  position: absolute; 
+  top: 50%; left: 17px;
+  margin-top: -8px;
+}
+.id_pw_wrap .input_row .icon_cell .icon_id{
+  background-position: -93px -203px;
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+}
+.id_pw_wrap .input_row .icon_cell .icon_pw{
+  background-position: -129px -203px;
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+}
+
+.id_pw_wrap .input_row .input_text {
+  display: table-cell;
+  padding-right: 30px;
+}
+
+.input_text {
+  position: relative;
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: -.5px;
+  color: #222;
+  box-sizing: border-box;
+  z-index: 4;
+  border:0;
+  padding:5px 0;
+}
+
+
+
+
+
+
+
+
