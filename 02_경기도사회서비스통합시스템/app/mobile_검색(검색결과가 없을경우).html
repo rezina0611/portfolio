@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex"> <!--로봇 메타 태그는 검색엔진에 해당 페이지를 검색결과로 표시하지 않도록 지시-->
+<title>경기도사회서비스원 모바일서비스 APP</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="./css/default.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/base.css">
+
+
+<!-- JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+</head>
+
+<body>
+<header class="m-header bg9c">
+    <div class="inner">
+        <a href="#none" class="left" title="이전페이지로 이동"><img src="./images/ico_back.png"></a>
+        <h1>검색</h1>
+        <!-- <a href="#none" class="right" title="로그아웃"><img src="./images/ico_out.png"></a> -->
+    </div>
+</header>    
+
+<div class="contents">
+    <h2 class="hidden">종합재가센터 - 검색</h2>
+    <div class="p-1 bg-white">
+        <div class="search-area">
+            <input type="search" id="searchinput" placeholder="요양보호사를 입력해 검색하세요.">
+            <button class="btnClear" id="searchclear"></button>
+            <script>
+                $(function(){
+                    $('#searchinput').keyup(function(){
+                        $("#searchclear").toggle(Boolean($(this).val()));
+                    });
+
+                    $('#searchclear').toggle(Boolean($('#searchinput').val()));
+                    $('#searchclear').click(function(){
+                        $("#searchinput").val('').focus();
+                        $(this).hide();
+                    });
+                });
+            </script>
+            <div class="input-group-append">
+                <span class="input-group-text"><img src="./images/ico_seach_grey.png" alt="검색"></span>
+            </div>
+        </div>
+
+        <div class="sidebar-wrapper result">
+            <div class="sidebar-menu">
+                <ul>
+                    <li>
+                        <div class="case-title">검색결과가 없습니다.</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+         
+<!-- <footer>
+    <span class="app-v">버전 1.0.0</span>
+</footer> -->
+</body>
+</html>

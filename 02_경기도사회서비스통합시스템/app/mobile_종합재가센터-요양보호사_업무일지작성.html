@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex"> <!--로봇 메타 태그는 검색엔진에 해당 페이지를 검색결과로 표시하지 않도록 지시-->
+<title>경기도사회서비스원 모바일서비스 APP</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="./css/default.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/datepicker.css">  <!-- 제이쿼리 달력 css-->
+<link rel="stylesheet" href="./css/jquery.timepicker.css">
+
+<!-- JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/datepicker.js"></script><!-- 제이쿼리 달력 js-->
+<script src="./js/datepicker-ko.js"></script><!-- 제이쿼리 달력 datepicker 한국어로 -->
+<script src="./js/jquery.timepicker.min.js"></script>
+<script>
+    $(function(){
+        $(".stime, .etime").timepicker({
+            timeFormat: 'H:i A',   //H : 24시간제로 표시   A : AM/PM표시
+            interval:30,           //시간간격 : 30분
+            minTime: '09',         //최소시간
+            maxTime: '23:00pm',     //최대시간
+            dynamic: false,
+            dropdown: true,
+            scrollbar: true
+        });
+
+        //min : 날짜와 시간의 최소값 지정
+        //max : 날짜와 시간의 최대값 지정
+        //value : 화면에 표시할 초기값을 지정
+
+        //페이지 로딩시 현재시간 자동으로 입력.
+        //$(".stime").timepicker('setTime', new Date());
+        //출처: https://ellordnet.tistory.com/131 [IT in MT]  https://github.com/jonthornton/jquery-timepicker
+
+    });
+</script>
+</head>
+
+<body>
+<header class="m-header bg9c">
+    <div class="inner">
+        <a href="#none" class="left" title="이전페이지로 이동"><img src="./images/ico_back.png"></a>
+        <h1>업무일지 작성</h1>
+        <!-- <a href="#none" class="right" title="로그아웃"><img src="./images/ico_out.png"></a> -->
+    </div>
+</header>   
+
+<div class="contents">
+    <h2 class="hidden">종합재가센터 - 요양보호사</h2>
+    <div class="p-1 bg-white">
+        <div class="today-data">2021.12.14 화요일</div>
+        <table class="table no-bg mt-1">
+            <!-- <colgroup>
+                <col style="width:100%;">
+                <col style="width:100%;">
+            </colgroup> -->
+            <tbody>
+                <tr>
+                    <th scope="row">대상자 정보</th>
+                    <td>
+                        <textarea id="editable" name="editable" class="textarea" rows="5"  placeholder="최대 100자까지 등록할 수 있습니다." disabled>
+홍길동
+식사도움
+서울시 성동구 연무장5가길 7(성수동 2가)
+OOO 주의해주세요.
+                        </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">출근시간 <strong class="red">*</strong></th>
+                    <td>
+                        <input type="text" name="stime" value="" placeholder="출근시간선택"  class="input-tb stime">
+                        <!--<script>
+                            $(function(){
+                                //지금 시간, 분 표시 https://codepen.io/rafaelcastrocouto/pen/Iyewu
+                                let d = new Date(),
+                                    hr = d.getHours(),  //시간
+                                    min= d.getMinutes(); //분
+                                if(hr < 10) hr = '0' + hr; 
+                                if(min < 10) min = '0' + min; 
+                                $('input[type="time"][value="now"]').each(function(){ 
+                                    $(this).attr({'value': hr + ':' + min});
+                                });
+                            });
+                        </script>-->
+                        
+                        <!-- <div class="time">
+                            <div><input type="time" name="first_time" value="now" min="HH" max="MM" title="출근시간시작" class="input-tb"></div>
+                        </div> -->
+                    </td>
+                </tr>
+                <script>
+                    $(function(){
+                        //추가 버튼
+                        $(document).on("click","button[name=add]",function(){
+                            var addStaffText =
+                                '<div class="set mt_1 mb_0">'+
+                                '<select class="tal mb_0_5">'+
+                                '<option value="카테고리를 선택하세요">카테고리를 선택하세요</option>'+
+                                '<option value="방문요양">방문요양</option>'+
+                                '<option value="방문간호">방문간호</option>'+
+                                '<option value="스마트 돌봄">스마트 돌봄</option>'+
+                                '</select>'+
+                                '<select class="tal mb_0_5">'+
+                                '<option value="범주를 선택하세요">범주를 선택하세요</option>'+
+                                '<!--방문요양 (카테고리)-->'+
+                                '<option value="신체활동지원">신체활동지원</option>'+
+                                '<option value="인지활동지원">인지활동지원</option>'+
+                                '<option value="일상생활 함께하기">일상생활 함께하기</option>'+
+                                '<option value="정서지원">정서지원</option>'+
+                                '<option value="가시 및 일상생활지원">가시 및 일상생활지원</option>'+
+
+                                '<!--방문간호 (카테고리)-->'+
+                                '<option value="건강관리">건강관리</option>'+
+                                '<option value="신체기능관리">신체기능관리</option>'+
+                                '<option value="질병관리">질병관리</option>'+
+                                '<option value="인지기능">인지기능</option>'+
+                                '<option value="영양관리">영양관리</option>'+
+                                '<option value="배설관리">배설관리</option>'+
+
+                                '<!--스마트 돌봄 (카테고리)-->'+
+                                '<option value="AI 정서활동 관리">AI 정서활동 관리</option>'+
+                                '</select>'+
+
+                                '<select class="tal">'+
+                                '<option value="세부활동을 선택하세요">세부활동을 선택하세요</option>'+
+                                '<!--방문요양 (카테고리)- 신체활동지원 -->'+
+                                '<option value="안면청결도움">안면청결도움</option>'+
+                                '<option value="구강청결도움">구강청결도움</option>'+
+                                '<option value="두발청결도움">두발청결도움</option>'+
+                                '<option value="신체청결도움">신체청결도움</option>'+
+                                '<option value="옷갈이입기도움">옷갈이입기도움</option>'+
+                                '<option value="식사도움">식사도움</option>'+
+                                '<option value="배살도움">배살도움</option>'+
+                                '<option value="이동도움">이동도움</option>'+
+                                '<option value="신체기능의 유지 및 증진도움">신체기능의 유지 및 증진도움</option>'+
+                                '<!--방문요양 (카테고리)- 인지활동지원-->'+
+                                '<option value="인지훈련">인지훈련</option>'+
+                                '<!--방문요양 (카테고리)- 일상생활 함께하기-->'+
+                                '<option value="일상생활함께 하기">일상생활함께 하기 </option>'+
+                                '<!--방문요양 (카테고리)- 정서지원-->'+
+                                '<option value="정서지원">정서지원</option>'+
+                                '<!-- 방문요양(카테고리)- 가시 및 일상생활지원 -->'+
+                                '<option value="식사준비">식사준비</option>'+
+                                '<option value="청소 및 주변정돈">청소 및 주변정돈</option>'+
+                                '<option value="세탁">세탁</option>'+
+                                '<option value="외출도움">외출도움</option>'+
+                                '<option value="일상업무대행">일상업무대행</option>'+
+                                '<!--방문간호 (카테고리)- 건강관리 -->'+
+                                '<option value="">건강상태확인</option>'+
+                                '<!--방문간호 (카테고리)- 신체기능관리 -->'+
+                                '<option value="">관절구축 관리</option>'+
+                                '<option value="">이동장애 관리</option>'+
+                                '<!--방문간호 (카테고리)- 질병관리-->'+
+                                '<option value="투약관리">투약관리</option>'+
+                                '<option value="통증관리">통증관리</option>'+
+                                '<option value="감염예방">감염예방</option>'+
+                                '<option value="호흡기 간호">호흡기 간호</option>'+
+                                '<option value="상처관리">상처관리</option>'+
+                                '<option value="욕창">욕창</option>'+
+                                '<!--방문간호 (카테고리)- 인지기능-->'+
+                                '<option value="인지기능평가">인지기능평가</option>'+
+                                '<option value="인지기능강화">인지기능강화</option>'+
+                                '<!--방문간호 (카테고리)- 영양관리 -->'+
+                                '<option value="">영양관리(비위관 교환 및 관리), 상담</option>'+
+                                '<!--방문간호 (카테고리)- 배설관리-->'+
+                                '<option value="배뇨장애">배뇨장애</option>'+
+                                '<option value="배변장애">배변장애</option>'+
+                                '<!--스마트 돌봄 (카테고리) - AI 정서활동 관리-->'+
+                                '<option value="부모사랑 효둘">부모사랑 효돌</option>'+
+                                '<option value="AI감성케어 서비스">AI감성케어 서비스</option>'+
+                                '<option value="복양지도 서비스">복약지도 서비스</option>'+
+                                '</select>'+
+                                '</div>';
+                            var trHtml = $( "div.set:last" ); //last를 사용하여 trStaff라는 명을 가진 마지막 태그 호출
+
+                            trHtml.after(addStaffText); //마지막 trStaff명 뒤에 붙인다.
+                        }); 
+
+                        //삭제 버튼
+                        $(document).on("click","button[name=del]",function(){
+                            //var trHtml = $(this).parent().parent();
+                            var trHtml = $( "div.set:last" );
+                            trHtml.remove(); //div.set 삭제
+                        });
+
+                    });
+                </script>
+                <tr>
+                    <th scope="row" class="d-flex j-space-between">
+                        <div class="mt_1">업무 <strong class="red">*</strong></div>
+                        <div>
+                            <button class="btn-ss -add" id="addBtn" name="add">+ 추가</button>
+                            <button class="btn-ss -del" id="delBtn" name="del">- 삭제</button>
+                        </div>
+                    </th>
+                    <td>
+                        <div class="set mb_0">
+                            <select name="sel1" id="sel1" class="tal mb_0_5">
+                                <option value="카테고리를 선택하세요">카테고리를 선택하세요</option>
+                                <option value="방문요양">방문요양</option>
+                                <option value="방문간호">방문간호</option>
+                                <option value="스마트 돌봄">스마트 돌봄</option>
+                            </select>
+                            <select name="sel2" id="sel2" class="tal mb_0_5">
+                                <option value="범주를 선택하세요">범주를 선택하세요</option>
+                                <!--방문요양 (카테고리)-->
+                                <option value="">신체활동지원</option>
+                                <option value="">인지활동지원</option>
+                                <option value="">일상생활 함께하기</option>
+                                <option value="">정서지원</option>
+                                <option value="">가시 및 일상생활지원 </option>
+
+                                <!--방문간호 (카테고리)-->
+                                <option value="건강관리">건강관리</option>
+                                <option value="신체기능관리">신체기능관리</option>
+                                <option value="질병관리">질병관리</option>
+                                <option value="인지기능">인지기능</option>
+                                <option value="영양관리">영양관리</option>
+                                <option value="배설관리">배설관리</option>
+
+                                <!--스마트 돌봄 (카테고리)-->
+                                <option value="AI 정서활동 관리">AI 정서활동 관리</option>
+                            </select>
+                            <select name="sel3" id="sel3" class="tal">
+                                <option value="세부활동을 선택하세요">세부활동을 선택하세요</option>
+                                <!--방문요양 (카테고리)- 신체활동지원 -->
+                                <option value="안면청결도움">안면청결도움</option>
+                                <option value="구강청결도움">구강청결도움</option>
+                                <option value="두발청결도움">두발청결도움</option>
+                                <option value="신체청결도움">신체청결도움</option>
+                                <option value="옷갈이입기도움">옷갈이입기도움</option>
+                                <option value="식사도움">식사도움</option>
+                                <option value="배살도움">배살도움</option>
+                                <option value="이동도움">이동도움</option>
+                                <option value="신체기능의 유지 및 증진도움">신체기능의 유지 및 증진도움</option>
+                                <!--방문요양 (카테고리)- 인지활동지원-->
+                                <option value="인지훈련">인지훈련</option>
+                                <!--방문요양 (카테고리)- 일상생활 함께하기-->
+                                <option value="일상생활함께 하기">일상생활함께 하기 </option>
+                                <!--방문요양 (카테고리)- 정서지원-->
+                                <option value="정서지원">정서지원</option>
+                                <!-- 방문요양(카테고리)- 가시 및 일상생활지원 -->
+                                <option value="식사준비">식사준비</option>
+                                <option value="청소 및 주변정돈">청소 및 주변정돈</option>
+                                <option value="세탁">세탁</option>
+                                <option value="외출도움">외출도움</option>
+                                <option value="일상업무대행">일상업무대행</option>
+                                <!--방문간호 (카테고리)- 건강관리 -->
+                                <option value="">건강상태확인</option>
+                                <!--방문간호 (카테고리)- 신체기능관리 -->
+                                <option value="">관절구축 관리</option>
+                                <option value="">이동장애 관리</option>
+                                <!--방문간호 (카테고리)- 질병관리-->
+                                <option value="투약관리">투약관리</option>
+                                <option value="통증관리">통증관리</option>
+                                <option value="감염예방">감염예방</option>
+                                <option value="호흡기 간호">호흡기 간호</option>
+                                <option value="상처관리">상처관리</option>
+                                <option value="욕창">욕창</option>
+                                <!--방문간호 (카테고리)- 인지기능-->
+                                <option value="인지기능평가">인지기능평가</option>
+                                <option value="인지기능강화">인지기능강화</option>
+                                <!--방문간호 (카테고리)- 영양관리 -->
+                                <option value="">영양관리(비위관 교환 및 관리), 상담</option>
+                                <!--방문간호 (카테고리)- 배설관리-->
+                                <option value="배뇨장애">배뇨장애</option>
+                                <option value="배변장애">배변장애</option>
+                                <!--스마트 돌봄 (카테고리) - AI 정서활동 관리-->
+                                <option value="부모사랑 효둘">부모사랑 효돌</option>
+                                <option value="AI감성케어 서비스">AI감성케어 서비스</option>
+                                <option value="복양지도 서비스">복약지도 서비스</option>
+                            </select>
+                        </div>
+
+                        <!-- <div class="set mt_1 mb_1">
+                            <select name="sel1" id="sel1" class="tal mb_0_5">
+                                <option value="카테고리를 선택하세요">카테고리를 선택하세요</option>
+                            </select>
+                            <select name="sel2" id="sel2" class="tal mb_0_5">
+                                <option value="범주를 선택하세요">범주를 선택하세요</option>
+                            </select>
+                            <select name="sel3" id="sel3" class="tal">
+                                <option value="세부활동을 선택하세요">세부활동을 선택하세요</option>
+                            </select>
+                        </div> -->
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">기타</th>
+                    <td>
+                        <textarea id="editable" name="editable" class="textarea" rows="5"  placeholder="최대 100자까지 등록할 수 있습니다."></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">퇴근시간 <strong class="red">*</strong></th>
+                    <td>
+                        <input type="text" name="etime" value="" placeholder="퇴근시간선택"  class="input-tb etime">
+                        <!-- <div class="time">
+                            <div><input type="time" name="last_time" value="now" min="HH" max="MM" title="퇴근시간선택" class="input-tb"></div>
+                        </div> -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="btn-area">
+            <!-- <button class="btn -grey left">취소</button> -->
+            <button class="btn -primary w100p">완료</button> 
+        </div>
+    </div>
+</div>
+         
+<!-- <footer>
+    <span class="app-v">버전 1.0.0</span>
+</footer> -->
+    
+</body>
+</html>

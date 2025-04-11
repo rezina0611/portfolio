@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex"> <!--로봇 메타 태그는 검색엔진에 해당 페이지를 검색결과로 표시하지 않도록 지시-->
+<title>경기도사회서비스원 모바일서비스 APP</title>
 
+<!-- CSS -->
+<link rel="stylesheet" href="./css/default.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/datepicker.css">  <!-- 제이쿼리 달력 css-->
+<link rel="stylesheet" href="./css/jquery.timepicker.css">
+
+<!-- JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/datepicker.js"></script><!-- 제이쿼리 달력 js-->
+<script src="./js/datepicker-ko.js"></script><!-- 제이쿼리 달력 datepicker 한국어로 -->
+<script src="./js/jquery.timepicker.min.js"></script>
+</head>
+
+<body>
+<div class="m-wrap">
+    <div class="ci">
+        <img src="./images/logo_ci.png" alt="경기도사회서비스원">
+    </div>
+    <div class="container">
+        <div class="login">
+            <div class="title-area">
+                <span class="b-title">경기도사회서비스원</span>
+                <!-- <span class="s-title"><img src="./images/s-title.png" alt="모바일 서비스"></span> -->
+                <div class="divider">모바일 서비스</div>
+            </div>
+            <form class="loginForm">
+                <fieldset>
+                    <label for="ID">아이디 입력</label>
+                    <input type="text" placeholder="아이디를 입력하세요." tabindex=""/>
+                </fieldset>
+                <fieldset>
+                    <label for="PW">비밀번호 입력</label>
+                    <input id="PW" type="password" placeholder="비밀번호를 입력하세요." tabindex="2"/>
+                </fieldset> 
+                <div class="d-flex info-save">
+                    <input type="checkbox" id="idsave" checked>
+                    <label for="idsave" class="lbl-idsave">아이디 저장</label>
+                    <!-- <a href="#none">비밀번호 찾기</a> -->
+                </div>  
+                <a href="#none " class="btn -login">로그인</a>
+            </form>
+        </div>
+    </div>
+    <footer class="login-ft">
+        COPYRIGHT© 경기도사회서비스원. ALL RIGHT RESERVED.
+    </footer>
+</div>
+    
+
+    
+</body>
+</html>

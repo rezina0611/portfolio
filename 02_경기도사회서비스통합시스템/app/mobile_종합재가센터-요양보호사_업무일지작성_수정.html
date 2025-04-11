@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex"> <!--로봇 메타 태그는 검색엔진에 해당 페이지를 검색결과로 표시하지 않도록 지시-->
+<title>경기도사회서비스원 모바일서비스 APP</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="./css/default.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/datepicker.css">  <!-- 제이쿼리 달력 css-->
+<link rel="stylesheet" href="./css/jquery.timepicker.css">
+
+<!-- JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/datepicker.js"></script><!-- 제이쿼리 달력 js-->
+<script src="./js/datepicker-ko.js"></script><!-- 제이쿼리 달력 datepicker 한국어로 -->
+<script src="./js/jquery.timepicker.min.js"></script>
+<script>
+    $(function(){
+        $(".stime, .etime").timepicker({
+            timeFormat: 'A H:i ',   //H : 24시간제로 표시   A : AM/PM표시
+            interval:30,           //시간간격 : 30분
+            minTime: '09',         //최소시간
+            maxTime: '23:00pm',     //최대시간
+            dynamic: false,
+            dropdown: true,
+            scrollbar: true
+        });
+
+        //min : 날짜와 시간의 최소값 지정
+        //max : 날짜와 시간의 최대값 지정
+        //value : 화면에 표시할 초기값을 지정
+
+        //페이지 로딩시 현재시간 자동으로 입력.
+        //$(".stime").timepicker('setTime', new Date());
+        //출처: https://ellordnet.tistory.com/131 [IT in MT]  https://github.com/jonthornton/jquery-timepicker
+
+    });
+</script>
+</head>
+
+<body>
+<header class="m-header bg9c">
+    <div class="inner">
+        <a href="#none" class="left" title="이전페이지로 이동"><img src="./images/ico_back.png"></a>
+        <h1>업무일지 작성</h1>
+        <!-- <a href="#none" class="right" title="로그아웃"><img src="./images/ico_out.png"></a> -->
+    </div>
+</header>   
+
+<div class="contents">
+    <h2 class="hidden">종합재가센터 - 요양보호사</h2>
+    <div class="p-1 bg-white">
+        <div class="today-data">2021.12.14 화요일</div>
+        <table class="table no-bg mt-1">
+            <!-- <colgroup>
+                <col style="width:100%;">
+                <col style="width:100%;">
+            </colgroup> -->
+            <tbody>
+                <tr>
+                    <th scope="row">대상자 정보</th>
+                    <td>
+                        <textarea id="editable" name="editable" class="textarea" rows="5"  placeholder="최대 100자까지 등록할 수 있습니다." disabled>
+홍길동
+식사도움
+서울시 성동구 연무장5가길 7(성수동 2가)
+OOO 주의해주세요.
+                        </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">출근시간 <strong class="red">*</strong></th>
+                    <td>
+                        <input type="text" name="stime" value="" placeholder="출근시간선택"  class="input-tb stime">
+                    </td>
+                </tr>
+                
+                
+                <!-- <script>
+                    $(function () {
+                        //삭제 버튼
+                        $(document).on("click","button[name=del]",function(){
+                            var trHtml = $( " " );
+                            trHtml.remove(); //div.set 삭제
+                        });
+                    });
+                </script> -->
+                <script>
+                    //https://myhappyman.tistory.com/215?category=846886
+                    $(function(){
+                        areaSelectMaker("select[name=addressRegion]");
+                    });
+
+                    let areaSelectMaker = function(target){
+                        if(target == null || $(target).length == 0){
+                            console.warn("Unkwon Area Tag");
+                            return;
+                        }
+
+                        let area = {
+                            "방문요양" :{
+                                "신체활동지원" : [ "안면청결도움", "구강청결도움", "두발청결도움", "신체청결도움", "옷갈이입기도움", "식사도움", "배살도움", "이동도움", "신체기능의&nbsp유지&nbsp및&nbsp증진도움" ],
+                                "인지활동지원" : [ "인지훈련" ],
+                                "일상생활 함께하기" : [ "일상생활함께&nbsp하기" ] ,
+                                "정서지원" : [ "정서지원" ],
+                                "가시및일상생활지원" : [ "식사준비", "청소및주변정돈", "청소", "외출도움", "일상업무대행" ]
+                            },
+
+                            "방문간호" :{
+                                "건강관리" : [ "건강상태확인" ],
+                                "신체기능관리" : [ "관절구축 관리", "이동장애 관리" ],
+                                "질병관리" : [ "투약관리", "통증관리", "감염예방", "호흡기&nbsp간호", "상처관리", "욕창" ],
+                                "인지기능" : [ "인지기능평가", "인지기능강화" ],
+                                "영양관리" : [ "영양관리&nbsp(비위관&nbsp교환&nbsp및&nbsp관리),&nbsp상담" ],
+                                "배설관리" : [ "배뇨장애", "배변장애" ]
+                            },
+
+                             "스마트 돌봄" : {
+                                "AI 정서활동 관리" : [ "부모사랑&nbsp효돌", "AI감성케어&nbsp서비스", "복약지도&nbsp서비스" ] 
+                            }
+
+                        };
+
+                        for(i=0; i<$(target).length; i++){
+                            (function(z){
+                                let a1 = $(target).eq(z);
+                                let a2 = a1.next();
+                                let a3 = a2.next();
+
+                                //초기화
+                                init(a1, true);
+
+                                //권역 기본 생성
+                                let areaKeys1 = Object.keys(area);
+                                areaKeys1.forEach(function(Region){
+                                    a1.append("<option value="+Region+">"+Region+"</option>");
+                                });
+
+                                //변경 이벤트
+                                $(a1).on("change", function(){
+                                    init($(this), false);
+                                    let Region = $(this).val();
+                                    let keys = Object.keys(area[Region]);
+                                    keys.forEach(function(Do){
+                                        a2.append("<option value="+Do+">"+Do+"</option>");
+                                    });
+                                });
+
+                                $(a2).on("change", function(){
+                                    a3.empty().append("<option value=''>선택</option>");
+                                    let Region = a1.val();
+                                    let Do = $(this).val();
+                                    let keys = Object.keys(area[Region][Do]);
+                                    keys.forEach(function(SiGunGu){
+                                        a3.append("<option value="+area[Region][Do][SiGunGu]+">"+area[Region][Do][SiGunGu]+"</option>");    
+                                    });
+                                });
+                            })(i); 
+
+                            function init(t, first){
+                                first ? t.empty().append("<option value=''>카테고리를 선택하세요</option>") : "";
+                                t.next().empty().append("<option value=''>범주를 선택하세요</option>");
+                                t.next().next().empty().append("<option value=''>세부활동을 선택하세요</option>");
+                            }
+                        }
+                    }
+
+                    //선택한 value값 노출
+                    var idval = $('#sel-1');
+                        $('#addressRegion1').change(function(){
+                           var element = $(this).find('option:selected');
+                           var myTag = element.attr('value');
+                           idval.val(myTag); 
+                    });
+
+                    var idval2 = $('#sel-2');
+                    $('#addressDo1').change(function(){
+                       var element2 = $(this).find('option:selected'); 
+                       var myTag2 = element2.attr('value');
+                       idval2.val(myTag2); 
+                    });
+
+                    var idval3 = $('#sel-3');
+                        $('#addressSiGunGu1').change(function(){
+                           var element3 = $(this).find('option:selected'); 
+                           var myTag3 = element3.attr('value');
+                           idval3.val(myTag3); 
+                    });
+                </script>
+                <script>
+                    $(function(){
+                        //셀렉트박스 3개 선택시 아래 추가
+                        $('#addressSiGunGu1').on('change',function(){
+                            //alert(this.value);
+                            //$(".set").append("<div id='result' class='mt_2'><input type='text' name='sel-1' id='sel-1' class='input-tb mb_0_5'><input type='text' name='sel-2' id='sel-2' class='input-tb mb_0_5'><input type='text' name='sel-3' id='sel-3' class='input-tb mb_0_5'></div>"); // 태그 추가
+
+                            $(".set").append("<div id='result' class='mt_2'><input type='text' name='sel-1' id='sel-1' class='input-tb mb_0_5' value='" + $('#addressRegion1').val()+ "'><input type='text' name='sel-2' id='sel-2' class='input-tb mb_0_5' value='" + $('#addressDo1').val()+ "'><input type='text' name='sel-3' id='sel-3' class='input-tb mb_0_5' value='" + $('#addressSiGunGu1').val()+ "'></div> "); // 태그 추가
+
+                        });
+
+                        //삭제 버튼
+                        $(document).on("click","button[name=del]",function(){
+                            var trHtml = $("#result");
+                            trHtml.remove(); 
+                        });
+                    });
+                </script>
+
+                <tr>
+                    <th scope="row" class="d-flex j-space-between">
+                        <div class="mt_1">업무 <strong class="red">*</strong></div>
+                        <div>
+                            <!-- <button class="btn-ss -add" id="addBtn" name="add">+ 추가</button> -->
+                            <button class="btn-ss -del" id="delBtn" name="del">- 삭제</button>
+                        </div>
+                    </th>
+                    <td>
+                        <div class="set mb_0">
+                            <select name="addressRegion" id="addressRegion1" class="tal mb_0_5"></select>
+                            <select name="addressDo" id="addressDo1" class="tal mb_0_5"></select>
+                            <select name="addressSiGunGu" id="addressSiGunGu1" class="tal"></select>
+                            <!-- <select name="sel1" id="sel1" class="tal mb_0_5">
+                                <option value="카테고리를 선택하세요">카테고리를 선택하세요</option>
+                            </select>
+                            <select name="sel2" id="sel2" class="tal mb_0_5">
+                                <option value="범주를 선택하세요">범주를 선택하세요</option>
+                            </select>
+                            <select name="sel3" id="sel3" class="tal">
+                                <option value="세부활동을 선택하세요">세부활동을 선택하세요</option>
+                            </select> -->
+                        </div>
+
+                        <!-- <div id="result" class="mt_2">
+                            <input type='text' name='sel-1' id='sel-1' class="input-tb mb_0_5">
+                            <input type='text' name='sel-2' id='sel-2' class="input-tb mb_0_5">
+                            <input type='text' name='sel-3' id='sel-3' class="input-tb mb_0_5">
+                        </div> -->
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">기타</th>
+                    <td>
+                        <textarea id="editable" name="editable" class="textarea" rows="5"  placeholder="최대 100자까지 등록할 수 있습니다."></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">퇴근시간 <strong class="red">*</strong></th>
+                    <td>
+                        <input type="text" name="etime" value="" placeholder="퇴근시간선택"  class="input-tb etime">
+                        <!-- <div class="time">
+                            <div><input type="time" name="last_time" value="now" min="HH" max="MM" title="퇴근시간선택" class="input-tb"></div>
+                        </div> -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="btn-area">
+            <!-- <button class="btn -grey left">취소</button> -->
+            <button class="btn -primary w100p">완료</button> 
+        </div>
+    </div>
+</div>
+         
+<!-- <footer>
+    <span class="app-v">버전 1.0.0</span>
+</footer> -->
+    
+</body>
+</html>

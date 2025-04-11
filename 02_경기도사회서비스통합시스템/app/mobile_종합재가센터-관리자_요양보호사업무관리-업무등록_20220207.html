@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex"> <!--로봇 메타 태그는 검색엔진에 해당 페이지를 검색결과로 표시하지 않도록 지시-->
+<title>경기도사회서비스원 모바일서비스 APP</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="./css/default.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/datepicker.css">  <!-- 제이쿼리 달력 css-->
+<link rel="stylesheet" href="./css/jquery.timepicker.css">
+
+<!-- JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/datepicker.js"></script><!-- 제이쿼리 달력 js-->
+<script src="./js/datepicker-ko.js"></script><!-- 제이쿼리 달력 datepicker 한국어로 -->
+<script src="./js/jquery.timepicker.min.js"></script>
+
+<script>
+    $(function(){
+        $("#vtime").timepicker({
+            timeFormat: 'H:i A',   //H : 24시간제로 표시   A : AM/PM표시
+            interval:30,           //시간간격 : 30분
+            minTime: '09',         //최소시간
+            maxTime: '23:00pm',     //최대시간
+            dynamic: false,
+            dropdown: true,
+            scrollbar: true
+        });
+
+        //min : 날짜와 시간의 최소값 지정
+        //max : 날짜와 시간의 최대값 지정
+        //value : 화면에 표시할 초기값을 지정
+
+        //페이지 로딩시 현재시간 자동으로 입력.
+        //$(".stime").timepicker('setTime', new Date());
+        //출처: https://ellordnet.tistory.com/131 [IT in MT]  https://github.com/jonthornton/jquery-timepicker
+
+    });
+</script>
+</head>
+
+<body>
+<header class="m-header bg9c">
+    <div class="inner">
+        <a href="#none" class="left" title="이전페이지로 이동"><img src="./images/ico_back.png"></a>
+        <h1>업무등록</h1>
+        <!-- <a href="#none" class="right" title="로그아웃"><img src="./images/ico_out.png"></a> -->
+    </div>
+</header>    
+
+<div class="contents">
+    <h2 class="hidden">종합재가센터 - 관리자 - 요양보호사 업무관리 - 업무등록</h2>
+    <div class="p-1 bg-white">
+        <table class="table no-bg mt-1">
+            <!-- <colgroup>
+                <col style="width:100%;">
+                <col style="width:100%;">
+            </colgroup> -->
+            <tbody>
+                <tr>
+                    <th scope="row">방문일 <strong class="sky">*</strong></th>
+                    <td>
+                        <div class="data-time">
+                            <div class="data-w mr_1">
+                                <input type="text" id="search_day_from" name="param_vo.search_day_from" value="" class="input-tb datepicker01" placeholder="날짜선택">
+                                <img onclick="javascript:$('#search_day_from').datepicker('show')" src="./images/ico_calender.gif" alt="방문일" title="방문일" align="absmiddle" style="cursor:pointer">
+                            </div>
+                            <div class="time-w">
+                                <input type="text" name="vtime" value="" placeholder="방문시간" id="vtime" class="input-tb tac">
+                                <!--HH:MM-->
+                                <!-- <script>
+                                    $(function(){
+                                        //페이지 로딩시 현재시간 자동으로 입력.
+                                        //지금 시간, 분 표시 https://codepen.io/rafaelcastrocouto/pen/Iyewu
+                                        let d = new Date(),
+                                            hr = d.getHours(),  //시간
+                                            min= d.getMinutes(); //분
+                                        if(hr < 10) hr = '0' + hr; 
+                                        if(min < 10) min = '0' + min; 
+                                        $('input[type="time"][value="now"]').each(function(){ 
+                                            $(this).attr({'value': hr + ':' + min});
+                                        });
+                                    });
+                                </script> -->
+                                <!--
+                                    min : 날짜와 시간의 최소값 지정
+                                    max : 날짜와 시간의 최대값 지정
+                                    value : 화면에 표시할 초기값을 지정
+                                -->
+                                <!-- <div class="time">
+                                    <div><input type="time" name="first_time" value="now" min="HH" max="MM" title="출근시간시작" class="input-tb"></div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">요양보호사 <strong class="sky">*</strong></th>
+                    <td>
+                        <div class="search-area">
+                            <input type="search" id="searchinput" placeholder="요양보호사를 입력해 검색하세요.">
+                            <button class="btnClear" id="searchclear"></button>
+                            <script>
+                                //IE 10이상의 input type의 X 버튼 구현하기 출처: https://webclub.tistory.com/297
+                                $(function(){
+                                    $('#searchinput').keyup(function(){
+                                        $("#searchclear").toggle(Boolean($(this).val()));
+                                    });
+
+                                    $('#searchclear').toggle(Boolean($('#searchinput').val()));
+                                    $('#searchclear').click(function(){
+                                        $("#searchinput").val('').focus();
+                                        $(this).hide();
+                                    });
+                                });
+                            </script>
+                            <script>
+                                $(function(){
+                                    //검색 클릭시 요양보호사 검색모달팝업
+                                    $('.serch-info').on('click', function() {
+                                        $('#modal-info4').toggleClass('open');
+                                        return false;
+                                    });
+                                });
+                            </script>
+                            <div class="input-group-append">
+                                <span class="input-group-text serch-info"><img src="./images/ico_seach_grey.png" alt="검색"></span>
+                            </div>
+                        </div>
+
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">담당자 <strong class="sky">*</strong></th>
+                    <td>
+                        <div class="search-area">
+                            <input type="search" id="searchinput2" placeholder="담당자를 입력해 검색하세요.">
+                            <button class="btnClear" id="searchclear2"></button>
+                            <script>
+                                //IE 10이상의 input type의 X 버튼 구현하기 출처: https://webclub.tistory.com/297
+                                $(function(){
+                                    $('#searchinput2').keyup(function(){
+                                        $("#searchclear2").toggle(Boolean($(this).val()));
+                                    });
+
+                                    $('#searchclear2').toggle(Boolean($('#searchinput2').val()));
+                                    $('#searchclear2').click(function(){
+                                        $("#searchinput2").val('').focus();
+                                        $(this).hide();
+                                    });
+                                });
+                            </script>
+                            
+                            <div class="input-group-append">
+                                <span class="input-group-text"><img src="./images/ico_seach_grey.png" alt="검색"></span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">주소</th>
+                    <td>
+                        <input type="text" name="" class="input-tb mb_0_3" value="서울시 성동구 연무장5가길 7(성수동 2가) " disabled />
+                        <input type="text" name="" class="input-tb" value="성수역 현대테라스타워 East동 13층" disabled />
+                    </td>
+                </tr>
+                <script>
+                    //https://myhappyman.tistory.com/215?category=846886
+                    $(function(){
+                        areaSelectMaker("select[name=addressRegion]");
+                    });
+
+                    let areaSelectMaker = function(target){
+                        if(target == null || $(target).length == 0){
+                            console.warn("Unkwon Area Tag");
+                            return;
+                        }
+
+                        let area = {
+                            "방문요양" :{
+                                "신체활동지원" : [ "안면청결도움", "구강청결도움", "두발청결도움", "신체청결도움", "옷갈이입기도움", "식사도움", "배살도움", "이동도움", "신체기능의&nbsp유지&nbsp및&nbsp증진도움" ],
+                                "인지활동지원" : [ "인지훈련" ],
+                                "일상생활 함께하기" : [ "일상생활함께&nbsp하기" ] ,
+                                "정서지원" : [ "정서지원" ],
+                                "가시및일상생활지원" : [ "식사준비", "청소및주변정돈", "청소", "외출도움", "일상업무대행" ]
+                            },
+
+                            "방문간호" :{
+                                "건강관리" : [ "건강상태확인" ],
+                                "신체기능관리" : [ "관절구축 관리", "이동장애 관리" ],
+                                "질병관리" : [ "투약관리", "통증관리", "감염예방", "호흡기&nbsp간호", "상처관리", "욕창" ],
+                                "인지기능" : [ "인지기능평가", "인지기능강화" ],
+                                "영양관리" : [ "영양관리&nbsp(비위관&nbsp교환&nbsp및&nbsp관리),&nbsp상담" ],
+                                "배설관리" : [ "배뇨장애", "배변장애" ]
+                            },
+
+                             "스마트 돌봄" : {
+                                "AI 정서활동 관리" : [ "부모사랑&nbsp효돌", "AI감성케어&nbsp서비스", "복약지도&nbsp서비스" ] 
+                            }
+
+                        };
+
+                        for(i=0; i<$(target).length; i++){
+                            (function(z){
+                                let a1 = $(target).eq(z);
+                                let a2 = a1.next();
+                                let a3 = a2.next();
+
+                                //초기화
+                                init(a1, true);
+
+                                //권역 기본 생성
+                                let areaKeys1 = Object.keys(area);
+                                areaKeys1.forEach(function(Region){
+                                    a1.append("<option value="+Region+">"+Region+"</option>");
+                                });
+
+                                //변경 이벤트
+                                $(a1).on("change", function(){
+                                    init($(this), false);
+                                    let Region = $(this).val();
+                                    let keys = Object.keys(area[Region]);
+                                    keys.forEach(function(Do){
+                                        a2.append("<option value="+Do+">"+Do+"</option>");
+                                    });
+                                });
+
+                                $(a2).on("change", function(){
+                                    a3.empty().append("<option value=''>선택</option>");
+                                    let Region = a1.val();
+                                    let Do = $(this).val();
+                                    let keys = Object.keys(area[Region][Do]);
+                                    keys.forEach(function(SiGunGu){
+                                        a3.append("<option value="+area[Region][Do][SiGunGu]+">"+area[Region][Do][SiGunGu]+"</option>");    
+                                    });
+                                });
+                            })(i); 
+
+                            function init(t, first){
+                                first ? t.empty().append("<option value=''>카테고리를 선택하세요</option>") : "";
+                                t.next().empty().append("<option value=''>범주를 선택하세요</option>");
+                                t.next().next().empty().append("<option value=''>세부활동을 선택하세요</option>");
+                            }
+                        }
+                    }
+
+                    //선택한 value값 노출
+                    var idval = $('#sel-1');
+                        $('#addressRegion1').change(function(){
+                           var element = $(this).find('option:selected');
+                           var myTag = element.attr('value');
+                           idval.val(myTag); 
+                    });
+
+                    var idval2 = $('#sel-2');
+                    $('#addressDo1').change(function(){
+                       var element2 = $(this).find('option:selected'); 
+                       var myTag2 = element2.attr('value');
+                       idval2.val(myTag2); 
+                    });
+
+                    var idval3 = $('#sel-3');
+                        $('#addressSiGunGu1').change(function(){
+                           var element3 = $(this).find('option:selected'); 
+                           var myTag3 = element3.attr('value');
+                           idval3.val(myTag3); 
+                    });
+                </script>
+                <script>
+                    $(function(){
+                        //셀렉트박스 3개 선택시 아래 추가
+                        $('#addressSiGunGu1').on('change',function(){
+                            //alert(this.value);
+                            //$(".set").append("<div id='result' class='mt_2'><input type='text' name='sel-1' id='sel-1' class='input-tb mb_0_5'><input type='text' name='sel-2' id='sel-2' class='input-tb mb_0_5'><input type='text' name='sel-3' id='sel-3' class='input-tb mb_0_5'></div>"); // 태그 추가
+
+                            $(".set").append("<div id='result' class='mt_2'><input type='text' name='sel-1' id='sel-1' class='input-tb mb_0_5' value='" + $('#addressRegion1').val()+ "'><input type='text' name='sel-2' id='sel-2' class='input-tb mb_0_5' value='" + $('#addressDo1').val()+ "'><input type='text' name='sel-3' id='sel-3' class='input-tb mb_0_5' value='" + $('#addressSiGunGu1').val()+ "'></div> "); // 태그 추가
+
+                        });
+
+                        //삭제 버튼
+                        $(document).on("click","button[name=del]",function(){
+                            var trHtml = $("#result");
+                            trHtml.remove(); 
+                        });
+                    });
+                </script>
+
+                <tr>
+                    <th scope="row" class="d-flex j-space-between">
+                        <div class="mt_1">업무 <strong class="sky">*</strong></div>
+                        <div>
+                            <!-- <button class="btn-ss -add" id="addBtn" name="add">+ 추가</button> -->
+                            <button class="btn-ss -del" id="delBtn" name="del">- 삭제</button>
+                        </div>
+                    </th>
+                    <td>
+                        <div class="set mb_0">
+                            <select name="addressRegion" id="addressRegion1" class="tal mb_0_5"></select>
+                            <select name="addressDo" id="addressDo1" class="tal mb_0_5"></select>
+                            <select name="addressSiGunGu" id="addressSiGunGu1" class="tal"></select>
+                            <!-- <select name="sel1" id="sel1" class="tal mb_0_5">
+                                <option value="카테고리를 선택하세요">카테고리를 선택하세요</option>
+                            </select>
+                            <select name="sel2" id="sel2" class="tal mb_0_5">
+                                <option value="범주를 선택하세요">범주를 선택하세요</option>
+                            </select>
+                            <select name="sel3" id="sel3" class="tal">
+                                <option value="세부활동을 선택하세요">세부활동을 선택하세요</option>
+                            </select> -->
+                        </div>
+
+                        <!-- <div id="result" class="mt_2">
+                            <input type='text' name='sel-1' id='sel-1' class="input-tb mb_0_5">
+                            <input type='text' name='sel-2' id='sel-2' class="input-tb mb_0_5">
+                            <input type='text' name='sel-3' id='sel-3' class="input-tb mb_0_5">
+                        </div> -->
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">전달사항</th>
+                    <td>
+                        <textarea id="editable" name="editable" class="textarea" rows="5"  placeholder="최대 100자까지 등록할 수 있습니다."></textarea>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="btn-area btn-2">
+            <button class="btn -grey left">취소</button>
+            <button class="btn -primary right">등록</button> 
+        </div>
+    </div>
+</div>
+
+<!--팝업창-->
+<div class="modal-wrapper" id="modal-info4">
+    <div class="modal">
+        <div class="header">
+            <h1>
+                <button class="btn btn-close serch-info"><img src="./images/ico_close.png" alt="닫기"></button>
+            </h1>
+        </div>
+        <div class="content maxh ofl_hid">
+            <h6 class="table-title">요양보호사 검색하기</h6>
+            <div class="signature">
+                <div class="search-area">
+                    <input type="search" id="searchinput" placeholder="요양보호사를 입력해 검색하세요.">
+                    <button class="btnClear" id="searchclear" style="display: none;"></button>
+                    <script>
+                        $(function(){
+                            $('#searchinput').keyup(function(){
+                                $("#searchclear").toggle(Boolean($(this).val()));
+                            });
+
+                            $('#searchclear').toggle(Boolean($('#searchinput').val()));
+                            $('#searchclear').click(function(){
+                                $("#searchinput").val('').focus();
+                                $(this).hide();
+                            });
+                        });
+                    </script>
+                    <div class="input-group-append">
+                        <span class="input-group-text"><img src="./images/ico_seach_grey.png" alt="검색"></span>
+                    </div>
+                </div>
+                <div class="sidebar-wrapper result" >
+                    <div class="sidebar-menu" style="height:350px; overflow-y:auto;">
+                        <ul>
+                            <!-- <li>
+                                <div class="case-title">검색결과가 없습니다.</div>
+                            </li> -->
+                            <li>
+                                <label for="ra_info1">
+                                    <input type="radio" name="ra_info" id="ra_info1">
+                                    <span>홍길동1</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label for="ra_info2">
+                                    <input type="radio" name="ra_info" id="ra_info2">
+                                    <span>홍길동2</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label for="ra_info3">
+                                    <input type="radio" name="ra_info" id="ra_info3">
+                                    <span>홍길동3</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label for="ra_info1">
+                                    <input type="radio" name="ra_info" id="ra_info1">
+                                    <span>홍길동1</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label for="ra_info2">
+                                    <input type="radio" name="ra_info" id="ra_info2">
+                                    <span>홍길동2</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label for="ra_info3">
+                                    <input type="radio" name="ra_info" id="ra_info3">
+                                    <span>홍길동3</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label for="ra_info1">
+                                    <input type="radio" name="ra_info" id="ra_info1">
+                                    <span>홍길동1</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label for="ra_info2">
+                                    <input type="radio" name="ra_info" id="ra_info2">
+                                    <span>홍길동2</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label for="ra_info3">
+                                    <input type="radio" name="ra_info" id="ra_info3">
+                                    <span>홍길동3</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="tac">
+                <button id="save" class="save">확인</button>
+            </div> -->
+        </div>
+    </div>
+</div>
+<!--//팝업창-->
+<!-- <footer>
+    <span class="app-v">버전 1.0.0</span>
+</footer> -->
+</body>
+</html>

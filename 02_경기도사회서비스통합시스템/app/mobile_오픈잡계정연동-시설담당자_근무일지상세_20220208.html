@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex"> <!--로봇 메타 태그는 검색엔진에 해당 페이지를 검색결과로 표시하지 않도록 지시-->
+<title>경기도사회서비스원 모바일서비스 APP</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="./css/default.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/datepicker.css">  <!-- 제이쿼리 달력 css-->
+<link rel="stylesheet" href="./css/jquery.timepicker.css">
+
+<!-- JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/datepicker.js"></script><!-- 제이쿼리 달력 js-->
+<script src="./js/datepicker-ko.js"></script><!-- 제이쿼리 달력 datepicker 한국어로 -->
+<script src="./js/jquery.timepicker.min.js"></script>
+</head>
+
+<body>
+<header class="m-header">
+    <div class="inner">
+        <a href="#none" class="left" title="이전페이지로 이동"><img src="./images/ico_back.png"></a>
+        <h1>근무일지</h1>
+        <!-- <a href="#none" class="right" title="로그아웃"><img src="./images/ico_out.png"></a> -->
+    </div>
+</header>
+
+<div class="contents">
+    <h2 class="hidden">오픈잡계정연동 - 시설담당자</h2>
+    <div class="p-1 bg-white">
+        <table class="table no-bg mt-1">
+            <!-- <colgroup>
+                <col style="width:100%;">
+                <col style="width:100%;">
+            </colgroup> -->
+            <tbody>
+                <tr>
+                    <th scope="row">소속 <strong class="sky">*</strong></th>
+                    <td>
+                        <input type="text" name="" class="input-tb" value="경기도 사회복지시설 대체인력 지원센터" disabled>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">대체인력성명 <strong class="sky">*</strong></th>
+                    <td>
+                        <input type="text" name="" class="input-tb" value="박혜진" disabled>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">근무시간 <strong class="sky">*</strong></th>
+                    <td>
+                        <div class="data-time">
+                            <div class="data-w mr_1">
+                                <input type="text" id="search_day_from" name="param_vo.search_day_from" value="2022-02-08" class="input-tb fs14 tac" disabled="">
+                            </div>
+                            <div class="time">
+                                <div class="mr_1" style="margin-right:.3rem !important;">
+                                    <label for="stime" class="skip">근무시간시작</label>
+                                    <input type="text" name="stime" id="stime" value="09:00" title="근무시간시작" class="input-tb tac stime fs14" disabled="">
+                                </div>&nbsp; ~ &nbsp;
+                                <div class="ml_1" style="margin-left:.3rem !important;">
+                                    <label for="etime" class="skip">근무시간종료</label>
+                                    <input type="text" name="etime" id="etime" value="18:00" title="근무시간종료" class="input-tb tac etime fs14" disabled="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="time">
+                            <div class="mr_1">
+                                <label for="stime" class="skip">근무시간시작</label>
+                                <input type="text" name="stime" id="stime" value="09:00" title="근무시간시작" class="input-tb tac stime" disabled="">
+                            </div>&nbsp; ~ &nbsp;
+                            <div class="ml_1">
+                                <label for="etime" class="skip">근무시간종료</label>
+                                <input type="text" name="etime" id="etime" value="18:00" title="근무시간종료" class="input-tb tac etime" disabled="">
+                            </div>
+                        </div> -->
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">지역 <strong class="sky">*</strong></th>
+                    <td>
+                        <input type="text" name="" class="input-tb" disabled value="양주">
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">시설명 <strong class="sky">*</strong></th>
+                    <td>
+                        <input type="text" name="" class="input-tb" disabled value="요셉의 집">
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">근무내용 <strong class="sky">*</strong></th>
+                    <td>
+                        <textarea id="editable" name="editable" class="textarea" rows="4" placeholder="최대 100자까지 등록할 수 있습니다." disabled="">
+간식지원
+점심, 저녁 식사지원
+                        </textarea>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="btn-area btn-2">
+            <button type="button" class="btn left -borprimary trigger-info-view">근로자 서명보기</button>
+            <button type="button" class="btn right -borprimary trigger-info">시설 담당자 서명하기</button>
+        </div>
+        
+        <div class="btn-area btn-2">
+            <button class="btn -grey left">취소</button>
+            <button class="btn -primary right">확인</button> 
+        </div>
+    </div>
+</div>
+
+<!-- <footer>
+    <span class="app-v">버전 1.0.0</span>
+</footer>  -->  
+<!--https://nowonbun.tistory.com/636-->
+<script>
+    (function(obj){
+      obj.init();
+      $(obj.onLoad);
+    })((function(){
+      var canvas = $("#canvas");
+      var div = canvas.parent("div");
+      // 캔버스의 오브젝트를 가져옵니다.
+      var ctx = canvas[0].getContext("2d");
+      var drawble = false;
+      
+      // 이제 html 버그인지는 모르겠는데 canvas의 style의 height와 width를 수정하게 되면 그림이 이상하게 그려집니다.
+      function canvasResize(){
+        canvas[0].height = div.height();
+        canvas[0].width = div.width();
+      }
+      // pc에서 서명을 할 경우 사용되는 이벤트입니다.
+      function draw(e){
+        function getPosition(){
+          return {
+            X: e.pageX - canvas[0].offsetLeft, 
+            Y: e.pageY - canvas[0].offsetTop
+          }
+        }
+        switch(e.type){
+          case "mousedown":{
+            drawble = true;
+            ctx.beginPath();
+            ctx.moveTo(getPosition().X, getPosition().Y);
+          }
+          break;
+          case "mousemove":{
+            if(drawble){
+              ctx.lineTo(getPosition().X, getPosition().Y);
+              ctx.stroke();
+            }
+          }
+          break;
+          case "mouseup":
+          case "mouseout":{
+            drawble = false;
+            ctx.closePath();
+          }
+          break;
+        }
+      }
+      // 스마트 폰에서 서명을 할 경우 사용되는 이벤트입니다.
+      function touchdraw(e){
+        function getPosition(){
+          return {
+            X: e.changedTouches[0].pageX - canvas[0].offsetLeft, 
+            Y: e.changedTouches[0].pageY - canvas[0].offsetTop
+          }
+        }
+        switch(e.type){
+          case "touchstart":{
+            drawble = true;
+            ctx.beginPath();
+            ctx.moveTo(getPosition().X, getPosition().Y);
+          }
+          break;
+          case "touchmove":{
+            if(drawble){
+              // 스크롤 이동등 이벤트 중지..
+              e.preventDefault();
+              ctx.lineTo(getPosition().X, getPosition().Y);
+              ctx.stroke();
+            }
+          }
+          break;
+          case "touchend":
+          case "touchcancel":{
+            drawble = false;
+            ctx.closePath();
+          }
+          break;
+        }
+      }
+      // 참고로 mousedown은 touchstart와 mousemove는 touchmove, mouseup은 touchend와 같습니다.
+      // mouseout와 touchcancel은 서로 다른 동작인데, mouseout은 canvas 화면을 벗어났을 때이고 touchcancel는 모바일에서 터치가 취소, 즉 에러가 났을 때 입니다.
+      return {
+        init: function(){
+          // 캔버스 사이즈 조절
+          $(window).on("resize", canvasResize);
+          
+          canvas.on("mousedown", draw);
+          canvas.on("mousemove", draw);
+          canvas.on("mouseup", draw);
+          canvas.on("mouseout", draw);
+          // 스마트 폰의 터치 이벤트
+          canvas.on("touchstart", touchdraw);
+          canvas.on("touchend", touchdraw);
+          canvas.on("touchcancel", touchdraw);
+          canvas.on("touchmove", touchdraw);
+          // save 버튼을 누르면 imageupload.php로 base64코드를 보내서 이미지로 변환합니다.
+          $("#save").on("click", function(){
+            // a 태그를 만들어서 다운로드를 만듭니다.
+            var link = document.createElement('a'); 
+            // base64데이터 링크 달기
+            link.href = canvas[0].toDataURL("image/png"); 
+            // 다운로드시 파일명 지정
+            link.download = "image.png"; 
+            // body에 추가
+            document.body.appendChild(link); 
+            link.click(); 
+            document.body.removeChild(link); 
+            // 다운로드용 a 태그는 다운로드가 끝나면 삭제합니다.
+            form.remove();
+          });
+        },
+        onLoad: function(){
+          // 캔버스 사이즈 조절
+          canvasResize();
+        }
+      }
+    })());
+</script>
+<!--팝업창-->
+<div class="modal-wrapper" id="modal-info2">
+    <div class="modal">
+        <div class="header">
+            <h1>
+                <button class="btn btn-close trigger-info-view"><img src="./images/ico_close.png" alt="닫기"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <h6 class="table-title">근로자 서명보기</h6>
+            <!-- 서명 공간 -->
+            <div class="name">이름 홍길동</div>
+            <div class="signature"> <!--style="width:100%; height:320px;"-->
+                <canvas id="canvas-view" width="400" height="350"></canvas>
+                <script>
+                    window.onload = function(){
+                        let canvas = document.getElementById("canvas-view");
+                        if(canvas.getContext){
+                            let draw = canvas.getContext("2d");
+                            
+                            let img = new Image();
+                            img.src = "./images/png-clipart-bts-signature-autograph-singer-others-miscellaneous-angle-thumbnail.png";
+                            img.onload = function(){
+                                //이미지의 원하는 부분만 잘라서 그리기
+                                //drawImage(이미지객체, 
+                                //        이미지의 왼위 부분x, 이미지의 왼위 부분y, 이미지의 원하는 가로크기, 이미지의 원하는 세로크기,
+                                //        사각형 부분x, 사각형 부분y, 가로크기, 세로크기)
+                                //draw.drawImage(img, 100,100, 300,300, 50,50, 250,300);
+                                
+                                //전체 이미지 그리기
+                                //drawImage(이미지객체, 사각형 왼위 x, 사각형 왼위 y, 가로크기, 세로크기)
+                                draw.drawImage(img,30,50,348,230);
+                            }
+                        }
+                    }
+                </script>
+            </div>
+            <div class="tac">
+                <button id="save" class="save -blue">확인</button>
+            </div>
+            <!-- //서명 공간 -->
+        </div>
+    </div>
+</div>
+<!--팝업창-->
+<!--팝업창-->
+<div class="modal-wrapper" id="modal-info">
+    <div class="modal">
+        <div class="header">
+            <h1>
+                <button class="btn btn-close trigger-info"><img src="./images/ico_close.png" alt="닫기"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <h6 class="table-title">시설담당자 서명하기</h6>
+            <!-- 서명 공간 -->
+            <div class="name">이름 김OO <span style="font-size:1.4rem;">(로그인한 시설담당자 이름)</span></div>
+            <div class="signature"> <!--style="width:100%; height:320px;"-->
+                <canvas id="myCanvas" width="400" height="350"></canvas>
+                <script>
+                    // 1. canvas 엘리먼트를 취득한다. 
+                    const canvas = document.getElementById('myCanvas');
+
+                    //2. 2d모드의 그리기 객체를 취득한다. => 이 객체를 통해 canvas에 그림을 그릴 수 있다.
+                    const ctx = canvas.getContext("2d");
+
+                    // 3.7. 가운데 정렬 텍스트 
+                    ctx.textAlign = 'center';
+
+                    // 3-4. 텍스트 색상 설정
+                    ctx.fillStyle = '#797b7a';
+
+                    // 3-3. 텍스트 폰트 설정  ctx.font = "스타일 굵기 크기 서체"
+                    ctx.font = "lighter 20px 나눔스퀘어, sans-serif"; //Arial서체 없을 경우, sans-serif 적용
+
+                    //텍스트 그리기 ctx.fillText("텍스트", x좌표, y좌표, 최대 너비) 
+                    ctx.fillText("여기에 사인을 하고", 200, 160);
+                    ctx.fillText("확인 버튼을 누르세요.", 200, 190);
+                </script>
+            </div>
+            <div class="tac">
+                <button id="save" class="save">확인</button>
+            </div>
+            <!-- //서명 공간 -->
+        </div>
+    </div>
+</div>
+<!--팝업창-->
+</body>
+</html>
