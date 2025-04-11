@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>경기도사회서비스원 통합사회정보시스템</title>
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/layout.css">
+<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/content.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/datepicker.css">  <!-- 제이쿼리 달력 css-->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./js/jquery.placeholder.min.js"></script><!-- 제이쿼리 placeholder-->
+<script src="./js/datepicker.js"></script><!-- 제이쿼리 달력 js-->
+<script src="./js/datepicker-ko.js"></script><!-- 제이쿼리 달력 datepicker 한국어로 -->
+<script src="./js/script.js"></script>
+<script>
+	$(function() {
+		$.datepicker.setDefaults($.datepicker.regional['ko']); //datepicker 한국어로 사용하기 위한 언어설정
+		$('.datepicker01').datepicker();
+		$('.datepicker02').datepicker();
+	});
+</script>
+
+</head>
+<div class="mask"></div>
+<div class="modal">
+    <div class="layerpopupArea">
+        <span class="close">&times;</span>
+        <!-- Modal content -->
+        <div  id="personalItem01" class="modal-content">    
+            <h4>비밀번호 변경</h4>
+            <div class="card-content">
+                <div class="tar fs12 mb_5"><span class="red">*</span>필수입력항목</div>
+                <div class="regist-form">
+                    <table>
+                        <colgroup>
+                            <col width="25%"><col width="">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">현재 비밀번호 <span class="red">*</span></th>
+                                <td><input type="text" class="form-control" title="아이디 입력해주세요" name="id"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">새 비밀번호 <span class="red">*</span></th>
+                                <td>
+                                    <input type="text" class="form-control" title="이름 입력해주세요" name="name">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">새 비밀번호 확인 <span class="red">*</span></th>
+                                <td><input type="text" class="form-control" title="이메일주소 입력해주세요" name="email"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="red fs12 mt_5">비밀번호는 8자 ~ 20자, 영문, 숫자, 특수문자 사용가능</div>
+                <div class="tar mt_30">
+                    <button type="button" class="btn btn-secondary" id="close">취소</button>
+                    <button type="button" class="btn btn-info">확인</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal content -->
+        <div  id="personalItem02" class="modal-content">
+            <h4>나의정보</h4>
+            <div class="card-content">
+                <div class="tar fs12 mb_5"><span class="red">*</span>필수입력항목</div>
+                <div class="regist-form">
+                    <table>
+                        <colgroup>
+                            <col width="20%"><col width="">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">소속 <span class="red">*</span></th>
+                                <td class="tal">기획예산팀</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">이름 <span class="red">*</span></th>
+                                <td class="tal">홍길동</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">직급/직책 <span class="red">*</span></th>
+                                <td class="tal">팀장</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">이메일주소 <span class="red">*</span></th>
+                                <td class="tal">awsdert@gg.pass.or.kr</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tar mt_30">
+                    <button type="button" class="btn btn-secondary" id="close">취소</button>
+                    <button type="button" class="btn btn-info">확인</button>
+                </div>
+            </div>
+        </div>
+        <!-- //Modal content -->
+    </div>
+</div>
+<body id="dashboard" class="bg">  <!--style="overflow-y:hidden; overflow-x:auto;"-->
+	<!--wrapper-->
+	<div class="wrapper">
+		<!-- Header -->
+		<div id="header">
+			<div class="skip">상단메뉴</div>
+			<div class="header-top main-width">
+                <div class="container navbar">
+                    <div class="inner-container">
+                        <div>
+                            <h1 class="logo">
+                                <img src="./images/logo.png" alt="경기도사회서비스원"><br><span>통합사회정보시스템</span>
+                            </h1>
+                        </div>
+                        <div class="gnb">
+                            <div class="skip">상단메뉴</div>
+                            <!--하위메뉴가 없는 메뉴는 해당li태그에 class="nosub" 넣어주세요-->
+                            <ul class="depth1">
+                                <li class="nosub"><a href="#none">홈</a></li>
+                                <li class="nosub"><a href="#none">예산집행율</a></li>
+                                <li class="nosub"><a href="#none">종사자현황</a></li>
+                                <li class="nosub"><a href="#none">종합재가센터</a></li>
+                                <li class="nosub"><a href="#none">어린이집</a></li>
+                                <li class="nosub"><a href="#none">다함께돌봄센터</a></li>
+                                <!-- <li><a href="#none">국공립시설</a>
+                                    <ul class="depth2">
+                                        <li><a href="#none">어린이집</a></li>
+                                        <li><a href="#none">다함께돌봄센터</a></li>
+                                    </ul>
+                                </li> -->
+                                <li><a href="#none">공공센터</a>
+                                    <ul class="depth2">
+                                        <li><a href="#none">대체인력지원사업</a></li>
+                                        <li><a href="#none">노인보호전문기관</a></li>
+                                        <li><a href="#none">노인종합상담센터</a></li>
+                                        <li><a href="#none">노인일자리지원센터</a></li>
+                                        <li><a href="#none">지역사회서비스지원단</a></li>
+                                        <li><a href="#none">장기요양요원지원센터</a></li>
+                                    </ul>
+                                </li>
+                                <!-- <li class="nosub"><a href="#none">개인인사정보</a></li>
+                                <li class="nosub"><a href="#none">통합결재</a></li>
+                                <li class="nosub"><a href="#none">설문조사</a></li>
+                                <li class="nosub"><a href="http://pub_lms-lite.tigensoft.co.kr:9090/_front/" target="_blank" title="새창열림">교육관리 <i class="far fa-window-restore"></i></a></li> -->
+                                <li><a href="#none">관리자</a>
+                                    <ul class="depth2">
+                                        <li><a href="#none">인사관리</a></li>
+                                        <li><a href="#none">통합결재관리</a></li>
+
+                                        <li><a href="#none">대용량메일발송관리</a></li>
+                                        <li><a href="#none">통합메시지관리</a></li>
+                                        <li><a href="#none">설문조사관리</a></li>
+                                        <li><a href="http://pub_lms-lite.tigensoft.co.kr:9090/_front/" target="_blank" title="새창열림">교육관리 <i class="far fa-window-restore"></i></a></li>
+
+                                        <li><a href="#none">자산관리</a></li>
+                                        <li><a href="#none">게시판관리</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="info">
+                            <a href="#none" title="펼치기" class="off">
+                                <i class="fas fa-user-cog fa-lg"></i>
+                                <span class="fs13">홍길동팀장 </span><br><span class="fs11">(기획예산팀)</span>
+                            </a>
+                            <ul>
+                                <li><a href="#none" class="openPopup" data-target="personalItem01"><i class="fas fa-user mr_5"></i> 비밀번호변경</a></li>
+                                <li><a href="#none" class="openPopup" data-target="personalItem02"><i class="fas fa-key mr_5"></i> 나의정보</a></li>
+                                <li><a href="./권한변경_공통.html"><i class="fas fa-key mr_5"></i> 권한설정</a></li>
+                                <li><a href="#none"><i class="fas fa-power-off mr_5"></i> 로그아웃</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+		<!-- //Header -->
+
+		<!--home-->
+		<div class="home">
+			<div class="home-wrapper homedashboard">
+				<div class="TODAY">
+					<div class="skip">홈(대시보드)영역</div>
+					<span class="data-tit">Today</span>
+					<div class="data_area">
+			            <a href="#" class="btn_prev" title="이전 달"><span><i class="fas fa-chevron-left fa-lg"></i></span></a>
+			            <div class="title_date">2021.10.26</div>
+			            <a href="#" class="btn_next rollover calendar-btn-next-mon" title="다음 달"><span><i class="fas fa-chevron-right fa-lg"></i></span></a>
+			        </div>
+				</div>
+				<!--dashboard-->
+				<div class="dashboard">
+					<div class="head">
+						<div class="title"><p class="text">대상자 서비스 이용현황</p></div>
+					</div>
+					<div class="body">
+						<div class="skip">대시보드영역</div>
+		                <div class="frame">
+		                    <ul>
+		                        <li class="item">
+		                            <div class="card">
+		                                <div class="contents">
+		                                    <span class="classification">1. 다함게돌봄센터</span>
+		                                    <div class="one">
+		                                    	<p>현원 <span>20</span>명</p>
+		                                    	<p>정원 40명</p>
+		                                    </div>
+		                                    <a href="#none" class="more">+</a>
+		                                </div>
+		                            </div>
+		                        </li>
+		                        <li class="item">
+		                            <div class="card">
+		                                <div class="contents">
+		                                    <span class="classification">2. 어린이집</span>
+		                                    <div class="one">
+		                                    	<p>현원 <span>50</span>명</p>
+		                                    	<p>정원 50명</p>
+		                                    </div>
+		                                    <a href="#none" class="more">+</a>
+		                                </div>
+		                            </div>
+		                        </li>
+		                        <li class="item">
+		                            <div class="card">
+		                                <div class="contents">
+		                                    <span class="classification">3. 종합재가센터</span>
+		                                    <div class="one">
+		                                    	<p>이용자수 <span>80</span>명</p>
+		                                    	<p>제공횟수 <span>80</span>회</p>
+		                                    </div>
+		                                    <a href="#none" class="more">+</a>
+		                                </div>
+		                            </div>
+		                        </li>
+		                        <li class="item">
+		                            <div class="card">
+		                                <div class="contents">
+		                                    <span class="classification">4. 노인보호전문기관</span>
+		                                    <div class="one">
+		                                    	<p>접수&상담수<span class="num">70</span>건</p>
+		                                    	<ul class="tar">
+		                                    		<li>수사중 50건</li>
+		                                    		<li>내사종결 20건</li>
+		                                    		<li>재판중 20건</li>
+		                                    		<li>판결 2건</li>
+		                                    	</ul>
+		                                    </div>
+		                                    <a href="#none" class="more">+</a>
+		                                </div>
+		                            </div>
+		                        </li>
+			                    <li class="item">
+		                            <div class="card">
+		                                <div class="contents">
+		                                    <span class="classification">5. 노인상담센터</span>
+		                                    <div class="one">
+		                                    	<p>상담수<span class="num">40</span>건</p>
+		                                    	<ul class="tar">
+		                                    		<li>정보제공상담 8건</li>
+		                                    		<li>10회기 8건</li>
+		                                    		<li>20회기 8건</li>
+		                                    		<li>30회기 8건</li>
+		                                    	</ul>
+		                                    </div>
+		                                    <a href="#none" class="more">+</a>
+		                                </div>
+		                            </div>
+		                        </li>
+		                    </ul>
+		                </div>
+					</div>
+					<!--//body-->
+
+					<div class="head">
+						<div class="title"><p class="text">서비스 지원현황</p></div>
+					</div>
+					<div class="body">
+						<div class="skip">대시보드영역</div>
+		                <div class="frame">
+		                	<ul>
+		                        <li class="item">
+		                            <div class="card">
+		                                <div class="contents">
+		                                    <span class="classification">6. 대체인력지원센터</span>
+		                                    <div class="one">
+		                                    	<p>국비 - 파견인원 <span>80</span>명</p>
+		                                    	<p>도비 - 파견인원 <span>80</span>명</p>
+		                                    </div>
+		                                    <a href="#none" class="more">+</a>
+		                                </div>
+		                            </div>
+		                        </li>
+		                        <li class="item">
+		                            <div class="card">
+		                                <div class="contents">
+		                                    <span class="classification">7. 안전점검 지원사업</span>
+		                                    <div class="one">
+		                                    	<p>신청 <span>80</span>명</p>
+		                                   		<p>지원 <span>80</span>명</p>
+		                                    </div>
+		                                    <a href="#none" class="more">+</a>
+		                                </div>
+		                            </div>
+		                        </li>
+		                        <li class="item">
+		                            <div class="card">
+		                                <div class="contents">
+		                                    <span class="classification">8. 컨설팅 지원사업</span>
+		                                    <div class="one">
+		                                    	<p>노무 <span>80</span>명</p>
+		                                   		<p>회계 <span>80</span>명</p>
+		                                   	</div>
+		                                    <a href="#none" class="more">+</a>
+		                                </div>
+		                            </div>
+		                        </li>
+		                        <li class="item">
+		                            <div class="card">
+		                                <div class="contents">
+		                                    <span class="classification">9. 지역사회서비스지원단</span>
+		                                    <div class="one">
+		                                    	<p>발굴&활성화수 <span>16</span>명</p>
+		                                    	<p>추진&참여인원 <span>16</span>명</p>
+		                                    </div>
+		                                    <a href="#none" class="more">+</a>
+		                                </div>
+		                            </div>
+		                        </li>
+		                        <li class="item">
+		                            <div class="card">
+		                                <div class="contents">
+		                                    <span class="classification">10. 노인일자리지원센터</span>
+		                                    <div class="one">
+		                                    	<p>지원&교육수 <span>28</span>명</p>
+		                                    	<p>추진&참여인원<span>28</span>명</p>
+		                                    </div>
+		                                    <a href="#none" class="more">+</a>
+		                                </div>
+		                            </div>
+		                        </li>
+		                        <li class="item">
+		                            <div class="card">
+		                                <div class="contents">
+		                                    <span class="classification">11. 장기요양요원지원센터</span>
+		                                    <div class="one">
+		                                    	<p>
+		                                    		<span class="txt">교육&상담&행사수</span>
+		                                    		<span>15</span>건
+		                                    	</p>
+		                                    	<p>대상&참여인원 <span>15</span>명</p>
+		                                    </div>
+		                                    <a href="#none" class="more">+</a>
+		                                </div>
+		                            </div>
+		                        </li>
+		                    </ul>
+		                </div>
+					</div>
+					<!--//body-->
+
+					<!--box3-->
+					<div class="box3">
+						<div class="head">
+							<div class="title"><p class="text">예산 집행률 현황</p></div>
+						</div>
+						<div class="frame">
+							<ul>
+								<li class="item w100p" style="height:150px;"> <!--style="width:593px; height:150px;"-->
+									<div class="card">
+										<div class="contents">
+											<div class="one mt_15">
+												<p class="tac">연간집행률 <span>50</span>%</p>
+											</div>
+											 <a href="#none" class="more">+</a>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!--//box3-->
+					<!--box3-->
+					<div class="box3 ml_10">
+						<div class="head">
+							<div class="title"><p class="text pl_10">직원 현황</p></div>
+						</div>
+						<div class="frame">
+							<ul>
+								<li class="item w100p" style="height:150px;">
+									<div class="card">
+										<div class="contents">
+											<div class="one mt_15">
+												<p class="tac">현원<span>400</span>명 / 정원 420명</p>
+											</div>
+											<a href="#none" class="more">+</a>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!--//box3-->
+					<!--box3-->
+					<div class="box3 ml_10">
+						<div class="head">
+							<div class="title"><p class="text pl_10">교육 이수 현황</p></div>
+						</div>
+						<div class="frame">
+							<ul>
+								<li class="item w100p" style="height:150px;">
+									<div class="card">
+										<div class="contents">
+											<div class="one mt_15">
+												<p class="tac"><span>20</span>건 / <span>20</span>시간 / <span>50</span>명</p>
+											</div>
+											<a href="#none" class="more">+</a>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!--//box3-->
+				</div>
+				<!--//dashboard-->
+			</div>
+		</div>
+		<!--//home-->
+	</div><!--//wrapper-->
+</body>
+</html>
