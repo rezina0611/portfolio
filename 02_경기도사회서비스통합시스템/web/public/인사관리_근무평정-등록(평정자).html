@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>경기도사회서비스원 통합사회정보시스템</title>
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/layout.css">
+<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/content.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/datepicker.css">  <!-- 제이쿼리 달력 css-->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./js/jquery.placeholder.min.js"></script><!-- 제이쿼리 placeholder-->
+<script src="./js/datepicker.js"></script><!-- 제이쿼리 달력 js-->
+<script src="./js/datepicker-ko.js"></script><!-- 제이쿼리 달력 datepicker 한국어로 -->
+<script src="./js/script.js"></script>
+<script>
+	$(function() {
+		$.datepicker.setDefaults($.datepicker.regional['ko']); //datepicker 한국어로 사용하기 위한 언어설정
+		$('.datepicker01').datepicker();
+		$('.datepicker02').datepicker();
+	});
+</script>
+
+</head>
+<div class="mask"></div>
+<div class="modal">
+	<div class="layerpopupArea">
+		<span class="close">&times;</span>
+		<!-- Modal content -->
+	    <div id="personalItem01" class="modal-content">	
+	    	<h4>비밀번호 변경</h4>
+	    	<div class="card-content">
+	    		<div class="tar fs12 mb_5"><span class="red">*</span>필수입력항목</div>
+	    		<div class="regist-form">
+	    			<table>
+						<colgroup>
+							<col width="25%"><col width="">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">현재 비밀번호 <span class="red">*</span></th>
+								<td><input type="text" class="form-control" title="아이디 입력해주세요" name="id"></td>
+							</tr>
+							<tr>
+								<th scope="row">새 비밀번호 <span class="red">*</span></th>
+								<td>
+									<input type="text" class="form-control" title="이름 입력해주세요" name="name">
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">새 비밀번호 확인 <span class="red">*</span></th>
+								<td><input type="text" class="form-control" title="이메일주소 입력해주세요" name="email"></td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    		<div class="red fs12 mt_5">비밀번호는 8자 ~ 20자, 영문, 숫자, 특수문자 사용가능</div>
+	    		<div class="tar mt_30">
+	    			<button type="button" class="btn btn-secondary" id="close">취소</button>
+	    			<button type="button" class="btn btn-info">확인</button>
+	    		</div>
+	    	</div>
+		</div>
+
+		<!-- Modal content -->
+	    <div id="personalItem02" class="modal-content">
+	    	<h4>나의정보</h4>
+	    	<div class="card-content">
+	    		<div class="tar fs12 mb_5"><span class="red">*</span>필수입력항목</div>
+	    		<div class="regist-form">
+	    			<table>
+						<colgroup>
+							<col width="20%"><col width="">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">소속 <span class="red">*</span></th>
+								<td class="tal">기획예산팀</td>
+							</tr>
+							<tr>
+								<th scope="row">이름 <span class="red">*</span></th>
+								<td class="tal">홍길동</td>
+							</tr>
+							<tr>
+								<th scope="row">직급/직책 <span class="red">*</span></th>
+								<td class="tal">팀장</td>
+							</tr>
+							<tr>
+								<th scope="row">이메일주소 <span class="red">*</span></th>
+								<td class="tal">awsdert@gg.pass.or.kr</td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    		<div class="tar mt_30">
+	    			<button type="button" class="btn btn-secondary" id="close">취소</button>
+	    			<button type="button" class="btn btn-info">확인</button>
+	    		</div>
+	    	</div>
+		</div>
+		<!-- //Modal content -->
+	</div>
+</div>
+<body class="bg">  <!--style="overflow-y:hidden; overflow-x:auto;"--> 
+	<!--wrapper-->
+	<div class="wrapper">
+		<!-- Header -->
+	    <div id="header">
+	        <div class="skip">상단메뉴</div>
+	        <div class="header-top main-width">
+	            <div class="container navbar">
+	                <div class="inner-container">
+	                    <div>
+	                        <h1 class="logo">
+	                            <img src="./images/logo.png" alt="경기도사회서비스원"><br><span>통합사회정보시스템</span>
+	                        </h1>
+	                    </div>
+	                   
+	                   <div class="gnb">
+	                        <div class="skip">상단메뉴</div>
+	                        <!--하위메뉴가 없는 메뉴는 해당li태그에 class="nosub" 넣어주세요-->
+	                        <ul class="depth1">
+                                <li class="nosub"><a href="./home(대시보드).html">홈</a></li>
+                                <li class="nosub"><a href="./예산집행율조회.html">예산집행율</a></li>
+                                <li class="nosub"><a href="./종사자현황_(고용형태별)조회.html">종사자현황</a></li>
+                                <li class="nosub"><a href="./종합재가센터_운영현황목록.html">종합재가센터</a></li>
+                                <li><a href="#none">국공립시설</a>
+                                	<ul class="depth2">
+                                		<li><a href="./국공립시설_운영현황목록(어린이집).html">어린이집</a></li>
+                                		<li><a href="./국공립시설_운영현황목록(다함께돌봄).html">다함께돌봄센터</a></li>
+                                	</ul>
+                                </li>
+                                <li><a href="#none">공공센터</a>
+                                	<ul class="depth2">
+                                		<li><a href="./공공센터_대체인력지원사업_운영현황.html">대체인력지원사업</a></li>
+                                		<li><a href="./공공센터_노인보호전문기관_운영현황.html">노인보호전문기관</a></li>
+                                		<li><a href="./공공센터_노인종합상담센터_운영현황.html">노인종합상담센터</a></li>
+                                		<li><a href="./공공센터_노인일자리지원센터_운영현황.html">노인일자리지원센터</a></li>
+                                		<li><a href="./공공센터_지역사회서비스지원단_운영현황.html">지역사회서비스지원단</a></li>
+                                		<li><a href="./공공센터_장기요양요원지원센터_운영현황.html">장기요양요원지원센터</a></li>
+                                	</ul>
+                                </li>
+                                <li class="nosub"><a href="./개인인사정보_개인휴가조회.html">개인인사정보</a></li>
+                                <li class="nosub"><a href="./통합결재_통합문서목록.html">통합결재</a></li>
+                                <li class="nosub"><a href="./설문조사_진행가능한설문.html">설문조사</a></li>
+                                <li class="nosub"><a href="http://pub_lms-lite.tigensoft.co.kr:9090/_front/" target="_blank" title="새창열림">교육관리 <i class="far fa-window-restore"></i></a></li>
+                                <li><a href="#none">관리자</a>
+                                    <ul class="depth2">
+                                        <li><a href="./인사관리_인사사항조회.html">인사관리</a></li>
+                                        <li><a href="./자산관리.html">자산관리</a></li>
+                                        <li><a href="./대용량메일발송.html">대용량메일발송</a></li>
+                                        <li><a href="./통합메시지.html">통합메시지</a></li>
+                                        <li><a href="./설문조사관리.html">설문조사관리</a></li>
+                                        <li><a href="./통합메시지발송.html">통합메시지발송</a></li>
+                                        <li><a href="./통합메시지기준관리.html">통합메시지기준관리</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+	                    </div>
+
+	                    <div class="info">
+                            <a href="#none" title="펼치기" class="off">
+                                <i class="fas fa-user-cog fa-lg"></i>
+                                <span class="fs13">홍길동팀장 </span><br><span class="fs11">(기획예산팀)</span>
+                            </a>
+                            <ul>
+                                <li><a href="#none" class="openPopup" data-target="personalItem01"><i class="fas fa-user mr_5"></i> 비밀번호변경</a></li>
+                                <li><a href="#none" class="openPopup" data-target="personalItem02"><i class="fas fa-key mr_5"></i> 나의정보</a></li>
+                                <li><a href="./권한변경_공통.html"><i class="fas fa-key mr_5"></i> 권한설정</a></li>
+                                <li><a href="#none"><i class="fas fa-power-off mr_5"></i> 로그아웃</a></li>
+                            </ul>
+                        </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    <!-- //Header -->
+		<!--gside-->
+	    <div class="gside">
+	        <div class="skip">레프트메뉴 영역</div>
+	        <!--li태그에 nochild 클래스가 있으면 하위메뉴가 없다는 뜻-->
+	        <div class="skip">관리자_인사관리</div>
+	        <ul>
+	            <li><a href="#none" class="on">인사관리</a>
+	                <ul>
+	                    <li><a href="./인사관리_인사사항조회.html">인사사항조회</a></li>
+	                    <li><a href="./인사관리_복지포인트.html">복지포인트조회</a></li>
+	                    <li><a href="./인사관리_근무평정(평정자).html"  class="on">근무성적평정</a></li>
+	                    <li><a href="./인사관리_재증명서발급.html">재증명서발급</a></li>
+	                    <li><a href="./인사관리_재증명발급이력조회.html">재증명발급이력조회</a></li>
+	                </ul>
+	            </li>
+	            <li><a href="#none">급여관리</a>
+	                <ul>
+	                    <li><a href="./인사관리_급여관리조회.html">급여조회</a></li>
+	                </ul>
+	            </li>
+	            <li><a href="#none">근태관리</a>
+	                <ul>
+	                    <li><a href="./인사관리_근태관리_일일근태조회.html">일일근태조회</a></li>
+	                    <li><a href="./인사관리_근태관리_기간별근태집계.html">기간별근태집계</a></li>
+	                    <li><a href="./인사관리_근태관리_야근식대교통비관리.html">야근식대교통비</a></li>
+	                </ul>
+	            </li>
+	            <li><a href="#none">휴가관리</a>
+	                <ul>
+	                    <li><a href="./인사관리_휴가관리_연차생성.html">연차생성</a></li>
+	                    <li><a href="./인사관리_휴가관리_연차일괄적용.html">연차일괄적용</a></li>
+	                    <li><a href="./인사관리_휴가관리_사용휴가관리.html">사용휴가관리</a></li>
+	                    <li><a href="./인사관리_휴가관리_잔여연차조회.html">잔여연차조회</a></li>
+	                </ul>
+	            </li>
+	            <li><a href="#none">통합결재관리</a>
+	                <ul>
+	                    <li><a href="./인사관리_통합결재관리_전체문서.html">전체문서</a></li>
+	                    <li><a href="./인사관리_통합결재관리_결제선관리.html">결재선문서</a></li>
+	                    <li><a href="./인사관리_통합결재관리_양식관리.html">양식관리</a></li>
+	                </ul>
+	            </li>
+	            <li><a href="#none">기준관리</a>
+	                <ul>
+	                    <li><a href="./인사관리_기준관리_휴일관리.html">휴일관리</a></li>
+	                    <li><a href="./인사관리_기준관리_부서코드.html">부서코드</a></li>
+	                    <li><a href="./인사관리_기준관리_부서코드(대분류코드등록).html">대중소분류코드등록</a></li>
+	                </ul>
+	            </li>
+	        </ul>
+	    </div>
+	    <!--//gside-->
+		<!--content-->
+		<div class="content">
+			<div class="skip">컨텐츠 영역</div>
+			<!--content-wrapper-->
+			<div class="content-wrapper">
+				<!--cont-header-->
+				<div class="cont-header">
+					<div class="cont-header-left">
+						<h3 class="Depth2_title">인사관리</h3>
+						<ul class="breadcrumb d_iblock">
+							<li>홈 <i class="fas fa-angle-right"></i></li>
+							<li>인사관리 <i class="fas fa-angle-right"></i></li>
+							<li>근무평정</li>
+						</ul>
+					</div>
+				</div>
+				<!--//cont-header-->
+				<!--content-body-->
+				<div class="content-body">
+					<div class="card-header">
+						<h4 class="Depth3_title">직원근무성적평정서</h4>
+						<!-- <div class="heading-elements">
+							<button type="button" class="btn btn-secondary"><i class="fas fa-redo-alt"></i> 검색조건 초기화</button>
+							<button type="button" class="btn btn-primary"><i class="fas fa-search"></i> 조회</button>
+						</div> -->
+					</div>	
+					<div class="card-body">
+						<!-- 검색 -->
+						<div class="search-area">
+							<table>
+								<colgroup>
+									<col width="13%"><col width="*">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">평정 대상기간</th>
+										<td>
+											<input type="text" class="form-control datepicker01" id="rating_day_from" name="param_vo.search_day_from" value="" style="width:110px;" />
+											<img onclick="javascript:$('#rating_day_from').datepicker('show')" src="./images/ico_calender.gif" alt="평정 대상기간" title="평정 대상기간" align="absmiddle" style="cursor:pointer">
+												 ~ 
+											<input type="text" class="form-control datepicker02" id="rating_day_to" name="param_vo.search_day_to" value="" style="width:110px;" />
+											<img onclick="javascript:$('#rating_day_to').datepicker('show')" src="./images/ico_calender.gif" alt="평정 대상기간" title="평정 대상기간" align="absmiddle" style="cursor:pointer">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!--// 검색 -->
+						<!-- 버튼영역 -->
+						<div class="pr mt_20">
+							<div class="list-top">
+								<!-- <button type="button" class="btn btn-info">목록</button>
+								<button type="button" class="btn btn-secondary">취소</button> -->
+								<button type="button" class="btn btn-enro">등록</button>
+							</div>
+						</div>
+						<!-- //버튼영역 -->
+						<div class="table_bbs_list mt_10">
+							<table>
+								<colgroup> <!--100/6개 => 16.6-->
+									<col width="16.6%">
+									<col width="16.6%">
+									<col width="16.6%">
+									<col width="16.6%">
+									<col width="16.6%">
+									<col width="16.6%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">성명</th>
+										<th scope="col">소속</th>
+										<th scope="col">직위</th>
+										<th scope="col">직급</th>
+										<th scope="col">현직급임용일</th>
+										<th scope="col">현보직일</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>홍길동</td>
+										<td>IT솔루션사업부</td>
+										<td>차장</td>
+										<td>4급</td>
+										<td>2021-11-12</td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<h6 class="bold fs15 mt_30">1.담당업무</h6>
+						<div class="table_bbs_write mt_10">
+							<table>
+								<colgroup>
+									<col width="13%"><col width="*">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">담당업무</th>
+										<td>
+											<input type="text" class="form-control" id="Responsibilities_from" name="param_vo.Responsibilities_from" value="" />
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<h6 class="bold fs15 mt_30">2. 근무실적 평정(50점)</h6>
+						<div class="table_bbs_list mt_10">
+							<table>
+								<colgroup>
+									<col width="3%">
+									<col width="5%">
+									<col width="4%">
+									<col width="29%">
+
+									<col width="3%">
+									<col width="3%">
+									<col width="3%">
+									<col width="3%">
+									<col width="3%">
+
+									<col width="3%">
+									<col width="3%">
+									<col width="3%">
+									<col width="3%">
+									<col width="3%">
+
+									<col width="3%">
+									<col width="3%">
+									<col width="3%">
+									<col width="3%">
+									<col width="3%">
+
+									<col width="4%">
+									<col width="4%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col" rowspan="3">연번</th>
+										<th scope="col" rowspan="3">성과목표 또는 단위과제</th>
+										<th scope="col" rowspan="3">업무<br>비중<br>(%)<br>㉮</th>
+										<th scope="col" rowspan="3">주요실적</th>
+										<th scope="col" colspan="16">평정요소</th>
+										<th scope="col" rowspan="3">소계<br>점수</th>
+									</tr>
+									<tr>
+										<th scope="col" colspan="5" class="borth">업무난이도(10점)㉯</th>
+										<th scope="col" colspan="5">완성도(20점)㉰</th>
+										<th scope="col" colspan="5">적시성(20점)㉱</th>
+										<th scope="col" rowspan="2">합산<br>점수</th>
+									</tr>
+									<tr>
+										<th scope="col" class="borth">①</th>
+										<th scope="col">②</th>
+										<th scope="col">③</th>
+										<th scope="col">④</th>
+										<th scope="col">⑤</th>
+										<th scope="col">①</th>
+										<th scope="col">②</th>
+										<th scope="col">③</th>
+										<th scope="col">④</th>
+										<th scope="col">⑤</th>
+										<th scope="col">①</th>
+										<th scope="col">②</th>
+										<th scope="col">③</th>
+										<th scope="col">④</th>
+										<th scope="col">⑤</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td><input type="text" name="" class="form-control"></td>
+										<td><input type="text" name="" class="form-control"></td>
+										<td><input type="text" name="" class="form-control"></td>
+										<td class="pink">2</td>
+										<td class="pink">4</td>
+										<td class="pink">6</td>
+										<td class="pink">8</td>
+										<td class="pink">10</td>
+										<td class="pink">2</td>
+										<td class="pink">4</td>
+										<td class="pink">6</td>
+										<td class="pink">8</td>
+										<td class="pink">10</td>
+										<td class="pink">2</td>
+										<td class="pink">4</td>
+										<td class="pink">6</td>
+										<td class="pink">8</td>
+										<td class="pink">10</td>
+										<td class="pink"></td>
+										<td class="pink"></td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td><input type="text" name="" class="form-control"></td>
+										<td><input type="text" name="" class="form-control"></td>
+										<td><input type="text" name="" class="form-control"></td>
+										<td class="pink">2</td>
+										<td class="pink">4</td>
+										<td class="pink">6</td>
+										<td class="pink">8</td>
+										<td class="pink">10</td>
+										<td class="pink">2</td>
+										<td class="pink">4</td>
+										<td class="pink">6</td>
+										<td class="pink">8</td>
+										<td class="pink">10</td>
+										<td class="pink">2</td>
+										<td class="pink">4</td>
+										<td class="pink">6</td>
+										<td class="pink">8</td>
+										<td class="pink">10</td>
+										<td class="pink"></td>
+										<td class="pink"></td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td><input type="text" name="" class="form-control"></td>
+										<td><input type="text" name="" class="form-control"></td>
+										<td><input type="text" name="" class="form-control"></td>
+										<td class="pink">2</td>
+										<td class="pink">4</td>
+										<td class="pink">6</td>
+										<td class="pink">8</td>
+										<td class="pink">10</td>
+										<td class="pink">2</td>
+										<td class="pink">4</td>
+										<td class="pink">6</td>
+										<td class="pink">8</td>
+										<td class="pink">10</td>
+										<td class="pink">2</td>
+										<td class="pink">4</td>
+										<td class="pink">6</td>
+										<td class="pink">8</td>
+										<td class="pink">10</td>
+										<td class="pink"></td>
+										<td class="pink"></td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td><input type="text" name="" class="form-control"></td>
+										<td><input type="text" name="" class="form-control"></td>
+										<td><input type="text" name="" class="form-control"></td>
+										<td class="pink">2</td>
+										<td class="pink">4</td>
+										<td class="pink">6</td>
+										<td class="pink">8</td>
+										<td class="pink">10</td>
+										<td class="pink">2</td>
+										<td class="pink">4</td>
+										<td class="pink">6</td>
+										<td class="pink">8</td>
+										<td class="pink">10</td>
+										<td class="pink">2</td>
+										<td class="pink">4</td>
+										<td class="pink">6</td>
+										<td class="pink">8</td>
+										<td class="pink">10</td>
+										<td class="pink"></td>
+										<td class="pink"></td>
+									</tr>
+									<tr>
+										<td colspan="4">대.내외 교육훈련 이수</td>
+										<td colspan="5">20시간 미만(10점) 나</td>
+										<td colspan="5">20이상 30미만(30점) 다</td>
+										<td colspan="5">30시간 이상(50점) 라</td>
+										<td colspan="2"></td>
+									</tr>
+									<tr>
+										<td>교육</td>
+										<td>교육훈련</td>
+										<td>5</td>
+										<td>교육훈련 이수</td>
+										<td colspan="5" class="pink">10</td>
+										<td colspan="5" class="pink">30</td>
+										<td colspan="5" class="pink">50</td>
+										<td class="pink">8</td>
+										<td class="pink">10</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="20" class="bold">총 점(A)</td>
+										<td class="pink borth"></td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+
+						<ul class="liBultxt">
+							<li class="bold">비고</li>
+							<li>1) 추가업무는 연초에 성과계획을 수립한 이후에 추가된 업무를 의미함.</li>
+							<li>2) 각 평가요소별로 불량(①)-미흡(②)-보통(③)-우수(④)-탁월(⑤)의 5단계로 평가하되, <br>
+								불량(①)은 당초 계획을 현저히 미달한 경우, 미흡(②)은 당초계획을 미달한 경우, <br>
+								보통(③)은 당초 계획을 달성한 경우, <br>
+								우수(④)는 당초 계획을 초과한 성과를 달성한 경우, <br>
+								탁월(⑤)은 획기적인 성과를 달성한 경우에 부여하도록 함.</li>
+							<li>3) 합산점수 = ㉯+㉰+㉱, 소계점수 = ㉮×(㉯+㉰+㉱), 총점은 각 소계점수를 합산함.</li>
+						</ul>
+						<h6 class="bold fs15 mt_30">3. 직무수행능력 평정(50점)</h6>
+						<div class="table_bbs_list mt_10">
+							<table>
+								<colgroup>
+									<col width="5%">
+									<col width="10%">
+									<col width="8%">
+									<col width="*">
+									<col width="4%">
+									<col width="4%">
+									<col width="4%">
+									<col width="4%">
+									<col width="4%">
+									<col width="5%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col" rowspan="2">연번</th>
+										<th scope="col" rowspan="2">평정요소</th>
+										<th scope="col" rowspan="2">요소별배점</th>
+										<th scope="col" rowspan="2">정의</th>
+										<th scope="col" colspan="5">평정등급</th>
+										<th scope="col" rowspan="2">소계점수</th>
+									</tr>
+									<tr>
+										<th scope="col" class="borth">①</th>
+										<th scope="col">②</th>
+										<th scope="col">③</th>
+										<th scope="col">④</th>
+										<th scope="col">⑤</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>기획력</td>
+										<td>9점</td>
+										<td class="tal">
+											· 창의적인 시각을 가지고 문제를 예측하고 실행가능 한 계획을 만든다.<br>
+											· 효과적인 설명이 가능하도록 일목요연한 계획을 만든다.</td>
+										<td class="pink">1.8</td>
+										<td class="pink">3.6</td>
+										<td class="pink">5.4</td>
+										<td class="pink">7.2</td>
+										<td class="pink">9.0</td>
+										<td class="pink"></td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>팀워크</td>
+										<td>8점</td>
+										<td class="tal">
+											· 타인을 존중하며 팀원들과 협조적인 분위기를 만든다.<br>
+											· 타인의 적절한 요구와 건설적인 비판을 수용한다.</td>
+										<td class="pink">1.6</td>
+										<td class="pink">3.2</td>
+										<td class="pink">4.8</td>
+										<td class="pink">6.4</td>
+										<td class="pink">8.0</td>
+										<td class="pink"></td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>고객·수혜자지향</td>
+										<td>9점</td>
+										<td class="tal">
+											· 업무와 관련하여 국민이나 내부수혜자(다른 직원)가 원하는 바를 이해하며, 그들의 요구를 충족하도록 배려하는 능력</td>
+										<td class="pink">1.2</td>
+										<td class="pink">2.4</td>
+										<td class="pink">3.6</td>
+										<td class="pink">4.8</td>
+										<td class="pink">6.0</td>
+										<td class="pink"></td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td>추진력</td>
+										<td>6점</td>
+										<td class="tal">
+											· 맡은 업무에 책임감을 가지고 목적한 바를 완수한다.<br>
+											· 열정을 가지고 환경적인 불리함을 극복한다.</td>
+										<td class="pink">1.2</td>
+										<td class="pink">2.4</td>
+										<td class="pink">3.6</td>
+										<td class="pink">4.8</td>
+										<td class="pink">6.0</td>
+										<td class="pink"></td>
+									</tr>
+									<tr>
+										<td>5</td>
+										<td>협상력</td>
+										<td>6점</td>
+										<td class="tal">
+											· 상대방의 의도를 적절히 파악하여 자신의 입장을 설득한다.<br>
+											· 서로 상반되는 이해관계에 대하여 효과적으로 조정을 한다.
+										</td>
+										<td class="pink">1.2</td>
+										<td class="pink">2.4</td>
+										<td class="pink">3.6</td>
+										<td class="pink">4.8</td>
+										<td class="pink">6.0</td>
+										<td class="pink"></td>
+									</tr>
+									<tr>
+										<td>6</td>
+										<td>의사전달력</td>
+										<td>5점</td>
+										<td class="tal">
+											· 표현이 간결하면서도 논점이 빠지지 않도록 문서를 만든다.<br>
+											· 논리적이면서 설득력 있는 말로 설명을 한다.
+										</td>
+										<td class="pink">1.0</td>
+										<td class="pink">2.0</td>
+										<td class="pink">3.0</td>
+										<td class="pink">4.0</td>
+										<td class="pink">5.0</td>
+										<td class="pink"></td>
+									</tr>
+									<tr>
+										<td>7</td>
+										<td>신속성</td>
+										<td>5점</td>
+										<td class="tal">
+											· 계획된 일정에 따라 지연됨이 없이 일을 처리한다.<br>
+											· 주어진 과제에 대한 집중력을 가지고 예상되는 소요시간 보다 빨리 일을 처리한다.
+										</td>
+										<td class="pink">1.0</td>
+										<td class="pink">2.0</td>
+										<td class="pink">3.0</td>
+										<td class="pink">4.0</td>
+										<td class="pink">5.0</td>
+										<td class="pink"></td>
+									</tr>
+									<tr>
+										<td>8</td>
+										<td>성실성</td>
+										<td>5점</td>
+										<td class="tal">
+											· 지각·조퇴·결근 등 조직운영에 장애가 되는 행위를 하지 않는다.<br>
+											· 맡은 업무 및 조직의 발전에 헌신적인 자세를 갖는다.
+										</td>
+										<td class="pink">1.0</td>
+										<td class="pink">2.0</td>
+										<td class="pink">3.0</td>
+										<td class="pink">4.0</td>
+										<td class="pink">5.0</td>
+										<td class="pink"></td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="9" class="bold">총점(B)</td>
+										<td class="pink borth"></td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+						<ul class="liBultxt">
+							<li class="bold">비고</li>
+							<li>평가요소별로 ‘전혀 그렇지 않다(①)-거의 그렇지 않다(②)-가끔 그렇다(③)-자주 그렇다(④)-항상 그렇다(⑤)’의 5단계로 평가함.</li>
+						</ul>
+
+						<h6 class="bold fs15 mt_30">4. 종합평가</h6>
+						<div class="table_bbs_list mt_10">
+							<table>
+								<colgroup>
+									<col width="10%">
+									<col width="10%">
+									<col width="5%">
+									<col width="*">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">종합평점등급</th>
+										<th scope="col">평점점수(A+B)</th>
+										<th scope="col" colspan="2">종합평정의견</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>실적</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>능력</td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="table_bbs_write mt_10">
+							<table>
+								<colgroup>
+									<col width="13%"><col width="*">
+									<col width="13%"><col width="*">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">등록일</th>
+										<td colspan="3">2021-12-31</td>
+									</tr>
+									<tr>
+										<th scope="row">평정자 직위(직급)</th>
+										<td class="input_not">과장</td>
+										<th scope="row">평정자 성명</th>
+										<td class="input_not">홍길동</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- 버튼영역 -->
+						<div class="pr mt_20 tar">
+							<div class="list-top">
+								<button type="button" class="btn btn-info">목록</button>
+								<button type="button" class="btn btn-secondary">취소</button>
+							</div>
+						</div>
+						<!-- //버튼영역 -->
+					</div>
+				</div>
+				<!--//content-body-->
+			</div><!--//content-wrapper-->
+		</div><!--//content-->
+	</div><!--//wrapper-->
+</body>
+</html>

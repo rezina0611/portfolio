@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>경기도사회서비스원 통합사회정보시스템</title>
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/layout.css">
+<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/content.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/datepicker.css">  <!-- 제이쿼리 달력 css-->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./js/jquery.placeholder.min.js"></script><!-- 제이쿼리 placeholder-->
+<script src="./js/datepicker.js"></script><!-- 제이쿼리 달력 js-->
+<script src="./js/datepicker-ko.js"></script><!-- 제이쿼리 달력 datepicker 한국어로 -->
+<script src="./js/script.js"></script>
+<script>
+	$(function() {
+		$.datepicker.setDefaults($.datepicker.regional['ko']); //datepicker 한국어로 사용하기 위한 언어설정
+		$('.datepicker01').datepicker();
+		$('.datepicker02').datepicker();
+	});
+</script>
+
+</head>
+<div class="mask"></div>
+<div class="modal">
+	<div class="layerpopupArea">
+		<span class="close">&times;</span>
+		<!-- Modal content -->
+	    <div  id="personalItem01" class="modal-content">	
+	    	<h4>비밀번호 변경</h4>
+	    	<div class="card-content">
+	    		<div class="tar fs12 mb_5"><span class="red">*</span>필수입력항목</div>
+	    		<div class="regist-form">
+	    			<table>
+						<colgroup>
+							<col width="25%"><col width="">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">현재 비밀번호 <span class="red">*</span></th>
+								<td><input type="text" class="form-control" title="아이디 입력해주세요" name="id"></td>
+							</tr>
+							<tr>
+								<th scope="row">새 비밀번호 <span class="red">*</span></th>
+								<td>
+									<input type="text" class="form-control" title="이름 입력해주세요" name="name">
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">새 비밀번호 확인 <span class="red">*</span></th>
+								<td><input type="text" class="form-control" title="이메일주소 입력해주세요" name="email"></td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    		<div class="red fs12 mt_5">비밀번호는 8자 ~ 20자, 영문, 숫자, 특수문자 사용가능</div>
+	    		<div class="tar mt_30">
+	    			<button type="button" class="btn btn-secondary" id="close">취소</button>
+	    			<button type="button" class="btn btn-info">확인</button>
+	    		</div>
+	    	</div>
+		</div>
+
+		<!-- Modal content -->
+	    <div  id="personalItem02" class="modal-content">
+	    	<h4>나의정보</h4>
+	    	<div class="card-content">
+	    		<div class="tar fs12 mb_5"><span class="red">*</span>필수입력항목</div>
+	    		<div class="regist-form">
+	    			<table>
+						<colgroup>
+							<col width="20%"><col width="">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">소속 <span class="red">*</span></th>
+								<td class="tal">기획예산팀</td>
+							</tr>
+							<tr>
+								<th scope="row">이름 <span class="red">*</span></th>
+								<td class="tal">홍길동</td>
+							</tr>
+							<tr>
+								<th scope="row">직급/직책 <span class="red">*</span></th>
+								<td class="tal">팀장</td>
+							</tr>
+							<tr>
+								<th scope="row">이메일주소 <span class="red">*</span></th>
+								<td class="tal">awsdert@gg.pass.or.kr</td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    		<div class="tar mt_30">
+	    			<button type="button" class="btn btn-secondary" id="close">취소</button>
+	    			<button type="button" class="btn btn-info">확인</button>
+	    		</div>
+	    	</div>
+		</div>
+		<!-- //Modal content -->
+	</div>
+</div>
+
+<body class="bg">  <!--style="overflow-y:hidden; overflow-x:auto;"--> 
+	<!--wrapper-->
+	<div class="wrapper">
+		<!-- Header -->
+		<div id="header">
+			<div class="skip">상단메뉴</div>
+			<div class="header-top main-width">
+                <div class="container navbar">
+                    <div class="inner-container">
+                        <div>
+                            <h1 class="logo">
+                                <img src="./images/logo.png" alt="경기도사회서비스원"><br><span>통합사회정보시스템</span>
+                            </h1>
+                        </div>
+                        <div class="gnb">
+                            <div class="skip">상단메뉴</div>
+                            <!--하위메뉴가 없는 메뉴는 해당li태그에 class="nosub" 넣어주세요-->
+                            <ul class="depth1">
+                                <li class="nosub"><a href="./home(대시보드).html">홈</a></li>
+                                <li class="nosub"><a href="./예산집행율조회.html">예산집행율</a></li>
+                                <li class="nosub"><a href="./종사자현황_(고용형태별)조회.html">종사자현황</a></li>
+                                <li class="nosub"><a href="./종합재가센터_운영현황목록.html">종합재가센터</a></li>
+                                <li><a href="#none">국공립시설</a>
+                                	<ul class="depth2">
+                                		<li><a href="./국공립시설_운영현황목록(어린이집).html">어린이집</a></li>
+                                		<li><a href="./국공립시설_운영현황목록(다함께돌봄).html">다함께돌봄센터</a></li>
+                                	</ul>
+                                </li>
+                                <li><a href="#none">공공센터</a>
+                                	<ul class="depth2">
+                                		<li><a href="./공공센터_대체인력지원사업_운영현황.html">대체인력지원사업</a></li>
+                                		<li><a href="./공공센터_노인보호전문기관_운영현황.html">노인보호전문기관</a></li>
+                                		<li><a href="./공공센터_노인종합상담센터_운영현황.html">노인종합상담센터</a></li>
+                                		<li><a href="./공공센터_노인일자리지원센터_운영현황.html">노인일자리지원센터</a></li>
+                                		<li><a href="./공공센터_지역사회서비스지원단_운영현황.html">지역사회서비스지원단</a></li>
+                                		<li><a href="./공공센터_장기요양요원지원센터_운영현황.html">장기요양요원지원센터</a></li>
+                                	</ul>
+                                </li>
+                                <li class="nosub"><a href="./개인인사정보_개인휴가조회.html">개인인사정보</a></li>
+                                <li class="nosub"><a href="./통합결재_통합문서목록.html">통합결재</a></li>
+                                <li class="nosub"><a href="./설문조사_진행가능한설문.html">설문조사</a></li>
+                                <li class="nosub"><a href="http://pub_lms-lite.tigensoft.co.kr:9090/_front/" target="_blank" title="새창열림">교육관리 <i class="far fa-window-restore"></i></a></li>
+                                <li><a href="#none">관리자</a>
+                                    <ul class="depth2">
+                                        <li><a href="./인사관리_인사사항조회.html">인사관리</a></li>
+                                        <li><a href="./자산관리.html">자산관리</a></li>
+                                        <li><a href="./대용량메일발송.html">대용량메일발송</a></li>
+                                        <li><a href="./통합메시지.html">통합메시지</a></li>
+                                        <li><a href="./설문조사관리.html">설문조사관리</a></li>
+                                        <li><a href="./통합메시지발송.html">통합메시지발송</a></li>
+                                        <li><a href="./통합메시지기준관리.html">통합메시지기준관리</a></li>
+                                    </ul>
+                                </li>
+                             </ul>
+                        </div>
+                        <div class="info">
+                            <a href="#none" title="펼치기" class="off">
+                                <i class="fas fa-user-cog fa-lg"></i>
+                                <span class="fs13">홍길동팀장 </span><br><span class="fs11">(기획예산팀)</span>
+                            </a>
+                            <ul>
+                                <li><a href="#none" class="openPopup" data-target="personalItem01"><i class="fas fa-user mr_5"></i> 비밀번호변경</a></li>
+                                <li><a href="#none" class="openPopup" data-target="personalItem02"><i class="fas fa-key mr_5"></i> 나의정보</a></li>
+                                <li><a href="./권한변경_공통.html"><i class="fas fa-key mr_5"></i> 권한설정</a></li>
+                                <li><a href="#none"><i class="fas fa-power-off mr_5"></i> 로그아웃</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+		<!-- //Header -->
+		<!--gside-->
+	    <div class="gside">
+	        <div class="skip">레프트메뉴 영역</div>
+	        <!--li태그에 nochild 클래스가 있으면 하위메뉴가 없다는 뜻-->
+	        <div class="skip">예산집행율</div>
+	        <ul>
+	            <li class="nochild"><a href="./예산집행율조회.html">예산집행율 조회</a></li>
+	            <li class="nochild"><a href="./예산집행율관리.html" class="on">예산집행율 관리</a></li>
+	        </ul>
+	    </div>
+	    <!--//gside-->
+		<!--content-->
+		<div class="content">
+			<div class="skip">컨텐츠 영역</div>
+			<!--content-wrapper-->
+			<div class="content-wrapper">
+				<!--cont-header-->
+				<div class="cont-header">
+					<div class="cont-header-left">
+						<h3 class="Depth2_title">예산집행율 관리</h3>
+						<ul class="breadcrumb d_iblock">
+							<li>홈 <i class="fas fa-angle-right"></i></li>
+							<li>예산집행율 <i class="fas fa-angle-right"></i></li>
+							<li>예산집행율 관리</li>
+						</ul>
+					</div>
+				</div>
+				<!--//cont-header-->
+				<!--content-body-->
+				<div class="content-body">
+					<div class="card-header">
+						<h4 class="Depth3_title">출연금 및 수탁사업</h4>
+						<div class="heading-elements">
+							<!-- <button type="button" class="btn btn-secondary"><i class="fas fa-redo-alt"></i> 검색조건 초기화</button> -->
+							<button type="button" class="btn btn-primary"><i class="fas fa-search"></i> 조회</button>
+						</div>
+					</div>	
+					<div class="card-body">
+						<!-- 검색 -->
+						<div class="search-area">
+							<table>
+								<colgroup>
+									<col width="13%"><col width="*">
+									<col width="13%"><col width="*">
+									<col width="13%"><col width="*">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">실적기준 년월</th>
+										<td colspan="5">
+											<div class="selectbox">
+												<select name="" title="" class="select">
+													<option value="2021" selected="selected">2021</option>
+													<option value="2025">2025</option>
+													<option value="2024">2024</option>
+													<option value="2023">2023</option>
+													<option value="2022">2022</option>
+												</select>
+											</div>
+											<div class="selectbox">
+												<select name="" title="" class="select">
+													<option value="전체" selected="selected">전체</option>
+													<option value="">1분기</option>
+													<option value="">2분기</option>
+													<option value="">전분기</option>
+													<option value="">3분기</option>
+													<option value="">4분기</option>
+													<option value="">하분기</option>
+												</select>
+											</div>
+											<div class="f_left mr_5 ml_10 line-h35 fs12">복사하기</div>
+											<div class="selectbox">
+												<select name="" title="" class="select">
+													<option value="전체" selected="selected">전체</option>
+													<option value="">1분기</option>
+													<option value="">2분기</option>
+													<option value="">전분기</option>
+													<option value="">3분기</option>
+													<option value="">4분기</option>
+													<option value="">하분기</option>
+												</select>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">구분</th>
+										<td>
+											<select name="" title="" class="select" onchange="window.open(value,'_self');">
+												<option value="./예산집행율관리(출연금및수탁사업).html" selected="selected">출연금 및 수탁사업</option>
+												<option value="./예산집행율관리(수탁시설및공공센터).html">수탁시설 및 공공센터</option>
+											</select>
+										</td>
+										<th scope="row">시설유형</th>
+										<td>
+											<select name="" title="" class="select">
+												<option value="전체" selected="selected">전체</option>
+												<option value="">본원</option>
+												<option value="">종합재가센터</option>
+												<option value="">국공립어린이집</option>
+												<option value="">다함께돌봄센터</option>
+												<option value="">대체인력지원센터</option>
+												<option value="">경기도노인종합상담센터</option>
+												<option value="">노인보호전문기관</option>
+												<option value="">경기도노인일자리지원센터</option>
+												<option value="">경기도지역사회서비스지원단</option>
+												<option value="">경기도장기요양요원지원센터</option>
+											</select>
+										</td>
+										<th scope="row">시설명</th>
+										<td>
+											<select name="" title="" class="select">
+												<option value="전체" selected="selected">전체</option>
+												<option value="">본부</option>
+												<option value="">남양주종합재가센터</option>
+												<option value="">부천종합재가센터</option>
+												<option value="">구리시립동구</option>
+												<option value="">의정부공립더함</option>
+												<option value="">화성시립도이장애전문</option>
+												<option value="">여주국공립 훈민</option>
+												<option value="">화성시(송린이음터)</option>
+												<option value="">포천시(영북면)</option>
+												<option value="">고양시(대화)</option>
+												<option value="">의정부시(가능)</option>
+												<option value="">양평군</option>
+												<option value="">대체인력지원센터</option>
+												<option value="">경기도노인종합상담센터</option>
+												<option value="">경기도노인보호전문기관</option>
+												<option value="">경기동부노인보호전문기관</option>
+												<option value="">경기서부노인보호전문기관</option>
+												<option value="">경기북부노인보호전문기관</option>
+												<option value="">경기북서부노인보호전문기관</option>
+												<option value="">경기도노인일자리지원센터</option>
+												<option value="">경기도지역사회서비스지원단</option>
+												<option value="">경기도장기요양요원지원센터</option>
+											</select>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!--// 검색 -->
+
+						<!-- 버튼영역 -->
+						<div class="pr mt_30">
+							<!-- <button type="button" class="btn btn-completed"><i class="fas fa-download"></i> 엑셀다운로드</button> -->
+							<div class="list-top tal">
+								<span class="fs12">(단위: 천원, <span class="red">2021. 9. 30.</span> 기준)</span>
+							</div>
+						</div>
+						<!-- //버튼영역 -->
+						
+						<table class="fixedHeader w100p">
+							<colgroup>
+								<col width="2%"><col width="2%"><col width="10%">
+								<col width="15%">
+								<col width="15%">
+								<col width="8%">
+								<col width="8%">
+								<col width="8%">
+								<col width="4%">
+								<col width="14%">
+								<col width="14%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" colspan="3">과목 </th>
+									<th scope="col" rowspan="2">연중목표</th>
+									<th scope="col" rowspan="2">3분기 추진실적</th>
+									<th scope="col" rowspan="2">연간예산</th>
+									<th scope="col" rowspan="2">3분기 집행<br>예상액(계획)</th>
+									<th scope="col" rowspan="2">3분기 집행액</th>
+									<th scope="col" rowspan="2">집행률</th>
+									<th scope="col" rowspan="2">부진사유</th>
+									<th scope="col" rowspan="2">하반기 집행계획</th>
+								</tr>
+								<tr>
+									<th scope="col">관</th>
+									<th scope="col">항</th>
+									<th scope="col">목</th>
+								</tr>
+								<tr>
+									<th scope="col" class="pink" colspan="3">계</th>
+									<!-- <th scope="col" class="pink">&nbsp;</th>
+									<th scope="col" class="pink">&nbsp;</th> -->
+									<th scope="col" class="pink">&nbsp;</th>
+									<th scope="col" class="pink">&nbsp;</th>
+									<th scope="col" class="pink">10,422,918</th>
+									<th scope="col" class="pink">4,920,983</th>
+									<th scope="col" class="pink">5,661,610</th>
+									<th scope="col" class="pink">54%</th>
+									<th scope="col" class="pink">&nbsp;</th>
+									<th scope="col" class="pink">&nbsp;</th>
+								</tr>
+							</thead>
+						</table>
+						
+						<div class="table_bbs_list_y ofl_hid h_auto mb_20">
+						 	<table id="division">
+						 		<colgroup>
+									<col width="2%"><col width="2%"><col width="10%">
+									<col width="15%">
+									<col width="15%">
+									<col width="8%">
+									<col width="8%">
+									<col width="8%">
+									<col width="4%">
+									<col width="14%">
+									<col width="14%">
+								</colgroup>
+								<tbody>
+									<script>
+										$(document).ready(function(){
+											//과목 추가 버튼
+											$(document).on("click","button[id=rowtr_Add1]",function(){
+
+												var $this = $(this);
+												var trClass2 = $this.parent().parent().attr('class');
+
+												console.log(trClass2);
+
+												var addTR_item1 = 
+
+												'<tr>'+
+												'<td class="p0"></td>'+
+												'<td colspan="2" class="tal"><input type="text" class="form-control" placeholder="관목입력"></td>'+
+												'<td></td>'+
+												'<td></td>'+
+												'<td><input type="text" class="form-control"></td>'+
+												'<td><input type="text" class="form-control"></td>'+
+												'<td><input type="text" class="form-control"></td>'+
+												'<td><input type="text" class="form-control"></td>'+
+												'<td></td>'+
+												'<td></td>'+
+												'</tr>'+
+
+												'<tr>'+
+												'<td></td>'+
+												'<td class="p0"><button type="button" id="rowtr_sAdd3" class="btn-sm btn-add" style="padding:.4rem;">+</button></td>'+
+												'<td class="tal"><input type="text" class="form-control" placeholder="항목입력"></td>'+
+												'<td class="v_top"><div class="editable" contenteditable="true"></div></td>'+
+												'<td class="v_top"><div class="editable" contenteditable="true"></div></td>'+
+												'<td><input type="text" class="form-control"></td>'+
+												'<td><input type="text" class="form-control"></td>'+
+												'<td><input type="text" class="form-control"></td>'+
+												'<td><input type="text" class="form-control"></td>'+
+												'<td class="v_top"><div class="editable" contenteditable="true"></div></td>'+
+												'<td class="v_top"><div class="editable" contenteditable="true"></div></td>'+
+												'</tr>';
+
+												//var trHtml = $( "#division tbody tr.nu03:last" ); //last를 사용하여 마지막 태그 호출
+												var trHtml = $( "#division tbody tr." + trClass2 + ":last" );
+
+												trHtml.after(addTR_item1); //마지막 trStaff명 뒤에 붙인다.
+												//trHtml.append(addTR_item1); 
+											});
+										});
+									</script>
+
+									<!-- <script>
+										$(document).ready(function(){
+											//관목 추가 버튼
+											$(document).on("click","button[id=rowtr_sAdd2]",function(){
+
+												// var $this = $(this);
+												// var trClass2 = $this .parent().parent().attr('class');
+
+												// console.log(trClass2);
+
+												var addTR_item2 = '<tr>'+
+												'<td class="p0"><button type="button" id="rowtr_sAdd2" class="btn-sm btn-add" style="padding:.4rem;">+</button></td>'+
+												'<td colspan="2" class="tal"><input type="text" class="form-control" placeholder="관목입력"></td>'+
+												'<td></td>'+
+												'<td></td>'+
+												'<td><input type="text" class="form-control"></td>'+
+												'<td><input type="text" class="form-control"></td>'+
+												'<td><input type="text" class="form-control"></td>'+
+												'<td><input type="text" class="form-control"></td>'+
+												'<td></td>'+
+												'<td></td>'+
+												'</tr>'+
+												'<tr class="nu02">'+
+												'<td></td>'+
+												'<td class="p0"><button type="button" id="rowtr_sAdd3" class="btn-sm btn-add" style="padding:.4rem;">+</button></td>'+
+												'<td class="tal"><input type="text" class="form-control" placeholder="항목입력"></td>'+
+												'<td class="v_top"><div class="editable" contenteditable="true"></div></td>'+
+												'<td class="v_top"><div class="editable" contenteditable="true"></div></td>'+
+												'<td><input type="text" class="form-control"></td>'+
+												'<td><input type="text" class="form-control"></td>'+
+												'<td><input type="text" class="form-control"></td>'+
+												'<td><input type="text" class="form-control"></td>'+
+												'<td class="v_top"><div class="editable" contenteditable="true"></div></td>'+
+												'<td class="v_top"><div class="editable" contenteditable="true"></div></td>'+
+												'</tr>';
+
+												// //var trHtml2 = $( "tr#item3:last" ); //last를 사용하여 마지막 태그 호출
+												//var trHtml2 = $( ".table_bbs_list_y table#division tbody" );
+												//var trHtml2 = $( "#division tbody tr." + trClass2 + ":last" ); //last를 사용하여 마지막 태그 호출
+												var trHtml2 = $( "#division tbody:last" ); 
+
+												// //trHtml2.after(addTR_item); //마지막 trStaff명 뒤에 붙인다.
+												trHtml2.append(addTR_item2); //마지막 addTR_item2명 뒤에 붙인다.
+											});
+										});
+									</script> -->
+
+									<script>
+										$(document).ready(function(){
+											//항목 추가 버튼
+											$(document).on("click","button[id=rowtr_sAdd3]",function(){
+
+												var $this = $(this);
+												var trClass3 = $this .parent().parent().attr('class');
+
+												console.log(trClass3);
+
+												var addTR_item3 = 
+												'<tr>'+
+												'<td></td>'+
+												'<td class="p0"><button type="button" id="rowtr_sAdd3" class="btn-sm btn-add" style="padding:.4rem;">+</button></td>'+
+												'<td class="tal"><input type="text" class="form-control" placeholder="항목입력"></td>'+
+												'<td class="v_top"><div class="editable" contenteditable="true"></div></td>'+
+												'<td class="v_top"><div class="editable" contenteditable="true"></div></td>'+
+												'<td><input type="text" class="form-control"></td>'+
+												'<td><input type="text" class="form-control"></td>'+
+												'<td><input type="text" class="form-control"></td>'+
+												'<td><input type="text" class="form-control"></td>'+
+												'<td class="v_top"><div class="editable" contenteditable="true"></div></td>'+
+												'<td class="v_top"><div class="editable" contenteditable="true"></div></td>'+
+												'</tr>';
+
+												var obj = $( "#division tbody tr." + trClass3 + ":last" );
+
+												obj.after(addTR_item3); //마지막 뒤에 붙인다.
+
+												//var trHtml2 = $( "tr#item3:last" ); //last를 사용하여 마지막 태그 호출
+												//trHtml2.after(addTR_item); //마지막 trStaff명 뒤에 붙인다.
+											});
+										});
+									</script>
+
+									<!--사업비 영역-->
+									<tr id="bgE2">
+					                    <td colspan="3" class="tal bold">사업비 <button type="button" id="rowtr_Add1" class="btn-sm btn-add">+</button></td>
+					                    <td></td>
+					                    <td></td>
+					                    <td>7.690.579</td>
+					                    <td>4,496,944</td>
+					                    <td>4,009,270</td>
+					                    <td>52%</td>
+					                    <td></td>
+					                    <td></td>
+				                	</tr>
+
+				                	<tr>
+					                    <td class="p0"></td>
+					                    <td colspan="2" class="tal"><input type="text" class="form-control" placeholder="관목입력"></td>
+					                    <td></td>
+					                    <td></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td></td>
+					                    <td></td>
+				                	</tr>
+				                	<tr class="nu01">
+					                    <td></td>
+					                    <td class="p0"><button type="button" id="rowtr_sAdd3" class="btn-sm btn-add" style="padding:.4rem;">+</button></td>
+					                    <td class="tal">
+					                    	<input type="text" class="form-control" placeholder="항목입력">
+					                    </td>
+					                    <td class="v_top">
+					                    	<div class="editable" contenteditable="true"></div>
+					                    </td>
+					                    <td class="v_top">
+					                    	<div class="editable" contenteditable="true"></div>
+					                    </td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td class="v_top">
+					                    	<div class="editable" contenteditable="true"></div>
+					                    </td>
+					                    <td class="v_top">
+					                    	<div class="editable" contenteditable="true"></div>
+					                    </td>
+				                	</tr>
+				                	<!--//사업비 영역-->
+
+
+				                	<!--인건비 영역-->
+				                	<tr id="bgE2">
+					                    <td colspan="3" class="tal bold">인건비 <button type="button" id="rowtr_Add1" class="btn-sm btn-add">+</button></td>
+					                    <td></td>
+					                    <td></td>
+					                    <td></td>
+					                    <td></td>
+					                    <td></td>
+					                    <td></td>
+					                    <td></td>
+					                    <td></td>
+				                	</tr>
+				                	<tr>
+					                    <td></td>
+					                    <td colspan="2" class="tal"><input type="text" class="form-control" placeholder="관목입력"></td>
+					                    <td></td>
+					                    <td></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td></td>
+					                    <td></td>
+				                	</tr>
+				                	<tr class="nu02">
+					                    <td></td>
+					                    <td class="p0"><button type="button" id="rowtr_sAdd3" class="btn-sm btn-add" style="padding:.4rem;">+</button></td>
+					                    <td class="tal">
+					                    	<input type="text" class="form-control" placeholder="항목입력">
+					                    </td>
+					                    <td class="v_top">
+					                    	<div class="editable" contenteditable="true"></div>
+					                    </td>
+					                    <td class="v_top">
+					                    	<div class="editable" contenteditable="true"></div>
+					                    </td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td class="v_top">
+					                    	<div class="editable" contenteditable="true"></div>
+					                    </td>
+					                    <td class="v_top">
+					                    	<div class="editable" contenteditable="true"></div>
+					                    </td>
+				                	</tr>
+				                	<!--//인건비 영역-->
+
+				                	<!--운영비 영역-->
+				                	<tr id="bgE2">
+					                    <td colspan="3" class="tal bold">운영비 </td>
+					                    <td></td>
+					                    <td></td>
+					                    <td></td>
+					                    <td></td>
+					                    <td></td>
+					                    <td></td>
+					                    <td></td>
+					                    <td></td>
+				                	</tr>
+				                	<!-- <tr>
+					                    <td></td>
+					                    <td colspan="2" class="tal"><input type="text" class="form-control" placeholder="관목입력"></td>
+					                    <td></td>
+					                    <td></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td></td>
+					                    <td></td>
+				                	</tr>
+				                	<tr class="nu03">
+					                    <td></td>
+					                    <td class="p0"></td>
+					                    <td class="tal">
+					                    	<input type="text" class="form-control" placeholder="항목입력">
+					                    </td>
+					                    <td class="v_top">
+					                    	<div class="editable" contenteditable="true"></div>
+					                    </td>
+					                    <td class="v_top">
+					                    	<div class="editable" contenteditable="true"></div>
+					                    </td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td class="v_top">
+					                    	<div class="editable" contenteditable="true"></div>
+					                    </td>
+					                    <td class="v_top">
+					                    	<div class="editable" contenteditable="true"></div>
+					                    </td>
+				                	</tr> -->
+				                	<!--//운영비 영역-->
+
+				                	<!--예비비 및 기타 영역-->
+				                	<tr id="bgE2">
+					                    <td colspan="3" class="tal bold">예비비 및 기타</td>
+					                    <td></td>
+					                    <td></td>
+					                    <td></td>
+					                    <td></td>
+					                    <td></td>
+					                    <td></td>
+					                    <td></td>
+					                    <td></td>
+				                	</tr>
+				                	<!-- <tr>
+					                    <td></td>
+					                    <td colspan="2" class="tal"><input type="text" class="form-control" placeholder="관목입력"></td>
+					                    <td></td>
+					                    <td></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td></td>
+					                    <td></td>
+				                	</tr>
+				                	<tr class="nu03">
+					                    <td></td>
+					                    <td class="p0"></td>
+					                    <td class="tal">
+					                    	<input type="text" class="form-control" placeholder="항목입력">
+					                    </td>
+					                    <td class="v_top">
+					                    	<div class="editable" contenteditable="true"></div>
+					                    </td>
+					                    <td class="v_top">
+					                    	<div class="editable" contenteditable="true"></div>
+					                    </td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td><input type="text" class="form-control"></td>
+					                    <td class="v_top">
+					                    	<div class="editable" contenteditable="true"></div>
+					                    </td>
+					                    <td class="v_top">
+					                    	<div class="editable" contenteditable="true"></div>
+					                    </td>
+				                	</tr> -->
+				                	<!--//예비비 및 기타 영역-->
+				                </tbody>
+							</table>
+						</div>
+						<div class="tar">
+							<button type="button" class="btn btn-info">저장</button>
+						</div>
+					</div>
+				</div>
+				<!--//content-body-->
+			</div><!--//content-wrapper-->
+		</div><!--//content-->
+	</div><!--//wrapper-->
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>경기도사회서비스원 통합사회정보시스템</title>
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/layout.css">
+<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/content.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/datepicker.css">  <!-- 제이쿼리 달력 css-->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./js/jquery.placeholder.min.js"></script><!-- 제이쿼리 placeholder-->
+<script src="./js/datepicker.js"></script><!-- 제이쿼리 달력 js-->
+<script src="./js/datepicker-ko.js"></script><!-- 제이쿼리 달력 datepicker 한국어로 -->
+<script src="./js/script.js"></script>
+<script>
+	$(function() {
+		$.datepicker.setDefaults($.datepicker.regional['ko']); //datepicker 한국어로 사용하기 위한 언어설정
+		$('.datepicker01').datepicker();
+		$('.datepicker02').datepicker();
+	});
+</script>
+
+</head>
+<div class="mask"></div>
+<div class="modal">
+	<div class="layerpopupArea">
+		<span class="close">&times;</span>
+		<!-- Modal content -->
+	    <div id="personalItem01" class="modal-content">	
+	    	<h4>비밀번호 변경</h4>
+	    	<div class="card-content">
+	    		<div class="tar fs12 mb_5"><span class="red">*</span>필수입력항목</div>
+	    		<div class="regist-form">
+	    			<table>
+						<colgroup>
+							<col width="25%"><col width="">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">현재 비밀번호 <span class="red">*</span></th>
+								<td><input type="text" class="form-control" title="아이디 입력해주세요" name="id"></td>
+							</tr>
+							<tr>
+								<th scope="row">새 비밀번호 <span class="red">*</span></th>
+								<td>
+									<input type="text" class="form-control" title="이름 입력해주세요" name="name">
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">새 비밀번호 확인 <span class="red">*</span></th>
+								<td><input type="text" class="form-control" title="이메일주소 입력해주세요" name="email"></td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    		<div class="red fs12 mt_5">비밀번호는 8자 ~ 20자, 영문, 숫자, 특수문자 사용가능</div>
+	    		<div class="tar mt_30">
+	    			<button type="button" class="btn btn-secondary" id="close">취소</button>
+	    			<button type="button" class="btn btn-info">확인</button>
+	    		</div>
+	    	</div>
+		</div>
+
+		<!-- Modal content -->
+	    <div id="personalItem02" class="modal-content">
+	    	<h4>나의정보</h4>
+	    	<div class="card-content">
+	    		<div class="tar fs12 mb_5"><span class="red">*</span>필수입력항목</div>
+	    		<div class="regist-form">
+	    			<table>
+						<colgroup>
+							<col width="20%"><col width="">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">소속 <span class="red">*</span></th>
+								<td class="tal">기획예산팀</td>
+							</tr>
+							<tr>
+								<th scope="row">이름 <span class="red">*</span></th>
+								<td class="tal">홍길동</td>
+							</tr>
+							<tr>
+								<th scope="row">직급/직책 <span class="red">*</span></th>
+								<td class="tal">팀장</td>
+							</tr>
+							<tr>
+								<th scope="row">이메일주소 <span class="red">*</span></th>
+								<td class="tal">awsdert@gg.pass.or.kr</td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    		<div class="tar mt_30">
+	    			<button type="button" class="btn btn-secondary" id="close">취소</button>
+	    			<button type="button" class="btn btn-info">확인</button>
+	    		</div>
+	    	</div>
+		</div>
+		<!-- //Modal content -->
+	</div>
+</div>
+<body class="bg">  <!--style="overflow-y:hidden; overflow-x:auto;"--> 
+	<!--wrapper-->
+	<div class="wrapper">
+		<!-- Header -->
+	    <div id="header">
+	        <div class="skip">상단메뉴</div>
+	        <div class="header-top main-width">
+	            <div class="container navbar">
+	                <div class="inner-container">
+	                    <div>
+	                        <h1 class="logo">
+	                            <img src="./images/logo.png" alt="경기도사회서비스원"><br><span>통합사회정보시스템</span>
+	                        </h1>
+	                    </div>
+	                   
+	                   <div class="gnb">
+	                        <div class="skip">상단메뉴</div>
+	                        <!--하위메뉴가 없는 메뉴는 해당li태그에 class="nosub" 넣어주세요-->
+	                        <ul class="depth1">
+                                <li class="nosub"><a href="./home(대시보드).html">홈</a></li>
+                                <li class="nosub"><a href="./예산집행율조회.html">예산집행율</a></li>
+                                <li class="nosub"><a href="./종사자현황_(고용형태별)조회.html">종사자현황</a></li>
+                                <li class="nosub"><a href="./종합재가센터_운영현황목록.html">종합재가센터</a></li>
+                                <li><a href="#none">국공립시설</a>
+                                	<ul class="depth2">
+                                		<li><a href="./국공립시설_운영현황목록(어린이집).html">어린이집</a></li>
+                                		<li><a href="./국공립시설_운영현황목록(다함께돌봄).html">다함께돌봄센터</a></li>
+                                	</ul>
+                                </li>
+                                <li><a href="#none">공공센터</a>
+                                	<ul class="depth2">
+                                		<li><a href="./공공센터_대체인력지원사업_운영현황.html">대체인력지원사업</a></li>
+                                		<li><a href="./공공센터_노인보호전문기관_운영현황.html">노인보호전문기관</a></li>
+                                		<li><a href="./공공센터_노인종합상담센터_운영현황.html">노인종합상담센터</a></li>
+                                		<li><a href="./공공센터_노인일자리지원센터_운영현황.html">노인일자리지원센터</a></li>
+                                		<li><a href="./공공센터_지역사회서비스지원단_운영현황.html">지역사회서비스지원단</a></li>
+                                		<li><a href="./공공센터_장기요양요원지원센터_운영현황.html">장기요양요원지원센터</a></li>
+                                	</ul>
+                                </li>
+                                <li class="nosub"><a href="./개인인사정보_개인휴가조회.html">개인인사정보</a></li>
+                                <li class="nosub"><a href="./통합결재_통합문서목록.html">통합결재</a></li>
+                                <li class="nosub"><a href="./설문조사_진행가능한설문.html">설문조사</a></li>
+                                <li class="nosub"><a href="http://pub_lms-lite.tigensoft.co.kr:9090/_front/" target="_blank" title="새창열림">교육관리 <i class="far fa-window-restore"></i></a></li>
+                                <li><a href="#none">관리자</a>
+                                    <ul class="depth2">
+                                        <li><a href="./인사관리_인사사항조회.html">인사관리</a></li>
+                                        <li><a href="./자산관리.html">자산관리</a></li>
+                                        <li><a href="./대용량메일발송.html">대용량메일발송</a></li>
+                                        <li><a href="./통합메시지.html">통합메시지</a></li>
+                                        <li><a href="./설문조사관리.html">설문조사관리</a></li>
+                                        <li><a href="./통합메시지발송.html">통합메시지발송</a></li>
+                                        <li><a href="./통합메시지기준관리.html">통합메시지기준관리</a></li>
+                                    </ul>
+                                </li>
+                             </ul>
+	                    </div>
+
+	                    <div class="info">
+	                        <a href="#none" title="펼치기" class="off">
+	                            <i class="fas fa-user-cog fa-lg"></i>
+	                            <!-- <span> 박길동팀장 (아동보육팀)</span> -->
+	                            <span class="fs13"> 박길동팀장 </span><br><span class="fs11">(기획예산팀)</span>
+	                        </a>
+	                        <ul>
+	                            <li><a href="#none" class="openPopup" data-target="personalItem01"><i class="fas fa-user mr_5"></i> 비밀번호변경</a></li>
+	                            <li><a href="#none" class="openPopup" data-target="personalItem02"><i class="fas fa-key mr_5"></i> 나의정보</a></li>
+	                            <li><a href="#none"><i class="fas fa-key mr_5"></i> 권한설정</a></li>
+	                            <li><a href="#none"><i class="fas fa-power-off mr_5"></i> 로그아웃</a></li>
+	                        </ul>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    <!-- //Header -->
+		<!--gside-->
+	    <div class="gside">
+	        <div class="skip">레프트메뉴 영역</div>
+	        <!--li태그에 nochild 클래스가 있으면 하위메뉴가 없다는 뜻-->
+	        <div class="skip">관리자_인사관리</div>
+	        <ul>
+	            <li><a href="#none">인사관리</a>
+	                <ul>
+	                    <li><a href="./인사관리_인사사항조회.html">인사사항조회</a></li>
+	                    <li><a href="./인사관리_복지포인트.html">복지포인트조회</a></li>
+	                    <li><a href="./인사관리_근무평정(평정자).html">근무성적평정</a></li>
+	                    <li><a href="./인사관리_재증명서발급.html">재증명서발급</a></li>
+	                    <li><a href="./인사관리_재증명발급이력조회.html">재증명발급이력조회</a></li>
+	                </ul>
+	            </li>
+	            <li><a href="#none">급여관리</a>
+	                <ul>
+	                    <li><a href="./인사관리_급여관리조회.html">급여조회</a></li>
+	                </ul>
+	            </li>
+	            <li><a href="#none">근태관리</a>
+	                <ul>
+	                    <li><a href="./인사관리_근태관리_일일근태조회.html">일일근태조회</a></li>
+	                    <li><a href="./인사관리_근태관리_기간별근태집계.html">기간별근태집계</a></li>
+	                    <li><a href="./인사관리_근태관리_야근식대교통비관리.html">야근식대교통비</a></li>
+	                </ul>
+	            </li>
+	            <li><a href="#none">휴가관리</a>
+	                <ul>
+	                    <li><a href="./인사관리_휴가관리_연차생성.html">연차생성</a></li>
+	                    <li><a href="./인사관리_휴가관리_연차일괄적용.html">연차일괄적용</a></li>
+	                    <li><a href="./인사관리_휴가관리_사용휴가관리.html">사용휴가관리</a></li>
+	                    <li><a href="./인사관리_휴가관리_잔여연차조회.html">잔여연차조회</a></li>
+	                </ul>
+	            </li>
+	            <li><a href="#none" class="on">통합결재관리</a>
+	                <ul>
+	                    <li><a href="./인사관리_통합결재관리_전체문서.html">전체문서</a></li>
+	                    <li><a href="./인사관리_통합결재관리_결제선관리.html" class="on">결재선문서</a></li>
+	                    <li><a href="./인사관리_통합결재관리_양식관리.html">양식관리</a></li>
+	                </ul>
+	            </li>
+	            <li><a href="#none">기준관리</a>
+	                <ul>
+	                    <li><a href="./인사관리_기준관리_휴일관리.html">휴일관리</a></li>
+	                    <li><a href="./인사관리_기준관리_부서코드.html">부서코드</a></li>
+	                    <li><a href="./인사관리_기준관리_부서코드(대분류코드등록).html">대중소분류코드등록</a></li>
+	                </ul>
+	            </li>
+	        </ul>
+	    </div>
+	    <!--//gside-->
+		<!--content-->
+		<div class="content">
+			<div class="skip">컨텐츠 영역</div>
+			<!--content-wrapper-->
+			<div class="content-wrapper">
+				<!--cont-header-->
+				<div class="cont-header">
+					<div class="cont-header-left">
+						<h3 class="Depth2_title">통합결재관리</h3>
+						<ul class="breadcrumb d_iblock">
+							<li>홈 <i class="fas fa-angle-right"></i></li>
+							<li>통합결재관리 <i class="fas fa-angle-right"></i></li>
+							<li>결제선관리</li>
+						</ul>
+					</div>
+				</div>
+				<!--//cont-header-->
+				<!--content-body-->
+				<div class="content-body">
+					<div class="card-header">
+						<h4 class="Depth3_title">결제선관리</h4>
+						<div class="heading-elements">
+							<!-- <button type="button" class="btn btn-secondary"><i class="fas fa-redo-alt"></i> 검색조건 초기화</button> -->
+							<button type="button" class="btn btn-primary"><i class="fas fa-search"></i> 조회</button>
+						</div>
+					</div>	
+					<div class="card-body">
+						<!-- 검색 -->
+						<div class="search-area">
+							<table>
+								<colgroup>
+									<col width="8%"><col width="15%">
+									<col width="13%"><col width="10%">
+									<col width="13%"><col width="*">
+									<col width="8%"><col width="10%">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">그룹번호</th>
+										<td>
+											<input type="text" id="search_wg_seq" name="param_vo.search_wg_seq" onkeypress="if( event.which == 13){fnSearch()};" value="" class="form-control">
+										</td>
+										<th scope="row">결재선 종류</th>
+										<td>
+											<select id="search_line_cd" name="param_vo.search_line_cd" class="select" onchange="fnSearch();">
+									  			<option value="">-전체-</option>
+									  			<option value="001">결제자</option>
+									  			<option value="002">사전참조</option>
+									  			<option value="003">수신처</option>
+									  		</select>
+										</td>
+										<th scope="row">연결서식</th>
+										<td>
+											<select id="search_wf_seq" name="param_vo.search_wf_seq" class="select" onchange="fnSearch();">
+									  			<option value="">-전체-</option>
+									  			<option value="1002">1002&nbsp;&nbsp;&nbsp;협조의뢰서</option>	
+									  			<option value="1003">1003&nbsp;&nbsp;&nbsp;신용평가 신청서</option>
+									  			<option value="1004">1004&nbsp;&nbsp;&nbsp;휴가 신청서</option>	
+									  			<option value="1005">1005&nbsp;&nbsp;&nbsp;경조금/화환 신청서-직원</option>	
+									  			<option value="1006">1006&nbsp;&nbsp;&nbsp;리조트 이용신청서</option>	
+									  			<option value="1008">1008&nbsp;&nbsp;&nbsp;접대비 승인 신청서</option>  			
+									  			<option value="1009">1009&nbsp;&nbsp;&nbsp;우편물 발송 의뢰서</option>
+									  			<option value="1010">1010&nbsp;&nbsp;&nbsp;사무용품신청서</option>		
+									  			<option value="1011">1011&nbsp;&nbsp;&nbsp;공조금 대여 신청서</option>		
+									  			<option value="1013">1013&nbsp;&nbsp;&nbsp;외주처 등록 신청서</option>	
+									  			<option value="1014">1014&nbsp;&nbsp;&nbsp;입사/전보 사전준비 협조의뢰서</option>	
+									  			<option value="1015">1015&nbsp;&nbsp;&nbsp;출장신청서(Traffic) 전용</option>
+									  			<option value="1016">1016&nbsp;&nbsp;&nbsp;출장신청서</option>	
+									  			<option value="1017">1017&nbsp;&nbsp;&nbsp;신규고객등록</option>	
+									  			<option value="1018">1018&nbsp;&nbsp;&nbsp;청구서 발행 요청서</option>
+									  			<option value="1019">1019&nbsp;&nbsp;&nbsp;법인카드 신청서</option>
+									  			<option value="1020">1020&nbsp;&nbsp;&nbsp;출장결과 보고서</option>
+									  			<option value="1021">1021&nbsp;&nbsp;&nbsp;구매 품의서</option>
+									  			<option value="1023">1023&nbsp;&nbsp;&nbsp;공유 폴더 생성증량 요청서</option>	
+									  			<option value="1024">1024&nbsp;&nbsp;&nbsp;시스템 권한 신청서</option>
+									  			<option value="1025">1025&nbsp;&nbsp;&nbsp;IT 소모품 신청서</option>
+									  			<option value="1029">1029&nbsp;&nbsp;&nbsp;인턴쉽 신청서</option>		
+									  			<option value="1034">1034&nbsp;&nbsp;&nbsp;카페테리아 복지 신청서</option>	  			
+									  			<option value="1035">1035&nbsp;&nbsp;&nbsp;야근 식대/교통비 신청서</option>	
+									  			<option value="1036">1036&nbsp;&nbsp;&nbsp;Creative Division 업무 의뢰서</option>	
+									  			<option value="1037">1037&nbsp;&nbsp;&nbsp;경조금/화환 신청서-거래처</option>	
+									  			<option value="1038">1038&nbsp;&nbsp;&nbsp;사외근무/출입카드미인식 확인서</option>	
+									  			<option value="1039">1039&nbsp;&nbsp;&nbsp;채용의뢰 협조전</option>
+									  			<option value="1040">1040&nbsp;&nbsp;&nbsp;출장결과 보고서(Traffic) 전용</option>
+									  			<option value="1041">1041&nbsp;&nbsp;&nbsp;주차요금 처리 요청서</option>
+									  			<option value="1042">1042&nbsp;&nbsp;&nbsp;업무연락(인사팀 전용)</option>								  			
+									  			<option value="1043">1043&nbsp;&nbsp;&nbsp;채용의뢰 협조전(Geometry전용)</option>		
+									  			<option value="1044">1044&nbsp;&nbsp;&nbsp;법인차량 배차 신청서</option>
+									  			<option value="1045">1045&nbsp;&nbsp;&nbsp;명함신청서</option>
+									  		</select>
+										</td>
+										<th scope="row">사용여부</th>
+										<td>
+											<select id="search_use_yn" name="param_vo.search_use_yn" onchange="fnSearch();" class="select">
+									  			<option value="">-전체-</option>
+									  			<option value="01" selected="selected">Y</option>
+									  			<option value="02">N</option>
+									  		</select>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!--// 검색 -->
+						<!-- 버튼영역 -->
+						<div class="pr mt_15">
+							<div class="list-top">
+								<button type="button" class="btn btn-enro"> 신규</button>
+								<!-- <button type="button" class="btn btn-primary"> 조회</button> -->
+							</div>
+						</div>
+						<!-- //버튼영역 -->
+
+						<div class="table_bbs_list">
+							<table>
+								<colgroup>
+									<col width="6%">
+									<col width="13%">
+									<col width="10%">
+									<col width="10%">
+									<col width="10%">
+									<col width="15%">
+									<col width="*">
+									<col width="6%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">순번</th>
+										<th scope="col">그룹번호</th>
+									    <th scope="col">결제선 그룹명</th>
+									    <th scope="col">결재선 종류</th>
+									    <th scope="col">연결 서식번호</th>
+									    <th scope="col">연결 서식명</th>
+									    <th scope="col">적요</th>
+									    <th scope="col">사용여부</th>
+								    </tr>
+							    </thead>
+								<tbody>
+									<tr>
+										<td>77</td>
+										<td>F00001</td>
+										<td>기본결재선</td>
+										<td>결재자</td>
+										<td>1006</td>
+										<td>리조트 이용신청서</td>
+										<td>리조트 이용신청서 기본 결재선 그룹</td>
+										<td>Y</td>
+									</tr>
+									<tr>
+										<td>77</td>
+										<td>F00001</td>
+										<td>기본결재선</td>
+										<td>결재자</td>
+										<td>1006</td>
+										<td>리조트 이용신청서</td>
+										<td>리조트 이용신청서 기본 결재선 그룹</td>
+										<td>Y</td>
+									</tr>
+									<tr>
+										<td>77</td>
+										<td>F00001</td>
+										<td>기본결재선</td>
+										<td>결재자</td>
+										<td>1006</td>
+										<td>리조트 이용신청서</td>
+										<td>리조트 이용신청서 기본 결재선 그룹</td>
+										<td>Y</td>
+									</tr>
+									<tr>
+										<td>77</td>
+										<td>F00001</td>
+										<td>기본결재선</td>
+										<td>결재자</td>
+										<td>1006</td>
+										<td>리조트 이용신청서</td>
+										<td>리조트 이용신청서 기본 결재선 그룹</td>
+										<td>Y</td>
+									</tr>
+									<tr>
+										<td>77</td>
+										<td>F00001</td>
+										<td>기본결재선</td>
+										<td>결재자</td>
+										<td>1006</td>
+										<td>리조트 이용신청서</td>
+										<td>리조트 이용신청서 기본 결재선 그룹</td>
+										<td>Y</td>
+									</tr>
+									<tr>
+										<td>77</td>
+										<td>F00001</td>
+										<td>기본결재선</td>
+										<td>결재자</td>
+										<td>1006</td>
+										<td>리조트 이용신청서</td>
+										<td>리조트 이용신청서 기본 결재선 그룹</td>
+										<td>Y</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- 페이징 -->
+						<div class="bbs_page">
+							<ul class="pagination">
+								<li class="page-item"><a class="page-link" href="#">« Prev</a></li>
+								<li class="page-item"><a class="page-link" href="#">Prev</a></li>
+								<li class="page-item"><a class="page-link" href="#">1</a></li>
+								<li class="page-item"><a class="page-link" href="#">2</a></li>
+								<li class="page-item active"><a class="page-link" href="#">3</a></li>
+								<li class="page-item"><a class="page-link" href="#">4</a></li>
+								<li class="page-item"><a class="page-link" href="#">5</a></li>
+								<li class="page-item"><a class="page-link" href="#">6</a></li>
+								<li class="page-item"><a class="page-link" href="#">7</a></li>
+								<li class="page-item"><a class="page-link" href="#">8</a></li>
+								<li class="page-item"><a class="page-link" href="#">9</a></li>
+								<li class="page-item"><a class="page-link" href="#">10</a></li>
+								<li class="page-item"><a class="page-link" href="#">Next</a></li>
+								<li class="page-item"><a class="page-link" href="#">Next »</a></li>
+							</ul>
+						</div>
+						<!-- //페이징 -->
+					</div>
+				</div>
+				<!--//content-body-->
+			</div><!--//content-wrapper-->
+		</div><!--//content-->
+	</div><!--//wrapper-->
+</body>
+</html>

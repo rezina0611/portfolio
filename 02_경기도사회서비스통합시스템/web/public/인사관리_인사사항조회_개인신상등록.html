@@ -1,0 +1,1896 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>경기도사회서비스원 통합사회정보시스템</title>
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/layout.css">
+<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/content.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/datepicker.css">  <!-- 제이쿼리 달력 css-->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./js/jquery.placeholder.min.js"></script><!-- 제이쿼리 placeholder-->
+<script src="./js/datepicker.js"></script><!-- 제이쿼리 달력 js-->
+<script src="./js/datepicker-ko.js"></script><!-- 제이쿼리 달력 datepicker 한국어로 -->
+<script src="./js/script.js"></script>
+<script>
+	$(function() {
+		$.datepicker.setDefaults($.datepicker.regional['ko']); //datepicker 한국어로 사용하기 위한 언어설정
+		$('.datepicker01').datepicker();
+		$('.datepicker02').datepicker();
+	});
+</script>
+</head>
+<div class="mask"></div>
+<div class="modal">
+	<div class="layerpopupArea">
+		<span class="close">&times;</span>
+		<!-- Modal content -->
+	    <div id="personalItem01" class="modal-content">	
+	    	<h4>비밀번호 변경</h4>
+	    	<div class="card-content">
+	    		<div class="tar fs12 mb_5"><span class="red">*</span>필수입력항목</div>
+	    		<div class="regist-form">
+	    			<table>
+						<colgroup>
+							<col width="25%"><col width="">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">현재 비밀번호 <span class="red">*</span></th>
+								<td><input type="text" class="form-control" title="아이디 입력해주세요" name="id"></td>
+							</tr>
+							<tr>
+								<th scope="row">새 비밀번호 <span class="red">*</span></th>
+								<td>
+									<input type="text" class="form-control" title="이름 입력해주세요" name="name">
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">새 비밀번호 확인 <span class="red">*</span></th>
+								<td><input type="text" class="form-control" title="이메일주소 입력해주세요" name="email"></td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    		<div class="red fs12 mt_5">비밀번호는 8자 ~ 20자, 영문, 숫자, 특수문자 사용가능</div>
+	    		<div class="tar mt_30">
+	    			<button type="button" class="btn btn-secondary" id="close">취소</button>
+	    			<button type="button" class="btn btn-info">확인</button>
+	    		</div>
+	    	</div>
+		</div>
+
+		<!-- Modal content -->
+	    <div id="personalItem02" class="modal-content">
+	    	<h4>나의정보</h4>
+	    	<div class="card-content">
+	    		<div class="tar fs12 mb_5"><span class="red">*</span>필수입력항목</div>
+	    		<div class="regist-form">
+	    			<table>
+						<colgroup>
+							<col width="20%"><col width="">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">소속 <span class="red">*</span></th>
+								<td class="tal">기획예산팀</td>
+							</tr>
+							<tr>
+								<th scope="row">이름 <span class="red">*</span></th>
+								<td class="tal">홍길동</td>
+							</tr>
+							<tr>
+								<th scope="row">직급/직책 <span class="red">*</span></th>
+								<td class="tal">팀장</td>
+							</tr>
+							<tr>
+								<th scope="row">이메일주소 <span class="red">*</span></th>
+								<td class="tal">awsdert@gg.pass.or.kr</td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    		<div class="tar mt_30">
+	    			<button type="button" class="btn btn-secondary" id="close">취소</button>
+	    			<button type="button" class="btn btn-info">확인</button>
+	    		</div>
+	    	</div>
+		</div>
+		<!-- //Modal content -->
+	</div>
+</div>
+
+<script>
+	//기타 팝업(개인신상, 병역사항)
+	function popup_order(){document.getElementById("poptem01").style.display='inline'}
+	function close_order(){document.getElementById("poptem01").style.display='none'}
+
+	//학력
+	function popup_edu(){document.getElementById("poptem02").style.display='inline'}
+	function close_edu(){document.getElementById("poptem02").style.display='none'}
+
+	//사내경력
+	function popup_inexp(){document.getElementById("poptem03").style.display='inline'}
+	function close_inexp(){document.getElementById("poptem03").style.display='none'}
+
+	//사외경력
+	function popup_outexp(){document.getElementById("poptem04").style.display='inline'}
+	function close_outexp(){document.getElementById("poptem04").style.display='none'}
+
+	//가족 팝업
+	function popup_fam(){document.getElementById("poptem05").style.display='inline'}
+	function close_fam(){document.getElementById("poptem05").style.display='none'}
+
+	//교육 팝업
+	function popup_ed(){document.getElementById("poptem06").style.display='inline'}
+	function close_ed(){document.getElementById("poptem06").style.display='none'}
+
+	//자격 팝업
+	function popup_qua(){document.getElementById("poptem07").style.display='inline'}
+	function close_qua(){document.getElementById("poptem07").style.display='none'}
+
+	//외국어 팝업
+	function popup_for(){document.getElementById("poptem08").style.display='inline'}
+	function close_for(){document.getElementById("poptem08").style.display='none'}
+
+	//장애 팝업
+	function popup_obs(){document.getElementById("poptem09").style.display='inline'}
+	function close_obs(){document.getElementById("poptem09").style.display='none'}
+
+	//보훈 팝업
+	function popup_vet(){document.getElementById("poptem10").style.display='inline'}
+	function close_vet(){document.getElementById("poptem10").style.display='none'}
+
+	//상훈 팝업
+	function popup_san(){document.getElementById("poptem11").style.display='inline'}
+	function close_san(){document.getElementById("poptem11").style.display='none'}
+
+</script>
+<!--기타 팝업(개인신상, 병역사항)-->
+<div id="poptem01" class="modal_pop" style="top:15%;">
+	<div class="layerpopupArea">
+		<span class="close" onclick="close_order();">&times;</span>
+		<!-- Modal content Performance 실적 권한 변경-->
+	    <div id="Performance" class="modal-content-pop">
+	    	<h4>기타(개인신상, 병역사항)</h4>
+	    	<div class="card-content" style="overflow-y:scroll; height:500px; overflow-x:hidden;">
+	    		<div class="pop_title">
+	    			<h5 class="fs14 bold mt_15">개인신상</h5>
+	    			<button type="button" class="btn btn-info">신규</button>
+	    		</div>
+
+	    		<div class="table_bbs_write">
+	    			<table>
+						<colgroup>
+							<col width="13%"><col width="">
+							<col width="13%"><col width="">
+							<col width="13%"><col width="">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">본관</th>
+								<td><input type="text" class="form-control" id="fmoprt" name="param_vo.fmoprt" value="" maxlength="25"></td>
+								<th scope="row">호주명</th>
+								<td><input type="text" class="form-control" id="ho_ko_nm" name="param_vo.ho_ko_nm" value="" maxlength="4"></td>
+								<th scope="row">호주와의 <br>관계</th>
+								<td>
+									<div class="selectbox" style="width:120px;">
+										<label for="ho_rel" class="skip">호주와의관계</label>
+										<select class="select" id="ho_rel" name="param_vo.ho_rel">
+											<option value="">선택</option>
+											<option value="101">부</option>
+											<option value="102">모</option>
+											<option value="103">매</option>
+											<option value="104">형</option>
+											<option value="105">제</option>
+											<option value="106">조부</option>
+											<option value="107">조모</option>
+											<option value="108">빙부(장인)</option>
+											<option value="109">빙모(장모)</option>
+											<option value="110">배우자</option>
+											<option value="111">본인</option>
+											<option value="112">자녀</option>
+											<option value="113">사위</option>				
+											<option value="114">자부(며느리)</option>	
+											<option value="115">시부</option>
+											<option value="116">시모</option>
+											<option value="117">손자/손녀</option>
+											<option value="118">기타</option>
+										</select>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">종교</th>
+								<td>
+									<div class="selectbox" style="width:100%;">
+										<label for="relgn_cd" class="skip">종교</label>
+										<select class="select" id="relgn_cd" name="param_vo.relgn_cd">
+											<option value="">선택</option>
+											<option value="101">천주교</option>
+											<option value="102">불교</option>
+											<option value="103">기독교</option>
+											<option value="104">무교</option>
+										</select>
+									</div>
+								</td>
+								<th scope="row">주거</th>
+								<td>
+									<div class="checks"><input type="checkbox" id="res_div" name="param_vo.res_div" value="Y"><label for="res_div" class="skip">주거</label></div>
+								</td>
+								<th scope="row">색맹</th>
+								<td>
+									<div class="checks"><input type="checkbox" id="eye_color" name="param_vo.eye_color" value="Y"><label for="eye_color" class="skip">색맹</label></div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">본적</th>
+								<td colspan="5"><input type="text" class="form-control" id="domic" name="param_vo.domic" value="" maxlength="100"></td>
+							</tr>
+							<tr>
+								<th scope="row">결혼기념일</th>
+								<td colspan="3">
+									<input type="text" class="form-control mr_5 datepicker01" id="wedd_dt" name="param_vo.wedd_dt" value="" style="width:200px; margin-right:5px;" />
+									<img onclick="javascript:$('#wedd_dt').datepicker('show')" src="./images/ico_calender.gif" alt="결혼기념일" title="결혼기념일" align="absmiddle" style="cursor:pointer">
+									<div class="checks mt_10 ml_5"><input type="checkbox" id="wedd_div" name="param_vo.wedd_div" value=""><label for="wedd_div">결혼여부</label></div>
+								</td>
+								<th scope="row">취미</th>
+								<td><input type="text" class="form-control" id="hobby_nm" name="param_vo.hobby_nm" value=""></td>
+							</tr>
+							<tr>
+								<th scope="row">특기</th>
+								<td><input type="text" class="form-control" style="width:100px;" id="sabil_nm" name="param_vo.sabil_nm" value=""></td>
+								<th scope="row">형액형</th>
+								<td><input type="text" class="form-control" id="bld" name="param_vo.bld" value=""></td>
+								<th scope="row">주거구분</th>
+								<td>
+									<div class="selectbox" style="width:100%;">
+										<label for="living_div" class="skip">주거구분</label>
+										<select class="select" id="living_div" name="param_vo.living_div">
+											<option value="">선택</option>
+											<option value="101">자가</option>
+											<option value="102">사택</option>
+											<option value="103">차가</option>
+											<option value="104">하숙</option>
+											<option value="105">자취</option>
+											<option value="106">기타</option>	
+										</select>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">시력</th>
+								<td>
+									<span class="fs13 f_left w90 mb_5">왼쪽:  &nbsp;&nbsp; <input type="text" class="form-control" style="width:40px;" id="sight_left" name="param_vo.sight_left" value=""></span>
+									<span class="fs13 f_left w90">오른쪽: <input type="text" class="form-control" style="width:40px;" id="sight_right" name="param_vo.sight_right" value=""></span> 
+								</td>
+								<th scope="row">신장</th>
+								<td><input type="text" class="form-control" id="height" name="param_vo.height" value=""></td>
+								<th scope="row">몸무게</th>
+								<td><input type="text" class="form-control" id="weght" name="param_vo.weght" value=""></td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    		<h5 class="fs14 bold mt_20">병역사항</h5>
+	    		<div class="table_bbs_write">
+	    			<table>
+	    				<colgroup>
+	    					<col width="13%">
+	    					<col width="*">
+	    					<col width="13%">
+	    					<col width="*">
+	    					<col width="13%">
+	    					<col width="*">
+	    				</colgroup>
+	    				<tbody>
+	    					<tr>
+	    						<th scope="row">병역구분</th>
+	    						<td>
+	    							<div class="selectbox" style="width:100%;">
+										<label for="sol_div" class="skip">병역구분</label>
+										<select class="select" id="sol_div" name="param_vo.sol_div">
+											<option value="">선택</option>
+											<option value="101">필</option>
+											<option value="102">미필</option>
+											<option value="103">면제</option>
+											<option value="104">여자</option>
+											<option value="105">기타</option>
+										</select>
+									</div>
+	    						</td>
+	    						<th scope="row">미필사유</th>
+	    						<td><input type="text" class="form-control" id="incmp_rsn" name="param_vo.incmp_rsn" value=""></td>
+	    						<th scope="row">군별 및 <br>계급</th>
+	    						<td>
+	    							<div class="selectbox" style="width:100%; margin-bottom:5px;">
+										<label for="kun_div" class="skip">군별</label>
+										<select class="select" id="kun_div" name="param_vo.kun_div">
+											<option value="">선택</option>
+											<option value="101">육군</option>
+											<option value="102">해군</option>
+											<option value="103">공군</option>
+											<option value="104">전경</option>
+											<option value="105">의경</option>
+											<option value="106">해병대</option>
+											<option value="107">기타</option>
+										</select>
+									</div>
+									<div class="selectbox" style="width:100%;">
+										<label for="sol_cls" class="skip">>계급</label>
+										<select class="select" id="sol_cls" name="param_vo.sol_cls">
+											<option value="">선택</option>			
+											<option value="101">이병</option>			
+											<option value="102">일병</option>		
+											<option value="103">상병</option>	
+											<option value="104">병장</option>			
+											<option value="105">하사</option>		
+											<option value="106">중사</option>		
+											<option value="107">상사</option>		
+											<option value="108">준위</option>	
+											<option value="109">소위</option>
+											<option value="110">중위</option>
+											<option value="111">대위</option>
+											<option value="112">소령</option>	
+											<option value="113">중령</option>
+											<option value="114">대령</option>
+										</select>
+									</div>
+	    						</td>
+	    					</tr>
+	    					<tr>
+	    						<th scope="row">역종</th>
+	    						<td>
+	    							<div class="selectbox" style="width:100%;">
+										<label for="sol_knd" class="skip">역종</label>
+										<select class="select" id="sol_knd" name="param_vo.sol_knd">
+											<option value="">선택</option>								
+											<option value="101">예비역</option>								
+											<option value="102">보충역</option>					
+											<option value="103">제2국민역</option>
+										</select>
+									</div>
+	    						</td>
+	    						<th scope="row">병과</th>
+	    						<td><input type="text" class="form-control" id="sol_sect" name="param_vo.sol_sect" value=""></td>
+	    						<th scope="row">제대구분</th>
+	    						<td>
+	    							<div class="fwrite_form">
+										<label for="dschrg_div" class="skip">제대구분</label>
+										<select class="select" id="dschrg_div" name="param_vo.dschrg_div">
+											<option value="">선택</option>
+											<option value="101">만기제대</option>
+											<option value="102">의가사제대</option>
+										</select>
+									</div>
+	    						</td>
+	    					</tr>
+	    					<tr>
+	    						<th scope="row">입대일</th>
+	    						<td colspan="2">
+	    							<input type="text" class="form-control datepicker01" id="f_date" name="param_vo.f_date" value="" style="width:100px; margin-right:5px;" />
+									<img onclick="javascript:$('#f_date').datepicker('show')" src="./images/ico_calender.gif" alt="입대일" title="입대일" align="absmiddle" style="cursor:pointer">
+	    						</td>
+	    						<th scope="row">제대일</th>
+	    						<td colspan="2">
+	    							<input type="text" class="form-control datepicker02" id="t_date" name="param_vo.t_date" value="" style="width:100px; margin-right:5px;" />
+									<img onclick="javascript:$('#t_date').datepicker('show')" src="./images/ico_calender.gif" alt="제대일" title="제대일" align="absmiddle" style="cursor:pointer">
+	    						</td>
+	    					</tr>
+	    				</tbody>
+	    			</table>
+	    		</div>
+			    
+	    	</div>
+		</div>
+		<!-- //Modal content -->
+	</div>
+</div>
+<!--//기타 팝업(개인신상, 병역사항)-->
+
+<!--학력팝업-->
+<div id="poptem02" class="modal_pop" style="top:15%;">
+	<div class="layerpopupArea">
+		<span class="close" onclick="close_edu();">&times;</span>
+	    <div id="Performance" class="modal-content-pop">
+	    	<h4>학력</h4>
+	    	<div class="card-content">
+	    		<div class="pop_title">
+	    			<button type="button" class="btn btn-info">신규</button>
+	    		</div>
+	    		<div class="data_ta_list mt_15">
+	    			<table>
+						<colgroup>
+							<col width="60px">
+							<col width="200px">
+							<col width="200px">
+							<col width="150px">
+							<col width="150px">
+							<col width="200px">
+							<col width="100px">
+							<col width="150px">
+							<col width="200px">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">순번</th>
+								<th scope="col">입학일</th>
+								<th scope="col">졸업일자</th>
+								<th scope="col">학력사항</th>
+								<th scope="col">학교명</th>
+								<th scope="col">소재지</th>
+								<th scope="col">학과</th>
+								<th scope="col">졸업구분</th>
+								<th scope="col">관리</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>100</td>
+								<td>
+									<input type="text" class="form-control mr_5 datepicker01" id="ent_dt" name="param_vo.ent_dt" value="" style="width:100px; margin-right:5px;" />
+									<img onclick="javascript:$('#ent_dt').datepicker('show')" src="./images/ico_calender.gif" alt="입학일" title="입학일" align="absmiddle" style="cursor:pointer">
+								</td>
+								<td>
+									<input type="text" class="form-control mr_5 datepicker01" id="grade_dt" name="param_vo.grade_dt" value="" style="width:100px; margin-right:5px;" />
+									<img onclick="javascript:$('#grade_dt').datepicker('show')" src="./images/ico_calender.gif" alt="졸업일자" title="졸업일자" align="absmiddle" style="cursor:pointer">
+								</td>
+								<td>
+									<select id="process" name="param_vo.process" class="select"><option value="101">초등학교</option><option value="102">중학교</option><option value="103">고등학교</option><option value="104">전문대</option><option value="105">대학교</option><option value="106">대학원</option><option value="107">기타</option></select>
+								</td>
+								<td>
+									<input type="text" id="scl_nm" name="param_vo.scl_nm" class="form-control" maxlength="70">
+								</td>
+								<td>
+									<input type="text" id="scl_job" name="param_vo.scl_job" class="form-control" maxlength="70">
+								</td>
+								<td>
+									<input type="text" id="scl_div_nm" name="param_vo.scl_div_nm" class="form-control" maxlength="70">
+								</td>
+								<td>
+									<select id="grade_div" name="param_vo.grade_div" class="select"><option value="101">졸업</option><option value="102">수료</option><option value="103">중퇴</option><option value="104">재학중</option><option value="105">석사</option><option value="106">박사</option></select>
+								</td>
+								<td>
+									<button type="button" class="btn-sm btn-info" onclick="fnUpdateSubmit()">저장</button>
+									<button type="button" class="btn-sm btn-secondary" onclick="fnOpenCancel()">취소</button>
+								</td>
+							</tr>
+							<tr>
+								<td>100</td>
+								<td>2000-02-14</td>
+								<td>2000-02-14</td>
+								<td>대학교</td>
+								<td>한양사이버대학교</td>
+								<td>서울시 성동구 왕십리로 220 </td>
+								<td>컴퓨터공학과</td>
+								<td>졸업</td>
+								<td>
+									<button type="button" class="btn-sm btn-info">수정</button>
+									<button type="button" class="btn-sm btn-secondary">삭제</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+			    
+	    	</div>
+		</div>
+		<!-- //Modal content -->
+	</div>
+</div>
+<!--//학력팝업-->
+
+<!--사내경력 팝업-->
+<div id="poptem03" class="modal_pop" style="top:15%; margin-left:-500px;">
+	<div class="layerpopupArea width1000">
+		<span class="close" onclick="close_inexp();">&times;</span>
+	    <div id="Performance" class="modal-content-pop">
+	    	<h4>사내경력</h4>
+	    	<div class="card-content">
+	    		<div class="pop_title">
+	    			<button type="button" class="btn btn-info">신규</button>
+	    		</div>
+	    		<div class="data_ta_list mt_15 h400">
+	    			<table>
+						<colgroup>
+							<col width="60px">
+							<col width="200px">
+							<col width="150px">
+							<col width="150px">
+							<col width="170px">
+							<col width="130px">
+							<col width="130px">
+							<col width="130px">
+							<col width="130px">
+							<col width="200px">
+							<col width="200px">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">순번</th>
+								<th scope="col">발령일</th>
+								<th scope="col">발령구분</th>
+								<th scope="col">직위</th>
+								<th scope="col">부서</th>
+								<th scope="col">업종</th>
+								<th scope="col">직종</th>
+								<th scope="col">직무</th>
+								<th scope="col">사외경력</th>
+								<th scope="col">비고</th>
+								<th scope="col">관리</th>
+							</tr>
+						</thead>
+						<script>
+							//수정버튼 함수 클릭시
+				        	function fnUpdateOpen() {
+				        		$('#listTR0').hide();
+				        		$('#listTR1').show();
+				        	}
+
+				        	//취소버튼 함수 클릭시
+				        	function fnOpenCancel() {
+				        		$('#listTR1').hide();
+				        		$('#listTR0').show();
+				        	}
+
+				        	function fnDelete() {
+				        		$('#listTR0').remove();
+				        	}
+				        </script>
+						<tbody>
+							<tr id="listTR0">
+								<td>100</td>
+								<td>2019-01-01</td>
+								<td>승진</td>
+								<td>차장</td>
+								<td>Fusion Campaign 1팀	</td>
+								<td>광고 </td>
+								<td>기획 </td>
+								<td>AE </td>
+								<td>없음</td>
+								<td></td>
+								<td>
+									<button type="button" class="btn-sm btn-info" onclick="fnUpdateOpen();">수정</button>
+									<button type="button" class="btn-sm btn-secondary" onclick="fnDelete();">삭제</button>
+								</td>
+							</tr>
+
+							<tr id="listTR1" style="display:none;">
+								<td>-</td>
+								<td>
+									<input type="text" class="form-control mr_5 datepicker01" id="search_day_from" name="param_vo.search_day_from" value="2021-11-05" style="margin-right:5px; width:100px;" />
+									<img onclick="javascript:$('#search_day_from').datepicker('show')" src="./images/ico_calender.gif" alt="발령일" title="발령일" align="absmiddle" style="cursor:pointer">
+								</td>
+								<td>
+									<select id="procm_div2" name="param_vo.procm_div2" class="select">
+										<option value="101">입사</option><option value="102">입사취소</option>
+										<option value="103">조직개편</option><option value="104">일반휴직</option>
+										<option value="105" selected="">퇴사</option><option value="106">복직</option>
+										<option value="107">직제개편</option><option value="108">육아휴직</option>
+										<option value="109">승진</option><option value="110">안식월</option>
+										<option value="111">전환배치</option><option value="112">산전후휴가</option>
+										<option value="113">계약직발령</option><option value="114">그룹사전입</option>
+										<option value="115">팀장발령</option><option value="116">병가</option>
+										<option value="117">정규직발령</option><option value="118">그룹사전출</option>
+										<option value="119">팀장면직</option>
+									</select>
+								</td>
+								<td>
+									<select id="procm_pos" name="param_vo.procm_pos" class="select">
+										<option value="101">입사</option>
+										<option value="102">입사취소</option><option value="103">조직개편</option>
+										<option value="104">일반휴직</option>
+										<option value="105">퇴사</option><option value="106">복직</option>
+										<option value="107">직제개편</option><option value="108">육아휴직</option>
+										<option value="109" selected="">승진</option><option value="110">안식월</option>
+										<option value="111">전환배치</option><option value="112">산전후휴가</option>
+										<option value="113">계약직발령</option><option value="114">그룹사전입</option>
+										<option value="115">팀장발령</option><option value="116">병가</option>
+										<option value="117">정규직발령</option><option value="118">그룹사전출</option>
+										<option value="119">팀장면직</option>
+									</select>
+								</td>
+								<td>
+									<select id="procm_pos" name="param_vo.procm_pos" class="select">
+										<option value="115">회장</option><option value="116">대표이사사장</option><option value="117">고문</option><option value="119">이사대우</option><option value="120">국장대우</option><option value="121">부국장대우</option><option value="122">부장대우</option><option value="123">4급남</option><option value="124">4급여</option><option value="125">5급남 전문대졸</option><option value="126">5급여 전문대졸</option><option value="127">5급남(군필)</option><option value="128">5급남(군미필)</option><option value="129">5급여</option><option value="130">기능직</option><option value="131">기타</option><option value="132">일반직(군필)</option><option value="133">숙련직(군필)</option><option value="134">기사보(군필)</option><option value="135">기사(군필)</option><option value="136">일반직(군미필)</option><option value="137">숙련직(군미필)</option><option value="138">기사보(군미필)</option><option value="139">기사(군미필)</option><option value="140">위원</option><option value="141">외국인</option><option value="142">자문</option><option value="143">자문위원</option><option value="144">감사</option><option value="145">대표이사</option><option value="146">상무보</option><option value="147">Director</option><option value="148">S.Manager</option><option value="149">Manager</option><option value="150">Senior</option><option value="151">Junior(남)</option><option value="152">Junior(여)</option><option value="153">지사장</option><option value="154">팀장</option><option value="155">프리랜서</option><option value="101">인턴</option><option value="102">사원</option><option value="103">대리</option><option value="104">과장</option><option value="105" selected="">차장</option><option value="106">부장</option><option value="107">부국장</option><option value="108">실장</option><option value="109">국장</option><option value="110">수석국장</option><option value="111">이사</option><option value="112">상무</option><option value="118">전무</option><option value="113">부사장</option><option value="114">사장</option>
+									</select>
+								</td>
+								<td>
+									<select id='procm_category' name='param_vo.procm_category' class='select' onchange='fnJobClass();'>
+										<option value='190' selected>광고</option><option value='191'>PR</option><option value='192'>관리</option><option value='193'>ONLINE</option>
+									</select>
+								</td>
+								<td>
+									<select id="procm_type" name="param_vo.procm_type" class="select">
+										<option value="101" selected>기획</option>
+										<option value="102">제작</option>
+										<option value="103">Media</option>
+									</select>
+								</td>
+								<td>
+									<select id='procm_duty' name='param_vo.procm_duty' class="select">
+										<option value=''>전체</option>
+										<option value='101' selected>AE</option>
+										<option value='102'>AP</option>
+									</select>
+								</td>
+								<td>
+									<select id='procm_outside' name='param_vo.procm_outside' class="select">
+										<option value='100' selected>없음</option>
+										<option value='101'>대행사</option>
+										<option value="102">기타</option>
+									</select>
+								</td>
+								<td>
+									<input value='' type='text' id='remark' name='param_vo.remark' class='form-control'>
+								</td>
+								<td>
+									<button type="button" class="btn-sm btn-info" onclick="fnUpdateSubmit()">저장</button>
+									<button type="button" class="btn-sm btn-secondary" onclick="fnOpenCancel()">취소</button>
+								</td>
+							</tr>
+							<tr>
+								<td>100</td>
+								<td>2019-01-01</td>
+								<td>승진</td>
+								<td>차장</td>
+								<td>Fusion Campaign 1팀	</td>
+								<td>광고</td>
+								<td>기획</td>
+								<td>AE</td>
+								<td>없음</td>
+								<td></td>
+								<td>
+									<button type="button" class="btn-sm btn-info">수정</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    		<!-- 페이징 -->
+				<div class="bbs_page">
+					<ul class="pagination">
+						<li class="page-item"><a class="page-link" href="#">« Prev</a></li>
+						<li class="page-item"><a class="page-link" href="#">Prev</a></li>
+						<li class="page-item"><a class="page-link" href="#">1</a></li>
+						<li class="page-item"><a class="page-link" href="#">2</a></li>
+						<li class="page-item active"><a class="page-link" href="#">3</a></li>
+						<li class="page-item"><a class="page-link" href="#">4</a></li>
+						<li class="page-item"><a class="page-link" href="#">5</a></li>
+						<li class="page-item"><a class="page-link" href="#">6</a></li>
+						<li class="page-item"><a class="page-link" href="#">7</a></li>
+						<li class="page-item"><a class="page-link" href="#">8</a></li>
+						<li class="page-item"><a class="page-link" href="#">9</a></li>
+						<li class="page-item"><a class="page-link" href="#">10</a></li>
+						<li class="page-item"><a class="page-link" href="#">Next</a></li>
+						<li class="page-item"><a class="page-link" href="#">Next »</a></li>
+					</ul>
+				</div>
+				<!-- //페이징 -->
+			    
+	    	</div>
+		</div>
+		<!-- //Modal content -->
+	</div>
+</div>
+<!--//사내경력 팝업-->
+
+<!--사외경력 팝업-->
+<div id="poptem04" class="modal_pop" style="top:15%;">
+	<div class="layerpopupArea">
+		<span class="close" onclick="close_outexp();">&times;</span>
+	    <div id="Performance" class="modal-content-pop">
+	    	<h4>사외경력</h4>
+	    	<div class="card-content">
+	    		<div class="pop_title">
+	    			<button type="button" class="btn btn-info">신규</button>
+	    		</div>
+	    		<div class="data_ta_list mt_15">
+	    			<table>
+						<colgroup>
+							<col width="60px">
+							<col width="150px">
+							<col width="200px">
+							<col width="200px">
+							<col width="150px">
+							<col width="150px">
+							<col width="150px">
+							<col width="150px">
+							<col width="150px">
+							<col width="300px">
+							<col width="200px">
+							<col width="200px">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">순번</th>
+								<th scope="col">근무처</th>
+								<th scope="col">입사년월일</th>
+								<th scope="col">퇴사년월일</th>
+								<th scope="col">직위</th>
+								<th scope="col">부서</th>
+								<th scope="col">업종</th>
+								<th scope="col">직종</th>
+								<th scope="col">직무</th>
+								<th scope="col">사외경력</th>
+								<th scope="col">비고</th>
+								<th scope="col">관리</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>100</td>
+								<td>
+									<input type="text" id="cmpy_nm" name="param_vo.cmpy_nm" class="form-control" maxlength="50">
+								</td>
+								<td>
+									<input type="text" class="form-control mr_5 datepicker01" id="enter_dt" name="param_vo.enter_dt" value="" style="margin-right:5px; width:100px;" />
+									<img onclick="javascript:$('#enter_dt').datepicker('show')" src="./images/ico_calender.gif" alt="입사일" title="입사일" align="absmiddle" style="cursor:pointer">
+								</td>
+								<td>
+									<input type="text" id="retire_dt" name="param_vo.retire_dt" class="form-control mr_5 datepicker02" value="" style="margin-right:5px; width:100px;">
+									<img onclick="javascript:$('#retire_dt').datepicker('show')" src="./images/ico_calender.gif" alt="퇴사일" title="퇴사일" align="absmiddle" style="cursor:pointer">
+								</td>
+								<td>
+									<input type="text" id="cmpy_pos_nm" name="param_vo.cmpy_pos_nm" class="form-control" maxlength="50">
+								</td>
+								<td>
+									<input type="text" id="cmpy_dept_nm" name="param_vo.cmpy_dept_nm" class="form-control" maxlength="50">
+								</td>
+								<td>
+									<input type="text" id="cnpy_category" name="param_vo.cnpy_category" class="form-control" maxlength="50">
+								</td>
+								<td>
+									<input type="text" id="cnpy_type" name="param_vo.cnpy_type" class="form-control" maxlength="50">
+								</td>
+								<td>
+									<input type="text" id="cnpy_duty" name="param_vo.cnpy_duty" class="form-control" maxlength="50">
+								</td>
+								<td>
+									<select id="cmpy_outside_div" name="param_vo.cmpy_outside_div" class="select f_left" style="width:100px; margin-right:5px;" onchange="fnOutside()" ;="">
+										<option value="100">없음</option>
+										<option value="101">대행사</option>
+										<option value="102">기타</option>
+									</select>
+									<input type="text" id="cmpy_outside_nm" name="param_vo.cmpy_outside_nm" class="form-control f_left" style="width:150px;" maxlength="15">
+								</td>
+								<td><input type="text" id="remark" name="param_vo.remark" class="form-control" maxlength="30"></td>
+								<td>
+									<button type="button" class="btn-sm btn-info" onclick="fnUpdateSubmit()">저장</button>
+									<button type="button" class="btn-sm btn-secondary" onclick="fnOpenCancel()">취소</button>
+								</td>
+							</tr>
+							<tr>
+								<td>100</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>100</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+			    <div class="tar mt_10">
+	    			<button type="button" class="btn btn-info">저장</button>
+	    		</div>
+	    	</div>
+		</div>
+		<!-- //Modal content -->
+	</div>
+</div>
+<!--//사외경력 팝업-->
+
+<!--가족 팝업-->
+<div id="poptem05" class="modal_pop" style="top:15%;">
+	<div class="layerpopupArea">
+		<span class="close" onclick="close_fam();">&times;</span>
+	    <div id="Performance" class="modal-content-pop">
+	    	<h4>가족</h4>
+	    	<div class="card-content">
+	    		<div class="pop_title">
+	    			<button type="button" class="btn btn-info">신규</button>
+	    		</div>
+	    		<div class="data_ta_list mt_15 h400">
+	    			<table>
+						<colgroup>
+							<col width="60px">
+							<col width="150px">
+							<col width="100px">
+							<col width="100px">
+							<col width="130px">
+							<col width="150px">
+							<col width="100px">
+							<col width="100px">
+							<col width="150px">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">순번</th>
+								<th scope="col">관계</th>
+								<th scope="col">성명</th>
+								<th scope="col">학력</th>
+								<th scope="col">직업</th>
+								<th scope="col">근무처</th>
+								<th scope="col">직위</th>
+								<th scope="col">동거여부</th>
+								<th scope="col">관리</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>100</td>
+								<td>부</td>
+								<td>박상은</td>
+								<td>대졸</td>
+								<td>사업</td>
+								<td>쌍마주유소</td>
+								<td>**</td>
+								<td>Y</td>
+								<td>
+									<button type="button" class="btn-sm btn-info">수정</button>
+									<button type="button" class="btn-sm btn-secondary">삭제</button>
+								</td>
+							</tr>
+							<tr>
+								<td>100</td>
+								<td><select id="rel_cd" name="param_vo.rel_cd" class="select"><option value="101">부</option><option value="102">모</option><option value="103">매</option><option value="104">형</option><option value="105">제</option><option value="106">조부</option><option value="107">조모</option><option value="108">빙부(장인)</option><option value="109">빙모(장모)</option><option value="110">배우자</option><option value="111">본인</option><option value="112">자녀</option><option value="113">사위</option><option value="114">자부(며느리)</option><option value="115">시부</option><option value="116">시모</option><option value="117">손자/손녀</option><option value="118">기타</option></select></td>
+								<td><input type="text" id="family_nm" name="param_vo.family_nm" class="form-control" maxlength="5"></td>
+								<td><input type="text" id="sclar_cd" name="param_vo.sclar_cd" class="form-control" maxlength="5"></td>
+								<td><input type="text" id="occup_nm" name="param_vo.occup_nm" class="form-control" maxlength="5"></td>
+								<td><input type="text" id="cmpy_nm" name="param_vo.cmpy_nm" class="form-control" maxlength="20"></td>
+								<td><input type="text" id="pos_nm" name="param_vo.pos_nm" class="form-control" maxlength="5"></td>
+								<td>
+									<div class="checks ch-td"><input type="checkbox" id="inmat_yn" name="param_vo.inmat_yn" value="Y"><label for="han_yn" class="skip">동거여부</label></div>
+								</td>
+								<td>
+									<button type="button" class="btn-sm btn-info" onclick="fnInsertSubmit();">저장</button>
+									<button type="button" class="btn-sm btn-secondary" onclick="fnOpenCancel();">취소</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    	</div>
+		</div>
+		<!-- //Modal content -->
+	</div>
+</div>
+<!--//가족 팝업-->
+
+<!--교육 팝업-->
+<div id="poptem06" class="modal_pop" style="top:15%;">
+	<div class="layerpopupArea">
+		<span class="close" onclick="close_ed();">&times;</span>
+	    <div id="Performance" class="modal-content-pop">
+	    	<h4>교육</h4>
+	    	<div class="card-content">
+	    		<div class="pop_title">
+	    			<button type="button" class="btn btn-info">신규</button>
+	    		</div>
+	    		<div class="data_ta_list mt_15 h400">
+	    			<table>
+						<colgroup>
+							<col width="60px">
+							<col width="100px">
+							<col width="200px">
+							<col width="150px">
+							<col width="150px">
+							<col width="320px">
+							<col width="150px">
+							<col width="150px">
+							<col width="150px">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">순번</th>
+								<th scope="col">교육구분</th>
+								<th scope="col">교육신청일</th>
+								<th scope="col">교육기관</th>
+								<th scope="col">교육과정</th>
+								<th scope="col">교육기간</th>
+								<th scope="col">교육비</th>
+								<th scope="col">고용보험환급액</th>
+								<th scope="col">관리</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>100</td>
+								<td>
+									<select id="educ_div" name="param_vo.educ_div" class="select"><option value="101">교육</option></select>
+								</td>
+								<td>
+									<input type="text" id="educ_dt" name="param_vo.educ_dt" class="form-control mr_5 datepicker01" style="width:100px; margin-right:5px;">
+									<img onclick="javascript:$('#educ_dt').datepicker('show')" src="./images/ico_calender.gif" alt="교육신청일" title="교육신청일" align="absmiddle" style="cursor:pointer">
+								</td>
+								<td>
+									<input type="text" id="educ_agcy" name="param_vo.educ_agcy" class="form-control">
+								</td>
+								<td>
+									<input type="text" id="educ_course" name="param_vo.educ_course" class="form-control">
+								</td>
+								<td>
+									<input type="text" id="educ_f_dt" name="param_vo.educ_f_dt" class="form-control mr_5 datepicker01" style="width:100px; margin-right:5px;">
+									<img onclick="javascript:$('#educ_f_dt').datepicker('show')" src="./images/ico_calender.gif" alt="교육기간 시작일" title="교육기간 시작일" align="absmiddle" style="cursor:pointer">
+									~ 
+									<input type="text" id="educ_t_dt" name="param_vo.educ_t_dt" class="form-control mr_5 datepicker01" style="width:100px; margin-right:5px;">
+									<img onclick="javascript:$('#educ_t_dt').datepicker('show')" src="./images/ico_calender.gif" alt="교육기간 종료일" title="교육기간 종료일" align="absmiddle" style="cursor:pointer">
+								</td>
+								<td><input type="text" id="educ_amt" name="param_vo.educ_amt" class="form-control" maxlength="10"></td>
+								<td><input type="text" id="educ_ret_amt" name="param_vo.educ_ret_amt" class="form-control" maxlength="10"></td>
+								<td>
+									<button type="button" class="btn-sm btn-info">저장</button>
+									<button type="button" class="btn-sm btn-secondary">취소</button>
+								</td>
+							</tr>
+							<tr>
+								<td>100</td>
+								<td>수료</td>
+								<td>2021-11-10</td>
+								<td>그린컴퓨터학원</td>
+								<td>웹 퍼블리셔과정</td>
+								<td>2021-11-10 ~ 2021-11-10</td>
+								<td>1,200,000</td>
+								<td>300,000</td>
+								<td>
+									<button type="button" class="btn-sm btn-info">수정</button>
+									<button type="button" class="btn-sm btn-secondary">삭제</button>
+								</td>
+							</tr>
+							<tr>
+								<td>100</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>1,200,000</td>
+								<td>300,000</td>
+								<td>
+									<button type="button" class="btn-sm btn-info">수정</button>
+									<button type="button" class="btn-sm btn-secondary">삭제</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    	</div>
+		</div>
+		<!-- //Modal content -->
+	</div>
+</div>
+<!--//교육 팝업-->
+
+<!--자격 팝업-->
+<div id="poptem07" class="modal_pop" style="top:15%;">
+	<div class="layerpopupArea">
+		<span class="close" onclick="close_qua();">&times;</span>
+	    <div id="Performance" class="modal-content-pop">
+	    	<h4>자격</h4>
+	    	<div class="card-content">
+	    		<div class="pop_title">
+	    			<button type="button" class="btn btn-info">신규</button>
+	    		</div>
+	    		<div class="data_ta_list mt_15 h300">
+	    			<table>
+						<colgroup>
+							<col width="60px">
+							<col width="200px">
+							<col width="150px">
+							<col width="150px">
+							<col width="150px">
+							<col width="150px">
+							<col width="100px">
+							<col width="200px">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">순번</th>
+								<th scope="col">취득일자</th>
+								<th scope="col">자격증명</th>
+								<th scope="col">발급기관</th>
+								<th scope="col">자격증번호</th>
+								<th scope="col">자격증등급</th>
+								<th scope="col">자격수당</th>
+								<th scope="col">관리</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td style="text-align:center;vertical-align:middle;background:#ffffff; font-size:13px;" colspan="8"><b>정보가 없습니다.</b></td>
+							</tr>
+							<tr>
+								<td>100</td>
+								<td>
+									<input type="text" class="form-control mr_5 datepicker01" id="lice_dt" name="param_vo.lice_dt" value="2021-11-10" style="width:100px; margin-right:5px;" />
+									<img onclick="javascript:$('#lice_dt').datepicker('show')" src="./images/ico_calender.gif" alt="취득일자" title="취득일자" align="absmiddle" style="cursor:pointer">
+								</td>
+								<td><input type="text" id="lice_nm" name="param_vo.lice_nm" class="form-control" maxlength="15"></td>
+								<td><input type="text" id="lice_org" name="param_vo.lice_org" class="form-control" maxlength="10"></td>
+								<td><input type="text" id="lice_no" name="param_vo.lice_no" class="form-control" maxlength="10"></td>
+								<td><input type="text" id="lice_class" name="param_vo.lice_class" class="form-control" maxlength="1"></td>
+								<td><input type="text" id="lice_amt" name="param_vo.lice_amt" class="form-control" maxlength="10"></td>
+								<td>
+									<button type="button" class="btn-sm btn-info">저장</button>
+									<button type="button" class="btn-sm btn-secondary">취소</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    	</div>
+		</div>
+		<!-- //Modal content -->
+	</div>
+</div>
+<!--//자격 팝업-->
+
+<!--외국어 팝업-->
+<div id="poptem08" class="modal_pop" style="top:15%;">
+	<div class="layerpopupArea">
+		<span class="close" onclick="close_for();">&times;</span>
+	    <div id="Performance" class="modal-content-pop">
+	    	<h4>외국어</h4>
+	    	<div class="card-content">
+	    		<div class="pop_title">
+	    			<button type="button" class="btn btn-info">신규</button>
+	    		</div>
+	    		<div class="data_ta_list mt_15">
+	    			<table>
+						<colgroup>
+						<col width="60px">
+						<col width="200px">
+						<col width="200px">
+						<col width="100px">
+						<col width="200px">
+						<col width="200px">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">순번</th>
+								<th scope="col">취득일자</th>
+								<th scope="col">시험명</th>
+								<th scope="col">점수/등급</th>
+								<th scope="col">인증기관</th>
+								<th scope="col">관리</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td style="text-align:center;vertical-align:middle;background:#ffffff;" colspan="8"><b>정보가 없습니다.</b></td>
+							</tr>
+							<tr>
+								<td>-</td>
+								<td>
+									<input type="text" class="form-control mr_5 datepicker01" id="acq_dt" name="param_vo.acq_dt" value="" style="width:100px; margin-right:5px;" />
+									<img onclick="javascript:$('#acq_dt').datepicker('show')" src="./images/ico_calender.gif" alt="취득일자" title="취득일자" align="absmiddle" style="cursor:pointer">
+								</td>
+								<td><input type="text" id="examine_name" name="param_vo.examine_name" class="form-control" maxlength="25"></td>
+								<td><input type="text" id="score_grd" name="param_vo.score_grd" class="form-control" maxlength="5"></td>
+								<td><input type="text" id="cert_organ" name="param_vo.cert_organ" class="form-control" maxlength="25"></td>
+								<td>
+									<button type="button" class="btn-sm btn-info">저장</button>
+									<button type="button" class="btn-sm btn-secondary">취소</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    	</div>
+		</div>
+		<!-- //Modal content -->
+	</div>
+</div>
+<!--//외국어 팝업-->
+
+<!--장애 팝업-->
+<div id="poptem09" class="modal_pop" style="top:15%;">
+	<div class="layerpopupArea">
+		<span class="close" onclick="close_obs();">&times;</span>
+	    <div id="Performance" class="modal-content-pop">
+	    	<h4>장애</h4>
+	    	<div class="card-content">
+	    		<div class="pop_title">
+	    			<button type="button" class="btn btn-info">신규</button>
+	    		</div>
+	    		<div class="data_ta_list mt_15">
+	    			<table>
+						<colgroup>
+						<col width="60px">
+						<col width="100px">
+						<col width="150px">
+						<col width="150px">
+						<col width="80px">
+						<col width="200px">
+						<col width="200px">
+						<col width="200px">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">순번</th>
+								<th scope="col">장애자성명</th>
+								<th scope="col">본인과의관계</th>
+								<th scope="col">장애등급번호</th>
+								<th scope="col">등급</th>
+								<th scope="col">등록일자</th>
+								<th scope="col">비고</th>
+								<th scope="col">관리</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td style="text-align:center;vertical-align:middle;background:#fff; font-size:13px;" colspan="8"><b>정보가 없습니다.</b></td>
+							</tr>
+							<tr>
+								<td>-</td>
+								<td>
+									<input type="text" id="han_ko_nm" name="param_vo.han_ko_nm" class="form-control" maxlength="10">
+								</td>
+								<td>
+									<select id="han_rel" name="param_vo.han_rel" class="select"><option value="101">부</option><option value="102">모</option><option value="103">매</option><option value="104">형</option><option value="105">제</option><option value="106">조부</option><option value="107">조모</option><option value="108">빙부(장인)</option><option value="109">빙모(장모)</option><option value="110">배우자</option><option value="111">본인</option><option value="112">자녀</option><option value="113">사위</option><option value="114">자부(며느리)</option><option value="115">시부</option><option value="116">시모</option><option value="117">손자/손녀</option><option value="118">기타</option></select>
+								</td>
+								<td><input type="text" id="han_no" name="param_vo.han_no" class="form-control" maxlength="15"></td>
+								<td><input type="text" id="han_grad" name="param_vo.han_grad" class="form-control" maxlength="4"></td>
+								<td>
+									<input type="text" id="han_reg_dt" name="param_vo.han_reg_dt" class="form-control mr_5 datepicker01" style="width:100px; margin-right:5px;" />
+									<img onclick="javascript:$('#han_reg_dt').datepicker('show')" src="./images/ico_calender.gif" alt="등록일자" title="등록일자" align="absmiddle" style="cursor:pointer">
+								</td>
+								<td><input type="text" id="han_remark" name="param_vo.han_remark" class="form-control" maxlength="25"></td>
+								<td>
+									<button type="button" class="btn-sm btn-info">저장</button>
+									<button type="button" class="btn-sm btn-secondary">취소</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    	</div>
+		</div>
+		<!-- //Modal content -->
+	</div>
+</div>
+<!--//장애 팝업-->
+
+<!--보훈 팝업-->
+<div id="poptem10" class="modal_pop" style="top:15%;">
+	<div class="layerpopupArea">
+		<span class="close" onclick="close_vet();">&times;</span>
+	    <div id="Performance" class="modal-content-pop">
+	    	<h4>보훈</h4>
+	    	<div class="card-content">
+	    		<div class="pop_title">
+	    			<button type="button" class="btn btn-info">신규</button>
+	    		</div>
+	    		<div class="data_ta_list mt_15">
+	    			<table>
+						<colgroup>
+						<col width="60px">
+						<col width="100px">
+						<col width="150px">
+						<col width="150px">
+						<col width="150px">
+						<col width="150px">
+						<col width="200px">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">순번</th>
+								<th scope="col">보훈자성명</th>
+								<th scope="col">본인과의관계</th>
+								<th scope="col">보훈번호</th>
+								<th scope="col">등급</th>
+								<th scope="col">비고</th>
+								<th scope="col">관리</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td style="text-align:center;vertical-align:middle;background:#ffffff; font-size:13px;" colspan="7"><b>정보가 없습니다.</b></td>
+							</tr>
+							<tr>
+								<td>-</td>
+								<td><input type="text" id="patr_ko_nm" name="param_vo.patr_ko_nm" class="form-control" maxlength="10"></td>
+								<td>
+									<select id="patr_rel" name="param_vo.patr_rel" class="select"><option value="101">부</option><option value="102">모</option><option value="103">매</option><option value="104">형</option><option value="105">제</option><option value="106">조부</option><option value="107">조모</option><option value="108">빙부(장인)</option><option value="109">빙모(장모)</option><option value="110">배우자</option><option value="111">본인</option><option value="112">자녀</option><option value="113">사위</option><option value="114">자부(며느리)</option><option value="115">시부</option><option value="116">시모</option><option value="117">손자/손녀</option><option value="118">기타</option>
+									</select>
+								</td>
+								<td><input type="text" id="prtr_no" name="param_vo.prtr_no" class="form-control" maxlength="15" onkeydown="handlerEng(this);"></td>
+								<td><input type="text" id="patr_class" name="param_vo.patr_class" class="form-control"></td>
+								<td><input type="text" id="patr_remark" name="param_vo.patr_remark" class="form-control" maxlength="25"></td>
+								<td>
+									<button type="button" class="btn-sm btn-info">저장</button>
+									<button type="button" class="btn-sm btn-secondary">취소</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    	</div>
+		</div>
+		<!-- //Modal content -->
+	</div>
+</div>
+<!--//보훈 팝업-->
+
+<!--상훈 팝업-->
+<div id="poptem11" class="modal_pop" style="top:15%;">
+	<div class="layerpopupArea">
+		<span class="close" onclick="close_san();">&times;</span>
+	    <div id="Performance" class="modal-content-pop">
+	    	<h4>상훈</h4>
+	    	<div class="card-content">
+	    		<div class="pop_title">
+	    			<button type="button" class="btn btn-info">신규</button>
+	    		</div>
+	    		<div class="data_ta_list mt_15">
+	    			<table>
+						<colgroup>
+						<col width="60px">
+						<col width="250px">
+						<col width="200px">
+						<col width="80px">
+						<col width="300px">
+						<col width="200px">
+						<col width="200px">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">순번</th>
+								<th scope="col">기관명및단체명</th>
+								<th scope="col">일자</th>
+								<th scope="col">등급</th>
+								<th scope="col">내용</th>
+								<th scope="col">비고</th>
+								<th scope="col">관리</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td style="text-align:center;vertical-align:middle;background:#ffffff;font-size:13px;" colspan="7"><b>정보가 없습니다.</b></td>
+							</tr>
+							<tr>
+								<td>-</td>
+								<td><input type="text" id="awa_org" name="param_vo.awa_org" class="form-control" maxlength="15"></td>
+								<td>
+									<input type="text" id="awa_dt" name="param_vo.awa_dt" class="form-control mr_5 datepicker01" style="width:100px; margin-right:5px;" />
+									<img onclick="javascript:$('#awa_dt').datepicker('show')" src="./images/ico_calender.gif" alt="일자" title="일자" align="absmiddle" style="cursor:pointer">
+								</td>
+								<td><input type="text" id="awa_grd" name="param_vo.awa_grd" class="form-control"></td>
+								<td><input type="text" id="awa_cont" name="param_vo.awa_cont" class="form-control" maxlength="25"></td>
+								<td><input type="text" id="awa_etc" name="param_vo.awa_etc" class="form-control" maxlength="25"></td>
+								<td>
+									<button type="button" class="btn-sm btn-info">저장</button>
+									<button type="button" class="btn-sm btn-secondary">취소</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+	    		</div>
+	    	</div>
+		</div>
+		<!-- //Modal content -->
+	</div>
+</div>
+<!--//상훈 팝업-->
+<body class="bg">  <!--style="overflow-y:hidden; overflow-x:auto;"--> 
+	<!--wrapper-->
+	<div class="wrapper">
+		<!-- Header -->
+	    <div id="header">
+	        <div class="skip">상단메뉴</div>
+	        <div class="header-top main-width">
+	            <div class="container navbar">
+	                <div class="inner-container">
+	                    <div>
+	                        <h1 class="logo">
+	                            <img src="./images/logo.png" alt="경기도사회서비스원"><br><span>통합사회정보시스템</span>
+	                        </h1>
+	                    </div>
+	                   
+	                   <div class="gnb">
+	                        <div class="skip">상단메뉴</div>
+	                        <!--하위메뉴가 없는 메뉴는 해당li태그에 class="nosub" 넣어주세요-->
+	                        <ul class="depth1">
+                                <li class="nosub"><a href="./home(대시보드).html">홈</a></li>
+                                <li class="nosub"><a href="./예산집행율조회.html">예산집행율</a></li>
+                                <li class="nosub"><a href="./종사자현황_(고용형태별)조회.html">종사자현황</a></li>
+                                <li class="nosub"><a href="./종합재가센터_운영현황목록.html">종합재가센터</a></li>
+                                <li><a href="#none">국공립시설</a>
+                                	<ul class="depth2">
+                                		<li><a href="./국공립시설_운영현황목록(어린이집).html">어린이집</a></li>
+                                		<li><a href="./국공립시설_운영현황목록(다함께돌봄).html">다함께돌봄센터</a></li>
+                                	</ul>
+                                </li>
+                                <li><a href="#none">공공센터</a>
+                                	<ul class="depth2">
+                                		<li><a href="./공공센터_대체인력지원사업_운영현황.html">대체인력지원사업</a></li>
+                                		<li><a href="./공공센터_노인보호전문기관_운영현황.html">노인보호전문기관</a></li>
+                                		<li><a href="./공공센터_노인종합상담센터_운영현황.html">노인종합상담센터</a></li>
+                                		<li><a href="./공공센터_노인일자리지원센터_운영현황.html">노인일자리지원센터</a></li>
+                                		<li><a href="./공공센터_지역사회서비스지원단_운영현황.html">지역사회서비스지원단</a></li>
+                                		<li><a href="./공공센터_장기요양요원지원센터_운영현황.html">장기요양요원지원센터</a></li>
+                                	</ul>
+                                </li>
+                                <li class="nosub"><a href="./개인인사정보_개인휴가조회.html">개인인사정보</a></li>
+                                <li class="nosub"><a href="./통합결재_통합문서목록.html">통합결재</a></li>
+                                <li class="nosub"><a href="./설문조사_진행가능한설문.html">설문조사</a></li>
+                                <li class="nosub"><a href="http://pub_lms-lite.tigensoft.co.kr:9090/_front/" target="_blank" title="새창열림">교육관리 <i class="far fa-window-restore"></i></a></li>
+                                <li><a href="#none">관리자</a>
+                                    <ul class="depth2">
+                                        <li><a href="./인사관리_인사사항조회.html">인사관리</a></li>
+                                        <li><a href="./자산관리.html">자산관리</a></li>
+                                        <li><a href="./대용량메일발송.html">대용량메일발송</a></li>
+                                        <li><a href="./통합메시지.html">통합메시지</a></li>
+                                        <li><a href="./설문조사관리.html">설문조사관리</a></li>
+                                        <li><a href="./통합메시지발송.html">통합메시지발송</a></li>
+                                        <li><a href="./통합메시지기준관리.html">통합메시지기준관리</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+	                    </div>
+
+	                    <div class="info">
+                            <a href="#none" title="펼치기" class="off">
+                                <i class="fas fa-user-cog fa-lg"></i>
+                                <span class="fs13">홍길동팀장 </span><br><span class="fs11">(기획예산팀)</span>
+                            </a>
+                            <ul>
+                                <li><a href="#none" class="openPopup" data-target="personalItem01"><i class="fas fa-user mr_5"></i> 비밀번호변경</a></li>
+                                <li><a href="#none" class="openPopup" data-target="personalItem02"><i class="fas fa-key mr_5"></i> 나의정보</a></li>
+                                <li><a href="./권한변경_공통.html"><i class="fas fa-key mr_5"></i> 권한설정</a></li>
+                                <li><a href="#none"><i class="fas fa-power-off mr_5"></i> 로그아웃</a></li>
+                            </ul>
+                        </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    <!-- //Header -->
+		<!--gside-->
+	    <div class="gside">
+	        <div class="skip">레프트메뉴 영역</div>
+	        <!--li태그에 nochild 클래스가 있으면 하위메뉴가 없다는 뜻-->
+	        <div class="skip">관리자_인사관리</div>
+	        <ul>
+	            <li><a href="#none" class="on">인사관리</a>
+	                <ul>
+	                    <li><a href="./인사관리_인사사항조회.html" class="on">인사사항조회</a></li>
+	                    <li><a href="./인사관리_복지포인트.html">복지포인트조회</a></li>
+	                    <li><a href="./인사관리_근무평정(평정자).html">근무성적평정</a></li>
+	                    <li><a href="./인사관리_재증명서발급.html">재증명서발급</a></li>
+	                    <li><a href="./인사관리_재증명발급이력조회.html">재증명발급이력조회</a></li>
+	                </ul>
+	            </li>
+	            <li><a href="#none">급여관리</a>
+	                <ul>
+	                    <li><a href="./인사관리_급여관리조회.html">급여조회</a></li>
+	                </ul>
+	            </li>
+	            <li><a href="#none">근태관리</a>
+	                <ul>
+	                    <li><a href="./인사관리_근태관리_일일근태조회.html">일일근태조회</a></li>
+	                    <li><a href="./인사관리_근태관리_기간별근태집계.html">기간별근태집계</a></li>
+	                    <li><a href="./인사관리_근태관리_야근식대교통비관리.html">야근식대교통비</a></li>
+	                </ul>
+	            </li>
+	            <li><a href="#none">휴가관리</a>
+	                <ul>
+	                    <li><a href="./인사관리_휴가관리_연차생성.html">연차생성</a></li>
+	                    <li><a href="./인사관리_휴가관리_연차일괄적용.html">연차일괄적용</a></li>
+	                    <li><a href="./인사관리_휴가관리_사용휴가관리.html">사용휴가관리</a></li>
+	                    <li><a href="./인사관리_휴가관리_잔여연차조회.html">잔여연차조회</a></li>
+	                </ul>
+	            </li>
+	            <li><a href="#none">통합결재관리</a>
+	                <ul>
+	                    <li><a href="./인사관리_통합결재관리_전체문서.html">전체문서</a></li>
+	                    <li><a href="./인사관리_통합결재관리_결제선관리.html">결재선문서</a></li>
+	                    <li><a href="./인사관리_통합결재관리_양식관리.html">양식관리</a></li>
+	                </ul>
+	            </li>
+	            <li><a href="#none">기준관리</a>
+	                <ul>
+	                    <li><a href="./인사관리_기준관리_휴일관리.html">휴일관리</a></li>
+	                    <li><a href="./인사관리_기준관리_부서코드.html">부서코드</a></li>
+	                    <li><a href="./인사관리_기준관리_부서코드(대분류코드등록).html">대중소분류코드등록</a></li>
+	                </ul>
+	            </li>
+	        </ul>
+	    </div>
+	    <!--//gside-->
+		<!--content-->
+		<div class="content">
+			<div class="skip">컨텐츠 영역</div>
+			<!--content-wrapper-->
+			<div class="content-wrapper">
+				<!--cont-header-->
+				<div class="cont-header">
+					<div class="cont-header-left">
+						<h3 class="Depth2_title">인사관리</h3>
+						<ul class="breadcrumb d_iblock">
+							<li>홈 <i class="fas fa-angle-right"></i></li>
+							<li>인사관리 <i class="fas fa-angle-right"></i></li>
+							<li>인사사항조회</li>
+						</ul>
+					</div>
+				</div>
+				<!--//cont-header-->
+				<!--content-body-->
+				<div class="content-body">
+					<div class="card-header">
+						<h4 class="Depth3_title">개인신상관리</h4>
+					</div>	
+					<div class="card-body">
+						<!-- 버튼영역 -->
+						<div class="pr mb_10">
+							<div class="list-top">
+								<button type="button" class="btn btn-info">목록</button>
+								<button type="button" class="btn btn-info">채용예정자선택</button>
+								<button type="button" class="btn btn-info">입력</button>
+							</div>
+						</div>
+						<!-- //버튼영역 -->
+						<script>
+							$(function(){
+								$('#img_file').change(function(){
+								    setImageFromFile(this, '#preview');
+								});
+
+								function setImageFromFile(input, expression) {
+								    if (input.files && input.files[0]) {
+								        var reader = new FileReader();
+								        reader.onload = function (e) {
+								            $(expression).attr('src', e.target.result);
+								        }
+								        reader.readAsDataURL(input.files[0]);
+								    }
+								}
+							});
+						</script>
+
+						<div class="formProfile">
+							<div class="row mr_35 mt_15">
+								<div id="pic">
+									<div id="uploadpic">
+										<!--[Upload Picture]-->
+										<img src="./images/no_image.gif" id="preview">
+									</div>
+								</div>
+								<div id="picupload">
+									<div class="imgbox bs3-primary mt_10">
+									  <label for="img_file">사진등록</label> 
+									  <input type="file" id="img_file"> 
+									</div>
+								</div>
+								<div id="tebbutton">
+									<button type="button" class="teb teb-primary" onclick="popup_order()">기타</button>
+									<button type="button" class="teb teb-primary" onclick="popup_edu()">학력</button>
+									<button type="button" class="teb teb-primary" onclick="popup_inexp()">사내경력</button>
+									<button type="button" class="teb teb-primary" onclick="popup_outexp()">사외경력</button>
+									<button type="button" class="teb teb-primary" onclick="popup_fam()">가족</button>
+									<button type="button" class="teb teb-primary" onclick="popup_ed()">교육</button>
+									<button type="button" class="teb teb-primary" onclick="popup_qua()">자격</button>
+									<button type="button" class="teb teb-primary" onclick="popup_for()">외국어</button>
+									<button type="button" class="teb teb-primary" onclick="popup_obs()">장애</button>
+									<button type="button" class="teb teb-primary" onclick="popup_vet()">보훈</button>
+									<button type="button" class="teb teb-primary" onclick="popup_san()">상훈</button>
+									<!-- <a href="#url" class="teb">연봉</a> -->
+								</div>
+							</div>
+							<div class="row">
+								<div class="table_bbs_write">
+									<table>
+										<colgroup>
+											<col width="15%">
+											<col width="*">
+											<col width="15%">
+											<col width="*">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row">재직구분</th>
+												<td>
+													<div class="selectbox">
+														<select class="select" id="engag_div" name="param_vo.engag_div">
+														    <option value="">선택</option>
+													       <!--  <option value="101" >&#51116;&#51649;</option> -->
+													        <option value="101" selected="">재직</option>
+													    
+													       <!--  <option value="102" >&#53748;&#51649;</option> -->
+													        <option value="102">퇴직</option>
+													    
+													       <!--  <option value="103" >&#55092;&#51649;</option> -->
+													        <option value="103">휴직</option>
+													    
+													       <!--  <option value="104" >&#51077;&#49324;&#52712;&#49548;</option> -->
+													        <option value="104">입사취소</option>
+														</select>
+													</div>
+												</td>
+												<th scope="row">성별</th>
+												<td>
+													<div class="selectbox">
+                                                    	<select class="select" id="sex_div" name="param_vo.sex_div">
+	                                                    	<option value="">선택</option>
+	                                                        <option value="101">남</option>
+	                                                        <option value="102">여</option>
+	                                                    </select>
+	                                                </div>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">성명<span class="red">*</span></th>
+												<td><input type="text" class="form-control" style="width:200px;" id="emp_ko_nm" name="param_vo.emp_ko_nm" value=""></td>
+												<th scope="row">입사일<span class="red">*</span></th>
+												<td>
+													<input type="text" class="form-control mr_5 datepicker01" id="search_day_from" name="param_vo.search_day_from" value="2021-11-05" style="width:200px; margin-right:5px;" />
+													<img onclick="javascript:$('#search_day_from').datepicker('show')" src="./images/ico_calender.gif" alt="입사일" title="입사일" align="absmiddle" style="cursor:pointer">
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">한문명</th>
+												<td><input type="text" class="form-control" style="width:200px;" id="emp_ch_nm" name="param_vo.emp_ch_nm" maxlength="20"></td>
+												<th scope="row">영문명</th>
+												<td>
+													<div class="en_input mr_10">
+														<label for="emp_en_nm1">First</label>
+														<input type="text" class="form-control" id="emp_en_nm1" name="param_vo.emp_en_nm1" onkeyup="fnEnNm()" value="" style="width:70px;">
+													</div>
+													<div class="en_input mr_10">
+														<label for="emp_en_nm2">Last</label>
+														<input type="text" class="form-control" id="emp_en_nm2" name="param_vo.emp_en_nm2" onkeyup="fnEnNm()" value="" style="width:70px;">
+													</div>
+													<div class="en_input">
+														<label for="emp_en_nm_full">Full</label>
+														<input type="text" id="emp_en_nm_full" name="param_vo.emp_en_nm_full" value="" class="form-control" disabled style="width:210px;">
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">주민번호<span class="red">*</span></th>
+												<td colspan="3">
+													<div class="f_left mr_15">
+														<input type="text" class="form-control" style="width:100px;" id="resid_no_first" name="param_vo.resid_no_first" maxlength="6" onkeydown="handlerEng(this);" value=""> - 
+														<input type="text" class="form-control" style="width:100px;" id="resid_no_last" name="param_vo.resid_no_last" maxlength="7" onkeydown="handlerEng(this);" value="">
+													</div>
+												
+													<div class="checks f_left w90" style="height:33px; line-height:33px;"> <input type="checkbox" name="foreigner_resid_no" id="foreigner_resid_no" value="Y"> <label for="foreigner_resid_no">외국인</label></div>
+													<div class="checks f_left" style="height:33px; line-height:33px;"><input type="checkbox" name="pass_resid_no" id="pass_resid_no" value="Y"> <label for="pass_resid_no">미확인</label> (※ 체크시 111111-1111111로 등록됩니다)</div>
+													
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">생년월일</th>
+												<td colspan="3">
+													<input type="text" class="form-control w200" id="birth_dt" name="param_vo.birth_dt" onkeydown="javascript:fnDateFormat('birth_dt')" value="">
+													<div class="checks mt_10 ml_5">
+														<input type="checkbox" name="residEqBirth" id="residEqBirth" onclick="fnBirthDtIns();" value="Y"><label for="residEqBirth">주민번호와 동일</label>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">회사</th>
+												<td><input class="form-control" id="cmpny" type="text" disabled></td>
+												<th scope="row">본부</th>
+												<td><input type="text" class="form-control" id="upper_name" disabled></td>
+											</tr>
+											<tr>
+												<th scope="row">부서<span class="red">*</span></th>
+												<td>
+													<input type="text" class="form-control w200" id="dept_cd" name="param_vo.dept_cd" maxlength="4" onkeydown="handlerEng(this);" onblur="fnKeyDown();">
+													<input type="text" class="form-control w200" id="dept_name" name="param_vo.dept_name" readonly="readonly">
+												</td>
+												<th scope="row">직위<span class="red">*</span></th>
+												<td>
+													<div class="selectbox">
+		                                                 <label for="blong_to" class="skip">직위</label>
+		                                                 <select class="select" id="blong_to" name="param_vo.blong_to">
+		                                                 	<option value="">선택</option>
+		                                                 
+		                                                    <option value="115">회장</option>
+		                                                 
+		                                                    <option value="116">대표이사사장</option>
+		                                                 
+		                                                    <option value="117">고문</option>
+		                                                 
+		                                                    <option value="119">이사대우</option>
+		                                                 
+		                                                    <option value="120">국장대우</option>
+		                                                 
+		                                                    <option value="121">부국장대우</option>
+		                                                 
+		                                                    <option value="122">부장대우</option>
+		                                                 
+		                                                    <option value="123">4급남</option>
+		                                                 
+		                                                    <option value="124">4급여</option>
+		                                                 
+		                                                    <option value="125">5급남 전문대졸</option>
+		                                                 
+		                                                    <option value="126">5급여 전문대졸</option>
+		                                                 
+		                                                    <option value="127">5급남(군필)</option>
+		                                                 
+		                                                    <option value="128">5급남(군미필)</option>
+		                                                 
+		                                                    <option value="129">5급여</option>
+		                                                 
+		                                                    <option value="130">기능직</option>
+		                                                 
+		                                                    <option value="131">기타</option>
+		                                                 
+		                                                    <option value="132">일반직(군필)</option>
+		                                                 
+		                                                    <option value="133">숙련직(군필)</option>
+		                                                 
+		                                                    <option value="134">기사보(군필)</option>
+		                                                 
+		                                                    <option value="135">기사(군필)</option>
+		                                                 
+		                                                    <option value="136">일반직(군미필)</option>
+		                                                 
+		                                                    <option value="137">숙련직(군미필)</option>
+		                                                 
+		                                                    <option value="138">기사보(군미필)</option>
+		                                                 
+		                                                    <option value="139">기사(군미필)</option>
+		                                                 
+		                                                    <option value="140">위원</option>
+		                                                 
+		                                                    <option value="141">외국인</option>
+		                                                 
+		                                                    <option value="142">자문</option>
+		                                                 
+		                                                    <option value="143">자문위원</option>
+		                                                 
+		                                                    <option value="144">감사</option>
+		                                                 
+		                                                    <option value="145">대표이사</option>
+		                                                 
+		                                                    <option value="146">상무보</option>
+		                                                 
+		                                                    <option value="147">Director</option>
+		                                                 
+		                                                    <option value="148">S.Manager</option>
+		                                                 
+		                                                    <option value="149">Manager</option>
+		                                                 
+		                                                    <option value="150">Senior</option>
+		                                                 
+		                                                    <option value="151">Junior(남)</option>
+		                                                 
+		                                                    <option value="152">Junior(여)</option>
+		                                                 
+		                                                    <option value="153">지사장</option>
+		                                                 
+		                                                    <option value="154">팀장</option>
+		                                                 
+		                                                    <option value="155">프리랜서</option>
+		                                                 
+		                                                    <option value="101">인턴</option>
+		                                                 
+		                                                    <option value="102">사원</option>
+		                                                 
+		                                                    <option value="103">대리</option>
+		                                                 
+		                                                    <option value="104">과장</option>
+		                                                 
+		                                                    <option value="105">차장</option>
+		                                                 
+		                                                    <option value="106">부장</option>
+		                                                 
+		                                                    <option value="107">부국장</option>
+		                                                 
+		                                                    <option value="108">실장</option>
+		                                                 
+		                                                    <option value="109">국장</option>
+		                                                 
+		                                                    <option value="110">수석국장</option>
+		                                                 
+		                                                    <option value="111">이사</option>
+		                                                 
+		                                                    <option value="112">상무</option>
+		                                                 
+		                                                    <option value="118">전무</option>
+		                                                 
+		                                                    <option value="113">부사장</option>
+		                                                 
+		                                                    <option value="114">사장</option>
+		                                                 
+		                                                </select>
+		                                            </div>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">업종<span class="red">*</span></th>
+												<td>
+													<div class="selectbox">
+	                                                    <label class="skip">업종</label>
+	                                                    <select class="select" id="categ_busn" name="param_vo.categ_busn" onchange="fnJobClass();" selected="selected">
+		                                                    <option value="">선택</option>                              
+			                                                <option value="190">광고</option>                                    
+			                                                <option value="191">PR</option>                              
+			                                                <option value="192">관리</option>   
+			                                                <option value="193">ONLINE</option>
+	                                                    </select>
+	                                                </div>
+												</td>
+												<th scope="row">직종 및 직무<span class="red">*</span></th>
+												<td>
+													<div class="selectbox">
+                                                    	<label class="skip">직종</label>
+                                                    	<select class="select" id="job_class" name="param_vo.job_class" onchange="fnJob();" selected="selected">
+                                                    		<option value="">선택</option>
+                                                    	</select>
+                                                	</div>
+                                                	<div class="selectbox">
+                                                    	<label class="skip">직무</label>
+                                                    	<select class="select" id="job" name="param_vo.job" onchange="fnOccpt();" selected="selected">
+                                                    		<option value="">선택</option>
+                                                    	</select>
+                                                	</div>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">관리직종<span class="red">*</span></th>
+												<td colspan="3">
+													<input type="text" id="occpt_cd_copy" value="" class="form-control" readonly="readonly" style="width: 260px;">
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">고용형태<span class="red">*</span></th>
+												<td>
+													<div class="selectbox">
+														<label class="skip">고용형태</label>
+														<select class="select" id="emp_form" name="param_vo.emp_form" onchange="fnEmpForm()">
+															<option value="">선택</option>
+															<option value="101">정규직</option>
+															<option value="102">계약직</option>
+															<option value="103">인턴직</option>
+															<option value="104">파견직</option>
+															<option value="105">일용직</option>
+															<option value="108">프리랜서</option>
+														</select>
+													</div>
+												</td>
+												<th scope="row">급여대상구분</th>
+												<td>
+													<div class="selectbox">
+	                                                    <label class="skip">급여대상구분</label>
+	                                                    <select class="select" id="pay_div" name="param_vo.pay_div">
+	                                                    
+	                                                    <option value="100">해당없음</option>
+	                                                    
+	                                                    <option value="101">근로소득</option>
+	                                                    
+	                                                    <option value="102">사업소득</option>
+	                                                    
+	                                                    <option value="103">일용소득</option>
+	                                                    
+	                                                    <option value="104">기타소득</option>
+	                                                    
+	                                                    </select>
+	                                                </div>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">인정경력</th>
+												<td colspan="3">
+													<input type="text" class="form-control" style="width:80px;" id="cert_yer" name="param_vo.cert_yer" maxlength="4" onkeydown="handlerEng(this);" value="2021" disabled="disabled">년
+													<input type="text" class="form-control" style="width:50px;" id="cert_mon" name="param_vo.cert_mon" onkeydown="handlerEng(this);" maxlength="2" value="30" disabled="disabled"> 개월
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">계약기간</th>
+												<td colspan="3">
+													<input type="text" class="form-control w200" id="from_contract" name="param_vo.from_contract" onkeydown="javascript:fnDateFormat('from_contract')" disabled="disabled"> ~ 
+													<input type="text" class="form-control w200" id="to_contract" name="param_vo.to_contract" onkeydown="javascript:fnDateFormat('to_contract')" on="" disabled="disabled">
+												</td>
+											</tr>
+											<tr>
+												<td colspan="4">
+													<div class="checks f_left mr_15"><input type="checkbox" id="water_yn" name="param_vo.water_yn" value="Y"> <label for="water_yn">식대지원대상</label></div>
+													<div class="checks f_left mr_15"><input type="checkbox" id="cafe_yn" name="param_vo.cafe_yn" value="Y"> <label for="cafe_yn">까페테리아 제외</label></div>
+													<div class="checks f_left mr_15"><input type="checkbox" id="org_yn" name="param_vo.org_yn" value="Y"> <label for="org_yn">조직도 제외</label></div>
+													<div class="checks f_left mr_15"><input type="checkbox" id="company_div" name="param_vo.company_div" value="Y"> <label for="company_div">4대보험지원대상</label></div>
+													<div class="checks f_left mr_15"><input type="checkbox" id="headcount_div" name="param_vo.headcount_div" value="Y"> <label for="headcount_div">HeadCount 제외</label></div>
+													<div class="checks f_left mr_15"><input type="checkbox" id="han_yn" name="param_vo.han_yn" value="Y"><label for="han_yn">장애인</label></div>
+													<div class="checks f_left mr_15"><input type="checkbox" id="vet_yn" name="param_vo.vet_yn" value="Y"><label for="han_yn">보훈대상자</label></div>
+												</td>
+											</tr>
+											<tr>
+												<th colspan="4">인적사항</th>
+											</tr>
+											<tr>
+												<th scope="row">전화번호</th>
+												<td>
+													<input type="text" class="form-control" style="width:150px;" id="tel_no" name="param_vo.tel_no" maxlength="20" onkeydown="handlerEng(this);handlerTel(this);" value="">
+												</td>
+												<th scope="row">휴대폰</th>
+												<td>
+													<input type="text" class="form-control" style="width:145px;" id="tel_mobile" name="param_vo.tel_mobile" onkeydown="handlerTel(this);handlerTel(this);" maxlength="20" value="">
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">주소</th>
+												<td colspan="3"><input type="text" class="form-control" id="addr" name="param_vo.addr" maxlength="50"></td>
+											</tr>
+											<tr>
+												<th scope="row">영문주소</th>
+												<td colspan="3"><input type="text" class="form-control" id="addr_en" name="param_vo.addr_en" maxlength="100"></td>
+											</tr>
+											<tr>
+												<th scope="row">개인이메일</th>
+												<td><input type="text" class="form-control" style="width:150px;" id="person_e_mail" name="param_vo.person_e_mail" maxlength="40" value=""></td>
+												<th scope="row">사내이메일</th>
+												<td><input type="text" class="form-control" style="width:145px;" id="e_mail" name="param_vo.e_mail" maxlength="40"></td>
+											</tr>
+											<tr>
+												<th scope="row">사내전화번호</th>
+												<td><input type="text" class="form-control" style="width:150px;" id="in_tel" name="param_vo.in_tel" maxlength="15" onkeydown="handlerEng(this);"></td>
+												<th scope="row">최종학력</th>
+												<td><input type="text" class="form-control" style="width:145px;" id="last_sclar" name="param_vo.last_sclar" maxlength="15"></td>
+											</tr>
+											<tr>
+												<th scope="row">비상연락망</th>
+												<td colspan="3">
+													<div class="f_left"><input type="text" class="form-control" style="width:150px;" id="network_contract" name="param_vo.network_contract" maxlength="12" onkeydown="handlerEng(this);"></div>
+													<div class="checks f_left" style="height:33px; line-height:33px; padding-left:10px;"><input type="checkbox" id="foreign_div" name="param_vo.foreign_div" value="Y"> <label for="foreign_div">외국인구분</label></div>
+												</td>
+
+											</tr>
+											<tr>
+												<th scope="row">국적</th>
+												<td><input type="text" class="form-control" style="width:150px;" id="nationality" name="param_vo.nationality" maxlength="15"></td>
+												<th scope="row">체류자격</th>
+												<td><input type="text" class="form-control" style="width:150px;" id="stay_right" name="param_vo.stay_right" maxlength="25"></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!-- 버튼영역 -->
+						<div class="pr tar mt_20">
+							<div class="list-top">
+								<button type="button" class="btn btn-info">목록</button>
+								<button type="button" class="btn btn-info">저장</button>
+							</div>
+						</div>
+						<!-- //버튼영역 -->
+					</div>
+				</div>
+				<!--//content-body-->
+			</div><!--//content-wrapper-->
+		</div><!--//content-->
+	</div><!--//wrapper-->
+</body>
+</html>
