@@ -1,0 +1,164 @@
+@charset "UTF-8";
+/* ------- NAV ------- */
+.side-nav {
+    display: none;
+}
+.side-nav {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    top: 0;
+    right: -100%;
+    z-index: 99; 
+    background: #fff;
+    box-shadow: 0 0 2px 0 rgb(0 0 0 / 20%);
+    min-width: 24rem;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+    position: relative;
+}
+.user-area {
+    padding: 2rem 0;
+    margin: 0 2rem;
+    border-bottom:1px solid #DBDBDB;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.user-area > button{
+    width: 6rem;
+    height: 2.4rem;
+    font-size: 1.2rem;
+}
+.avatar {
+    position: relative;
+    width: 4.8rem;
+    height: 4.8rem;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: bottom;
+    user-select: none;
+    border-radius: 8px;
+    background: rgba(219, 219, 219, .3);
+}
+.avatar > img {
+    width: 2.8rem;
+    height: 2.8rem;
+}
+.user-area .name{
+    font-weight: bold;
+    line-height: 1;
+    font-size: 1.6rem;
+}
+.user-area .time {
+    font-weight: normal;
+    line-height: 21px;
+    font-size: 1.2rem;
+    color: rgba(34, 34, 34, 1);
+    font-weight: 400;
+    display: block;
+}
+
+.side-nav .side-menu {
+    height: calc(100% -  236px);
+    overflow-y: overlay;
+    position: relative;
+    flex: 1;
+}
+.side-nav .side-menu > ul {
+    margin-top: 6px;
+}
+.side-nav .side-menu ul li  {}
+.side-nav .side-menu ul li a {
+    display: flex;
+	align-items: center;
+    width: 100%;
+    position: relative;
+    padding: 1rem 2rem;
+    color: #222;
+	font-size: 1.6rem;
+	font-weight: 500;
+}
+.side-nav .side-menu ul li a > img {
+	width: 2rem;
+	margin-right: 1.6rem;
+}
+.side-nav-header{
+    min-height: 5.6rem;
+    box-shadow: 0 0 2px rgb(0 0 0 / 8%);
+}
+.side-nav-header > .ico-menu-list {
+	display: flex;
+    justify-content: space-between;
+	padding: 1.5rem 1.5rem 1.5rem 2rem;
+}
+.side-nav-header > .ico-menu-list > img{
+    width: 14rem;
+    height: 2.4rem;
+}
+.side-nav-header > .ico-menu-list .ico-btn{
+    position: relative;
+	width: 2.4rem;
+	height: 2.4rem;
+    background: url(../images/ico_close@2x.png) no-repeat 0 0;
+    background-size: 100%; 
+}
+
+.side-nav > .user {
+    border-bottom: 1px solid #434343;
+}
+.side-nav > .user a{
+	display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    padding: 1.6rem 2rem;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 500;
+    opacity: .7;
+}
+.side-nav > .user a:after {
+	font-family: "FontAwesome";
+    content: "\f054";
+    display: inline-block;
+    position: absolute;
+    right: 1.8rem;
+    top: 2rem;
+    font-size: 1.27rem;
+}
+.side-nav > .user a:hover {
+    opacity: 1;
+	background-color: #222;
+}
+.side-nav > .user a > img {
+	width: 2rem;
+	margin-right: 1.6rem;
+}
+.side-nav > .user a > .name:after{
+	content: '님';
+	margin-left: 2px;
+	opacity: .7;
+	font-size: 90%;
+}
+.page-wrapper.toggled #side-nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 1px 1px 10px rgba(0,0,0,.1);
+    transition: all .35s;
+}
+
+
