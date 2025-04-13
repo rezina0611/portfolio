@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>사용자관리</title>
+<!-- CSS -->
+<link rel="stylesheet" href="./css/fontawesome6-all.css">
+<link rel="stylesheet" href="./css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+<div class="w-wrapper">
+    <!--header-->
+    <header class="w-header">
+        <div class="d-flex">
+            <div class="top-nav">
+                <div class="logo">
+                    <a href="#none">
+                        <img src="./images/logo_wh@2x.png" alt="kt 출동 최적화 시스템">
+                    </a>
+                </div>
+                <ul>
+                    <li><a href="#none">공지사항</a></li>
+                    <li><a href="#none">출동 경로</a></li>
+                    <li><a href="#none">장비 관리</a></li>
+                    <li><a href="#none">작업 관리</a>
+                        <ul>
+                            <li><a href="#none">작업 조회</a></li>
+                            <li><a href="#none">작업 진행률</a></li>
+                            <li><a href="#none">긴급출동 조회</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#none">업로드 관리</a>
+                        <ul>
+                            <li><a href="#none">장비등록</a></li>
+                            <li><a href="#none">작업등록</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#none">사용자 관리</a></li>
+                </ul>
+            </div>
+            <div class="top-right">
+                <div class="d-flex ai-center mr-1">
+                    <span class="avatar">
+                        <img src="./images/ico_user_wh@2x.png">
+                    </span>
+                    <div class="d-block ml-0-5 mr-1-8">
+                      <div class="name">홍길동</div>
+                      <div class="time">충주운용팀</div>
+                    </div>
+                </div>
+                
+                <div class="right-end">
+                    <button class="btn ico">
+                        <img src="./images/ico_logout@2x.png" alt="로그아웃">
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </header>
+    <!--//header-->
+    <!--contents-->
+    <main class="contents">
+        <!--page-body-->
+        <div class="page-body">
+            <div class="subLocation">
+                <ul>
+                    <li>
+                        <a href="#none">
+                            <img src="./images/ico_home@2x.png">
+                        </a>
+                    </li>
+                    <li><span>사용자관리</span></li>
+                </ul>
+            </div> 
+            <h1 class="page-tit">사용자관리</h1>
+            <table class="table l-fixed left">
+                <colgroup>
+                    <col width="145">
+                    <col>
+                    <col width="145">
+                    <col>
+                    <col width="145">
+                    <col>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>회사</th>
+                        <td>
+                            <select class="input-tb">
+                                <option>회사</option>
+                                <option>KT</option>
+                                <option>KT MOS</option>
+                            </select>
+                        </td>
+                        <th>조직</th>
+                        <td>
+                            <div class="input-group">
+                                <select class="input-tb">
+                                    <option>북부</option>
+                                </select>
+                                <select class="input-tb m-r-l-6">
+                                    <option>본부</option>
+                                </select>
+                                <select class="input-tb">
+                                    <option>팀</option>
+                                </select>
+                            </div>
+                        </td>
+                        <th>권한</th>
+                        <td>
+                            <select class="input-tb">
+                                <option>전체</option>
+                                <option>Master</option>
+                                <option>Administrator</option>
+                                <option>출동조</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>아이디</th>
+                        <td><input type="text" class="input-tb" placeholder="아이디를 입력하세요."></td>
+                        <th>이름</th>
+                        <td><input type="text" class="input-tb" placeholder="이름을 입력하세요."></td>
+                        <th>승인여부</th>
+                        <td>
+                            <select class="input-tb">
+                                <option>전체 </option>
+                                <option>승인전</option>
+                                <option>승인완료</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>신청일</th>
+                        <td>
+                            <div class="input-group">
+                                <input type="date" name="search_start" class="input-tb">
+                                <span>~</span>
+                                <input type="date" name="search_end" class="input-tb">
+                            </div>
+                        </td>
+                        <th>승인일</th>
+                        <td>
+                            <div class="input-group">
+                                <input type="date" name="search_start" class="input-tb">
+                                <span>~</span>
+                                <input type="date" name="search_end" class="input-tb">
+                            </div>
+                        </td>
+                        <th>사용여부</th>
+                        <td>
+                            <select class="input-tb">
+                                <option>전체 </option>
+                                <option>사용중</option>
+                                <option>사용중지</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="btn-group">
+                <button type="button" class="btn big secondary">초기화</button>
+                <button type="button" class="btn big danger">검색</button>
+            </div>
+            <div class="box-wrap">
+                <div class="d-flex">
+                    <h2>사용자 목록 <span class="text-danger">(<span id="totalCount">00</span>)</span></h2>
+                    <div class="btn-group w-auto mt-0 d-flex">
+                        <select class="input-tb view-num">
+                            <option selected="">보기설정</option>
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                        
+                        <button pb="PW" type="button" class="btn btn-approval">일괄 승인(00)</button>
+                    </div>
+                </div>
+                <div class="table-scroll">
+                    <table class="table db-t left">
+                        <colgroup>
+                            <col style="width: 40px;">
+                            <col style="width: 200px;">
+                            <col style="width: 120px;">
+                            <col style="width: 120px;">
+                            <col style="width: 120px;">
+                            <col style="width: 300px;">
+                            <col style="width: 200px;">
+                            <col style="width: 120px;">
+                            <col style="width: 200px;">
+                            <col style="width: 120px;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="pl-0-6">
+                                    <label class="styled">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                </th>
+                                <th>신청일</th>
+                                <th>아이디</th>
+                                <th>이름</th>
+                                <th>회사</th>
+                                <th>조직</th>
+                                <th>권한</th>
+                                <th>승인여부</th>
+                                <th>승인</th>
+                                <th>사용여부</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="pl-0-6">
+                                    <label class="styled">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                </td>
+                                <td>2023.12.20 11:05:36</td>
+                                <td class="bold">
+                                    <a href="#none">A190238</a></td>
+                                <td>홍길동</td>
+                                <td>KT</td>
+                                <td>KT MOS 남부/대구본부/구미운용팀</td>
+                                <td>Master</td>
+                                <td>승인완료</td>
+                                <td>2023.12.20 11:05:36</td>
+                                <td>사용중</td>
+                            </tr>
+                            <!-- <tr>
+                                <td class="pl-0-6">
+                                    <label class="styled">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                </td>
+                                <td>2023.12.20 11:05:36</td>
+                                <td class="bold">A190238</td>
+                                <td>홍길동</td>
+                                <td>KT</td>
+                                <td>KT MOS 남부/대구본부/구미운용팀</td>
+                                <td>출동조</td>
+                                <td><span class="text-danger">승인 전</span></td>
+                                <td>
+                                    <button class="btn blue small">승인</button>
+                                </td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td class="pl-0-6">
+                                    <label class="styled">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                </td>
+                                <td>2023.12.20 11:05:36</td>
+                                <td class="bold">A190238</td>
+                                <td>홍길동</td>
+                                <td>KT</td>
+                                <td>KT MOS 남부/대구본부/구미운용팀</td>
+                                <td>출동조</td>
+                                <td><span class="text-danger">승인 전</span></td>
+                                <td>
+                                    <button class="btn blue small">승인</button>
+                                </td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td class="pl-0-6">
+                                    <label class="styled">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                </td>
+                                <td><span class="text-gray">2023.12.20 11:05:36</span></td>
+                                <td class="bold">A190238</td>
+                                <td><span class="text-gray">홍길동</span></td>
+                                <td><span class="text-gray">KT</span></td>
+                                <td><span class="text-gray">KT MOS 남부/대구본부/구미운용팀</span></td>
+                                <td><span class="text-gray">Master</span></td>
+                                <td><span class="text-gray">승인완료</span></td>
+                                <td><span class="text-gray">2023.12.20 11:05:36</span></td>
+                                <td><span class="text-gray">사용중지</span></td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="page-area">
+                    <div class="page-num">
+                        <div class="pagination">
+                            <a pb="PGP" href="#" id="first"><img src="./images/ico_double_arrow_left@2x.png" title="첫 페이지"></a>
+                            <a pb="PGP" href="#" id="prev"><img src="./images/ico_arrow_left@2x.png" title="이전 페이지"></a>
+                            <input type="text" class="input-tb" value="1">
+                            <span>of 4</span>
+                            <a pb="PGP" href="#" id="last"><img src="./images/ico_arrow_right@2x.png" title="마지막 페이지"></a>
+                            <a pb="PGP" href="#" id="next"><img src="./images/ico_double_arrow_right@2x.png" title="다음 페이지"></a>
+                        </div>
+                    </div>
+                    <div class="view-num">
+                        <select class="input-tb">
+                            <option selected="">보기설정</option>
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--//page-body-->
+    </main>
+    <!--//contents-->
+</div>
+</body>
+</html>

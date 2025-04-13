@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>작업조회</title>
+<!-- CSS -->
+<link rel="stylesheet" href="./css/fontawesome6-all.css">
+<link rel="stylesheet" href="./css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+<div class="w-wrapper">
+    <!--header-->
+    <header class="w-header">
+        <div class="d-flex">
+            <div class="top-nav">
+                <div class="logo">
+                    <a href="#none">
+                        <img src="./images/logo_wh@2x.png" alt="kt 출동 최적화 시스템">
+                    </a>
+                </div>
+                <ul>
+                    <li><a href="#none">공지사항</a></li>
+                    <li><a href="#none">출동 경로</a></li>
+                    <li><a href="#none">장비 관리</a></li>
+                    <li><a href="#none">작업 관리</a>
+                        <ul>
+                            <li><a href="#none">작업 조회</a></li>
+                            <li><a href="#none">작업 진행률</a></li>
+                            <li><a href="#none">긴급출동 조회</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#none">업로드 관리</a>
+                        <ul>
+                            <li><a href="#none">장비등록</a></li>
+                            <li><a href="#none">작업등록</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#none">사용자 관리</a></li>
+                </ul>
+            </div>
+            <div class="top-right">
+                <div class="d-flex ai-center mr-1">
+                    <span class="avatar">
+                        <img src="./images/ico_user_wh@2x.png">
+                    </span>
+                    <div class="d-block ml-0-5 mr-1-8">
+                      <div class="name">홍길동</div>
+                      <div class="time">충주운용팀</div>
+                    </div>
+                </div>
+                
+                <div class="right-end">
+                    <button class="btn ico">
+                        <img src="./images/ico_logout@2x.png" alt="로그아웃">
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </header>
+    <!--//header-->
+    <!--contents-->
+    <main class="contents">
+        <!--page-body-->
+        <div class="page-body">
+            <div class="subLocation">
+                <ul>
+                    <li>
+                        <a href="#none">
+                            <img src="./images/ico_home@2x.png">
+                        </a>
+                    </li>
+                    <li>작업관리</li>
+                    <li><span>작업조회</span></li>
+                </ul>
+            </div> 
+            <h1 class="page-tit">작업조회</h1>
+            <table class="table l-fixed left">
+                <colgroup>
+                    <col width="145">
+                    <col>
+                    <col width="145">
+                    <col>
+                    <col width="145">
+                    <col>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>장비 ID</th>
+                        <td>
+                            <input type="text" class="input-tb" placeholder="장비 ID를 입력하세요.">
+                        </td>
+                        <th>작업명</th>
+                        <td>
+                            <input type="text" class="input-tb" placeholder="작업명을 입력하세요.">
+                        </td>
+                        <th>작업상태</th>
+                        <td>
+                            <select class="input-tb">
+                                <option>전체</option>
+                                <option>미진행</option>
+                                <option>진행중</option>
+                                <option>누락</option>
+                                <option>보류</option>
+                                <option>삭제</option>
+                                <option>완료</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>작업기간</th>
+                        <td>
+                            <div class="input-group">
+                                <input type="date" name="search_start" class="input-tb">
+                                <span>~</span>
+                                <input type="date" name="search_end" class="input-tb">
+                            </div>
+                        </td>
+                        <th>운용팀</th>
+                        <td>
+                            <div class="input-group">
+                                <select class="input-tb">
+                                    <option>북부</option>
+                                </select>
+                                <select class="input-tb m-r-l-6">
+                                    <option>본부</option>
+                                </select>
+                                <select class="input-tb">
+                                    <option>팀</option>
+                                </select>
+                            </div>
+                        </td>
+                        <th>메모</th>
+                        <td>
+                            <input type="text" class="input-tb" placeholder="메모를 입력하세요.">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="btn-group">
+                <button type="button" class="btn big secondary">초기화</button>
+                <button type="button" class="btn big danger">검색</button>
+            </div>
+
+            <div class="box-wrap">
+                <div class="d-flex">
+                    <h2>작업 목록 <span class="text-danger">(<span id="totalCount">00</span>)</span></h2>
+                    <div class="btn-group w-auto mt-0 d-flex">
+                        <select class="input-tb view-num">
+                            <option selected="">보기설정</option>
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button type="button" class="btn btn-minus mr-0-6">선택 작업 일일업무 배정 제외</button>
+                        <button type="button" class="btn btn-delete mr-0-6">선택 작업 삭제</button>
+                        <button type="button" class="btn btn-download">엑셀 다운로드</button>
+                    </div>
+                </div>
+                <div class="table-scroll">
+                    <table class="table db-t left">
+                        <colgroup>
+                            <col style="width: 40px;">
+                            <col style="width: 50px;">
+                            <col style="width: 220px;">
+                            <col style="width: 90px;">
+                            <col style="width: 120px;">
+                            <col style="width: 120px;">
+                            <col style="width: 120px;">
+                            <col style="width: 100px;">
+                            <col style="width: 100px;">
+                            <col style="width: 100px;">
+                            <col style="width: 150px;">
+                            <col style="width: 160px;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="pl-0-6">
+                                    <label class="styled">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                </th>
+                                <th>배정</th>
+                                <th>작업명 <a href="#none" class="btn-arrow_down"></a></th>
+                                <th>시작일 <a href="#none" class="btn-arrow_down"></a></th>
+                                <th>마감기한 <a href="#none" class="btn-arrow_down"></a></th>
+                                <th>장비 ID <a href="#none" class="btn-arrow_down"></a></th>
+                                <th>운용팀 <a href="#none" class="btn-arrow_down"></a></th>
+                                <th class="tac">소요시간(분) <a href="#none" class="btn-arrow_down"></a></th>
+                                <th>작업상태 변경일 <a href="#none" class="btn-arrow_down"></a></th>
+                                <th>작업상태 <a href="#none" class="btn-arrow_down"></a></th>
+                                <th>출동자 <a href="#none" class="btn-arrow_down"></a></th>
+                                <th>메모</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="pl-0-6">
+                                    <label class="styled">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                </td>
+                                <td></td>
+                                <td class="bold">무선 자산현행화</td>
+                                <td>2023.11.17</td>
+                                <td>2023.11.17</td>
+                                <td>RTCB2391G</td>
+                                <td>청주운용팀</td>
+                                <td class="tac">40</td>
+                                <td>-</td>
+                                <td><span class="text-blue bold">미진행</span></td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td class="pl-0-6">
+                                    <label class="styled">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                </td>
+                                <td><span class="text-danger">제외</span></td>
+                                <td class="bold">무선 자산현행화 무선 자산현행화 무선 자산현행화 무선 자산현행화</td>
+                                <td>2023.11.17</td>
+                                <td>2023.11.17</td>
+                                <td>RTCB2391G</td>
+                                <td>운용지원부/경기남부고객VOC처리파트</td>
+                                <td class="tac">40</td>
+                                <td>2023.11.17</td>
+                                <td><span class="text-blue bold">누락</span></td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td class="pl-0-6">
+                                    <label class="styled">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                </td>
+                                <td></td>
+                                <td class="bold">무선 자산현행화</td>
+                                <td>2023.11.17</td>
+                                <td>2023.11.17</td>
+                                <td>RTCB2391G</td>
+                                <td>청주운용팀</td>
+                                <td class="tac">40</td>
+                                <td>2023.11.17</td>
+                                <td><span class="text-gray bold">완료</span></td>
+                                <td>김출동, 이기사, 박선수</td>
+                                <td>작업완료</td>
+                            </tr>
+                            <tr>
+                                <td class="pl-0-6">
+                                    <label class="styled">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                </td>
+                                <td></td>
+                                <td class="bold">LTE RU밧데리대개체</td>
+                                <td>2023.11.17</td>
+                                <td>2023.11.17</td>
+                                <td>RTCB2391G</td>
+                                <td>청주운용팀</td>
+                                <td class="tac">40</td>
+                                <td>2023.11.17</td>
+                                <td><span class="text-gray bold">완료</span></td>
+                                <td>이사원, 김사원</td>
+                                <td>작업완료</td>
+                            </tr>
+                            <tr>
+                                <td class="pl-0-6">
+                                    <label class="styled">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                </td>
+                                <td></td>
+                                <td class="bold">무선 자산현행화</td>
+                                <td>2023.11.17</td>
+                                <td>2023.11.17</td>
+                                <td>RTCB2391G</td>
+                                <td>청주운용팀</td>
+                                <td class="tac">40</td>
+                                <td>2023.11.17</td>
+                                <td><span class="text-warning bold">보류</span></td>
+                                <td>김남준</td>
+                                <td>점검 불필요</td>
+                            </tr>
+                            <tr>
+                                <td class="pl-0-6">
+                                    <label class="styled">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                </td>
+                                <td></td>
+                                <td class="bold">무선 자산현행화</td>
+                                <td>2023.11.17</td>
+                                <td>2023.11.17</td>
+                                <td>RTCB2391G</td>
+                                <td>청주운용팀</td>
+                                <td class="tac">40</td>
+                                <td>2023.11.17</td>
+                                <td><span class="text-danger bold">삭제</span></td>
+                                <td>김남준</td>
+                                <td>작업완료</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="page-area">
+                    <div class="page-num">
+                        <div class="pagination">
+                            <a pb="PGP" href="#" id="first"><img src="./images/ico_double_arrow_left@2x.png" title="첫 페이지"></a>
+                            <a pb="PGP" href="#" id="prev"><img src="./images/ico_arrow_left@2x.png" title="이전 페이지"></a>
+                            <input type="text" class="input-tb" value="1">
+                            <span>of 4</span>
+                            <a pb="PGP" href="#" id="last"><img src="./images/ico_arrow_right@2x.png" title="마지막 페이지"></a>
+                            <a pb="PGP" href="#" id="next"><img src="./images/ico_double_arrow_right@2x.png" title="다음 페이지"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--//page-body-->
+    </main>
+    <!--//contents-->
+</div>
+</body>
+</html>

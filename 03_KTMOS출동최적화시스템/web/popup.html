@@ -1,0 +1,958 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>팝업</title>
+<!-- CSS -->
+<link rel="stylesheet" href="./css/fontawesome6-all.css">
+<link rel="stylesheet" href="./css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="./js/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.css" />
+
+<script src="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.js"></script>
+<script type="text/javascript" class="code-js">
+    $(function(){
+        //작업 시작 시간
+        var tpSelectbox = new tui.TimePicker('#timepicker-selectbox1', {
+            initialHour: 10,    //몇시
+            initialMinute: 30,  //몇분
+            inputType: 'selectbox',
+            showMeridiem: false
+        });
+
+        //작업 복귀 시간
+        var tpSelectbox = new tui.TimePicker('#timepicker-selectbox2', {
+            initialHour: 17,    //몇시
+            initialMinute: 30,  //몇분
+            inputType: 'selectbox',
+            showMeridiem: false
+        });
+    });
+</script>
+<script>
+    //popup open 열기
+    function fnShowPop(sGetName){
+        var layer = $("#"+ sGetName);
+
+        layer.addClass("open");
+        $('.popup-dialog-mask').fadeIn(150);
+
+        layer.draggable({
+            handle : '.dialog-title' // drag 대상 안 특정 요소에 제한 (여러개 사용 가능)
+        });
+        
+        
+        // 화면의 중앙에 레이어를 띄운다.
+        layer.css("top", ( $(window).height() - layer.height() ) / 2+$(window).scrollTop() + "px");
+        layer.css("left", ( $(window).width() - layer.width() ) / 2+$(window).scrollLeft() + "px");
+    MM_showHideLayers(sGetName,'','show');
+
+    }
+
+    //popup hide 닫기
+    function fnHidePop(sGetName){
+        var $layer = $("#"+ sGetName);
+
+        $("#"+ sGetName).removeClass("open");
+        $('.popup-dialog-mask').fadeOut(150);
+
+        //$layer.css("top", "");
+        //$layer.css("left", "");
+        $layer.css({"top": "", "left": ""});
+    }
+</script>
+</head>
+<body>
+<div class="w-wrapper" style="padding: 15px;">
+    <div class="tac" style="margin-bottom: 2rem; font-weight: bold; font-size: 25px;">팝업샘플</div>
+    <div class="tac">
+        <button class="btn blue" onclick="fnShowPop('re_request')">승인요청</button>
+        <button class="btn blue" onclick="fnShowPop('re_noti')">공지사항 등록</button>
+        <button class="btn blue" onclick="fnShowPop('re_noti_detail')">공지사항 상세</button>
+        <button class="btn blue" onclick="fnShowPop('re_use')">사용자 상세</button>
+        <button class="btn blue" onclick="fnShowPop('re_matching')">출동자매칭</button>
+        <button class="btn blue" onclick="fnShowPop('re_detail')">작업 상세</button>
+        <button class="btn blue" onclick="fnShowPop('re_Job_p_detail')">작업 진행률 상세</button>
+        <button class="btn blue" onclick="fnShowPop('re_Job_i_detail')">작업 조회 상세</button>
+        <button class="btn blue" onclick="fnShowPop('re_upload')">업로드 오류</button>
+        <button class="btn blue" onclick="fnShowPop('re_dispatch')">긴급출동</button>
+        <button class="btn blue" onclick="fnShowPop('re_setting')">출동 최적화 실행 조건 설정</button>
+    </div>
+</div>
+<div class="popup-dialog-mask"></div>
+
+<!--승인요청-->
+<div class="popup-dialog rounded ui-draggable" id="re_request">
+    <div class="dialog-header">
+        <div class="dialog-title ui-draggable-handle">kt 출동 최적화 시스템 승인신청</div>
+        <div class="dialog-close" onclick="fnHidePop('re_request')"></div>
+    </div>
+    <div class="dialog-body">
+        <p class="fs14 tac">
+            접속을 위해 관리자 승인이 필요합니다. <br>권한 선택 후 승인 신청하시기 바랍니다.
+        </p>
+        <div class="mt-2 tac">
+            <select class="input-tb w-280">
+                <option value="" selected="">권한을 선택하세요</option>
+                <option value="Master">Master</option>
+                <option value="Administrator">Administrator</option>
+                <option value="출동조">출동조</option>
+            </select>
+        </div>
+        
+    </div>
+    <div class="dialog-footer">
+        <div class="btn danger">승인신청</div>
+    </div>
+</div>
+<!--//승인요청-->
+
+<!--공지사항 등록-->
+<div class="popup-dialog dialog-lg rounded ui-draggable" id="re_noti">
+    <div class="dialog-header">
+        <div class="dialog-title ui-draggable-handle">공지사항 등록</div>
+        <div class="dialog-close" onclick="fnHidePop('re_noti')"></div>
+    </div>
+    
+    <div class="dialog-body">
+        <div class="board-wrap">
+            <div class="head no-bor">
+                <label class="form-label">제목</label>
+                <input type="text" class="input-tb" placeholder="제목을 입력하세요">
+                <div class="count-btn">
+                    <span>0/50</span>
+                </div>
+            </div>
+            <div class="con">
+                <label class="form-label">내용</label>
+                <textarea class="textarea" placeholder="내용을 입력하세요" rows="19"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="dialog-footer">
+        <div class="btn secondary">취소</div>
+        <div class="btn danger">저장</div>
+    </div>
+</div>
+<!--공지사항 //등록-->
+
+<!--공지사항 상세-->
+<div class="popup-dialog dialog-lg rounded ui-draggable" id="re_noti_detail">
+    <div class="dialog-header">
+        <div class="dialog-title ui-draggable-handle">공지사항 상세</div>
+        <div class="dialog-close" onclick="fnHidePop('re_noti_detail')"></div>
+    </div>
+    
+    <div class="dialog-body">
+        <div class="board-wrap">
+            <div class="head">
+                <h2 class="page-tit">[공지] 동절기 안전점검 안내</h2>
+                <div class="info">
+                    <span class="name">홍길동</span>
+                    <span class="date">2023.12.30 08:11:23</span>
+                    <span class="num">조회 15</span>
+                </div>
+            </div>
+            
+            <div class="con" style="height: 354px;">
+                <p>동절기 작업을 위한 안전 준수 사항 </p>
+                <br>
+                <p>① 위험요인</p>
+                <p>- 난방기구 및 전열기구 과열로 인한 화재</p>
+                <p>- 현장 내에서 피우던 불의 비산으로 인한 화재</p>
+                <p>- 동결된 폭약 취급으로 인한 폭발</p>
+                <p>- 콘크리트 양생을 위한 연료(기름, 갈탄 등) 사용 시 일산화탄소 중독 및 질식</p>
+                <br>
+                <p>② 안전대책</p>
+                <p>- 가설숙소, 현장사무실 및 창고 등의 난방기구 및 전열기구 상태를 확인한다.</p>
+                <p>- 유류를 사용하는 난방기구는 반드시 소화 후 주유한다.</p>
+                <p>- 난방기구 1m 주변에는 유류 및 가연성 물질이 방치되지 않도록 하고, 소화기를 주위에 비치한다.</p>
+                <p>- 난방기구 관리자를 지정하여 점심시간이나 퇴근 시 소화상태 또는 전원 차단상태를 확인한다.</p>
+                <p>- 인화성 물질은 작업장에 필요한 수량만 반입하되 구획된 저장소를 마련하여 분리보관 한다.</p>
+                <p>- 유류통에 연료량을 확인 시 손전등 사용한다.(라이터 및 성냥 사용 금지)</p>
+                <p>- 가설숙소, 현장사무실 및 창고의 출입구 주위와 인화물질 보관장소, 화기작업 주변에는 소화 설비(소화전, 소화기, 방화사 등)를 비치한다.</p>
+                <p>- 화재예방 교육을 통하여 소화기 사용방법 및 화재발생 시의 대피요령 등을 숙지한다.</p>
+                <p>- 흡연장소를 설치하고, 지정된 장소에서만 흡연하도록 조치한다.</p>
+                <p>- 콘크리트 양생을 위해 화기 또는 열풍기를 사용하는 경우 소화기를 비치하고, 질식 및 중독 사고방지를 위해 환기 설비 설치, 호흡용 보호구 지급, 작업 전 산소 및 유해가스 농도 측정 등을 실시한다.</p>
+                <p>- 사업장 내에서 작업자가 임의로 화기를 다루거나 불을 피우지 못 하도록 조치한다. </p>
+                <p>- 밀폐된 공간 내에서 도장작업 등 유기용제를 사용하는 작업을 할 경우 환기(자연환기, 전체환기, 국소배기)조치를 하고 화기사용을 금지한다</p>
+                <br>
+            </div>
+        </div>
+        
+    </div>
+    <div class="dialog-footer">
+        <div class="btn secondary">닫기</div>
+        <div class="btn dark">삭제</div>
+        <div class="btn danger">수정</div>
+    </div>
+</div>
+<!--//공지사항 상세-->
+
+<!--사용자 상세-->
+<div class="popup-dialog rounded ui-draggable" id="re_use">
+    <div class="dialog-header">
+        <div class="dialog-title ui-draggable-handle">사용자 상세</div>
+        <div class="dialog-close" onclick="fnHidePop('re_use')"></div>
+    </div>
+    <div class="dialog-body">
+        <form name="" action="" method="">
+            <div class="input-group d-block">
+                <div class="inner-input-group">
+                    <label style="width: 11.7rem;">권한</label>
+                    <select class="input-tb">
+                        <option value="" selected="">권한을 선택하세요</option>
+                        <option value="Administrator">Administrator</option>
+                        <option value="출동조">출동조</option>
+                    </select>
+                </div>
+                <div class="inner-input-group">
+                    <label>신청일</label>
+                    <span>2023.12.20 11:05:36</span>
+                </div>
+                <div class="inner-input-group">
+                    <label>승인여부</label>
+                    <label class="skinned-switch on-blue off-gray normal">
+                        <input type="checkbox">
+                        <span data-on="승인완료" data-off="승인전"></span>
+                    </label>
+                    <!-- <div class="d-flex ai-center">
+                        <span class="text-danger fs14 mr-1">승인 전</span>
+                        <button type="button" class="btn blue small">승인</button>
+                    </div> -->
+                </div>
+                <div class="inner-input-group">
+                    <label>아이디</label>
+                    <span>10000111</span>
+                </div>
+                <div class="inner-input-group">
+                    <label>이름</label>
+                    <span>김남준</span>
+                </div>
+                <div class="inner-input-group">
+                    <label>회사</label>
+                    <span>KT MOS</span>
+                </div>
+                <div class="inner-input-group">
+                    <label>부서</label>
+                    <span>KT MOS 남부/대구본부/구미운용팀</span>
+                </div>
+                <div class="inner-input-group">
+                    <label>사용여부</label>
+                    <label class="skinned-switch on-blue off-gray normal">
+                        <input type="checkbox" checked="checked">
+                        <span data-on="사용" data-off="미사용"></span>
+                    </label>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="dialog-footer">
+        <div class="btn secondary">닫기</div>
+        <div class="btn danger">저장</div>
+    </div>
+</div>
+<!--//사용자 상세-->
+
+<!--업로드오류-->
+<div class="popup-dialog red rounded ui-draggable" id="re_upload">
+    <div class="dialog-header">
+        <div class="dialog-title ui-draggable-handle text-danger">업로드오류</div>
+        <div class="dialog-close" onclick="fnHidePop('re_upload')"></div>
+    </div>
+    <div class="dialog-body">
+        <p class="fs14 text-danger">
+            확인할 수 없는 장비 ID, 작업명과 장비ID가 중복된 작업은 등록할 수 없습니다. <br>
+            오류 항목은 확인 후 다시 등록 하시기 바랍니다.
+        </p>
+        <textarea class="textarea readonly mt-1" style="height: 16rem;">
+행 [2] : 장비 ID 확인 불가 <br>
+행 [3] : 작업명 & 장비 ID 중복
+        </textarea>
+    </div>
+    <div class="dialog-footer">
+        <div class="btn secondary">닫기</div>
+    </div>
+</div>
+<!--//업로드오류-->
+
+<!--긴급출동-->
+<div class="popup-dialog red rounded ui-draggable" id="re_dispatch">
+    <div class="dialog-header">
+        <div class="dialog-title ui-draggable-handle text-danger">긴급출동</div>
+        <div class="dialog-close" onclick="fnHidePop('re_dispatch')"></div>
+    </div>
+    <div class="dialog-body">
+        <div class="input-group d-block">
+            <div class="inner-input-group">
+                <label>주소</label>
+                <span>충청북도 청주시 상당구 용담동 431-0 나대지 SKT 전주</span>
+            </div>
+            <div class="inner-input-group d-block">
+                <label class="w-100 mb-0-2">Moss 데이터</label>
+                <span>
+                    <textarea class="textarea" rows="4" disabled style="height: 106px;">
+※ 안전사고 주의하고, 예방수칙을 철저히 준수하여 작업해 주시기 바랍니다. 
+
+[자동][충청1-장애] K-남파5가_ORU1(3G) 등 중계기 장애발생</textarea>
+                </span>
+            </div>
+            <div class="inner-input-group d-block">
+                <label class="w-100 mb-0-2">메모</label>
+                <span>
+                    <textarea class="textarea" rows="3" disabled>
+ 작업 완료</textarea>
+                </span>
+            </div>
+            <div class="inner-input-group">
+                <label>등록자</label>
+                <span>홍길동</span>
+            </div>
+            <div class="inner-input-group">
+                <label>등록일</label>
+                <span>2023.12.10 15:20:11</span>
+            </div>
+        </div>
+    </div>
+    <div class="dialog-footer">
+        <div class="btn secondary">닫기</div>
+    </div>
+</div>
+<!--//긴급출동-->
+
+<!--출동 최적화 실행 조건 설정-->
+<div class="popup-dialog rounded ui-draggable" id="re_setting">
+    <div class="dialog-header">
+        <div class="dialog-title ui-draggable-handle">출동 최적화 실행 조건 설정</div>
+        <div class="dialog-close" onclick="fnHidePop('re_setting')"></div>
+    </div>
+    <div class="dialog-body">
+        <div class="input-group d-block">
+            <div class="inner-input-group no-bor d-block">
+                <label class="w-100 mb-0-2 fs16 text-dark">팀</label>
+                <span class="box">남부 > 충청본부 > 청주운용팀</span>
+            </div>
+        </div>
+        <div class="input-group d-block mb-2">
+            <div class="inner-input-group mt-1" style="border-top: none;">
+                <label class="w-100 mb-0-2 fs16 text-dark">조건 설정</label>
+                <button class="button ico_refresh" title="초기화" alt="초기화">
+                    <img src="./images/ico_refresh@2x.png">
+                </button>
+            </div>
+            <div class="inner-input-group">
+                <label>작업 시작 시간</label>
+                <span>
+                    <div id="timepicker-selectbox1"></div>
+                </span>
+            </div>
+            <div class="inner-input-group">
+                <label>작업 복귀 시간</label>
+                <span>
+                    <div id="timepicker-selectbox2"></div>
+                </span>
+            </div>
+            <div class="inner-input-group">
+                <label>요청 경로 수</label>
+                <span>
+                    <select class="input-tb">
+                        <option>All</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                        <option>13</option>
+                        <option>14</option>
+                        <option>15</option>
+                        <option>16</option>
+                        <option>17</option>
+                        <option>18</option>
+                        <option>19</option>
+                        <option>20</option>
+                    </select>
+                </span>
+            </div>
+        </div>
+        <div class="contentsBox">
+            <ul class="txtRefer">
+                <li>※ 출동 최적화는 매일 20:00 부터 팀별로 순차적 실행합니다.</li>
+                <li>※ 출동 최적화 조건은 팀별로 설정할 수 있습니다. </li>
+                <li>※ 변경된 설정은 다음 출동 최적화 진행 시 반영됩니다. </li>
+                <li>※ [실행] 버튼을 클릭하여 변경한 설정으로 실행을 예약합니다. <br>
+                    <span class="pl-1-6">(실행하지 않고 팝업을 닫을 시 변경된 설정 값은 반영되지 않습니다.)</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="dialog-footer">
+        <div class="btn secondary">닫기</div>
+        <div class="btn danger">실행</div>
+    </div>
+</div>
+<!--//출동 최적화 실행 조건 설정-->
+
+<!--작업 조회 상세-->
+<div class="popup-dialog rounded ui-draggable" id="re_Job_i_detail">
+    <div class="dialog-header">
+        <div class="dialog-title ui-draggable-handle">작업 조회 상세</div>
+        <div class="dialog-close" onclick="fnHidePop('re_Job_i_detail')"></div>
+    </div>
+    <div class="dialog-body">
+        <div class="input-group d-block">
+            <div class="inner-input-group">
+                <label>작업명</label>
+                <span>
+                    <input type="text" class="input-tb" value="무선 자산현행화">
+                </span>
+            </div>
+            <div class="inner-input-group">
+                <label>소요시간(분)</label>
+                <span>
+                    <input type="text" class="input-tb" value="40">
+                </span>
+            </div>
+            <div class="inner-input-group">
+                <label>장비 ID</label>
+                <span>
+                    RTCB23391G
+                </span>
+            </div>
+            <div class="inner-input-group">
+                <label>시작일</label>
+                <span class="input-group">
+                    <input type="date" name="search_start" class="input-tb">
+                </span>
+            </div>
+            <div class="inner-input-group">
+                <label>마감기한</label>
+                <span class="input-group">
+                    <input type="date" name="search_start" class="input-tb">
+                </span>
+            </div>
+            <div class="inner-input-group">
+                <label>운용팀</label>
+                <span>
+                    남부 > 충청본부 > 청주운용팀
+                </span>
+            </div>
+            <div class="inner-input-group">
+                <label>작업자</label>
+                <span>
+                    김출동 (1101221), 이기사 (1122511), 박선수 (1100001)
+                </span>
+            </div>
+            <div class="inner-input-group">
+                <label>작업상태 <br>변경일</label>
+                <span>
+                    2023.11.17
+                </span>
+            </div>
+            <div class="inner-input-group">
+                <label>작업상태</label>
+                <span>
+                    <select class="input-tb">
+                        <option>전체</option>
+                        <option>미진행</option>
+                        <option>누락</option>
+                        <option>진행중</option>
+                        <option>보류</option>
+                        <option>삭제</option>
+                        <option selected>완료</option>
+                    </select>
+                </span>
+            </div>
+            <div class="inner-input-group">
+                <label>등록자</label>
+                <span>
+                    박지민
+                </span>
+            </div>
+            <div class="inner-input-group">
+                <label>등록일</label>
+                <span>
+                    2023.11.30 11:12:30
+                </span>
+            </div>
+            <div class="inner-input-group d-block">
+                <label class="w-100 mb-0-2">메모</label>
+                <span>
+                    <textarea class="textarea" rows="2" disabled>
+ 작업 완료</textarea>
+                </span>
+            </div>
+            <div class="inner-input-group">
+                <label>일일업무 배정</label>
+                <label class="skinned-switch on-blue off-gray normal" style="width: 75px; height: 32px;">
+                    <input type="checkbox" checked="checked">
+                    <span data-on="포함" data-off="제외"></span>
+                </label>
+            </div>
+            <div class="inner-input-group">
+                <label>우선순위</label>
+                <span>
+                    <input type="text" class="input-tb" value="" placeholder="1~9까지 숫자로 입력하세요.">
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="dialog-footer">
+        <div class="btn secondary">닫기</div>
+        <div class="btn danger">저장</div>
+    </div>
+</div>
+<!--//작업 조회 상세-->
+
+<!--작업 진행률 상세-->
+<div class="popup-dialog rounded ui-draggable" id="re_Job_p_detail">
+    <div class="dialog-header">
+        <div class="dialog-title ui-draggable-handle">작업 진행률 상세</div>
+        <div class="dialog-close" onclick="fnHidePop('re_Job_p_detail')"></div>
+    </div>
+    <div class="dialog-body">
+        <div class="input-group d-block">
+            <div class="inner-input-group">
+                <label>작업명</label>
+                <span>
+                    <input type="text" class="input-tb" value="무선 자산현행화">
+                </span>
+            </div>
+            <div class="inner-input-group">
+                <label>소요시간(분)</label>
+                <span>
+                    <input type="text" class="input-tb" value="40">
+                </span>
+            </div>
+            <div class="inner-input-group">
+                <label>운용팀</label>
+                <span>
+                    남부 > 충청본부 > 청주운용팀
+                </span>
+            </div>
+            <div class="inner-input-group">
+                <label>시작일</label>
+                <span class="input-group">
+                    <input type="date" name="search_start" class="input-tb">
+                </span>
+            </div>
+            <div class="inner-input-group">
+                <label>마감기한</label>
+                <span class="input-group">
+                    <input type="date" name="search_start" class="input-tb">
+                </span>
+            </div>
+            <div class="d-j-a fs14 mt-1">
+                <p class="bold">대상: <sapn class="bold text-dark">50</sapn></p>
+                <p class="bold">진행률 : <span class="bold text-dark">80%</span></p>
+            </div>
+            <div class="mt-0-6">
+                <table class="table db-t bb-1 center">
+                    <thead>
+                        <tr>
+                            <th>완료</th>
+                            <th>미진행</th>
+                            <th>보류</th>
+                            <th>삭제</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="bold text-gray">7</span></td>
+                            <td><span class="bold text-blue">4</span></td>
+                            <td><span class="bold text-warning">2</span></td>
+                            <td><span class="bold text-danger">1</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="inner-input-group">
+                <label>등록자</label>
+                <span>
+                    박지민
+                </span>
+            </div>
+            <div class="inner-input-group">
+                <label>등록일</label>
+                <span>
+                    2023.10.01
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="dialog-footer">
+        <div class="btn secondary">닫기</div>
+        <div class="btn dark">삭제</div>
+        <div class="btn danger">저장</div>
+    </div>
+</div>
+<!--//작업 진행률 상세-->
+
+<!--작업 상세-->
+<div class="popup-dialog rounded ui-draggable" id="re_detail">
+    <div class="dialog-header">
+        <div class="dialog-title ui-draggable-handle">작업 상세</div>
+        <div class="dialog-close" onclick="fnHidePop('re_detail')"></div>
+    </div>
+    <div class="dialog-body">
+        <div class="input-group d-block">
+            <div class="inner-input-group">
+                <label>순서</label>
+                <span>
+                    01
+                </span>
+            </div>
+            <div class="inner-input-group">
+                <label>작업명</label>
+                <span>
+                    무선 자산현행화
+                </span>
+            </div>
+            <div class="inner-input-group">
+                <label>작업ID</label>
+                <span>
+                    RTCB23391G
+                </span>
+            </div>
+            <div class="inner-input-group">
+                <label>주소</label>
+                <span>
+                    충청북도 청주시 상당구 용담동 431-0 나대지 SKT 전주
+                </span>
+            </div>
+            <div class="inner-input-group">
+                <label>출동자</label>
+                <span>
+                    홍길동(1002201), 임꺽정(1250004)
+                </span>
+            </div>
+            <div class="inner-input-group">
+                <label>시작일</label>
+                <span>
+                    2023.10.01
+                </span>
+            </div>
+            <div class="inner-input-group">
+                <label>마감기한</label>
+                <span>2023.12.30</span>
+            </div>
+            <div class="inner-input-group">
+                <label>작업시간</label>
+                <span>
+                    60분
+                </span>
+            </div>
+            <div class="inner-input-group">
+                <label>작업상태</label>
+                <span>
+                    <select class="input-tb">
+                        <option>전체</option>
+                        <option selected>미진행</option>
+                        <option>진행중</option>
+                        <option>보류</option>
+                        <option>삭제</option>
+                        <option >완료</option>
+                    </select>
+                </span>
+            </div>
+            <div class="inner-input-group d-block">
+                <label class="w-100 mb-0-2">메모</label>
+                <span>
+                    <textarea class="textarea" rows="2" disabled>
+ 작업 완료</textarea>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="dialog-footer">
+        <div class="btn secondary">닫기</div>
+        <div class="btn danger">저장</div>
+    </div>
+</div>
+<!--작업 상세-->
+
+<!--출동자 매칭-->
+<div class="popup-dialog dialog-lg rounded ui-draggable" id="re_matching">
+    <div class="dialog-header">
+        <div class="dialog-title ui-draggable-handle">출동자 매칭</div>
+        <div class="dialog-close" onclick="fnHidePop('re_matching')"></div>
+    </div>
+    
+    <div class="dialog-body">
+        <div class="d-j-a">
+            <div class="col le"> 
+                <div class="card no-bor">
+                    <div class="card-header p-0 m-0">
+                        <h3 class="card-title">직원선택</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="table-menu">
+                            <li class="number">선택</li>
+                            <li class="name">이름</li>
+                            <li class="id">아이디</li>
+                        </ul>
+                        <ul class="list-group brl-1" style="overflow-y: auto; height: 400px;">
+                            <li class="list-group-item">
+                                <div class="number pl-1">
+                                    <label class="styled">
+                                        <input type="checkbox" checked>
+                                        <i></i>
+                                    </label>
+                                </div>
+                                <div class="name">
+                                    김석진
+                                </div>
+                                <div class="id">
+                                    110211110211110211                                                
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="number pl-1">
+                                    <label class="styled">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                </div>
+                                <div class="name">
+                                    민윤기
+                                </div>
+                                <div class="id">
+                                    110211                                               
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="number pl-1">
+                                    <label class="styled">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                </div>
+                                <div class="name">
+                                    김남준
+                                </div>
+                                <div class="id">
+                                    110211                                               
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="number pl-1">
+                                    <label class="styled">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                </div>
+                                <div class="name">
+                                    정호석
+                                </div>
+                                <div class="id">
+                                    110211                                                
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="number pl-1">
+                                    <label class="styled">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                </div>
+                                <div class="name">
+                                    김태형
+                                </div>
+                                <div class="id">
+                                    110211                                                
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="number pl-1">
+                                    <label class="styled">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                </div>
+                                <div class="name">
+                                    박지민
+                                </div>
+                                <div class="id">
+                                    110211                                                
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="number pl-1">
+                                    <label class="styled">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                </div>
+                                <div class="name">
+                                    전정국
+                                </div>
+                                <div class="id">
+                                    110211                                                
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="number pl-1">
+                                    <label class="styled">
+                                        <input type="checkbox" checked>
+                                        <i></i>
+                                    </label>
+                                </div>
+                                <div class="name">
+                                    김석진
+                                </div>
+                                <div class="id">
+                                    110211110211110211                                                
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="number pl-1">
+                                    <label class="styled">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                </div>
+                                <div class="name">
+                                    민윤기
+                                </div>
+                                <div class="id">
+                                    110211                                               
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="number pl-1">
+                                    <label class="styled">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                </div>
+                                <div class="name">
+                                    김남준
+                                </div>
+                                <div class="id">
+                                    110211                                               
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="number pl-1">
+                                    <label class="styled">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                </div>
+                                <div class="name">
+                                    정호석
+                                </div>
+                                <div class="id">
+                                    110211                                                
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="number pl-1">
+                                    <label class="styled">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                </div>
+                                <div class="name">
+                                    김태형
+                                </div>
+                                <div class="id">
+                                    110211                                                
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="number pl-1">
+                                    <label class="styled">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                </div>
+                                <div class="name">
+                                    박지민
+                                </div>
+                                <div class="id">
+                                    110211                                                
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="number pl-1">
+                                    <label class="styled">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                </div>
+                                <div class="name">
+                                    전정국
+                                </div>
+                                <div class="id">
+                                    110211                                                
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="m-2">
+                <button type="button" class="btn outline" alt="선택추가">
+                    <img src="./images/arrow_left_big@2x.png">
+                </button>
+            </div>
+            <div class="col ri">
+                <div class="card no-bor">
+                    <div class="card-header p-0 m-0">
+                        <h3 class="card-title">출동자</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="table-menu">
+                            <li class="number">번호</li>
+                            <li class="name">이름</li>
+                            <li class="id">아이디</li>
+                        </ul>
+                        <ul class="list-group brl-1" style="overflow-y: auto; height: 400px;">
+                            <li class="list-group-item">
+                                <div class="number"> 1</div>
+                                <div class="name">
+                                    김석진
+                                </div>
+                                <div class="id">
+                                    110211110211110211110211                                                 
+                                </div>
+                                <div>
+                                    <button type="button" class="delete" title="삭제"></button>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="number"> 2</div>
+                                <div class="name">
+                                    김석진
+                                </div>
+                                <div class="id">
+                                    110211                                                
+                                </div>
+                                <div>
+                                    <button type="button" class="delete" title="삭제"></button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dialog-footer">
+        <div class="btn secondary">취소</div>
+        <div class="btn danger">저장</div>
+    </div>
+</div>
+<!--//출동자 매칭-->
+</body>
+</html>

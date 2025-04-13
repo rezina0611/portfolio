@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>공지사항</title>
+<!-- CSS -->
+<link rel="stylesheet" href="./css/fontawesome6-all.css">
+<link rel="stylesheet" href="./css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+<div class="w-wrapper">
+    <!--header-->
+    <header class="w-header">
+        <div class="d-flex">
+            <div class="top-nav">
+                <div class="logo">
+                    <a href="#none">
+                        <img src="./images/logo_wh@2x.png" alt="kt 출동 최적화 시스템">
+                    </a>
+                </div>
+                <ul>
+                    <li><a href="#none">공지사항</a></li>
+                    <li><a href="#none">출동 경로</a></li>
+                    <li><a href="#none">장비 관리</a></li>
+                    <li><a href="#none">작업 관리</a>
+                        <ul>
+                            <li><a href="#none">작업 조회</a></li>
+                            <li><a href="#none">작업 진행률</a></li>
+                            <li><a href="#none">긴급출동 조회</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#none">업로드 관리</a></li>
+                    <li><a href="#none">사용자 관리</a></li>
+                </ul>
+            </div>
+            <div class="top-right">
+                <div class="d-flex ai-center mr-1">
+                    <span class="avatar">
+                        <img src="./images/ico_user_wh@2x.png">
+                    </span>
+                    <div class="d-block ml-0-5 mr-1-8">
+                      <div class="name">홍길동</div>
+                      <div class="time">충주운용팀</div>
+                    </div>
+                </div>
+                
+                <div class="right-end">
+                    <button class="btn ico">
+                        <img src="./images/ico_logout@2x.png" alt="로그아웃">
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </header>
+    <!--//header-->
+    <!--contents-->
+    <main class="contents">
+        <!--page-body-->
+        <div class="page-body">
+            <div class="subLocation">
+                <ul>
+                    <li>
+                        <a href="#none">
+                            <img src="./images/ico_home@2x.png">
+                        </a>
+                    </li>
+                    <li><span>공지사항</span></li>
+                </ul>
+            </div>
+            
+            <h1 class="page-tit">공지사항</h1>
+
+            <div class="box-wrap mt-1 p-0">
+                <div class="d-flex">
+                    <div class="input-group bd-1">
+                        <input type="search" name="checker1UserName" value="" placeholder="제목 or 등록자 검색">
+                        <div class="input-group-append">
+                            <span class="input-group-text">
+                                <img src="./images/ico_search_grey@2x.png">
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="btn-group w-auto mt-0 d-flex">
+                        <select class="input-tb view-num">
+                            <option selected="">보기설정</option>
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button class="btn btn-write">
+                            공지사항 등록
+                        </button>
+                    </div> 
+                </div>
+                <div class="table-scroll">
+                    <table class="table db-t l-fixed">
+                        <colgroup>
+                            <col style="width: 70px;">
+                            <col>
+                            <col style="width: 120px;">
+                            <col style="width: 200px;">
+                            <col style="width: 100px;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="tac">번호</th>
+                                <th>제목</th>
+                                <th>등록자</th>
+                                <th>등록일시</th>
+                                <th class="tac">조회수</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="tac bold">10</td>
+                                <td class="tal bold">
+                                    <a href="#none" class="ellipsis">[충주운용팀] 충주운용팀 업무시간 조정 안내 충주운용팀 업무시간 조정 안내 충주운용팀 업무시간 조정 안내 충주운용팀 업무시간 조정 안내 충주운용팀 업무시간 조정 안내
+                                        <span class="ico-new">new</span>
+                                    </a>
+                                </td>
+                                <td>홍길동</td>
+                                <td class="tal">2023.12.20 11:05:36</td>
+                                <td class="tac">15</td>
+                            </tr>
+                            <tr>
+                                <td class="tac bold">9</td>
+                                <td class="tal bold">
+                                    <a href="#none" class="ellipsis">[공지] 동절기 안전점검 안내 
+                                        <span class="ico-new">new</span>
+                                    </a>
+                                </td>
+                                <td>홍길동</td>
+                                <td class="tal">2023.12.20 11:05:36</td>
+                                <td class="tac">15</td>
+                            </tr>
+                            <tr>
+                                <td class="tac bold">8</td>
+                                <td class="tal bold"><a href="#none" class="ellipsis">[공지] 폭설로 인한 근무시간 공지</a></td>
+                                <td>홍길동</td>
+                                <td class="tal">2023.12.20 11:05:36</td>
+                                <td class="tac">15</td>
+                            </tr>
+                            <tr>
+                                <td class="tac bold">7</td>
+                                <td class="tal bold"><a href="#none" class="ellipsis">[공지] 폭설로 인한 근무시간 공지</a></td>
+                                <td>홍길동</td>
+                                <td class="tal">2023.12.20 11:05:36</td>
+                                <td class="tac">15</td>
+                            </tr>
+                            <tr>
+                                <td class="tac bold">6</td>
+                                <td class="tal bold"><a href="#none">[공지] 폭설로 인한 근무시간 공지</a></td>
+                                <td>홍길동</td>
+                                <td class="tal">2023.12.20 11:05:36</td>
+                                <td class="tac">15</td>
+                            </tr>
+                            <tr>
+                                <td class="tac bold">5</td>
+                                <td class="tal bold"><a href="#none" class="ellipsis">[공지] 폭설로 인한 근무시간 공지</a></td>
+                                <td>홍길동</td>
+                                <td class="tal">2023.12.20 11:05:36</td>
+                                <td class="tac">15</td>
+                            </tr>
+                            <tr>
+                                <td class="tac bold">4</td>
+                                <td class="tal bold"><a href="#none" class="ellipsis">[공지] 폭설로 인한 근무시간 공지</a></td>
+                                <td>홍길동</td>
+                                <td class="tal">2023.12.20 11:05:36</td>
+                                <td class="tac">15</td>
+                            </tr>
+                            <tr>
+                                <td class="tac bold">3</td>
+                                <td class="tal bold"><a href="#none" class="ellipsis">[공지] 폭설로 인한 근무시간 공지</a></td>
+                                <td>홍길동</td>
+                                <td class="tal">2023.12.20 11:05:36</td>
+                                <td class="tac">15</td>
+                            </tr>
+                            <tr>
+                                <td class="tac bold">2</td>
+                                <td class="tal bold"><a href="#none" class="ellipsis">[공지] 폭설로 인한 근무시간 공지</a></td>
+                                <td>홍길동</td>
+                                <td class="tal">2023.12.20 11:05:36</td>
+                                <td class="tac">15</td>
+                            </tr>
+                            <tr>
+                                <td class="tac bold">1</td>
+                                <td class="tal bold"><a href="#none" class="ellipsis">[공지] 폭설로 인한 근무시간 공지</a></td>
+                                <td>홍길동</td>
+                                <td class="tal">2023.12.20 11:05:36</td>
+                                <td class="tac">15</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="page-area">
+                    <div class="page-num">
+                        <div class="pagination">
+                            <a pb="PGP" href="#" id="first"><img src="./images/ico_double_arrow_left@2x.png" title="첫 페이지"></a>
+                            <a pb="PGP" href="#" id="prev"><img src="./images/ico_arrow_left@2x.png" title="이전 페이지"></a>
+                            <input type="text" class="input-tb" value="1">
+                            <span>of 4</span>
+                            <a pb="PGP" href="#" id="last"><img src="./images/ico_arrow_right@2x.png" title="마지막 페이지"></a>
+                            <a pb="PGP" href="#" id="next"><img src="./images/ico_double_arrow_right@2x.png" title="다음 페이지"></a>
+                        </div>
+                    </div>
+                    <!-- <div class="view-num">
+                        <select class="input-tb">
+                            <option selected="">보기설정</option>
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <!--//page-body-->
+    </main>
+    <!--//contents-->
+</div>
+</body>
+</html>

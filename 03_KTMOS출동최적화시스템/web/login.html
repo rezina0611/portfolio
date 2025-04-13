@@ -1,0 +1,74 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>로그인</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="./css/style.css">   
+<link rel="stylesheet" href="./css/login.css"> 
+<!-- JS -->
+<script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+<div class="login-wrap">
+  <div class="form-signin w-100 m-auto">
+    <div class="login-area">
+      <h2><img src="./images/logo@2x.png" alt="kt 출동최적화 시스템"></h2>
+      <form id="login" name="login" action="" method="post" enctype="" novalidate="novalidate">
+        <div class="id_pw_wrap">
+          <div class="input_row" id="id_line">
+              <div class="icon_cell" id="id_cell">
+                  <span class="icon_id">
+                      <span class="blind">아이디</span>
+                  </span>
+              </div>
+              <input type="text" id="id" name="id" placeholder="아이디를 입력하세요" title="아이디" class="input_text" maxlength="41" value="">
+          </div>
+          <div class="input_row" id="pw_line">
+              <div class="icon_cell" id="pw_cell">
+                  <span class="icon_pw">
+                      <span class="blind">비밀번호</span>
+                  </span>
+              </div>
+              <input type="password" id="pw" name="pw" placeholder="비밀번호를 입력하세요" title="비밀번호" class="input_text" maxlength="16" value="*********">
+          </div>
+        </div>
+    
+        <div class="input-group mt-1" style="margin-bottom: 20px;">
+          <label class="styled fs13">
+            <input type="checkbox" name="remember_me" value="true" checked="">
+            <i>로그인 정보 저장</i>
+          </label>
+        </div>
+    
+        <div class="num_wrap">
+          <div class="input_row mb-1">
+            <div class="icon_cell" id="id_cell">
+              <span class="icon_num">
+                  <span class="blind">인증번호</span>
+              </span>
+            </div>
+            <input type="text" class="input_text" placeholder="인증번호를 입력하세요." title="일증번호" style="width: 47%;">
+            <span class="number">05:00</span>
+            <button class="btn" type="button">인증번호 요청</button>
+          </div>
+        </div>
+        
+        <p>※ 아이디, 패스워드 입력 후 인증번호를 요청해주세요.</p>
+        <p>※ 수신하신 인증번호를 유효시간 내 입력하셔야 로그인 하실 수 있습니다.</p>
+    
+        <input type="submit" id="btnLogin" class="w-100 btn danger mt-2" value="로그인">
+      </form>
+    </div>
+  </div>
+  <div class="login-footer">
+    <ul>
+        <li><a href="#none" onclick="" class="last">이용약관</a></li>
+        <li><a href="#none" onclick="">개인정보 보호정책</a></li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>

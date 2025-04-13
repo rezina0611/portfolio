@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>긴급출동 조회</title>
+<!-- CSS -->
+<link rel="stylesheet" href="./css/fontawesome6-all.css">
+<link rel="stylesheet" href="./css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+<div class="w-wrapper">
+    <!--header-->
+    <header class="w-header">
+        <div class="d-flex">
+            <div class="top-nav">
+                <div class="logo">
+                    <a href="#none">
+                        <img src="./images/logo_wh@2x.png" alt="kt 출동 최적화 시스템">
+                    </a>
+                </div>
+                <ul>
+                    <li><a href="#none">공지사항</a></li>
+                    <li><a href="#none">출동 경로</a></li>
+                    <li><a href="#none">장비 관리</a></li>
+                    <li><a href="#none">작업 관리</a>
+                        <ul>
+                            <li><a href="#none">작업 조회</a></li>
+                            <li><a href="#none">작업 진행률</a></li>
+                            <li><a href="#none">긴급출동 조회</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#none">업로드 관리</a>
+                        <ul>
+                            <li><a href="#none">장비등록</a></li>
+                            <li><a href="#none">작업등록</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#none">사용자 관리</a></li>
+                </ul>
+            </div>
+            <div class="top-right">
+                <div class="d-flex ai-center mr-1">
+                    <span class="avatar">
+                        <img src="./images/ico_user_wh@2x.png">
+                    </span>
+                    <div class="d-block ml-0-5 mr-1-8">
+                      <div class="name">홍길동</div>
+                      <div class="time">충주운용팀</div>
+                    </div>
+                </div>
+                
+                <div class="right-end">
+                    <button class="btn ico">
+                        <img src="./images/ico_logout@2x.png" alt="로그아웃">
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </header>
+    <!--//header-->
+    <!--contents-->
+    <main class="contents">
+        <!--page-body-->
+        <div class="page-body">
+            <div class="subLocation">
+                <ul>
+                    <li>
+                        <a href="#none">
+                            <img src="./images/ico_home@2x.png">
+                        </a>
+                    </li>
+                    <li>작업관리</li>
+                    <li><span>긴급출동 조회</span></li>
+                </ul>
+            </div> 
+            <h1 class="page-tit">긴급출동 조회</h1>
+            <table class="table l-fixed left">
+                <colgroup>
+                    <col width="145">
+                    <col>
+                    <col width="145">
+                    <col>
+                    <col width="145">
+                    <col>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>Moss 데이터</th>
+                        <td>
+                            <input type="text" class="input-tb" placeholder="Moss 데이터를 입력하세요.">
+                        </td>
+                        <th>메모</th>
+                        <td>
+                            <input type="text" class="input-tb" placeholder="메모를 입력하세요.">
+                        </td>
+                        <th>등록인</th>
+                        <td>
+                            <input type="text" class="input-tb" placeholder="등록인을 입력하세요.">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>등록일</th>
+                        <td>
+                            <div class="input-group">
+                                <input type="date" name="search_start" class="input-tb">
+                                <span>~</span>
+                                <input type="date" name="search_end" class="input-tb">
+                            </div>
+                        </td>
+                        <th>주소</th>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" class="input-tb" placeholder="시/도를 입력하세요">
+                                <input type="text" class="input-tb m-r-l-6" placeholder="시/군/구를 입력하세요">
+                                <input type="text" class="input-tb" placeholder="읍/면/동을 입력하세요">
+                            </div>
+                        </td>
+                        <th></th>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="btn-group">
+                <button type="button" class="btn big secondary">초기화</button>
+                <button type="button" class="btn big danger">검색</button>
+            </div>
+
+            <div class="box-wrap">
+                <div class="d-flex">
+                    <h2>긴급출동 목록 <span class="text-danger">(<span id="totalCount">00</span>)</span></h2>
+                    <div class="btn-group w-auto mt-0 d-flex">
+                        <select class="input-tb view-num">
+                            <option selected="">보기설정</option>
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button type="button" class="btn btn-delete mr-0-6">선택삭제</button>
+                        <button type="button" class="btn btn-download">엑셀 다운로드</button>
+                    </div>
+                </div>
+                <div class="table-scroll">
+                    <table class="table db-t left">
+                        <colgroup>
+                            <col style="width: 40px;">
+                            <col style="width: 600px;">
+                            <col style="width: 500px;">
+                            <col style="width: 150px;">
+                            <col style="width: 100px;">
+                            <col style="width: 160px;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="pl-0-6">
+                                    <label class="styled">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                </th>
+                                <th>Moss 데이터</th>
+                                <th>주소</th>
+                                <th>메모</th>
+                                <th>등록자 </th>
+                                <th>등록일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="pl-0-6">
+                                    <label class="styled">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                </td>
+                                <td>[자동][충청1-장애] K-남파5 …</td>
+                                <td>충청북도 청주시 사당구 용담동 431-0 나대지 SKT 전주</td>
+                                <td>작업완료</td>
+                                <td>홍길동</td>
+                                <td>2023.11.24 11:12:30</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="page-area">
+                    <div class="page-num">
+                        <div class="pagination">
+                            <a pb="PGP" href="#" id="first"><img src="./images/ico_double_arrow_left@2x.png" title="첫 페이지"></a>
+                            <a pb="PGP" href="#" id="prev"><img src="./images/ico_arrow_left@2x.png" title="이전 페이지"></a>
+                            <input type="text" class="input-tb" value="1">
+                            <span>of 4</span>
+                            <a pb="PGP" href="#" id="last"><img src="./images/ico_arrow_right@2x.png" title="마지막 페이지"></a>
+                            <a pb="PGP" href="#" id="next"><img src="./images/ico_double_arrow_right@2x.png" title="다음 페이지"></a>
+                        </div>
+                    </div>
+                    <!-- <div class="view-num">
+                        <select class="input-tb">
+                            <option selected="">보기설정</option>
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <!--//page-body-->
+    </main>
+    <!--//contents-->
+</div>
+</body>
+</html>

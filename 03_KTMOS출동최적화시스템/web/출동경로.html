@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>출동경로</title>
+<!-- CSS -->
+<link rel="stylesheet" href="./css/fontawesome6-all.css">
+<link rel="stylesheet" href="./css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="./js/jquery-ui.min.js"></script>
+<script>
+    //popup open 열기
+    function fnShowPop(sGetName){
+        var layer = $("#"+ sGetName);
+
+        layer.addClass("open");
+        $('.popup-dialog-mask').fadeIn(150);
+
+        layer.draggable({
+            handle : '.dialog-title' // drag 대상 안 특정 요소에 제한 (여러개 사용 가능)
+        });
+        
+        
+        // 화면의 중앙에 레이어를 띄운다.
+        layer.css("top", ( $(window).height() - layer.height() ) / 2+$(window).scrollTop() + "px");
+        layer.css("left", ( $(window).width() - layer.width() ) / 2+$(window).scrollLeft() + "px");
+    MM_showHideLayers(sGetName,'','show');
+
+    }
+
+    //popup hide 닫기
+    function fnHidePop(sGetName){
+        var $layer = $("#"+ sGetName);
+
+        $("#"+ sGetName).removeClass("open");
+        $('.popup-dialog-mask').fadeOut(150);
+
+        //$layer.css("top", "");
+        //$layer.css("left", "");
+        $layer.css({"top": "", "left": ""});
+    }
+</script>
+<!-- <script>
+    $(window).on('resize', function(){
+        //실행될 코드
+        if (window.innerHeight <= 1440) {
+            $('.table-scroll1').css('height',$(window).innerHeight() - 258); 
+            //1182
+        }
+    });
+</script> -->
+</head>
+<body>
+<div class="w-wrapper">
+    <!--header-->
+    <header class="w-header">
+        <div class="d-flex">
+            <div class="top-nav">
+                <div class="logo">
+                    <a href="#none">
+                        <img src="./images/logo_wh@2x.png" alt="kt 출동 최적화 시스템">
+                    </a>
+                </div>
+                <ul>
+                    <li><a href="#none">공지사항</a></li>
+                    <li><a href="#none">출동 경로</a></li>
+                    <li><a href="#none">장비 관리</a></li>
+                    <li><a href="#none">작업 관리</a>
+                        <ul>
+                            <li><a href="#none">작업 조회</a></li>
+                            <li><a href="#none">작업 진행률</a></li>
+                            <li><a href="#none">긴급출동 조회</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#none">업로드 관리</a>
+                        <ul>
+                            <li><a href="#none">장비등록</a></li>
+                            <li><a href="#none">작업등록</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#none">사용자 관리</a></li>
+                </ul>
+            </div>
+            <div class="top-right">
+                <div class="d-flex ai-center mr-1">
+                    <span class="avatar">
+                        <img src="./images/ico_user_wh@2x.png">
+                    </span>
+                    <div class="d-block ml-0-5 mr-1-8">
+                      <div class="name">홍길동</div>
+                      <div class="time">충주운용팀</div>
+                    </div>
+                </div>
+                
+                <div class="right-end">
+                    <button class="btn ico">
+                        <img src="./images/ico_logout@2x.png" alt="로그아웃">
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </header>
+    <!--//header-->
+    <!--contents-->
+    <main class="contents">
+        <!--page-body-->
+        <div class="page-body">
+            <div class="subLocation">
+                <ul>
+                    <li>
+                        <a href="#none">
+                            <img src="./images/ico_home@2x.png">
+                        </a>
+                    </li>
+                    <li><span>출동경로</span></li>
+                </ul>
+            </div>
+            <h1 class="page-tit">출동경로</h1>
+
+            <div class="d-j-a ai-start">
+                <!--route-left-->
+                <div class="route-left">
+                    <div class="main-box-wrap block">
+                        <div class="box txt">
+                            조회할 팀을 선택하세요.
+                        </div>
+                        <div class="box d-block">
+                            <div class="col region">
+                                <label class="d-block">지역</label>
+                                <select class="input-tb">
+                                    <option>남부</option>
+                                    <option>북부</option>
+                                </select>
+                            </div>
+                            <div class="col central">
+                                <label class="d-block">본부</label>
+                                <select class="input-tb mr-3">
+                                    <option value="남부본부">선택하세요</option>
+                                    <option value="CC0000">충청본부</option>
+                                    <option value="HN0000">호남본부</option>
+                                    <option value="BS0000">부산본부</option>
+                                    <option value="DG0000">대구본부</option>
+                                </select>
+                            </div>
+                            <div class="col team">
+                                <label class="d-block">팀</label>
+                                <select class="input-tb">
+                                    <option>선택하세요</option>
+                                    <option>청주운용팀</option>
+                                    <option>충주운용팀</option>
+                                    <option>천안운용팀</option>
+                                    <option>세종운용팀</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="line">
+                    <h1 class="page-tit2">출동 최적화 결과</h1>
+                    <p class="date-time">2023.12.10 08:15:22</p>
+                    <ul class="list-group no-bg">
+                        <li class="list-group-item">
+                            <div class="tit">대상 작업 수</div>
+                            <div>570</div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="tit">최적 작업 수</div>
+                            <div>400</div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="tit">누락 작업 수</div>
+                            <div>170</div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="tit">최적화 경로</div>
+                            <div>9</div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="tit">작업 시작 시간</div>
+                            <div>10:00</div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="tit">작업 복귀 시간</div>
+                            <div>17:00</div>
+                        </li>
+                    </ul>
+                    <button class="btn danger w-100">출동 최적화 실행</button>
+                </div>
+                <!--//route-left-->
+                <!--route-right-->
+                <div class="route-right">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">청주운용팀 <span class="text-danger">(00)</span></h3>
+                        </div>
+                        <div class="card-body">
+                            <table class="table db-t">
+                                <colgroup>
+                                    <col style="width: 70px;">
+                                    <col style="width: 160px;">
+                                    <col style="width: 150px;">
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="tac">번호</th>
+                                        <th class="tal">출동자</th>
+                                        <th class="tal">지역</th>
+                                        <th class="tal">작업내용</th>
+                                    </tr>
+                                </thead>
+                            </table>
+            
+                            <div class="table-scroll1" style="overflow-y: auto; height: 695px;"> <!--height: 695px;"-->
+                                <table class="table db-t">
+                                    <colgroup>
+                                        <col style="width: 70px;">
+                                        <col style="width: 160px;">
+                                        <col style="width: 150px;">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td class="tac">1</td>
+                                            <td class="bold">
+                                                <a href="#none">김사원, 이사원</a>
+                                            </td>
+                                            <td>진천군</td>
+                                            <td>
+                                                ･ 무선 자산현행화 (4)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tac">2</td>
+                                            <td class="bold">
+                                                <a href="#none">김사원, 이사원</a>
+                                            </td>
+                                            <td>진천군, 서원구</td>
+                                            <td>
+                                                ･ 무선 자산현행화 (4) <br>･ LTE RU 밧데리 대개체 (11)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tac">3</td>
+                                            <td class="bold">
+                                                <a href="#none">김사원, 이사원</a>
+                                            </td>
+                                            <td>진천군</td>
+                                            <td>
+                                                ･ 무선 자산현행화 (4) <br>･ LTE RU 밧데리 대개체 (11)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tac">4</td>
+                                            <td class="bold">김사원, 이사원</td>
+                                            <td>진천군</td>
+                                            <td>
+                                                ･ LTE RU 밧데리 대개체 (16)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tac">5</td>
+                                            <td class="bold">
+                                                <button class="btn pink meddle">출동자 등록</button>
+                                            </td>
+                                            <td>진천군, 서원구</td>
+                                            <td>
+                                                ･ LTE RU 밧데리 대개체 (11)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tac">6</td>
+                                            <td class="bold">
+                                                <button class="btn pink meddle">출동자 등록</button>
+                                            </td>
+                                            <td>진천군</td>
+                                            <td>
+                                                ･ 무선 자산현행화 (4)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tac">7</td>
+                                            <td class="bold">김사원, 이사원</td>
+                                            <td>진천군</td>
+                                            <td>
+                                                ･ 무선 자산현행화 (4) <br>･ LTE RU 밧데리 대개체 (11)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tac">8</td>
+                                            <td class="bold">김사원, 이사원</td>
+                                            <td>진천군</td>
+                                            <td>
+                                                ･ 무선 자산현행화 (4) <br>･ LTE RU 밧데리 대개체 (11)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tac">9</td>
+                                            <td class="bold">김사원, 이사원</td>
+                                            <td>진천군</td>
+                                            <td>
+                                                ･ 무선 자산현행화 (4) <br>･ LTE RU 밧데리 대개체 (11)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tac">10</td>
+                                            <td class="bold">김사원, 이사원</td>
+                                            <td>진천군</td>
+                                            <td>
+                                                ･ 무선 자산현행화 (4) <br>･ LTE RU 밧데리 대개체 (11)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tac">11</td>
+                                            <td class="bold">김사원, 이사원</td>
+                                            <td>진천군</td>
+                                            <td>
+                                                ･ 무선 자산현행화 (4) <br>･ LTE RU 밧데리 대개체 (11)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tac">12</td>
+                                            <td class="bold">김사원, 이사원</td>
+                                            <td>진천군</td>
+                                            <td>
+                                                ･ 무선 자산현행화 (4) <br>･ LTE RU 밧데리 대개체 (11)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tac">13</td>
+                                            <td class="bold">김사원, 이사원</td>
+                                            <td>진천군</td>
+                                            <td>
+                                                ･ 무선 자산현행화 (4) <br>･ LTE RU 밧데리 대개체 (11)
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div> 
+                    </div>
+                
+                    <div class="card">   
+                        <div class="card-header">
+                            <h3 class="card-title">작업현황</h3>
+                            <!-- <button class="btn btn-map" onclick="fnShowPop('re_map')">
+                                경로 지도로 보기
+                            </button>  -->
+                        </div>
+                        <div class="card-body">
+                            <div class="card-box">
+                                <div class="card-header mb-0">
+                                    <h3 class="card-title">김사원, 이사원</h3>
+                                </div>
+                                <div class="card-body">
+                                    <table class="table db-t bb-1 center">
+                                        <thead>
+                                            <tr>
+                                                <th>전체</th>
+                                                <th>완료</th>
+                                                <th>미진행</th>
+                                                <th>보류</th>
+                                                <th>삭제</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><span class="bold text-dark">15</span></td>
+                                                <td><span class="bold text-gray">7</span></td>
+                                                <td><span class="bold text-blue">4</span></td>
+                                                <td><span class="bold text-warning">2</span></td>
+                                                <td><span class="bold text-danger">1</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="card-header mt-2">
+                                    <h3 class="card-title">세부 작업 목록 <span class="text-danger">(00)</span></h3>
+                                    <button class="btn btn-map" onclick="fnShowPop('re_map')">
+                                        경로 지도로 보기
+                                    </button>
+                                </div>
+                                <div class="card-body">
+                                    
+                                    <table class="table db-t center">
+                                        <colgroup>
+                                            <col style="width: 60px;">
+                                            <col style="width: 160px;">
+                                            <col style="width: 110px;">
+                                            <col style="width: 80px;">
+                                            <col style="width: 80px;">
+                                            <col style="width: 160px;">
+                                            <col>
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>순서</th>
+                                                <th class="tal">작업명</th>
+                                                <th class="tal">장비ID</th>
+                                                <th>작업시간</th>
+                                                <th>작업상태</th>
+                                                <th class="tal">메모</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                   
+                                    <div class="table-scroll" style="overflow-y: auto; height: 512px;">
+                                        <table class="table db-t center">
+                                            <colgroup>
+                                                <col style="width: 60px;">
+                                                <col style="width: 160px;">
+                                                <col style="width: 110px;">
+                                                <col style="width: 80px;">
+                                                <col style="width: 80px;">
+                                                <col style="width: 160px;">
+                                                <col>
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td class="tal bold">LTE RU 밧데리 대개체 LTE RU 밧데리 대개체</td>
+                                                    <td class="tal">RTCB23391G</td>
+                                                    <td>30</td>
+                                                    <td><span class="text-gray bold">완료</span></td>
+                                                    <td class="tal">작업완료</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td class="tal bold">LTE RU 밧데리 대개체</td>
+                                                    <td class="tal">RTCB23391G</td>
+                                                    <td>30</td>
+                                                    <td><span class="text-gray bold">완료</span></td>
+                                                    <td class="tal">작업완료</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td class="tal bold">LTE RU 밧데리 대개체</td>
+                                                    <td class="tal">RTCB23391G</td>
+                                                    <td>30</td>
+                                                    <td><span class="text-warning bold">보류</span></td>
+                                                    <td class="tal">안전 조치 후 작업필요</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td class="tal bold">LTE RU 밧데리 대개체</td>
+                                                    <td class="tal">RTCB23391G</td>
+                                                    <td>30</td>
+                                                    <td class="text-danger bold">삭제</td>
+                                                    <td class="tal">작업 불필요</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td class="tal bold">LTE RU 밧데리 대개체</td>
+                                                    <td class="tal">RTCB23391G</td>
+                                                    <td>30</td>
+                                                    <td><span class="text-blue bold">미진행</span></td>
+                                                    <td class="tal"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td class="tal bold">LTE RU 밧데리 대개체</td>
+                                                    <td class="tal">RTCB23391G</td>
+                                                    <td>30</td>
+                                                    <td><span class="text-danger bold">삭제</span></td>
+                                                    <td class="tal">작업 불필요</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>7</td>
+                                                    <td class="tal bold">LTE RU 밧데리 대개체</td>
+                                                    <td class="tal">RTCB23391G</td>
+                                                    <td>30</td>
+                                                    <td><span class="text-danger bold">삭제</span></td>
+                                                    <td class="tal">작업 불필요</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>8</td>
+                                                    <td class="tal bold">LTE RU 밧데리 대개체</td>
+                                                    <td class="tal">RTCB23391G</td>
+                                                    <td>30</td>
+                                                    <td><span class="text-gray bold">완료</span></td>
+                                                    <td class="tal">작업완료</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>9</td>
+                                                    <td class="tal bold">LTE RU 밧데리 대개체</td>
+                                                    <td class="tal">RTCB23391G</td>
+                                                    <td>30</td>
+                                                    <td><span class="text-gray bold">완료</span></td>
+                                                    <td class="tal">작업완료</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>10</td>
+                                                    <td class="tal bold">LTE RU 밧데리 대개체</td>
+                                                    <td class="tal">RTCB23391G</td>
+                                                    <td>30</td>
+                                                    <td><span class="text-gray bold">완료</span></td>
+                                                    <td class="tal">작업완료</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>11</td>
+                                                    <td class="tal bold">LTE RU 밧데리 대개체</td>
+                                                    <td class="tal">RTCB23391G</td>
+                                                    <td>30</td>
+                                                    <td><span class="text-gray bold">완료</span></td>
+                                                    <td class="tal">작업완료</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>12</td>
+                                                    <td class="tal bold">LTE RU 밧데리 대개체</td>
+                                                    <td class="tal">RTCB23391G</td>
+                                                    <td>30</td>
+                                                    <td><span class="text-gray bold">완료</span></td>
+                                                    <td class="tal">작업완료</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <!--//route-right-->
+            </div>
+        </div>
+        <!--//page-body-->
+    </main>
+    <!--//contents-->
+</div>
+<div class="popup-dialog-mask"></div>
+
+<!--경로 지도로 보기-->
+<div class="popup-dialog dialog-lg rounded ui-draggable" id="re_map">
+    <div class="dialog-header">
+        <div class="dialog-title ui-draggable-handle">경로 지도로 보기</div>
+        <div class="dialog-close" onclick="fnHidePop('re_map')"></div>
+    </div>
+    <div class="dialog-body p-0">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.463141627283!2d127.05164767651054!3d37.544150724229304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca5d02afb3daf%3A0xc1638fd083dbadb0!2z7ISx7IiY7Jet7ZiE64yA7YWM65287Iqk7YOA7JuM!5e0!3m2!1sko!2skr!4v1704780227775!5m2!1sko!2skr" width="758" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
+<!--//경로 지도로 보기-->
+</body>
+</html>
