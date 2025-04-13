@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no user-scalable=yes">
+<meta name="robots" content="noindex">
+<title>Safety3650 - PoC</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="./css/default.css">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/form.css">
+<link rel="stylesheet" href="./css/popup.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/Safety3650-m.css">
+<link rel="stylesheet" href="./css/fontawesome6-all.min.css">
+
+<!-- JS -->
+<script src="./js/jquery-3.6.0.min.js"></script>
+<script src="./js/comm.js"></script>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <!--header-->
+    <header class="header">
+        <div class="title pl_0">Safety3650</div>
+        <div class="notice-toggle">
+            <button>
+                <span class="badge noti">99</span>
+                <!-- <img src="./images/ico_bell.png" alt="알림"> -->
+                <i class="fa-light fa-bell" title="알림" style="font-size:1.7em;"></i>
+            </button>
+        </div>
+        <div class="menu-toggle">
+            <input type="checkbox" id="menuicon">
+            <label for="menuicon" title="메뉴열기, 닫기">
+                <!-- <img src="./images/ico_menu.png" style="width:24px; height:24px;"> -->
+                <span class="ico-m"></span>
+            </label>
+            <div class="sidebar"> 
+                <div class="brand-user">
+                    <div class="side-head">
+                        <span>
+                            <a href="#"><i class="fa-solid fa-arrow-right-from-bracket fa-lg" alt="로그아웃" title="로그아웃"></i></a>
+                        </span>
+                        <span>
+                            <a href="#"><i class="fa-regular fa-gear fa-lg" alt="설정아이콘" title="설정아이콘"></i></a>
+                        </span>
+                    </div>
+                    <div class="admin-area">
+                        <span class="circle"><i class="fa-solid fa-user fa-2x"></i></span>
+                        <span>
+                            <p class="name">홍길동<small>님</small></p>
+                            <p class="connect">gildong@email.com</p>
+                        </span>
+                        <span class="tar warrow"><i class="fa-solid fa-angle-right"></i></span>
+                    </div>
+                    <div class="btn-2 mt_1 mb_6_5">
+                        <button class="btn btn-outline-primary btn-sm w100p bold">마이페이지</button>
+                    </div>
+                </div>
+                <div class="side-menu">
+                    <div class="side-menu-area">
+                        <h4>현장안전점검</h4>
+                        <div class="side-menu-submenu">
+                            <ul>
+                                <li>
+                                    <span class="icon"><img src="./images/ico_daily_safety_report.png"></span>
+                                    <span class="ml_1"><a href="#">일일안전활동보고</a></span>
+                                </li>
+                                <li>
+                                    <span class="icon"><img src="./images/ico_safety_check_list.png"></span>
+                                    <span class="ml_1"><a href="#">안전점검 체크리스트</a></span>
+                                </li>
+                            </ul>
+                        </div> 
+
+                        <h4>위험성평가조회</h4>
+                        <div class="side-menu-submenu">
+                            <ul>
+                                <li>
+                                    <span class="icon"><img src="./images/ico_risk_assessment_inquiry.png"></span>
+                                    <span class="ml_1"><a href="#">위험성평가조회</a></span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <h4>작업중지권</h4>
+                        <div class="side-menu-submenu">
+                            <ul>
+                                <li>
+                                    <span class="icon"><img src="./images/ico_right_stop_working.png"></span>
+                                    <span class="ml_1"><a href="#">작업중지권</a></span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <h4>차량안전점검</h4>
+                        <div class="side-menu-submenu">
+                            <ul>
+                                <li>
+                                    <span class="icon"><img src="./images/ico_vehicle_operation_plan.png"></span>
+                                    <span class="ml_1"><a href="#">차량사용작업계획서</a></span>
+                                </li>
+                                <li>
+                                    <span class="icon"><img src="./images/ico_check_before_working.png"></span>
+                                    <span class="ml_1"><a href="#">차량 작업 전 점검표</a></span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <h4>등록이력</h4>
+                        <div class="side-menu-submenu">
+                            <ul>
+                                <li>
+                                    <span class="icon"><img src="./images/ico_daily_safety_report.png"></span>
+                                    <span class="ml_1"><a href="#">일일안전활동보고</a></span>
+                                </li>
+                                <li>
+                                    <span class="icon"><img src="./images/ico_safety_check_list.png"></span>
+                                    <span class="ml_1"><a href="#">안전점검 체크리스트</a></span>
+                                </li>
+                                <li><span class="icon"><img src="./images/ico_right_stop_working.png"></span>
+                                    <span class="ml_1"><a href="#">작업중지권</a></span>
+                                </li>
+                                <li>
+                                    <span class="icon"><img src="./images/ico_vehicle_operation_plan.png"></span>
+                                    <span class="ml_1"><a href="#">차량사용작업계획서</a></span>
+                                </li>
+                                <li>
+                                    <span class="icon"><img src="./images/ico_check_before_working.png"></span>
+                                    <span class="ml_1"><a href="#">차량 작업 전 점검</a></span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <h4>승인요청/이력</h4>
+                        <div class="side-menu-submenu">
+                            <ul>
+                                <li>
+                                    <span class="icon"><img src="./images/ico_daily_safety_report.png"></span>
+                                    <span class="ml_1"><a href="#">일일안전활동보고</a></span>
+                                </li>
+                                <li>
+                                    <span class="icon"><img src="./images/ico_vehicle_operation_plan.png"></span>
+                                    <span class="ml_1"><a href="#">차량사용작업계획서</a></span>
+                                </li>
+                                <li>
+                                    <span class="icon"><img src="./images/ico_check_before_working.png"></span>
+                                    <span class="ml_1"><a href="#">차량 작업 전 점검</a></span>
+                                </li>
+                                <li><span class="icon"><img src="./images/ico_right_stop_working.png"></span>
+                                    <span class="ml_1"><a href="#">작업중지권</a></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="side-footer">
+                    <span class="app-v">버전정보 <span id="version">2.0.0</span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--//header-->
+    <div class="container">
+        <!--contents-->
+        <div class="contents">
+            <div class="main-menu">
+                <ul>
+                    <li>
+                        현장안전점검
+                        <div class="sub-menu-submenu">
+                            <ul>
+                                <li><a href="#"><span class="icon mr_1"><img src="./images/ico_daily_safety_report.png"></span> 일일안전활동보고</a></li>
+                                <li><a href="#"><span class="icon mr_1"><img src="./images/ico_safety_check_list.png"></span> 안전점검 체크리스트</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                       위험성평가조회
+                        <div class="sub-menu-submenu">
+                            <ul>
+                                <li><a href="#"><span class="icon mr_1"><img src="./images/ico_risk_assessment_inquiry.png"></span>위험성평가조회</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        작업중지권
+                        <div class="sub-menu-submenu">
+                            <ul>
+                                <li><a href="#"><span class="icon mr_1"><img src="./images/ico_right_stop_working.png"></span>작업중지권</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        차량안전점검
+                        <div class="sub-menu-submenu">
+                            <ul>
+                                <li><a href="#"><span class="icon mr_1"><img src="./images/ico_vehicle_operation_plan.png"></span>차량사용 작업계획서</a></li>
+                                <li><a href="#"><span class="icon mr_1"><img src="./images/ico_check_before_working.png"></span>차량작업전 점검</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        등록 이력
+                        <div class="sub-menu-submenu">
+                            <ul>
+                                <li><a href="#"><span class="icon mr_1"><img src="./images/ico_daily_safety_report.png"></span>일일안전활동보고</a></li>
+                                <li><a href="#"><span class="icon mr_1"><img src="./images/ico_safety_check_list.png"></span>안전점검 체크리스트</a></li>
+                                <li><a href="#"><span class="icon mr_1"><img src="./images/ico_right_stop_working.png"></span>작업중지권</a></li>
+                                <li><a href="#"><span class="icon mr_1"><img src="./images/ico_vehicle_operation_plan.png"></span>차량사용 작업계획서</a></li>
+                                <li><a href="#"><span class="icon mr_1"><img src="./images/ico_check_before_working.png"></span>차량작업전 점검</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        승인요청/이력
+                        <div class="sub-menu-submenu">
+                            <ul>
+                                <li><a href="#"><span class="icon mr_1"><img src="./images/ico_daily_safety_report.png"></span>일일안전활동보고</a></li>
+                                <li><a href="#"><span class="icon mr_1"><img src="./images/ico_vehicle_operation_plan.png"></span>차량사용 작업계획서</a></li>
+                                <li><a href="#"><span class="icon mr_1"><img src="./images/ico_check_before_working.png"></span>차량작업전 점검</a></li>
+                                <li><a href="#"><span class="icon mr_1"><img src="./images/ico_right_stop_working.png"></span>작업중지권</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--//contents-->
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" style="display:block;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">공지</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="cont">
+                        <p>Cras mattis consectetur purus sit amet fermentum.  증오를 줄이기 위해 단백질과 항산화제, 빈곤에 대한 필요성.  사자의 웃음, 게이트와 메인 ac, 에로스의 아치.</p>
+                        <p>제목은 웹사이트에서의 현재 사용자 위치를 알려주고, 본문을 읽기 전에 간략한 내용을 파악할 수 있게 도와준다. 따라서 각 콘텐츠의 제목은 다른 요소와 명확하게 구분되어 표현되어야 한다.</p>
+                    </div>
+                </div>
+                <div class="modal-footer jcsb"> 
+                    <div class="checks">
+                        <label class="styled" style="font-size:initial;">
+                            <input type="checkbox" checked>
+                            <i></i><span class="pl_3 fs14" style="position:relative; top:-2px;">오늘 하루 동안 보지 않기</span>
+                        </label>
+                    </div>
+                    <button class="fs14 bold" data-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-backdrop"></div>
+    <!-- //Modal -->
+</div>
+</body>
+</html>

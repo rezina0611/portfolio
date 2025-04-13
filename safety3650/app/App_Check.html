@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no user-scalable=yes">
+<meta name="robots" content="noindex">
+<title>Safety3650 - PoC</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="./css/default.css">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/form.css">
+<link rel="stylesheet" href="./css/popup.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/Safety3650-m.css">
+<link rel="stylesheet" href="./css/fontawesome6-all.min.css">
+<!-- JS -->
+<script src="./js/jquery-3.6.0.min.js"></script>
+<script src="./js/comm.js"></script>
+</head>
+	
+<body>
+
+<div class="page-wrapper">
+	<!--header-->
+    <header class="header no-shadow">
+        <div class="title"><img src="./images/logo.png" alt="세이프티3650"></div>
+    </header>
+    <!--//header-->
+	<div class="system-check app">
+        <img src="./images/img_app.png" alt="">
+        <p class="mt_2"><img src="./images/progress_arrow.png" alt="" class="progress-arrow"></p>
+    </div>
+    <footer class="footer p-1">
+        <a href="#none" class="btn-prev" @click="MoveApp">앱 확인 및 실행</a>
+    </footer>
+	
+	<div class="p-1 tac">
+		<iframe id="appFrame" name="appFrame"></iframe>
+		<span id="installComment" style="display: none;" class="p-1">앱이 설치되어 있지 않습니다.</span>
+		<a href="#none" id="install" class="btn-prev" @click="InstallApp" style="display: none;">앱 다운로드</a>
+	</div>
+</div>
+<script type="text/javascript" charset="utf-8" src="/app/app-check.js"></script>	
+</body>
+</html>
