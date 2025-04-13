@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>ESPY</title>
+<link rel="stylesheet" href="css/default.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="l-wrapper">
+    <header class="l-header">
+        <div class="d-flex">
+            <div class="top-nav">
+                <div class="logo">
+                    <a href="#none">ESPY 로고</a>
+                </div>
+            </div>
+            <div class="top-right">
+                <div class="right-end">
+                    <button class="btn ico" id="setting"><img src="./images/ico_setting.png" alt="설정"></button>
+                    <!-- 드롭다운 메뉴 -->
+                    <div id="st-div" class="dropdown">
+                        <ul class="dropdown-menu">
+                            <li><a href="#">사용자 관리</a></li>
+                        </ul>
+                    </div>
+                    <!-- 드롭다운 메뉴 -->
+                    <button class="btn ico"><img src="./images/ico_logout.png" alt="로그아웃"></button>
+                </div>
+                
+                <div class="timer">
+                    <div onclick="test_init();">
+                        <span class="date">2023년 6월 21일</span>
+                    </div>
+                    <div onclick="test_enter();">
+                        <span class="time">15:30</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </header>
+    
+    <main class="l-main">
+ 
+        <div class="grid-area">
+            <div class="grid-map-wrapper" id="border">
+                <canvas id="grid" style="touch-action: none; cursor: inherit;"></canvas>
+            </div>
+            
+            <div class="robots-wrapper">
+                
+                <details class="dropdown body robot" open>
+                    <summary>
+                        <div class="avatar">
+                            <span class="role">R1</span>
+                        </div>
+                        <span class="name">R1<span class="status">Move (Storage 1)</span></span>
+                        <div class="battery low">
+                            <span>80%</span>
+                            <!-- <span class="tip"></span> -->
+                        </div>
+                    </summary>
+                    <div class="inner">
+                        <div class="btn-area">
+                            <button class="btn red">STOP</button>
+                        </div>
+                    </div>
+                </details>
+                
+                <details class="dropdown body robot" open>
+                    <summary>
+                        <div class="avatar">
+                            <span class="role">R2</span>
+                        </div>
+                        <span class="name">R2<span class="status">STOP(Container ship 1)</span></span>
+                        <div class="battery full">
+                            <span>100%</span>
+                            <!-- <span class="tip"></span> -->
+                        </div>
+                    </summary>
+                    <div class="inner">
+                        <div class="btn-area">
+                            <button class="btn green">RESTART</button>
+                        </div>
+                    </div>
+                </details>
+                
+                <details class="dropdown body robot" open>
+                    <summary>
+                        <div class="avatar">
+                            <span class="role">R3</span>
+                        </div>
+                        <span class="name">R3<span class="status">Ready</span></span>
+                        <div class="battery charge">
+                            <span>100%</span>
+                        </div>
+                    </summary>
+                    <div class="inner">
+                        <div class="btn-area">
+                            <button class="btn basic">STOP</button>
+                        </div>
+                    </div>
+                </details>
+                
+            </div>
+        </div>
+
+        <div class="log-area">
+            <div style="width: 50%;">
+                <h4>로그 출력</h4>
+                <div class="log-wrapper">
+                    <pre class="form-control" id="log" style="height: 14rem;">
+fafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafa
+fafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafa
+fafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafa
+fafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafa
+fafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafa
+fafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafa
+fafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafa
+fafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafa
+fafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafa
+fafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafa
+fafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafa
+fafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafa
+fafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafa
+fafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafa
+fafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafa
+                    </pre>
+                </div>
+            </div>
+            <div style="width: 50%;">
+                <div class="d-jc-sb">
+                    <h4>Mission</h4>
+                    <button class="btn small">+ Mission</button>
+                </div>
+                <div class="table-wrapper">
+                    <table class="table-1">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Pick up</th>
+                                <th>Drop</th>
+                                <th>Robot</th>
+                                <th>State</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Container ship 1</td>
+                                <td>Storage 1</td>
+                                <td>R1</td>
+                                <td>Run</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Container ship 1</td>
+                                <td>Storage 1</td>
+                                <td>R1</td>
+                                <td>Run</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Storage 1</td>
+                                <td>Container ship 2</td>
+                                <td></td>
+                                <td>Wait</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Storage 1</td>
+                                <td>Container ship 2</td>
+                                <td></td>
+                                <td>Wait</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>    
+<script src="js/jquery-3.7.0.min.js"></script>
+<script src="js/sidebar.js"></script>
+    
+</body>
+</html>

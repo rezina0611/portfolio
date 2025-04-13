@@ -1,0 +1,147 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+
+/* Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, tt, /*sub, sup,  var,*/
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, main {
+	display: block;
+}
+
+body {line-height: 1;}
+ol, ul, li {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: '';content: none;}
+table {border-collapse: collapse;border-spacing: 0;}
+
+a {
+	background-color:transparent;
+    -webkit-text-decoration-skip:objects; 
+	text-decoration: none;color: inherit;
+}
+a:active,a:hover{outline-width:0}
+
+input, select, textarea {
+    outline: none;
+    border: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+textarea, input {
+    /*-webkit-appearance: none;*/
+    -webkit-border-radius: 0;
+}
+textarea {
+    width: 100%;
+    resize: none;
+    font-family: 'Noto Sans KR', sans-serif;
+    display: block;
+}
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: #fff url("../images/ico_arrow_down.png") right 6px center no-repeat;
+	background-size: 15px 15px;
+	-webkit-padding-right: 15px;
+	-moz-padding-right: 15px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    filter: invert(2%) hue-rotate(5deg) brightness(1);
+    transform: scale(1.3);
+    opacity: 0.55;
+}
+
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+    accent-color: #FFA63B !important;
+    opacity: 1;
+}
+
+input:disabled, select:disabled {
+    background: #F5F5F5;
+	color: #666;
+	opacity: 1;
+}
+input[type="checkbox"]:disabled,
+input[type="radio"]:disabled {
+    opacity: 1;
+}
+
+button{cursor: pointer; border:0} 
+
+*:hover {
+    -webkit-transition: 0.1s linear;
+  -moz-transition: 0.1s linear;
+  -ms-transition: 0.1s linear;
+  -o-transition: 0.1s linear;
+  transition: 0.1s linear;
+}
+
+/*스크롤바 커스텀*/
+*::-webkit-scrollbar {  /* 스크롤바의 너비 */
+    width: 5px;
+    height: 5px;
+}
+*::-webkit-scrollbar-button:start:decrement,
+*::-webkit-scrollbar-button:end:increment {
+    display: block;
+    width: 0;
+    height: 0;
+    background-color: transparent;
+}
+*::-webkit-scrollbar-corner {
+    background: 0 0;
+}
+*::-webkit-scrollbar-thumb {  /*스크롤바 막대에 대한 설정*/
+    border-radius: 1rem;
+    background: rgba(227 231 237 / 16%);
+}
+*::-webkit-scrollbar-track {  /*스크롤바 뒷 배경에 대한 설정*/
+    width: 1rem;
+    background-color: transparent;
+    border-radius: 1rem;
+}
+
+summary{
+    cursor: pointer; /*마우스를 위로 올렸을때 커서를 손가락모양으로 바꾸기*/
+    outline:none;  /*검정색 외곽라인 없애기*/
+}
+details summary::marker, /*삼각형모양의 특수문자 커스터마이징*/
+details summary::-webkit-details-marker{
+    display: none;
+    content: '';
+}
+
+
+
+
+
+
+
+
+
