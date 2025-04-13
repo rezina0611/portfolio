@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="ko"> 
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css" /> <!--스타일시트 형식 지정-->
+<meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible" /> <!--크롬, IE 최신 렌더링 호환성-->
+<!--IE=edge : 최신모드로 지정된 DOCTYPE에 상관없이 IE8 이상 버전에서 항상 최신 표준 모드로 렌더링-->
+<!--chrome=1 : 크롬이 설치되어있다면 IE에서도 크롬 렌더링을 사용-->
+<meta name ="viewport" content= "width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<title>FAIP 3.0 디자이너 - 수정</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="./css/reset.css">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/web_faip.css">
+<link rel="stylesheet" href="./css/fontawesome6-all.min.css">
+</head>
+<body>
+<div id="wrapper">
+    <!--header-->
+    <header class="header">
+        <h1>FAIP Designer</h1>
+        <div class="nav-item">
+            <button type="button"><img src="./images/ico_user.png"></button>
+            <div class="dropdown-menu dropdown-menu-arrow show">
+                <a href="#" class="dropdown-item">로그아웃</a>
+            </div>
+            <div class="ml_10 fs15 fwbold">펀진</div>
+        </div>
+    </header>
+    <!--//header-->
+
+    <!--container-->
+    <div class="container">
+        <div class="content scrollbar"> <!--style="overflow-y:scroll; height:100vh;"-->
+            <section class="content_inner">
+                <div class="location">
+                    <h2 class="colorf0">SPEC 상세(수정)</h2>
+                </div>
+
+                <!--page-content-->
+                <div class="page-content">
+                    <h3 class="mt_20 colorf0 fs20">고객정보</h3>
+                    <div class="tbl-wrap">
+                        <div class="tbl-type">
+                            <table>
+                                <colgroup>
+                                    <col width="13%">
+                                    <col width="*">
+                                    <col width="13%">
+                                    <col width="*">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">프로젝트 <strong class="colorf0">*</strong></th>
+                                        <td class="tal"><input type="text" name="" class="ex_input" value="프로젝트1"></td>
+                                        <th scope="row">업체명 <strong class="colorf0">*</strong></th>
+                                        <td class="tal"><input type="text" name="commpay" id="commpay" class="ex_input" value="(주)대동"></td>   
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">담당자 <strong class="colorf0">*</strong></th>
+                                        <td class="tal"><input type="text" name="" class="ex_input" value="홍길동"></td>
+                                        <th scope="row">적용분야 <strong class="colorf0">*</strong></th>
+                                        <td class="tal"><input type="text" name="" class="ex_input" value="자율주행 골프키트"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">이메일</th>
+                                        <td class="tal"><input type="text" name="" class="ex_input" value="rezina.js.han@funzin.co.kr"></td>
+                                        <th scope="row">휴대폰번호</th>
+                                        <td class="tal"><input type="text" name="" class="ex_input" value="000-0000-0000"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!--오른쪽 정렬-->
+                    <h3 class="mt_60 colorf0 fs20">SPEC 설정</h3>
+                    <div class="view-box">
+                        <ul>
+                            <li class="li1">
+                                <!--CLOUD-->
+                                <div class="s-box">
+                                    <h4 class="mt_15">CLOUD</h4>
+                                    <ul class="ListText">
+                                        <li class="disabled">
+                                            <div>
+                                                <span>
+                                                    <input type="radio" name="Edge" id="outer" class="ra_ radio">
+                                                    <label for="outer"><span></span>기타</label> 
+                                                </span>
+                                                <span>
+                                                    <input type="text" name="" class="ex_input w150">
+                                                </span>
+                                            </div>
+                                        </li>
+                                        <li class="disabled">
+                                            <div>
+                                                <span>
+                                                    <input type="radio" name="CLOUD" id="On-premise" class="ra_ radio">
+                                                    <label for="On-premise"><span></span>On-premise</label> 
+                                                </span>
+                                                <span><button type="button"><img src="./images/ico_info.png"></button></span>
+                                            </div>
+                                        </li>
+                                        <li class="detail">
+                                            <div>
+                                                <span>
+                                                    <input type="radio" name="CLOUD" id="pc" class="ra_ radio" checked="checked">
+                                                    <label for="pc"><span></span>Public Cloud</label> 
+                                                </span>
+                                                <span><button type="button"><img src="./images/ico_info.png"></button></span>
+                                            </div>
+                                        </li> 
+                                        
+                                    </ul>
+                                </div>
+                                <!--//CLOUD-->
+                                <!--Edge-->
+                                <div class="s-box">
+                                    <h4 class="mt_15">Edge</h4>
+                                    <!-- <div class="ip_check">
+                                        <span class="switch">
+                                            <input type="checkbox" id="switch" value="on">
+                                            <label for="switch" class="switch_label">
+                                                <span class="onf_btn"></span>
+                                            </label>
+                                        </span>
+                                        <span class="y_text grey">사용</span>
+                                    </div> -->
+                                    <ul class="ListText">
+                                        <li class="disabled">
+                                            <div>
+                                                <span>
+                                                    <input type="radio" name="Edge" id="P-Type" class="ra_ radio">
+                                                    <label for="ET"><span></span>PC Type</label>
+                                                </span>
+                                                <span><button type="button"><img src="./images/ico_info.png"></button></span>
+                                            </div>
+                                        </li>
+                                        <li class="detail w360">
+                                            <div>
+                                                <span>
+                                                    <input type="radio" name="ET" id="ET" class="ra_ radio" checked>
+                                                    <label for="ET"><span></span>Embedded Type</label>&nbsp;&nbsp;
+                                                    <button type="button"><img src="./images/ico_info.png"></button></span>
+                                                <span>
+                                                    <select name="" class="select ml_5">
+                                                        <option value="POF Ev-kit">POF Ev-kit</option>
+                                                        <option value="FAD43">FAD43</option>
+                                                        <option value="Jetson Nano">Jetson Nano</option>
+                                                    </select>
+                                                </span>
+                                            </div>
+                                        </li>
+                                        <li class="disabled">
+                                            <div>
+                                                <span>
+                                                    <input type="radio" name="Edge" id="outer" class="ra_ radio">
+                                                    <label for="outer"><span></span>기타</label> 
+                                                </span>
+                                                <span>
+                                                    <input type="text" name="" class="ex_input w150">
+                                                </span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--//Edge-->
+                                <!--AI-->
+                                <div class="s-box">
+                                    <h4 class="mt_15">AI</h4> <!--style="width:296px;"-->
+                                    <ul class="ListText">
+                                        <li class="disabled">
+                                            <div>
+                                                <span>
+                                                    <input type="checkbox" name="FD" id="FD" class="che_ chbe">
+                                                    <label for="FD" class="che_">Face Detector</label>
+                                                </span>
+                                                <span><button type="button"><img src="./images/ico_info.png"></button></span>
+                                            </div>
+                                        </li>
+                                        <li class="disabled">
+                                            <div>
+                                                <span>
+                                                    <input type="checkbox" name="MD" id="MD" class="che_ chbe">
+                                                    <label for="MD" class="che_">Mask Detector</label>
+                                                </span>
+                                                <span><button type="button"><img src="./images/ico_info.png"></button></span>
+                                            </div>
+                                        </li>
+                                        <li class="detail">
+                                            <div>
+                                                <span>
+                                                    <input type="checkbox" name="PD" id="PD" class="che_ chbe" checked>
+                                                    <label for="PD" class="che_">Person Detector</label>
+                                                </span>
+                                                <span><button type="button"><img src="./images/ico_info.png"></button></span>
+                                            </div>
+                                        </li>
+                                        
+                                        <li class="disabled">
+                                            <div>
+                                                <span>
+                                                    <input type="checkbox" name="HGR" id="HGR" class="che_ chbe">
+                                                    <label for="HGR" class="che_">Hand Gesture Recognition</label>
+                                                </span>
+                                                <span><button type="button"><img src="./images/ico_info.png"></button></span>
+                                            </div>
+                                        </li>
+                                        <li class="disabled">
+                                            <div>
+                                                <span>
+                                                    <input type="checkbox" name="FL" id="FL" class="che_ chbe">
+                                                    <label for="FL" class="che_">Face Landmark</label>
+                                                </span>
+                                                <span><button type="button"><img src="./images/ico_info.png"></button></span>
+                                            </div>
+                                        </li>
+                                        <li class="disabled">
+                                            <div>
+                                                <span>
+                                                    <input type="checkbox" name="FR" id="FR" class="che_ chbe">
+                                                    <label for="FR" class="che_">Face Recognition</label>
+                                                </span>
+                                                <span><button type="button"><img src="./images/ico_info.png"></button></span>
+                                            </div>
+                                        </li>
+                                        
+                                        <li class="disabled">
+                                            <div>
+                                                <span>
+                                                    <input type="checkbox" name="DSOD" id="DSOD" class="che_ chbe">
+                                                    <label for="DSOD" class="che_">Door Side Object Detector</label>
+                                                </span>
+                                                <span><button type="button"><img src="./images/ico_info.png"></button></span>
+                                            </div>
+                                        </li>
+                                        <li class="disabled">
+                                            <div>
+                                                <span>
+                                                    <input type="checkbox" name="LD" id="LD" class="che_ chbe">
+                                                    <label for="LD" class="che_">Lane Detector</label>
+                                                </span>
+                                                <span><button type="button"><img src="./images/ico_info.png"></button></span>
+                                            </div>
+                                        </li>
+                                        <li class="disabled">
+                                            <div>
+                                                <span>
+                                                    <input type="checkbox" name="SDS" id="SDS" class="che_ chbe">
+                                                    <label for="SDS" class="che_">Social Distance Solution</label>
+                                                </span>
+                                                <span><button type="button"><img src="./images/ico_info.png"></button></span>
+                                            </div>
+                                        </li>
+                                        
+                                        <li class="disabled">
+                                            <div>
+                                                <span>
+                                                    <input type="checkbox" name="outer" id="outer" class="che_ chbe">
+                                                    <label for="outer"><span></span>기타</label> 
+                                                </span>
+                                                <span class="ml_10">
+                                                    <input type="text" name="" class="ex_input w150">
+                                                </span>
+                                            </div>
+                                        </li>
+                                        <li class="disabled">
+                                            <div>
+                                                <span>
+                                                    <input type="checkbox" name="DAS" id="DAS" class="che_ chbe">
+                                                    <label for="DAS" class="che_">Drivable Area Segmentation</label>
+                                                </span>
+                                                <span><button type="button"><img src="./images/ico_info.png"></button></span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--//AI-->
+                                <!--통신-->
+                                <div class="s-box">
+                                    <h4 class="mt_15">통신</h4> 
+                                    <ul class="ListText">
+                                        <li class="disabled">
+                                            <div>
+                                                <span>
+                                                    <input type="checkbox" name="POF" id="POF" class="che_ chbe">
+                                                    <label for="POF" class="che_">POF</label>
+                                                </span>
+                                                <span><button type="button"><img src="./images/ico_info.png"></button></span>
+                                            </div>
+                                        </li>
+                                        <li class="disabled">
+                                            <div>
+                                                <span>
+                                                    <input type="checkbox" name="Wi-Fi" id="Wi-Fi" class="che_ chbe">
+                                                    <label for="Wi-Fi" class="che_">Wi-Fi</label>
+                                                </span>
+                                                <span><button type="button"><img src="./images/ico_info.png"></button></span>
+                                            </div>
+                                        </li>
+                                        <li class="detail">
+                                            <div>
+                                                <span>
+                                                    <input type="checkbox" name="BT" id="BT" class="che_ chbe" checked="checked">
+                                                    <label for="BT" class="che_">BT</label>
+                                                </span>
+                                                <span><button type="button"><img src="./images/ico_info.png"></button></span>
+                                            </div>
+                                        </li> 
+                                        <li class="disabled">
+                                            <div>
+                                                <span>
+                                                    <input type="checkbox" name="outer" id="outer" class="che_ chbe">
+                                                    <label for="outer"><span></span>기타</label> 
+                                                </span>
+                                                <span class="ml_10">
+                                                    <input type="text" name="" class="ex_input w150">
+                                                </span>
+                                            </div>
+                                        </li>
+                                        <li class="disabled">
+                                            <div>
+                                                <span>
+                                                    <input type="checkbox" name="5G_LTE" id="5G_LTE" class="che_ chbe">
+                                                    <label for="5G_LTE" class="che_">5G/LTE</label>
+                                                </span>
+                                                <span><button type="button"><img src="./images/ico_info.png"></button></span>
+                                            </div>
+                                        </li> 
+                                        <li class="disabled">
+                                            <div>
+                                                <span>
+                                                    <input type="checkbox" name="RJ45" id="RJ45" class="che_ chbe">
+                                                    <label for="RJ45" class="che_">RJ45</label>
+                                                </span>
+                                                <span><button type="button"><img src="./images/ico_info.png"></button></span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--//통신-->
+                                <!--기능-->
+                                <div class="s-box">
+                                    <h4 class="mt_15">기능</h4>
+                                    <ul class="ListText">
+                                        <li class="disabled">
+                                            <div>
+                                                <span>
+                                                    <input type="checkbox" name="Big Data" id="Big Data" class="che_ chbe">
+                                                    <label for="Big Data" class="che_ chbe">Big Data</label>
+                                                </span>
+                                                <span><button type="button"><img src="./images/ico_info.png"></button></span>
+                                            </div>
+                                        </li>
+                                        <li class="disabled">
+                                            <div>
+                                                <span>
+                                                    <input type="checkbox" name="PHM" id="PHM" class="che_ chbe">
+                                                    <label for="PHM" class="che_ chbe">PHM</label>
+                                                </span>
+                                                <span><button type="button"><img src="./images/ico_info.png"></button></span>
+                                            </div>
+                                        </li> 
+                                        <li class="detail">
+                                            <div>
+                                                <span>
+                                                    <input type="checkbox" name="Streaming" id="Streaming" class="che_ chbe" checked>
+                                                    <label for="Streaming" class="che_ chbe">Streaming</label>
+                                                </span>
+                                                <span><button type="button"><img src="./images/ico_info.png"></button></span>
+                                            </div>
+                                        </li> 
+                                        <li class="disabled">
+                                            <div>
+                                                <span>
+                                                    <input type="checkbox" name="outer" id="outer" class="che_ chbe">
+                                                    <label for="outer"><span></span>기타</label> 
+                                                </span>
+                                                <span class="ml_10">
+                                                    <input type="text" name="" class="ex_input w150">
+                                                </span>
+                                            </div>
+                                        </li>
+                                        <li class="disabled">
+                                            <div>
+                                                <span>
+                                                    <input type="checkbox" name="OTA" id="OTA" class="che_ chbe">
+                                                    <label for="OTA" class="che_ chbe">OTA</label>
+                                                </span>
+                                                <span class="tip">
+                                                    <button type="button"><img src="./images/ico_info.png"></button>
+                                                    <div class="video-box">
+                                                        <figure>
+                                                            <img src="./images/img_p_financial_620.jpg" class="mb_10">
+                                                            <a href="https://www.youtube.com/watch?v=sckuGYiHYRA" target="_blank" title="새창열림" class="btn-video small">동영상 보기</a>
+                                                        </figure>
+                                                        <p class="type-vido">플라스틱 광파이버<br> 글라스제의 경우 코어의 직경은 약 10fm(1fm은 1,000분의 1mm)인 데 비해, POF의 코어 직경은 1mm정도로 굵기에서 100배, 단면적에서는 1만 배에 이름. 
+                                                        </p>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </li> 
+                                        <li class="disabled">
+                                            <div>
+                                                <span>
+                                                    <input type="checkbox" name="Video REC" id="Video REC" class="che_ chbe">
+                                                    <label for="Video REC" class="che_ chbe">Video REC.</label>
+                                                </span>
+                                                <span><button type="button"><img src="./images/ico_info.png"></button></span>
+                                            </div>
+                                        </li> 
+                                    </ul>
+                                </div>
+                                <!--//기능-->
+                                <!--Sensor-->
+                                <!--카메라, 라이다, 레이더 선택 시 하위 항목 활성화됨, 선택 전 비활성화-->
+                                <div class="ss-box">
+                                    <h4 class="mt_15 f_left">Sensor</h4>
+                                    <ul class="List_sensor" style="display:block;"> 
+                                        <li>
+                                            <input type="checkbox" name="Lidar" id="Lidar" class="che_ chbe">
+                                             <label for="Lidar">Lidar</label>
+                                            <em class="f_right"><img src="./images/ico_info.png"></em>
+                                            <ul class="sensor-box" style="display:block;">
+                                                <li>
+                                                    <input type="checkbox" name="BT" id="BT" class="chek_ bgc9">
+                                                    <label for="BT">BT</label>
+                                                    <button type="button" class="f_right"><img src="./images/ico_info.png"></button>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="Wi-Fi" id="Wi-Fi" class="chek_ bgc9">
+                                                    <label for="Wi-Fi">Wi-Fi</label>
+                                                    <button type="button" class="f_right"><img src="./images/ico_info.png"></button>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="SC" id="SC" class="chek_ bgc9">
+                                                    <label for="SC">SC</label>
+                                                    <button type="button" class="f_right"><img src="./images/ico_info.png"></button>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="RJ45" id="RJ45" class="chek_ bgc9">
+                                                    <label for="RJ45">RJ45</label>
+                                                    <button type="button" class="f_right"><img src="./images/ico_info.png"></button>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="5G/LTE" id="5G/LTE" class="chek_ bgc9">
+                                                    <label for="5G/LTE">5G/LTE</label>
+                                                    <button type="button" class="f_right"><img src="./images/ico_info.png"></button>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="USB" id="USB" class="chek_ bgc9">
+                                                    <label for="USB">USB</label>
+                                                    <button type="button" class="f_right"><img src="./images/ico_info.png"></button>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="UART" id="UART" class="chek_ bgc9">
+                                                    <label for="UART">UART</label>
+                                                    <button type="button" class="f_right"><img src="./images/ico_info.png"></button>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="UART" id="UART" class="chek_ bgc9">
+                                                    <label for="UART">기타</label>
+                                                    <em><input type="text" name="" id="" class="ex_input w135"></em>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="Radar" id="Radar" class="che_ chbe">
+                                            <label for="Radar" >Radar </label>
+                                            <em class="f_right"><img src="./images/ico_info.png"></em>
+                                            <ul class="sensor-box" style="display:block;">
+                                                <li>
+                                                    <input type="checkbox" name="BT" id="BT" class="chek_ bgc9">
+                                                    <label for="BT">BT</label>
+                                                    <button type="button" class="f_right"><img src="./images/ico_info.png"></button>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="Wi-Fi" id="Wi-Fi" class="chek_ bgc9">
+                                                    <label for="Wi-Fi">Wi-Fi</label>
+                                                    <button type="button" class="f_right"><img src="./images/ico_info.png"></button>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="SC" id="SC" class="chek_ bgc9">
+                                                    <label for="SC">SC</label>
+                                                    <button type="button" class="f_right"><img src="./images/ico_info.png"></button>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="RJ45" id="RJ45" class="chek_ bgc9">
+                                                    <label for="RJ45">RJ45</label>
+                                                    <button type="button" class="f_right"><img src="./images/ico_info.png"></button>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="5G/LTE" id="5G/LTE" class="chek_ bgc9">
+                                                    <label for="5G/LTE">5G/LTE</label>
+                                                    <button type="button" class="f_right"><img src="./images/ico_info.png"></button>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="USB" id="USB" class="chek_ bgc9">
+                                                    <label for="USB">USB</label>
+                                                    <button type="button" class="f_right"><img src="./images/ico_info.png"></button>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="UART" id="UART" class="chek_ bgc9">
+                                                    <label for="UART">UART</label>
+                                                    <button type="button" class="f_right"><img src="./images/ico_info.png"></button>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="UART" id="UART" class="chek_ bgc9">
+                                                    <label for="UART">기타</label>
+                                                    <em><input type="text" name="" id="" class="ex_input w135"></em>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="over">
+                                            <input type="checkbox" name="Camera" id="Camera" class="che_ chbe" checked>
+                                            <label for="Camera">Camera </label>
+                                            <em class="f_right"><img src="./images/ico_info.png"></em>
+                                            <ul class="sensor-box">
+                                                <li>
+                                                    <input type="checkbox" name="BT" id="BT" class="chek_ bgc9" checked>
+                                                    <label for="BT">BT</label>
+                                                    <button type="button" class="f_right"><img src="./images/ico_info.png"></button>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="Wi-Fi" id="Wi-Fi" class="chek_ bgc9">
+                                                    <label for="Wi-Fi">Wi-Fi</label>
+                                                    <button type="button" class="f_right"><img src="./images/ico_info.png"></button>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="SC" id="SC" class="chek_ bgc9">
+                                                    <label for="SC">SC</label>
+                                                    <button type="button" class="f_right"><img src="./images/ico_info.png"></button>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="RJ45" id="RJ45" class="chek_ bgc9">
+                                                    <label for="RJ45">RJ45</label>
+                                                    <button type="button" class="f_right"><img src="./images/ico_info.png"></button>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="5G/LTE" id="5G/LTE" class="chek_ bgc9">
+                                                    <label for="5G/LTE">5G/LTE</label>
+                                                    <button type="button" class="f_right"><img src="./images/ico_info.png"></button>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="USB" id="USB" class="chek_ bgc9">
+                                                    <label for="USB">USB</label>
+                                                    <button type="button" class="f_right"><img src="./images/ico_info.png"></button>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="UART" id="UART" class="chek_ bgc9">
+                                                    <label for="UART">UART</label>
+                                                    <button type="button" class="f_right"><img src="./images/ico_info.png"></button>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="UART" id="UART" class="chek_ bgc9">
+                                                    <label for="UART">기타</label>
+                                                    <em><input type="text" name="" id="" class="ex_input w135"></em>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <ul class="ListText f_left w100p">
+                                        <li class="disabled">
+                                            <div>
+                                                <span>
+                                                    <input type="checkbox" name="outer" id="outer" class="che_ chbe">
+                                                    <label for="outer">기타</label> 
+                                                </span>
+                                                <span class="ml_10">
+                                                    <input type="text" name="" class="ex_input w150">
+                                                </span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--//Sensor-->
+                            </li>
+                            <li>
+                                <!--total-title-->
+                                <div class="Total-title">
+                                    <h3>TOTAL</h3>
+                                    <div class="tar">
+                                        <button type="button" class="btn-word">워드파일 다운로드</button>
+                                    </div>
+                                </div>
+                                <!--//total-title-->
+                                <!--total-area-->
+                                <div class="total-area scrollbar">
+                                    <h4>CLOUD</h4>
+                                    <div class="cont-box">
+                                        <h4>Public Cloud </h4>
+                                        <div class="diagram-box width-over">
+                                            <figure>
+                                                <div class="img-s">
+                                                    <img src="./images/img_p_financial_620.jpg" alt="">
+                                                  </div>
+                                            </figure>
+                                            <p>설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다.</p>
+                                        </div>
+                                    </div>
+                                    <div class="counter">
+                                        <h4>EDGE</h4>
+                                        <div class="colorgreen fs14"><img src="./images/check_green.png"> 사용</div>
+                                    </div>
+                                    <div class="cont-box">
+                                        <h4>H/W</h4>
+                                        <div class="diagram-box width-over">
+                                            <figure>
+                                                <div class="img-s">
+                                                    <img src="./images/img_p_financial_620.jpg" alt="">
+                                                </div>
+                                            </figure>
+                                            <p>설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. </p>
+                                        </div>
+                                    </div>
+                                    <h4>AI</h4>
+                                    <div class="cont-box">
+                                        <h4>H/W</h4>
+                                        <div class="diagram-box width-over">
+                                            <figure>
+                                                <div class="img-s">
+                                                    <img src="./images/img_p_financial_620.jpg" alt="">
+                                                </div>
+                                            </figure>
+                                            <p>설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. </p>
+                                        </div>
+                                    </div>
+                                    <h4>통신</h4>
+                                    <div class="cont-box">
+                                        <h4>H/W</h4>
+                                        <div class="diagram-box width-over">
+                                            <figure>
+                                                <div class="img-s">
+                                                    <img src="./images/img_p_financial_620.jpg" alt="">
+                                                </div>
+                                            </figure>
+                                            <p>설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. </p>
+                                        </div>
+                                    </div>
+                                    <h4>기능</h4>
+                                    <div class="cont-box">
+                                        <h4>Mask Detector</h4>
+                                        <div class="diagram-box width-over">
+                                            <figure>
+                                                <div class="img-s">
+                                                    <img src="./images/img_p_financial_620.jpg" alt="">
+                                                </div>
+                                            </figure>
+                                            <p>설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. </p>
+                                        </div>
+
+                                        <div class="hr"></div>
+
+                                        <h4>Mask Detector</h4>
+                                        <div class="diagram-box width-over">
+                                            <figure>
+                                                <div class="img-s">
+                                                    <img src="./images/img_p_financial_620.jpg" alt="">
+                                                </div>
+                                            </figure>
+                                            <p>설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. </p>
+                                        </div>
+                                        <div class="hr"></div>
+
+                                        <h4>Mask Detector</h4>
+                                        <div class="diagram-box width-over">
+                                            <figure>
+                                                <div class="img-s">
+                                                    <img src="./images/img_p_financial_620.jpg" alt="">
+                                                </div>
+                                            </figure>
+                                            <p>설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--//total-area-->
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tac mt_50">
+                        <button type="button" class="btn-del large">취소</button>
+                        <button type="button" class="btn-retouch large">수정</button>
+                    </div>
+                </div>
+                <!--//page-content-->
+            </section>
+        </div>
+    </div>
+    <!--//container-->
+</div><!--//wrapper-->
+</body>
+</html>
