@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no user-scalable=yes">
+<meta name="robots" content="noindex">
+<title>Safety3650 - PoC</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="./css/default.css">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/form.css">
+<link rel="stylesheet" href="./css/popup.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/Safety3650-m.css">
+<link rel="stylesheet" href="./css/fontawesome6-all.min.css">
+
+<!-- JS -->
+<script src="./js/jquery-3.6.0.min.js"></script>
+<script src="./js/comm.js"></script>
+</head>
+<body>
+
+<div class="page-wrapper">
+    
+    <!--header-->
+    <header class="header">
+        <a href="#none"><i class="fa-solid fa-arrow-left fa-lg"></i></a>
+        <div class="title">일일안전활동보고</div>
+    </header>
+    <!--//header-->
+
+    <!--container-->
+    <div class="container">
+        <div class="contents">
+            <h4 class="mb-12">TBM 및 안전교육</h4>
+            <div class="progress">
+                <div class="progress-bar" style="width:50%" role="progressbar">
+                    <span class="visually-hidden">50% Complete</span>
+                </div>
+            </div>
+            <div class="bbs-wrap">
+                <div class="row">
+                    <div class="col-sm-2 col-form-label d-block mb_0_5">소속부서</div>
+                    <div class="col-sm-10">
+                        <!-- <input type="text" name="" class="form-control" disabled value="KTMOS북부/강서본부/안양운용팀"> -->
+                        <p class="disabled-text">KTMOS북부/강서본부/안양운용팀</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2 col-form-label d-block mb_0_5">작업인원수</div>
+                    <div class="col-sm-10">
+                        <input type="text" name="" class="form-control" placeholder="숫자입력">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2 col-form-label d-block mb_0_5">작업자</div>
+                    <div class="col-sm-10">
+                        <input type="text" name="name1" class="form-control mb_0_5" placeholder="이름입력">
+                        <input type="text" name="name2" class="form-control mb_0_5" placeholder="이름입력">
+                        <input type="text" name="name3" class="form-control mb_0_5" placeholder="이름입력">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2 col-form-label d-block mb_0_5">안전교육 내용</div>
+                    <div class="col-sm-10">
+                        <textarea class="textarea" placeholder="최대100자까지 입력해주세요"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2 col-form-label d-block mb_0_5">작업일시</div>
+                    <div class="col-sm-10">
+                        <input type="datetime-local" class="datetime" name="startdate" id="startdate" value="">
+                    </div>
+                </div>
+                <div class="row d-block mt_2">
+                    <div class="col-sm-2 col-form-label d-block mb_0_5">사진등록</div>
+                    <div class="col-sm-10">
+                        <div class="mem_cert_wrap_v2">
+                            <ul>
+                                <li style="width:49%;">
+                                    <div class="filebox">
+                                        <input type="file" id="ex_camera">
+                                        <label for="ex_camera"><img src="./images/ic_camera.png" alt="사진촬영 아이콘">사진촬영</label>
+                                    </div>
+                                    <!-- <button><figure class="fig1"><img src="./images/ic_camera.png" alt="사진촬영 아이콘"> </figure><p>사진촬영</p></button> -->
+                                </li>
+                                <li class="li">&nbsp;</li>
+                                <li style="width:49%;">
+                                    <div class="filebox">
+                                        <input type="file" id="ex_photo">
+                                        <label for="ex_photo"><img src="./images/ic_photo.png" alt="사진보관함 아이콘">사진 보관함</label>
+                                    </div>
+                                    <!-- <button><figure class="fig2"><img src="./images/ic_photo.png" alt="사진보관함 아이콘"></figure><p>사진 보관함</p></button> -->
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <ul class="grid">
+                    <li>
+                        <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                        <div class="attach">
+                            <img src="./images/ic_noimage.png" alt="이미지 없음">
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                        <div class="attach">
+                            <img src="./images/ic_noimage.png" alt="이미지 없음">
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                        <div class="attach">
+                            <img src="./images/ic_noimage.png" alt="이미지 없음">
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                        <div class="attach">
+                            <img src="./images/ic_noimage.png" alt="이미지 없음">
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                        <div class="attach">
+                            <img src="./images/ic_noimage.png" alt="이미지 없음">
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                        <div class="attach">
+                            <img src="./images/ic_noimage.png" alt="이미지 없음">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--//container-->
+    <footer class="p0">
+        <div class="btn-area d-grid">
+            <button class="btn noradius btn-primary btn-lg">다음</button>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

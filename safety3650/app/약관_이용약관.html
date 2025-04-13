@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no user-scalable=yes">
+<meta name="robots" content="noindex">
+<title>Safety3650 - PoC</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="./css/default.css">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/form.css">
+<link rel="stylesheet" href="./css/popup.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/Safety3650-m.css">
+<link rel="stylesheet" href="./css/fontawesome6-all.min.css">
+
+<!-- JS -->
+<script src="./js/jquery-3.6.0.min.js"></script>
+<script src="./js/comm.js"></script>
+</head>
+<body class="bgf5">
+
+<div class="page-wrapper">
+    <!--header-->
+    <header class="header">
+        <a href="#none"><i class="fa-solid fa-arrow-left fa-lg"></i></a>
+        <div class="title">이용약관</div>
+        <!-- <button type="button" class="btn-close" aria-label="Close"></button> -->
+    </header>
+    <!--//header-->
+    <div class="container">
+        <!--contents-->
+        <div class="contents">
+            <div class="join_form">
+                <form id="join_form" method="GET" action="/user2/V2Join?m=begin">
+                    <!-- 전체약관동의 -->
+                    <div class="terms_chk_all">
+                        <div class="checks">
+                            <label class="styled">
+                                <input type="checkbox" checked>
+                                <i></i><span class="pl_3">전체 약관 동의하기</span>
+                            </label>
+                        </div>
+                    </div>
+                    <p class="mt_1 fs13">서비스 이용을 위해서는 아래 이용약관에 동의해 주세요.</p>
+                    <!-- //전체약관동의 -->
+                    <ul class="terms_bx_list">
+                        <li class="terms_bx">
+                            <div class="checks">
+                                <label class="styled">
+                                    <input type="checkbox" >
+                                    <i></i><span class="pl_3">이용약관 동의(필수)</span>
+                                </label>
+                                <a href="#" class="arrow"><i class="fa-solid fa-angle-right"></i></a>
+                            </div>
+                        </li>
+                        <li class="terms_bx">
+                            <div class="checks">   
+                                <label class="styled">
+                                    <input type="checkbox">
+                                    <i></i><span class="pl_3">개인정보처리방침 동의(필수)</span>
+                                </label>
+                                <a href="#" class="arrow"><i class="fa-solid fa-angle-right"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+        <!--//contents-->
+    </div>
+    <footer class="p0">
+        <div class="btn-area d-grid">
+            <button class="btn2 noradius btn-primary btn-lg">동의</button>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

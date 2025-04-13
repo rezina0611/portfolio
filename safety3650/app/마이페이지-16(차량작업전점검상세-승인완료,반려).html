@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no user-scalable=yes">
+<meta name="robots" content="noindex">
+<title>Safety3650 - PoC</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="./css/default.css">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/form.css">
+<link rel="stylesheet" href="./css/popup.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/Safety3650-m.css">
+<link rel="stylesheet" href="./css/fontawesome6-all.min.css">
+
+<!-- JS -->
+<script src="./js/jquery-3.6.0.min.js"></script>
+<script src="./js/comm.js"></script>
+</head>
+<body>
+<div class="page-wrapper">
+    <!--header-->
+    <header class="header">
+        <a href="#none"><i class="fa-solid fa-arrow-left fa-lg"></i></a>
+        <div class="title">상세보기</div>
+    </header>
+    <!--//header-->
+    <div class="container White">
+        <!--contents-->
+        <div class="contents">
+            <h3 class="ss-title">점검정보</h3>
+            <div class="bar"></div>
+            <div class="bbs-wrap">
+                <div class="row mb_2 d-block">
+                    <label for="Department" class="col-form-label w100p mb_0_5">소속부서</label>
+                    <p class="disabled-text">KTMOS북부/강서본부/안양운용팀</p>
+                </div>
+                <div class="row mb_2 d-block">
+                    <label for="project" class="col-form-label w100p mb_0_5">프로젝트</label>
+                    <p class="disabled-text">OOOOOO 프로젝트</p>
+                </div>
+                <div class="row mb_2 d-block">
+                    <label for="car_num" class="col-form-label w100p mb_0_5">차량번호</label>
+                    <p class="disabled-text">98조 7254</p>
+                </div>
+                <div class="row mb_2 d-block">
+                    <label for="car_num" class="col-form-label w100p mb_0_5">점검일시</label>
+                    <p class="disabled-text">2021-01-27 17:01</p>
+                </div>
+                <div class="row mb_2 d-block">
+                    <label for="Workplace-name" class="col-form-label w100p mb_0_5">작업장명</label>
+                    <p class="disabled-text">홍길동</p>
+                </div>
+            </div>
+
+            <h3 class="ss-title">점검진행</h3>
+            <div class="bar"></div>
+            <h3 class="ss-title lightbor mt_2">주행장치 - 타이어</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">손상∙마모 유무, 공기압</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra1" disabled="" checked="">
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra1" disabled="">
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra1" disabled="">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <h3 class="ss-title  lightbor">주행장치 -  주행브레이크</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">작동상태</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra2" disabled >
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra2" disabled checked>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra2" disabled="">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <h3 class="ss-title lightbor">선회대 - 회전 기어 감속기</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">작동상태</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra3" disabled >
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra3" disabled checked>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra3" disabled>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <h3 class="ss-title  lightbor">선회대 - 회전 기어 베어링</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">체결 볼트 풀림 여부</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra4" disabled checked>
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra4" disabled>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra4" disabled="">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">선회대 - 붐 핀</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">연결 핀의 조립 상태</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra5" disabled >
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra5" disabled checked>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra5" disabled>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">선회대 - 실린더 핀</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">연결 핀의 조립 상태</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra6" disabled >
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra6" disabled>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra6" disabled checked>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">선회대 - 수평유지장치</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">연결 핀의 조립 상태</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra7" disabled >
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra7" disabled>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra7" disabled checked>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">선회대 - 외관</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">용접부 크랙 여부</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra8" disabled >
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra8" disabled>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra8" disabled checked>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">아웃트리거 - 실린더 핀</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">핀 부착 상태</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra9" disabled >
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra9" disabled>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra9" disabled checked>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">아웃트리거 - 외관</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">용접부 크랙 여부</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra10" disabled checked>
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra10" disabled>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra10" disabled>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">아웃트리거 - 기능</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">작동 상태</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra11" disabled checked>
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra11" disabled>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra11" disabled>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">유입장치 - 실린더</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">누유 여부</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra12" disabled checked>
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra12" disabled>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra12" disabled>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">유입장치 - 호스</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">찍히거나 파손 여부</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra13" disabled checked>
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra13" disabled>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra13" disabled>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">유입장치 - 작동유탱크</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">작동유 상태</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra14" disabled>
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra14" disabled checked>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra14" disabled>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">주유 - 각 회전부</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">주유상태</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra15" disabled>
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra15" disabled checked>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra15" disabled>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">주유 - 요소수</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">주유상태</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra16" disabled>
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra16" disabled checked>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra16" disabled>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">붐 - 붐, 암</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">균열∙변형 유무, 설치 상태</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra17" disabled>
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra17" disabled checked>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra17" disabled>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">붐 - 붐 기복∙신축 실린더</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">누유∙자유하강 유무, 작동 상태</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra18" disabled>
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra18" disabled checked>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra18" disabled>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">붐 - 승강장치(수직승강형)</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">누유∙자유하강 유무, 작동 상태</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra19" disabled>
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra19" disabled checked>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra19" disabled>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">작업대 - 작업대(난간)</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">손상 유무</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra20" disabled>
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra20" disabled checked>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra20" disabled>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">작업대 - 작업대 평행 장치</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">작동 상태</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra21" disabled checked>
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra21" disabled>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra21" disabled>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">작업대 - 작업대 선회 장치</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">작동 상태</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra22" disabled checked>
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra22" disabled>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra22" disabled>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">조작 장치 등 - 조작 레버, 조작 스위치  </h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">작동 상태, 조작 방법 표시 유무</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra23" disabled checked>
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra23" disabled>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra23" disabled>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">조작 장치 등 - 계기</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">작동 상태</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra24" disabled checked>
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra24" disabled>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra24" disabled>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">조작 장치 등 - 발페달</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">작동 상태</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra25" disabled checked>
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra25" disabled>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra25" disabled>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">조작 장치 등 - 오조작방지 안전 커버</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">커버 유무</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra26" disabled checked>
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra26" disabled>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra26" disabled>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">조작 장치 등 - 전조등, 후미등, 방향 지시기</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">등화 상태</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra27" disabled checked>
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra27" disabled>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra27" disabled>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">안전 장치 - 안정기 공정 장치</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">작동 상태</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra28" disabled checked>
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra28" disabled>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra28" disabled>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">안전 장치 - 하중감지와 위치 제어장치</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">작동 상태</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra29" disabled checked>
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra29" disabled>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra29" disabled>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">안전 장치 - 모멘트 감지 장치</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">작동 상태</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra30" disabled checked>
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra31" disabled>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra31" disabled>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">안전 장치 - 비상 안전 장치</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">작동 상태</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra32" disabled checked>
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra32" disabled>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra32" disabled>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title  lightbor">안전 장치 - 경보 </h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">등화 상태</span>
+                    <div class="view-q mt_2 disabled-text">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra33" disabled checked>
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra33" disabled>
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra33" disabled>
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="row mb_1 d-block">
+                <div class="col-form-label w100p mb_0_5">사진</div>
+            </div>
+            <ul class="grid">
+                <li>
+                    <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                    <div class="attach">
+                        <img src="./images/ic_noimage.png" alt="이미지 없음">
+                    </div>
+                </li>
+                <li>
+                    <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                    <div class="attach">
+                        <img src="./images/ic_noimage.png" alt="이미지 없음">
+                    </div>
+                </li>
+                <li>
+                    <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                    <div class="attach">
+                        <img src="./images/ic_noimage.png" alt="이미지 없음">
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title mt_2">승인</h3>
+   
+            <div class="approved1">
+                <ul>
+                    <li>
+                        <span class="tal fs14"><b>1단계 승인</b></span>
+                        <span class="tar">홍길동<br><span class="text02">2022-04-01 09:00</span></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--//contents-->
+    </div>
+    <footer>
+        <div class="btn-area btn-2">
+            <button class="btn btn-disabled btn-mm">반려</button>
+            <button class="btn btn-disabled btn-mm">승인</button>
+        </div>
+        <!-- <br>
+        <div class="btn-area btn-2">
+            <button class="btn btn-disabled btn-mm">반려</button>
+            <button class="btn btn-primary btn-mm">승인</button>
+        </div> -->
+    </footer>
+</div>
+</body>
+</html>

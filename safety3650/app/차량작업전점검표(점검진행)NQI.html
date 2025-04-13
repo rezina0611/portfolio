@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no user-scalable=yes">
+<meta name="robots" content="noindex">
+<title>Safety3650 - PoC</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="./css/default.css">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/form.css">
+<link rel="stylesheet" href="./css/popup.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/Safety3650-m.css">
+<link rel="stylesheet" href="./css/fontawesome6-all.min.css">
+
+<!-- JS -->
+<script src="./js/jquery-3.6.0.min.js"></script>
+<script src="./js/comm.js"></script>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+    <!--header-->
+    <header class="header">
+        <a href="#none"><i class="fa-solid fa-arrow-left fa-lg"></i></a>
+        <div class="title">차량 작업 전 점검표</div>
+    </header>
+    <!--//header-->
+
+    <!--container-->
+    <div class="container">
+        <div class="contents">
+            <h4 class="mt_1 mb-12">점검진행</h4>
+            <div class="progress">
+                <div class="progress-bar" style="width:100%" role="progressbar">
+                    <span class="visually-hidden">100% Complete</span>
+                </div>
+            </div>
+
+            <h3 class="ss-title bor">운행 전</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">안전운전은 실시하였는가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd1" name="ra1" checked>
+                            <label for="ex_rd1" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd2" name="ra1">
+                            <label for="ex_rd2" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">기동장비 운행일지 등 관리는 양호한가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd4" name="ra2">
+                            <label for="ex_rd4" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd5" name="ra2">
+                            <label for="ex_rd5" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">차량의 외관이 손상되거나 파손된 부분은 없는가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd7" name="ra3">
+                            <label for="ex_rd7" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd8" name="ra3">
+                            <label for="ex_rd8" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">차내 및 유리 청결상태는 양호한가</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd10" name="ra4">
+                            <label for="ex_rd10" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd11" name="ra4">
+                            <label for="ex_rd11" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">유리에 불필요한 물건을 부착하진 않았는가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd13" name="ra5">
+                            <label for="ex_rd13" class="pl_3">양호</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd14" name="ra5">
+                            <label for="ex_rd14" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">안전벨트 상태 및 작동은 양호한가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd16" name="ra6">
+                            <label for="ex_rd16" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd17" name="ra6">
+                            <label for="ex_rd17" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">차량용 안전장구(안전표지판/공구/소화기/고임목 등)확보 및 관리 상태는 양호한가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd19" name="ra7">
+                            <label for="ex_rd19" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd20" name="ra7">
+                            <label for="ex_rd20" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">조향장치/제동장치/냉각수/타이어공기압/기름 등은 양호한가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd22" name="ra8">
+                            <label for="ex_rd22" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd23" name="ra8">
+                            <label for="ex_rd23" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">조명장치(전조등/미등/방향표시/브레이크 등)은 정상상태인가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd25" name="ra9">
+                            <label for="ex_rd25" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd26" name="ra9">
+                            <label for="ex_rd26" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">워셔액은 충분하고, 와이퍼는 정상동작 하는가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd28" name="ra10">
+                            <label for="ex_rd28" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd29" name="ra10">
+                            <label for="ex_rd29" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">화물의 전락방지를 위한 조치를 했는가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd31" name="ra11">
+                            <label for="ex_rd31" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd32" name="ra11">
+                            <label for="ex_rd32" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">차량 시동 후 계기판에 경고등이 점등되어 있는 항목은 없는가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd34" name="ra12">
+                            <label for="ex_rd34" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd35" name="ra12">
+                            <label for="ex_rd35" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">타이어마모 상태 및 공기압은 양호한가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd37" name="ra13">
+                            <label for="ex_rd37" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd38" name="ra13">
+                            <label for="ex_rd38" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">엔진오일 및 기름 누수 상태는 확인 하였는가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd40" name="ra14">
+                            <label for="ex_rd40" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd41" name="ra14">
+                            <label for="ex_rd41" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            
+            <h3 class="ss-title bor">운행 중</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">안전벨트를 착용 하였는가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd42" name="ra15" checked>
+                            <label for="ex_rd42" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd43" name="ra15">
+                            <label for="ex_rd43" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question"> 교통신호 등 규칙을 엄수하는가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd44" name="ra16">
+                            <label for="ex_rd44" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd45" name="ra16">
+                            <label for="ex_rd45" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question"> 전방 주시하면서 주변 도로 상황 확인하는가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd46" name="ra17">
+                            <label for="ex_rd46" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd47" name="ra17">
+                            <label for="ex_rd47" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question"> 앞차와는 적정거리를 유지하는가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd48" name="ra18">
+                            <label for="ex_rd48" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd49" name="ra18">
+                            <label for="ex_rd49" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question"> 도로변에 보행자/자전거 등이 있을 경우 저속/주의 운행하는가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd50" name="ra19">
+                            <label for="ex_rd50" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd51" name="ra19">
+                            <label for="ex_rd51" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question"> 차량 고장 시 안전삼각대를 설치하는가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd52" name="ra20">
+                            <label for="ex_rd52" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd53" name="ra20">
+                            <label for="ex_rd53" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question"> 악천우 시 평소보다 안전거리 2배 이상 유지하고 속도는 절반 이하로 감속운행 하는가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd54" name="ra21">
+                            <label for="ex_rd54" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd55" name="ra21">
+                            <label for="ex_rd55" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">  차량 운행 시 엔진룸 소음, 조향장치 떨림 등 이상 현상이 발생 하였는가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd56" name="ra22">
+                            <label for="ex_rd56" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd57" name="ra22">
+                            <label for="ex_rd57" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question">  어린이 보호구역에서는 속도(30km 이하)를 준수하는가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd58" name="ra23">
+                            <label for="ex_rd58" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd59" name="ra23">
+                            <label for="ex_rd59" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title bor">운행 후</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question"> 주차 라인을 잘 지켜 안전하게 주차 하였는가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd60" name="ra24">
+                            <label for="ex_rd60" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd61" name="ra24">
+                            <label for="ex_rd61" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question"> 차량의 미끄러짐 예방 받침목은 설치 하였는가? </span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd62" name="ra25">
+                            <label for="ex_rd62" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd63" name="ra25">
+                            <label for="ex_rd63" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question"> 차량 청결상태는 양호한가? </span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd64" name="ra26">
+                            <label for="ex_rd64" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd65" name="ra26">
+                            <label for="ex_rd65" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question"> 차량 주행거리 및 유류 상태는 양호한가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd66" name="ra27">
+                            <label for="ex_rd66" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd67" name="ra27">
+                            <label for="ex_rd67" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question"> 기동장비 운행일지 관리는 즉시 하는가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd68" name="ra28">
+                            <label for="ex_rd68" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd69" name="ra28">
+                            <label for="ex_rd69" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question"> 차량 운행 종료 후 전조등, 인버터 등 배터리 방전 예방을 위한 전원OFF 상태를 확인했는가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd70" name="ra29">
+                            <label for="ex_rd70" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd71" name="ra29">
+                            <label for="ex_rd71" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question"> 차량 엔진룸 기름 및 오일 누수는 없는지 확인했는가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd72" name="ra30">
+                            <label for="ex_rd72" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd73" name="ra30">
+                            <label for="ex_rd73" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question"> 차량 타이어의 펑크 유,무 파악 하였는가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd74" name="ra31">
+                            <label for="ex_rd74" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd75" name="ra31">
+                            <label for="ex_rd75" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question"> 운행 후 사용한 안전용품(안전표지판/공구/소화기/고임목 등)은 모두 확인 하였는가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd76" name="ra32">
+                            <label for="ex_rd76" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd77" name="ra32">
+                            <label for="ex_rd77" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title bor">사고/고장 발생 대응</h3>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question"> 긴급 구난을 위한 보험사 및 연락처를 확인했는가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd78" name="ra33">
+                            <label for="ex_rd78" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd79" name="ra33">
+                            <label for="ex_rd79" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question"> 사고/고장 차량 후방 30M에 안전표지판을 설치하였는가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd80" name="ra34">
+                            <label for="ex_rd80" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd81" name="ra34">
+                            <label for="ex_rd81" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question"> 2차 사고 예방을 위해 신속하게 차량을 길가로 이동 조치 하였는가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd82" name="ra35">
+                            <label for="ex_rd82" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd83" name="ra35">
+                            <label for="ex_rd83" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="check-list">
+                <li class="nobor">
+                    <span class="question"> 차량 운전자 및 동승자는 안전한 곳으로 이동하여 후속 차량 유도조치를 하였는가?</span>
+                    <div class="view-q">
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd84" name="ra36">
+                            <label for="ex_rd84" class="pl_3">YES</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="ex_rd85" name="ra36">
+                            <label for="ex_rd85" class="pl_3">NO</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+
+            <!-- <h3 class="ss-title">사진 첨부하기</h3>
+            <div class="row mb_2 d-block">
+                <div class="mem_cert_wrap_v2">
+                    <ul>
+                        <li style="width:49%;">
+                            <div class="filebox">
+                                <input type="file" id="ex_camera">
+                                <label for="ex_camera"><img src="./images/ic_camera.png" alt="사진촬영 아이콘">사진촬영</label>
+                            </div>
+                        </li>
+                        <li class="li">&nbsp;</li>
+                        <li style="width:49%;">
+                            <div class="filebox">
+                                <input type="file" id="ex_photo">
+                                <label for="ex_photo"><img src="./images/ic_photo.png" alt="사진보관함 아이콘">사진 보관함</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div> -->
+                <!--사진 최대 9장 등록-->
+                <!-- <ul class="grid">
+                    <li>
+                        <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                        <div class="attach">
+                            <img src="./images/ic_noimage.png" alt="이미지 없음">
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                        <div class="attach">
+                            <img src="./images/ic_noimage.png" alt="이미지 없음">
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                        <div class="attach">
+                            <img src="./images/ic_noimage.png" alt="이미지 없음">
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                        <div class="attach">
+                            <img src="./images/ic_noimage.png" alt="이미지 없음">
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                        <div class="attach">
+                            <img src="./images/ic_noimage.png" alt="이미지 없음">
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                        <div class="attach">
+                            <img src="./images/ic_noimage.png" alt="이미지 없음">
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                        <div class="attach">
+                            <img src="./images/ic_noimage.png" alt="이미지 없음">
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                        <div class="attach">
+                            <img src="./images/ic_noimage.png" alt="이미지 없음">
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                        <div class="attach">
+                            <img src="./images/ic_noimage.png" alt="이미지 없음">
+                        </div>
+                    </li>
+                </ul> -->
+            </div>
+        </div>
+    </div>
+    <!--//container-->
+    <footer class="p0">
+        <div class="btn-area d-grid">
+            <button class="btn noradius btn-primary btn-lg">다음</button>
+        </div>
+    </footer>
+</div>
+
+<!-- <script  src="./js/sidebar.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no user-scalable=yes">
+<meta name="robots" content="noindex">
+<title>Safety3650 - PoC</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="./css/default.css">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/form.css">
+<link rel="stylesheet" href="./css/popup.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/Safety3650-m.css">
+<link rel="stylesheet" href="./css/fontawesome6-all.min.css">
+
+<!-- JS -->
+<script src="./js/jquery-3.6.0.min.js"></script>
+<script src="./js/comm.js"></script>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+    <!--header-->
+    <header class="header">
+        <a href="#none"><i class="fa-solid fa-arrow-left fa-lg"></i></a>
+        <div class="title">차량 사용작업계획서</div>
+    </header>
+    <!--//header-->
+
+    <!--container-->
+    <div class="container">
+        <div class="contents">
+            <h4 class="mb-12">계획작성</h4>
+            <div class="progress">
+                <div class="progress-bar" style="width:100%" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="25% Complete">
+                    <span class="visually-hidden">100% Complete</span>
+                </div>
+            </div>
+
+            <!--bbs-wrap-->
+            <div class="bbs-wrap">
+                <div class="row d-block">
+                    <div class="col-form-label w100p mb_0_5">소속부서</div>
+                    <input type="text" name="Department" id="Department" class="form-control disabled" value="KTMOS북부/강서본부/안양운용팀" disabled>
+                </div>
+                <div class="row d-block">
+                    <div class="col-form-label w100p mb_0_5">프로젝트</div>
+                    <input type="text" name="project" id="project" class="form-control disabled" value="NRSL00436S" disabled>
+                </div>
+                <div class="row d-block">
+                    <div class="col-form-label w100p mb_0_5">차량번호</div>
+                    <input type="text" name="car_num" id="car_num" class="form-control disabled" value="98조7254" disabled>
+                </div>
+                <div class="row d-block">
+                    <div class="col-form-label w100p mb_0_5">작업자</div>
+                    <input type="text" name="name1" class="form-control mb_0_5" placeholder="이름입력">
+                    <input type="text" name="name2" class="form-control mb_0_5" placeholder="이름입력">
+                    <input type="text" name="name3" class="form-control mb_0_5" placeholder="이름입력">
+                </div>
+                <div class="row d-block">
+                    <div class="col-form-label w100p mb_0_5">작업시작일시</div>
+                    <input type="datetime-local" class="datetime" name="startdate" id="startdate" value="">
+                </div>
+                <div class="row d-block">
+                    <div class="col-form-label w100p mb_0_5">작업종료일시</div>
+                    <input type="datetime-local" class="datetime" name="lastdate" id="lastdate" value="">
+                </div>
+                <div class="row d-block">
+                    <div class="col-form-label w100p mb_0_5">사용시간(분)</div>
+                    <input type="text" name="hh-mm" id="hh-mm" class="form-control disabled" placeholder="종료–시작 뺀 시간을 분단위로 자동표기" disabled>
+                </div>
+                <div class="row d-block">
+                    <div class="col-form-label w100p mb_0_5">작업목적</div>
+                    <textarea class="textarea" id="work" rows="5" cols="40" placeholder="최대 100자까지 입력해주세요"></textarea>
+                </div>
+                <div class="row d-block">
+                    <div class="col-form-label w100p mb_0_5">비고</div>
+                    <textarea class="textarea" id="note" rows="5" cols="40" placeholder="최대 100자까지 입력해주세요"></textarea>
+                </div>
+            </div>
+            <!--//bbs-wrap-->
+        </div>
+    </div>
+    <!--//container-->
+    <footer class="p0">
+        <div class="btn-area d-grid">
+            <button class="btn btn-primary noradius btn-lg">다음</button>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

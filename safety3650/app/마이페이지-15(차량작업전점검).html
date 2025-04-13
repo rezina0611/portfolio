@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no user-scalable=yes">
+<meta name="robots" content="noindex">
+<title>Safety3650 - PoC</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="./css/default.css">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/form.css">
+<link rel="stylesheet" href="./css/popup.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/Safety3650-m.css">
+<link rel="stylesheet" href="./css/fontawesome6-all.min.css">
+
+<!-- JS -->
+<script src="./js/jquery-3.6.0.min.js"></script>
+<script src="./js/comm.js"></script>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+    <!--header-->
+    <header class="header">
+        <a href="#none"><i class="fa-solid fa-arrow-left fa-lg"></i></a>
+        <div class="title">차량 작업 전 점검</div>
+        <button type="button" class="ico_delete" title="삭제">
+            <!-- <img src="./images/ico_delete.png" alt="휴지통"> -->
+        </button>
+    </header>
+    <!--//header-->
+    <div class="container">
+        <!--contents-->
+        <div class="contents p0">
+            <div class="tab_scroll">
+                <ul class="tab_menu">
+                    <li class="current w46" data-tab="tab-1">
+                        <a href="#none">전체</a>
+                    </li>
+                    <li data-tab="tab-2" class="">
+                        <a href="#none">승인요청</a>
+                    </li>
+                    <li data-tab="tab-3" class="">
+                        <a href="#none">승인완료</a>
+                    </li>
+                    <li data-tab="tab-4" class="">
+                        <a href="#none">승인반려</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="tab-1" class="tab_content current">
+                <ul class="list-area">
+                    <li>
+                        <div class="top">
+                            <span class="flex">
+                                <p class="fs14"><span class="meno">NQI</span>OOO 프로젝트</p>
+                                <p class="bold fs16 mt_0_5">98조 7225</p>
+                            </span>
+                            <button class="approved org">승인 요청 </button>
+                        </div>
+                        <div class="bottom">
+                            <span class="people">
+                                <p>작업자명</p>
+                            </span>
+                            <span>
+                                <p>2022-06-14 14:00</p>
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="top">
+                            <span class="flex">
+                                <p class="fs14"><span class="meno">화웨이</span>OOO 프로젝트</p>
+                                <p class="bold fs16 mt_0_5">98조 7225</p>
+                            </span>
+                            <button class="approved blue">승인 완료 </button>
+                        </div>
+                        <div class="bottom">
+                            <span class="people">
+                                <p>1단계 작업자명</p>
+                                <p>2단계 관리자명</p>
+                            </span>
+                            <span>
+                                <p>2022-06-14 14:00</p>
+                                <p>2022-06-14 14:00</p>
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="top">
+                            <span class="flex">
+                                <p class="fs14"><span class="meno">화웨이</span>OOO 프로젝트</p>
+                                <p class="bold fs16 mt_0_5">98조 7225</p>
+                            </span>
+                            <button class="approved red">승인 반려 </button>
+                        </div>
+                        <div class="bottom">
+                            <span class="people">
+                                <p>1단계 관리자명</p>
+                            </span>
+                            <span>
+                                <p>2022-06-14 14:00</p>
+                                <p>2022-06-14 14:00</p>
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="top">
+                            <span class="flex">
+                                <p class="fs14"><span class="meno">NQI</span>OOO 프로젝트 프로젝트 프로젝트</p>
+                                <p class="bold fs16 mt_0_5">98조 7225</p>
+                            </span>
+                            <button class="approved green">작성 중</button>
+                        </div>
+                        <div class="bottom">
+                            <span class="people">
+                                <p>작업자명</p>
+                            </span>
+                            <span>
+                                <p>2022-06-14 14:00</p>
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="tab-2" class="tab_content">
+                <ul class="list-area">
+                    <li>
+                        <div class="top">
+                            <span class="flex">
+                                <p class="fs14"><span class="meno">NQI</span>OOO 프로젝트 프로젝트 프로젝트</p>
+                                <p class="bold fs16 mt_0_5">98조 7225</p>
+                            </span>
+                            <button class="approved org">승인요청</button>
+                        </div>
+                        <div class="bottom">
+                            <span class="people">
+                                <p>작업자명</p>
+                            </span>
+                            <span>
+                                <p>2022-06-14 14:00</p>
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="top">
+                            <span class="flex">
+                                <p class="fs14"><span class="meno">NQI</span>OOO 프로젝트 프로젝트 프로젝트</p>
+                                <p class="bold fs16 mt_0_5">98조 7225</p>
+                            </span>
+                            <button class="approved org">승인요청</button>
+                        </div>
+                        <div class="bottom">
+                            <span class="people">
+                                <p>작업자명</p>
+                            </span>
+                            <span>
+                                <p>2022-06-14 14:00</p>
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="top">
+                            <span class="flex">
+                                <p class="fs14"><span class="meno">NQI</span>OOO 프로젝트 프로젝트 프로젝트</p>
+                                <p class="bold fs16 mt_0_5">98조 7225</p>
+                            </span>
+                            <button class="approved org">승인요청</button>
+                        </div>
+                        <div class="bottom">
+                            <span class="people">
+                                <p>작업자명</p>
+                            </span>
+                            <span>
+                                <p>2022-06-14 14:00</p>
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="tab-3" class="tab_content">
+                <ul class="list-area">
+                    <li>
+                        <div class="top">
+                            <span class="flex">
+                                <p class="fs14"><span class="meno">화웨이</span>OOO 프로젝트</p>
+                                <p class="bold fs16 mt_0_5">98조 7225</p>
+                            </span>
+                            <button class="approved blue">승인완료</button>
+                        </div>
+                        <div class="bottom">
+                            <span class="people">
+                                <p>작업자명</p>
+                                <p>관리자명</p>
+                            </span>
+                            <span>
+                                <p>2022-06-14 14:00</p>
+                                <p>2022-06-14 14:00</p>
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="top">
+                            <span class="flex">
+                                <p class="fs14"><span class="meno">화웨이</span>OOO 프로젝트</p>
+                                <p class="bold fs16 mt_0_5">98조 7225</p>
+                            </span>
+                            <button class="approved blue">승인완료</button>
+                        </div>
+                        <div class="bottom">
+                            <span class="people">
+                                <p>작업자명</p>
+                                <p>관리자명</p>
+                            </span>
+                            <span>
+                                <p>2022-06-14 14:00</p>
+                                <p>2022-06-14 14:00</p>
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="top">
+                            <span class="flex">
+                                <p class="fs14"><span class="meno">화웨이</span>OOO 프로젝트</p>
+                                <p class="bold fs16 mt_0_5">98조 7225</p>
+                            </span>
+                            <button class="approved blue">승인완료</button>
+                        </div>
+                        <div class="bottom">
+                            <span class="people">
+                                <p>작업자명</p>
+                                <p>관리자명</p>
+                            </span>
+                            <span>
+                                <p>2022-06-14 14:00</p>
+                                <p>2022-06-14 14:00</p>
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="tab-4" class="tab_content">
+                <ul class="list-area">
+                    <li>
+                        <div class="top">
+                            <span class="flex">
+                                <p class="fs14"><span class="meno">NQI</span>OOO 프로젝트</p>
+                                <p class="bold fs16 mt_0_5">98조 7225</p>
+                            </span>
+                            <button class="approved red">승인반려</button>
+                        </div>
+                        <div class="bottom">
+                            <span class="people">
+                                <p>작업자명</p>
+                                <p>관리자명</p>
+                            </span>
+                            <span>
+                                <p>2022-06-14 14:00</p>
+                                <p>2022-06-14 14:00</p>
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="top">
+                            <span class="flex">
+                                <p class="fs14"><span class="meno">NQI</span>OOO 프로젝트</p>
+                                <p class="bold fs16 mt_0_5">98조 7225</p>
+                            </span>
+                            <button class="approved red">승인반려</button>
+                        </div>
+                        <div class="bottom">
+                            <span class="people">
+                                <p>작업자명</p>
+                                <p>관리자명</p>
+                            </span>
+                            <span>
+                                <p>2022-06-14 14:00</p>
+                                <p>2022-06-14 14:00</p>
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="top">
+                            <span class="flex">
+                                <p class="fs14"><span class="meno">NQI</span>OOO 프로젝트</p>
+                                <p class="bold fs16 mt_0_5">98조 7225</p>
+                            </span>
+                            <button class="approved red">승인반려</button>
+                        </div>
+                        <div class="bottom">
+                            <span class="people">
+                                <p>작업자명</p>
+                                <p>관리자명</p>
+                            </span>
+                            <span>
+                                <p>2022-06-14 14:00</p>
+                                <p>2022-06-14 14:00</p>
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <!--라디오버튼으로 탭메뉴-->
+            <!-- <div class="tab_menu-css">
+                <input id="tab1" type="radio" name="tabs" checked="">
+                <label for="tab1" class="ml_1">전체</label>
+
+                <input id="tab2" type="radio" name="tabs">
+                <label for="tab2">승인요청</label>
+
+                <input id="tab3" type="radio" name="tabs">
+                <label for="tab3">승인완료</label>
+
+                <input id="tab4" type="radio" name="tabs">
+                <label for="tab4">승인반려</label>
+
+                <section class="tab_content" id="content1">
+                    <ul class="list-area">
+                        <li>
+                            <div class="top">
+                                <span class="title">
+                                    <p><span class="meno">NQI</span>OOO 프로젝트</p>
+                                    <p class="bold fs16">98조 7225</p>
+                                </span>
+                                <span class="okay"><button class="approved org">승인요청 </button></span>
+                            </div>
+                            <div class="bottom">
+                                <span class="people">
+                                    <p>작업자명</p>
+                                </span>
+                                <span>
+                                    <p>2022-06-14 14:00</p>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="top">
+                                <span class="title">
+                                    <p><span class="meno">화웨이</span>OOO 프로젝트</p>
+                                    <p class="bold fs16">98조 7225</p>
+                                </span>
+                                <span><button class="approved blue">승인완료 </button></span>
+                            </div>
+                            <div class="bottom">
+                                <span class="people">
+                                    <p>1단계 작업자명</p>
+                                    <p>2단계 관리자명</p>
+                                </span>
+                                <span>
+                                    <p>2022-06-14 14:00</p>
+                                    <p>2022-06-14 14:00</p>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="top">
+                                <span class="title">
+                                    <p><span class="meno">화웨이</span>OOO 프로젝트</p>
+                                    <p class="bold fs16">98조 7225</p>
+                                </span>
+                                <span><button class="approved red">승인반려 </button></span>
+                            </div>
+                            <div class="bottom">
+                                <span class="people">
+                                    <p>1단계 관리자명</p>
+                                </span>
+                                <span>
+                                    <p>2022-06-14 14:00</p>
+                                    <p>2022-06-14 14:00</p>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+                <section class="tab_content" id="content2">
+                    <ul class="list-area">
+                        <li>
+                            <div class="top">
+                                <span class="title">
+                                    <p><span class="meno">NQI</span>OOO 프로젝트 프로젝트 프로젝트</p>
+                                    <p class="bold fs16">98조 7225</p>
+                                </span>
+                                <span class="okay"><button class="approved org">승인요청</button></span>
+                            </div>
+                            <div class="bottom">
+                                <span class="people">
+                                    <p>작업자명</p>
+                                </span>
+                                <span>
+                                    <p>2022-06-14 14:00</p>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="top">
+                                <span class="title">
+                                    <p><span class="meno">NQI</span>OOO 프로젝트 프로젝트 프로젝트</p>
+                                    <p class="bold fs16">98조 7225</p>
+                                </span>
+                                <span class="okay"><button class="approved org">승인요청</button></span>
+                            </div>
+                            <div class="bottom">
+                                <span class="people">
+                                    <p>작업자명</p>
+                                </span>
+                                <span>
+                                    <p>2022-06-14 14:00</p>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="top">
+                                <span class="title">
+                                    <p><span class="meno">NQI</span>OOO 프로젝트 프로젝트 프로젝트</p>
+                                    <p class="bold fs16">98조 7225</p>
+                                </span>
+                                <span class="okay"><button class="approved org">승인요청</button></span>
+                            </div>
+                            <div class="bottom">
+                                <span class="people">
+                                    <p>작업자명</p>
+                                </span>
+                                <span>
+                                    <p>2022-06-14 14:00</p>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+                <section class="tab_content" id="content3">
+                    <ul class="list-area">
+                        <li>
+                            <div class="top">
+                                <span class="title">
+                                    <p><span class="meno">화웨이</span>OOO 프로젝트</p>
+                                    <p class="bold fs16">98조 7225</p>
+                                </span>
+                                <span><button class="approved blue">승인완료</button></span>
+                            </div>
+                            <div class="bottom">
+                                <span class="people">
+                                    <p>작업자명</p>
+                                    <p>관리자명</p>
+                                </span>
+                                <span>
+                                    <p>2022-06-14 14:00</p>
+                                    <p>2022-06-14 14:00</p>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="top">
+                                <span class="title">
+                                    <p><span class="meno">화웨이</span>OOO 프로젝트</p>
+                                    <p class="bold fs16">98조 7225</p>
+                                </span>
+                                <span><button class="approved blue">승인완료</button></span>
+                            </div>
+                            <div class="bottom">
+                                <span class="people">
+                                    <p>작업자명</p>
+                                    <p>관리자명</p>
+                                </span>
+                                <span>
+                                    <p>2022-06-14 14:00</p>
+                                    <p>2022-06-14 14:00</p>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="top">
+                                <span class="title">
+                                    <p><span class="meno">화웨이</span>OOO 프로젝트</p>
+                                    <p class="bold fs16">98조 7225</p>
+                                </span>
+                                <span><button class="approved blue">승인완료</button></span>
+                            </div>
+                            <div class="bottom">
+                                <span class="people">
+                                    <p>작업자명</p>
+                                    <p>관리자명</p>
+                                </span>
+                                <span>
+                                    <p>2022-06-14 14:00</p>
+                                    <p>2022-06-14 14:00</p>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+                <section class="tab_content" id="content4">
+                    <ul class="list-area">
+                        <li>
+                            <div class="top">
+                                <span class="title">
+                                    <p><span class="meno">NQI</span>OOO 프로젝트</p>
+                                    <p class="bold fs16">98조 7225</p>
+                                </span>
+                                <span><button class="approved red">승인반려</button></span>
+                            </div>
+                            <div class="bottom">
+                                <span class="people">
+                                    <p>작업자명</p>
+                                    <p>관리자명</p>
+                                </span>
+                                <span>
+                                    <p>2022-06-14 14:00</p>
+                                    <p>2022-06-14 14:00</p>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="top">
+                                <span class="title">
+                                    <p><span class="meno">NQI</span>OOO 프로젝트</p>
+                                    <p class="bold fs16">98조 7225</p>
+                                </span>
+                                <span><button class="approved red">승인반려</button></span>
+                            </div>
+                            <div class="bottom">
+                                <span class="people">
+                                    <p>작업자명</p>
+                                    <p>관리자명</p>
+                                </span>
+                                <span>
+                                    <p>2022-06-14 14:00</p>
+                                    <p>2022-06-14 14:00</p>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="top">
+                                <span class="title">
+                                    <p><span class="meno">NQI</span>OOO 프로젝트</p>
+                                    <p class="bold fs16">98조 7225</p>
+                                </span>
+                                <span><button class="approved red">승인반려</button></span>
+                            </div>
+                            <div class="bottom">
+                                <span class="people">
+                                    <p>작업자명</p>
+                                    <p>관리자명</p>
+                                </span>
+                                <span>
+                                    <p>2022-06-14 14:00</p>
+                                    <p>2022-06-14 14:00</p>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </div>     -->
+        </div>
+        <!--//contents-->
+    </div>
+</div>
+</body>
+</html>

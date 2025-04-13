@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no user-scalable=yes">
+<meta name="robots" content="noindex">
+<title>Safety3650 - PoC</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="./css/default.css">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/form.css">
+<link rel="stylesheet" href="./css/popup.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/Safety3650-m.css">
+<link rel="stylesheet" href="./css/fontawesome6-all.min.css">
+
+<!-- JS -->
+<script src="./js/jquery-3.6.0.min.js"></script>
+<script src="./js/comm.js"></script>
+
+</head>
+<body>
+<div class="page-wrapper">
+    <!--header-->
+    <header class="header">
+        <a href="#none"><i class="fa-solid fa-arrow-left fa-lg"></i></a>
+        <div class="title">안전점검 체크리스트</div>
+    </header>
+    <!--//header-->
+
+    <!--container-->
+    <div class="container">
+        <div class="contents">
+            <h4 class="mb-12">점검진행</h4>
+            <div class="progress">
+                <div class="progress-bar" style="width:50%" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="50% Complete">
+                    <span class="visually-hidden">50% Complete</span>
+                </div>
+            </div>
+
+            <h3 class="ss-title bor">공통</h3>
+            <ul class="check-list">
+                <li>
+                    <span class="question">공사안전표지판/라바콘 설치여부(차량이동 위험, 외부인 접근 제한조치 등)</span>
+                    <div class="view-q mt_2">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra1" checked>
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                            <!-- <input type="radio" id="ex_rd1" name="ra1" checked>
+                            <label for="ex_rd1" class="pl_3">
+                                양호
+                            </label> -->
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra1">
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                            <!-- <input type="radio" id="ex_rd2" name="ra1">
+                            <label for="ex_rd2" class="pl_3">불량</label> -->
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra1">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                            <!-- <input type="radio" id="ex_rd3" name="ra1">
+                            <label for="ex_rd3" class="pl_3">해당없음</label> -->
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="question">부상방지를 위한 긴장완화 및 스트레칭 시행여부</span>
+                    <div class="view-q mt_2">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra2">
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra2">
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra2">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="question">2인1조 작업 등 작업규모 대비 인원 적정여부</span>
+                    <div class="view-q mt_2">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra3">
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra3">
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra3">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="question">안전보호구 상태(노후상태, 고장여부, 개조 등)</span>
+                    <div class="view-q mt_2">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra4">
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra4">
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra4">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="question">작업 전 옥상, 옥탑, 통신주 등 주변 위험국소 확인 및 조치 여부 (미끄러짐, 넘어짐, 전기시설, 벌집, 옥상배수, 인화물질 등 위험여부)</span>
+                    <div class="view-q mt_2">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra5">
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra5">
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra5">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="question">작업에 맞는 적정 보호구의 정상 착용여부 (조임, 체결상태 등)</span>
+                    <div class="view-q mt_2">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra6">
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra6">
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra6">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="question">작업완료 시 현장 정리정돈을 하여야 하는지 여부</span>
+                    <div class="view-q mt_2">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra7">
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra7">
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra7">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title bor">공통(차량)</h3>
+            <ul class="check-list">
+                <li>
+                    <span class="question">차량운행 전 나의 몸상태(음주운전 상태, 피곤한 상태, 화가난 상태 등)</span>
+                    <div class="view-q mt_2">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra8">
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra8">
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra8">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="question">차량운행 전 차량상태 및 안전사항 확인 하는지 여부 (타이어상태, 동작/알람 상태, 안전벨트 착용, 블랙박스 동작, 운전보험연령 확인 등)</span>
+                    <div class="view-q mt_2">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra9">
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra9">
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra9">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="question">안전운전 방법 숙지여부(과속, 휴대폰조작, 법규위반, 졸음운전, 양보운전, 서행운전 등)</span>
+                    <div class="view-q mt_2">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra10">
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra10">
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra10">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title bor">고소작업</h3>
+            <ul class="check-list">
+                <li>
+                    <span class="question">고소작업 시 추락 및 감전 등의 위험요인 여부 </span>
+                    <div class="view-q mt_2">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra11">
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra11">
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra11">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="question">도로 인접한 통신주 작업 시 신호수 배치 여부</span>
+                    <div class="view-q mt_2">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra12">
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra12">
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra12">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="question">등주 전 통신주의 안전상태 확인여부(기울어짐, 균열, 스템볼트 이탈 등)</span>
+                    <div class="view-q mt_2">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra13">
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra13">
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra13">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="question">장비 설치 위치 적정성여부(3단 높이, 인입전원 근접여부 등)</span>
+                    <div class="view-q mt_2">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra14">
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra14">
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra14">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="question">통신주 및 작업장소 작업발판 설치여부</span>
+                    <div class="view-q mt_2">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra15">
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra15">
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra15">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title bor">사다리작업</h3>
+            <ul class="check-list">
+                <li>
+                    <span class="question">고정식 사다리 설치 상태 적정여부(고정점 견고, 상부 60cm 이상 연장, 7m 이상 시 등받이 울 설치여부)</span>
+                    <div class="view-q mt_2">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra16">
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra16">
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra16">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="question">공구 또는 물건 등을 손에 직접들고 사다리 등주여부</span>
+                    <div class="view-q mt_2">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra17">
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra17">
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra17">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="question">이동식 사다리 설치 적정여부(설치내각 75도 이상, 최상부 60cm 이상 거치)</span>
+                    <div class="view-q mt_2">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra18">
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra18">
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra18">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="question">이동식 사다리 사용 시 다른 작업자가 잡아 주는지 여부</span>
+                    <div class="view-q mt_2">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra19">
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra19">
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra19">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="question">이동식 사다리 상태(고무패킹, 아웃트리거, 균열, 찌그러짐, 노후화 등)</span>
+                    <div class="view-q mt_2">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra20">
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra20">
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra20">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="question">이동식 사다리 중 대나무 사다리 등 비규격 사다리 사용여부</span>
+                    <div class="view-q mt_2">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra21">
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra21">
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra21">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="question">이동식 사다리 최상부 발판에서 작업시행 여부</span>
+                    <div class="view-q mt_2">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra22">
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra22">
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra22">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title bor">전기작업</h3>
+            <ul class="check-list">
+                <li>
+                    <span class="question">전기작업 시 안전작업 절차 준수여부(1차측 차단기 OFF등)</span>
+                    <div class="view-q mt_2">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra23">
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra23">
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra23">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="question">작업자가 젖은 상태로 충전부를 직접 조작하는지 여부</span>
+                    <div class="view-q mt_2">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra24">
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra24">
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra24">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="question">전원선 노후화 및 단자 조임 상태</span>
+                    <div class="view-q mt_2">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra25">
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra25">
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra25">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="question">발전기 투입 시 안전작업 절차 여부</span>
+                    <div class="view-q mt_2">
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra26">
+                                <i></i><span class="pl_3 fs14">양호</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra26">
+                                <i></i><span class="pl_3 fs14">불량</span>
+                            </label>
+                        </div>
+                        <div class="form-radio">
+                            <label class="styled">
+                                <input type="radio" name="ra26">
+                                <i></i><span class="pl_3 fs14">해당없음</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="ss-title mt_2 fs14">문제점 및 요청사항</h3>
+            <label for="Problems_and_requests" class="visually-hidden">문제점 및 요청사항</label>
+            <textarea class="textarea" id="Problems_and_requests" placeholder="문제점 및 요청사항을 입력해주세요"></textarea>
+
+            <h3 class="ss-title mt_2_4 fs14">사진 첨부하기</h3>
+            <div class="row d-block">
+                <div class="col-sm-10">
+                    <div class="mem_cert_wrap_v2">
+                        <ul>
+                            <li style="width:49%;">
+                                <div class="filebox">
+                                    <input type="file" id="ex_camera">
+                                    <label for="ex_camera"><img src="./images/ic_camera.png" alt="사진촬영 아이콘">사진촬영</label>
+                                </div>
+                                <!-- <button><figure class="fig1"><img src="./images/ic_camera.png" alt="사진촬영 아이콘"> </figure><p>사진촬영</p></button> -->
+                            </li>
+                            <li class="li">&nbsp;</li>
+                            <li style="width:49%;">
+                                <div class="filebox">
+                                    <input type="file" id="ex_photo">
+                                    <label for="ex_photo"><img src="./images/ic_photo.png" alt="사진보관함 아이콘">사진 보관함</label>
+                                </div>
+                                <!-- <button><figure class="fig2"><img src="./images/ic_photo.png" alt="사진보관함 아이콘"></figure><p>사진 보관함</p></button> -->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <ul class="grid">
+                <li>
+                    <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                    <div class="attach">
+                        <img src="./images/ic_noimage.png" alt="이미지 없음">
+                    </div>
+                </li>
+                <li>
+                    <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                    <div class="attach">
+                        <img src="./images/ic_noimage.png" alt="이미지 없음">
+                    </div>
+                </li>
+                <li>
+                    <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                    <div class="attach">
+                        <img src="./images/ic_noimage.png" alt="이미지 없음">
+                    </div>
+                </li>
+                <li>
+                    <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                    <div class="attach">
+                        <img src="./images/ic_noimage.png" alt="이미지 없음">
+                    </div>
+                </li>
+                <li>
+                    <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                    <div class="attach">
+                        <img src="./images/ic_noimage.png" alt="이미지 없음">
+                    </div>
+                </li>
+                <li>
+                    <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                    <div class="attach">
+                        <img src="./images/ic_noimage.png" alt="이미지 없음">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--//container-->
+    <footer>
+        <div class="btn-area btn-2">
+            <button class="btn btn-outline-primary btn-mm">임시저장</button>
+            <button class="btn btn-primary btn-mm">완료</button>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

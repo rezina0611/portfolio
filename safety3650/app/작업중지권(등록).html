@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no user-scalable=yes">
+<meta name="robots" content="noindex">
+<title>Safety3650</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="./css/default.css">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/form.css">
+<link rel="stylesheet" href="./css/popup.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/Safety3650-m.css">
+<link rel="stylesheet" href="./css/fontawesome6-all.min.css">
+
+<!-- JS -->
+<script src="./js/jquery-3.6.0.min.js"></script>
+<script src="./js/comm.js"></script>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+    <!--header-->
+    <header class="header">
+        <a href="#none"><i class="fa-solid fa-arrow-left fa-lg"></i></a>
+        <div class="title">작업중지권</div>
+    </header>
+    <!--//header-->
+
+    <!--container-->
+    <div class="container">
+        <div class="contents">
+
+            <!--bbs-wrap-->
+            <div class="bbs-wrap mt_0">
+                <div class="row mb_2 d-block">
+                    <label for="registrant" class="col-form-label d-block w100p mb_0_5">등록자</label>
+                    <input type="text" name="registrant" id="registrant" class="form-control disabled" value="홍길동" disabled>
+                </div>
+                <div class="row mb_2 d-block">
+                    <label for="project" class="col-form-label d-block w100p mb_0_5">프로젝트</label>
+                    <input type="text" name="project" id="project" class="form-control disabled" value="OOOOOOO 프로젝트" disabled>
+                </div>
+                <div class="row mb_2 d-block">
+                    <div class="col-form-label d-block w100p mb_0_5">위치</div>
+
+                    <textarea class="textarea" name="description" id="description" rows="5" cols="40" placeholder="주소를 입력해주세요.&#13;&#10;ex)서울시 성동구 연무장5가 7길."></textarea>
+                </div>
+
+                <div class="col-form-label d-block w100p mb_0_5">등록유형&nbsp;<img src="./images/ic_notice_info.png" class="e-mark"></div>
+                <div class="row mb_2 d-block">
+                    <select class="form-select" id="type">
+                        <option value="" selected>선택</option>
+                        <option value="type01">재난,재해</option>
+                        <option value="type02">기상상태</option>
+                        <option value="type03">안전사고</option>
+                    </select>
+                </div>
+
+                <div class="row mb_2 d-block">
+                <label for="influence" class="col-form-label d-block w100p mb_0_5">영향도</label>
+                    <select class="form-select" id="influence">
+                        <option value="" value="null">선택</option>
+                        <option value="">운용조</option>
+                        <option value="">부서</option>
+                        <option value="">본부</option>
+                        <option value="">본사</option>
+                    </select>
+                </div>
+               
+                <div class="row mb_2 d-block">
+                    <div class="col-form-label d-block w100p mb_0_5">사진 첨부하기</div>
+                    <div class="mem_cert_wrap_v2">
+                        <ul>
+                            <li style="width:49%;">
+                                <div class="filebox">
+                                    <input type="file" id="ex_camera">
+                                    <label for="ex_camera"><img src="./images/ic_camera.png" alt="사진촬영 아이콘">사진촬영</label>
+                                </div>
+                            </li>
+                            <li class="li">&nbsp;</li>
+                            <li style="width:49%;">
+                                <div class="filebox">
+                                    <input type="file" id="ex_photo">
+                                    <label for="ex_photo"><img src="./images/ic_photo.png" alt="사진보관함 아이콘">사진 보관함</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--사진 최대 9장 등록-->
+                    <ul class="grid">
+                        <li>
+                            <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                            <div class="attach">
+                                <img src="./images/ic_noimage.png" alt="이미지 없음">
+                            </div>
+                        </li>
+                        <li>
+                            <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                            <div class="attach">
+                                <img src="./images/ic_noimage.png" alt="이미지 없음">
+                            </div>
+                        </li>
+                        <li>
+                            <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                            <div class="attach">
+                                <img src="./images/ic_noimage.png" alt="이미지 없음">
+                            </div>
+                        </li>
+                        <li>
+                            <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                            <div class="attach">
+                                <img src="./images/ic_noimage.png" alt="이미지 없음">
+                            </div>
+                        </li>
+                        <li>
+                            <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                            <div class="attach">
+                                <img src="./images/ic_noimage.png" alt="이미지 없음">
+                            </div>
+                        </li>
+                        <li>
+                            <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                            <div class="attach">
+                                <img src="./images/ic_noimage.png" alt="이미지 없음">
+                            </div>
+                        </li>
+                        <li>
+                            <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                            <div class="attach">
+                                <img src="./images/ic_noimage.png" alt="이미지 없음">
+                            </div>
+                        </li>
+                        <li>
+                            <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                            <div class="attach">
+                                <img src="./images/ic_noimage.png" alt="이미지 없음">
+                            </div>
+                        </li>
+                        <li>
+                            <button class="btn-close" title="삭제"><img src="./images/ic_img_delete.png"></button>
+                            <div class="attach">
+                                <img src="./images/ic_noimage.png" alt="이미지 없음">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--//bbs-wrap-->
+        </div>
+    </div>
+    <!--//container-->
+    <footer class="p0">
+        <div class="btn-area d-grid">
+            <button class="btn btn-primary noradius btn-lg">등록</button>
+        </div>
+    </footer>
+</div>
+    
+<!-- <script  src="./js/sidebar.js"></script> -->
+</body>
+</html>

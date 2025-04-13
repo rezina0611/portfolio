@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no user-scalable=yes">
+<meta name="robots" content="noindex">
+<title>Safety3650 - PoC</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="./css/default.css">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/form.css">
+<link rel="stylesheet" href="./css/popup.css">
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/Safety3650-m.css">
+<link rel="stylesheet" href="./css/fontawesome6-all.min.css">
+
+<!-- JS -->
+<script src="./js/jquery-3.6.0.min.js"></script>
+<script src="./js/comm.js"></script>
+</head>
+<body>
+
+<div class="page-wrapper">
+    
+    <!--header-->
+    <header class="header">
+        <a href="#none"><i class="fa-solid fa-arrow-left fa-lg"></i></a>
+        <div class="title">차량 작업 전 점검표</div>
+    </header>
+    <!--//header-->
+
+    <!--container-->
+    <div class="container">
+        <div class="contents">
+            <h4 class="mb-12">점검정보</h4>
+            <div class="progress">
+                <div class="progress-bar" style="width:25%" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" aria-label="25% Complete">
+                    <span class="visually-hidden">25% Complete</span>
+                </div>
+            </div>
+
+            <!--bbs-wrap-->
+            <div class="bbs-wrap">
+                <div class="row mb_2 d-block">
+                    <div class="col-form-label w100p mb_0_5">협력 회사명</div>
+                    <input type="text" name="Department" id="Department" class="form-control" value="">
+                </div>
+
+                <div class="row mb_2 d-block">
+                    <div class="col-form-label w100p mb_0_5">소속부서</div>
+                    <!-- <input type="text" name="Department" id="Department" class="form-control" value="KTMOS북부/강서본부/안양운용팀" disabled> -->
+                    <p class="disabled-text">KTMOS북부/강서본부/안양운용팀</p>
+                </div>
+                <div class="row mb_2 d-block">
+                    <div class="col-form-label w100p mb_0_5">운전자명</div>
+                    <!-- <input type="text" name="place" id="place" class="form-control" value="홍길동" disabled> -->
+                    <p class="disabled-text">홍길동</p>
+                </div>
+
+                <div class="row mb_2 d-block">
+                    <div class="col-form-label w100p mb_0_5">관리자</div>
+                    <input type="text" name="manager" id="manager" class="form-control" value="">
+                </div>
+
+                <div class="row mb_2 d-block">
+                    <div class="col-form-label w100p mb_0_5">차량번호판</div>
+                    <input type="text" name="car_num1" id="car_num1" class="form-control" value="" placeholder="차량번호판를 입력해주세요">
+                </div>
+                <div class="row mb_2 d-block">
+                    <div class="col-form-label w100p mb_0_5">차량모델명</div>
+                    <input type="text" name="model_name" id="model_name" class="form-control" value="" placeholder="차량모델명를 입력해주세요">
+                </div>
+                <div class="row mb_2 d-block">
+                    <div class="col-form-label w100p mb_0_5">차량주행거리</div>
+                    <input type="text" name="vehicle_mileage" id="vehicle_mileage" class="form-control" value="" placeholder="차량주행거리를 입력해주세요">
+                </div>
+                <div class="row mb_2 d-block">
+                    <div class="col-form-label w100p mb_0_5">차량등록증번호</div>
+                    <input type="text" name="Vehicle-registration-number" id="Vehicle-registration-number" class="form-control" value="" placeholder="차량등록증번호를 입력해주세요">
+                </div>
+                <div class="row mb_2 d-block">
+                    <div class="col-form-label w100p mb_0_5">점검일시</div>
+                    <!--<input type="datetime-local" class="datetime" name="Inspection_Date" id="dateTimeLocal" value="2018-06-12T19:30">-->
+					<div class="date">
+						<input type="text" id="dateTimeLocal" class="form-control" value="2022-05-09">
+						<i class="calendar"></i>
+					</div>
+                </div>
+                
+                <div class="row mb_2 d-block">
+                    <div class="col-form-label w100p mb_0_5">점검정보</div>
+                    <textarea class="textarea" id="Inspection-info" rows="5" cols="40" placeholder="최대 100자까지 입력해주세요"></textarea>
+                </div>
+            </div>
+            <!--//bbs-wrap-->
+        </div>
+    </div>
+    <!--//container-->
+    <footer class="p0">
+        <div class="btn-area d-grid">
+            <button class="btn noradius btn-primary btn-lg">다음</button>
+        </div>
+    </footer>
+</div>
+    
+<!-- <script  src="./js/sidebar.js"></script> -->
+</body>
+</html>
