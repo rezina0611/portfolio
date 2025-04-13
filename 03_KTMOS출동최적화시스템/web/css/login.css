@@ -1,0 +1,176 @@
+@charset "UTF-8";
+
+/* ----- LOGIN ----- */
+.login-wrap{
+    position: relative;
+    background: #F2F3F3;
+    background: url(../images/bg@2x.png) no-repeat center bottom / contain;
+}
+.login-wrap .login-footer {
+    background: #E6E6E6;
+    height: 4rem;
+    text-align: center;
+    padding: 1.1rem 0;
+}
+.login-wrap .login-footer > ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+.login-wrap .login-footer > ul > li {
+    text-align: center;
+    /* padding: 0 1.5rem; */
+}
+.login-wrap .login-footer > ul > li > a {
+    position: relative;
+    font-size: 1.2rem;
+    color: #AAAAAA;
+    letter-spacing: -0.24px;
+}
+.login-wrap .login-footer > ul > li > a::before {
+    content: "|";
+    color: #707070;
+    opacity: 30%;
+    padding: 0 12px;
+}
+.login-wrap .login-footer > ul > li > a.last::before{
+    content: "";
+}
+
+
+.form-signin {
+    max-width: 440px;
+    height: calc(100vh - 40px);
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.form-signin .login-area{
+    padding: 4rem;
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.16);
+    margin-top: -10rem;
+}
+.form-signin .login-area h2{
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #222;
+}
+.form-signin .login-area h2 > img{
+    width: 284px;
+    height: 3.6rem;
+}
+.form-signin .login-area .input-group {
+    width: 100%;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+.form-signin .login-area input[type=submit]{
+    height: 4.8rem;
+}
+.form-signin .login-area p{
+    color: #6F6F6F;
+    letter-spacing: -0.24px;
+    font: normal normal normal 12px/20px Noto Sans CJK KR;
+}
+.num_wrap .input_row,
+.id_pw_wrap .input_row {
+    display: flex;
+    align-items: center;
+    table-layout:fixed;
+    width: 100%;
+    padding: .3rem .5rem .3rem;
+    box-sizing:border-box;
+    margin-bottom: .5rem;
+}
+.input_row {
+    position: relative;
+    display: block;
+    height: 100%;
+    border: 1px solid #dadada;
+    padding: 1.6rem 1.8rem 1.5rem;
+    border-radius: .4rem;
+    box-sizing: border-box;
+    text-align: left;
+}
+.num_wrap .input_row .icon_cell,
+.id_pw_wrap .input_row .icon_cell {
+    display:table-cell;
+    width: 40px; height: 40px;
+    vertical-align:middle;
+    background: rgba(162, 154, 154, .12);
+    border-radius: .4rem;
+    margin-right: .5rem;
+}
+.num_wrap .input_row .icon_cell .icon_num,
+.id_pw_wrap .input_row .icon_cell .icon_id,
+.id_pw_wrap .input_row .icon_cell .icon_pw {
+    position:absolute;
+    top: 37%;
+    left: 1rem;
+    margin-top: -8px;
+}
+.id_pw_wrap .input_row .icon_cell .icon_id{
+    background: url(../images/ico_user@2x.png) no-repeat;
+    background-size: contain;
+    width: 2.8rem; height: 2.8rem;
+    opacity: 70%;
+}
+.id_pw_wrap .input_row .icon_cell .icon_id > img{
+    width: 2.8rem; height: 2.8rem;
+}
+.id_pw_wrap .input_row .icon_cell .icon_pw{
+    background: url(../images/ico_password@2x.png) no-repeat;
+    background-size: contain;
+    width: 2.8rem; height: 2.8rem;
+    opacity: 70%;
+}
+.num_wrap .input_row .icon_cell .icon_num{
+    background: url(../images/ico_verify@2x.png) no-repeat;
+    background-size: contain;
+    width: 2.8rem; height: 2.8rem;
+    opacity: 70%;
+}
+
+.num_wrap .input_row .input_text,
+.id_pw_wrap .input_row .input_text {
+    display:table-cell;
+}
+.input_text {
+    position:relative;
+    display:block;
+    /* width: 100%; */
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: -.5px;
+    color:#222;
+    box-sizing:border-box;
+    z-index: 4
+}
+.num_wrap .input_row .btn{
+    min-width: 8.8rem;
+    min-height: 3.6rem;
+    border: 1px solid #B1B1B1;
+    border-radius: 2px;
+    background: #fff;
+    font-size: 1.3rem;
+    color: #6F6F6F;
+    letter-spacing: -0.5px;
+    padding: 0.375rem 0.5rem;
+}
+.num_wrap .input_row .number{
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-right: 1rem;
+    color: #D9000D;
+}
