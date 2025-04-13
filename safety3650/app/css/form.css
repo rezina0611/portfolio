@@ -1,0 +1,753 @@
+@charset "utf-8";
+
+button, 
+input[type="submit"],
+button[type="button"]{cursor:pointer;}
+button{
+    /*color:var(--body-color);*/ /*#2f3339*/
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: auto;
+    margin: 0; padding:0;
+    line-height:1;
+    border: none;
+    background-color:transparent;
+}
+
+textarea, input{font-family: 'Noto Sans KR', sans-serif;}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color:var(--gray-light); /*#adadad;*/ 
+    opacity: 1 !important;
+    font-size:1.4rem;
+}
+input:-moz-placeholder,
+textarea::-moz-placeholder {
+    color:var(--gray-light); /*#adadad;*/ 
+    font-size:1.4rem;
+}
+/* IE 10 ~ */
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder{
+    color:var(--gray-light); /*#adadad;*//*IE10+*/
+    font-size:1.4rem;
+}
+
+input:focus, select:focus, option:focus, textarea:focus, button:focus{
+	outline: none;
+}
+
+/*div 태그를 input, textarea처럼 쓸수 있을때
+https://honeystorage.tistory.com/274
+*/
+[placeholder]:empty:before {
+  display: block;
+  content: attr(placeholder);
+  color: var(--gray-light); /*#adadad;*/
+}
+
+
+input[type="text"]:disabled, 
+input[type="number"]:disabled,
+textarea:disabled {
+  background: #f9f9f9;/*#f9f9f9;*/
+  color:var(--gray-light); /*#adadad;*/
+  font-size:1.4rem;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus{
+    border: 1px solid var(--primary);
+}
+
+input[type="text"].hover{border:2px solid var(--primary); /*#468ccf*/}
+input[type="text"].error{
+    border:1px solid var(--error); /*#ec2028*/
+    color:var(--error); /*#ec2028*/
+}
+/*ie10 이상에서 input textbox에 포커스시 생기는 삭제(x) 버튼 숨기기*/
+input[type=text]::-ms-clear{
+    display: none;
+}
+/*input, select 태그에 하이라이트를 제거*/
+input:focus,
+select:focus{outline:none;}
+select:active, select:hover {
+  outline: none;
+}
+select[disabled]{
+    pointer-events: none; 
+    user-select: none;  
+    background-color: #f9f9f9; /*#f9f9f9;*/
+    background-image: url(../images/ico_sort.png);
+    font-size: 1.4rem;
+}
+
+select{
+    border:0; 
+    background:transparent;
+    cursor: pointer;
+}
+/*x버튼 없애기*/
+/* IE의 경우 */
+input::-ms-clear,
+input::-ms-reveal{
+    display:none;
+}
+/* 크롬의 경우 */
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration{
+    display:none;
+}
+
+/*하이라이트 없애기*/
+*{-webkit-tap-highlight-color: transparent !important;} 
+
+
+/*input 입력폼의 자동완성 백그라운드 제거 방법*/
+/* Change the color to your own background color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+transition: background-color 5000s;
+/*-webkit-text-fill-color: #fff !important;*/
+}
+
+input:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+
+input[type=text], 
+input[type=password] {
+    border:2px solid var(--border-box-shadow); /*#000 8%;*/
+    border-radius: 0.4rem;
+    width: 100%;
+    padding: 1.2rem 1rem;
+    z-index:100;
+    /* font-size:1.6rem; */
+    background-color:var(--white);
+}
+input[type=text]:focus,
+input[type=text]:visited,
+input[type=text]:active{
+    position:relative;
+    border:2px solid var(--primary);
+    box-shadow : 0 2px 8px rgba(0,0,0,.08);
+}
+input[type=text]:focus + label,
+input[type=text]:visited + label,
+input[type=text]:active + label{
+    display:block;
+}
+
+input[type=password]:focus + label,
+input[type=password]:visited + label,
+input[type=password]:active + label{
+    display:block;
+}
+
+input[type=password]:focus,
+input[type=password]:visited,
+input[type=password]:active {
+    border:2px solid var(--primary);
+}
+
+
+/*input type="checkbox", input type="radio"*/
+.del-check, .checks, .checks2, .all-check,
+.form-radio{position:relative;margin:0;}
+
+input[type="checkbox"],
+input[type="radio"]{
+/* 실제 체크박스는 화면에서 숨김 */ 
+    position: absolute; 
+    width: 1px; height: 1px; 
+    padding: 0; margin: -1px; 
+    overflow: hidden; 
+    clip:rect(0,0,0,0); 
+    border: 0;
+} 
+input[type="checkbox"] + label:before{
+    content: ' ';
+    position:absolute; 
+    /*left:0; top:-3px;*/
+    width:24px; height:24px; 
+    /*line-height:24px; */
+    text-align: center; 
+    background:url(../images/checkbox.png) 0 0 no-repeat;
+}
+
+input[type="checkbox"] + label{
+    display: inline-block; 
+    position: relative; 
+    cursor: pointer; 
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none;
+    /*padding-left:25px;*/
+}
+input[type="checkbox"]:checked + label:before{
+    background: url(../images/checkbox_checked.png);
+    background-position:0 0;
+    background-repeat: no-repeat;
+}
+
+input[type="checkbox"]:disabled + label:before{
+    background:url(../images/checkbox_disabled.png);
+    background-position:0 0;
+    background-repeat: no-repeat;
+}
+input[type="checkbox"].checkbox_disabled + label:before{
+    background:url(../images/checkbox_disabled_checked.png);
+    background-position:0 0;
+    background-repeat: no-repeat;
+}
+.all-check input[type="checkbox"] + label:before{left:0; top:-5px}
+.checks input[type="checkbox"] + label:before{
+    left:0; top:-3px;
+}
+.checks2 input[type="checkbox"] + label:before{
+    left:0; top:-18px;
+}
+.del-check input[type="checkbox"] + label{text-indent:-99999px;}
+.del-check input[type="checkbox"] + label:before{
+    left:0; top:1px;
+}
+
+label.styled {
+    background: transparent !important;
+    border: none !important;
+    position: relative;
+    font-size:1.4rem;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+label.styled input[type=checkbox],
+label.styled input[type=radio] {
+  position: absolute;
+  opacity: 0.01;
+  cursor: pointer;
+}
+
+label.styled input[type=radio] + i:after,
+label.styled input[type=checkbox] + i:after {
+    display: none;
+}
+
+label.styled input[type=radio] + i:before,
+label.styled input[type=radio] + i:after,
+label.styled input[type=checkbox] + i:before,
+label.styled input[type=checkbox] + i:after {
+  position: relative;
+  cursor: pointer;
+}
+
+label.styled input[type=checkbox] + i:before{
+    content: "";
+    position:absolute; 
+    top:-2px; left:0;
+    width:24px;  height:24px;
+    background:url(../images/checkbox_defalut.png);
+    background-position:0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 999;
+}
+label.styled input[type=checkbox]:checked + i:before {
+    content: "";
+    background: url(../images/checkbox_checked.png);
+    background-position:0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+label.styled input[type=checkbox]:disabled + i:before,
+label.styled input[type=checkbox][disabled] + i:before{
+  cursor: not-allowed;
+}
+label.styled input[type=checkbox]:disabled + i:before,
+label.styled input[type=checkbox][disabled] + i:before {
+  content: "";
+  background: url(../images/checkbox_disabled.png);
+  background-position:0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+label.styled input[type=checkbox]:checked:disabled + i:before{
+  content: "";
+  background: url(../images/checkbox_disabled_checked.png);
+  background-position:0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+label.styled input[type=radio]:disabled + i:before,
+label.styled input[type=radio][disabled] + i:before{
+  cursor: not-allowed;
+}
+label.styled input[type=radio]:disabled + i:before,
+label.styled input[type=radio][disabled] + i:before {
+  content: "";
+  position:absolute; 
+  top:1px !important; left:0;
+  background:#dedede;
+  border-radius:50%;
+  width:20px !important; height:20px !important;
+}
+label.styled input[type=radio]:checked:disabled + i:before{
+  content: "";
+  background: url(../images/radio_on_light_disabled.png);
+  background-position:0 0;
+  background-repeat: no-repeat;
+  width:24px !important; height:24px !important;
+  position:absolute; top:-2px !important;
+}
+
+
+label.styled input[type=radio] + i:before {
+    content: "";
+    position:absolute; 
+    top:-1px; left:0;
+    width:24px;  height:24px;
+    background:url(../images/radio_off_light.png);
+    background-position:0 0;
+    background-repeat: no-repeat;
+}
+label.styled input[type=radio]:checked + i:before {
+    background: url(../images/radio_on_light.png);
+    background-position:0 0;
+    background-repeat: no-repeat;
+    content: "";
+}
+
+label.styled2{
+    position: relative;
+}
+label.styled2 input[type=radio] + i:before
+ {
+    content: "";
+    position:absolute; width:24px;  height:24px;
+    top:-12px; left:0;
+    background:url(../images/radio_off_light.png);
+    background-position:0 0;
+    background-repeat: no-repeat;
+}
+label.styled2 input[type=radio]:checked + i:before {
+    background: url(../images/radio_on_light.png);
+    background-position:0 0;
+    background-repeat: no-repeat;
+}
+
+label.styled2 input[type=checkbox] + i::before{
+    content: "";
+    position:absolute; width:24px;  height:24px;
+    top:-10px; left:0;
+    background:url(../images/checkbox.png);
+    background-position:0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+label.styled2 input[type=checkbox]:checked + i::before{
+    content: "";
+    position:absolute; width:24px;  height:24px;
+    top:-10px; left:0;
+    background:url(../images/checkbox_checked.png);
+    background-position:0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+/*위험성평가조회,상세*/
+.form-check{position: relative;}
+.form-check input[type="checkbox"] + label{
+    display:inline-block;
+    padding: 2rem 4.5rem 2rem 2rem;
+    position: relative;
+    width: 100%;
+    text-align: left;
+    cursor:pointer;
+}
+
+
+.form-check input[type="checkbox"] + label:before{
+    content: '\f107';
+    font-family:"Font Awesome 6 pro";
+    font-weight:500;
+    color: var(--finished); /*#979797;*/
+    font-size:1.8rem;
+    position:absolute; 
+    top:20px; right:8px; /*15px*/
+    left:inherit;
+    background:none;
+}
+
+.form-check input[type="checkbox"] + label + .data_list {
+    max-height:0;
+    overflow:hidden;
+}
+
+.form-check input[type="checkbox"]:checked + label:before{
+    content: '\f106';
+    font-family:"Font Awesome 6 pro";
+    font-weight:500;
+    color: var(--finished); /*#979797;*/
+    font-size:1.8rem;
+    position:absolute; 
+    top:20px; right:8px;  /*15px*/
+    left:inherit;
+}
+
+.form-check input[type="checkbox"]:checked + label + .data_list {
+    max-height:100%;
+    width: 100%;
+}
+
+
+
+
+.form-check input[type="checkbox"] + label.johoe-view{
+    background:var(--bg-color); /*#f5f5f6;*/
+    border-top: 1px solid var(--border4);
+    margin-top: 2rem;
+    padding: 2rem 3.5rem 2rem 1rem;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.form-check input[type="checkbox"] + label.johoe-view span{
+    width:100%;
+    font-size:1.4rem;
+    line-height:140%;
+}
+.form-check input[type="checkbox"] + label.johoe-view:before{
+    content: '\f107';
+    font-family:"Font Awesome 6 pro";
+    font-weight:500;
+    color: var(--finished); /*#979797;*/
+    font-size:1.8rem;
+    position:absolute; 
+    top:30px; right:8px;
+    left:inherit;
+    background:none;
+}
+.form-check input[type="checkbox"] + label.johoe-view + .danger-area2{
+    max-height:0;
+    transition: all .35s;
+    overflow:hidden;
+}
+.form-check input[type="checkbox"]:checked + label.johoe-view:before{
+    content: '\f106';
+    font-family:"Font Awesome 6 pro";
+    font-weight:500;
+    color: var(--finished); /*#979797;*/
+    font-size:1.8rem;
+    position:absolute; 
+    top:20px; right:15px; 
+    left:inherit;
+}
+.form-check input[type="checkbox"]:checked + label.johoe-view:before{
+    top:30px; right:8px; 
+}
+.form-check input[type="checkbox"]:checked + label.johoe-view + .danger-area2{
+    max-height:100%;
+    width: 100%;
+    overflow-y:auto;
+}
+
+
+/* 활성화 <input> */
+.form-control:focus{
+    border:1px solid var(--primary) !important;
+    box-shadow:none !important;
+}
+select:focus{
+    border:1px solid var(--primary) !important;
+    box-shadow:none !important;
+}
+
+/* 모든 비활성 <input> 선택 */
+input:disabled,
+input[disabled],
+.disabled{
+    background: #f9f9f9 !important;
+    box-shadow: none !important;
+    cursor: not-allowed !important;
+}
+
+select:disabled,
+select[disabled],
+select.disabled{
+    background: #f9f9f9 url(../images/ico_arrow_down.png) no-repeat 99% 50% !important;
+    box-shadow: none !important;
+    cursor: not-allowed !important;
+}
+
+button:disabled{
+    cursor: not-allowed;
+}
+
+
+/*input type="text", input type="passward"*/
+.form-control {
+    display:inline-block;
+    width: 100%;
+    padding: 1rem .8rem;
+    font-weight: 400;
+    color: var(--body-color);/* #2f3339;*/
+    background-color:var(--white);
+    background-clip: padding-box;
+    border: 1px solid var(--border-color) !important; /*#dedede;*/
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius:.4rem;
+    transition: border-color .15s ease-in-out,
+        box-shadow .15s ease-in-out;
+}
+.form-control.h-lg{
+    height:5rem; line-height:5rem;
+}
+
+/*x버튼*/
+#clear {
+    position: absolute;
+    right:1rem; top: 0; bottom: 0;
+    width:24px; height:24px;
+    margin: auto;
+    font-size:1.2rem;
+    cursor: pointer;
+    background:url(../images/ico_close.png) 0 0 no-repeat;
+}
+
+/*select*/
+.form-select {
+    display: block;
+    width: 100%;
+    padding:1rem .8rem;
+    -moz-padding-start: calc(0.75rem - 3px);
+    font-weight: 400;
+    line-height: 1.5;
+    background-color:var(--white);
+    background-image: url(../images/ico_sort.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size:24px 24px;
+    border: 1px solid var(--border-color);
+    border-radius: .4rem;
+    transition: border-color .15s ease-in-out,
+    box-shadow .15s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color:var(--body-color); /*#2f3339;*/
+}
+.select option{
+    padding: 4px;
+    font-size: 14px;
+    background: var(--white);
+    border: 1px solid var(--border-color); 
+}
+
+.select2 {
+    position:relative;
+    display: inline-block;
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: .4rem;
+}
+.select2 .selected {
+    display: flex;
+    justify-content: space-between;
+    padding:1rem .8rem;
+}
+
+.select2 .selected .selected-value {
+    max-width: 90px;
+}
+.select2 .selected .arrow {
+    width:24px;
+    background: url("../images/ico_sort.png") no-repeat 70% 50%;
+    background-size:24px 24px;
+}
+.select2 ul li,
+.select2 .selected .selected-value {
+    white-space: nowrap; /* 줄바꿈 안함 */
+    color: var(--body-color);
+    font-size:1.4rem;
+}
+.select2 ul {
+    width: 100%;
+    border-radius: 0.4rem;
+    display: none; 
+    position: absolute;
+    background: var(--white);
+    cursor: pointer;
+    z-index: 800;
+    top: 41px;
+    border: 1px solid var(--border-color);
+}
+.select2.active ul {
+    display: initial;
+    max-height:150px;
+    overflow-y: auto;
+}
+
+.select2 ul li {
+    padding:1.1rem 1rem;
+    font-size:1.4rem;
+    color: var(--body-color);
+}
+
+
+/*input type="file"*/
+.filebox{
+    position:relative; 
+    display:inline-block; 
+    max-width: 100%;
+    width: 100%;
+}
+.filebox input[type="file"] { 
+    position: absolute; 
+    width: 1px; height: 1px; 
+    padding: 0; margin: -1px; 
+    overflow: hidden; 
+    clip:rect(0,0,0,0); 
+    border: 0;
+}
+.filebox > label {
+    font-size: 1.4rem;
+    width: 100%; height: 25px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    justify-content: center;
+}
+.filebox > label img {
+    margin-right:1.5rem;
+    width:24px; height:24px;
+}
+
+
+/*여러 줄의 긴 문장을 입력*/
+.textarea{
+    width:100%; height:10rem; 
+    padding:1rem; 
+    box-sizing:border-box; 
+    border: 1px solid var(--border-color); /*#dedede*/ 
+    border-radius:.4rem;
+    overflow-y:auto;
+    line-height:1.4;
+    text-align:left;
+}
+.textarea:focus{
+    border: var(--primary) solid 1px;
+}
+
+/*날짜,시간*/
+.datetime{
+    width:100%;
+    position:relative;
+    padding:1rem .8rem;
+    border:1px solid var(--border-color); /*#dedede*/ 
+    border-radius:.4rem;
+    font-size:1.3rem;
+    color: var(--gray-light); /*#adadad;*/
+}
+.datetime:after{
+    position: absolute;
+    top:50%; right:10px;
+    content: '';
+    width: 24px; height:24px;
+    background:url('../images/ic_calendar.png') center center ;
+    background-size: contain;
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+input[type="datetime-local"]::-webkit-clear-button,
+input[type="datetime-local"]::-webkit-inner-spin-button{ 
+    display: none;
+} 
+input[type="datetime-local"]::-webkit-calendar-picker-indicator{ 
+    background: transparent;
+    z-index: 1;
+} 
+
+.ico_delete{
+    position: relative;
+}
+.ico_delete:before{
+    content:'';
+    background:url('../images/ico_delete.png');
+    background-position:0 0;
+    background-repeat:no-repeat;
+    position: absolute;
+    background-size:24px 24px;
+    top: -12px;
+    right: 0;
+    width: 24px;
+    height: 24px;
+}
+
+
+label.styled > .pl_3 {
+   line-height: 1.4;
+}
+
+/*인밸리드*/
+input.invalid {
+    background: white url("../images/ico_close_red.png") no-repeat 100% 50% !important;
+    background-size:20px 20px;
+    border:1px solid var(--error) !important;
+    box-shadow:none;
+}
+
+select.invalid {
+    background: url("../images/ico_close_red.png") no-repeat 100% 50% !important;
+    background-size:20px 20px;
+    border:1px solid var(--error) !important;
+    box-shadow:none;
+}
+
+.bullets label.on {
+    background-color: var(--primary);
+    width: 30px;
+    border-radius: 8px;
+}
+
+
+
+
+/* 날짜표시 input=text */
+.date {
+	position: relative;
+}
+.date .calendar {
+    position: absolute;
+    top: 10px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    background: url(../images/ic_calendar.png) no-repeat 50% 50%;
+    background-size: contain;
+    z-index: 100;
+    cursor: pointer;
+}
+.date > input {
+	font-size: 1.4rem;
+	position: relative;
+}
+
+
+    

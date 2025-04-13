@@ -1,0 +1,125 @@
+@charset "utf-8";
+
+.m-wrap {
+    position: relative;
+    width: 100%;
+	height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.m-wrap .footer{
+    width: 100%;
+    margin-top: auto;
+    text-align: center;
+}
+
+.footer .terms {
+	margin: 2rem 0;
+}
+.footer .terms li{display: inline-flex;}
+.footer .terms li a{
+    position:relative;
+    color:var(--finished); /*#979797*/
+    font-size:1.2rem; 
+    margin:0 1rem;
+}
+.footer .terms li a:before{
+    content: "|";
+    color: var(--bar); /*#e8e8e8*/
+    position:absolute;
+    top:0; right:-12px;
+    opacity:.5;
+    width:1px; height:100%;
+}
+.footer .terms li:last-child a:before {content:"";}
+
+.m-wrap .login-w {
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+.m-wrap .login {
+	position: relative;
+    overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.login .title-area {
+    text-align: center;
+    margin:8rem 0;
+}
+.login .title-area img{
+    width:199px;
+}
+.loginForm {
+    width: 300px;
+}
+.loginForm .area{
+    padding-bottom:10px;
+}
+.loginForm .area label {
+    display: none;
+    text-align: left;
+    position: absolute;
+    top: -12px;
+    left:10px;
+    z-index: 600;
+}
+.loginForm .area i{
+    position: absolute;
+    right:5%;
+    top: 23px;
+    color:var(--gray-darker); /*#68686a;*/
+    z-index: 800;
+}
+.loginForm .area label span{
+    font-size:1.3rem;
+    font-weight:400;
+    color:var(--primary); /*#468ccf*/
+    text-shadow: -1px 0 var(--bg-color), 0 1px var(--bg-color), 
+                 1px 0 var(--bg-color), 0 -1px var(--bg-color);
+    background-color:var(--bg-color);
+}
+.btn-login {
+    display:inline-block;
+    width: 100%;
+    font-size: 1.5rem;
+    position: relative;
+    border-radius:.4rem;
+    font-weight: 700;
+    background:var(--primary);/*#468ccf*/
+    cursor: pointer;
+    margin:24px 0 0;
+    padding:1.8rem 0;
+    text-align:center;
+    color:var(--white); /*#fff*/
+}
+.idpw-save{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:1rem 0;
+}
+
+.info-save {
+    font-size: 1.3rem;
+    align-items: center;
+    margin-top:1.5rem;
+    margin-left:1rem;
+}
+.info-save .keep_text {
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--gray-light); /*#adadad*/
+    padding-left:.5rem;
+}
+
+.loginForm input[type="text"] {
+    text-transform: lowercase;
+}
+
+
