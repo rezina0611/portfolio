@@ -1,0 +1,334 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>일일안전활동보고 등록 2단계</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">    
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/modernizr.custom.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+<body>
+
+<!-- 위험유형/위험요인 추가 -->
+<div class="layer" id="modal-modify" style="z-index: 100;">
+    <header class="m-header">
+        <div class="inner">위험유형/위험요인 추가</div>
+        <button class="no-bg left modal-modify"></button>
+    </header>
+    <div class="contents">
+        <div class="bg-white p-1">
+            <form class="register">
+                <fieldset class="d-block">
+                        <label for="">위험유형<span class="required">*</span></label>
+                        <input class="input-tb" id="" type="text" placeholder="숫자입력" tabindex="1">
+                    </fieldset>
+                <fieldset class="d-block mt-2">
+                    <label for="">위험요인<span class="required">*</span></label>
+                    <textarea id="" name="content" class="textarea" rows="3" placeholder="최대 100자까지 등록할 수 있습니다."></textarea>
+                </fieldset>
+                <fieldset class="d-block mt-2">
+                    <label for="">예방개선대책<span class="required">*</span></label>
+                    <textarea id="" name="content" class="textarea" rows="3" placeholder="최대 100자까지 등록할 수 있습니다."></textarea>
+                </fieldset>
+            </form>
+        </div>
+        
+        <div class="btn-area btn-2">
+            <a class="btn -grey" href="" >취소</a>
+            <a class="btn -primary" href="" >등록</a>
+        </div>
+    </div>
+</div>
+<!--// 위험유형/위험요인 추가 -->
+    
+<!-- 위험유형/요인 선택 -->
+<div class="layer" id="modal-info">
+    <header class="m-header">
+        <div class="inner">위험유형/위험요인 선택</div>
+        <button class="no-bg left trigger-info"></button>
+    </header>
+    <div class="contents">
+        <div class="bg-white p-1">
+            <!-- 위험유형/요인 -->
+            <div class="top btn-area">
+                <div title="left" class="left">
+                    <button class="ico-btn btn-delete"><img src="../../images/icon/ico_trash_grey.png" alt="삭제"></button>
+                </div>
+                <div title="right">
+                    <button class="btn btn-write trigger-modify">직접입력추가</button>
+                </div>
+            </div>
+            <div class="table-wrapper mt-1 mb-6">
+                <details class="dropdown body">
+                    <summary>
+                        <ul class="check-wrapper">
+                            <input type="checkbox">
+                            <li class="title">추락</li>
+                            <li>중계기 주변 발판 사용하여 작업 중 추락방지조치 미흡으로 인한 근로자 추락</li>
+                        </ul>
+                    </summary>
+                    <!-- 숨겨진 영역 -->
+                    <ul>
+                        <table class="table simple">
+                            <colgroup>
+                                <col width="80">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>예방개선대책</th>
+                                    <td>2M 이상  고소작업 시 안전대 부착설비, 근로자 안전대 착용 철저</td>
+                                </tr>
+                                <tr>
+                                    <th>위험성 결정<span class="desc">빈도*강도=수준</span></th>
+                                    <td>2 / 5 / 10</td>
+                                </tr>
+                                <tr>
+                                    <th>평가(종류)</th>
+                                    <td>M</td>
+                                </tr>
+                                <tr>
+                                    <th>조치담당자</th>
+                                    <td>이상화</td>
+                                </tr>
+                                <tr>
+                                    <th>조치확인자</th>
+                                    <td>박대환</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </ul>
+                    <!--// 숨겨진 영역 -->
+                </details>
+                <details class="dropdown body">
+                    <summary>
+                        <ul class="check-wrapper">
+                            <input type="checkbox" checked />
+                            <li class="title">낙하</li>
+                            <li>천공작업 중 스크류 상부의 흙덩어리 낙하위험</li>
+                        </ul>
+                    </summary>
+                    <!-- 숨겨진 영역 -->
+                    <ul>
+                        <table class="table simple">
+                            <colgroup>
+                                <col width="80">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>예방개선대책</th>
+                                    <td>스크류 덮개설치 및 천공사, 털기작업시 근로자 접근금지</td>
+                                </tr>
+                                <tr>
+                                    <th>위험성 결정<span class="desc">빈도*강도=수준</span></th>
+                                    <td>6 / 6 / 18</td>
+                                </tr>
+                                <tr>
+                                    <th>평가(종류)</th>
+                                    <td>M</td>
+                                </tr>
+                                <tr>
+                                    <th>조치담당자</th>
+                                    <td>이상화</td>
+                                </tr>
+                                <tr>
+                                    <th>조치확인자</th>
+                                    <td>임익태</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </ul>
+                    <!--// 숨겨진 영역 -->
+                </details>
+                <details class="dropdown body">
+                    <summary>
+                        <ul class="check-wrapper">
+                            <input type="checkbox">
+                            <li class="title">추락</li>
+                            <li>중계기 주변 발판 사용하여 작업 중 추락방지조치 미흡으로 인한 근로자 추락</li>
+                        </ul>
+                    </summary>
+                    <!-- 숨겨진 영역 -->
+                    <ul>
+                        <table class="table simple">
+                            <colgroup>
+                                <col width="80">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>예방개선대책</th>
+                                    <td>2M 이상  고소작업 시 안전대 부착설비, 근로자 안전대 착용 철저</td>
+                                </tr>
+                                <tr>
+                                    <th>위험성 결정<span class="desc">빈도*강도=수준</span></th>
+                                    <td>2 / 5 / 10</td>
+                                </tr>
+                                <tr>
+                                    <th>평가(종류)</th>
+                                    <td>M</td>
+                                </tr>
+                                <tr>
+                                    <th>조치담당자</th>
+                                    <td>이상화</td>
+                                </tr>
+                                <tr>
+                                    <th>조치확인자</th>
+                                    <td>박대환</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </ul>
+                    <!--// 숨겨진 영역 -->
+                </details>
+                <details class="dropdown body">
+                    <summary>
+                        <ul class="check-wrapper">
+                            <input type="checkbox">
+                            <li class="title">추락</li>
+                            <li>중계기 주변 발판 사용하여 작업 중 추락방지조치 미흡으로 인한 근로자 추락</li>
+                        </ul>
+                    </summary>
+                    <!-- 숨겨진 영역 -->
+                    <ul>
+                        <table class="table simple">
+                            <colgroup>
+                                <col width="80">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>예방개선대책</th>
+                                    <td>2M 이상  고소작업 시 안전대 부착설비, 근로자 안전대 착용 철저</td>
+                                </tr>
+                                <tr>
+                                    <th>위험성 결정<span class="desc">빈도*강도=수준</span></th>
+                                    <td>2 / 5 / 10</td>
+                                </tr>
+                                <tr>
+                                    <th>평가(종류)</th>
+                                    <td>M</td>
+                                </tr>
+                                <tr>
+                                    <th>조치담당자</th>
+                                    <td>이상화</td>
+                                </tr>
+                                <tr>
+                                    <th>조치확인자</th>
+                                    <td>박대환</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </ul>
+                    <!--// 숨겨진 영역 -->
+                </details>
+                <details class="dropdown body">
+                    <summary>
+                        <ul class="check-wrapper">
+                            <input type="checkbox">
+                            <li class="title">추락</li>
+                            <li>중계기 주변 발판 사용하여 작업 중 추락방지조치 미흡으로 인한 근로자 추락</li>
+                        </ul>
+                    </summary>
+                    <!-- 숨겨진 영역 -->
+                    <ul>
+                        <table class="table simple">
+                            <colgroup>
+                                <col width="80">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>예방개선대책</th>
+                                    <td>2M 이상  고소작업 시 안전대 부착설비, 근로자 안전대 착용 철저</td>
+                                </tr>
+                                <tr>
+                                    <th>위험성 결정<span class="desc">빈도*강도=수준</span></th>
+                                    <td>2 / 5 / 10</td>
+                                </tr>
+                                <tr>
+                                    <th>평가(종류)</th>
+                                    <td>M</td>
+                                </tr>
+                                <tr>
+                                    <th>조치담당자</th>
+                                    <td>이상화</td>
+                                </tr>
+                                <tr>
+                                    <th>조치확인자</th>
+                                    <td>박대환</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </ul>
+                    <!--// 숨겨진 영역 -->
+                </details>
+            </div>
+            <!-- 위험유형/요인 -->
+        </div>
+        
+        <div class="btn-area btn-2">
+            <a class="btn -grey" href="" >취소</a>
+            <a class="btn -primary" href="" >등록</a>
+        </div>
+    </div>
+</div>
+<!--// 위험유형/요인 선택 -->
+    
+<div class="page-wrapper d-flex">
+    <main class="main">
+        <!-- 모바일 헤더 -->
+        <header class="m-header">
+            <div class="inner">일일안전활동보고 등록</div>
+            <button class="no-bg left"></button>
+        </header>
+        <!--// 모바일 헤더 -->
+        
+        <!-- 모바일 컨텐츠 -->
+        <div class="contents">
+            <div class="bg-white p-1">
+                <div class="detail-head">
+                    <h2 class="title">2021-00530-K (강원 삼척시) 일일안전활동보고 12.13</h2>
+                </div>
+                <div class="steps-wrapper">
+                    <ul class="steps">
+                        <li class="done"><span class="step">TBM 및 안전교육</span></li>
+                        <li class="done"><span class="step">순회점검</span></li>
+                        <li class="active"><span class="step">위험성평가</span></li>
+                    </ul>
+                </div>
+                <form class="register">
+                    <fieldset class="d-block mt-2">
+                        <label for="">위험유형<span class="required">*</span></label>
+                        <button class="btn block c-blue trigger-info">위험유형/위험요인 선택</button>
+                    </fieldset>
+                    <fieldset class="d-block mt-2">
+                        <label for="">사진<span class="required">*</span></label>
+                        <div class="photo-btn-group">
+                            <button class="camera">사진촬영</button>
+                            <button class="album">사진보관함</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="btn-area btn-2">
+                <a href="" class="btn normal">임시저장</a>
+                <a href="" class="btn -primary">다음</a>
+            </div>
+        </div>
+        <!--// 모바일 컨텐츠 -->
+    </main>
+</div>
+    
+
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+
+</body>
+</html>

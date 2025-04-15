@@ -1,0 +1,475 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>일일안전활동보고 상세</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">    
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/modernizr.custom.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+<body>
+<!--반려사유 팝업-->
+<div class="layer h60" id="modal-register-wf">
+    <header class="m-header">
+        <h2 class="layer-tt">반려사유</h2>
+        <button class="btn btn-close trigger-register-wf"></button>
+    </header>
+    <div class="content pe-1">
+        <textarea id="" name="" class="textarea" rows="15" placeholder="최대 100자 이내"></textarea>
+        <div class="btn-area btn-2">
+            <a href="" class="btn -grey">취소</a>
+            <a href="" class="btn -primary">등록</a>
+        </div>
+    </div>
+    
+</div>
+<!--반려사유 팝업-->
+
+<div class="page-wrapper d-flex">
+    <main class="main">
+        <header class="m-header">
+            <div class="inner">일일안전활동보고 상세</div>
+            <button class="no-bg left"><!--<i class="fa fa-chevron-left"></i>--></button>
+        </header>
+        <div class="contents">
+            <div class="bg-white p-1">
+                <div class="detail-head">
+                    <h2 class="title">은평국사 일일안전활동보고 12.21</h2>
+                </div>
+                <div class="steps-wrapper">
+                    <ul class="steps wide">
+                        <li class="done"><span class="step">고위험작업</span></li>
+                        <li class="done"><span class="step">TBM 및 안전교육</span></li>
+                        <li class="done"><span class="step">건강체크</span></li>
+                        <li class="active"><span class="step">순회점검</span></li>
+                    </ul>
+                </div> 
+                <div class="check-wrapper mt-2 mb-6">
+                    <!--작업자-->
+                    <details class="dropdown body" open>
+                        <summary>
+                            <ul>
+                                <li class="title">작업자</li>
+                            </ul>
+                        </summary>
+                        <div>
+                            <form class="register mt-1 mb-0">
+                                <h3 class="s-title mt-0-6">건강상태 확인</h3>
+                                <div class="radio-list shadow">
+                                    <span class="question">혈압, 체온, 음주여부 및 기타 증상</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-1" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-1" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-1" disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <h3 class="s-title">보호구 착용</h3>
+                                <div class="radio-list shadow">
+                                    <h4 class="ss-tit">[기본] 상시착용</h4>
+                                    <span class="question">안전모/안전조끼/안전화/각반</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-2" disabled> 적합</label>
+                                        <label><input type="radio" name="choice-2" checked disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-2" disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow">
+                                    <h4 class="ss-tit">[상황별] 고소/비계</h4>
+                                    <span class="question">그네식 안전대 (=전체식 안전벨트)</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-3" disabled> 적합</label>
+                                        <label><input type="radio" name="choice-3" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-3" checked disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow">
+                                    <h4 class="ss-tit">[상황별] 야간/밀폐</h4>
+                                    <span class="question">반사조끼, 헤드랜턴</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-4" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-4" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-4" disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow">
+                                    <h4 class="ss-tit">[상황별] 용접</h4>
+                                    <span class="question">보안면, 용접장갑, 용접용 방진마스크</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-5" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-5" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-5" disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow">
+                                    <h4 class="ss-tit">[상황별] 천공/절단</h4>
+                                    <span class="question">보안경, 귀마개, 마진마스크</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-6" disabled> 적합</label>
+                                        <label><input type="radio" name="choice-6" checked disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-6" disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow">
+                                    <h4 class="ss-tit">[상황별] 전기(활선)</h4>
+                                    <span class="question">철연용 고무장갑/고무장화</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-7" disabled> 적합</label>
+                                        <label><input type="radio" name="choice-7" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-7" checked disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow h46">
+                                    <h4 class="ss-tit">비고</h4>
+                                    <span class="question mb-0">손상・파손 보호구 착용금지! 보호구 재고 확보</span>
+                                </div>
+                            </form>
+                        </div>
+                    </details>
+
+                    <!--작업환경-->
+                    <details class="dropdown body">
+                        <summary>
+                            <ul>
+                                <li class="title mb-0">작업환경</li>
+                            </ul>
+                        </summary>
+                        <div>
+                            <h3 class="s-title mt-0-6">사다리</h3>
+                            <form class="register mt-1 mb-0">
+                                <div class="radio-list shadow">
+                                    <span class="question">A형 사다리 사용 * 보호구 재고 확보</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-8" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-8" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-8" disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow">
+                                    <span class="question">2인 1조 작업 * 단독작업금지</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-9" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-9" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-9" disabled> N/A</label>
+                                    </div>
+                                </div>
+                               <div class="radio-list shadow">
+                                    <span class="question">최대 길이 3.5m 이하 사용 
+                                        * 작업 높이 2m 이상 안전대 사용
+                                    </span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-10" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-10" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-10" disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow">
+                                    <span class="question">최상단 작업 금지</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-11" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-11" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-11" disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow">
+                                    <span class="question">아웃트리거(=전도방지대) 정상 설치∙사용</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-12" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-12" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-12" disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow">
+                                    <span class="question">벌어짐 방지 조치</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-13" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-13" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-13" disabled> N/A</label>
+                                    </div>
+                                </div>
+
+                                <h3 class="s-title">고소/비계</h3>
+                                <span class="ex">* 고소 : 작업 높이 2m 이상 <br>
+                                    <span class="ml-0-5">(작업 높이 : 발을 딛는 디딤대의 높이)</span>
+                                </span>
+                                <div class="radio-list shadow">
+                                    <span class="question">안전대 부착 설비 여부 * 수직/수평 구명줄 설치</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-14" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-14" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-14" disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow">
+                                    <span class="question">작업자 고소/비계 작업 시 언존댜 착용 및 체결</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-15" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-15" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-15" disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow">
+                                    <span class="question">비계 작업발판 폭 최소 40cm, 발판 틈 3cm 이하</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-16" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-16" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-16" disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow">
+                                    <span class="question">비계 기둥 간의 적재하중은 400kg 이하</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-17" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-17" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-17" disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow">
+                                    <span class="question">추락방호망 설치</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-18" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-18" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-18" disabled> N/A</label>
+                                    </div>
+                                </div>
+
+                                <h3 class="s-title">건설기계</h3>
+                                <span class="ex">* 크레인/굴삭기/타설/고소작업대</span>
+                                <div class="radio-list shadow">
+                                    <span class="question">작업지휘자(유도자/신호수) 배치</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-19" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-19" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-19" disabled> N/A</label>
+                                    </div>
+                                </div>
+
+                                <h3 class="s-title">차량</h3>
+                                <span class="ex">* 지게차, 트럭 등</span>
+                                <div class="radio-list shadow">
+                                    <span class="question">차량 고임목 설치 * 경사면 평지 등 4개소 모두 설치</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-20" disabled> 적합</label>
+                                        <label><input type="radio" name="choice-20" checked disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-20" disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow">
+                                    <span class="question">주변 경계/차단 시설 설치</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-21" disabled> 적합</label>
+                                        <label><input type="radio" name="choice-21" checked disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-21" disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow">
+                                    <span class="question">도로 점용 작업 시 신호수 배치</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-22" disabled> 적합</label>
+                                        <label><input type="radio" name="choice-22" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-22" checked disabled> N/A</label>
+                                    </div>
+                                </div>
+
+                                <h3 class="s-title">개구부</h3>
+                                <span class="ex">* 소형 : 1m2 이하<br>* 대형 : 2m2 초과</span>
+                                <div class="radio-list shadow">
+                                    <span class="question">[소형] 크기 작아도 반드시 개구부 덮개 설치</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-23" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-23" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-23" disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow">
+                                    <span class="question">[소형] 덮개 상부판 안전표시 (예 : 개구부주의 / 추락위험) 부착</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-24" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-24" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-24" disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow">
+                                    <span class="question">[대형] 안전난간 및 안전방망 설치치</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-25" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-25" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-25" disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow">
+                                    <span class="question">[대형] 주변 위험 표시 * 어두운 곳에서도 식별 가능</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-26" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-26" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-26" disabled> N/A</label>
+                                    </div>
+                                </div>
+
+                                <h3 class="s-title">밀폐공간/야간</h3>
+                                <span class="ex">* 50w 백열전구 ≒ 약 50룩스<br>
+                                    * 산소 18~23.5%, 탄산가스 1.5%, 일산화탄소 30ppm, 황화수소 10ppm 미만
+                                </span>
+                                <div class="radio-list shadow">
+                                    <span class="question">작업구간 75럭스(Lux) 이상 조도(조명밝기) 확보 *</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-27" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-27" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-27" disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow">
+                                    <span class="question">[밀폐공간] 산소 및 유해가스 측정 * * 환기시설 설치</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-28" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-28" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-28" disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow">
+                                    <span class="question">[밀폐공간] 안전장구(안전대, 구명밧줄 등) 착용</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-29" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-29" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-29" disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow">
+                                    <span class="question">[밀폐공간] 일회용 산소호흡기 비치</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-30" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-30" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-30" disabled> N/A</label>
+                                    </div>
+                                </div>
+
+                                <h3 class="s-title">전기/공구/용접/절단</h3>
+                                <span class="ex">* 전기작업 : 분전반 전암 75볼트 이상 활선작업</span>
+                                <div class="radio-list shadow">
+                                    <span class="question">핸드그라인더/고속절단기 방호 덮개안전커버 부착</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-31" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-31" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-31" disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow">
+                                    <span class="question">누전차단기 부착형 작업전선 사용 * 가정용 콘센트/전선 사용 금지</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-32" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-32" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-32" disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow">
+                                    <span class="question">전기∙기계∙기구로부터 70cm 이상 작업 공간 확보</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-33" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-33" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-33" disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow">
+                                    <span class="question">[용접작업] 주변 가연성 물질 제거 * 소화기 비치</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-35" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-35" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-35" disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow">
+                                    <span class="question">[전기작업] 작업자 절연장갑 및 절연도구 사용</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-36" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-36" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-36" disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow">
+                                    <span class="question">[절단작업] 불티비산방지막 설치 * 소화기 비치</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-37" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-37" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-37" disabled> N/A</label>
+                                    </div>
+                                </div>
+                                <div class="radio-list shadow">
+                                    <span class="question">[절단작업] 톱날접촉예방장치</span>
+                                    <div class="d-flex mb-0">
+                                        <label><input type="radio" name="choice-38" checked disabled> 적합</label>
+                                        <label><input type="radio" name="choice-38" disabled> 부적합</label>
+                                        <label><input type="radio" name="choice-38" disabled> N/A</label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </details>
+                    <details class="dropdown body">
+                        <summary>
+                            <ul>
+                                <li class="title mb-0">점검사진</li>
+                            </ul>
+                        </summary>
+                        <div>
+                            <div class="grid-gallery mt-1">
+                                <div class="grid-wrap">
+                                    <ul class="grid r-2">
+                                        <li class="img-detail">
+                                            <button class="btn-close"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                            <figure>
+                                                <img src="../../images/sample/2.png" alt="img02">
+                                            </figure>
+                                        </li>
+                                        <li class="img-detail">
+                                            <button class="btn-close"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                            <figure>
+                                                <img src="../../images/sample/2.png" alt="img02">
+                                            </figure>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="dropdown body">
+                        <summary>
+                            <ul>
+                                <li class="title mb-0">점검 조치사항</li>
+                            </ul>
+                        </summary>
+                        <div>
+                            <textarea id="" name="content" class="textarea" rows="3" disabled>증상 및 조치 블라블라</textarea>
+                        </div>
+                    </details>
+                    <details class="dropdown body">
+                        <summary>
+                            <ul>
+                                <li class="title mb-0">PM 피드백</li>
+                            </ul>
+                        </summary>
+                        <div>
+                            <!--PM 피드백 글-->
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div class="btn-area btn-2">
+                <a href="" class="btn -grey">닫기</a>
+                <a href="" class="btn normal">회수</a>
+                <a href="" class="btn -red trigger-register-wf">반려</a>
+                <a href="" class="btn -primary">승인</a>
+            </div>
+        </div>
+    </main>
+</div>
+    
+
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+
+</body>
+</html>

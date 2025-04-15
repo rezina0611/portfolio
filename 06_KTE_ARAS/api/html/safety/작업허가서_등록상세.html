@@ -1,0 +1,334 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>작업허가서 등록</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">    
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/modernizr.custom.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+<body>
+    
+<!-- 반려팝업 -->    
+<div class="layer h60" id="layer-st-01">
+    <header class="m-header">
+        <h2 class="layer-tt">반려사유</h2>
+        <button class="btn btn-close st-01"></button>
+    </header>
+    <div class="contents">
+        <div class="bg-white pe-1">
+            <textarea class="textarea m-0" rows="11" placeholder="최대 100자 이내"></textarea>
+        </div>
+        <div class="btn-area btn-2">
+            <a href="" class="btn -grey">취소</a>
+            <a href="" class="btn -primary">등록</a>
+        </div>
+    </div>
+</div>    
+<!--// 반려팝업 -->
+    
+<div class="page-wrapper d-flex">
+    <main class="main">
+        <!-- 모바일 헤더 -->
+        <header class="m-header">
+            <div class="inner">작업허가서 등록</div>
+            <button class="no-bg left"></button>
+        </header>
+        <!--// 모바일 헤더 -->
+        
+        <!-- 모바일 컨텐츠 -->
+        <div class="contents">
+            <div class="bg-white p-1">
+                <form class="register mb-2">
+                    <fieldset class="d-block">
+                        <label for="">프로젝트 <span class="required">*</span></label>
+                        <select class="input-tb">
+                            <option selected="">프로젝트 선택</option>
+                            <option>1</option>
+                            <option>2</option>
+                        </select>
+                    </fieldset>
+                    <fieldset class="d-block mt-2">
+                        <label for="">파트너사 <span class="required">*</span></label>
+                        <select class="input-tb">
+                            <option selected="">파트너사 선택</option>
+                            <option>1</option>
+                            <option>2</option>
+                        </select>
+                    </fieldset>
+                    <fieldset class="d-block mt-2">
+                        <label for="">작업내용 <span class="required">*</span></label>
+                        <select class="input-tb">
+                            <option selected="">작업내용 선택</option>
+                            <option>1</option>
+                            <option>2</option>
+                        </select>
+                    </fieldset>
+                    <fieldset class="d-flex mt-1">
+                        <label for="">작업일자 <span class="required">*</span></label>
+                        <div class="input_date_box">
+                            <input type="date" class="input-tb">
+                        </div>
+                    </fieldset>
+                    <fieldset class="d-flex">
+                        <label for="">직업장소<span class="required">*</span></label>
+                        <input class="input-tb" id="" type="text" placeholder="장소 입력">
+                    </fieldset>
+                    <fieldset class="d-flex">
+                        <label for="">작업시간<span class="required">*</span></label>
+                        <input class="input-tb" id="" type="text" placeholder="작업시간 입력">
+                    </fieldset>
+                    <fieldset class="d-flex">
+                        <label for="">작업인원<span class="required">*</span></label>
+                        <input class="input-tb" id="" type="text" placeholder="인원수 입력">
+                    </fieldset>
+                    <fieldset class="d-flex">
+                        <label for="">작성자<span class="required">*</span></label>
+                        <input class="input-tb" id="" type="text" value="시스템 관리자" disabled>
+                    </fieldset>
+                    
+                    <div class="check-wrapper mt-2 mb-6">
+                        <details class="dropdown body">
+                            <summary>
+                                <ul>
+                                    <li class="title">위험예방 사전조치 요구 항목 점검</li>
+                                </ul>
+                            </summary>
+                            <div>
+                                <h3 class="s-title mt-0-6">일반사항(필수) <span class="required">*</span></h3>
+                                <ul>
+                                    <li class="radio-list shadow">
+                                        <span class="question">개인안전보호구 착용</span>
+                                        <div class="d-flex">
+                                            <label><input type="radio" name="choice-1-1">양호</label>
+                                            <label><input type="radio" name="choice-1-1">불량</label>
+                                            <label><input type="radio" name="choice-1-1">해당없음</label>
+                                        </div>
+                                    </li>
+                                    <li class="radio-list shadow">
+                                        <span class="question">작업구간 구획정리 및 동제</span>
+                                        <div class="d-flex">
+                                            <label><input type="radio" name="choice-1-2">양호</label>
+                                            <label><input type="radio" name="choice-1-2">불량</label>
+                                            <label><input type="radio" name="choice-1-2">해당없음</label>
+                                        </div>
+                                    </li>
+                                    <li class="radio-list shadow">
+                                        <span class="question">안전게시판 설치운영</span>
+                                        <div class="d-flex">
+                                            <label><input type="radio" name="choice-1-3">양호</label>
+                                            <label><input type="radio" name="choice-1-3">불량</label>
+                                            <label><input type="radio" name="choice-1-3">해당없음</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <h3 class="s-title">주요사항(필수) <span class="required">*</span></h3>
+                                <ul>
+                                    <li class="radio-list shadow">
+                                        <!-- <h4 class="ss-tit">[기본] 상시착용</h4> -->
+                                        <span class="question">안전난간대 설치 확인</span>
+                                        <div class="d-flex">
+                                            <label><input type="radio" name="choice-2-1">양호</label>
+                                            <label><input type="radio" name="choice-2-1">불량</label>
+                                            <label><input type="radio" name="choice-2-1">해당없음</label>
+                                        </div>
+                                    </li>
+                                    <li class="radio-list shadow">
+                                        <!-- <h4 class="ss-tit">[기본] 상시착용</h4> -->
+                                        <span class="question">생명줄 설치(안전벨트 부착설비 포함)</span>
+                                        <div class="d-flex">
+                                            <label><input type="radio" name="choice-2-2">양호</label>
+                                            <label><input type="radio" name="choice-2-2">불량</label>
+                                            <label><input type="radio" name="choice-2-2">해당없음</label>
+                                        </div>
+                                    </li>
+                                    <li class="radio-list shadow">
+                                        <!-- <h4 class="ss-tit">[기본] 상시착용</h4> -->
+                                        <span class="question">안전벨트 착용 및 고려 체결 확인</span>
+                                        <div class="d-flex">
+                                            <label><input type="radio" name="choice-2-3">양호</label>
+                                            <label><input type="radio" name="choice-2-3">불량</label>
+                                            <label><input type="radio" name="choice-2-3">해당없음</label>
+                                        </div>
+                                    </li>
+                                    <li class="radio-list shadow">
+                                        <!-- <h4 class="ss-tit">[기본] 상시착용</h4> -->
+                                        <span class="question">추락방지용 방망 설치(필요시)</span>
+                                        <div class="d-flex">
+                                            <label><input type="radio" name="choice-2-4">양호</label>
+                                            <label><input type="radio" name="choice-2-4">불량</label>
+                                            <label><input type="radio" name="choice-2-4">해당없음</label>
+                                        </div>
+                                    </li>
+                                    <li class="radio-list shadow">
+                                        <!-- <h4 class="ss-tit">[기본] 상시착용</h4> -->
+                                        <span class="question">과상승방지봉 적성 설치 여부(4개소)</span>
+                                        <div class="d-flex">
+                                            <label><input type="radio" name="choice-2-5">양호</label>
+                                            <label><input type="radio" name="choice-2-5">불량</label>
+                                            <label><input type="radio" name="choice-2-5">해당없음</label>
+                                        </div>
+                                    </li>
+                                    <li class="radio-list shadow">
+                                        <!-- <h4 class="ss-tit">[기본] 상시착용</h4> -->
+                                        <span class="question">상승시 스위치 작동 여부</span>
+                                        <div class="d-flex">
+                                            <label><input type="radio" name="choice-2-6">양호</label>
+                                            <label><input type="radio" name="choice-2-6">불량</label>
+                                            <label><input type="radio" name="choice-2-6">해당없음</label>
+                                        </div>
+                                    </li>
+                                    <li class="radio-list shadow">
+                                        <!-- <h4 class="ss-tit">[기본] 상시착용</h4> -->
+                                        <span class="question">비상정지 스위치 작동 여부</span>
+                                        <div class="d-flex">
+                                            <label><input type="radio" name="choice-2-7">양호</label>
+                                            <label><input type="radio" name="choice-2-7">불량</label>
+                                            <label><input type="radio" name="choice-2-7">해당없음</label>
+                                        </div>
+                                    </li>
+                                    <li class="radio-list shadow">
+                                        <!-- <h4 class="ss-tit">[기본] 상시착용</h4> -->
+                                        <span class="question">풋 스위치(클러치)안전덮개 설치 여부</span>
+                                        <div class="d-flex">
+                                            <label><input type="radio" name="choice-2-8">양호</label>
+                                            <label><input type="radio" name="choice-2-8">불량</label>
+                                            <label><input type="radio" name="choice-2-8">해당없음</label>
+                                        </div>
+                                    </li>
+                                    <li class="radio-list shadow">
+                                        <!-- <h4 class="ss-tit">[기본] 상시착용</h4> -->
+                                        <span class="question">케이지 내 소화기 배치 여부(화기작업 시)</span>
+                                        <div class="d-flex">
+                                            <label><input type="radio" name="choice-2-9">양호</label>
+                                            <label><input type="radio" name="choice-2-9">불량</label>
+                                            <label><input type="radio" name="choice-2-9">해당없음</label>
+                                        </div>
+                                    </li>
+                                    <li class="radio-list shadow">
+                                        <!-- <h4 class="ss-tit">[기본] 상시착용</h4> -->
+                                        <span class="question">안전검삼 실시 여부 및 필증 부착 여부</span>
+                                        <div class="d-flex">
+                                            <label><input type="radio" name="choice-2-10">양호</label>
+                                            <label><input type="radio" name="choice-2-10">불량</label>
+                                            <label><input type="radio" name="choice-2-10">해당없음</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <h3 class="s-title">추가사항</h3>
+                                <p class="ex">(위 항목 중 불량 체크시 추가대책)</p>
+                                <ul class="list">
+                                    <li class="m-0">
+                                        <textarea name="" class="textarea" rows="3" placeholder="위 항목 중 불량 체크시 추가대책"></textarea>
+                                    </li>
+                                    <li class="m-0">
+                                        <textarea name="" class="textarea" rows="3" placeholder="위 항목 중 불량 체크시 추가대책"></textarea>
+                                    </li>
+                                    <li class="m-0">
+                                        <textarea name="" class="textarea" rows="3" placeholder="위 항목 중 불량 체크시 추가대책"></textarea>
+                                    </li>
+                                </ul>
+                            </div>
+                        </details>
+                        <details class="dropdown body">
+                            <summary>
+                                <ul>
+                                    <li class="title">작업안전 및 작업환경 위험분석</li>
+                                </ul>
+                            </summary>
+                            <div>
+                                <ul>
+                                    <li class="radio-list shadow">
+                                        <span class="question">보호구</span>
+                                        <div class="selct-multi">
+                                            <label><input type="checkbox">안전모</label>
+                                            <label><input type="checkbox">안전대</label>
+                                            <label><input type="checkbox">안전화</label>
+                                            <label><input type="checkbox">보안경</label>
+                                            <label><input type="checkbox">마스크</label>
+                                            <label><input type="checkbox">귀마개</label>
+                                            <label><input type="checkbox">안전장갑</label>
+                                            <label class="etc"><input type="checkbox">기타 : <input type="text" class="input-tb" placeholder="최대 20자 이내"></label>
+                                        </div>
+                                    </li>
+                                    <li class="radio-list shadow">
+                                        <span class="question">기상환경</span>
+                                        <div class="selct-multi">
+                                            <label><input type="checkbox">강풍</label>
+                                            <label><input type="checkbox">강우</label>
+                                            <label><input type="checkbox">강설</label>
+                                            <label><input type="checkbox">낙뢰</label>
+                                            <label><input type="checkbox">혹서</label>
+                                            <label><input type="checkbox">혹한</label>
+                                            <label><input type="checkbox">습도</label>
+                                            <label class="etc"><input type="checkbox">기타 : <input type="text" class="input-tb" placeholder="최대 20자 이내"></label>
+                                        </div>
+                                    </li>
+                                    <li class="radio-list shadow">
+                                        <span class="question">작업환경</span>
+                                        <div class="selct-multi">
+                                            <label><input type="checkbox">고소</label>
+                                            <label><input type="checkbox">야간</label>
+                                            <label><input type="checkbox">조도</label>
+                                            <label><input type="checkbox">중장비</label>
+                                            <label><input type="checkbox">전기인접</label>
+                                            <label><input type="checkbox">도로/철도</label>
+                                            <label class="etc"><input type="checkbox">기타 : <input type="text" class="input-tb" placeholder="최대 20자 이내"></label>
+                                        </div>
+                                    </li>
+                                    <li class="radio-list shadow">
+                                        <span class="question">보건/환경</span>
+                                        <div class="selct-multi">
+                                            <label><input type="checkbox">대기오염</label>
+                                            <label><input type="checkbox">소음</label>
+                                            <label><input type="checkbox">진동</label>
+                                            <label><input type="checkbox">폐기물발생</label>
+                                            <label><input type="checkbox">유해물질</label>
+                                            <label><input type="checkbox">토양/수질오염</label>
+                                            <label class="etc"><input type="checkbox">기타 : <input type="text" class="input-tb" placeholder="최대 20자 이내"></label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </details>
+                        <details class="dropdown body" open>
+                            <summary>
+                                <ul>
+                                    <li class="title">작업허가 관련 추가 요구사항</li>
+                                </ul>
+                            </summary>
+                            <div>
+                                <ul>
+                                    <li class="radio-list shadow">
+                                        <span class="question mb-0">PM의견</span>
+                                        <textarea class="textarea" cols="100" rows="5" placeholder="최대500자"></textarea>
+                                    </li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="btn-area btn-2">
+                <a href="" class="btn -grey">닫기</a>
+                <a href="" class="btn normal">회수</a>
+                <a href="" class="btn -red st-01">반려</a>
+                <a href="" class="btn -primary">승인</a>
+            </div>
+        </div>
+        <!--// 모바일 컨텐츠 -->
+    </main>
+</div>
+    
+
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+
+</body>
+</html>

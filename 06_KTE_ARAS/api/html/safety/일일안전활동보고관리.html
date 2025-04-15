@@ -1,0 +1,238 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>일일안전활동보고 관리</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">    
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/modernizr.custom.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+<body>
+    
+<div class="page-wrapper d-flex">
+    <main class="main">
+        <header class="m-header">
+            <div class="inner">일일안전활동보고 관리</div>
+            <button class="no-bg left"></button>
+            <button class="no-bg home"></button>
+        </header>
+        <div class="contents">
+            <div class="board-wrapper">
+                <div class="schedule jc-center">
+                    <!-- <button class="btn_prev"></button> -->
+                    <div class="input_date_box"><input type="date" name="today" id="today" value="2023-03-20" class="input-tb b-0" style="background: transparent; width: 11rem;"></div>
+                    <!-- <button class="btn_next"></button> -->
+                </div>
+                <div class="search-area mint">
+                    <input type="search" class="search" placeholder="사업장명을 입력해 검색하세요.">
+                    <div class="input-group-append">
+                        <button class="search-btn"></button>
+                    </div>
+                </div>
+                
+                <div id="tab-menu" class="tab-menu">
+                    <div id="tab-btn" class="tab-btn">
+                        <ul>
+                            <li class="active"><button>전체</button></li>
+                            <li><button>작성전</button></li>
+                            <li><button>임시저장</button></li>
+                            <li><button>작성완료</button></li>
+                            <li><button>PM승인</button></li>
+                            <li><button>PM반려</button></li>
+                        </ul>
+                    </div>
+                    <div id="tab-cont" class="tab-cont">
+                        <div title="all">
+                            <!--전체-->
+                            <ul class="board-list">
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="cate">A230022 지하철(서울교통공사) KT 무선망 공사</h5>
+                                        <p class="title">2023-04-24 성수역</p>
+                                        <span class="badge c-grey">작성전<span class="c-grey">(작업)</span></span>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="cate">A230043 kt고양 무선종합시험센터 쉴드룸 LED 조명 교체공사</h5>
+                                        <p class="title">2023-04-24 화곡역</p>
+                                        <span class="badge c-grey">임시저장<span class="c-grey">(작업)</span></span>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="cate">은행국사</h5>
+                                        <p class="title">2A200048 서대문(가좌)국사 최적화 사업</p>
+                                        <span class="badge c-primary">작성완료<span class="c-grey">(작업없음)</span></span>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="cate">은행국사</h5>
+                                        <p class="title">2A200048 서대문(가좌)국사 최적화 사업</p>
+                                        <span class="badge c-green">PM승인<span class="c-grey">(작업)</span></span>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="cate">은행국사</h5>
+                                        <p class="title">2A200048 서대문(가좌)국사 최적화 사업</p>
+                                        <span class="badge c-red">PM반려<span class="c-grey">(작업없음)</span></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--//전체-->
+                        <!--작성전-->
+                        <div>
+                            <ul class="board-list">
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="cate">은행국사</h5>
+                                        <p class="title">2A200048 서대문(가좌)국사 최적화 사업</p>
+                                        <span class="badge c-grey">작성전</span>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="cate">은행국사</h5>
+                                        <p class="title">2A200048 서대문(가좌)국사 최적화 사업</p>
+                                        <span class="badge c-grey">작성전</span>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="cate">은행국사</h5>
+                                        <p class="title">2A200048 서대문(가좌)국사 최적화 사업</p>
+                                        <span class="badge c-grey">작성전</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--//작성전-->
+                        <!--임시저장-->
+                        <div>
+                            <ul class="board-list">
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="cate">은행국사</h5>
+                                        <p class="title">2A200048 서대문(가좌)국사 최적화 사업</p>
+                                        <span class="badge c-grey">임시저장</span>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="cate">은행국사</h5>
+                                        <p class="title">2A200048 서대문(가좌)국사 최적화 사업</p>
+                                        <span class="badge c-grey">임시저장</span>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="cate">은행국사</h5>
+                                        <p class="title">2A200048 서대문(가좌)국사 최적화 사업</p>
+                                        <span class="badge c-grey">임시저장</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--//임시저장-->
+                        <!--작성완료-->
+                        <div>
+                            <ul class="board-list">
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="cate">은행국사</h5>
+                                        <p class="title">2A200048 서대문(가좌)국사 최적화 사업</p>
+                                        <span class="badge c-primary">작성완료</span>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="cate">은행국사</h5>
+                                        <p class="title">2A200048 서대문(가좌)국사 최적화 사업</p>
+                                        <span class="badge c-primary">작성완료</span>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="cate">은행국사</h5>
+                                        <p class="title">2A200048 서대문(가좌)국사 최적화 사업</p>
+                                        <span class="badge c-primary">작성완료</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--PM승인-->
+                        <div>
+                            <ul class="board-list">
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="cate">은행국사</h5>
+                                        <p class="title">2A200048 서대문(가좌)국사 최적화 사업</p>
+                                        <span class="badge c-green">PM승인</span>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="cate">은행국사</h5>
+                                        <p class="title">2A200048 서대문(가좌)국사 최적화 사업</p>
+                                        <span class="badge c-green">PM승인</span>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="cate">은행국사</h5>
+                                        <p class="title">2A200048 서대문(가좌)국사 최적화 사업</p>
+                                        <span class="badge c-green">PM승인</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--//PM승인-->
+                        <!--PM반려-->
+                        <div>
+                            <ul class="board-list">
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="cate">은행국사</h5>
+                                        <p class="title">2A200048 서대문(가좌)국사 최적화 사업</p>
+                                        <span class="badge c-red">PM반려</span>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="cate">은행국사</h5>
+                                        <p class="title">2A200048 서대문(가좌)국사 최적화 사업</p>
+                                        <span class="badge c-red">PM반려</span>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="cate">은행국사</h5>
+                                        <p class="title">2A200048 서대문(가좌)국사 최적화 사업</p>
+                                        <span class="badge c-red">PM반려</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                         <!--//PM반려-->
+                    </div>
+			    </div>
+                
+            </div>
+        </div>
+    </main>
+</div>
+    
+
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+
+</body>
+</html>

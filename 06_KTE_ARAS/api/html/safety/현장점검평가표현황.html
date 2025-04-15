@@ -1,0 +1,165 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>현장점검평가표 현황</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">    
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/modernizr.custom.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+<body>
+    
+<div class="page-wrapper d-flex">
+    <main class="main">
+        <header class="m-header">
+            <div class="inner">현장점검평가표 현황</div>
+            <button class="no-bg left"></button>
+        </header>
+        <div class="contents">
+            <div class="board-wrapper">
+                <div class="search-area mint">
+                    <input type="search" class="search" placeholder="프로젝트명을 입력해 검색하세요.">
+                    <div class="input-group-append">
+                        <button class="search-btn"></button>
+                    </div>
+                </div>
+                <div class="total-pj">
+                    <span class="total">전체 : 4662건</span>
+                    <span class="my">my : 420건</span>
+                </div>
+
+                <div id="tab-menu" class="tab-menu">
+                    <div id="tab-btn" class="tab-btn">
+                        <ul>
+                            <li class="active"><button>전체</button></li>
+                            <li><button>본부</button></li>
+                            <li><button>공사중</button></li>
+                            <li><button>종료</button></li>
+                        </ul>
+                    </div>
+                    <form class="register mb-0 pe-1">
+                        <fieldset class="d-block">
+                            <select class="input-tb">
+                                <option selected="">평가연도 선택</option>
+                                <option>2020</option>
+                                <option>2021</option>
+                                <option>2022</option>
+                                <option>2023</option>
+                            </select>
+                        </fieldset>
+                    </form>
+                    <div id="tab-cont" class="tab-cont">
+                        <!--전체-->
+                        <div title="all" class="p-1">
+                            <div class="list-box" data-value="A210186">
+                                <button type="button" class="list_">
+                                    <h5 class="cate c-yellow">무선-터널</h5>
+                                    [A210186] 2022년 무선망 시설공사 총액계약_KT engineering(대구)
+                                </button>
+                                <div style="display: none;">
+                                    작업예정
+                                </div>
+                            </div>
+                            <div class="list-box" data-value="A210205">
+                                <button type="button" class="list_">
+                                    <h5 class="cate">무선-터널</h5>
+                                    [A210205] 2021년 무선망 시설공사 총액계약(서부)
+                                </button>
+                                <div style="display: none;">
+                                    작업예정
+                                </div>
+                            </div>
+                            <div class="list-box" data-value="A220133">
+                                <button type="button" class="list_">
+                                    <h5 class="cate c-blue">무선-철탑</h5>
+                                    [A220133] '22년 무선철탑시설물 재난피해 예방사업(capex)_강북
+                                </button>
+                                <div style="display: block; padding:1rem 1.6rem 1rem 1.8rem; font-size: 1.4rem;">
+                                    작업예정
+                                </div>
+                            </div>
+                        </div>
+                        <!--//전체-->
+                        <!--본부-->
+                        <div title="danger">
+                            <div class="list-box" data-value="A210186">
+                                <button type="button" class="list_">
+                                    <h5 class="cate c-yellow">무선-터널</h5>
+                                    [A210186] 2022년 무선망 시설공사 총액계약_KT engineering(대구)
+                                </button>
+                                <div style="display: none;">
+                                    작업예정
+                                </div>
+                            </div>
+                        </div>
+                        <!--//본부-->
+                        <!--공사중-->
+                        <div title="headOffice">
+                            <div class="list-box" data-value="A210205">
+                                <button type="button" class="list_">
+                                    <h5 class="cate">무선-터널</h5>
+                                    [A210205] 2021년 무선망 시설공사 총액계약(서부)
+                                </button>
+                                <div>
+                                    작업예정
+                                </div>
+                            </div>
+                        </div>
+                        <!--//공사중-->
+                        <!--종료-->
+                        <div title="BM">
+                            <div class="list-box" data-value="A220133">
+                                <button type="button" class="list_">
+                                    <h5 class="cate c-blue">무선-철탑</h5>
+                                    [A220133] '22년 무선철탑시설물 재난피해 예방사업(capex)_강북
+                                </button>
+                                <div>
+                                    작업예정
+                                </div>
+                            </div>
+                        </div>
+                        <!--//종료-->
+                    </div>
+			    </div>
+                
+            </div>
+        </div>
+    </main>
+</div>
+    
+
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+<script>
+    $(document).ready(function(){
+        $('button.list_').click(function(){
+            // let button = $(this).find(' > button');
+            let button = $(this);
+            let ul = button.next("div");
+            if(button.hasClass('on')){
+                ul.slideUp();
+                button.removeClass('on');
+
+            }else{
+                ul.slideDown();
+                button.addClass('on');
+            }
+
+        })
+    })
+    function goDanger(obj){
+        let dangerNo = $(obj).attr('danger-no');
+        let versionNo = $(obj).attr('version-no');
+        location.href = '/danger/evaluation/view/A04S05?dangerNo='+dangerNo+'&versionNo='+versionNo
+    }
+</script>
+<style>
+    .list-box > div{display:none;}
+</style>
+</body>
+</html>
