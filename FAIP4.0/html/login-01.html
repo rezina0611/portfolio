@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<title>Login-03</title>
+<title>Login-01</title>
 <meta charset="UTF-8">
 <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
@@ -21,7 +21,7 @@
 
 </head>
 <body class="login2">
-    <div class="login-box" id="signup">
+    <div class="login-box" id="login">
         <div class="login-header">
             <div class="login-logo">
                 <img src="./images/logo@2x.png">
@@ -31,55 +31,39 @@
             <form name="loginForm" method="post" action="#" autocomplete="off">
                 <div class="form-group">
                     <div class="icon_cell">
-                        <label class="icon_id control-label" for="id">
+                        <label class="icon_id opacity-70 control-label" for="id">
                             <span class="blind">아이디</span>
                         </label>
                     </div>
-                    <input type="text" class="input" id="id" name="id" placeholder="아이디" autocomplete="off">
+                    <input type="text" class="input" id="id" name="id" placeholder="아이디를 입력하세요." autocomplete="off">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group mb-0">
                     <div class="icon_cell">
-                        <label class="icon_email control-label" for="email">
-                            <span class="blind">이메일</span>
-                        </label>
-                    </div>
-                    <input type="text" class="input" id="email" name="email" placeholder="이메일" autocomplete="off">
-                </div>
-
-                <div class="form-group">
-                    <div class="icon_cell">
-                        <label class="icon_name opacity-70 control-label" for="name">
-                            <span class="blind">이름</span>
-                        </label>
-                    </div>
-                    <input type="text" class="input" id="name" name="name" placeholder="이름" autocomplete="off">
-                </div>
-
-                <div class="form-group">
-                    <div class="icon_cell">
-                        <label class="icon_pw control-label" for="password">
+                        <label class="icon_pw opacity-70 control-label" for="password">
                             <span class="blind">비밀번호</span>
                         </label>
                     </div>
-                    <input type="password" class="input form-control" id="password" name="pswd" placeholder="비밀번호" autocomplete="off">
+                    <input type="password" class="input" id="password" name="pswd" placeholder="비밀번호를 입력하세요." autocomplete="new-password">
                 </div>
 
                 <div class="form-group remember">
                     <label class="input styled">
                         <input type="checkbox" name="remember_me" value="true" autocomplete="off" checked>
-                        <i class="h8">이용약관 및 개인정보 수집 동의</i>
+                        <i class="h8">로그인 정보 저장</i>
                     </label>
+                    <span class="h8" @click="">비밀번호 재설정</span>
                 </div>
-                <button type="button" class="button login mt-9" @click="Signup">회원가입</button>
+                <button type="button" class="button login" @click="Login">로그인</button>
             </form>
         </div>
         <div class="login-footer">
-            <div class="le">
-                <span @click="" class="back">뒤로</span>
-            </div>
+            <ul class="le">
+                <li><span class="last h8" @click="">이용약관</span></li>
+                <li><span class="h8" @click="">개인정보 처리방침</span></li>
+            </ul>
             <div class="ri">
-                <span class="signup" @click="">로그인</span>
+                <span class="signup" @click="GoSignup">회원가입</span>
             </div>
         </div>
     </div>

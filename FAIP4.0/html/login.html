@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>Login</title>
+<meta charset="UTF-8">
+<meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="ui_event" content="true" />
+
+<link rel="stylesheet" href="./css/fontawesome6-all.css">
+<link rel="stylesheet" href="./css/fonts.css">
+<link rel="stylesheet" href="./css/layout.css">
+
+<link rel="stylesheet" href="./css/faip_login.css">
+
+<script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
+<script>
+$(function(){
+    $('#GoSignup').click(function(){
+	    $("#login").hide();
+        $("#reset_password").hide();
+        $("#signup").show();
+    });
+
+    $('#GoLogin').click(function(){
+        $("#signup").hide();
+        $("#reset_password").hide();
+        $("#login").show();
+    });
+
+    $('#GoResetPassword').click(function(){
+        $("#signup").hide();
+        $("#login").hide();
+        $("#reset_password").show();
+    });
+});
+</script>
+<!-- <script>
+    $(function(){
+        var focus = $('.focused-input');
+        var focus1 = $('.focused-id');
+        var focus2 = $('.focused-pw');
+        var focus3 = $('.focused-em');
+        var focus4 = $('.focused-na');
+
+        focus.focus(function(){ 
+            //focus.val('포커스를 얻었습니다.');
+            $('.form-group2').addClass('fakefocus');
+        });
+        focus1.focus(function(){
+            //focus.val('포커스를 얻었습니다.');
+            $('.form-id').addClass('fakefocus');
+        });
+        focus2.focus(function(){
+            $('.form-pw').addClass('fakefocus');
+        });
+        focus3.focus(function(){
+            $('.form-em').addClass('fakefocus');
+        });
+        focus4.focus(function(){
+            $('.form-na').addClass('fakefocus');
+        });
+
+
+        focus.blur(function(){ 
+            $('.form-group2').removeClass('fakefocus');
+        });
+        focus1.blur(function(){
+            $('.form-id').removeClass('fakefocus');
+        });
+        focus2.blur(function(){
+            $('.form-pw').removeClass('fakefocus');
+        });
+        focus3.blur(function(){
+            $('.form-em').removeClass('fakefocus');
+        });
+        focus4.blur(function(){
+            $('.form-na').removeClass('fakefocus');
+        });
+    });
+</script> -->
+</head>
+<body class="login2">
+    <!--로그인-->
+    <div class="login-box" id="login">
+        <div class="login-header">
+            <div class="login-logo">
+                <img src="./images/logo@2x.png">
+            </div>
+        </div>
+        <div class="login-body">
+            <form name="loginForm" method="post" action="#" autocomplete="off">
+
+                <div class="form-group">
+                    <div class="icon_cell">
+                        <label class="icon_id opacity-70 control-label" for="id">
+                            <span class="blind">아이디</span>
+                        </label>
+                    </div>
+                    <input type="text" class="input" id="id" name="id" placeholder="아이디를 입력하세요." autocomplete="off">
+                </div>
+
+                <div class="form-group mb-0">
+                    <div class="icon_cell">
+                        <label class="icon_pw opacity-70 control-label" for="password">
+                            <span class="blind">비밀번호</span>
+                        </label>
+                    </div>
+                    <input type="password" class="input" id="password" name="pswd" placeholder="비밀번호를 입력하세요." autocomplete="off">
+                </div>
+
+                <div class="form-group remember">
+                    <label class="input styled">
+                        <input type="checkbox" name="remember_me" value="true" autocomplete="off" checked>
+                        <i class="h8">로그인 정보 저장</i>
+                    </label>
+                    <span class="h8" @click="GoResetPasswor" id="GoResetPassword">비밀번호 재설정</span>
+                </div>
+                <button type="button" class="button login" @click="Login">로그인</button>
+            </form>
+        </div>
+        <div class="login-footer">
+            <ul class="le">
+                <li><span class="last h8" @click="">이용약관</span></li>
+                <li><span class="h8" @click="">개인정보 처리방침</span></li>
+            </ul>
+            <div class="ri">
+                <span class="signup" @click="GoSignup" id="GoSignup">회원가입</span>
+            </div>
+        </div>
+    </div>
+
+    <!--회원가입-->
+    <div class="login-box display-hide" id="signup">
+        <div class="login-header">
+            <div class="login-logo">
+                <img src="./images/logo@2x.png">
+            </div>
+        </div>
+        <div class="login-body">
+            <form name="loginForm" method="post" action="#" autocomplete="off">
+                <div class="form-group">
+                    <div class="icon_cell">
+                        <label class="icon_id control-label" for="id">
+                            <span class="blind">아이디</span>
+                        </label>
+                    </div>
+                    <input type="text" class="input focused-id" id="id" name="id" placeholder="아이디" autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                    <div class="icon_cell">
+                        <label class="icon_email control-label" for="email">
+                            <span class="blind">이메일</span>
+                        </label>
+                    </div>
+                    <input type="text" class="input focused-em" id="email" name="email" placeholder="이메일" autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                    <div class="icon_cell">
+                        <label class="icon_name opacity-70 control-label" for="name">
+                            <span class="blind">이름</span>
+                        </label>
+                    </div>
+                    <input type="text" class="input focused-na" id="name" name="name" placeholder="이름" autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                    <div class="icon_cell">
+                        <label class="icon_pw control-label" for="password">
+                            <span class="blind">비밀번호</span>
+                        </label>
+                    </div>
+                    <input type="password" class="input focused-pw" id="password" name="pswd" placeholder="비밀번호" autocomplete="off">
+                </div>
+
+                <div class="form-group remember">
+                    <label class="input styled">
+                        <input type="checkbox" name="remember_me" value="true" autocomplete="off" checked>
+                        <i class="h8">이용약관 및 개인정보 수집 동의</i>
+                    </label>
+                </div>
+                <button type="button" class="button login mt-9" @click="Signup">회원가입</button>
+            </form>
+        </div>
+        <div class="login-footer">
+            <div class="le">
+                <span @click="" class="back">뒤로</span>
+            </div>
+            <div class="ri">
+                <span class="signup" @click="GoLogin" id="GoLogin">로그인</span>
+            </div>
+        </div>
+    </div>
+
+    <!--비밀번호 재설정-->
+    <div class="login-box display-hide" id="reset_password">
+        <div class="login-header">
+            <div class="login-logo">
+                <img src="./images/logo@2x.png">
+            </div>
+        </div>
+        <div class="login-body text-center">
+            <p class="text-white">비밀번호 재설정을 위해 이메일 주소를 입력해주세요.</p>
+            <form name="loginForm" method="post" action="#" autocomplete="off">
+                <div class="form-group"> 
+                    <div class="icon_cell">
+                        <label class="icon_id control-label" for="id">
+                            <span class="blind">비밀번호 재설정</span>
+                        </label>
+                    </div>
+                    <input type="text" class="input" id="reaat-email" name="reaat-email" autocomplete="off" value="Janedoe@email.com">
+                </div>
+
+                <button type="button" class="button login" @click="">비밀번호 재설정</button>
+            </form>
+        </div>
+        <div class="login-footer">
+            <div class="le">
+                <span @click="" class="back">뒤로</span>
+            </div>
+            <div class="ri">
+                <span class="signup" @click="GoLogin" id="GoLogin">로그인</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

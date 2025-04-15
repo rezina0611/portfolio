@@ -1,0 +1,275 @@
+@charset "UTF-8";
+
+/* input box color */
+input:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px #fff inset ; -webkit-text-fill-color: #fff; }
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active { transition: background-color 5000s ease-in-out 0s; }
+
+.no-bg{
+  background: transparent !important;
+}
+body.login2{
+    background-size: cover;
+    background-position: center;
+    background-color: #393B44;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -50px;
+}
+
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+// .fz-login-wrap{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     flex-direction: column;
+//     background-color: #393B44;
+//     width: 100%;
+//     height: 100%;
+// }
+
+.login-box {
+    width: 400px;
+    display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    color: rgba(255,255,255, .7);
+
+    &.display-hide{
+        display: none;
+    }
+}
+
+.login-header{
+        background: transparent;
+        height: auto;
+        padding: 20px;
+
+        .login-logo {
+        text-align: center;
+        font-weight: 700;
+        letter-spacing: 4px;
+
+        img{
+            width: 219px;
+            height: 72px;
+        }
+    }
+}
+
+// .form-group:focus-within{
+//   border: 2px solid #2491FD;
+//   .icon_cell{
+//     .icon_id {
+//       background: #2491FD;
+//     }
+//     .icon_pw {
+//       background: #2491FD;
+//     }
+//   }
+// }
+
+.login-body {
+    overflow: hidden;
+    padding: 15px 20px 32px 20px;
+    margin-top: 20px;
+
+    & .text-white{
+        margin-bottom: 30px;
+        color: #fff !important;
+        font-size: 15px;
+    }
+    .form-group{
+      position: relative;
+      display: flex;
+      align-items: center;
+      table-layout: fixed;
+      width: 100%; height: 100%;
+      padding: 0.25rem;
+      box-sizing: border-box;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      text-align: left;
+      margin-bottom: .8rem;
+
+      &.remember{
+        padding: 0;
+        border: 0;
+        background: transparent;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: .5rem;
+
+        label.styled input[type=checkbox]{
+          & + i {
+            &:before{
+              content: "";
+              background: url(../images/checkbox@2x.png);
+              background-repeat: no-repeat;
+              background-size: 100%;
+              background-position: -1px -2px;
+              width: 20px;
+              height: 20px;
+              margin-right: 0.6rem;
+            }
+          }
+          &:checked + i{
+            &:before{
+              content: "";
+              background: url(../images/checkbox_checked@2x.png);
+              background-repeat: no-repeat;
+              background-size: 100%;
+              background-position: -1px -2px;
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+      }
+
+      &:focus-within{
+        /*focus시 요소의 부모에 스타일 지정*/
+        border: 2px solid #2491FD;
+        .icon_cell{
+          background: #2491FD;
+        }
+      }
+
+      // &.fakefocus{
+      //   border: 2px solid #2491FD;
+      //   margin-bottom: 20px;
+      //   .icon_cell{
+      //       background: #2491FD;
+      //   }
+      // }
+
+      .icon_cell {
+        display:table-cell;
+        width: 45px; height: 38px;
+        vertical-align:middle;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .icon_id, .icon_name{
+          background: url(../images/ico_user@2x.png) no-repeat;
+          background-size: contain;
+          width: 28px; height: 28px;
+          display: flex;
+        }
+        .icon_email{
+            background: url(../images/ico_mail@2x.png) no-repeat;
+            background-size: contain;
+            width: 28px; height: 28px;
+            display: flex;
+        }
+        .icon_pw{
+          background: url(../images/ico_password@2x.png) no-repeat;
+          background-size: contain;
+          width: 28px; height: 28px;
+          display: flex;
+        }
+      }
+      input:not([type=radio]):not([type=checkbox]).input:not([readonly]):not(:disabled):not([disabled]):not(.disabled):focus{
+        border-color:0;
+      }
+      input[type=text], input[type=password]{
+        border: 0;
+        background: transparent;
+
+        &::placeholder {
+          font-size: 14px;
+          color: rgba(255, 255, 255, 0.3);
+        }
+      }
+    }
+
+    .button {
+      height: 48px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      padding: 0.8rem;
+      border:none;
+      cursor: pointer;
+      text-shadow: none;
+      box-shadow: inset;
+    }
+    .button.login {
+      background: rgba(36, 145, 253, 1) 0% 0% no-repeat;
+      border-radius: 8px;
+      color: #fff;
+      width: 100%;
+      //margin-top: .5rem;
+    }
+}
+
+.login-footer{
+    padding: 1.2rem 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .le{
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        .back{
+            background: transparent url('../images/ico_arw_left@2x.png') 0% 1px no-repeat;
+            background-size: contain;
+            height: 16px;
+            padding-left: 1.5rem;
+        }
+        li{
+            text-align: center;
+            span{
+            position: relative;
+            font-size: 13px;
+            color: rgba(255,255,255, .7);
+            letter-spacing: -0.24px;
+            &:before{
+                content: "|";
+                color: #707070;
+                opacity: 30%;
+                padding: 0 12px;
+            }
+            }
+            span.last{
+            &:before{
+                content: "";
+                padding: 0;
+            }
+            }
+        }
+    }
+    .ri{
+        span.signup{
+            margin-left: 20px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 0.75rem;
+            cursor: pointer;
+        }
+    }
+}
+
