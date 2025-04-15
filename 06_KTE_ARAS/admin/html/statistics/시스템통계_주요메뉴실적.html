@@ -1,0 +1,550 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>ARAS - 주요메뉴실적</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+    
+<body>
+	  
+<div class="page-wrapper d-flex">
+    <nav id="side-nav" class="side-nav">
+		<div class="side-nav-header">
+			<div class="ico-menu-list">
+				<button class="ico-btn"><img src="../../images/icon/ico_notification.png" alt="알림"></button>
+				<button class="ico-btn" id="logOutBtn"><img src="../../images/icon/ico_logout_wh.png" alt="로그아웃"></button>
+			</div>
+		</div>
+        <div class="brand-user">
+            <div class="brand">
+                <img src="../../images/logo-aras-kr.png" alt="아라스 로고">
+            </div>
+        </div>
+		<div class="user">
+			<a href="">
+				<img src="../../images/icon/ico_user.png" alt="시스템관리자">
+				<span class="name">시스템관리자</span>
+			</a>
+		</div>
+        <div class="side-menu">
+            <ul>
+                <li><a href=""><img src="../../images/icon/ico_sidebar_map_wh.png" alt="지도">지도</a></li>
+                <li><a href=""><img src="../../images/icon/ico_sidebar_pj_wh.png" alt="프로잭트">프로젝트</a></li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_place_wh.png" alt="현장관리">현장관리</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">현장정보</a></li>
+                            <li><a href="#">현장관리</a></li>
+                            <li><a href="#">공정분류설정</a></li>
+                            <li><a href="#">OCR데이터관리</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_material_wh.png" alt="자재관리">자재관리</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">자재구매관리</a></li>
+                            <li><a href="#">자재현황관리</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_safety_wh.png" alt="안전관리">안전관리</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">위험성평가회의</a></li>
+                            <li><a href="#">일일안전활동보고</a></li>
+                            <li><a href="#">안전관리용품</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_safety_board_wh.png" alt="안전관리 게시판">안전관리 게시판</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">안전보건관리 수행계획서</a></li>
+                            <li><a href="#">위험작업 사전허가요청서</a></li>
+                            <li><a href="#">작업허가서</a></li>
+                            <li><a href="#">작업계획서</a></li>
+							<li><a href="#">안전보건교육일지</a></li>
+                            <li><a href="#">안전점검의 날 행사</a></li>
+                            <li><a href="#">협의체 회의록</a></li>
+                            <li><a href="#">사업장 합동안전점검</a></li>
+							<li><a href="#">산업안전보건관리비</a></li>
+                            <li><a href="#">임원/교차 합동안전점검</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_assess_wh.png" alt="수행품질평가">수행품질평가</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">품질평가 결과조회</a></li>
+                            <li><a href="#">협력사별 종합표</a></li>
+                            <li><a href="#">프로젝트별 종합표</a></li>
+                            <li><a href="#">품질평가 진행현황</a></li>
+							<li><a href="#">품질평가 항목관리</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_board_wh.png" alt="게시판">게시판</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">프로젝트 게시판</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_sys_manage_wh.png" alt="시스템관리">시스템관리</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">메뉴권한관리</a></li>
+                            <li><a href="#">조직관리</a></li>
+                            <li><a href="#">권한관리</a></li>
+                            <li><a href="#">사용자관리</a></li>
+							<li><a href="#">로그인 히스토리</a></li>
+                            <li><a href="#">공정진행 단계관리</a></li>
+                            <li><a href="#">공정분류 코드관리</a></li>
+                            <li><a href="#">안전장구 물품관리</a></li>
+							<li><a href="#">위험평가항목 코드관리</a></li>
+                            <li><a href="#">품질평가항목관리</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+	
+    <main class="contents">
+        <section class="wrapper">
+            <h1 class="page-title">주요메뉴실적</h1>
+            
+            <!--본부별 프로젝트 현황(월)-->
+            <div class="tui-wrapper">
+                <div class="d-flex">
+                    <h2>본부별 프로젝트 현황(월)</h2>
+					<div class="top btn-area">
+                        <div class="d-flex input_date_box mr-05">
+                            <input type="month" value="2023-05" class="input-tb" id="currnetMonth">
+                        </div>
+                        <button type="button" class="btn -primary">검색</button>
+                        <button type="button" class="btn btn-download">엑셀 다운로드</button>
+                    </div>
+                    <script>
+                        document.getElementById('currnetMonth').value= new Date().toISOString().slice(0, 7);
+                    </script>
+                </div>
+                <div class="tui-area">
+                    <table class="table db-t center">
+						<colgroup>
+							<col width="200">
+							<col width="100"><col width="100"><col width="100">
+                            <col width="100"><col width="100"><col width="100">
+                            <col width="100"><col width="100"><col width="100">
+                            <col width="100">
+						</colgroup>
+                        <thead>
+                            <tr>
+								<th class="center">구분</th>
+								<th class="center">네트워크</th>
+								<th class="center">ICT</th>
+								<th class="center">융합</th>
+                                <th class="center">강북/강원</th>
+                                <th class="center">강남/서부</th>
+                                <th class="center">부산/경남</th>
+                                <th class="center">대구/경북</th>
+                                <th class="center">전남/전북</th>
+                                <th class="center">충남/충북</th>
+                                <th class="center">합계</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="left">수주/수행 상태 프로젝트</td>
+								<td>5</td>
+                                <td>10</td>
+                                <td>15</td>
+                                <td>20</td>
+                                <td>25</td>
+                                <td>30</td>
+                                <td>35</td>
+                                <td>40</td>
+                                <td>45</td>
+                                <td class="bg-blue">225</td>
+                            </tr>
+                            <tr>
+                                <td class="left">사업장 배치 프로젝트 개수</td>
+								<td>3</td>
+                                <td>5</td>
+                                <td>7</td>
+                                <td>9</td>
+                                <td>11</td>
+                                <td>13</td>
+                                <td>15</td>
+                                <td>17</td>
+                                <td>19</td>
+                                <td class="bg-blue">99</td>
+                            </tr>
+                            <tr>
+                                <td class="left">사업장 미배치 프로젝트 개수</td>
+								<td>8</td>
+                                <td>15</td>
+                                <td>22</td>
+                                <td>29</td>
+                                <td>36</td>
+                                <td>43</td>
+                                <td>50</td>
+                                <td>57</td>
+                                <td>64</td>
+                                <td class="bg-blue">324</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--//본부별 프로젝트 현황(월)-->
+
+            <!--월별 주요메뉴 등록 실적-->
+            <div class="tui-wrapper">
+                <div class="d-flex">
+                    <h2>월별 주요메뉴 등록 실적</h2>
+                    <div class="top btn-area">
+                        <div class="d-flex input_date_box mr-05">
+                            <select name="stats">
+                                <option value="">전체</option>
+                                <option value="">2026</option>
+                                <option value="">2025</option>
+                                <option value="">2024</option>
+                                <option value="" selected>2023</option>
+                                <option value="">2022</option>
+                                <option value="">2021</option>
+                                <option value="">2020</option>
+                            </select>
+                        </div>
+                        <div class="top btn-area">
+                            <button type="button" class="btn -primary">검색</button>
+                            <button type="button" class="btn btn-download">엑셀 다운로드</button>
+                        </div> 
+                    </div>
+                </div>
+                <div class="tui-area">
+                    <table class="table db-t center">
+						<colgroup>
+							<col width="285">
+							<col><col><col>
+                            <col><col><col>
+                            <col><col><col>
+                            <col><col><col>
+                            <col width="100">
+						</colgroup>
+                        <thead>
+                            <tr>
+								<th class="center">구분</th>
+								<th class="center">1월</th>
+								<th class="center">2월</th>
+								<th class="center">3월</th>
+                                <th class="center">4월</th>
+                                <th class="center">5월</th>
+                                <th class="center">6월</th>
+                                <th class="center">7월</th>
+                                <th class="center">8월</th>
+                                <th class="center">9월</th>
+                                <th class="center">10월</th>
+                                <th class="center">11월</th>
+                                <th class="center">12월</th>
+                                <th class="center">합계</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="left">현장정보</td>
+								<td>5</td>
+                                <td>5</td>
+                                <td>5</td>
+                                <td>5</td>
+                                <td>5</td>
+                                <td>5</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="bg-blue">30</td>
+                            </tr>
+                            <tr>
+                                <td class="left">현장관리</td>
+								<td>3</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="bg-blue">18</td>
+                            </tr>
+                            <tr>
+                                <td class="left">일일안전활동보고</td>
+								<td>5</td>
+                                <td>5</td>
+                                <td>5</td>
+                                <td>5</td>
+                                <td>5</td>
+                                <td>5</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="bg-blue">30</td>
+                            </tr>
+                            <tr>
+                                <td class="left">최초위험성평가표</td>
+								<td>3</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="bg-blue">18</td>
+                            </tr>
+                            <tr>
+                                <td class="left">수시위험성평가표</td>
+								<td>5</td>
+                                <td>5</td>
+                                <td>5</td>
+                                <td>5</td>
+                                <td>5</td>
+                                <td>5</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="bg-blue">30</td>
+                            </tr>
+                            <tr>
+                                <td class="left">정기위험성평가표</td>
+								<td>3</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="bg-blue">18</td>
+                            </tr>
+                            <tr>
+                                <td class="left">사업장 배치 프로젝트</td>
+								<td>10</td>
+                                <td>10</td>
+                                <td>10</td>
+                                <td>10</td>
+                                <td>10</td>
+                                <td>10</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="bg-blue">60</td>
+                            </tr>
+                            <tr>
+                                <td class="left">사업장 개수</td>
+								<td>20</td>
+                                <td>20</td>
+                                <td>20</td>
+                                <td>20</td>
+                                <td>20</td>
+                                <td>20</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="bg-blue">120</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--//월별 주요메뉴 등록 실적-->
+
+            <!--본부별 주요 메뉴 등록 실적(월)-->
+            <div class="tui-wrapper">
+                <div class="d-flex">
+                    <h2>본부별 주요 메뉴 등록 실적(월)</h2>
+					<div class="top btn-area">
+                        <div class="d-flex input_date_box mr-05">
+                            <input type="month" value="2023-05" class="input-tb" id="currnetMonth">
+                        </div>
+                        <button type="button" class="btn -primary">검색</button>
+                        <button type="button" class="btn btn-download">엑셀 다운로드</button>
+                    </div>
+                    <script>
+                        document.getElementById('currnetMonth').value= new Date().toISOString().slice(0, 7);
+                    </script>
+                </div>
+                <div class="tui-area">
+                    <table class="table db-t center">
+						<colgroup>
+							<col width="200">
+							<col width="100"><col width="100"><col width="100">
+                            <col width="100"><col width="100"><col width="100">
+                            <col width="100"><col width="100"><col width="100">
+                            <col width="100">
+						</colgroup>
+                        <thead>
+                            <tr>
+								<th class="center">구분</th>
+								<th class="center">네트워크</th>
+								<th class="center">ICT</th>
+								<th class="center">융합</th>
+                                <th class="center">강북/강원</th>
+                                <th class="center">강남/서부</th>
+                                <th class="center">부산/경남</th>
+                                <th class="center">대구/경북</th>
+                                <th class="center">전남/전북</th>
+                                <th class="center">충남/충북</th>
+                                <th class="center">합계</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="left">현장정보</td>
+								<td>5</td>
+                                <td>10</td>
+                                <td>15</td>
+                                <td>20</td>
+                                <td>25</td>
+                                <td>30</td>
+                                <td>35</td>
+                                <td>40</td>
+                                <td>45</td>
+                                <td class="bg-blue">225</td>
+                            </tr>
+                            <tr>
+                                <td class="left">현장관리</td>
+								<td>3</td>
+                                <td>5</td>
+                                <td>7</td>
+                                <td>9</td>
+                                <td>11</td>
+                                <td>13</td>
+                                <td>15</td>
+                                <td>17</td>
+                                <td>19</td>
+                                <td class="bg-blue">99</td>
+                            </tr>
+                            <tr>
+                                <td class="left">일일안전활동보고</td>
+								<td>5</td>
+                                <td>10</td>
+                                <td>15</td>
+                                <td>20</td>
+                                <td>25</td>
+                                <td>30</td>
+                                <td>35</td>
+                                <td>40</td>
+                                <td>45</td>
+                                <td class="bg-blue">225</td>
+                            </tr>
+                            <tr>
+                                <td class="left">최초위험성평가표</td>
+								<td>3</td>
+                                <td>5</td>
+                                <td>7</td>
+                                <td>9</td>
+                                <td>11</td>
+                                <td>13</td>
+                                <td>15</td>
+                                <td>17</td>
+                                <td>19</td>
+                                <td class="bg-blue">99</td>
+                            </tr>
+                            <tr>
+                                <td class="left">수시위험성평가표</td>
+								<td>5</td>
+                                <td>10</td>
+                                <td>15</td>
+                                <td>20</td>
+                                <td>25</td>
+                                <td>30</td>
+                                <td>35</td>
+                                <td>40</td>
+                                <td>45</td>
+                                <td class="bg-blue">225</td>
+                            </tr>
+                            <tr>
+                                <td class="left">정기위험성평가표</td>
+								<td>3</td>
+                                <td>5</td>
+                                <td>7</td>
+                                <td>9</td>
+                                <td>11</td>
+                                <td>13</td>
+                                <td>15</td>
+                                <td>17</td>
+                                <td>19</td>
+                                <td class="bg-blue">99</td>
+                            </tr>
+                            <tr>
+                                <td class="bg-blue f-bold">합계</td>
+                                <td class="bg-blue f-bold">24</td>
+                                <td class="bg-blue f-bold">45</td>
+                                <td class="bg-blue f-bold">66</td>
+                                <td class="bg-blue f-bold">87</td>
+                                <td class="bg-blue f-bold">108</td>
+                                <td class="bg-blue f-bold">129</td>
+                                <td class="bg-blue f-bold">150</td>
+                                <td class="bg-blue f-bold">172</td>
+                                <td class="bg-blue f-bold">192</td>
+                                <td class="bg-blue f-bold">972</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--//본부별 주요 메뉴 등록 실적(월)-->
+        </section>
+    </main> 
+    
+</div>
+    
+    
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+
+</body>
+</html>

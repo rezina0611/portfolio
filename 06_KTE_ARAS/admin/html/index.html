@@ -1,0 +1,1399 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>ARAS</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../css/default.css">
+<link rel="stylesheet" href="../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+    
+<body>
+    
+<!-- Modal 사업장 배치 정보 -->
+<div class="modal-wrapper" id="modal-place">
+    <div class="modal">
+        <div class="header">
+            <h1>사업장 배치 정보 추가
+                <button class="btn btn-close trigger-place"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <form class="modify">
+				<ul class="form-group">
+					<li>
+						<label>프로젝트</label>
+						<input type="text" class="input-tb" placeholder="" value="2019년 무선망 시설공사 총액계약_ 강북" disabled>
+					</li>
+					<li class="d-flex">
+						<div>
+							<label>사업장명</label>
+							<select class="form-select">
+								<option selected="">직접입력</option>
+								<option value="">1</option>
+								<option value="">2</option>
+							</select>
+						</div>
+						<div>
+							<label>&nbsp;</label>
+							<input type="text" class="input-tb" placeholder="사업장명을 입력하세요" value="">
+						</div>
+					</li>
+                    <li>
+						<label>사업장주소</label>
+						<div class="d-flex">
+							<input type="text" class="input-tb" placeholder="사업장주소를 입력하세요" value="">
+                            <button class="btn -magenta">좌표 변환</button>
+						</div>
+					</li>
+                    <li>
+						<label>위도/경도</label>
+						<div class="d-flex">
+							<input type="text" class="input-tb" placeholder="위도" value="">
+                            <input type="text" class="input-tb" placeholder="경도" value="">
+						</div>
+					</li>
+                    <li>
+						<label>업무(국소명)</label>
+						<input type="text" class="input-tb" placeholder="업무(국소명)을 입력하세요" value="">
+					</li>
+                    <li>
+                        <label>수행PL</label>
+                        <select class="form-select">
+                            <option selected="">수행PL</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                        </select>
+                    </li>
+					<li class="d-flex">
+                        <div>
+                            <label>사업장 시작일</label>
+                            <div class="input_date_box">
+                                <input type="date" class="input-tb" placeholder="" value="">
+                            </div> 
+                        </div>
+                        <div>
+                            <label>착공여부</label>
+                            <select class="form-select">
+								<option selected="">N</option>
+								<option value="">Y</option>
+								<option value="">N</option>
+							</select>
+                        </div>
+					</li>
+                    <li class="d-flex">
+                        <div>
+                            <label>사업장 완료일</label>
+                            <div class="input_date_box">
+                                <input type="date" class="input-tb" placeholder="" value="">
+                            </div> 
+                        </div>
+                        <div>
+                            <label>완료여부</label>
+                            <select class="form-select">
+								<option selected="">N</option>
+								<option value="">Y</option>
+								<option value="">N</option>
+							</select>
+                        </div>
+					</li>
+					<li class="d-flex">
+						<div>
+							<label>파트너사명</label>
+							<select class="form-select">
+								<option selected="">선택</option>
+								<option value="">1</option>
+								<option value="">2</option>
+							</select>
+						</div>
+						<div>
+							<label>KTE 직영</label>
+							<select class="form-select">
+								<option selected="">N</option>
+								<option value="">Y</option>
+								<option value="">N</option>
+							</select>
+						</div>
+					</li>
+					<li class="d-flex">
+						<div>
+							<label>발주처 담당자</label>
+							<input type="text" class="input-tb" placeholder="성명을 입력하세요" value="">
+						</div>
+						<div>
+							<label>발주처 연락처</label>
+                            <input type="text" class="input-tb" placeholder="'-'을 빼고 입력하세요" value="">
+						</div>
+					</li>
+					<li>
+                        <label>발주처 이메일</label>
+                        <input type="email" class="input-tb" placeholder="이메일 주소를 입력하세요." value="">
+					</li>
+				</ul>
+            </form>
+        </div>
+		<div class="btn-area">
+			<button class="btn -grey">취소</button>
+			<button class="btn -primary">저장</button>
+		</div>
+    </div>
+</div>
+<!-- End Modal -->
+    
+<!-- Modal 작업인력 확인-->
+<div class="modal-wrapper" id="modal-info">
+    <div class="modal">
+        <div class="header">
+            <h1>작업인력
+                <button class="btn btn-close trigger-info"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="card w100">
+                <div class="card-header">파트너사</div>
+                <div class="card-body">
+                    <div class="card-search">
+                        <select class="form-select">
+                            <option selected="">전체</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                            <option value="">4</option>
+                        </select>
+                        <div class="options">
+                            <label><input type="radio" name="ops">전체(000)</label>
+                            <label><input type="radio" name="ops">파트너사 직원(000)</label>
+                            <label><input type="radio" name="ops">일용직(000)</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="search" placeholder="직원 이름을 입력해 검색하세요.">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-wrap">
+                        <div class="check-list">
+                            <label class="tr">
+                                <span class="name"><span class="class">사원</span>홍길동</span>
+                                <span>회사명</span>
+                                <span>정규직</span>
+                            </label>
+                            <label class="tr">
+                                <span class="name"><span class="class">부장</span>홍길동</span>
+                                <span>회사명</span>
+                                <span>정규직</span>
+                            </label>
+                            <label class="tr">
+                                <span class="name"><span class="class">부장</span>홍길동</span>
+                                <span>회사명</span>
+                                <span>정규직</span>
+                            </label>
+                            <label class="tr">
+                                <span class="name"><span class="class">사원</span>홍길동</span>
+                                <span>회사명</span>
+                                <span>정규직</span>
+                            </label>
+                            <label class="tr">
+                                <span class="name"><span class="class">부장</span>홍길동</span>
+                                <span>회사명</span>
+                                <span>정규직</span>
+                            </label>
+                            <label class="tr">
+                                <span class="name"><span class="class">부장</span>홍길동</span>
+                                <span>회사명</span>
+                                <span>정규직</span>
+                            </label>
+                            <label class="tr">
+                                <span class="name"><span class="class">사원</span>홍길동</span>
+                                <span>회사명</span>
+                                <span>정규직</span>
+                            </label>
+                            <label class="tr">
+                                <span class="name"><span class="class">부장</span>홍길동</span>
+                                <span>회사명</span>
+                                <span>정규직</span>
+                            </label>
+                            <label class="tr">
+                                <span class="name"><span class="class">부장</span>홍길동</span>
+                                <span>회사명</span>
+                                <span>정규직</span>
+                            </label>
+                            <label class="tr">
+                                <span class="name"><span class="class">사원</span>홍길동</span>
+                                <span>회사명</span>
+                                <span>정규직</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="btn-area">
+			<button class="btn -primary block">확인</button>
+		</div>
+    </div>
+</div>
+<!-- End Modal -->
+
+<!-- 알림설정 2023-03-30 -->
+<div class="layer" id="layer-setting">
+    <header class="m-header">
+        <div class="inner">알림설정</div>
+        <button class="btn-close setting"></button>
+    </header>
+    <div class="contents">
+        <div class="notice-wrapper">
+            <ul class="notice-setting">
+                <li>
+                    <div>
+                        <p class="title">알림</p>
+                        <p class="info-save mt-0">알림을 받습니다.</p>
+                    </div>
+                    <div class="button on-off r">
+                        <input type="checkbox" class="checkbox" name="allReceiveYn" value="Y" onchange="submitAlarmSetting(this.value)" checked>
+                        <div class="knobs"></div>
+                        <div class="btn-layer"></div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p class="title">품질평가</p>
+                    </div>
+                    <div class="button on-off r">
+                        <input type="checkbox" class="checkbox" name="receiveTypes" value="Q" onchange="submitAlarmSetting(this.value)">
+                        <div class="knobs"></div>
+                        <div class="btn-layer"></div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p class="title">현장관리</p>
+                    </div>
+                    <div class="button on-off r">
+                        <input type="checkbox" class="checkbox" name="receiveTypes" value="W" onchange="submitAlarmSetting(this.value)">
+                        <div class="knobs"></div>
+                        <div class="btn-layer"></div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p class="title">안전관리</p>
+                    </div>
+                    <div class="button on-off r">
+                        <input type="checkbox" class="checkbox" name="receiveTypes" value="D" onchange="submitAlarmSetting(this.value)">
+                        <div class="knobs"></div>
+                        <div class="btn-layer"></div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p class="title">현장정보</p>
+                    </div>
+                    <div class="button on-off r">
+                        <input type="checkbox" class="checkbox" name="receiveTypes" value="P" onchange="submitAlarmSetting(this.value)">
+                        <div class="knobs"></div>
+                        <div class="btn-layer"></div>
+                    </div>
+                </li>
+            </ul>
+            <footer>
+                <p class="info">
+                    <span><i class="fas fa-info-circle"></i></span>
+                    푸시알림을 받으려면 알림을 켜주세요.
+                </p>
+            </footer>
+        </div>
+    </div>
+</div>
+<!-- // 알림설정 -->   
+
+<!-- 알림 목록함 2022-10-12 -->
+<div class="layer" id="layer-noti">
+    <header class="m-header">
+        <div class="inner">알림함</div>
+        <button class="btn-close noti"></button>
+    </header>
+    <div class="contents">
+        <div class="notice-wrapper">
+            <div id="tab-menu" class="tab-menu">
+                <div id="tab-btn2" class="tab-btn">
+                    <ul class="tab u-line">
+                        <li class="active"><button>미확인</button></li>
+                        <li><button>확인</button></li>
+                    </ul>
+                </div>
+                <div id="tab-cont2" class="tab-cont">
+                    <div title="" class="">
+                        <ul class="notice">
+                            <li>
+                                <a href="">
+                                    <div class="noti-head">
+                                        <h5>ARAS - 품질평가</h5>
+                                        <span class="date">2022-06-11 10:01</span>
+                                    </div>
+                                    <p>OOO님(검사자명)이 [지하철(시공)] 품질평가 확인요청을 했습니다. 내용을 확인해주세요.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="noti-head">
+                                        <h5>ARAS - 품질평가 ARAS - 품질평가 ARAS - 품질평가</h5>
+                                        <span class="date">2022-06-11 10:01</span>
+                                    </div>
+                                    <p>OOO님(검사자명)이 000협력사에 대한 (프로젝트명) [지하철(시공)] 품질평가 확인요청을 했습니다. 내용을 확인해주세요.</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div title="" class="">
+                        <ul class="notice">
+                            <li class="none">
+                                <div>
+                                    <img src="../images/ico_notification.png" alt="">
+                                    <p>받은 알림이 없습니다.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <footer>
+                <p class="info">
+                    <span><i class="fas fa-info-circle"></i></span>
+                    읽은 알림은 30일 경과시 사라집니다.
+                </p>
+            </footer>
+        </div>
+    </div>
+</div>
+<!-- // 알림 목록함 -->    
+	
+<!-- Modal 작업인력 등록-->
+<div class="modal-wrapper" id="modal-register-wf">
+    <div class="modal wide">
+        <div class="header">
+            <h1>작업인력 등록
+                <button class="btn btn-close trigger-register-wf"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="register-wf">
+                <div class="d-flex">
+                    <div class="left">
+                        <div class="card">
+                            <div class="card-header">KTE</div>
+                            <div class="card-body">
+								<div id="tab-menu" class="tab-menu">
+									<div id="tab-btn" class="tab-btn">
+										<ul class="tab-2">
+											<li class="active"><button>조직도</button></li>
+											<li><button>검색</button></li>
+										</ul>
+									</div>
+									<div id="tab-cont" class="tab-cont">
+										<div title="organization" class="tree-wrap">
+											<ul class="tree">
+												<li>
+													<input type="checkbox" id="root">
+													<label for="root">조직도</label>
+													<ul>
+														<li>
+                                                            <input type="checkbox" id="node1">
+															<label for="node1">네트워크 사업본부</label>
+															<ul>
+																<li>
+                                                                    <label>사업성과팀</label>
+                                                                    <ul>
+                                                                        <li>
+                                                                            <label class="name"><input type="checkbox"><span class="class">부장</span>홍길동</label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <label class="name"><input type="checkbox"><span class="class">과장</span>김철수</label>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+																<li><label>node12</label></li>
+															    <li><label>node12</label></li>
+															</ul>
+                                                        </li>
+														<li>
+															<input type="checkbox" id="node3">
+															<label for="node3">부산/경남본부</label>
+															<ul>
+																<li><label>부산/경남 NW엔지니어링팀</label></li>
+																<li><label>node32</label></li>
+																<li><label>node33</label></li>
+															</ul>
+														</li>
+														<li>
+															<input type="checkbox" id="node4">
+															<label for="node4">node4</label>
+															<ul>
+																<li><label>node41</label></li>
+																<li><label>node42</label></li>
+																<li><label>node43</label></li>
+															</ul>
+														</li>
+														<li>
+															<input type="checkbox" id="node5">
+															<label for="node5">node5</label>
+															<ul>
+																<li><label>node51</label></li>
+																<li><label>node52</label></li>
+																<li><label>node53</label></li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+                                                <li>
+                                                    <input type="checkbox" id="node6">
+                                                    <label for="node6">네트워크 사업본부</label>
+                                                    <ul>
+                                                        <li>
+                                                            <span>
+                                                                <input type="checkbox" id="nod61">
+                                                                <label for="node61">사업성과팀</label>
+                                                            </span>
+                                                            <ul>
+                                                                <li>
+                                                                    <label class="name"><input type="checkbox"><span class="class">부장</span>홍길동</label>
+                                                                </li>
+                                                                <li>
+                                                                    <label class="name"><input type="checkbox"><span class="class">과장</span>김철수</label>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><label><span>node32</span></label></li>
+                                                        <li><label><span>node32</span></label></li>
+                                                    </ul>
+                                                </li>
+											</ul>
+										</div>
+										<div title="search">
+											<div class="card-search">
+												<div class="input-group">
+													<input type="search" placeholder="직원 이름을 입력해 검색하세요.">
+													<div class="input-group-append">
+														<span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+													</div>
+												</div>
+											</div>
+                                            <div class="check-list-wrap">
+											<div class="check-list">
+												<label class="tr">
+													<span class="name">
+														<input type="checkbox">
+														<span class="class">프로젝트 계약사원</span>홍길동
+													</span>
+													<span class="belong">설계팀</span>
+												</label>
+												<label class="tr">
+													<span class="name">
+														<input type="checkbox">
+														<span class="class">부장</span>홍길동
+													</span>
+													<span class="belong">설계팀</span>
+												</label>
+												<label class="tr">
+													<span class="name">
+														<input type="checkbox">
+														<span class="class">부장</span>홍길동
+													</span>
+													<span class="belong">설계팀</span>
+												</label>
+                                                <label class="tr">
+													<span class="name">
+														<input type="checkbox">
+														<span class="class">부장</span>홍길동
+													</span>
+													<span class="belong">설계팀</span>
+												</label>
+												<label class="tr">
+													<span class="name">
+														<input type="checkbox">
+														<span class="class">부장</span>홍길동
+													</span>
+													<span class="belong">설계팀</span>
+												</label>
+												<label class="tr">
+													<span class="name">
+														<input type="checkbox">
+														<span class="class">부장</span>홍길동
+													</span>
+													<span class="belong">설계팀</span>
+												</label>
+                                                <label class="tr">
+													<span class="name">
+														<input type="checkbox">
+														<span class="class">부장</span>홍길동
+													</span>
+													<span class="belong">설계팀</span>
+												</label>
+												<label class="tr">
+													<span class="name">
+														<input type="checkbox">
+														<span class="class">부장</span>홍길동
+													</span>
+													<span class="belong">설계팀</span>
+												</label>
+												<label class="tr">
+													<span class="name">
+														<input type="checkbox">
+														<span class="class">부장</span>홍길동
+													</span>
+													<span class="belong">설계팀</span>
+												</label>
+                                                <label class="tr">
+													<span class="name">
+														<input type="checkbox">
+														<span class="class">부장</span>홍길동
+													</span>
+													<span class="belong">설계팀</span>
+												</label>
+												<label class="tr">
+													<span class="name">
+														<input type="checkbox">
+														<span class="class">부장</span>홍길동
+													</span>
+													<span class="belong">설계팀</span>
+												</label>
+												<label class="tr">
+													<span class="name">
+														<input type="checkbox">
+														<span class="class">부장</span>홍길동
+													</span>
+													<span class="belong">설계팀</span>
+												</label>
+                                                <label class="tr">
+													<span class="name">
+														<input type="checkbox">
+														<span class="class">부장</span>홍길동
+													</span>
+													<span class="belong">설계팀</span>
+												</label>
+												<label class="tr">
+													<span class="name">
+														<input type="checkbox">
+														<span class="class">부장</span>홍길동
+													</span>
+													<span class="belong">설계팀</span>
+												</label>
+												<label class="tr">
+													<span class="name">
+														<input type="checkbox">
+														<span class="class">부장</span>홍길동
+													</span>
+													<span class="belong">설계팀</span>
+												</label>
+                                                <label class="tr">
+													<span class="name">
+														<input type="checkbox">
+														<span class="class">부장</span>홍길동
+													</span>
+													<span class="belong">설계팀</span>
+												</label>
+												<label class="tr">
+													<span class="name">
+														<input type="checkbox">
+														<span class="class">부장</span>홍길동
+													</span>
+													<span class="belong">설계팀</span>
+												</label>
+												<label class="tr">
+													<span class="name">
+														<input type="checkbox">
+														<span class="class">부장</span>홍길동
+													</span>
+													<span class="belong">설계팀</span>
+												</label>
+                                			</div>
+                                            
+                                            </div>
+										</div>
+									</div>
+								</div>
+								
+                            </div>
+                        </div>
+                    </div>
+                    <div class="center">
+                        <button class="btn free">추가<i class="fas fa-chevron-right m-l"></i></button>
+                    </div>
+                    <div class="right">
+                        <div class="card">
+                            <div class="card-header">작업인력</div>
+                            <div class="card-body">
+                                <div class="total">총 000명</div>
+                                <div class="check-list-wrap">
+                                    <div class="check-list">
+                                        <label class="tr">
+                                            <span class="name"><input type="checkbox">
+                                            <span class="class">본부장</span>홍길동</span>
+                                            <span>부산/경남 NW엔지니어링팀</span>
+                                            <span>KTE엔지니어링</span>
+                                            <span><button><i class="fas fa-minus-circle"></i></button></span>
+                                        </label>
+                                        <label class="tr">
+                                            <span class="name"><input type="checkbox">
+                                            <span class="class">부장</span>홍길동</span>
+                                            <span>설계팀</span>
+                                            <span>KTE</span>
+                                            <span><button><i class="fas fa-minus-circle"></i></button></span>
+                                        </label>
+                                        <label class="tr">
+                                            <span class="name"><input type="checkbox">
+                                            <span class="class">부장</span>홍길동</span>
+                                            <span>설계팀</span>
+                                            <span>KTE</span>
+                                            <span><button><i class="fas fa-minus-circle"></i></button></span>
+                                        </label>
+                                        <label class="tr">
+                                            <span class="name"><input type="checkbox">
+                                            <span class="class">부장</span>홍길동</span>
+                                            <span>설계팀</span>
+                                            <span>KTE</span>
+                                            <span><button><i class="fas fa-minus-circle"></i></button></span>
+                                        </label>
+                                        <label class="tr">
+                                            <span class="name"><input type="checkbox">
+                                            <span class="class">차장</span>홍길동</span>
+                                            <span>설계팀</span>
+                                            <span>KTE</span>
+                                            <span><button><i class="fas fa-minus-circle"></i></button></span>
+                                        </label><label class="tr">
+                                            <span class="name"><input type="checkbox">
+                                            <span class="class">과장</span>홍길동</span>
+                                            <span>설계팀</span>
+                                            <span>KTE</span>
+                                            <span><button><i class="fas fa-minus-circle"></i></button></span>
+                                        </label>
+                                        <label class="tr">
+                                            <span class="name"><input type="checkbox">
+                                            <span class="class">부장</span>홍길동</span>
+                                            <span>부산/경남 NW엔지니어링팀</span>
+                                            <span>KTE</span>
+                                            <span><button><i class="fas fa-minus-circle"></i></button></span>
+                                        </label>
+                                
+                                    </div>
+                                </div>
+                                <div class="setting">
+                                    <input type="checkbox">
+                                    <button class="btn-sm">선택 인력 빼기</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+		<div class="btn-area">
+			<button class="btn -grey">취소</button>
+			<button class="btn -primary">등록</button>
+		</div>
+    </div>
+</div>
+<!-- End Modal -->
+
+<!-- Modal 프로젝트 수정-->
+<div class="modal-wrapper" id="modal-modify">
+    <div class="modal">
+        <div class="header">
+            <h1>프로젝트 수정
+                <button class="btn btn-close trigger-modify"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <form class="modify">
+				<ul class="form-group">
+					<li>
+						<label>프로젝트</label>
+						<input type="text" class="input-tb" placeholder="" value="2019년 무선망 시설공사 총액계약_ 강북" disabled>
+					</li>
+					<li class="d-flex">
+						<div>
+							<label>사업분류(BM)</label>
+							<select class="form-select" disabled>
+								<option selected="">무선</option>
+								<option value="">1</option>
+								<option value="">2</option>
+							</select>
+						</div>
+						<div>
+							<label>사업영역</label>
+							<select class="form-select" disabled>
+								<option selected="">무선</option>
+								<option value="">1</option>
+								<option value="">2</option>
+							</select>
+						</div>
+					</li>
+					<li>
+						<label>착공일/준공일</label>
+						<div class="d-flex ai-center">
+							<input type="date" class="input-tb" placeholder="" value="" disabled>
+							<span>~</span>
+							<input type="date" class="input-tb" placeholder="" value="" disabled>
+						</div>
+					</li>
+					<li class="d-flex">
+						<div>
+							<label>영업대표</label>
+							<div class="input-tb">
+								<input type="text" class="input-tb" placeholder="" value="시스템 관리자" disabled>
+								<button class="ico-btn disabled"><img src="../images/icon/ico_write_pop.png" alt=""></button>
+							</div>
+						</div>
+						<div>
+							<label>수주부서</label>
+							<select class="form-select" disabled>
+								<option selected="">강북/강원 NW엔지니어링팀</option>
+								<option value="">1</option>
+								<option value="">2</option>
+							</select>
+						</div>
+					</li>
+					<li class="d-flex">
+						<div>
+							<label>수행PM</label>
+							<div class="input-tb">
+								<input type="text" class="input-tb" placeholder="" value="시스템 관리자" disabled>
+								<button class="ico-btn disabled"><img src="../images/icon/ico_write_pop.png" alt=""></button>
+							</div>
+						</div>
+						<div>
+							<label>수행부서</label>
+							<select class="form-select" disabled>
+								<option selected="">강북/강원 NW엔지니어링팀</option>
+								<option value="">1</option>
+								<option value="">2</option>
+							</select>
+						</div>
+					</li>
+					<li class="d-flex">
+						<div>
+							<label>PL(공통)</label>
+							<div class="input-tb">
+								<input type="text" class="input-tb" placeholder="" value="시스템 관리자">
+								<button class="ico-btn trigger-register-wf"><img src="../images/icon/ico_write_pop.png" alt=""></button>
+							</div>
+						</div>
+						<div>
+							<label>수행PL</label>
+							<select class="form-select" disabled>
+								<option selected="">강북/강원 NW엔지니어링팀</option>
+								<option value="">1</option>
+								<option value="">2</option>
+							</select>
+						</div>
+					</li>
+                    <li>
+						<label>계약번호</label>
+						<input type="text" class="input-tb" placeholder="계약번호" value="">
+					</li>
+                    <li class="d-flex">
+						<div>
+							<label>위험평가표 작성대상</label>
+							<select class="form-select">
+								<option selected="">대상</option>
+								<option value="">1</option>
+								<option value="">2</option>
+							</select>
+						</div>
+					</li>
+				</ul>
+            </form>
+        </div>
+		<div class="btn-area">
+			<button class="btn -grey">취소</button>
+			<button class="btn -primary">수정</button>
+		</div>
+    </div>
+</div>
+<!-- End Modal -->
+
+<div class="page-wrapper d-flex">
+    <nav id="side-nav" class="side-nav">
+        <!-- 사이드바 토글 -->
+        <div id="menu-toggle">
+            <button class="ico-btn">
+                <img src="../images/icon/ico_menu.png" alt="토글">
+            </button>
+        </div>
+
+		<div class="side-nav-header">
+			<div class="ico-menu-list">
+                <button class="ico-btn setting">
+                    <img src="../images/icon/ico_setting.png" alt="설정">
+                </button>
+				<button class="ico-btn noti">
+                    <span class="badge noti">99</span>
+                    <img src="../images/icon/ico_notification.png" alt="알림">
+                </button>
+				<button class="ico-btn" id="logOutBtn"><img src="../images/icon/ico_logout_wh.png" alt="로그아웃"></button>
+			</div>
+		</div>
+        <div class="brand-user">
+            <div class="brand">
+                <img src="../images/logo-aras-kr.png" alt="아라스 로고">
+            </div>
+        </div>
+		<div class="user">
+			<a href="">
+				<img src="../images/icon/ico_user.png" alt="시스템관리자">
+				<span class="name">시스템관리자</span>
+			</a>
+		</div>
+        <div class="PiMS">
+			<a href="" target="_blank">
+				<img src="../images/icon/ico_pims.png" alt="PiMS">
+				<span class="name">PiMS</span>
+			</a>
+		</div>
+        <div class="side-menu">
+            <ul>
+                <li><a href=""><img src="../images/icon/ico_sidebar_map_wh.png" alt="지도">지도</a></li>
+                <li><a href="" class="active"><img src="../images/icon/ico_sidebar_pj_wh.png" alt="프로잭트">프로젝트</a></li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../images/icon/ico_sidebar_place_wh.png" alt="현장관리">현장관리</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">현장정보</a></li>
+                            <li><a href="#">현장관리</a></li>
+                            <li><a href="#">공정분류설정</a></li>
+                            <li><a href="#">OCR데이터관리</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../images/icon/ico_sidebar_material_wh.png" alt="자재관리">자재관리</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">자재구매관리</a></li>
+                            <li><a href="#">자재현황관리</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../images/icon/ico_sidebar_safety_wh.png" alt="안전관리">안전관리</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">위험성평가회의</a></li>
+                            <li><a href="#">일일안전활동보고</a></li>
+                            <li><a href="#">안전관리용품</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../images/icon/ico_sidebar_safety_board_wh.png" alt="안전관리 게시판">안전관리 게시판</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">안전보건관리 수행계획서</a></li>
+                            <li><a href="#">위험작업 사전허가요청서</a></li>
+                            <li><a href="#">작업허가서</a></li>
+                            <li><a href="#">작업계획서</a></li>
+							<li><a href="#">안전보건교육일지</a></li>
+                            <li><a href="#">안전점검의 날 행사</a></li>
+                            <li><a href="#">협의체 회의록</a></li>
+                            <li><a href="#">사업장 합동안전점검</a></li>
+							<li><a href="#">산업안전보건관리비</a></li>
+                            <li><a href="#">임원/교차 합동안전점검</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../images/icon/ico_sidebar_assess_wh.png" alt="수행품질평가">수행품질평가</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">품질평가 결과조회</a></li>
+                            <li><a href="#">협력사별 종합표</a></li>
+                            <li><a href="#">프로젝트별 종합표</a></li>
+                            <li><a href="#">품질평가 진행현황</a></li>
+							<li><a href="#">품질평가 항목관리</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../images/icon/ico_sidebar_board_wh.png" alt="게시판">게시판</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">프로젝트 게시판</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-menu-dropdown">
+                    <a href="#"><img src="../images/icon/ico_sidebar_sys_manage_wh.png" alt="시스템관리">시스템관리</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">메뉴권한관리</a></li>
+                            <li><a href="#">조직관리</a></li>
+                            <li><a href="#">권한관리</a></li>
+                            <li><a href="#">사용자관리</a></li>
+							<li><a href="#">로그인 히스토리</a></li>
+                            <li><a href="#">공정진행 단계관리</a></li>
+                            <li><a href="#">공정분류 코드관리</a></li>
+                            <li><a href="#">안전장구 물품관리</a></li>
+							<li><a href="#">위험평가항목 코드관리</a></li>
+                            <li><a href="#">품질평가항목관리</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+		<!--<footer>
+			<div>
+				<span class="v-info">버전정보 2.0.0</span>
+			</div>
+		</footer>-->
+    </nav>
+	
+    <main class="contents">
+        <section class="wrapper">
+            <h1 class="page-title">프로젝트 관리</h1>
+            <form>
+                <table class="table l-fixed">
+					<colgroup>
+						<col width="160">
+						<col width="">
+						<col width="160">
+						<col width="">
+						<col width="160">
+						<col width="">
+					</colgroup>
+                    <tbody>
+                        <tr>
+							<th>프로젝트코드</th>
+                            <td>
+								<input type="text" class="input-tb" placeholder="프로젝트코드">
+							</td>
+							<th>진행상태</th>
+                            <td>
+								<select class="form-select">
+                                    <option selected>선택</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                </select>
+							</td>
+							<th>프로젝트명</th>
+                            <td>
+								<input type="text" class="input-tb" placeholder="프로젝트명">
+							</td>
+						</tr>
+						<tr>
+							<th>사업장배치</th>
+							<td>
+                                <select class="form-select">
+                                    <option selected="">선택</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+							</td>
+                            <th>BM</th>
+							<td>
+								<select class="form-select">
+                                    <option selected="">선택</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+							</td>
+                            <th>사업영역</th>
+                            <td>
+								<select class="form-select">
+                                    <option selected="">선택</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+							</td>
+                        </tr>
+                        <tr>
+                            <th>수행품질평가대상</th>
+                            <td>
+								<select class="form-select">
+                                    <option selected="">선택</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+							</td>
+                            <th>위험성평가표 적용대상</th>
+                            <td>
+                                <select class="form-select">
+                                    <option selected="">선택</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                            <th>고위험 여/부</th>
+                            <td>
+                                <select class="form-select">
+                                    <option selected="">선택</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>수행PM</th>
+                            <td><input type="text" class="input-tb" placeholder="수행 PM"></td>
+                            <th>영업대표</th>
+                            <td><input type="text" class="input-tb" placeholder=""></td>
+                            <th></th>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btn-area">
+                    <button class="btn-big -grey">초기화</button>
+                    <button class="btn-big -primary">검색</button>
+                </div>
+            </form>
+            <div class="tui-wrapper">
+                <div class="d-flex">
+                    <h2>프로젝트<span>(00)</span></h2>
+                    <div class="top btn-area">
+                        <button class="btn btn-delete">삭제</button>
+                        <button class="btn btn-upload">엑셀 업로드</button>
+                        <button class="btn btn-download">엑셀 다운로드</button>
+						<!--<button class="btn btn-write">프로젝트 등록</button>-->
+                    </div>
+                </div>
+                <div class="tui-area">
+                    <table class="table db-t">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox"></th>
+                                <th>주관사업본부</th>
+                                <th>프로젝트 코드</th>
+                                <th>프로젝트명</th>
+                                <th>프로젝트배치</th>
+                                <th>사업장배치</th>
+                                <th>BM</th>
+                                <th>사업영역</th>
+                                <th>작업인력</th>
+                                <th>고위험작업</th>
+                                <th>수주(예상)금액</th>
+                                <th>착공일</th>
+                                <th>준공일</th>
+                                <th>수주부서</th>
+                                <th>영업대표</th>
+                                <th>수행비서</th>
+                                <th>수행PM</th>
+                                <th>발주처명</th>
+                                <th>ARAS 등록</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>네트워크사업본부</td>
+                                <td>A0000000</td>
+                                <td><a href="#" class="trigger-modify">2019년 무선망 시설공사 총액계약_ 강북</a></td>
+                                <td class="center"><button class="btn -lightred trigger-place">사업장 배치</button></td>
+                                <td class="center">O</td>
+                                <td>무선</td>
+                                <td>터널, 인빌딩</td>
+                                <td class="center"><button class="btn -blue trigger-info">작업인력</button></td>
+                                <td class="center"><button class="btn -orange">위험작업 체크</button></td>
+                                <td class="right">10,000,000</td>
+                                <td class="center">2021-04-15</td>
+                                <td class="center">2021-12-10</td>
+                                <td>충남/충북NW엔지니어링팀</td>
+                                <td>홍길동</td>
+                                <td>충남/충북NW엔지니어링팀</td>
+                                <td>홍길동</td>
+                                <td>주식회사케이티</td>
+                                <td class="center">Y <button class="btn -green">워드 다운로드</button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>네트워크사업본부</td>
+                                <td>A0000000</td>
+                                <td><a href="#">2021년 000변경 사업</a></td>
+                                <td class="center"></td>
+                                <td class="center">O</td>
+                                <td>무선</td>
+                                <td>터널, 인빌딩</td>
+                                <td class="center"><button class="btn -blue trigger-info">작업인력</button></td>
+                                <td class="center">고위험</td>
+                                <td class="right">10,000,000</td>
+                                <td class="center">2021-04-15</td>
+                                <td class="center">2021-12-10</td>
+                                <td>충남/충북NW엔지니어링팀</td>
+                                <td>홍길동</td>
+                                <td>충남/충북NW엔지니어링팀</td>
+                                <td>홍길동</td>
+                                <td>주식회사케이티</td>
+                                <td class="center">N</td>
+                            </tr>
+							<tr>
+                                <td><input type="checkbox"></td>
+                                <td>네트워크사업본부</td>
+                                <td>A0000000</td>
+                                <td><a href="#" class="trigger-modify">2021년 000변경 사업</a></td>
+                                <td class="center"><button class="btn -lightred trigger-place">사업장 배치</button></td>
+                                <td class="center">X</td>
+                                <td>무선</td>
+                                <td>터널, 인빌딩</td>
+                                <td class="center"><button class="btn -blue trigger-info">작업인력</button></td>
+                                <td class="center">-</td>
+                                <td class="right">10,000,000</td>
+                                <td class="center">2021-04-15</td>
+                                <td class="center">2021-12-10</td>
+                                <td>충남/충북NW엔지니어링팀</td>
+                                <td>홍길동</td>
+                                <td>충남/충북NW엔지니어링팀</td>
+                                <td>홍길동</td>
+                                <td>주식회사케이티</td>
+                                <td class="center">Y <button class="btn -green">워드 다운로드</button></td>
+                            </tr>
+							<tr>
+                                <td><input type="checkbox"></td>
+                                <td>네트워크사업본부</td>
+                                <td>A0000000</td>
+                                <td><a href="#" class="trigger-modify">2021년 000변경 사업</a></td>
+                                <td class="center"><button class="btn -lightred trigger-place">사업장 배치</button></td>
+                                <td class="center">X</td>
+                                <td>무선</td>
+                                <td>터널, 인빌딩</td>
+                                <td class="center"><button class="btn -blue trigger-info">작업인력</button></td>
+                                <td class="center">-</td>
+                                <td class="right">10,000,000</td>
+                                <td class="center">2021-04-15</td>
+                                <td class="center">2021-12-10</td>
+                                <td>충남/충북NW엔지니어링팀</td>
+                                <td>홍길동</td>
+                                <td>충남/충북NW엔지니어링팀</td>
+                                <td>홍길동</td>
+                                <td>주식회사케이티</td>
+                                <td class="center">Y <button class="btn -green">워드 다운로드</button></td>
+                            </tr>
+							<tr>
+                                <td><input type="checkbox"></td>
+                                <td>네트워크사업본부</td>
+                                <td>A0000000</td>
+                                <td><a href="#" class="trigger-modify">2021년 000변경 사업</a></td>
+                                <td class="center"><button class="btn -lightred trigger-place">사업장 배치</button></td>
+                                <td class="center">X</td>
+                                <td>무선</td>
+                                <td>터널, 인빌딩</td>
+                                <td class="center"><button class="btn -blue trigger-info">작업인력</button></td>
+                                <td class="center"><button class="btn -orange">위험작업 체크</button></td>
+                                <td class="right">10,000,000</td>
+                                <td class="center">2021-04-15</td>
+                                <td class="center">2021-12-10</td>
+                                <td>충남/충북NW엔지니어링팀</td>
+                                <td>홍길동</td>
+                                <td>충남/충북NW엔지니어링팀</td>
+                                <td>홍길동</td>
+                                <td>주식회사케이티</td>
+                                <td class="center">Y <button class="btn -green">워드 다운로드</button></td>
+                            </tr>
+							<tr>
+                                <td><input type="checkbox"></td>
+                                <td>네트워크사업본부</td>
+                                <td>A0000000</td>
+                                <td><a href="#" class="trigger-modify">2021년 000변경 사업</a></td>
+                                <td class="center"><button class="btn -lightred trigger-place">사업장 배치</button></td>
+                                <td class="center">X</td>
+                                <td>무선</td>
+                                <td>터널, 인빌딩</td>
+                                <td class="center"><button class="btn -blue trigger-info">작업인력</button></td>
+                                <td class="center"><button class="btn -orange">위험작업 체크</button></td>
+                                <td class="right">10,000,000</td>
+                                <td class="center">2021-04-15</td>
+                                <td class="center">2021-12-10</td>
+                                <td>충남/충북NW엔지니어링팀</td>
+                                <td>홍길동</td>
+                                <td>충남/충북NW엔지니어링팀</td>
+                                <td>홍길동</td>
+                                <td>주식회사케이티</td>
+                                <td class="center">Y <button class="btn -green">워드 다운로드</button></td>
+                            </tr>
+							<tr>
+                                <td><input type="checkbox"></td>
+                                <td>네트워크사업본부</td>
+                                <td>A0000000</td>
+                                <td><a href="#" class="trigger-modify">2021년 000변경 사업</a></td>
+                                <td class="center"><button class="btn -lightred trigger-place">사업장 배치</button></td>
+                                <td class="center">O</td>
+                                <td>무선</td>
+                                <td>터널, 인빌딩</td>
+                                <td class="center"><button class="btn -blue trigger-info">작업인력</button></td>
+                                <td class="center"><button class="btn -orange">위험작업 체크</button></td>
+                                <td class="right">10,000,000</td>
+                                <td class="center">2021-04-15</td>
+                                <td class="center">2021-12-10</td>
+                                <td>충남/충북NW엔지니어링팀</td>
+                                <td>홍길동</td>
+                                <td>충남/충북NW엔지니어링팀</td>
+                                <td>홍길동</td>
+                                <td>주식회사케이티</td>
+                                <td class="center">Y <button class="btn -green">워드 다운로드</button></td>
+                            </tr>
+							<tr>
+                                <td><input type="checkbox"></td>
+                                <td>네트워크사업본부</td>
+                                <td>A0000000</td>
+                                <td><a href="#" class="trigger-modify">2021년 000변경 사업</a></td>
+                                <td class="center"><button class="btn -lightred trigger-place">사업장 배치</button></td>
+                                <td class="center">O</td>
+                                <td>무선</td>
+                                <td>터널, 인빌딩</td>
+                                <td class="center"><button class="btn -blue trigger-info">작업인력</button></td>
+                                <td class="center"><button class="btn -orange">위험작업 체크</button></td>
+                                <td class="right">10,000,000</td>
+                                <td class="center">2021-04-15</td>
+                                <td class="center">2021-12-10</td>
+                                <td>충남/충북NW엔지니어링팀</td>
+                                <td>홍길동</td>
+                                <td>충남/충북NW엔지니어링팀</td>
+                                <td>홍길동</td>
+                                <td>주식회사케이티</td>
+                                <td class="center">Y <button class="btn -green">워드 다운로드</button></td>
+                            </tr>
+							<tr>
+                                <td><input type="checkbox"></td>
+                                <td>네트워크사업본부</td>
+                                <td>A0000000</td>
+                                <td><a href="#" class="trigger-modify">2021년 000변경 사업</a></td>
+                                <td class="center"><button class="btn -lightred trigger-place">사업장 배치</button></td>
+                                <td class="center">O</td>
+                                <td>무선</td>
+                                <td>터널, 인빌딩</td>
+                                <td class="center"><button class="btn -blue trigger-info">작업인력</button></td>
+                                <td class="center"><button class="btn -orange">위험작업 체크</button></td>
+                                <td class="right">10,000,000</td>
+                                <td class="center">2021-04-15</td>
+                                <td class="center">2021-12-10</td>
+                                <td>충남/충북NW엔지니어링팀</td>
+                                <td>홍길동</td>
+                                <td>충남/충북NW엔지니어링팀</td>
+                                <td>홍길동</td>
+                                <td>주식회사케이티</td>
+                                <td class="center">Y <button class="btn -green">워드 다운로드</button></td>
+                            </tr>
+							<tr>
+                                <td><input type="checkbox"></td>
+                                <td>네트워크사업본부</td>
+                                <td>A0000000</td>
+                                <td><a href="#" class="trigger-modify">2021년 000변경 사업</a></td>
+                                <td class="center"><button class="btn -lightred trigger-place">사업장 배치</button></td>
+                                <td class="center">O</td>
+                                <td>무선</td>
+                                <td>터널, 인빌딩</td>
+                                <td class="center"><button class="btn -blue trigger-info">작업인력</button></td>
+                                <td class="center"><button class="btn -orange">위험작업 체크</button></td>
+                                <td class="right">10,000,000</td>
+                                <td class="center">2021-04-15</td>
+                                <td class="center">2021-12-10</td>
+                                <td>충남/충북NW엔지니어링팀</td>
+                                <td>홍길동</td>
+                                <td>충남/충북NW엔지니어링팀</td>
+                                <td>홍길동</td>
+                                <td>주식회사케이티</td>
+                                <td class="center">Y <button class="btn -green">워드 다운로드</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+				
+				<!--<div class="toolbar">
+					<div id="paging" class="pagination">
+						<a href="#" id="first" class="disabled"><img src="../images/icon/ico_double_arrow_left.png" alt="첫 페이지"></a> 
+					  	<a href="#" id="prev" class="disabled"><img src="../images/icon/ico_arrow_left.png" alt="이전 페이지"></a> 
+						<div id="wrapper">
+							<select name="selBox" id="selBox" class="page-select">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+							</select>
+							<span>of 3</span>
+						</div>
+						<a href="#" id="next"><img src="../images/icon/ico_arrow_right.png" alt="다음 페이지"></a>
+						<a href="#" id="last"><img src="../images/icon/ico_double_arrow_right.png" alt="마지막 페이지"></a>
+					</div>
+				</div>-->
+				
+				<div class="toolbar">
+					<div id="paging" class="pagination">
+						<a href="#" id="first" class="disabled"><img src="../images/icon/ico_double_arrow_left.png" alt="첫 페이지"></a> 
+					  	<a href="#" id="prev" class="disabled"><img src="../images/icon/ico_arrow_left.png" alt="이전 페이지"></a> 
+						<div id="wrapper">
+							<ul class="page-num">
+								<li><a href="" class="active">1</a></li>
+								<li><a href="">2</a></li>
+								<li><a href="">3</a></li>
+								<li><a href="">4</a></li>
+								<li><a href="">5</a></li>
+								<li><a href="">6</a></li>
+								<li><a href="">7</a></li>
+								<li><a href="">8</a></li>
+								<li><a href="">9</a></li>
+								<li><a href="">10</a></li>
+							</ul>
+						</div>
+						<a href="#" id="next"><img src="../images/icon/ico_arrow_right.png" alt="다음 페이지"></a>
+						<a href="#" id="last"><img src="../images/icon/ico_double_arrow_right.png" alt="마지막 페이지"></a>
+					</div>
+					<div class="view-num">
+						<select class="form-select">
+							<option selected="">보기설정</option>
+							<option value="">10</option>
+							<option value="">20</option>
+							<option value="">30</option>
+							<option value="">40</option>
+							<option value="">50</option>
+						</select>
+					</div>
+				</div>
+            </div>
+        </section>
+    </main>
+    
+    <!--loading-->
+    <div id="loading-overlay">
+        <div id="loading">
+            <div class="dot-area">
+                <div class="dot left three"></div>
+                <div class="dot left two"></div>
+                <div class="dot left one"></div>
+                <i class="ic-logo"></i>
+                <div class="dot right one"></div>
+                <div class="dot right two"></div>
+                <div class="dot right three"></div>
+            </div>
+            <h2 class="loading-text">잠시만 기다려주세요</h2>
+        </div>
+    </div>
+    <!--// loading-->
+    
+    
+</div>
+    
+    
+<!-- partial -->
+<script  src="../js/sidebar.js"></script>
+
+</body>
+</html>

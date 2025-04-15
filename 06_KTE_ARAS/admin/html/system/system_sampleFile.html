@@ -1,0 +1,111 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>양식파일 관리</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+    
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+<body>
+    
+<div class="page-wrapper d-flex">
+	<nav id="side-nav" class="side-nav">
+    </nav>
+	
+    <main class="contents">
+        <section class="wrapper">
+            <h1 class="page-title">양식(샘플)파일 관리</h1>
+            <form class="modify">
+                <table class="table v-middle">
+                    <colgroup>
+                        <col width="260">
+                        <col width="">
+                        <col width="500">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>양식(샘플)명</th>
+                            <th>다운로드 위치</th>
+                            <th>첨부</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="edit">
+                            <td>고위험작업 체크리스트</td>
+                            <td>프로젝트 &gt; 위험작업 체크리스트</td>
+                            <td>
+                                <div class="filebox">
+                                    <input class="upload-name" value="위험작업체크리스트.xls" placeholder="첨부파일">
+                                    <label for="file-1">파일선택</label> 
+                                    <input type="file" id="file-1">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="edit">
+                            <td>일일안전활동보고</td>
+                            <td>안전관리 &gt; 일일안전활동보고</td>
+                            <td>
+                                <div class="filebox">
+                                    <input class="upload-name" value="일일안전보고활동.xls" placeholder="첨부파일">
+                                    <label for="file-2">파일선택</label> 
+                                    <input type="file" id="file-2">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="edit">
+                            <td>최초위험성평가표</td>
+                            <td>안전관리 &gt; 최초위험성평가표 관리</td>
+                            <td>
+                                <div class="filebox">
+                                    <input class="upload-name" value="최초위험성평가표.xls" placeholder="첨부파일">
+                                    <label for="file-3">파일선택</label> 
+                                    <input type="file" id="file-3">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="edit">
+                            <td>수시위험성평가표</td>
+                            <td>안전관리 &gt; 수시위험성평가표 관리<br>파트너사 &gt; 수시위험성평가표 관리</td>
+                            <td>
+                                <div class="filebox">
+                                    <input class="upload-name" value="위험작업체크리스트.xls" placeholder="첨부파일">
+                                    <label for="file-4">파일선택</label> 
+                                    <input type="file" id="file-4">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="edit">
+                            <td>정기위험성평가표</td>
+                            <td>안전관리 &gt; 정기위험성평가표 관리</td>
+                            <td>
+                                <div class="filebox">
+                                    <input class="upload-name" value="위험작업체크리스트.xls" placeholder="첨부파일">
+                                    <label for="file-5">파일선택</label> 
+                                    <input type="file" id="file-5">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btn-area">
+                    <button class="btn-big -grey">취소</button>
+                    <button class="btn-big -primary">저장</button>
+                </div>
+            </form>
+    
+        </section>
+    </main>
+</div>
+    
+    
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+    
+</body>
+</html>
