@@ -1,0 +1,148 @@
+/* *******************************************************
+ * filename : reset.css
+ * description : css 초기화
+******************************************************** */
+@charset "utf-8";
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 
+*/
+*{margin:0; padding:0;}
+
+html, body, div, span, applet, object, iframe,
+p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ol, ul, li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+ol, ul, li {list-style: none;}
+i,em,address{font-style:normal}
+
+/* 인용구 표시 초기화 */
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+legend{
+    overflow:hidden;position:absolute;
+    top:0;left:0;width:1px;height:1px;
+    font-size:0;line-height:100px;
+    white-space:nowrap;
+}
+table{
+  border-spacing: 0px;
+  border-collapse: collapse;
+}
+caption{
+    width:1px;height:0;
+    overflow:hidden;
+    clip:rect(1px, 1px, 1px, 1px);
+}
+th,td{word-break:break-all;vertical-align: middle;}
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+p {
+  padding: 0.143rem 0.143rem;
+}
+
+/* 폰트 강조 특성 초기화 */
+address, caption, cite, code, dfn, em, strong, th, var,i {
+  font-style:normal;
+}
+
+hr {border: none;}
+
+img,fieldset{
+  border:0;
+  vertical-align:middle;
+}
+
+a{
+  text-decoration: none;
+}
+a:focus{
+  outline: none !important;
+}
+button, [role="button"], [role="option"] {
+  cursor: pointer;
+}
+button{
+  cursor: pointer; 
+  border:0;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+input:focus, select:focus, option:focus, textarea:focus, button:focus{
+	outline: none;
+}
+select {
+  --form-select-bg-img:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%238a97ab' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+  /* background-image:var(--form-select-bg-img); */
+  background: #fff url(../images/ico_arrow_down@2x.png);
+  background-repeat: no-repeat;
+	background-size: 1.4rem 1.4rem;
+  /* background-position: 2.5rem 1rem; */
+  background-position: 5.5rem .8rem;
+	-webkit-padding-right: 2rem;
+	-moz-padding-right: 2rem;
+}
+
+input::placeholder {
+  color: #c0c0c0;
+  font-size: 1.3rem;
+}
+textarea::placeholder {
+  color: #c0c0c0;
+  font-size: 1.3rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
