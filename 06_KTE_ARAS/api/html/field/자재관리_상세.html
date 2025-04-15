@@ -1,0 +1,355 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>자재관리</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+<body>
+	<div class="page-wrapper d-flex">
+		<main class="main">
+			<header class="m-header">
+				<button class="no-bg left"></button>
+				<div class="inner">자재관리</div>
+			</header>
+
+			<!--모바일 컨텐츠-->
+			<div class="contents">
+				<div class="board-wrapper" style="height: calc(100vh - 10.4rem);">
+					<div class="list-box mate">
+						<button type="button" class="list_ ">
+							<span class="title">광전복합케이블</span>
+							<span class="badge count">100M</span>
+						</button>
+						<ul class="worker-info">
+							<table class="table no-bg">
+								<colgroup>
+			                        <col width="95">
+			                        <col width="">
+			                    </colgroup>
+			                    <tbody>
+			                    	<tr>
+			                    		<th>협력사명</th>
+			                            <td><input type="text" id="Partner_Name" name="Partner_Name" class="input-tb" value="(주)큐브정보통신" disabled=""></td>
+			                    	</tr>
+			                    	<tr>
+			                    		<th>프로젝트 코드</th>
+			                            <td><input type="text" id="project_code" name="project_code" class="input-tb" value="A210167" disabled=""></td>
+			                    	</tr>
+			                    	<tr>
+			                    		<th>프로젝트명</th>
+			                            <td><input type="text" id="project_name" name="project_name" class="input-tb" value="2021년 통신3사 무선국 설치환경 개선사업" disabled=""></td>
+			                    	</tr>
+			                    	<tr>
+			                    		<th>구매오더번호</th>
+			                            <td><input type="text" id="order_member" name="order_member" class="input-tb" value="4500043954" disabled=""></td>
+			                    	</tr>
+			                    	<tr>
+			                    		<th>자재코드</th>
+			                            <td><input type="text" id="code" name="code" class="input-tb" value="10375823" disabled=""></td>
+			                    	</tr>
+			                    	<tr>
+			                    		<th>자재명</th>
+			                            <td><input type="text" id="name" name="name" class="input-tb" value="광전복합케이블" disabled=""></td>
+			                    	</tr>
+			                    	<tr>
+			                    		<th>납품사</th>
+			                            <td><input type="text" id="Suppliers" name="Suppliers" class="input-tb" value="케이티커머스 주식회사/담당자/01001011234" disabled=""></td>
+			                    	</tr>
+			                    	<tr>
+			                    		<th>분배수량(잔여)</th>
+			                            <td><input type="text" id="" name="" class="input-tb" value="100M (100M)" disabled=""></td>
+			                    	</tr>
+									<tr>
+			                    		<th>총 입고완료수량</th>
+			                            <td>
+			                            	<input type="text" name="" id="" class="input-tb" value="0M">
+			                            </td>
+			                    	</tr>
+			                    	<tr>
+			                    		<th>입고수량</th>
+			                            <td>
+			                            	<input type="text" name="" id="" class="input-tb" placeholder="수량을 입력하세요">
+			                            </td>
+			                    	</tr>
+			                    	<tr>
+			                            <th colspan="2" style="border-bottom: 0;">
+			                                <div class="d-flex title-area">
+			                                    <span class="title">자재사진</span>
+			                                    <button class="btn-sm -blue">사진추가</button>
+			                                </div>
+			                                <div class="grid-gallery">
+			                                    <ul class="grid">
+		                                            <li>
+		                                                <button class="btn-close"><i class="fa fa-times" aria-hidden="true"></i></button>
+		                                                <figure class="h-auto">
+		                                                    <img src="../../images/sample/1.png" alt="img01">
+		                                                </figure>
+		                                                <div class="info no-bortop" style="display: block;">
+		                                                    <div class="fs12">노영수</div>
+		                                                    <div class="date">2021-05-27</div>
+		                                                </div>
+		                                            </li>
+		                                            <li>
+		                                                <button class="btn-close"><i class="fa fa-times" aria-hidden="true"></i></button>
+		                                                <div class="attach">
+		                                                    <div class="btn-area">
+		                                                        <button class="btn-sm"><i class="fa fa-camera" aria-hidden="true"></i></button>
+		                                                        <button class="btn-sm"><i class="fa fa-images" aria-hidden="true"></i></button>
+		                                                    </div>
+		                                                </div>
+		                                            </li>
+		                                            <li>
+		                                                <button class="btn-close"><i class="fa fa-times" aria-hidden="true"></i></button>
+		                                                <div class="attach">
+		                                                    <div class="btn-area">
+		                                                        <button class="btn-sm"><i class="fa fa-camera" aria-hidden="true"></i></button>
+		                                                        <button class="btn-sm"><i class="fa fa-images" aria-hidden="true"></i></button>
+		                                                    </div>
+		                                                </div>
+		                                            </li>
+		                                        </ul>
+			                                </div>
+			                            </th>
+			                        </tr>
+			                    </tbody>
+							</table>
+						</ul>
+					</div>
+					<div class="list-box mate">
+						<button type="button" class="list_ ">
+							<span class="title">안전조끼</span>
+							<span class="badge count">200EA</span>
+						</button>
+						<ul class="worker-info">
+							<table class="table no-bg">
+								<colgroup>
+			                        <col width="95">
+			                        <col width="">
+			                    </colgroup>
+			                    <tbody>
+			                    	<tr>
+			                    		<th>협력사명</th>
+			                            <td><input type="text" id="Partner_Name" name="Partner_Name" class="input-tb" value="(주)큐브정보통신" disabled=""></td>
+			                    	</tr>
+			                    	<tr>
+			                    		<th>프로젝트 코드</th>
+			                            <td><input type="text" id="project_code" name="project_code" class="input-tb" value="A210167" disabled=""></td>
+			                    	</tr>
+			                    	<tr>
+			                    		<th>프로젝트명</th>
+			                            <td><input type="text" id="project_name" name="project_name" class="input-tb" value="2021년 통신3사 무선국 설치환경 개선사업" disabled=""></td>
+			                    	</tr>
+			                    	<tr>
+			                    		<th>구매오더번호</th>
+			                            <td><input type="text" id="order_member" name="order_member" class="input-tb" value="4500043954" disabled=""></td>
+			                    	</tr>
+			                    	<tr>
+			                    		<th>자재코드</th>
+			                            <td><input type="text" id="code" name="code" class="input-tb" value="10375823" disabled=""></td>
+			                    	</tr>
+			                    	<tr>
+			                    		<th>자재명</th>
+			                            <td><input type="text" id="name" name="name" class="input-tb" value="안전조끼" disabled=""></td>
+			                    	</tr>
+			                    	<tr>
+			                    		<th>납품사</th>
+			                            <td><input type="text" id="Suppliers" name="Suppliers" class="input-tb" value="케이티커머스 주식회사/담당자/01001011234" disabled=""></td>
+			                    	</tr>
+			                    	<tr>
+			                    		<th>분배수량(잔여)</th>
+			                            <td><input type="text" id="" name="" class="input-tb" value="100EA (100M)" disabled=""></td>
+			                    	</tr>
+									<tr>
+			                    		<th>총 입고완료수량</th>
+			                            <td>
+			                            	<input type="text" name="" id="" class="input-tb" value="0EA">
+			                            </td>
+			                    	</tr>
+			                    	<tr>
+			                    		<th>입고수량</th>
+			                            <td>
+			                            	<input type="text" name="" id="" class="input-tb" placeholder="수량을 입력하세요">
+			                            </td>
+			                    	</tr>
+			                    	<tr>
+			                            <th colspan="2" style="border-bottom: 0;">
+			                                <div class="d-flex title-area">
+			                                    <span class="title">자재사진</span>
+			                                    <button class="btn-sm -blue">사진추가</button>
+			                                </div>
+			                                <div class="grid-gallery">
+			                                    <ul class="grid">
+		                                            <li>
+		                                                <button class="btn-close"><i class="fa fa-times" aria-hidden="true"></i></button>
+		                                                <figure class="h-auto">
+		                                                    <img src="../../images/sample/1.png" alt="img01">
+		                                                </figure>
+		                                                <div class="info no-bortop" style="display: block;">
+		                                                    <div class="fs12">노영수</div>
+		                                                    <div class="date">2021-05-27</div>
+		                                                </div>
+		                                            </li>
+		                                            <li>
+		                                                <button class="btn-close"><i class="fa fa-times" aria-hidden="true"></i></button>
+		                                                <div class="attach">
+		                                                    <div class="btn-area">
+		                                                        <button class="btn-sm"><i class="fa fa-camera" aria-hidden="true"></i></button>
+		                                                        <button class="btn-sm"><i class="fa fa-images" aria-hidden="true"></i></button>
+		                                                    </div>
+		                                                </div>
+		                                            </li>
+		                                            <li>
+		                                                <button class="btn-close"><i class="fa fa-times" aria-hidden="true"></i></button>
+		                                                <div class="attach">
+		                                                    <div class="btn-area">
+		                                                        <button class="btn-sm"><i class="fa fa-camera" aria-hidden="true"></i></button>
+		                                                        <button class="btn-sm"><i class="fa fa-images" aria-hidden="true"></i></button>
+		                                                    </div>
+		                                                </div>
+		                                            </li>
+		                                        </ul>
+			                                </div>
+			                            </th>
+			                        </tr>
+			                    </tbody>
+							</table>
+						</ul>
+					</div>
+					<div class="list-box mate">
+						<button type="button" class="list_ ">
+							<span class="title">코팅장갑</span>
+							<span class="badge count">100PAK</span>
+						</button>
+						<ul class="worker-info">
+							<table class="table no-bg">
+								<colgroup>
+			                        <col width="95">
+			                        <col width="">
+			                    </colgroup>
+			                    <tbody>
+			                    	<tr>
+			                    		<th>협력사명</th>
+			                            <td><input type="text" id="Partner_Name" name="Partner_Name" class="input-tb" value="(주)큐브정보통신" disabled=""></td>
+			                    	</tr>
+			                    	<tr>
+			                    		<th>프로젝트 코드</th>
+			                            <td><input type="text" id="project_code" name="project_code" class="input-tb" value="A210167" disabled=""></td>
+			                    	</tr>
+			                    	<tr>
+			                    		<th>프로젝트명</th>
+			                            <td><input type="text" id="project_name" name="project_name" class="input-tb" value="2021년 통신3사 무선국 설치환경 개선사업" disabled=""></td>
+			                    	</tr>
+			                    	<tr>
+			                    		<th>구매오더번호</th>
+			                            <td><input type="text" id="order_member" name="order_member" class="input-tb" value="4500043954" disabled=""></td>
+			                    	</tr>
+			                    	<tr>
+			                    		<th>자재코드</th>
+			                            <td><input type="text" id="code" name="code" class="input-tb" value="10375823" disabled=""></td>
+			                    	</tr>
+			                    	<tr>
+			                    		<th>자재명</th>
+			                            <td><input type="text" id="name" name="name" class="input-tb" value="코팅장갑" disabled=""></td>
+			                    	</tr>
+			                    	<tr>
+			                    		<th>납품사</th>
+			                            <td><input type="text" id="Suppliers" name="Suppliers" class="input-tb" value="케이티커머스 주식회사/담당자/01001011234" disabled=""></td>
+			                    	</tr>
+			                    	<tr>
+			                    		<th>분배수량(잔여)</th>
+			                            <td><input type="text" id="" name="" class="input-tb" value="100PAK" disabled=""></td>
+			                    	</tr>
+									<tr>
+			                    		<th>총 입고완료수량</th>
+			                            <td>
+			                            	<input type="text" name="" id="" class="input-tb" value="0PAK">
+			                            </td>
+			                    	</tr>
+			                    	<tr>
+			                    		<th>입고수량</th>
+			                            <td>
+			                            	<input type="text" name="" id="" class="input-tb" placeholder="수량을 입력하세요">
+			                            </td>
+			                    	</tr>
+			                    	<tr>
+			                            <th colspan="2" style="border-bottom: 0;">
+			                                <div class="d-flex title-area">
+			                                    <span class="title">자재사진</span>
+			                                    <button class="btn-sm -blue">사진추가</button>
+			                                </div>
+			                                <div class="grid-gallery">
+			                                    <ul class="grid">
+		                                            <li>
+		                                                <button class="btn-close"><i class="fa fa-times" aria-hidden="true"></i></button>
+		                                                <figure class="h-auto">
+		                                                    <img src="../../images/sample/1.png" alt="img01" >
+		                                                </figure>
+		                                                <div class="info no-bortop" style="display: block;">
+		                                                    <div class="fs12">노영수</div>
+		                                                    <div class="date">2021-05-27</div>
+		                                                </div>
+		                                            </li>
+		                                            <li>
+		                                                <button class="btn-close"><i class="fa fa-times" aria-hidden="true"></i></button>
+		                                                <div class="attach">
+		                                                    <div class="btn-area">
+		                                                        <button class="btn-sm"><i class="fa fa-camera" aria-hidden="true"></i></button>
+		                                                        <button class="btn-sm"><i class="fa fa-images" aria-hidden="true"></i></button>
+		                                                    </div>
+		                                                </div>
+		                                            </li>
+		                                            <li>
+		                                                <button class="btn-close"><i class="fa fa-times" aria-hidden="true"></i></button>
+		                                                <div class="attach">
+		                                                    <div class="btn-area">
+		                                                        <button class="btn-sm"><i class="fa fa-camera" aria-hidden="true"></i></button>
+		                                                        <button class="btn-sm"><i class="fa fa-images" aria-hidden="true"></i></button>
+		                                                    </div>
+		                                                </div>
+		                                            </li>
+		                                        </ul>
+			                                </div>
+			                            </th>
+			                        </tr>
+			                    </tbody>
+							</table>
+						</ul>
+					</div>	
+				</div>
+				<div class="btn-area btn-2">
+					<a href="" class="btn -grey">취소</a>
+					<a href="" class="btn -primary">입고완료</a>
+				</div>
+			</div>
+			<!--//모바일 컨텐츠-->
+		</main>
+	</div>
+	<!-- partial -->
+
+	<script src="../../js/sidebar.js"></script>
+	<script>
+    $(document).ready(function(){
+        $('button.list_').click(function(){
+            // let button = $(this).find(' > button');
+            let button = $(this);
+            let ul = button.next("ul");
+            if(button.hasClass('on')){
+                ul.slideUp();
+                button.removeClass('on');
+
+            }else{
+                ul.slideDown();
+                button.addClass('on');
+            }
+        })
+    })
+</script>
+</body>
+</html>

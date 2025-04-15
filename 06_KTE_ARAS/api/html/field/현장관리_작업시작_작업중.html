@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="noindex">
+    <title>ARAS</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/default.css">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <!-- tui css -->
+    <link rel="stylesheet" type="text/css" href="../../css/tui-pagination.css">
+    <link rel="stylesheet" type="text/css" href="../../css/tui-grid.css">
+    <link rel="stylesheet" type="text/css" href="../../css/tui-time-picker.css">
+    <link rel="stylesheet" type="text/css" href="../../css/tui-date-picker.css">
+    <link rel="stylesheet" type="text/css" href="../../css/toastui-select-box.css">
+ 
+    <!-- JS -->
+    <script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+
+    <!-- tui js -->
+    <script type="text/javascript" src="./js/tui-pagination.js"></script>
+    <script type="text/javascript" src="./js/tui-grid.js"></script>
+    <script type="text/javascript" src="./js/tui-code-snippet.js"></script>
+    <script type="text/javascript" src="./js/tui-time-picker.js"></script>
+    <script type="text/javascript" src="./js/tui-date-picker.js"></script>
+    <script type="text/javascript" src="./js/tui-calendar.js"></script>
+    <script type="text/javascript" src="./js/toastui-select-box.js"></script>
+</head>
+    
+<body>
+    
+<div class="page-wrapper d-flex">
+    <!--모바일 서브메뉴 영역-->
+    <nav id="side-nav" class="side-nav"></nav>
+    <!--//모바일 서브메뉴 영역-->
+
+    <main class="main">
+        <header class="m-header">
+            <div class="inner">현장관리</div>
+            <button class="no-bg left"></button>
+            <button class="no-bg home"></button>
+        </header>
+
+        <!--모바일 컨텐츠-->
+        <div class="contents">
+            <div class="divider"></div>
+            <div class="bg-white p-1">
+                <h2 class="mt-1 mb-1">작업중</h2>
+                <div class="progress_bar pr bar_green">
+                    <div style="width:220px;"></div>
+                </div>
+                <table class="table no-bg mt-1 mb-6">
+                    <colgroup>
+                        <col width="85">
+                        <col width="">
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                        <th>사업장명</th>
+                        <td>
+                            <input type="text" id="workplace" name="workplace" class="input-tb" title="제목 입력" value="KT행당지사인빌딩" disabled="disabled">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>업무(국소명)</th>
+                        <td>
+                            <p><input type="checkbox" id="common" value="공통작업" checked="" disabled="disabled"> <label for="common">공통작업</label></p>
+                            <input type="text" id="devicePlaceName" name="devicePlaceName" class="input-tb" title="제목 입력" value="KT행당지사인빌딩" disabled="disabled">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>특이사항</th>
+                        <td><textarea id="bigo" name="bigo" class="textarea" rows="5"></textarea></td>
+                    </tr>
+                    <tr>
+                        <th>공사전사진</th>
+                        <td>
+                            <div class="box">
+                                <div class="selectBox">
+                                    <select name="selBeforeMidCode" id="selBeforeMidCode" onchange="changeBeforeMidCode();">
+                                        <option value="" selected="" disabled="">선택</option>
+                                        <option value="A030201">광접속</option>
+                                    </select>
+                                </div>
+                                <button class="pluse" id="add_Before">+</button>
+                            </div>
+
+                            <div class="fileDiv_be" id="divBefore">
+                                <div id="Before_A030201" class="cont" style="">
+                                    <h3 class="tit_type">광접속
+                                        <button id="closeBeforeA030201" class="minus" onclick="hideBefore(&#39;A030201&#39;)">-</button>
+                                    </h3>
+                                    <!--<form id="beforeImageFormA030201">-->
+                                    <ul class="grid" id="BeforeImageA030201">
+                                        <form id="ImageFormBefore_A030201_0"> 
+                                            <li>
+                                                <div class="attach m-0">     
+                                                    <div class="btn-area">         
+                                                        <div class="filebox">             
+                                                            <!-- 카메라 -->             
+                                                            <input type="file" name="upFile[]" id="upCamBefore_A030201_0" accept="image/*" capture="camera" onchange="fn_upload_img(&quot;Before_A030201_0&quot;);">             
+                                                            <button type="button" class="btn-sm">
+                                                                <label for="upCamBefore_A030201_0"><i class="fa fa-camera" aria-hidden="true"></i></label>
+                                                            </button>             
+                                                            <!-- 갤러리 -->             
+                                                            <input type="file" name="upFile[]" id="upGallBefore_A030201_0" accept="image/*" onchange="fn_upload_img(&quot;Before_A030201_0&quot;);">
+                                                            <button type="button" class="btn-sm"><label for="upGallBefore_A030201_0"><i class="fa fa-images" aria-hidden="true"></i></label></button>
+                                                        </div>
+                                                    </div> 
+                                                </div> 
+                                            </li>
+                                        </form>
+                                        <form id="ImageFormBefore_A030201_1">
+                                            <li>
+                                                <div class="attach m-0">     
+                                                    <div class="btn-area">         
+                                                        <div class="filebox">
+                                                            <!-- 카메라 -->             
+                                                            <input type="file" name="upFile[]" id="upCamBefore_A030201_1" accept="image/*" capture="camera" onchange="fn_upload_img(&quot;Before_A030201_1&quot;);">
+                                                            <button type="button" class="btn-sm"><label for="upCamBefore_A030201_1"><i class="fa fa-camera" aria-hidden="true"></i></label></button>
+                                                            <!-- 갤러리 -->
+                                                            <input type="file" name="upFile[]" id="upGallBefore_A030201_1" accept="image/*" onchange="fn_upload_img(&quot;Before_A030201_1&quot;);">
+                                                            <button type="button" class="btn-sm"><label for="upGallBefore_A030201_1"><i class="fa fa-images" aria-hidden="true"></i></label></button>
+                                                        </div>    
+                                                    </div> 
+                                                </div> 
+                                            </li>
+                                        </form>
+                                        <form id="ImageFormBefore_A030201_2"> 
+                                            <li> 
+                                                <div class="attach m-0">     
+                                                    <div class="btn-area">         
+                                                        <div class="filebox">             
+                                                            <!-- 카메라 -->
+                                                            <input type="file" name="upFile[]" id="upCamBefore_A030201_2" accept="image/*" capture="camera" onchange="fn_upload_img(&quot;Before_A030201_2&quot;);">
+                                                            <button type="button" class="btn-sm"><label for="upCamBefore_A030201_2"><i class="fa fa-camera" aria-hidden="true"></i></label></button>
+                                                            <!-- 갤러리 -->
+                                                            <input type="file" name="upFile[]" id="upGallBefore_A030201_2" accept="image/*" onchange="fn_upload_img(&quot;Before_A030201_2&quot;);">
+                                                            <button type="button" class="btn-sm"><label for="upGallBefore_A030201_2"><i class="fa fa-images" aria-hidden="true"></i></label></button>
+                                                        </div>     
+                                                    </div> 
+                                                </div> 
+                                            </li>
+                                        </form>
+                                    </ul>
+                                    <!-- </form>-->
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>공사후사진</th>
+                        <td>
+                            <div class="box">
+                                <div class="selectBox">
+                                    <select name="selAfterMidCode" id="selAfterMidCode" onchange="changeAfterMidCode();">
+                                        <option value="" selected="" disabled="">선택</option>
+                                        <option value="A030201">광접속</option>
+                                    </select>
+                                </div>
+                                <button class="pluse" id="add_After" disabled="">+</button>
+                            </div>
+
+                            <div class="fileDiv_be" id="divAfter">
+                                <div id="After_A030201" class="cont" style="display: none;">
+                                    <h3 class="tit_type">광접속
+                                        <button id="closeAfterA030201" class="minus" onclick="hideAfter(&#39;A030201&#39;)">-</button>
+                                    </h3>
+                                    <!--<form id="afterImageFormA030201">-->
+                                    <ul class="grid" id="AfterImageA030201">
+                                        <form id="ImageFormAfter_A030201_0">
+                                            <li>
+                                                <div class="attach m-0">     
+                                                    <div class="btn-area">         
+                                                        <div class="filebox">             
+                                                            <!-- 카메라 -->
+                                                            <input type="file" name="upFile[]" id="upCamAfter_A030201_0" accept="image/*" capture="camera" onchange="fn_upload_img(&quot;After_A030201_0&quot;);">
+                                                            <button type="button" class="btn-sm"><label for="upCamAfter_A030201_0"><i class="fa fa-camera" aria-hidden="true"></i></label></button>
+                                                            <!-- 갤러리 -->             
+                                                            <input type="file" name="upFile[]" id="upGallAfter_A030201_0" accept="image/*" onchange="fn_upload_img(&quot;After_A030201_0&quot;);">
+                                                            <button type="button" class="btn-sm"><label for="upGallAfter_A030201_0"><i class="fa fa-images" aria-hidden="true"></i></label></button>
+                                                        </div>
+                                                    </div> 
+                                                </div> 
+                                            </li>
+                                        </form>
+                                        <form id="ImageFormAfter_A030201_1"> 
+                                            <li> 
+                                                <div class="attach m-0">     
+                                                    <div class="btn-area">         
+                                                        <div class="filebox">             
+                                                            <!-- 카메라 -->             
+                                                            <input type="file" name="upFile[]" id="upCamAfter_A030201_1" accept="image/*" capture="camera" onchange="fn_upload_img(&quot;After_A030201_1&quot;);">             
+                                                            <button type="button" class="btn-sm"><label for="upCamAfter_A030201_1"><i class="fa fa-camera" aria-hidden="true"></i></label></button>
+                                                            <!-- 갤러리 -->
+                                                            <input type="file" name="upFile[]" id="upGallAfter_A030201_1" accept="image/*" onchange="fn_upload_img(&quot;After_A030201_1&quot;);">
+                                                            <button type="button" class="btn-sm"><label for="upGallAfter_A030201_1"><i class="fa fa-images" aria-hidden="true"></i></label></button>
+                                                        </div>     
+                                                    </div> 
+                                                </div> 
+                                            </li>
+                                        </form>
+                                        <form id="ImageFormAfter_A030201_2"> 
+                                            <li> 
+                                                <div class="attach m-0">     
+                                                    <div class="btn-area">         
+                                                        <div class="filebox">             
+                                                            <!-- 카메라 -->
+                                                            <input type="file" name="upFile[]" id="upCamAfter_A030201_2" accept="image/*" capture="camera" onchange="fn_upload_img(&quot;After_A030201_2&quot;);">
+                                                            <button type="button" class="btn-sm"><label for="upCamAfter_A030201_2"><i class="fa fa-camera" aria-hidden="true"></i></label></button>
+                                                            <!-- 갤러리 -->             
+                                                            <input type="file" name="upFile[]" id="upGallAfter_A030201_2" accept="image/*" onchange="fn_upload_img(&quot;After_A030201_2&quot;);">
+                                                            <button type="button" class="btn-sm"><label for="upGallAfter_A030201_2"><i class="fa fa-images" aria-hidden="true"></i></label></button>
+                                                        </div>     
+                                                    </div> 
+                                                </div> 
+                                            </li>
+                                        </form>
+                                    </ul>
+                                    <!--</form>-->
+                                </div>                        
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <a href="http://localhost:8082/material/work/edit/A190238/687" class="btn -ascert" id="btnI">자재관리</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>OCR</th>
+                        <td>
+                            <div class="box">
+                                <div class="selectBox">
+                                    <select name="name_ocr" id="id_ocr">
+                                        <option value="" selected="" disabled="">선택</option>
+                                        <option value="1">장비</option>
+                                        <option value="2">SN</option>
+                                        <option value="3">바코드</option>
+                                        <option value="4">회선번호</option>
+                                        <option value="5">기타</option>
+                                    </select>
+                                </div>
+                                <button class="pluse" id="add_pluse_ocr" onclick="showOcr()">+</button>
+                            </div>
+
+                            <div class="fileDiv_OCR" id="fileDiv_OCR">
+                                <form id="ocrForm0" onsubmit="return false;" style="display: none;" class="ocrForm ocrFormGita">
+                                    <div class="order_ocr filebox_ocr_gita mt5 ocr_div" data-type="5">
+                                        <div class="ocr_tit">기타</div>
+                                        <input type="text" name="gita" id="gita" placeholder="내용을 입력해주세요" class="input-tb ocr_gita">
+                                        <input type="text" name="ocrInput0" id="ocrInput0" class="ocr_in upload-name ocr_text">
+                                        <input type="file" id="ocrFile0" name="ocrFile0" accept="image/*" capture="camera" onchange="fn_upload_ocr(5, 0)" class="upload-hidden">
+                                        <label for="ocrFile0">OCR</label>
+                                        <button class="minus" onclick="hideOcr(0)">-</button>
+                                    </div>
+                                </form>
+                                <form id="ocrForm1" onsubmit="return false;" class="ocrForm">
+                                    <div class="ocr_inner filebox_ocr ocr_div" data-type="장비">  
+                                        <div class="ocr_tit">장비</div>
+                                        <input type="text" name="ocrInput1" id="ocrInput1" class="upload-name ocr_text" value="33333333333">  
+                                        <button class="ocr"><label for="ocrFile1">OCR</label></button>  
+                                        <input type="file" id="ocrFile1" name="ocrFile1" accept="image/*" capture="camera" onchange="fn_upload_ocr(장비 , 1)" class="upload-hidden">  
+                                        <button class="minus" onclick="hideOcr(1)">-</button>  
+                                    </div>  
+                                </form> 
+                                </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="btn-area btn-2">
+                <button type="button" class="btn w50 -grey" id="btnSaveTemp">임시저장</button>
+                <button type="button" class="btn w50 -primary" id="btnGoFinish">다음</button>
+            </div>
+        </div>
+        <!--//모바일 컨텐츠-->
+    </main>
+</div>
+
+    
+<script src="../../js/sidebar.js"></script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>ARAS</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+<body>
+	<div class="page-wrapper d-flex">
+		<!--모바일 서브메뉴 영역-->
+		<nav id="side-nav" class="side-nav">
+			<!--모바일 서브메뉴 영역-->
+			<header>
+				<ul>
+					<li>
+						<a href="#" class="notification">
+<!--                         <span class="badge noti">99</span>  알림 있는 경우 -->
+<!--                         <span class="badge"></span>         알림 없는 경우 -->
+                         <img src="./images/ico_notification.png" alt="">
+                     </a>
+                 	</li>
+					<li><a href="#"><img src="./images/ico_setting.png" alt=""></a></li>
+					<li><a href="#" class="menu-toggle"><img src="./images/ico_close.png" alt=""></a></li>
+				</ul>
+			</header>
+			<div class="brand-user">
+				<div class="brand">
+					<img src="./images/logo.png" alt="">
+					<h1>ARAS</h1>
+				</div>
+				<div class="user">
+	                <div class="name"><span>시스템관리자</span>님</div>
+	            </div>
+	            <div class="btn-area d-flex">
+	            	<button class="btn -normal" id="myInfoBtn">정보수정</button>
+	            	<button class="btn -grey" id="logOutBtn">로그아웃</button>
+	            </div>
+			</div>
+			<div class="side-menu">
+				<ul>
+					<li><a href="#" onclick="fnLayerToggle('layer-manage-place');"><i class="fas fa-briefcase" aria-hidden="true"></i>프로젝트 관리</a></li>
+					<li><a href="" onclick="javascript:alert('준비중');"><i class="fas fa-chart-bar" aria-hidden="true"></i>통계(준비중)</a></li>
+					<li><a href="" onclick="javascript:alert('준비중');"><i class="fas fa-hard-hat" aria-hidden="true"></i>안전관리(준비중)</a></li>
+					<li><a href="" onclick="javascript:alert('준비중');"><i class="fas fa-building" aria-hidden="true"></i>현장관리(준비중)</a></li>
+					<li><a href="" onclick="javascript:alert('준비중');"><i class="fas fa-toolbox" aria-hidden="true"></i>자재관리(준비중)</a></li>
+					<li><a href="" onclick="javascript:alert('준비중');"><i class="fas fa-clipboard-check" aria-hidden="true"></i>협력사품질평가(준비중)</a></li>
+				</ul>
+			</div>
+			<footer>
+				<span class="app-v">버전정보 <span id="version"></span></span>
+			</footer>
+		</nav>
+		<!--//모바일 서브메뉴 영역-->
+		<script type="text/javascript">
+			
+			function fnLayerToggle( layer ){
+				fnProjectList();
+				$('#'+layer).toggleClass('open');
+				$(".page-wrapper").toggleClass("toggled");
+			}
+			  /**
+			 * 앱 현재 버전 가져오기
+			 */
+			function getCurrentVersion(){
+				try{
+				 	/**
+				  	 * 안드로이드
+				  	 */
+					if(typeof window != "undefined" && typeof window.android != "undefined"){
+						window.android.currentVersion();
+					}
+					 
+					 
+					/**
+				  	 * 아이폰 
+				  	 */
+					if (typeof webkit != "undefined") {
+						
+						// ios 의 경우 postMessage 메시지에 파라미터가 없으면 안되어서 
+						// 파라미터가 필요 없는 경우 빈 스트링 넘겨줘야 합니다.
+				        webkit.messageHandlers.currentVersion.postMessage('');
+				    }
+				 }catch(err){
+					 
+				 }
+				
+			}
+			
+			/**
+			 * 앱 현재 버전 가져오기(currentVersion) 의 callback
+			 */
+			function callbackVersion(value){
+				//alert("앱으로 부터 받은 버전 : " + value);
+				document.getElementById("version").innerText = value;
+			}
+			
+			function logout(){
+				try{
+					/**
+				  	 * 안드로이드
+				  	 */
+					if(typeof window != "undefined" && typeof window.android != "undefined"){
+						window.android.logout();
+					}
+					 
+					 
+					/**
+				  	 * 아이폰 
+				  	 */
+					if (typeof webkit != "undefined") {
+				        webkit.messageHandlers.logout.postMessage('');
+				    }
+				}catch(err){
+					
+				}
+			}
+			
+			function quality(){
+				try{
+				 	/**
+				  	 * 안드로이드
+				  	 */
+					if(typeof window != "undefined" && typeof window.android != "undefined"){
+						window.android.quality();
+					}
+					 
+					 
+					/**
+				  	 * 아이폰 
+				  	 */
+					if (typeof webkit != "undefined") {
+						
+						// ios 의 경우 postMessage 메시지에 파라미터가 없으면 안되어서 
+						// 파라미터가 필요 없는 경우 빈 스트링 넘겨줘야 합니다.
+				        webkit.messageHandlers.quality.postMessage('');
+				    }
+				 }catch(err){
+					 
+				 }
+			}
+			  	
+			$('#logOutBtn').click(function(){
+				logout();
+				location.href="/logout";
+			});
+
+			$('#myInfoBtn').click(function(){
+		        location.href="/user/myinfo";
+		    })
+			
+			$( document ).ready(function() {
+				getCurrentVersion();
+			});
+		</script>
+		<script>
+
+			function getCheckboxValue( obj )  {   //obj:매개변수
+				// 선택된 목록 가져오기
+				const query = 'input[name="animal"]:checked';
+				const selectedEls = document.querySelectorAll(query);
+
+				// 선택된 목록에서 value 찾기
+			   let result = '';
+			   selectedEls.forEach((el) => {
+			    result += el.value + ' ';
+			   });
+
+			   // 출력
+			   document.getElementById('result-check').innerText = result;
+
+			   //$(obj).parent('span').parent('li').find('span.fl_right').text($('input:checkbox[name=animal]:checked').length );
+			   $(obj).parent('span').parent('li').find('span.fl_right').attr('class','square_num').text($('input:checkbox[name=animal]:checked').length );
+			   
+			   //나자신의 함수의 매개변수의 부모의 부모 span.fl_right 찾아서  id의 속성을 추가하고 선택한 요소 안에 선택된 갯수를 넣어라 
+			   //.find()는 어떤 요소의 하위 요소 중 특정 요소를 찾을 때 사용
+			   //.attr()은 요소(element)의 속성(attribute)의 값을 가져오거나 속성을 추가합니다.
+			   //.text()는 선택한 요소 안의 내용을 가져오거나, 다른 내용으로 바꿉니다. .html()과 비슷하지만 태그의 처리가 다릅니다.
+			   /*// 전체 갯수
+					$("input:checkbox[name=is_check]").length
+					 
+					// 선택된 갯수
+					$("input:checkbox[name=is_check]:checked").length
+					 
+					// 전체 체크
+					$("input[name=mycheck]:checkbox").prop("checked", true);
+					 
+					// 전체 체크 순회
+					$("input:checkbox[name=is_check]").each(function() {
+					 this.checked = true;
+					});
+					 
+					// 체크여부 확인
+					if($("input:checkbox[name=complete_yn]").is(":checked") == true) {
+					  //작업
+					}*/
+			}
+		</script>
+
+		<main class="main">
+			<header class="m-header">
+				<button class="no-bg left"></button>
+				<div class="inner">현장관리</div>
+				<button class="no-bg home"></button>
+				<!--<a href="#none" class="btn -primary">현장관리</a>-->
+			</header>
+
+			<!--모바일 컨텐츠-->
+			<div class="contents">
+				<div class="p-1 bg-white">
+					<h2 class="mt-1 mb10">테스트 정보</h2>
+					<div class="divText">
+						<div class="header">선택한 순서대로 텍스트가 보여집니다.</div>
+						<div id="result-check"></div>
+					</div>
+					<div class="ListText">
+						<ul>
+							<li>
+								<span class="fl_left"><input type="checkbox" name="animal" value="양재20420" onclick='getCheckboxValue(this)'/> 양재20420 </span>
+								<span class="fl_right"></span>  <!--circle_num-->
+							</li>
+							<li>
+								<span class="fl_left"><input type="checkbox" name="animal" value="SEC345520" onclick='getCheckboxValue(this)'/> SEC345520 </span>
+								<span class="fl_right"></span>  <!--circle_num-->
+							</li>
+
+							<li>
+								<span class="fl_left"><input type="checkbox" name="animal" value="#16157" onclick='getCheckboxValue(this)'/> #16157 </span>
+								<span class="fl_right"></span>  <!--circle_num-->
+							</li>
+							<li>
+								<span class="fl_left"><input type="checkbox" name="animal" value="양재20420" onclick='getCheckboxValue(this)'/> 양재20420 </span>
+								<span class="fl_right"></span>  <!--circle_num-->
+							</li>
+							<li>
+								<span class="fl_left"><input type="checkbox" name="animal" value="c123012160013" onclick='getCheckboxValue(this)'/> c123012160013</span>
+								<span class="fl_right"></span>  <!--circle_num-->
+							</li>
+							<li>
+								<span class="fl_left"><input type="checkbox" name="animal" value="SEC345520" onclick='getCheckboxValue(this)'/> SEC345520 </span>
+								<span class="fl_right"></span>  <!--circle_num-->
+							</li>
+						</ul>
+					</div>
+					<div class="btn-area btn-2">
+						<button id="" name="" class="btn -grey">_</button>
+						<button id="" name="" class="btn -grey">-</button>
+						<button id="" name="" class="btn -grey">(</button>
+						<button id="" name="" class="btn -grey">)</button>
+						<button id="" name="" class="btn -grey">)</button>
+						<button id="" name="" class="btn -primary">초기화</button>
+					</div>
+               <div class="btn-area btn-2">
+                  <a class="btn -grey" href="#none">직접수정</a>
+                  <a class="btn -primary" href="#none">등록</a>
+               </div>
+				</div>
+			</div>
+			<!--//모바일 컨텐츠-->
+		</main>
+	</div>
+	<script src="../../js/sidebar.js"></script>
+</body>
+</html>

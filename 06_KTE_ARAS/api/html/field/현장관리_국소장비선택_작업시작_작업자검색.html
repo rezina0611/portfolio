@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="noindex">
+    <title>ARAS</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/default.css">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <!-- tui css -->
+    <link rel="stylesheet" type="text/css" href="../../css/tui-pagination.css">
+    <link rel="stylesheet" type="text/css" href="../../css/tui-grid.css">
+    <link rel="stylesheet" type="text/css" href="../../css/tui-time-picker.css">
+    <link rel="stylesheet" type="text/css" href="../../css/tui-date-picker.css">
+    <link rel="stylesheet" type="text/css" href="../../css/toastui-select-box.css">
+ 
+    <!-- JS -->
+    <script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+
+    <!-- tui js -->
+    <script type="text/javascript" src="./js/tui-pagination.js"></script>
+    <script type="text/javascript" src="./js/tui-grid.js"></script>
+    <script type="text/javascript" src="./js/tui-code-snippet.js"></script>
+    <script type="text/javascript" src="./js/tui-time-picker.js"></script>
+    <script type="text/javascript" src="./js/tui-date-picker.js"></script>
+    <script type="text/javascript" src="./js/tui-calendar.js"></script>
+    <script type="text/javascript" src="./js/toastui-select-box.js"></script>
+</head>
+
+<body>
+<div class="page-wrapper d-flex">
+    <!--모바일 서브메뉴 영역-->
+    <nav id="side-nav" class="side-nav"></nav>
+    <!--//모바일 서브메뉴 영역-->
+
+    <main class="main">
+        <header class="m-header">
+            <div class="inner">현장관리</div>
+            <button class="no-bg left"></button>
+            <!--<a href="#none" class="btn -primary">현장관리</a>-->
+        </header>
+
+        <!--모바일 컨텐츠-->
+        <div class="contents">
+            <div class="bg-white p-1">
+                <div class="cont-area">
+                  <script>
+                     $(function () {   
+                        tab('#tab',0); 
+                     });
+
+                     function tab(e, num){
+                         var num = num || 0;
+                         var menu = $(e).children();
+                         var con = $(e+'_con').children();
+                         var select = $(menu).eq(num);
+                         var i = num;
+
+                         select.addClass('on');
+                         con.eq(num).show();
+
+                         menu.click(function(){
+                             if(select!==null){
+                                 select.removeClass("on");
+                                 con.eq(i).hide();
+                             }
+
+                             select = $(this);  
+                             i = $(this).index();
+
+                             select.addClass('on');
+                             con.eq(i).show();
+                         });
+                     }
+                  </script>
+                    <ul class="tab" id="tab">
+                        <li><a href="#none">검색</a></li>
+                        <li><a href="#none">직접등록</a></li>
+                    </ul>
+                    
+                    <div class="tab_con" id="tab_con" style="display:block;">
+                        <div title="search" id="tab_con_0">
+                            <div class="search-area mt-1 bor autocomplete">
+                                <input type="search" class="search" id="srchtags" placeholder="국소장비을 입력해 검색하세요">
+                                <div class="input-group-append">
+                                    <span class="input-group-text search-btn" id="btnSrchWorkerUndo"><i class="fa fa-undo" aria-hidden="true"></i></span>
+                                    <span class="input-group-text search-btn" id="btnSrchWorker"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>   
+                        <div title="direct" id="tab_con_1">
+                            <input type="text" class="input-tb d-block" id="srchProjectName" placeholder="등록할 이름을 입력하세요">
+                        </div>
+                    </div>
+                    <div class="a-center">
+                        <a href="#A" class="btn -ascert" id="btnI">등록</a>
+                    </div>
+				</div>
+            </div>
+            
+        </div>
+        <!--//모바일 컨텐츠-->
+    </main>
+</div>
+
+<script src="./js/sidebar.js"></script>
+
+</body>
+</html>

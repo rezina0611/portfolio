@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="noindex">
+    <title>ARAS</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/default.css">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <!-- tui css -->
+    <link rel="stylesheet" type="text/css" href="../../css/tui-pagination.css">
+    <link rel="stylesheet" type="text/css" href="../../css/tui-grid.css">
+    <link rel="stylesheet" type="text/css" href="../../css/tui-time-picker.css">
+    <link rel="stylesheet" type="text/css" href="../../css/tui-date-picker.css">
+    <link rel="stylesheet" type="text/css" href="../../css/toastui-select-box.css">
+ 
+    <!-- JS -->
+    <script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+    
+<body>
+
+<div class="page-wrapper d-flex">
+    <!--모바일 서브메뉴 영역-->
+    <nav id="side-nav" class="side-nav"></nav>
+    <!--//모바일 서브메뉴 영역-->
+
+    <main class="main">
+        <header class="m-header">
+            <div class="inner">일일작업현황</div>
+            <button class="no-bg left"></button>
+            <a href="#none" class="btn -primary">등록</a>
+            <button class="no-bg home"></button>
+        </header>
+
+        <!--모바일 컨텐츠-->
+        <div class="contents">
+            <div class="bg-white">
+                <div class="search-area mint autocomplete">
+                    <input type="search" class="search" id="srchKey" name="srchKey" placeholder="프로젝트, 사업장, 업무(국소명)을 입력해 검색하세요">
+                    <div class="input-group-append">
+                        <span class="input-group-text refresh" id="srchUndo"></span>
+                    </div>
+                    <div class="input-group-append">
+                        <span class="input-group-text search-btn" id="search-btn"></span>
+                    </div>
+                </div>
+                <div class="cont-area">
+                    <div id="tab-btn" class="tab-btn">
+                        <ul>
+                            <li class="active"><button>전체</button></li>
+                            <li><button>임시저장</button></li>
+                            <li><button>종료</button></li>
+                        </ul>
+                    </div>
+                    <!--<button class="btn-sm -red active" id="srchBtn">전체</button>
+                    <button class="btn-sm -gray" id="srchBtn">임시저장</button>
+                    <button class="btn-sm -gray" id="srchBtn">종료</button>-->
+                
+                    <div class="total-pj">
+                        <span class="total">전체 : 4662건</span>
+                    </div>
+                    <div id="tab-cont" class="tab-cont">
+                        <div>
+                            <ul class="box-area">
+                                <li>
+                                    <a>
+                                        <div><p class="title"> A230022 지하철(서울교통공사) KT 무선망 공사 </p> 성수역_3 성수역3번출구 <br> 장비실 환경 공사(공통) <br> 장비실 전경 <br>  </div>
+                                        <span class="date">2022-10-13 09:00:00</span>	
+                                        <p>임시저장</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <div><p class="title"> A220122 2022년 북부 통신구 노후시설 정비공사 </p> 중앙 노후통신구 중앙노후통신구 <br> 건축 <br> 가설공사 <br>  </div>
+                                        <span class="date">2022-10-13 09:00:00</span>	
+                                        <p>임시저장</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <div><p class="title"> A230093 2023년 무선철탑 안전시설 등받이울 설치사업(강북) </p> 군자철탑 설치업무 <br> 전기공사 <br> 분전반설치작업,전기외선(IP주신설),전기외선(굴착및인입작업),한전계량기설치작업 <br>  </div>
+                                        <span class="date">2022-10-13 09:00:00</span>
+                                        <p>임시저장</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <div><p class="title"> A220352 흑석3구역 리버파크자이 산소공급시스템 납품 </p> 중화동 중화동 테스트국소 <br> 기계설비공사 <br> 덕트공사,배관공사,보온공사,장비설치,장비제작 <br>  </div>
+                                        <span class="date">2022-10-13 09:00:00</span>
+                                        <p>종료</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <div><p class="title"> A220230 2022년 지하철 신규노선 무선망 구축공사(강북) </p> 시우역 원곡역-서-G91-대_8T <br> 장비실 환경 공사(공통) <br> 장비실 전경 <br>  </div>
+                                        <span class="date">2022-10-13 09:00:00</span>
+                                        <p>종료</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="box-area">
+                                <li>
+                                    <a>
+                                        <div><p class="title"> A230022 지하철(서울교통공사) KT 무선망 공사 </p> 성수역_3 성수역3번출구 <br> 장비실 환경 공사(공통) <br> 장비실 전경 <br>  </div>
+                                        <span class="date">2022-10-13 09:00:00</span>	
+                                        <p>임시저장</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <div><p class="title"> A220122 2022년 북부 통신구 노후시설 정비공사 </p> 중앙 노후통신구 중앙노후통신구 <br> 건축 <br> 가설공사 <br>  </div>
+                                        <span class="date">2022-10-13 09:00:00</span>	
+                                        <p>임시저장</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="box-area">
+                                <li>
+                                    <a>
+                                        <div><p class="title"> A220352 흑석3구역 리버파크자이 산소공급시스템 납품 </p> 중화동 중화동 테스트국소 <br> 기계설비공사 <br> 덕트공사,배관공사,보온공사,장비설치,장비제작 <br>  </div>
+                                        <span class="date">2022-10-13 09:00:00</span>
+                                        <p>종료</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <div><p class="title"> A220230 2022년 지하철 신규노선 무선망 구축공사(강북) </p> 시우역 원곡역-서-G91-대_8T <br> 장비실 환경 공사(공통) <br> 장비실 전경 <br>  </div>
+                                        <span class="date">2022-10-13 09:00:00</span>
+                                        <p>종료</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>
+        <!--//모바일 컨텐츠-->
+    </main>
+</div>
+
+<script src="../../js/sidebar.js"></script>
+</body>
+</html>

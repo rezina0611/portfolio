@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="noindex">
+    <title>ARAS</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/default.css">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <!-- tui css -->
+    <link rel="stylesheet" type="text/css" href="../../css/tui-pagination.css">
+    <link rel="stylesheet" type="text/css" href="../../css/tui-grid.css">
+    <link rel="stylesheet" type="text/css" href="../../css/tui-time-picker.css">
+    <link rel="stylesheet" type="text/css" href="../../css/tui-date-picker.css">
+    <link rel="stylesheet" type="text/css" href="../../css/toastui-select-box.css">
+ 
+    <!-- JS -->
+    <script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+
+    <!-- tui js -->
+    <script type="text/javascript" src="./js/tui-pagination.js"></script>
+    <script type="text/javascript" src="./js/tui-grid.js"></script>
+    <script type="text/javascript" src="./js/tui-code-snippet.js"></script>
+    <script type="text/javascript" src="./js/tui-time-picker.js"></script>
+    <script type="text/javascript" src="./js/tui-date-picker.js"></script>
+    <script type="text/javascript" src="./js/tui-calendar.js"></script>
+    <script type="text/javascript" src="./js/toastui-select-box.js"></script>
+</head>
+
+<body>
+
+<div class="page-wrapper d-flex">
+<!--모바일 서브메뉴 영역-->
+<nav id="side-nav" class="side-nav">
+</nav>
+<!--//모바일 서브메뉴 영역-->
+
+<main class="main">
+    <header class="m-header">
+        <div class="inner">공정분류</div>
+        <button class="no-bg left"></button>
+        <button class="no-bg home"></button>
+    </header>
+
+    <!--모바일 컨텐츠-->
+    <div class="contents bg-white">
+        <div class="bg-white p-1">
+            <div class="cont-area">  
+                <table class="table no-bg">
+                    <colgroup>
+                        <col width="80">
+                        <col width="">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>BM</th>
+                            <td>
+                                <input type="text" id="bmName" name="bmName" class="input-tb" title="BM" value="에너지" placeholder="BM" disabled="disabled">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>사업영역</th>
+                            <td>
+                                <input type="text" id="bzName" name="bzName" class="input-tb" title="사업영역" value="태양광" placeholder="사업영역" disabled="disabled">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>공정대분류</th>
+                            <td>
+                                <select id="selProcessBigCode" name="selProcessBigCode" onchange="selectBigCode()">
+                                    <option value="" selected="" disabled="">선택</option>
+                                    <option value="G0101">전기공사</option>
+                                    <option value="G0102">구조물공사</option>
+                                    <option value="G0103">장비설치공사</option>
+                                    <option value="G0104">대관업무</option>
+                                    <option value="G0105">기타</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>공정중분류</th>
+                            <td>
+                                <div class="search-area bor">
+                                    <input type="search" class="search" id="srchProcessMidCode" name="srchProcessMidCode" value="" placeholder="공정중분류를 검색하세요">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text search-btn" id="srchProcessMidCodeUndo"><i class="fa fa-undo" aria-hidden="true"></i></span>
+                                        <span class="input-group-text search-btn" id="btnSrchProcessMidCode"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+                                <div class="mt-1 bor">
+                                    <ul class="check-list" style="padding:8px 0;" name="processMidCode" id="processMidCode"> 
+                                        <li value="G010103" id="G010103">  
+                                            <label>
+                                                <input type="checkbox" name="장비설치공사" value="G010103"><span class="icon">장비설치공사</span>
+                                                <input type="text" id="process_mid_user_input" name="process_mid_user_input" style="display: none; background: transparent;" value="장비설치공사">
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="btn-area a-center">
+                    <a href="#A" class="btn -ascert" id="btnI">등록</a>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <!--//모바일 컨텐츠-->
+</main>
+</div>
+
+<script src="./js/sidebar.js"></script>
+</body>
+</html>

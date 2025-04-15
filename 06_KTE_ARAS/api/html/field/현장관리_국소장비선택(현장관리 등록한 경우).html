@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="noindex">
+    <title>ARAS</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/default.css">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <!-- tui css -->
+    <link rel="stylesheet" type="text/css" href="../../css/tui-pagination.css">
+    <link rel="stylesheet" type="text/css" href="../../css/tui-grid.css">
+    <link rel="stylesheet" type="text/css" href="../../css/tui-time-picker.css">
+    <link rel="stylesheet" type="text/css" href="../../css/tui-date-picker.css">
+    <link rel="stylesheet" type="text/css" href="../../css/toastui-select-box.css">
+ 
+    <!-- JS -->
+    <script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+    
+<body>
+
+<div class="page-wrapper d-flex">
+    <!--모바일 서브메뉴 영역-->
+    <nav id="side-nav" class="side-nav"></nav>
+    <!--//모바일 서브메뉴 영역-->
+
+    <main class="main">
+        <header class="m-header">
+            <div class="inner">현장관리</div>
+            <button class="no-bg left"></button>
+            <button class="no-bg home"></button>
+            <!--<a href="#none" class="btn -primary">현장관리</a>-->
+        </header>
+
+        <!--모바일 컨텐츠-->
+        <div class="contents">
+            <div class="bg-white p-1">
+                <h2 class="mt-1 mb-1">업무(국소명) 선택</h2>
+                <div class="progress_bar pr bar_green"><div style="width:100px"></div></div>
+                <table class="table no-bg mt-1">
+                    <colgroup>
+                        <col width="90">
+                        <col width="">
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                        <th>프로젝트명</th>
+                        <td>
+                            <input type="text" id="projectName" name="projectName" class="input-tb" value="영통국사 최적화 사업" disabled="disabled" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>사업장명 <strong class="star" title="필수항목">*</strong></th>
+                        <td>
+                            <input type="text" id="workplace" name="workplace" class="input-tb" value="KT영통빌딩" disabled="disabled">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>사업장주소 <strong class="star" title="필수항목">*</strong></th>
+                        <td>
+                            <input type="text" id="workplaceAddress" name="workplaceAddress" class="input-tb" value="경기도 수원시 영통구 청명남로 3" disabled="disabled">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>업무(국소명) <strong class="star" title="필수항목">*</strong></th>
+                        <td>
+                            <p><input type="checkbox" id="common" value="공통작업"> <label for="common">공통작업</label></p>
+                            <div class="search-area bor">
+                                <input type="search" class="search" id="srchDevicePlaceName" name="srchDevicePlaceName" placeholder="업무(국소명)을 입력해 검색하세요">
+                                <div class="input-group-append">
+                                    <span class="input-group-text search-btn" id="srchUndo"><i class="fa fa-undo" aria-hidden="true"></i></span>
+                                    <span class="input-group-text search-btn" id="srchDevicePlace"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                            <div class="mt-1 bor">
+                                <select name="devicePlaceName" id="devicePlaceName" value="">
+                                    <option value="" selected="" disabled="">선택</option>
+                                    <option value="29948">KT영통빌딩</option>
+                                    <option value="30151">영통분기국사(신축)</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="btn-area">
+                <button class="btn -primary block" >다음</button>
+            </div>
+        </div>
+        <!--//모바일 컨텐츠-->
+    </main>
+</div>
+
+<script src="./js/sidebar.js"></script>
+</body>
+</html>

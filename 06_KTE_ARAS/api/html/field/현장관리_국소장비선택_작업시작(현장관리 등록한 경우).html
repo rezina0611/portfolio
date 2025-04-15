@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="noindex">
+    <title>ARAS</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/default.css">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <!-- tui css -->
+    <link rel="stylesheet" type="text/css" href="../../css/tui-pagination.css">
+    <link rel="stylesheet" type="text/css" href="../../css/tui-grid.css">
+    <link rel="stylesheet" type="text/css" href="../../css/tui-time-picker.css">
+    <link rel="stylesheet" type="text/css" href="../../css/tui-date-picker.css">
+    <link rel="stylesheet" type="text/css" href="../../css/toastui-select-box.css">
+ 
+    <!-- JS -->
+    <script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+
+    <!-- tui js -->
+    <script type="text/javascript" src="./js/tui-pagination.js"></script>
+    <script type="text/javascript" src="./js/tui-grid.js"></script>
+    <script type="text/javascript" src="./js/tui-code-snippet.js"></script>
+    <script type="text/javascript" src="./js/tui-time-picker.js"></script>
+    <script type="text/javascript" src="./js/tui-date-picker.js"></script>
+    <script type="text/javascript" src="./js/tui-calendar.js"></script>
+    <script type="text/javascript" src="./js/toastui-select-box.js"></script>
+</head>
+
+<body>
+
+<div class="page-wrapper d-flex">
+    <!--모바일 서브메뉴 영역-->
+    <nav id="side-nav" class="side-nav"></nav>
+    <!--//모바일 서브메뉴 영역-->
+
+    <main class="main">
+        <header class="m-header">
+            <div class="inner">현장관리</div>
+            <button class="no-bg left"></button>
+            <button class="no-bg home"></button>
+            <!--<a href="#none" class="btn -primary">현장관리</a>-->
+        </header>
+
+        <!--모바일 컨텐츠-->
+        <div class="contents">
+            <div class="p-1 bg-white">
+                <h2 class="mt-1 mb-1">작업시작</h2>
+                <div class="progress_bar pr bar_green"><div style="width:160px"></div></div>
+                
+                <table class="table no-bg mt-1 mb-6">
+                    <colgroup>
+                        <col width="90">
+                        <col width="">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>공사시작일시<strong class="star" title="필수항목">*</strong></th>
+                            <td>
+                                <div class="tui-datepicker-input tui-datetime-input tui-has-focus input-tb" id="conStartDate" name="conStartDate">
+                                    <input type="text" id="datepicker-input-2" aria-label="Date-Time">
+                                    <span class="tui-ico-date"></span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>현장대리인 <strong class="star" title="필수항목">*</strong></th>
+                            <td>
+                                <input type="text" id="workerName" name="workerName" class="input-tb" title="현장대리인 입력" value="시스템관리자" placeholder="현장대리인" disabled="disabled">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>작업자 <strong class="star" title="필수항목">*</strong></th>
+                            <td>
+                                <div onclick="popupWorker();">
+                                    <select name="popupWorker" id="popupWorker" class="white" disabled="disabled">
+                                        <option selected="">선택</option>
+                                    </select>
+                                </div>
+                                <input type="hidden" id="workersCodeList" name="workersCodeList" value="">
+                                <textarea id="workersNameList" name="workersNameList" class="textarea" value="" disabled="disabled"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>공사인원 <strong class="star" title="필수항목">*</strong></th>
+                            <td>
+                                <input type="text" id="workers" name="workers" class="input-tb" title="공사인원 입력" value="0" disabled="disabled">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>작업계획 <strong class="star" title="필수항목">*</strong></th>
+                            <td>
+                                <div onclick="popupProcess();">
+                                    <select name="popupProcess" id="popupProcess" class="white" disabled="disabled">
+                                        <option selected="">선택</option>
+                                    </select>
+                                </div>
+                                <input type="hidden" id="processMidCodeList" name="processMidCodeList" value="">
+                                <input type="hidden" id="processMidUserInputList" name="processMidUserInputList" value="">
+                                <textarea id="processMidNameList" name="processMidNameList" class="textarea" disabled="disabled" rows="3" value=""></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>현장사진</th>
+                            <td>
+                                <div class="grid-gallery">
+                                    <input type="hidden" id="tempImageList" name="tempImageList" value="">
+                                    <!-- <form id="tempImageForm">-->
+                                    <ul class="grid" id="tempImage">
+                                        <form id="ImageForm29948_0">
+                                            <li>
+                                                <div class="attach m-0">
+                                                    <div class="btn-area">
+                                                        <div class="filebox">  
+                                                            <button class="btn-sm ml-0"><i class="fa fa-camera" aria-hidden="true"></i></button>
+                                                            <button class="btn-sm ml-0"><i class="fa fa-images" aria-hidden="true"></i></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </form>
+                                        <form id="ImageForm29948_1"> 
+                                            <li>
+                                                <div class="attach m-0">
+                                                    <div class="btn-area">
+                                                        <div class="filebox">  
+                                                            <button class="btn-sm ml-0"><i class="fa fa-camera" aria-hidden="true"></i></button>
+                                                            <button class="btn-sm ml-0"><i class="fa fa-images" aria-hidden="true"></i></button>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                            </li>
+                                        </form>
+                                        <form id="ImageForm29948_2">
+                                            <li>
+                                                <div class="attach m-0">
+                                                    <div class="btn-area">
+                                                        <div class="filebox">  
+                                                            <button class="btn-sm ml-0"><i class="fa fa-camera" aria-hidden="true"></i></button>
+                                                            <button class="btn-sm ml-0"><i class="fa fa-images" aria-hidden="true"></i></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </form>
+                                    </ul>
+                                    <!-- </form>-->
+                                </div><!-- // grid-gallery -->
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+              
+            </div>
+            <div class="btn-area btn-2">
+                <a class="btn -red" href="">삭제</a>
+                <a class="btn normal" href="">임시저장</a>
+                <a class="btn -primary" href="">등록</a>
+            </div>
+        </div>
+        <!--//모바일 컨텐츠-->
+    </main>
+</div>
+
+<script src="../../js/sidebar.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>ARAS</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+
+</head>
+<body>
+<div class="page-wrapper d-flex">
+	<main class="main">
+		<header class="m-header">
+			<button class="no-bg left" onclick="history.back();"></button>
+			<div class="inner">자재관리</div>
+		</header>
+
+		<!--모바일 컨텐츠-->
+		<div class="contents">
+			<div class="p-1 bg-white">
+				<select name="equipment" id="equipment" class="w100">
+					<option value="">공정분류 선택</option>
+					<option value="장비">장비</option>
+					<option value="분배기">분배기</option>
+					<option value="안테나">안테나</option>
+				</select>
+				<div class="search-area mt-1 bor autocomplete">
+					<input type="search" class="search" id="srchtags" placeholder="자재명을 검색하세요">
+					<div class="input-group-append">
+						<span class="input-group-text search-btn" id="srchtags"><i class="fa fa-search" aria-hidden="true"></i></span>
+					</div>
+				</div>
+				<ul class="box-area">
+					<li>
+						<a href="#none">
+							<span>TFO_O/F-SM-288C(난연)중상<br>EA-100 </span>
+							<p><input type="text" name="" class="input" style="width:85px;" value="100"></p>
+						</a>
+					</li>
+					<li>
+						<a href="#none">
+							<span>TFO_O/F-SM-288C(난연)중상<br>EA-100 </span>
+							<p><input type="text" name="" class="input" style="width:85px;" value="100"></p>
+						</a>
+					</li>
+					<li>
+						<a href="#none">
+							<span>TFO_O/F-SM-288C(난연)중상<br>EA-100 </span>
+							<p><input type="text" name="" class="input" style="width:85px;" value="사용량입력"></p>
+						</a>
+					</li>
+				</ul>
+				
+			</div>
+			<div class="btn-area btn-2">
+				<a class="btn -grey project-info" href="#none">취소</a>
+				<a class="btn -primary" href="#none">등록</a>
+			</div>
+		</div>
+		<!--//모바일 컨텐츠-->
+	</main>
+</div>
+
+	<script src="./js/sidebar.js"></script>
+</body>
+</html>

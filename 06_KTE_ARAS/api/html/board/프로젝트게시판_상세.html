@@ -1,0 +1,93 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>ARAS</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css"> 
+
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/modernizr.custom.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+<body>
+    
+<div class="page-wrapper d-flex">
+    <main class="main">
+        <header class="m-header">
+            <div class="inner">프로젝트 게시판 등록</div>
+            <button class="no-bg left"></button>
+			<button class="no-bg home"></button>
+        </header>
+        
+        <div class="contents">
+            <div class="board-wrapper">
+				<form>
+					<table class="table no-bg">
+						<tbody>
+							<tr>
+								<th>유형<span class="required">*</span></th>
+								<td>
+									<div class="options">
+										<label><input type="radio" name="b-type">공지</label>
+										<label><input type="radio" name="b-type">요청</label>
+										<label><input type="radio" name="b-type">자료</label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>제목<span class="required">*</span></th>
+								<td><input type="text" class="input-tb" placeholder=""></td>
+							</tr>
+							<tr>
+								<th colspan="2" class="no-deco">내용<span class="required">*</span>
+									<div class="text-area pj">
+										<textarea cols="30" rows="10">내용</textarea>
+									</div>
+								</th>
+							</tr>
+							<tr>
+								<th>등록자</th>
+								<td>홍길동</td>
+							</tr>
+							<tr>
+								<th>첨부파일</th>
+								<td>
+									<input type="file" class="mb-1">
+									<div class="attachment">
+										<span class="file-down" href="">2차 메뉴얼1<a href="" class="delete"><i class="fas fa-times" aria-hidden="true"></i></a></span>
+										<span class="file-down" href="">2차 메뉴얼2<a href="" class="delete"><i class="fas fa-times" aria-hidden="true"></i></a></span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>게시여부</th>
+								<td>
+									<div class="options">
+										<label><input type="radio" name="b-status">게시</label>
+										<label><input type="radio" name="b-status">미게시</label>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+                </form>
+            </div>
+			<div class="btn-area btn-2">
+                <a href="" class="btn -grey">취소</a>
+                <a href="" class="btn -primary">등록</a>
+            </div>
+        </div>
+        
+    </main>
+</div>
+    
+
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="noindex">
+    <title>ARAS</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/default.css">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <!-- tui css -->
+    <link rel="stylesheet" type="text/css" href="../../css/tui-pagination.css">
+    <link rel="stylesheet" type="text/css" href="../../css/tui-grid.css">
+    <link rel="stylesheet" type="text/css" href="../../css/tui-time-picker.css">
+    <link rel="stylesheet" type="text/css" href="../../css/tui-date-picker.css">
+    <link rel="stylesheet" type="text/css" href="../../css/toastui-select-box.css">
+ 
+    <!-- JS -->
+    <script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+
+    <!-- tui js -->
+    <script type="text/javascript" src="./js/tui-pagination.js"></script>
+    <script type="text/javascript" src="./js/tui-grid.js"></script>
+    <script type="text/javascript" src="./js/tui-code-snippet.js"></script>
+    <script type="text/javascript" src="./js/tui-time-picker.js"></script>
+    <script type="text/javascript" src="./js/tui-date-picker.js"></script>
+    <script type="text/javascript" src="./js/tui-calendar.js"></script>
+    <script type="text/javascript" src="./js/toastui-select-box.js"></script>
+</head>
+
+<body>
+
+<div class="page-wrapper d-flex">
+    <!--모바일 서브메뉴 영역-->
+    <nav id="side-nav" class="side-nav"></nav>
+    <!--//모바일 서브메뉴 영역-->
+    
+    <main class="main">
+        <header class="m-header">
+            <div class="inner">사업장 목록</div>
+            <button class="no-bg left"></button>
+            <button class="no-bg home"></button>
+            <!--<a href="#none" class="btn -primary">현장관리</a>-->
+        </header>
+
+        <!--모바일 컨텐츠-->
+        <div class="contents">
+            <div class="bg-white"> 
+                <div class="search-area mint autocomplete">
+                    <input type="search" class="search" id="srchKey" name="srchKey" placeholder="사업장을 입력해 검색하세요">
+                    <div class="input-group-append">
+                        <span class="input-group-text refresh" id="srchUndo"></span>
+                    </div>
+                    <div class="input-group-append">
+                        <span class="input-group-text search-btn" id="search-btn"></span>
+                    </div>
+                </div>
+                <div class="total-pj">
+                    <span class="total">사업장 : 1건</span>
+                </div>
+
+                <!--선택한 프로젝트에 속한 사업장 목록 노출
+                사업장명을 입력해 검색할 수 있음
+                사업장 선택 시 국소장비 선택 화면 이동
+                -->
+                <ul class="box-area">
+                    <li>
+                        <a href="#none" class="d-block w-80">KT광화문 WEST빌딩 리모델링 정보통신공사 
+                            <span  class="badge -red">위험요소</span>	
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">성수역_#1 </a>
+                    </li>
+                    <li>
+                        <a href="#none">성수역_#2</a>
+                    </li>
+                    <li>
+                        <a href="#none">성수역_#3</a> 
+                    </li>
+                    <li>
+                        <a href="#none">성수역_#4</a>  
+                    </li>
+                    <li>
+                        <a href="#none">성수역_#5</a> 
+                    </li>
+                    <li>
+                        <a href="#none">성수역_#6</a>   
+                    </li>
+                    <li>
+                        <a href="#none">성수역_#7</a>   
+                    </li>
+                    <li>
+                        <a href="#none">성수역_#8</a>   
+                    </li>
+                    <li>
+                        <a href="#none">성수역_#9</a> 
+                    </li>
+                    <li>
+                        <a href="#none">성수역_#10</a>  
+                    </li>
+                </ul>
+                <div class="footer">
+                    <input type="hidden" id="page" name="page" value="1">
+                    <input type="hidden" id="perPage" name="perPage" value="10">
+                    <div id="pagination" class="tui-pagination">
+                        <!--페이징 영역-->
+                    </div>
+                </div>
+            </div>
+        </div>    
+        <!--//모바일 컨텐츠-->
+    </main>
+</div>
+
+<script src="./js/sidebar.js"></script>
+</body>
+</html>

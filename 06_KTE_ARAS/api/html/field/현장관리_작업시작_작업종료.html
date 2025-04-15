@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="noindex">
+    <title>ARAS</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/default.css">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <!-- tui css -->
+    <link rel="stylesheet" type="text/css" href="../../css__/tui-pagination.css">
+    <link rel="stylesheet" type="text/css" href="../../css__/tui-grid.css">
+    <link rel="stylesheet" type="text/css" href="../../css__/tui-time-picker.css">
+    <link rel="stylesheet" type="text/css" href="../../css__/tui-date-picker.css">
+    <link rel="stylesheet" type="text/css" href="../../css__/toastui-select-box.css">
+ 
+    <!-- JS -->
+    <script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+
+    <!-- tui js -->
+    <script type="text/javascript" src="./js/tui-pagination.js"></script>
+    <script type="text/javascript" src="./js/tui-grid.js"></script>
+    <script type="text/javascript" src="./js/tui-code-snippet.js"></script>
+    <script type="text/javascript" src="./js/tui-time-picker.js"></script>
+    <script type="text/javascript" src="./js/tui-date-picker.js"></script>
+    <script type="text/javascript" src="./js/tui-calendar.js"></script>
+    <script type="text/javascript" src="./js/toastui-select-box.js"></script>
+</head>
+
+<body>
+
+<div class="page-wrapper d-flex">
+    <!--모바일 서브메뉴 영역-->
+    <nav id="side-nav" class="side-nav"></nav>
+    <!--//모바일 서브메뉴 영역-->
+
+    <main class="main">
+        <header class="m-header">
+            <div class="inner">현장관리</div>
+            <button class="no-bg left"></button>
+            <button class="no-bg home"></button>
+        </header>
+
+        <!--모바일 컨텐츠-->
+        <div class="contents">
+            <div class="divider"></div>
+            <div class="p-1 bg-white">
+                <h2 class="mt-1 mb-1">작업종료</h2>
+                <div class="progress_bar pr bar_green"><div style="width:100%;"></div></div>
+
+                <table class="table no-bg mt-1 mb-6">
+                    <colgroup>
+                        <col width="85">
+                        <col width="">
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                        <th>프로젝트명</th>
+                        <td>
+                            <input type="text" id="projectName" name="projectName" class="input-tb" value="2019년 무선망 시설공사 총액계약_강북" disabled="disabled">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>사업장명</th>
+                        <td>
+                            <input type="text" id="workplace" name="workplace" class="input-tb" value="KT행당지사인빌딩" disabled="disabled">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>업무(국소명)</th>
+                        <td>
+                            <p><input type="checkbox" id="common" value="공통작업" checked="" disabled="disabled"> <label for="common">공통작업</label></p>
+                            <input type="text" id="devicePlaceName" name="devicePlaceName" class="input-tb" value="KT행당지사인빌딩" disabled="disabled">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>공사종료일시 <strong class="star" title="필수항목">*</strong></th>
+                        <td>
+                            <div class="tui-datepicker-input tui-datetime-input tui-has-focus" id="conEndDate" name="conEndDate">
+                                <input type="text" id="datepicker-input-2" aria-label="Date-Time">
+                                <span class="tui-ico-date"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>작업결과 <strong class="star" title="필수항목">*</strong></th>
+                        <td>
+                            <input type="hidden" id="processResultCodeList" name="processResultCodeList" value="A030201">
+                            <textarea id="processResultNameList" name="processResultNameList" class="textarea" disabled="disabled" rows="3">광접속</textarea>
+<!--                            작업중화면으로 자재관리 버튼 이동-->
+<!--                            <div class="a-center mt-1">-->
+<!--                                <a href="/material/work/edit/A190238/687" class="btn -ascert" id="btnI">자재관리</a>-->
+<!--                            </div>-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>익일계획</th>
+                        <td>
+                            <!-- 2022-10-21 수정한 부분 -->
+                            <div class="m-tb-05">
+                                <label><input type="radio" id="D" name="radioConState" value="D" checked="checked" onchange="setNext()">공사중</label>
+                                <label><input type="radio" id="F" name="radioConState" value="F" onchange="setNext()">공사종료</label>
+                            </div>
+                            <!-- 2022-10-21 수정한 부분 -->
+                            <div id="next">
+                                <div onclick="popupProcess();">
+                                    <select name="popupProcess" id="popupProcess" style="width: 100% !important; background: #FFFFFF" disabled="disabled">
+                                        <option selected="">선택</option>
+                                    </select>
+                                </div>
+                                <textarea id="processMidNameList" name="processMidNameList" class="textarea" disabled="disabled" rows="3" value="광접속"></textarea>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="btn-area btn-2">
+                <a href="" class="btn -ascert" id="btnFinish">종료</a>
+            </div>
+        </div>
+        <!--//모바일 컨텐츠-->
+    </main>
+</div>
+    
+
+<div id="popup-process">
+    <div class="modal-wrapper" id="modal-modify">
+    <div class="modal">
+        <div class="header">
+            <h1>
+                <button class="btn btn-close" onclick="CommonUtil.popupClear();"><i class="fa fa-times" aria-hidden="true"></i></button>
+            </h1>
+        </div>
+        <div class="content">
+            <!--모바일 컨텐츠-->
+            <table class="table no-bg">
+                <colgroup>
+                    <col width="80">
+                    <col width="">
+                </colgroup>
+                <tbody>
+                <tr>
+                    <th>BM</th>
+                    <td>
+                        <input type="text" id="bmName" name="bmName" class="input-tb" title="BM" value="무선" placeholder="BM" disabled="disabled">
+                    </td>
+                </tr>
+                <tr>
+                    <th>사업영역</th>
+                    <td>
+                        <input type="text" id="bzName" name="bzName" class="input-tb" title="사업영역" value="인빌딩" placeholder="사업영역" disabled="disabled">
+                    </td>
+                </tr>
+                <tr>
+                    <th>공정대분류</th>
+                    <td>
+                        <select id="selProcessBigCode" name="selProcessBigCode" onchange="selectBigCode()">
+                            <option value="" selected="" disabled="">선택</option>
+                            <option value="A0302" selected="">개통</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>공정중분류</th>
+                    <td>
+                        <div class="search-area bor">
+                            <input type="search" class="search" id="srchProcessMidCode" name="srchProcessMidCode" value="" placeholder="공정중분류를 검색하세요">
+                            <div class="input-group-append">
+                                <span class="input-group-text search-btn" id="srchProcessMidCodeUndo"><i class="fa fa-undo" aria-hidden="true"></i></span>
+                                <span class="input-group-text search-btn" id="btnSrchProcessMidCode"><i class="fa fa-search" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                        <div class="mt-1 bor">
+                            <ul class="check-list" style="padding:8px 0;" name="processMidCode" id="processMidCode"> 
+                                <li value="A030201" id="A030201">  
+                                    <label><input type="checkbox" name="광접속" value="A030201"><span class="icon">광접속</span><input type="text" id="process_mid_user_input" name="process_mid_user_input" style="display: none; background: transparent;" value="광접속"></label>
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="a-center btn-area">
+                <a href="http://localhost:8082/work/finish/687#" class="btn -ascert" onclick="addProcessList();" id="btnI">등록</a>
+            </div>
+            <!--//모바일 컨텐츠-->
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    selectBigCode();
+
+    $('#btnSrchProcessMidCode').on('click', function () {
+        selectBigCode();
+    });
+    $('#srchProcessMidCodeUndo').on('click', function () {
+        $("#srchProcessMidCode").val('')
+        selectBigCode();
+    });
+
+    $('#srchProcessMidCode').keydown(function (e) {
+        if (e.keyCode == 13 || e.keyCode == 66) {
+            selectBigCode();
+        }
+    });
+
+    function refreshImage() {
+        let processBigCode = $("#selProcessBigCode").val();
+        if (!!processBigCode && "" !== processBigCode) {
+            var params = {
+                arrangeNo: $('#arrangeNo').val(),
+                processBigCode: processBigCode
+            }
+            console.log(params);
+
+            $.ajax({
+                url: "/work/temp/image",
+                contentType: "application/x-www-form-urlencoded;  charset=utf-8",
+                dataType: "json",
+                data: params,
+                beforeSend: function () {
+                    $("#tempImage").empty();
+                },
+                success: function (data) {
+                    // console.log(data);
+                    if (data.result === true) {
+                        setTempImage(data.items)
+                    }
+                }
+            });
+        }
+    }
+
+    function selectBigCode() {
+        let processBigCode = $("#selProcessBigCode").val();
+        if (!!processBigCode && "" !== processBigCode) {
+            var params = {
+                arrangeNo: $('#arrangeNo').val(),
+                processBigCode: processBigCode,
+                srchProcessMidCode: $('#srchProcessMidCode').val()
+            }
+            $("#processBigCode").val(processBigCode);
+
+            $.ajax({
+                url: "/work/processcode/list",
+                contentType: "application/x-www-form-urlencoded;  charset=utf-8",
+                dataType: "json",
+                data: params,
+                success: function (data) {
+                    if (data.result === true) {
+                        setProcessCode(data.items);
+                    }
+                }
+            });
+            refreshImage();
+            // $.ajax({
+            //     url: "/work/temp/image",
+            //     contentType: "application/x-www-form-urlencoded;  charset=utf-8",
+            //     dataType: "json",
+            //     data: params,
+            //     beforeSend: function (){
+            //         $("#tempImage").empty();
+            //     },
+            //     success: function (data) {
+            //         if (data.result === true) {
+            //             setTempImage(data.items)
+            //         }
+            //     }
+            // });
+        } else {
+            $('#processMidCode').html("");
+        }
+    }
+
+    function setProcessCode(result) {
+        $('#processMidCode').html("");
+
+        for (var i = 0; i < result.length; i++) {
+            var row = result[i];
+
+            var li_html = ' <li value=' + row.processMidCode + ' id=' + row.processMidCode + '> ' +
+                ' <label> ' +
+                ' <input type="checkbox" name="' + row.processMidName + '" value=' + row.processMidCode + '> ' +
+                ' <span class="icon">' + row.processMidName + '</span> ';
+            if (row.processMidName === "기타") {
+                li_html += ' <input type="text" id="process_mid_user_input"  name= "process_mid_user_input" style="background: #eee;" placeholder="항목을 입력해 주세요"> ';
+            } else {
+                li_html += ' <input type="text" id="process_mid_user_input"  name= "process_mid_user_input" style="display: none; background: transparent;" value="' + row.processMidName + '"> ';
+            }
+            ' </label> ' +
+            ' </li> ';
+            $('#processMidCode').append(li_html);
+        }//end for
+    }
+</script>
+
+</div>    
+
+<script src="../../js/sidebar.js"></script>
+</body>
+</html>
