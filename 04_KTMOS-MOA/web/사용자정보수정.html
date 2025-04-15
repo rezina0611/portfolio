@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>KT MOA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- 기존 css -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/resetting.css">
+    <link rel="stylesheet" type="text/css" href="./css/dialog.css">
+    <link rel="stylesheet" type="text/css" href="./css/wireless.css">
+
+    <!-- popup css 추가 20220623 -->
+    <link rel="stylesheet" type="text/css" href="./css/popup.css">
+    
+    <!-- tui css -->
+    <link rel="stylesheet" type="text/css" href="./css/tui-pagination.css">
+    <link rel="stylesheet" type="text/css" href="./css/tui-grid.css">
+    <link rel="stylesheet" type="text/css" href="./css/tui-time-picker.css">
+    <link rel="stylesheet" type="text/css" href="./css/tui-date-picker.css">
+    <link rel="stylesheet" type="text/css" href="./css/toastui-select-box.css">
+
+    <!-- toggle css -->
+    <link rel="stylesheet" type="text/css" href="./css/simple-sidebar.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+
+    <!-- Bootstrap core CSS -->
+
+    <!-- FILEUPLOAD -->
+    <link rel="stylesheet" type="text/css" href="./css/jquery.fileupload.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery.fileupload-ui.css">
+
+    <!-- 기존 js -->
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+    <script type="text/javascript" src="./js/scripts.js"></script>
+    <script type="text/javascript" src="./js/jquery.nicescroll.js"></script>
+
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/common-functions.js"></script>
+
+    <!-- tui js -->
+    <script type="text/javascript" src="./js/tui-pagination.js"></script>
+    <script type="text/javascript" src="./js/tui-grid.js"></script>
+    <script type="text/javascript" src="./js/tui-code-snippet.js"></script>
+    <script type="text/javascript" src="./js/tui-time-picker.js"></script>
+    <script type="text/javascript" src="./js/tui-date-picker.js"></script>
+    <script type="text/javascript" src="./js/tui-date-picker-ko.js"></script>
+    <script type="text/javascript" src="./js/tui-calendar.js"></script>
+    <script type="text/javascript" src="./js/toastui-select-box.js"></script>
+
+    <script>
+        const Grid = tui.Grid;
+        Grid.applyTheme('default', {
+            outline: {
+                border: '#e0e0e0'
+            },
+            cell: {
+                normal: {
+                    background: '#fff',
+                    border: '#e0e0e0',
+                    color: '#666666'
+                },
+                header: {
+                    background: '#f4f4f4',
+                    border: '#e0e0e0'
+                },
+                evenRow: {
+                    background: '#fff',
+                    border: '#e0e0e0',
+                    color: '#666666'
+                },
+                oddRow: {
+                    background: '#fff',
+                    border: '#e0e0e0',
+                    color: '#666666'
+                }
+            }
+        }); // Call API of static
+    </script>
+    <style type="text/css" id="tui-grid-theme-style">
+        .tui-grid-border-line-top{border-top:1px solid #e0e0e0}
+        .tui-grid-no-scroll-x .tui-grid-border-line-bottom{border-bottom:1px solid #e0e0e0}.tui-grid-frozen-border{background-color:#aaa}
+        .tui-grid-container ::-webkit-scrollbar{background-color:#fff}.tui-grid-container ::-webkit-scrollbar-thumb{background-color:#ddd}
+        .tui-grid-container ::-webkit-scrollbar-thumb:hover{background-color:#ddd;}
+        .tui-grid-container{scrollbar-3dlight-color:#fff;scrollbar-darkshadow-color:#fff;scrollbar-track-color:#fff;scrollbar-shadow-color:#fff;
+            scrollbar-face-color:#ddd;scrollbar-highlight-color:#ddd;scrollbar-arrow-color:#ddd;}
+        .tui-grid-border-line-bottom{border-bottom:1px solid #eee}
+        .tui-grid-content-area{border-color:#eee}.tui-grid-scrollbar-y-inner-border{background-color:#eee}
+        .tui-grid-scrollbar-y-outer-border{background-color:#eee}
+        .tui-grid-scrollbar-right-top{background-color:#f9f9f9;border-color:#eee}
+        .tui-grid-scrollbar-right-bottom{background-color:#f9f9f9;border-color:#eee}
+        .tui-grid-scrollbar-left-bottom{background-color:#f9f9f9;border-color:#eee}
+        .tui-grid-scrollbar-frozen-border{background-color:#f9f9f9;border-color:#eee}
+        .tui-grid-height-resize-handle{background-color:#fff;border-color:#fff}
+        .tui-grid-pagination{background-color:transparent;border-color:transparent}
+        .tui-grid-layer-selection{background-color:#00A9ff;border-color:#00a9ff}
+        .tui-grid-header-area{background-color:#fff;border-color:#ccc}
+        .tui-grid-body-area{background-color:#fff}.tui-grid-summary-area{background-color:#fff;border-color:#eee}
+        .tui-grid-has-summary-top .tui-grid-body-area{border-color:#eee}
+        .tui-grid-cell{background-color:#fff;border-color:#e0e0e0;border-left-width:0;border-right-width:0;border-top-width:1px;border-bottom-width:1px;color:#333}
+        .tui-grid-cell-editable{background-color:#fff}.tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-header-area .tui-grid-table{border-right-style:solid}
+        .tui-grid-cell-header{background-color:#f4f4f4;border-color:#e0e0e0;border-left-width:1px;border-right-width:1px;border-top-width:1px;border-bottom-width:1px;color:#222}
+        .tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-body-area .tui-grid-table{border-right-style:hidden}
+        .tui-grid-cell-row-header{background-color:#fff;border-color:#eee;border-left-width:0;border-right-width:0;border-top-width:1px;border-bottom-width:1px;color:#333}
+        .tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-summary-area .tui-grid-table{border-right-style:hidden}
+        .tui-grid-cell-summary{background-color:#fff;border-color:#eee;border-left-width:0;border-right-width:0;color:#333}
+        .tui-grid-cell-required{background-color:#fffdeb}
+        .tui-grid-cell-disabled{background-color:#f9f9f9;color:#c1c1c1}
+        .tui-grid-cell-invalid.tui-grid-cell{background-color:#ffe5e5}
+        .tui-grid-cell-header.tui-grid-cell-selected{background-color:#e5f6ff}
+        .tui-grid-cell-row-header.tui-grid-cell-selected{background-color:#e5f6ff}
+        .tui-grid-layer-focus-border{background-color:#00a9ff}.tui-grid-layer-editing{border-color:#00a9ff}
+        .tui-grid-layer-focus-deactive .tui-grid-layer-focus-border{background-color:#aaa}
+        .tui-grid-row-odd>td{background-color:#fff}.tui-grid-row-even>td{background-color:#fff}.tui-grid-cell-dummy{background-color:#fff}
+    </style>
+</head>
+
+<body>
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar" class="nav-collapse">
+        <button id="menu-toggle"><i class="fas fa-bars"></i></button>
+        <div class="user-bg">
+            <div class="brand">
+                <img src="./images/logo.png" alt="KTmos wMMS">
+            </div>
+            <div class="user-area">
+                <div class="user-name">
+                	<span style="width: 60%;word-break:break-all;word-wrap:break-word;float: left;">관리자 님</span>
+                	<span class="area-badge">북부</span>
+                </div>
+                <div class="user-btn m--3" style="margin-top: 35px;">
+                    <li><a href="javascript:void(0);" onclick="fn_modify(this)">정보수정</a></li>
+                    <li><a href="javascript:void(0);" onclick="fn_logout(this);">로그아웃</a></li>
+                </div>
+            </div>
+        </div>
+            <ul class="sidebar-menu" id="nav-accordion">
+                <li class="sub-menu"><a href="javascript:showSub1('M01S01')">인수시험관리<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM01S01" style="display: none;">
+                        <li><a href="/acceptcheck/list/M01S01" id="" class="" target="">인수시험정보조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M02S01')">국소정보<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM02S01" style="display: none;">
+                        <li><a href="/device/5glte3g/list/M02S01" id="" class="" target="">국소정보조회-5G/LTE/3G</a></li>
+                        <li><a href="/device/repeater/list/M02S02" id="" class="" target="">국소정보조회-중계기</a></li>
+                        <li><a href="/device/wifi/list/M02S03" id="" class="" target="">국소정보조회-WiFi</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M03S01')">정기점검<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM03S01" style="display: none;">
+                        <li><a href="/regularinspection/list/M03S01" id="" class="" target="">정기점검조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M04S01')">전기안전점검<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM04S01" style="display: none;">
+                        <li><a href="/electricsafety/plan/list/M04S01" id="" class="" target="">계획관리</a></li>
+                        <li><a href="/electricsafety/inspection/list/M04S02" id="" class="" target="">점검관리</a></li>
+                        <li><a href="/electricsafety/result/list/M04S03" id="" class="" target="">대응결과조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M05S01')">위험국소<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM05S01" style="display: none;">
+                        <li><a href="/dangerinspection/list/M05S01" id="" class="" target="">위험국소조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="#none">아차사고<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="" style="display:block;">
+                        <li><a href="#none" id="" class="active" target="">아차사고조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M06S01')">부대시설<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM06S01" style="display: none;">
+                        <li><a href="/additionalfacilities/list/M06S01" id="" class="" target="">부대시설점검조회</a></li>
+                    </ul>
+                </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M07S01')">긴급복구물자관리<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM07S01" style="display: none;">
+                            <li><a href="/emergencymaterial/status/M07S01" id="" class="" target="">긴급복구현황표</a></li>
+                            <li><a href="/emergencymaterial/master/list/M07S02" id="" class="" target="">긴급복구물자</a></li>
+                            <li><a href="/emergencymaterial/history/list/M07S03" id="" class="" target="">긴급복구물자사용</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M09S01')">안전용품관리<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM09S01" style="display: none;">
+                            <li><a href="/item-safety/status/M09S01" id="" class="" target="">현황표</a></li>
+                            <li><a href="/item-safety/list/M09S02" id="" class="" target="">안전용품등록</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M15S01')">현장수시업무<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM15S01" style="display: none;">
+                            <li><a href="/onsite/list/M15S01" id="" class="" target="">현장수시업무현황</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M08S01')">Safe365<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM08S01" style="display: none;">
+                            <li><a href="/safe365/safety/list/M08S01" id="" class="" target="">안전점검 체크 리스트</a></li>
+                            <li><a href="/safe365/highcar/list/M08S02" id="" class="" target="">고소작업차 사용 작업 계획서</a></li>
+                            <li><a href="/safe365/aerial/list/M08S03" id="" class="" target="">고소작업차 작업 전 점검표</a></li>
+                            <li><a href="/safe365/status/M08S04" id="" class="" target="">현장 안전점검 현황</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M14S01')">작업중지권<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM14S01" style="display: none;">
+                            <li><a href="/stopwork/list/M14S01" id="" class="" target="">작업중지권 조회</a></li>
+                            <li><a href="/stopwork/apply/list/M14S02" id="" class="" target="">작업중지권 승인관리</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M16S01')">현장업무지원<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM16S01" style="display: none;">
+                            <li><a href="/support/acs/list/M16S01" id="" class="" target="">ACS</a></li>
+                            <li><a href="/support/rsa/list/M16S02" id="" class="" target="">RSA</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M11S01')">예비품관리<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM11S01" style="display: none;">
+                            <li><a href="/spare/list/M11S01" id="" class="" target="">예비품관리</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M10S01')">업로드관리<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM10S01" style="display: none;"><li><a href="/device/5glte3g/excel/list/M10S01" id="" class="" target="">국소정보업로드-5G/LTE/3G</a></li>
+                            <li><a href="/device/repeater/excel/list/M10S02" id="" class="" target="">국소정보업로드-중계기</a></li>
+                            <li><a href="/device/wifi/excel/list/M10S03" id="" class="" target="">국소정보업로드-WIFI</a></li>
+                            <li><a href="/device/acceptcheck/excel/list/M10S04" id="" class="" target="">인수시험</a></li>
+                            <li><a href="/device/regularinspection/excel/list/M10S05" id="" class="" target="">정기점검</a></li>
+                            <li><a href="/device/regularinspection_riu/excel/list/M10S06" id="" class="" target="">정기점검 RIU</a></li>
+                            <li><a href="/device/regularinspection_du/excel/list/M10S07" id="" class="" target="">정기점검 DU</a></li>
+                            <li><a href="/device/regularinspection_wifi/excel/list/M10S08" id="" class="" target="">정기점검 WiFi</a></li>
+                            <li><a href="/device/additionalfacilities/excel/list/M10S09" id="" class="" target="">부대시설점검</a></li>
+                            <li><a href="/device/electricsafety/excel/list/M10S10" id="" class="" target="">전기안전점검 계획</a></li>
+                            <li><a href="/device/dangerstation/excel/list/M10S11" id="" class="" target="">위험국소</a></li>
+                            <li><a href="/device/emergencymaterial/excel/list/M10S12" id="" class="" target="">긴급복구물자 사용</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M13S01')">대시보드<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM13S01" style="display: none;">
+                            <li><a href="/dashboard/inspection/M13S01" id="" class="" target="_blank">정기점검 현황</a></li>
+                            <li><a href="/dashboard/accept/M13S02" id="" class="" target="_blank">인수시험 현황</a></li>
+                            <li><a href="/dashboard/danger/M13S03" id="" class="" target="_blank">위험국소 현황</a></li>
+                            <li><a href="/dashboard/setting/list/M13S04" id="" class="" target="">모수관리</a></li>
+                        </ul>
+                    </li>
+            </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <!-- <link rel="stylesheet" type="text/css" href="./css/multifreezer.css">
+    <script type="text/javascript" src="./js/multifreezerStandalone.js"></script> -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <section class="wrapper">
+            <h1 id="page_tit">사용자정보 수정</h1>
+            <form id="userEdit" name="userEdit">
+                <div class="group-section m-t-15">
+                    <table class="hit">
+                        <colgroup>
+                            <col width="150">
+                            <col>
+                            <col width="150">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>권한<span class="font-red">*</span></th>
+                                <td>
+                                    <div id="selectRoleCode" style="width: 100%;"><div class="tui-select-box"><div class="tui-select-box-input" tabindex="0"><p class="tui-select-box-placeholder">Admin User</p><span class="tui-select-box-icon">select</span></div><ul class="tui-select-box-dropdown tui-select-box-hidden"><li class="tui-select-box-item" tabindex="-1" data-value="" data-index="0">선택하세요</li><li class="tui-select-box-item" tabindex="-1" data-value="KU" data-index="1">KT User</li><li class="tui-select-box-item" tabindex="-1" data-value="SU" data-index="2">Super User</li><li class="tui-select-box-item tui-select-box-selected" tabindex="-1" data-value="AU" data-index="3">Admin User</li><li class="tui-select-box-item" tabindex="-1" data-value="MU" data-index="4">관리 User</li><li class="tui-select-box-item" tabindex="-1" data-value="FU" data-index="5">필드 User</li><li class="tui-select-box-item" tabindex="-1" data-value="PU" data-index="6">협력사 User</li></ul><select class="tui-select-box-hidden" tabindex="-1"><option label="선택하세요" value=""></option><option value="" label="선택하세요"></option><option value="KU" label="KT User"></option><option value="SU" label="Super User"></option><option value="AU" label="Admin User"></option><option value="MU" label="관리 User"></option><option value="FU" label="필드 User"></option><option value="PU" label="협력사 User"></option></select></div></div>
+                                    <input type="hidden" id="roleCode" name="roleCode" value="AU">
+                                </td>
+                                <th>북부/남부 구분<span class="font-red">*</span></th>
+                                <td>
+                                    <div id="selectNsType" style="width: 100%;"><div class="tui-select-box"><div class="tui-select-box-input" tabindex="0"><p class="tui-select-box-placeholder">북부</p><span class="tui-select-box-icon">select</span></div><ul class="tui-select-box-dropdown tui-select-box-hidden"><li class="tui-select-box-item" tabindex="-1" data-value="" data-index="0">선택하세요</li><li class="tui-select-box-item tui-select-box-selected" tabindex="-1" data-value="북부" data-index="1">북부</li><li class="tui-select-box-item" tabindex="-1" data-value="남부" data-index="2">남부</li></ul><select class="tui-select-box-hidden" tabindex="-1"><option label="선택하세요" value=""></option><option value="" label="선택하세요"></option><option value="북부" label="북부"></option><option value="남부" label="남부"></option></select></div></div>
+                                    <input type="hidden" id="nsType" name="nsType" value="북부">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>아이디<span class="font-red">*</span></th>
+                                <td>
+                                    <div class="d-flex space-between">
+                                        <input type="text" id="moaUserId" name="moaUserId" value="10000002" class="input-st" placeholder="아이디를 입력해 주세요" maxlength="20" readonly="" style="width: 87%;">
+                                        <button type="button" class="btn-reset inherit" onclick="fn_password_clear();">비밀번호 초기화</button>
+                                        <button type="button" class="btn-reset inherit btn-blue" onclick="">단말기 초기화</button>
+                                    </div>
+                                    <!-- <div class="d-flex flex-end" style="margin-top: 3px;">
+                                        <button type="button" class="btn-reset inherit" onclick="">단말기 초기화</button>
+                                    </div> -->
+                                </td>
+                                <th>직급</th>
+                                <td>
+                                   <input type="text" name="userPosition" value="대표이사" class="input-st" placeholder="직급을 입력해 주세요">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>이름<span class="font-red">*</span></th>
+                                <td>
+                                    <div class="d-flex" style="align-items: center;">
+                                        <input type="text" name="userName" value="김성인" class="input-st" placeholder="이름을 입력해 주세요" maxlength="30" style="width: auto;">
+                                        <span class="font-red">(휴면계정 : 2023.09.15)</span>
+                                        <button type="button" class="btn btn-red btn-md" onclick="" style="margin-left: 5px;">해제하기</button>
+                                    </div>
+                                     
+                                </td>
+                                <th>직책</th>
+                                <td>
+                                    <input type="text" name="userJob" value="대표이사" class="input-st" placeholder="직책을 입력해 주세요">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>부서<span class="font-red">*</span></th>
+                                <td>
+                                    <div class="hit-group" style="display: flex;">
+                                                                                <div id="selectDept1Code" name="selectDept1Code" style="width: 25%;margin-left: 15px;"><div class="tui-select-box"><div class="tui-select-box-input" tabindex="0"><p class="tui-select-box-placeholder">KT MOS 북부</p><span class="tui-select-box-icon">select</span></div><ul class="tui-select-box-dropdown tui-select-box-hidden"><li class="tui-select-box-item" tabindex="-1" data-value="" data-index="0">지역</li><li class="tui-select-box-item tui-select-box-selected" tabindex="-1" data-value="KTN000" data-index="1">KT MOS 북부</li><li class="tui-select-box-item" tabindex="-1" data-value="KTS000" data-index="2">KT MOS 남부</li></ul><select class="tui-select-box-hidden" tabindex="-1"><option label="지역" value=""></option><option value="" label="지역"></option><option value="KTN000" label="KT MOS 북부"></option><option value="KTS000" label="KT MOS 남부"></option></select></div></div>
+                                        <input type="hidden" id="dept1Code" name="dept1Code" value="KTN000">
+
+                                        <div id="selectDept2Code" name="selectDept2Code" style="width: 25%;margin-left: 15px;"><div class="tui-select-box"><div class="tui-select-box-input" tabindex="0"><p class="tui-select-box-placeholder">본부</p><span class="tui-select-box-icon">select</span></div><ul class="tui-select-box-dropdown tui-select-box-hidden"><li class="tui-select-box-item" tabindex="-1" data-value="" data-index="0">본부</li><li class="tui-select-box-item" tabindex="-1" data-value="AC0001" data-index="1">윤리경영실</li><li class="tui-select-box-item" tabindex="-1" data-value="AD0000" data-index="2">경영총괄</li><li class="tui-select-box-item" tabindex="-1" data-value="AE0000" data-index="3">기술총괄</li><li class="tui-select-box-item" tabindex="-1" data-value="AE0014" data-index="4">IP NOC</li><li class="tui-select-box-item" tabindex="-1" data-value="AE0500" data-index="5">품질지원센터</li><li class="tui-select-box-item" tabindex="-1" data-value="BA0000" data-index="6">강북본부</li><li class="tui-select-box-item" tabindex="-1" data-value="BB0000" data-index="7">강남본부</li><li class="tui-select-box-item" tabindex="-1" data-value="BC0000" data-index="8">강서본부</li><li class="tui-select-box-item" tabindex="-1" data-value="BD0000" data-index="9">강원본부</li></ul><select class="tui-select-box-hidden" tabindex="-1"><option label="본부" value=""></option><option value="" label="본부"></option><option value="AC0001" label="윤리경영실"></option><option value="AD0000" label="경영총괄"></option><option value="AE0000" label="기술총괄"></option><option value="AE0014" label="IP NOC"></option><option value="AE0500" label="품질지원센터"></option><option value="BA0000" label="강북본부"></option><option value="BB0000" label="강남본부"></option><option value="BC0000" label="강서본부"></option><option value="BD0000" label="강원본부"></option></select></div></div>
+                                        <input type="hidden" id="dept2Code" name="dept2Code" value="AA0001">
+
+                                        <div id="selectDept3Code" name="selectDept3Code" style="width: 25%;margin-left: 15px;"><div class="tui-select-box"><div class="tui-select-box-input" tabindex="0"><p class="tui-select-box-placeholder">팀</p><span class="tui-select-box-icon">select</span></div><ul class="tui-select-box-dropdown tui-select-box-hidden"><li class="tui-select-box-item tui-select-box-selected" tabindex="-1" data-value="" data-index="0">팀</li></ul><select class="tui-select-box-hidden" tabindex="-1"><option label="팀" value=""></option><option value="" label="팀"></option></select></div></div>
+                                        <input type="hidden" id="dept3Code" name="dept3Code" value="">
+
+                                        <div id="selectDept4Code" name="selectDept4Code" style="width: 25%;margin-left: 15px;"><div class="tui-select-box"><div class="tui-select-box-input tui-select-box-disabled" tabindex="0"><p class="tui-select-box-placeholder">파트</p><span class="tui-select-box-icon">select</span></div><ul class="tui-select-box-dropdown tui-select-box-hidden tui-select-box-disabled"><li class="tui-select-box-item" tabindex="-1" data-value="undefined" data-index="0">undefined</li></ul><select class="tui-select-box-hidden" tabindex="-1" disabled=""><option label="파트" value=""></option><option value="undefined" label="undefined"></option></select></div></div>
+                                        <input type="hidden" id="dept4Code" name="dept4Code" value="">
+                                    </div>
+                                </td>
+                                <th>업체명</th>
+                                <td>
+                                    <input type="text" name="corpName" value="" class="input-st" placeholder="업체명을 입력해 주세요">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>이메일<span class="font-red">*</span></th>
+                                <td>
+                                    <input type="text" name="email" value="sungin.kim@ktmos.com" class="input-st" placeholder="이메일을 입력하세요">
+                                </td>
+                                <th>전화번호</th>
+                                <td>
+                                    <input type="text" name="telNo" value="" class="input-st" placeholder="전화번호를 입력하세요">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>사용기간</th>
+                                <td>
+                                    <div style="display: flex;">
+                                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                            <input type="text" id="useStartDate" aria-label="Date-Time">
+                                            <span class="tui-ico-date"></span>
+                                        </div>
+                                        <div id="datepicker-wrapper1" style="margin-top: -1px;"><div class="tui-datepicker tui-hidden">            <div class="tui-datepicker-body tui-datepicker-type-date">        <div class="tui-calendar-container"><div class="tui-calendar">    <div class="tui-calendar-header"><div class="tui-calendar-header-inner">      <button class="tui-calendar-btn tui-calendar-btn-prev-month">Prev month</button>      <em class="tui-calendar-title tui-calendar-title-month">January 2000</em>      <button class="tui-calendar-btn tui-calendar-btn-next-month">Next month</button>    </div>    <div class="tui-calendar-header-info">    <p class="tui-calendar-title-today">Today: Wednesday, September 20, 2023</p>  </div></div>    <div class="tui-calendar-body"><table class="tui-calendar-body-inner" cellspacing="0" cellpadding="0">  <caption><span>Dates</span></caption>  <thead class="tui-calendar-body-header">    <tr>      <th class="tui-sun" scope="col">Sun</th>      <th scope="col">Mon</th>      <th scope="col">Tue</th>      <th scope="col">Wed</th>      <th scope="col">Thu</th>      <th scope="col">Fri</th>      <th class="tui-sat" scope="col">Sat</th>    </tr>  </thead>  <tbody>        <tr class="tui-calendar-week">            <td class="tui-calendar-date tui-calendar-prev-month tui-calendar-sun tui-is-selectable" data-timestamp="946134000000">26</td>            <td class="tui-calendar-date tui-calendar-prev-month tui-is-selectable" data-timestamp="946220400000">27</td>            <td class="tui-calendar-date tui-calendar-prev-month tui-is-selectable" data-timestamp="946306800000">28</td>            <td class="tui-calendar-date tui-calendar-prev-month tui-is-selectable" data-timestamp="946393200000">29</td>            <td class="tui-calendar-date tui-calendar-prev-month tui-is-selectable" data-timestamp="946479600000">30</td>            <td class="tui-calendar-date tui-calendar-prev-month tui-is-selectable" data-timestamp="946566000000">31</td>            <td class="tui-calendar-date tui-calendar-sat tui-is-selectable tui-is-selected" data-timestamp="946652400000">1</td>          </tr>        <tr class="tui-calendar-week">            <td class="tui-calendar-date tui-calendar-sun tui-is-selectable" data-timestamp="946738800000">2</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="946825200000">3</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="946911600000">4</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="946998000000">5</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="947084400000">6</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="947170800000">7</td>            <td class="tui-calendar-date tui-calendar-sat tui-is-selectable" data-timestamp="947257200000">8</td>          </tr>        <tr class="tui-calendar-week">            <td class="tui-calendar-date tui-calendar-sun tui-is-selectable" data-timestamp="947343600000">9</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="947430000000">10</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="947516400000">11</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="947602800000">12</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="947689200000">13</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="947775600000">14</td>            <td class="tui-calendar-date tui-calendar-sat tui-is-selectable" data-timestamp="947862000000">15</td>          </tr>        <tr class="tui-calendar-week">            <td class="tui-calendar-date tui-calendar-sun tui-is-selectable" data-timestamp="947948400000">16</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="948034800000">17</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="948121200000">18</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="948207600000">19</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="948294000000">20</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="948380400000">21</td>            <td class="tui-calendar-date tui-calendar-sat tui-is-selectable" data-timestamp="948466800000">22</td>          </tr>        <tr class="tui-calendar-week">            <td class="tui-calendar-date tui-calendar-sun tui-is-selectable" data-timestamp="948553200000">23</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="948639600000">24</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="948726000000">25</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="948812400000">26</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="948898800000">27</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="948985200000">28</td>            <td class="tui-calendar-date tui-calendar-sat tui-is-selectable" data-timestamp="949071600000">29</td>          </tr>        <tr class="tui-calendar-week">            <td class="tui-calendar-date tui-calendar-sun tui-is-selectable" data-timestamp="949158000000">30</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="949244400000">31</td>            <td class="tui-calendar-date tui-calendar-next-month tui-is-selectable" data-timestamp="949330800000">1</td>            <td class="tui-calendar-date tui-calendar-next-month tui-is-selectable" data-timestamp="949417200000">2</td>            <td class="tui-calendar-date tui-calendar-next-month tui-is-selectable" data-timestamp="949503600000">3</td>            <td class="tui-calendar-date tui-calendar-next-month tui-is-selectable" data-timestamp="949590000000">4</td>            <td class="tui-calendar-date tui-calendar-next-month tui-calendar-sat tui-is-selectable" data-timestamp="949676400000">5</td>          </tr>      </tbody></table></div></div></div>      </div>      <div class="tui-datepicker-footer">        <div class="tui-timepicker-container"><div class="tui-timepicker">  <div class="tui-timepicker-body">    <div class="tui-timepicker-row">              <div class="tui-timepicker-column tui-timepicker-selectbox tui-timepicker-hour"><select class="tui-timepicker-select" aria-label="Time">            <option value="1">1</option>                <option value="2">2</option>                <option value="3">3</option>                <option value="4">4</option>                <option value="5">5</option>                <option value="6">6</option>                <option value="7">7</option>                <option value="8">8</option>                <option value="9">9</option>                <option value="10">10</option>                <option value="11">11</option>                <option value="12" selected="">12</option>      </select></div>        <span class="tui-timepicker-column tui-timepicker-colon"><span class="tui-ico-colon">:</span></span>        <div class="tui-timepicker-column tui-timepicker-selectbox tui-timepicker-minute"><select class="tui-timepicker-select" aria-label="Time">            <option value="0" selected="">0</option>                <option value="1">1</option>                <option value="2">2</option>                <option value="3">3</option>                <option value="4">4</option>                <option value="5">5</option>                <option value="6">6</option>                <option value="7">7</option>                <option value="8">8</option>                <option value="9">9</option>                <option value="10">10</option>                <option value="11">11</option>                <option value="12">12</option>                <option value="13">13</option>                <option value="14">14</option>                <option value="15">15</option>                <option value="16">16</option>                <option value="17">17</option>                <option value="18">18</option>                <option value="19">19</option>                <option value="20">20</option>                <option value="21">21</option>                <option value="22">22</option>                <option value="23">23</option>                <option value="24">24</option>                <option value="25">25</option>                <option value="26">26</option>                <option value="27">27</option>                <option value="28">28</option>                <option value="29">29</option>                <option value="30">30</option>                <option value="31">31</option>                <option value="32">32</option>                <option value="33">33</option>                <option value="34">34</option>                <option value="35">35</option>                <option value="36">36</option>                <option value="37">37</option>                <option value="38">38</option>                <option value="39">39</option>                <option value="40">40</option>                <option value="41">41</option>                <option value="42">42</option>                <option value="43">43</option>                <option value="44">44</option>                <option value="45">45</option>                <option value="46">46</option>                <option value="47">47</option>                <option value="48">48</option>                <option value="49">49</option>                <option value="50">50</option>                <option value="51">51</option>                <option value="52">52</option>                <option value="53">53</option>                <option value="54">54</option>                <option value="55">55</option>                <option value="56">56</option>                <option value="57">57</option>                <option value="58">58</option>                <option value="59">59</option>      </select></div>                    <div class="tui-timepicker-column tui-timepicker-selectbox tui-is-add-picker tui-timepicker-meridiem">    <select class="tui-timepicker-select" aria-label="AM/PM">      <option value="AM" class="tui-timepicker-meridiem-checked" selected="true" checked="true">AM</option>      <option value="PM" class="">PM</option>    </select>  </div>                  </div>  </div></div></div>      </div>      </div></div>
+                                        <input type="hidden" id="useStartDate1" value="2000-01-01T00:00">
+
+                                        <span class="from">~</span>
+
+                                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                            <input type="text" id="useEndDate" aria-label="Date-Time">
+                                            <span class="tui-ico-date"></span>
+                                        </div>
+                                        <div id="datepicker-wrapper2" style="margin-top: -1px;"><div class="tui-datepicker tui-hidden">            <div class="tui-datepicker-body tui-datepicker-type-date">        <div class="tui-calendar-container"><div class="tui-calendar">    <div class="tui-calendar-header"><div class="tui-calendar-header-inner">      <button class="tui-calendar-btn tui-calendar-btn-prev-month">Prev month</button>      <em class="tui-calendar-title tui-calendar-title-month">December 2999</em>      <button class="tui-calendar-btn tui-calendar-btn-next-month tui-hidden">Next month</button>    </div>    <div class="tui-calendar-header-info">    <p class="tui-calendar-title-today">Today: Wednesday, September 20, 2023</p>  </div></div>    <div class="tui-calendar-body"><table class="tui-calendar-body-inner" cellspacing="0" cellpadding="0">  <caption><span>Dates</span></caption>  <thead class="tui-calendar-body-header">    <tr>      <th class="tui-sun" scope="col">Sun</th>      <th scope="col">Mon</th>      <th scope="col">Tue</th>      <th scope="col">Wed</th>      <th scope="col">Thu</th>      <th scope="col">Fri</th>      <th class="tui-sat" scope="col">Sat</th>    </tr>  </thead>  <tbody>        <tr class="tui-calendar-week">            <td class="tui-calendar-date tui-calendar-sun tui-is-selectable" data-timestamp="32500969200000">1</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="32501055600000">2</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="32501142000000">3</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="32501228400000">4</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="32501314800000">5</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="32501401200000">6</td>            <td class="tui-calendar-date tui-calendar-sat tui-is-selectable" data-timestamp="32501487600000">7</td>          </tr>        <tr class="tui-calendar-week">            <td class="tui-calendar-date tui-calendar-sun tui-is-selectable" data-timestamp="32501574000000">8</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="32501660400000">9</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="32501746800000">10</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="32501833200000">11</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="32501919600000">12</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="32502006000000">13</td>            <td class="tui-calendar-date tui-calendar-sat tui-is-selectable" data-timestamp="32502092400000">14</td>          </tr>        <tr class="tui-calendar-week">            <td class="tui-calendar-date tui-calendar-sun tui-is-selectable" data-timestamp="32502178800000">15</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="32502265200000">16</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="32502351600000">17</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="32502438000000">18</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="32502524400000">19</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="32502610800000">20</td>            <td class="tui-calendar-date tui-calendar-sat tui-is-selectable" data-timestamp="32502697200000">21</td>          </tr>        <tr class="tui-calendar-week">            <td class="tui-calendar-date tui-calendar-sun tui-is-selectable" data-timestamp="32502783600000">22</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="32502870000000">23</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="32502956400000">24</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="32503042800000">25</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="32503129200000">26</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="32503215600000">27</td>            <td class="tui-calendar-date tui-calendar-sat tui-is-selectable" data-timestamp="32503302000000">28</td>          </tr>        <tr class="tui-calendar-week">            <td class="tui-calendar-date tui-calendar-sun tui-is-selectable" data-timestamp="32503388400000">29</td>            <td class="tui-calendar-date tui-is-selectable" data-timestamp="32503474800000">30</td>            <td class="tui-calendar-date tui-is-selectable tui-is-selected" data-timestamp="32503561200000">31</td>            <td class="tui-calendar-date tui-calendar-next-month tui-is-blocked" data-timestamp="32503647600000">1</td>            <td class="tui-calendar-date tui-calendar-next-month tui-is-blocked" data-timestamp="32503734000000">2</td>            <td class="tui-calendar-date tui-calendar-next-month tui-is-blocked" data-timestamp="32503820400000">3</td>            <td class="tui-calendar-date tui-calendar-next-month tui-calendar-sat tui-is-blocked" data-timestamp="32503906800000">4</td>          </tr>        <tr class="tui-calendar-week">            <td class="tui-calendar-date tui-calendar-next-month tui-calendar-sun tui-is-blocked" data-timestamp="32503993200000">5</td>            <td class="tui-calendar-date tui-calendar-next-month tui-is-blocked" data-timestamp="32504079600000">6</td>            <td class="tui-calendar-date tui-calendar-next-month tui-is-blocked" data-timestamp="32504166000000">7</td>            <td class="tui-calendar-date tui-calendar-next-month tui-is-blocked" data-timestamp="32504252400000">8</td>            <td class="tui-calendar-date tui-calendar-next-month tui-is-blocked" data-timestamp="32504338800000">9</td>            <td class="tui-calendar-date tui-calendar-next-month tui-is-blocked" data-timestamp="32504425200000">10</td>            <td class="tui-calendar-date tui-calendar-next-month tui-calendar-sat tui-is-blocked" data-timestamp="32504511600000">11</td>          </tr>      </tbody></table></div></div></div>      </div>      <div class="tui-datepicker-footer">        <div class="tui-timepicker-container"><div class="tui-timepicker">  <div class="tui-timepicker-body">    <div class="tui-timepicker-row">              <div class="tui-timepicker-column tui-timepicker-selectbox tui-timepicker-hour"><select class="tui-timepicker-select" aria-label="Time">            <option value="1">1</option>                <option value="2">2</option>                <option value="3">3</option>                <option value="4">4</option>                <option value="5">5</option>                <option value="6">6</option>                <option value="7">7</option>                <option value="8">8</option>                <option value="9">9</option>                <option value="10">10</option>                <option value="11">11</option>                <option value="12" selected="">12</option>      </select></div>        <span class="tui-timepicker-column tui-timepicker-colon"><span class="tui-ico-colon">:</span></span>        <div class="tui-timepicker-column tui-timepicker-selectbox tui-timepicker-minute"><select class="tui-timepicker-select" aria-label="Time">            <option value="0" selected="">0</option>                <option value="1">1</option>                <option value="2">2</option>                <option value="3">3</option>                <option value="4">4</option>                <option value="5">5</option>                <option value="6">6</option>                <option value="7">7</option>                <option value="8">8</option>                <option value="9">9</option>                <option value="10">10</option>                <option value="11">11</option>                <option value="12">12</option>                <option value="13">13</option>                <option value="14">14</option>                <option value="15">15</option>                <option value="16">16</option>                <option value="17">17</option>                <option value="18">18</option>                <option value="19">19</option>                <option value="20">20</option>                <option value="21">21</option>                <option value="22">22</option>                <option value="23">23</option>                <option value="24">24</option>                <option value="25">25</option>                <option value="26">26</option>                <option value="27">27</option>                <option value="28">28</option>                <option value="29">29</option>                <option value="30">30</option>                <option value="31">31</option>                <option value="32">32</option>                <option value="33">33</option>                <option value="34">34</option>                <option value="35">35</option>                <option value="36">36</option>                <option value="37">37</option>                <option value="38">38</option>                <option value="39">39</option>                <option value="40">40</option>                <option value="41">41</option>                <option value="42">42</option>                <option value="43">43</option>                <option value="44">44</option>                <option value="45">45</option>                <option value="46">46</option>                <option value="47">47</option>                <option value="48">48</option>                <option value="49">49</option>                <option value="50">50</option>                <option value="51">51</option>                <option value="52">52</option>                <option value="53">53</option>                <option value="54">54</option>                <option value="55">55</option>                <option value="56">56</option>                <option value="57">57</option>                <option value="58">58</option>                <option value="59">59</option>      </select></div>                    <div class="tui-timepicker-column tui-timepicker-selectbox tui-is-add-picker tui-timepicker-meridiem">    <select class="tui-timepicker-select" aria-label="AM/PM">      <option value="AM" class="">AM</option>      <option value="PM" selected="true" checked="true" class="tui-timepicker-meridiem-checked">PM</option>    </select>  </div>                  </div>  </div></div></div>      </div>      </div></div>
+                                        <input type="hidden" id="useEndDate1" value="2999-12-31T23:59:59">
+                                    </div>
+                                </td>
+                                <th>휴대폰번호</th>
+                                <td>
+                                    <input type="text" name="mobileNo" value="010-9697-9955" class="input-st" placeholder="휴대폰번호를 입력하세요" maxlength="15">
+                                </td>
+                            </tr>
+                                <tr>
+                                <th>이용약관</th>
+                                <td>
+                                    <div id="selectClauseYn1" style="width: 100%;"><div class="tui-select-box"><div class="tui-select-box-input tui-select-box-disabled" tabindex="0"><p class="tui-select-box-placeholder">Yes</p><span class="tui-select-box-icon">select</span></div><ul class="tui-select-box-dropdown tui-select-box-hidden tui-select-box-disabled"><li class="tui-select-box-item" tabindex="-1" data-value="" data-index="0">선택하세요</li><li class="tui-select-box-item tui-select-box-selected" tabindex="-1" data-value="Y" data-index="1">Yes</li><li class="tui-select-box-item" tabindex="-1" data-value="N" data-index="2">No</li></ul><select class="tui-select-box-hidden" tabindex="-1" disabled=""><option label="선택하세요" value=""></option><option value="" label="선택하세요"></option><option value="Y" label="Yes"></option><option value="N" label="No"></option></select></div></div>
+                                    <input type="hidden" id="clauseYn1" name="clauseYn1" value="Y">
+                                </td>
+                                <th>개인정보처리방침</th>
+                                <td>
+                                    <div id="selectClauseYn2" style="width: 100%;"><div class="tui-select-box"><div class="tui-select-box-input tui-select-box-disabled" tabindex="0"><p class="tui-select-box-placeholder">Yes</p><span class="tui-select-box-icon">select</span></div><ul class="tui-select-box-dropdown tui-select-box-hidden tui-select-box-disabled"><li class="tui-select-box-item" tabindex="-1" data-value="" data-index="0">선택하세요</li><li class="tui-select-box-item tui-select-box-selected" tabindex="-1" data-value="Y" data-index="1">Yes</li><li class="tui-select-box-item" tabindex="-1" data-value="N" data-index="2">No</li></ul><select class="tui-select-box-hidden" tabindex="-1" disabled=""><option label="선택하세요" value=""></option><option value="" label="선택하세요"></option><option value="Y" label="Yes"></option><option value="N" label="No"></option></select></div></div>
+                                    <input type="hidden" id="clauseYn2" name="clauseYn2" value="Y">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>위치정보이용약관</th>
+                                <td>
+                                    <div id="selectClauseYn3" style="width: 100%;"><div class="tui-select-box"><div class="tui-select-box-input tui-select-box-disabled" tabindex="0"><p class="tui-select-box-placeholder">Yes</p><span class="tui-select-box-icon">select</span></div><ul class="tui-select-box-dropdown tui-select-box-hidden tui-select-box-disabled"><li class="tui-select-box-item" tabindex="-1" data-value="" data-index="0">선택하세요</li><li class="tui-select-box-item tui-select-box-selected" tabindex="-1" data-value="Y" data-index="1">Yes</li><li class="tui-select-box-item" tabindex="-1" data-value="N" data-index="2">No</li></ul><select class="tui-select-box-hidden" tabindex="-1" disabled=""><option label="선택하세요" value=""></option><option value="" label="선택하세요"></option><option value="Y" label="Yes"></option><option value="N" label="No"></option></select></div></div>
+                                    <input type="hidden" id="clauseYn3" name="clauseYn3" value="Y">
+                                </td>
+                                <th>개인정보처리위탁</th>
+                                <td>
+                                    <div id="selectClauseYn4" style="width: 100%;"><div class="tui-select-box"><div class="tui-select-box-input tui-select-box-disabled" tabindex="0"><p class="tui-select-box-placeholder">Yes</p><span class="tui-select-box-icon">select</span></div><ul class="tui-select-box-dropdown tui-select-box-hidden tui-select-box-disabled"><li class="tui-select-box-item" tabindex="-1" data-value="" data-index="0">선택하세요</li><li class="tui-select-box-item tui-select-box-selected" tabindex="-1" data-value="Y" data-index="1">Yes</li><li class="tui-select-box-item" tabindex="-1" data-value="N" data-index="2">No</li></ul><select class="tui-select-box-hidden" tabindex="-1" disabled=""><option label="선택하세요" value=""></option><option value="" label="선택하세요"></option><option value="Y" label="Yes"></option><option value="N" label="No"></option></select></div></div>
+                                    <input type="hidden" id="clauseYn4" name="clauseYn4" value="Y">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>정보보호서약서</th>
+                                <td class="t_left">
+                                    <input type="file" name="upload" size="120" value="" accept="application/pdf" id="upload" disabled="">
+                                </td>
+                                <th>사용여부</th>
+                                <td>
+                                    <div id="selectUseYn" style="width: 100%;"><div class="tui-select-box"><div class="tui-select-box-input" tabindex="0"><p class="tui-select-box-placeholder">Yes</p><span class="tui-select-box-icon">select</span></div><ul class="tui-select-box-dropdown tui-select-box-hidden"><li class="tui-select-box-item" tabindex="-1" data-value="" data-index="0">선택하세요</li><li class="tui-select-box-item tui-select-box-selected" tabindex="-1" data-value="Y" data-index="1">Yes</li><li class="tui-select-box-item" tabindex="-1" data-value="N" data-index="2">No</li></ul><select class="tui-select-box-hidden" tabindex="-1"><option label="선택하세요" value=""></option><option value="" label="선택하세요"></option><option value="Y" label="Yes"></option><option value="N" label="No"></option></select></div></div>
+                                    <input type="hidden" id="useYn" name="useYn" value="Y">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </section>
+    </div>
+    <!-- /#page-content-wrapper -->
+</div>
+<script type="text/javascript" src="./js/dept-select_new.js"></script>
+
+
+<div id="loading-overlay">
+    <div id="loading">
+        <div class="dot-area">
+            <div class="dot left three"></div>
+            <div class="dot left two"></div>
+            <div class="dot left one"></div>
+            <i class="ic-logo"></i>
+            <div class="dot right one"></div>
+            <div class="dot right two"></div>
+            <div class="dot right three"></div>
+        </div>
+        <h2 class="loading-text">잠시만 기다려주세요</h2>
+    </div>
+</div>
+
+</body>
+</html>

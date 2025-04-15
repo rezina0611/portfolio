@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+    <meta charset="UTF-8">
+    <title>KT MOA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- 기존 css -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/resetting.css">
+    <link rel="stylesheet" type="text/css" href="./css/dialog.css">
+    <link rel="stylesheet" type="text/css" href="./css/wireless.css">
+
+    <link href="./css/popup.css" rel="stylesheet" type="text/css">  <!--20220621-->
+    
+    <!-- tui css -->
+    <link rel="stylesheet" type="text/css" href="./css/tui-pagination.css">
+    <link rel="stylesheet" type="text/css" href="./css/tui-grid.css">
+    <link rel="stylesheet" type="text/css" href="./css/tui-time-picker.css">
+    <link rel="stylesheet" type="text/css" href="./css/tui-date-picker.css">
+    <link rel="stylesheet" type="text/css" href="./css/toastui-select-box.css">
+
+    <!-- toggle css -->
+    <link rel="stylesheet" type="text/css" href="./css/simple-sidebar.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+
+    <!-- Bootstrap core CSS -->
+
+    <!-- FILEUPLOAD -->
+    <link rel="stylesheet" type="text/css" href="./css/jquery.fileupload.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery.fileupload-ui.css">
+
+    <!-- 기존 js -->
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+    <script type="text/javascript" src="./js/scripts.js"></script>
+    <script type="text/javascript" src="./js/jquery.nicescroll.js"></script>
+
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/common-functions.js"></script>
+
+    <!-- tui js -->
+    <script type="text/javascript" src="./js/tui-pagination.js"></script>
+    <script type="text/javascript" src="./js/tui-grid.js"></script>
+    <script type="text/javascript" src="./js/tui-code-snippet.js"></script>
+    <script type="text/javascript" src="./js/tui-time-picker.js"></script>
+    <script type="text/javascript" src="./js/tui-date-picker.js"></script>
+    <script type="text/javascript" src="/js/tui-date-picker-ko.js"></script>
+    <script type="text/javascript" src="./js/tui-calendar.js"></script>
+    <script type="text/javascript" src="./js/toastui-select-box.js"></script>
+    <!-- <script type="text/javascript" src="/grid/device_5glte3g_list_grid.js"></script> -->
+    <script>
+        const Grid = tui.Grid;
+        Grid.applyTheme('default', {
+            outline: {
+                border: '#e0e0e0'
+            },
+            cell: {
+                normal: {
+                    background: '#fff',
+                    border: '#e0e0e0',
+                    color: '#666666'
+                },
+                header: {
+                    background: '#f4f4f4',
+                    border: '#e0e0e0'
+                },
+                evenRow: {
+                    background: '#fff',
+                    border: '#e0e0e0',
+                    color: '#666666'
+                },
+                oddRow: {
+                    background: '#fff',
+                    border: '#e0e0e0',
+                    color: '#666666'
+                }
+            }
+        }); // Call API of static
+    </script>
+        <style type="text/css" id="tui-grid-theme-style">
+            .tui-grid-border-line-top{border-top:1px solid #e0e0e0}
+            .tui-grid-no-scroll-x .tui-grid-border-line-bottom{border-bottom:1px solid #e0e0e0}.tui-grid-frozen-border{background-color:#aaa}
+            .tui-grid-container ::-webkit-scrollbar{background-color:#fff}.tui-grid-container ::-webkit-scrollbar-thumb{background-color:#ddd}
+            .tui-grid-container ::-webkit-scrollbar-thumb:hover{background-color:#ddd;}
+            .tui-grid-container{scrollbar-3dlight-color:#fff;scrollbar-darkshadow-color:#fff;scrollbar-track-color:#fff;scrollbar-shadow-color:#fff;
+                scrollbar-face-color:#ddd;scrollbar-highlight-color:#ddd;scrollbar-arrow-color:#ddd;}
+            .tui-grid-border-line-bottom{border-bottom:1px solid #eee}
+            .tui-grid-content-area{border-color:#eee}.tui-grid-scrollbar-y-inner-border{background-color:#eee}
+            .tui-grid-scrollbar-y-outer-border{background-color:#eee}
+            .tui-grid-scrollbar-right-top{background-color:#f9f9f9;border-color:#eee}
+            .tui-grid-scrollbar-right-bottom{background-color:#f9f9f9;border-color:#eee}
+            .tui-grid-scrollbar-left-bottom{background-color:#f9f9f9;border-color:#eee}
+            .tui-grid-scrollbar-frozen-border{background-color:#f9f9f9;border-color:#eee}
+            .tui-grid-height-resize-handle{background-color:#fff;border-color:#fff}
+            .tui-grid-pagination{background-color:transparent;border-color:transparent}
+            .tui-grid-layer-selection{background-color:#00A9ff;border-color:#00a9ff}
+            .tui-grid-header-area{background-color:#fff;border-color:#ccc}
+            .tui-grid-body-area{background-color:#fff}.tui-grid-summary-area{background-color:#fff;border-color:#eee}
+            .tui-grid-has-summary-top .tui-grid-body-area{border-color:#eee}
+            .tui-grid-cell{background-color:#fff;border-color:#e0e0e0;border-left-width:0;border-right-width:0;border-top-width:1px;border-bottom-width:1px;color:#333}
+            .tui-grid-cell-editable{background-color:#fff}.tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-header-area .tui-grid-table{border-right-style:solid}
+            .tui-grid-cell-header{background-color:#f4f4f4;border-color:#e0e0e0;border-left-width:1px;border-right-width:1px;border-top-width:1px;border-bottom-width:1px;color:#222}
+            .tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-body-area .tui-grid-table{border-right-style:hidden}
+            .tui-grid-cell-row-header{background-color:#fff;border-color:#eee;border-left-width:0;border-right-width:0;border-top-width:1px;border-bottom-width:1px;color:#333}
+            .tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-summary-area .tui-grid-table{border-right-style:hidden}
+            .tui-grid-cell-summary{background-color:#fff;border-color:#eee;border-left-width:0;border-right-width:0;color:#333}
+            .tui-grid-cell-required{background-color:#fffdeb}
+            .tui-grid-cell-disabled{background-color:#f9f9f9;color:#c1c1c1}
+            .tui-grid-cell-invalid.tui-grid-cell{background-color:#ffe5e5}
+            .tui-grid-cell-header.tui-grid-cell-selected{background-color:#e5f6ff}
+            .tui-grid-cell-row-header.tui-grid-cell-selected{background-color:#e5f6ff}
+            .tui-grid-layer-focus-border{background-color:#00a9ff}.tui-grid-layer-editing{border-color:#00a9ff}
+            .tui-grid-layer-focus-deactive .tui-grid-layer-focus-border{background-color:#aaa}
+            .tui-grid-row-odd>td{background-color:#fff}.tui-grid-row-even>td{background-color:#fff}.tui-grid-cell-dummy{background-color:#fff}
+        </style>
+</head>
+
+<body>
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar" class="nav-collapse">
+        <button id="menu-toggle"><i class="fas fa-bars"></i></button>
+        <div class="user-bg">
+            <div class="brand">
+                <img src="./images/logo.png" alt="KTmos wMMS">
+            </div>
+            <div class="user-area">
+                <div class="user-name">
+                	<span style="width: 60%;word-break:break-all;word-wrap:break-word;float: left;">관리자 님</span>
+                	<span class="area-badge">북부</span>
+                </div>
+                <div class="user-btn m--3" style="margin-top: 35px;">
+                    <li><a href="javascript:void(0);" onclick="fn_modify(this)">정보수정</a></li>
+                    <li><a href="javascript:void(0);" onclick="fn_logout(this);">로그아웃</a></li>
+                </div>
+            </div>
+        </div>
+            <!-- 메뉴 표시 -->
+            <ul class="sidebar-menu" id="nav-accordion">
+                <li class="sub-menu"><a href="javascript:showSub1('M01S01')">인수시험관리<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM01S01" style="display: none;">
+                        <li><a href="/acceptcheck/list/M01S01" id="" class="" target="">인수시험정보조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M02S01')">국소정보<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM02S01" style="display:none;">
+                        <li><a href="/device/5glte3g/list/M02S01" id="" class="" target="">국소정보조회-5G/LTE/3G</a></li>
+                        <li><a href="/device/repeater/list/M02S02" id="" class="" target="">국소정보조회-중계기</a></li>
+                        <li><a href="/device/wifi/list/M02S03" id="" class="" target="">국소정보조회-WiFi</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M03S01')">정기점검<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM03S01" style="display: none;">
+                        <li><a href="/regularinspection/list/M03S01" id="" class="" target="">정기점검조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M04S01')">전기안전점검<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM04S01" style="display: none;">
+                        <li><a href="/electricsafety/plan/list/M04S01" id="" class="" target="">계획관리</a></li>
+                        <li><a href="/electricsafety/inspection/list/M04S02" id="" class="" target="">점검관리</a></li>
+                        <li><a href="/electricsafety/result/list/M04S03" id="" class="" target="">대응결과조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M05S01')">위험국소<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM05S01" style="display: none;">
+                        <li><a href="/dangerinspection/list/M05S01" id="" class="" target="">위험국소조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="#none">아차사고<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="" style="display: none;">
+                        <li><a href="#none" id="" class="active" target="">아차사고조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M06S01')">부대시설<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM06S01" style="display: block;">
+                        <li><a href="/additionalfacilities/list/M06S01" id="" class="" target="">부대시설점검조회</a></li>
+                    </ul>
+                </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M07S01')">긴급복구물자관리<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM07S01" style="display: none;">
+                            <li><a href="/emergencymaterial/status/M07S01" id="" class="" target="">긴급복구현황표</a></li>
+                            <li><a href="/emergencymaterial/master/list/M07S02" id="" class="" target="">긴급복구물자</a></li>
+                            <li><a href="/emergencymaterial/history/list/M07S03" id="" class="" target="">긴급복구물자사용</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M09S01')">안전용품관리<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM09S01" style="display: none;">
+                            <li><a href="/item-safety/status/M09S01" id="" class="" target="">현황표</a></li>
+                            <li><a href="/item-safety/list/M09S02" id="" class="" target="">안전용품등록</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M15S01')">현장수시업무<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM15S01" style="display: none;">
+                            <li><a href="/onsite/list/M15S01" id="" class="" target="">현장수시업무현황</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M08S01')">Safe365<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM08S01" style="display: none;">
+                            <li><a href="/safe365/safety/list/M08S01" id="" class="" target="">안전점검 체크 리스트</a></li>
+                            <li><a href="/safe365/highcar/list/M08S02" id="" class="" target="">고소작업차 사용 작업 계획서</a></li>
+                            <li><a href="/safe365/aerial/list/M08S03" id="" class="" target="">고소작업차 작업 전 점검표</a></li>
+                            <li><a href="/safe365/status/M08S04" id="" class="" target="">현장 안전점검 현황</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M14S01')">작업중지권<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM14S01" style="display: none;">
+                            <li><a href="/stopwork/list/M14S01" id="" class="" target="">작업중지권 조회</a></li>
+                            <li><a href="/stopwork/apply/list/M14S02" id="" class="" target="">작업중지권 승인관리</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M16S01')">현장업무지원<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM16S01" style="display: none;">
+                            <li><a href="/support/acs/list/M16S01" id="" class="" target="">ACS</a></li>
+                            <li><a href="/support/rsa/list/M16S02" id="" class="" target="">RSA</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M11S01')">예비품관리<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM11S01" style="display: none;">
+                            <li><a href="/spare/list/M11S01" id="" class="" target="">예비품관리</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M10S01')">업로드관리<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM10S01" style="display: none;"><li><a href="/device/5glte3g/excel/list/M10S01" id="" class="" target="">국소정보업로드-5G/LTE/3G</a></li>
+                            <li><a href="/device/repeater/excel/list/M10S02" id="" class="" target="">국소정보업로드-중계기</a></li>
+                            <li><a href="/device/wifi/excel/list/M10S03" id="" class="" target="">국소정보업로드-WIFI</a></li>
+                            <li><a href="/device/acceptcheck/excel/list/M10S04" id="" class="" target="">인수시험</a></li>
+                            <li><a href="/device/regularinspection/excel/list/M10S05" id="" class="" target="">정기점검</a></li>
+                            <li><a href="/device/regularinspection_riu/excel/list/M10S06" id="" class="" target="">정기점검 RIU</a></li>
+                            <li><a href="/device/regularinspection_du/excel/list/M10S07" id="" class="" target="">정기점검 DU</a></li>
+                            <li><a href="/device/regularinspection_wifi/excel/list/M10S08" id="" class="" target="">정기점검 WiFi</a></li>
+                            <li><a href="/device/additionalfacilities/excel/list/M10S09" id="" class="" target="">부대시설점검</a></li>
+                            <li><a href="/device/electricsafety/excel/list/M10S10" id="" class="" target="">전기안전점검 계획</a></li>
+                            <li><a href="/device/dangerstation/excel/list/M10S11" id="" class="" target="">위험국소</a></li>
+                            <li><a href="/device/emergencymaterial/excel/list/M10S12" id="" class="" target="">긴급복구물자 사용</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M13S01')">대시보드<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM13S01" style="display: none;">
+                            <li><a href="/dashboard/inspection/M13S01" id="" class="" target="_blank">정기점검 현황</a></li>
+                            <li><a href="/dashboard/accept/M13S02" id="" class="" target="_blank">인수시험 현황</a></li>
+                            <li><a href="/dashboard/danger/M13S03" id="" class="" target="_blank">위험국소 현황</a></li>
+                            <li><a href="/dashboard/setting/list/M13S04" id="" class="" target="">모수관리</a></li>
+                        </ul>
+                    </li>
+                </ul>
+        <!--</div>-->
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <link rel="stylesheet" type="text/css" href="./css/multifreezer.css">
+    <script type="text/javascript" src="./js/multifreezerStandalone.js"></script>
+    <!-- Page Content -->
+<div id="page-content-wrapper">
+    <section class="wrapper">
+        <!-- 페이지 내용 시작   -->
+        
+            <h1 id="page_tit">부대시설 관리 <span class="sub_tit"> 상세페이지 </span></h1>
+        
+            <form id="additionalFacilitiesDetail" name="regularInspectionDetail">
+            <input type="hidden" id="deviceId" name="deviceId" value="NRSL00448S">
+            <input type="hidden" id="inspectionNo" name="inspectionNo" value="AF220426164706087387">
+            <div class="group-section m-t-15">
+                    <div class="title">장비 정보</div>
+                    <div class="f-r m-b-10">
+                        <button id="btnWordDownload" class="btn btn-md blue" onclick="fn_WordDownload();">다운로드</button>
+                    </div>
+                    <table class="hit hit-p">
+                          <colgroup>
+                            <col width="180">
+                            <col width="180"><col>
+                            <col width="180"><col>
+                            <col width="180"><col>
+                            <col width="180"><col>
+                        </colgroup>
+        
+                        <tbody>
+        
+                        <!-- 장비정보 -->
+                        <tr>
+                        <th rowspan="3" scope="row" class="th">장비정보</th>
+        
+                        <th>장비Category</th>
+                        <td>
+                                                    5G									</td>
+                        <th>장비TYPE</th>
+                        <td>RU</td>
+                        <th>네트워크단</th>
+                        <td>강남/서부NW운용본부</td>
+                        <th>운용팀</th>
+                        <td>강동엔지니어링부</td>
+                        </tr>
+        
+                        <tr>
+                        <th>운용본부</th>
+                        <td>강남본부</td>
+                        <th>센터</th>
+                        <td>관악P</td>
+                        <th>장비ID</th>
+                        <td>NRSL00448S</td>
+                        <th>장비명</th>
+                        <td>한남_시카고치과_32T_B</td>
+                        </tr>
+        
+                        <tr>
+                        <th>위치코드</th>
+                        <td>P0001290497000000</td>
+                        <th></th>
+                        <td></td>
+                        <th></th>
+                        <td></td>
+                        <th></th>
+                        <td></td>
+                        </tr>
+        
+                        <tr height="10"></tr>
+                        <!-- 주소정보 -->
+                        <tr>
+                        <th rowspan="2" scope="row" class="th">주소정보</th>
+        
+                        <th>우편번호</th>
+                        <td></td>
+                        <th>도로명주소</th>
+                        <td>서울특별시 용산구 한남대로 43-0</td>
+                        <th>시/도</th>
+                        <td>서울특별시</td>
+                        <th>시/군/구</th>
+                        <td>용산구</td>
+                        </tr>
+        
+                        <tr>
+                        <th>읍/면/동</th>
+                        <td>한남동</td>
+                        <th>번지</th>
+                        <td>224-0</td>
+                        <th>상세주소</th>
+                        <td colspan="3">제3한강교주유소</td>
+                        </tr>
+        
+                        <tr height="10"></tr>
+                        <!-- 건물정보 -->
+                        <tr>
+                        <th rowspan="2" scope="row" class="th">건물정보</th>
+        
+                        <th>건물명</th>
+                        <td>제3한강교주유소</td>
+                        <th>장비위치층</th>
+                        <td></td>
+                        <th>장비위치층2</th>
+                        <td></td>
+                        <th>건물층수</th>
+                        <td>15층</td>
+                        </tr>
+        
+                        <tr>
+                        <th>국사형태</th>
+                        <td>일반건물</td>
+                        <th>건물주연락처</th>
+                        <td></td>
+                        <th>관리자연락처</th>
+                        <td></td>
+                        <th></th>
+                        <td></td>
+        
+                        </tr>
+        
+                        <tr height="10"></tr>
+                        <!-- 출입정보 -->
+                        <tr>
+                        <th rowspan="2" scope="row" class="th">출입정보</th>
+        
+                        <th>출입제한</th>
+                        <td>출입제한없음</td>
+                        <th>출입제한시간대</th>
+                        <td></td>
+                        <th>출입관계</th>
+                        <td></td>
+                        <th>운용차량진입여부</th>
+                        <td></td>
+                        </tr>
+        
+                        <tr>
+                        <th>이동소요시간</th>
+                        <td></td>
+                        <th></th>
+                        <td></td>
+                        <th></th>
+                        <td></td>
+                        <th></th>
+                        <td></td>
+                        </tr>
+        
+                        <tr height="10"></tr>
+                        <!-- 철탑정보 -->
+                        <tr>
+                        <th rowspan="2" scope="row" class="th">철탑정보</th>
+        
+                        <th>철탑위치</th>
+                        <td></td>
+                        <th>철탑유형</th>
+                        <td>분산POLE</td>
+                        <th>철탑높이</th>
+                        <td>3m</td>
+                        <th>기타철탑</th>
+                        <td></td>
+                        </tr>
+        
+                        <tr>
+                        <th>지선운용수량</th>
+                        <td>2각2선/2각2선/2각2선/1각1선/1각1선</td>
+                        <th>지선운용상태</th>
+                        <td>5EA철탑 지선유</td>
+                        <th></th>
+                        <td></td>
+                        <th></th>
+                        <td></td>
+                        </tr>
+        
+                        <tr height="10"></tr>
+                        <!-- 철탑점검 -->
+                        <tr>
+                        <th rowspan="12" scope="row" class="th">철탑점검</th>
+        
+                        <th>볼트/너트</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>피뢰침</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>항공등(정기)</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>산화제거</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>항공등(전구)</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>항공등커버</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>점멸기</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>일체형항공등</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>접지</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>전원선</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>까치집</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>제초작업</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr height="10"></tr>
+                        <!-- 지선점검 -->
+                        <tr>
+                        <th rowspan="9" scope="row" class="th">지선점검</th>
+        
+                        <th>장력(텐션)</th>
+                        <td>NOK(미조치)</td>
+                        <th>기타</th>
+                        <td colspan="5">2ea지선 고정불량</td>
+                        </tr>
+        
+                        <tr>
+                        <th>지선부식(녹)</th>
+                        <td>NOK(미조치)</td>
+                        <th>기타</th>
+                        <td colspan="5">2ea지선 노후화 부식됨</td>
+                        </tr>
+        
+                        <tr>
+                        <th>텐버클부식(녹)</th>
+                        <td>NOK(미조치)</td>
+                        <th>기타</th>
+                        <td colspan="5">2ea턴버클 노후화됨</td>
+                        </tr>
+        
+                        <tr>
+                        <th>텐버클불량</th>
+                        <td>NOK(미조치)</td>
+                        <th>기타</th>
+                        <td colspan="5">턴버클 고정불량</td>
+                        </tr>
+        
+                        <tr>
+                        <th>도금제사용</th>
+                        <td>OK</td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>지선불량</th>
+                        <td>OK</td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>앙카불량</th>
+                        <td>OK</td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>지선설치</th>
+                        <td>OK</td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>지선보강</th>
+                        <td>OK</td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+        
+        
+                        <tr height="10"></tr>
+                        <!-- 냉방기점검 -->
+                        <tr>
+                        <th rowspan="16" scope="row" class="th">냉방기점검</th>
+        
+                        <th>필터세척</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>냉매보충</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>냉매누설</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>모터교체</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>FAN교체</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>콘덴서교체</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>배수펌프</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>EOCR교체</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>COMP교체</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>MainPCB교체</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>마그네트(M/S)</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>벨트교체</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>타이머교체</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>팽창밸브교체</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>알람연동</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>냉방기설정온도</th>
+                        <td></td>
+                        <th>국사내실내온도</th>
+                        <td></td>
+                        <td colspan="4"></td>
+                        </tr>
+        
+                        <tr height="10"></tr>
+                        <!-- 하론점검 -->
+                        <tr>
+                        <th rowspan="16" scope="row" class="th">하론점검</th>
+        
+                        <th>약제(용기1)</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>약제(용기2)</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>연기 감지기</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>열 감지기</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>수동조작함</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>방출표시등</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>SOL</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>기판</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>BATT</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>휴즈및스피커</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>환풍기연동</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>결선상태</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>제어망팀연동</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>스프링클러헤드</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>환풍기</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>타이머</th>
+                        <td></td>
+                        <th>기타</th>
+                        <td colspan="5"></td>
+                        </tr>
+        
+        
+                        <tr height="10"></tr>
+                        <!-- 구조안전진단 -->
+                        <tr>
+                        <th rowspan="2" scope="row" class="th">구조안전진단</th>
+        
+                        <th>비파괴 검사 결과</th>
+                        <td colspan="7"></td>
+                        </tr>
+        
+                        <tr>
+                        <th>구조 안전성 평가</th>
+                        <td colspan="7"></td>
+                        </tr>
+        
+                        <tr height="10"></tr>
+                        <!-- 기타 -->
+                        <tr>
+                        <th scope="row" class="th">특이사항</th>
+        
+                        <th>기타(불량사항, 추가내역)</th>
+                        <td colspan="7">고정불량및 지선녹슴</td>
+                        </tr>
+        
+                        </tbody>
+                      </table>
+            </div>
+        
+            </form>
+            <!-- 변경 이력 --->
+            <div class="group-section m-t-40">
+            <div class="title">부대시설 정보
+              <span class="title-num"><label id="lblTotalCount">1</label></span>
+            </div>
+            <div class="f-r m-b-10">
+                <button type="button" id="btnXlsDownload" class="btn btn-md green" onclick="fn_excel();">다운로드</button>
+            </div>
+             <div id="grid"><div data-grid-id="1" class="tui-grid-container tui-grid-show-lside-area" style="width: 100%;"><div class="tui-grid-content-area"><div class="tui-grid-lside-area" style="width: 41px; display: block;"><div class="tui-grid-header-area" style="height: 40px;"><table class="tui-grid-table"><colgroup><col data-column-name="detailViewer" style="width: 40px;"></colgroup><tbody><tr style="height: 40px;"><th data-column-name="_number" class="tui-grid-cell tui-grid-cell-header tui-grid-cell-row-header" style="text-align: center; vertical-align: middle;">No. </th></tr></tbody></table><div class="tui-grid-column-resize-container" style="display: block; margin-top: -35px; height: 35px;"></div></div><div class="tui-grid-body-area" style="height: 400px;"><div class="tui-grid-body-container" style="width: 40px; height: 41px;"><div class="tui-grid-table-container" style="top: 0px; left: 0px; overflow: visible;"><table class="tui-grid-table"><colgroup><col data-column-name="detailViewer" style="width: 40px;"></colgroup><tbody><tr class="tui-grid-row-odd" style="height: 40px;"><td data-row-key="0" data-column-name="_number" class="tui-grid-cell tui-grid-cell-has-input tui-grid-cell-row-header " style="text-align: center; vertical-align: middle;"><div class="tui-grid-cell-content">1</div></td></tr></tbody></table></div><div></div></div></div><div class="tui-grid-scrollbar-left-bottom"></div></div><div class="tui-grid-rside-area" style="display: block; margin-left: 40px;"><div class="tui-grid-header-area" style="height: 40px;"><table class="tui-grid-table"><colgroup><col data-column-name="detailViewer" style="width: 150px;"><col data-column-name="detailViewer" style="width: 150px;"><col data-column-name="detailViewer" style="width: 150px;"><col data-column-name="detailViewer" style="width: 150px;"><col data-column-name="detailViewer" style="width: 150px;"><col data-column-name="detailViewer" style="width: 300px;"><col data-column-name="detailViewer" style="width: 150px;"><col data-column-name="detailViewer" style="width: 150px;"></colgroup><tbody><tr style="height: 40px;"><th data-column-name="nsType" class="tui-grid-cell tui-grid-cell-header" style="text-align: center; vertical-align: middle;">지역</th><th data-column-name="ktOperationTeam" class="tui-grid-cell tui-grid-cell-header" style="text-align: center; vertical-align: middle;">운용팀</th><th data-column-name="inspectionUserId" class="tui-grid-cell tui-grid-cell-header" style="text-align: center; vertical-align: middle;">점검자ID</th><th data-column-name="inspectionUserName" class="tui-grid-cell tui-grid-cell-header" style="text-align: center; vertical-align: middle;">점검자명</th><th data-column-name="inspectionDate" class="tui-grid-cell tui-grid-cell-header" style="text-align: center; vertical-align: middle;">점검일시</th><th data-column-name="deviceId" class="tui-grid-cell tui-grid-cell-header" style="text-align: center; vertical-align: middle;">장비ID</th><th data-column-name="deviceName" class="tui-grid-cell tui-grid-cell-header" style="text-align: center; vertical-align: middle;">장비명</th><th data-column-name="locationCode" class="tui-grid-cell tui-grid-cell-header" style="text-align: center; vertical-align: middle;">위치코드</th></tr></tbody></table><div class="tui-grid-column-resize-container" style="display: block; margin-top: -35px; height: 35px;"><div class="tui-grid-column-resize-handle" title="지역" data-column-index="0" data-column-name="nsType" style="height: 40px; width: 7px; left: 147px; bottom: 0px;"></div><div class="tui-grid-column-resize-handle" title="운용팀" data-column-index="1" data-column-name="ktOperationTeam" style="height: 40px; width: 7px; left: 297px; bottom: 0px;"></div><div class="tui-grid-column-resize-handle" title="점검자ID" data-column-index="2" data-column-name="inspectionUserId" style="height: 40px; width: 7px; left: 447px; bottom: 0px;"></div><div class="tui-grid-column-resize-handle" title="점검자명" data-column-index="3" data-column-name="inspectionUserName" style="height: 40px; width: 7px; left: 597px; bottom: 0px;"></div><div class="tui-grid-column-resize-handle" title="점검일시" data-column-index="4" data-column-name="inspectionDate" style="height: 40px; width: 7px; left: 747px; bottom: 0px;"></div><div class="tui-grid-column-resize-handle" title="장비ID" data-column-index="5" data-column-name="deviceId" style="height: 40px; width: 7px; left: 1047px; bottom: 0px;"></div><div class="tui-grid-column-resize-handle" title="장비명" data-column-index="6" data-column-name="deviceName" style="height: 40px; width: 7px; left: 1197px; bottom: 0px;"></div><div class="tui-grid-column-resize-handle" title="위치코드" data-column-index="7" data-column-name="locationCode" style="height: 40px; width: 7px; left: 1347px; bottom: 0px;"></div></div></div><div class="tui-grid-body-area" style="height: 400px;"><div class="tui-grid-body-container" style="width: 1349px; height: 41px;"><div class="tui-grid-table-container" style="top: 0px; left: 0px; overflow: visible;"><table class="tui-grid-table"><colgroup><col data-column-name="detailViewer" style="width: 150px;"><col data-column-name="detailViewer" style="width: 150px;"><col data-column-name="detailViewer" style="width: 150px;"><col data-column-name="detailViewer" style="width: 150px;"><col data-column-name="detailViewer" style="width: 150px;"><col data-column-name="detailViewer" style="width: 300px;"><col data-column-name="detailViewer" style="width: 150px;"><col data-column-name="detailViewer" style="width: 150px;"></colgroup><tbody><tr class="tui-grid-row-odd" style="height: 40px;"><td data-row-key="0" data-column-name="nsType" class="tui-grid-cell tui-grid-cell-has-input " style="text-align: center; vertical-align: middle;"><div class="tui-grid-cell-content">북부</div></td><td data-row-key="0" data-column-name="ktOperationTeam" class="tui-grid-cell tui-grid-cell-has-input " style="text-align: center; vertical-align: middle;"><div class="tui-grid-cell-content">강동엔지니어링부</div></td><td data-row-key="0" data-column-name="inspectionUserId" class="tui-grid-cell tui-grid-cell-has-input " style="text-align: center; vertical-align: middle;"><div class="tui-grid-cell-content">N10001758</div></td><td data-row-key="0" data-column-name="inspectionUserName" class="tui-grid-cell tui-grid-cell-has-input " style="text-align: center; vertical-align: middle;"><div class="tui-grid-cell-content">천용호</div></td><td data-row-key="0" data-column-name="inspectionDate" class="tui-grid-cell tui-grid-cell-has-input " style="text-align: center; vertical-align: middle;"><div class="tui-grid-cell-content">2022-04-26</div></td><td data-row-key="0" data-column-name="deviceId" class="tui-grid-cell tui-grid-cell-has-input " style="text-align: center; vertical-align: middle;"><div class="tui-grid-cell-content">NRSL00448S</div></td><td data-row-key="0" data-column-name="deviceName" class="tui-grid-cell tui-grid-cell-has-input " style="text-align: center; vertical-align: middle;"><div class="tui-grid-cell-content">한남_시카고치과_32T_B</div></td><td data-row-key="0" data-column-name="locationCode" class="tui-grid-cell tui-grid-cell-has-input " style="text-align: center; vertical-align: middle;"><div class="tui-grid-cell-content">P0001290497000000</div></td></tr></tbody></table></div><div></div></div></div><div class="tui-grid-scrollbar-y-inner-border" style="top: 40px; height: 383px;"></div><div class="tui-grid-scrollbar-y-outer-border"></div><div class="tui-grid-scrollbar-right-top" style="height: 40px;"></div><div class="tui-grid-scrollbar-frozen-border" style="height: 17px; width: 0px; margin-left: 0px;"></div><div class="tui-grid-scrollbar-right-bottom" style="height: 17px;"></div></div><div class="tui-grid-border-line tui-grid-border-line-top"></div><div class="tui-grid-border-line tui-grid-border-line-left"></div><div class="tui-grid-border-line tui-grid-border-line-right"></div><div class="tui-grid-border-line tui-grid-border-line-bottom" style="bottom: 17px;"></div></div><div class="tui-grid-layer-state" style="display: none; top: 41px; height: 382px; left: 0px; right: 18px;"><div class="tui-grid-layer-state-content"><p></p></div></div><div class="tui-grid-clipboard" contenteditable="true"></div></div></div>
+            </div>
+        
+            <!-- <style>
+                .file_upload{
+                    position: relative;
+                    display: inline-block; 
+                    min-width:120px;
+                    padding-left: 2em;
+                    cursor: pointer; 
+                    text-align:center;
+                }
+                .file_upload::before{
+                    content:"";
+                    position: absolute;
+                    top:5px; left:10px;
+                    background:url(./images/ico_upload.png);
+                    background-repeat: no-repeat;
+                    background-position: 0 0;
+                    width:20px; height:20px;
+                }
+                .file_down{
+                    position: relative;
+                    display: inline-block; 
+                    min-width:120px;
+                    padding-left: 2em;
+                    text-align:center;
+                }
+                .file_down::before{
+                    content:"";
+                    position: absolute;
+                    top:5px; left:6px;
+                    background:url(./images/ico_download.png);
+                    background-repeat: no-repeat;
+                    background-position: 0 0;
+                    width:20px; height:20px;
+                }
+                .check-box{
+                    position: absolute;top:5px;right:5px;width:30px;height:30px;z-index: 999;
+                }
+                .check-box input[type="checkbox"] {
+                    -webkit-appearance: none;
+                    position: relative;
+                    width:30px; height:30px;
+                    cursor: pointer;
+                    outline: none !important;
+                    /* border:1px solid #6c6c6c; */
+                    border:2px solid #fff;
+                    box-shadow: 2px 3px 3px 0;
+                    border-radius:4px;
+                    background:transparent;
+                }
+                .check-box input[type="checkbox"]::before {
+                    content: "\2713";
+                    position: absolute;
+                    top: 50%; left: 50%;
+                    overflow: hidden;
+                    transform: scale(0) translate(-50%, -50%);
+                    line-height: 1;
+                }
+                .check-box input[type="checkbox"]:checked {
+                    background-color:#f2de00;
+                    border:2px solid #f2de00;
+                    box-shadow: 2px 3px 3px 0;
+                    /* border-color: rgba(255, 255, 255, 0.3); */
+                    color: white;
+                    font-size:22px; font-weight:bold;
+                    box-shadow:none;
+                }
+                .check-box input[type="checkbox"]:checked::before {
+                    border-radius:4px;
+                    transform: scale(1) translate(-50%, -50%)
+                }
+                .selected{border:3px solid #f2de00;}
+                .card .img{padding-bottom:74%; height:201px;}
+            </style> -->
+            <!-- 사진 정보  -->
+            <div class="group-section m-t-40">
+                <div class="title m-b-10">사진 업로드 정보</div>
+                <div style="clear:both">
+                <div class="row fileupload-buttonbar">
+                <div class="clear d-flex p-rel">
+                <label for="upload-btn" class="btn-file btn file_upload">파일 업로드</label>
+                <input type="file" class="btn" name="file" id="file" data-url="/additionalfacilities/image/upload/NRSL00448S/5G">
+                <label for="upload-btn" class="btn-file btn file_down" style="margin-left:10px;" onclick="imageDownload()">일괄 다운로드</label>
+                <label for="upload-btn2" class="btn-file btn file_down" style="margin-left:10px;" onclick="">선별 다운로드</label>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $('.check-box input[type="checkbox"]').on('click', function() {  //.check-box 체크박스에 클릭시
+                        if ( $(this).prop('checked') ) {  // 만약 체크박스에 체크시
+                             $(this).parent().parent().addClass("bordered");  // 체크박스의 부모의 부모 태그에 bordered 클래스 추가
+                        } else {  // 체크박스 해제시
+                            $(this).parent().parent().removeClass("bordered");  // 체크박스의 부모의 부모 태그에 bordered 클래스 삭제
+                        }
+                    });
+                });
+            </script>
+            <!-- 장비사진  -->
+            <div class="group-section m-t-40">
+                <div class="title m-b-10">장비 사진</div>
+                <div class="product-area">
+                    <ul class="card-gallery">
+                        <li class="card border">
+                            <div class="img image-link bordered">
+                                <div class="check-box">
+                                    <input type="checkbox" checked/>
+                                </div>
+                                <img src="./images/photo1.jpg" alt="img" onclick="imagePopup('http://moa-ktmos.com/additionalfacilities/image/NRSL00448S/NRSL00448S-b4faee02-10ac-4d1a-a650-620eb3714ad1/jpg');">
+                            </div>
+                            <div class="card-body"> <p class="card-text">등록일 : 2022-04-26 16:46:19</p> 
+                                <button class="btn primary" onclick="fnDownloadImage('/additionalfacilities/image/download/NRSL00448S/NRSL00448S-b4faee02-10ac-4d1a-a650-620eb3714ad1/jpg')" download="">다운로드</button>    
+                                <button class="btn" onclick="fnDeleteImage(250747)">삭제</button>
+                            </div>
+                        </li>
+                        <li class="card border">
+                            <div class="img image-link">
+                                <div class="check-box">
+                                    <input type="checkbox" />
+                                </div>
+                                <img src="./images/photo2.jpg" alt="img" onclick="imagePopup('http://moa-ktmos.com/additionalfacilities/image/NRSL00448S/NRSL00448S-4b7a4557-3880-4836-8278-22c890e63992/jpg');">
+                            </div>
+                            <div class="card-body">   <p class="card-text">등록일 : 2022-04-26 16:46:24</p>  
+                                <button class="btn primary" onclick="fnDownloadImage('/additionalfacilities/image/download/NRSL00448S/NRSL00448S-4b7a4557-3880-4836-8278-22c890e63992/jpg')" download="">다운로드</button> 
+                                <button class="btn" onclick="fnDeleteImage(250748)">삭제</button>
+                            </div>
+                        </li>
+                        <li class="card border">
+                            <div class="img image-link">
+                                <div class="check-box">
+                                    <input type="checkbox" />
+                                </div>
+                                <img src="./images/photo3.jpg" alt="img" onclick="imagePopup('http://moa-ktmos.com/additionalfacilities/image/NRSL00448S/NRSL00448S-e641ba84-1b78-4e30-992a-e428b7bdad13/jpg');">
+                            </div>
+                            <div class="card-body"> <p class="card-text">등록일 : 2022-04-26 16:46:34</p> 
+                                <button class="btn primary" onclick="fnDownloadImage('/additionalfacilities/image/download/NRSL00448S/NRSL00448S-e641ba84-1b78-4e30-992a-e428b7bdad13/jpg')" download="">다운로드</button>
+                                <button class="btn" onclick="fnDeleteImage(250749)">삭제</button></div>
+                        </li>
+                        <li class="card border">
+                            <div class="img image-link">
+                                <div class="check-box">
+                                    <input type="checkbox" />
+                                </div>
+                                <img src="./images/photo4.jpg" alt="img" onclick="imagePopup('http://moa-ktmos.com/additionalfacilities/image/NRSL00448S/NRSL00448S-7679006a-f09c-4a1a-a56b-dbbc8fe3bf7b/jpg');">
+                            </div>
+                            <div class="card-body">    <p class="card-text">등록일 : 2022-04-26 16:46:47</p>
+                                <button class="btn primary" onclick="fnDownloadImage('/additionalfacilities/image/download/NRSL00448S/NRSL00448S-7679006a-f09c-4a1a-a56b-dbbc8fe3bf7b/jpg')" download="">다운로드</button>
+                                <button class="btn" onclick="fnDeleteImage(250750)">삭제</button>
+                            </div>
+                        </li>
+                        <li class="card border">
+                            <div class="img image-link">
+                                <div class="check-box">
+                                    <input type="checkbox" />
+                                </div>
+                                <img src="./images/photo5.jpg" alt="img" onclick="imagePopup('http://moa-ktmos.com/additionalfacilities/image/NRSL00448S/NRSL00448S-e90ca57b-89ef-496c-af16-b7c5642b5b68/jpg');">
+                            </div>
+                            <div class="card-body"><p class="card-text">등록일 : 2022-04-26 16:46:55</p> 
+                                <button class="btn primary" onclick="fnDownloadImage('/additionalfacilities/image/download/NRSL00448S/NRSL00448S-e90ca57b-89ef-496c-af16-b7c5642b5b68/jpg')" download="">다운로드</button> 
+                                <button class="btn" onclick="fnDeleteImage(250751)">삭제</button>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="btn-area">
+                        <button class="btn btn-default primary" onclick="window.close();">닫기</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        
+        <!-- 팝업 모달 -->
+            <div id="element_to_pop_up">
+                <a class="b-close"><img src="./images/ic_close.png" style="width:80%; height:80%"></a><a>
+                <img id="popupImg" src="" alt="img" style="padding-top:20px; max-height:800px; max-width:800px;">
+            </a></div><a>
+        
+            <!-- 페이지 내용 끝  -->
+    </section>
+</div>
+<!-- /#page-content-wrapper -->
+<!-- 기본 레이아웃 끝 -->
+<link rel="stylesheet" type="text/css" href="/css/toastui-editor.min.css">
+<script type="text/javascript" src="/js/toastui-editor-all.min.js"></script>
+<script type="text/javascript" src="/js/vendor/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="/js/jquery.iframe-transport.js"></script>
+<script type="text/javascript" src="/js/jquery.fileupload.js"></script>
+<script type="text/javascript" src="/grid/additionalfacilities_edit_grid.js"></script>
+<script type="text/javascript" src="http://moa-ktmos.com/js/jquery.bpopup.min.js"></script>
+<script type="text/javascript">
+    var imageCnt=0;
+
+	showImageList();
+
+	function imageDownload(){
+  		if (imageCnt < 1){
+  			alert("다운로드 가능한 파일이 존재하지 않습니다.");
+  		} else {
+  			location.href = "/additionalfacilities/image/download/NRSL00448S";
+  		}
+
+  	}
+
+	function imagePopup(url){
+		$("#popupImg").attr("src", url);
+		$('#element_to_pop_up').bPopup({
+            position: [300, 20] //x, y
+		});
+	}
+
+    $('#file').fileupload({
+        dataType: 'json',
+        add: function(e, data) {
+            let uploadErrors = [];
+            let acceptFileTypes = /^image\/(gif|jpe?g|png)$/i;
+            if(data.originalFiles[0]['type'].length && !acceptFileTypes.test(data.originalFiles[0]['type'])) {
+                uploadErrors.push('이미지 파일만 업로드 가능합니다.');
+            }
+            if(data.originalFiles[0]['size'].length && data.originalFiles[0]['size'] > 5000000) {
+                uploadErrors.push('이미지파일은 50메가 미만이어야 합니다.');
+            }
+            if(uploadErrors.length > 0) {
+                alert(uploadErrors.join("\n"));
+            } else {
+                data.submit();
+            }
+        },
+        done: function(e, data) {
+            showImageList();
+        },
+        fail: function(e, data) {
+            alert("업로드 실패");
+        }
+    });
+
+
+    function showImageList() {
+        let deviceId = $('#deviceId').val();
+        let html =  '<li class="card border">' +
+                    '<div class="img image-link">' +
+                    '    <img src="/images/img-no.jpg" alt="img">' +
+                    '</div>' +
+                    '<div class="card-body">' +
+                    '    <p class="card-text"></p>' +
+                    '    <a class="btn primary">다운로드</a>' +
+                    '    <a class="btn">삭제</a>' +
+                    '</div>' +
+                '</li>';
+
+        $.ajax({
+            url: '/additionalfacilities/edit/image/NRSL00448S',
+            type: "GET",
+            dataType: "JSON",
+            contentType: "application/json",
+            success: function(data) {
+                if (data.total > 0) {
+                    html = "";
+                    $.each(data.items, function(i, item) {
+                    	let str = item.imageFile;
+                    	if(str.indexOf(".") > -1){
+		                    str = str.substring(0, str.indexOf("."));
+                    	}
+
+                        let imgUrl = "/additionalfacilities/image/"+item.deviceId+"/"+str+"/"+item.imageFileExtension;
+                        let downloadUrl = "/additionalfacilities/image/download/"+item.deviceId+"/"+str+"/"+item.imageFileExtension;
+                        html += '<li class="card border">' +
+                        '<div class="img image-link">' +
+                        '    <img src="'+imgUrl+'" alt="img" onClick="imagePopup(\'' + imgUrl + '\');">' +
+                        '</div>' +
+                        '<div class="card-body">' +
+                        '    <p class="card-text">등록일 : '+item.createDate+'</p>' +
+                        '    <button class="btn primary" onclick="fnDownloadImage(\''+downloadUrl+'\')" download>다운로드</button>' +
+                        '    <button class="btn" onclick="fnDeleteImage('+item.imageSeq+')">삭제</button>' +
+                        '</div>' +
+                        '</li>';
+                        imageCnt++;
+                    });
+                }
+                $('.card-gallery').html(html);
+            },
+            // error: function() {
+            //     alert("값을 가져오지 못했습니다.");
+            // }
+        })
+    };
+
+    function fnDownloadImage(url) {
+        location.href = url;
+    }
+
+
+    function fnDeleteImage(seq) {
+        if(confirm("정말 삭제하시겠습니까?")) {
+            $.ajax({
+                url: '/additionalfacilities/image/'+seq,
+                type: "DELETE",
+                dataType: "JSON",
+                contentType: "application/json",
+                success: function(data) {
+                    if (!data.result) {
+                        alert(data.msg);
+                    } else {
+                        //alert("삭제 되었습니다.");
+                        imageCnt--;
+                        showImageList();
+                    }
+                },
+                error: function(e) {
+                    alert("삭제에 실패했습니다. " + e);
+                }
+            });
+        }
+    }
+
+	// 엑셀 다운로드
+	function fn_excel(){
+		const $form = $('#additionalFacilitiesDetail');
+		var rowCount = deviceGrid.getRowCount();
+
+		// 정기점검 정보내역 조회건수 체크
+		if(rowCount < 1){
+    		alert("정기점검 정보내역이 없습니다.");
+    		return;
+    	}
+    	contentDispositionFileDownload('/additionalfacilities/excel/detail/export?'+$form.serialize(), true);
+	}
+
+	// 워드 다운로드
+	function fn_WordDownload(){
+        let deviceId = $('#deviceId').val();
+        let inspectionNo = $('#inspectionNo').val();
+        let url = '/additionalfacilities/print/'+deviceId+"/"+inspectionNo;
+        window.open(url);
+	}
+
+
+</script>
+<!--loading-->
+<div id="loading-overlay">
+    <div id="loading">
+        <div class="dot-area">
+            <div class="dot left three"></div>
+            <div class="dot left two"></div>
+            <div class="dot left one"></div>
+            <i class="ic-logo"></i>
+            <div class="dot right one"></div>
+            <div class="dot right two"></div>
+            <div class="dot right three"></div>
+        </div>
+        <h2 class="loading-text">잠시만 기다려주세요</h2>
+    </div>
+</div>
+</div>
+</body>
+</html>

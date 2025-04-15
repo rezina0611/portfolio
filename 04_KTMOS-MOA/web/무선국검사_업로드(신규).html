@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+    <meta charset="UTF-8">
+    <title>KT MOA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- 기존 css -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/resetting.css">
+    <link rel="stylesheet" type="text/css" href="./css/dialog.css">
+    <link rel="stylesheet" type="text/css" href="./css/wireless.css">
+
+    <link href="./css/popup.css" rel="stylesheet" type="text/css">  <!--20220621-->
+    
+    <!-- tui css -->
+    <link rel="stylesheet" type="text/css" href="./css/tui-pagination.css">
+    <link rel="stylesheet" type="text/css" href="./css/tui-grid.css">
+    <link rel="stylesheet" type="text/css" href="./css/tui-time-picker.css">
+    <link rel="stylesheet" type="text/css" href="./css/tui-date-picker.css">
+    <link rel="stylesheet" type="text/css" href="./css/toastui-select-box.css">
+
+    <!-- toggle css -->
+    <link rel="stylesheet" type="text/css" href="./css/simple-sidebar.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+
+    <!-- Bootstrap core CSS -->
+
+    <!-- FILEUPLOAD -->
+    <link rel="stylesheet" type="text/css" href="./css/jquery.fileupload.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery.fileupload-ui.css">
+
+    <!-- 기존 js -->
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+    <script type="text/javascript" src="./js/scripts.js"></script>
+    <script type="text/javascript" src="./js/jquery.nicescroll.js"></script>
+
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/common-functions.js"></script>
+
+    <!-- tui js -->
+    <script type="text/javascript" src="./js/tui-pagination.js"></script>
+    <script type="text/javascript" src="./js/tui-grid.js"></script>
+    <script type="text/javascript" src="./js/tui-code-snippet.js"></script>
+    <script type="text/javascript" src="./js/tui-time-picker.js"></script>
+    <script type="text/javascript" src="./js/tui-date-picker.js"></script>
+    <script type="text/javascript" src="./js/tui-date-picker-ko.js"></script>
+    <script type="text/javascript" src="./js/tui-calendar.js"></script>
+    <script type="text/javascript" src="./js/toastui-select-box.js"></script>
+  
+    <script>
+        const Grid = tui.Grid;
+        Grid.applyTheme('default', {
+            outline: {
+                border: '#e0e0e0'
+            },
+            cell: {
+                normal: {
+                    background: '#fff',
+                    border: '#e0e0e0',
+                    color: '#666666'
+                },
+                header: {
+                    background: '#f4f4f4',
+                    border: '#e0e0e0'
+                },
+                evenRow: {
+                    background: '#fff',
+                    border: '#e0e0e0',
+                    color: '#666666'
+                },
+                oddRow: {
+                    background: '#fff',
+                    border: '#e0e0e0',
+                    color: '#666666'
+                }
+            }
+        }); // Call API of static
+    </script>
+    <style type="text/css" id="tui-grid-theme-style">
+        .tui-grid-border-line-top{border-top:1px solid #e0e0e0}
+        .tui-grid-no-scroll-x .tui-grid-border-line-bottom{border-bottom:1px solid #e0e0e0}.tui-grid-frozen-border{background-color:#aaa}
+        .tui-grid-container ::-webkit-scrollbar{background-color:#fff}.tui-grid-container ::-webkit-scrollbar-thumb{background-color:#ddd}
+        .tui-grid-container ::-webkit-scrollbar-thumb:hover{background-color:#ddd;}
+        .tui-grid-container{scrollbar-3dlight-color:#fff;scrollbar-darkshadow-color:#fff;scrollbar-track-color:#fff;scrollbar-shadow-color:#fff;
+            scrollbar-face-color:#ddd;scrollbar-highlight-color:#ddd;scrollbar-arrow-color:#ddd;}
+        .tui-grid-border-line-bottom{border-bottom:1px solid #eee}
+        .tui-grid-content-area{border-color:#eee}.tui-grid-scrollbar-y-inner-border{background-color:#eee}
+        .tui-grid-scrollbar-y-outer-border{background-color:#eee}
+        .tui-grid-scrollbar-right-top{background-color:#f9f9f9;border-color:#eee}
+        .tui-grid-scrollbar-right-bottom{background-color:#f9f9f9;border-color:#eee}
+        .tui-grid-scrollbar-left-bottom{background-color:#f9f9f9;border-color:#eee}
+        .tui-grid-scrollbar-frozen-border{background-color:#f9f9f9;border-color:#eee}
+        .tui-grid-height-resize-handle{background-color:#fff;border-color:#fff}
+        .tui-grid-pagination{background-color:transparent;border-color:transparent}
+        .tui-grid-layer-selection{background-color:#00A9ff;border-color:#00a9ff}
+        .tui-grid-header-area{background-color:#fff;border-color:#ccc}
+        .tui-grid-body-area{background-color:#fff}.tui-grid-summary-area{background-color:#fff;border-color:#eee}
+        .tui-grid-has-summary-top .tui-grid-body-area{border-color:#eee}
+        .tui-grid-cell{background-color:#fff;border-color:#e0e0e0;border-left-width:0;border-right-width:0;border-top-width:1px;border-bottom-width:1px;color:#333}
+        .tui-grid-cell-editable{background-color:#fff}.tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-header-area .tui-grid-table{border-right-style:solid}
+        .tui-grid-cell-header{background-color:#f4f4f4;border-color:#e0e0e0;border-left-width:1px;border-right-width:1px;border-top-width:1px;border-bottom-width:1px;color:#222}
+        .tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-body-area .tui-grid-table{border-right-style:hidden}
+        .tui-grid-cell-row-header{background-color:#fff;border-color:#eee;border-left-width:0;border-right-width:0;border-top-width:1px;border-bottom-width:1px;color:#333}
+        .tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-summary-area .tui-grid-table{border-right-style:hidden}
+        .tui-grid-cell-summary{background-color:#fff;border-color:#eee;border-left-width:0;border-right-width:0;color:#333}
+        .tui-grid-cell-required{background-color:#fffdeb}
+        .tui-grid-cell-disabled{background-color:#f9f9f9;color:#c1c1c1}
+        .tui-grid-cell-invalid.tui-grid-cell{background-color:#ffe5e5}
+        .tui-grid-cell-header.tui-grid-cell-selected{background-color:#e5f6ff}
+        .tui-grid-cell-row-header.tui-grid-cell-selected{background-color:#e5f6ff}
+        .tui-grid-layer-focus-border{background-color:#00a9ff}.tui-grid-layer-editing{border-color:#00a9ff}
+        .tui-grid-layer-focus-deactive .tui-grid-layer-focus-border{background-color:#aaa}
+        .tui-grid-row-odd>td{background-color:#fff}.tui-grid-row-even>td{background-color:#fff}.tui-grid-cell-dummy{background-color:#fff}
+    </style>
+</head>
+
+<body>
+<script>
+    //엑셀 업로드 시 확인사항
+    $(function(){
+        //팝업창 열기
+        $(".openLayerPopup").on("click", function(e) {
+            e.preventDefault();
+            $(".layerpopupWrapper").show();
+            $(".mask").fadeIn(150);
+        });
+
+        //팝업창 닫기
+        $(".btnClose").on("click", function(e) {
+            e.preventDefault();
+            $(".layerpopupWrapper").hide();
+            $(".mask").fadeOut(150);
+        });
+    });
+</script>
+<div class="mask"></div>
+<div class="layerpopupWrapper" style="margin-left:-400px;">
+    <div class="layerpopupArea w850">
+        <a class="btnClose" href="#"><i class="fas fa-times fa-lg" style="color:#999;"></i></a>
+        <div class="layerPopupContent">
+            <h4>※ 엑셀 업로드 시 확인사항</h4>
+            <div class="previousInfo" style="height:450px;">
+                <h6 class="m-t-10">공통</h6>
+                <ul class="txtRefer">
+                    <li>서버 부하로 인하여 최대 1000건 이하로 업로드를 진행해주세요.</li>
+                    <li>'장비ID' 및 '고유번호'는 장비를 특정하는 key값 이므로 중복되지 않게 확인해주세요.</li>
+                    <li>같은 장비의 ‘마스터데이터 (국소정보)에 넣은 값’과 ‘인수시험, 정기점검, 위험국소, 부대시설점검, 긴급복구물자사용’의 공통 값<br>(ex: 장비ID, 고유번호)이 일치하는지 확인해주세요.</li>
+                    <li>마스터데이터(국소정보)에 없는 장비를 ‘외 메뉴(ex: 인수시험, 정기점검 등)’에 넣으면 업로드가 되지 않으니 주의해주세요.</li>
+                    <li>‘필수항목’은 필수로 기재해주세요.</li>
+                    <li>엑셀 작업 시 ‘표시형식’에 따라 값이 변경되는 경우가 있으니 확인해주세요. 
+                        ex) 숫자’0’으로 시작하는 값일 경우 <br>(고유번호: ’0000001’ <i class="fas fa-arrow-right fa-fw"></i>‘1’로 변경되는 경우가 있습니다.)
+                    </li>
+                    <li>데이터를 복사하려면 ‘값만 붙여넣기’를 해서 처리 해야 합니다.</li>
+                    <li>서식형태를 ‘텍스트’로 하여 진행해야 합니다.</li>
+                </ul>
+
+                <h6 class="m-t-30">국소정보</h6>
+                <ul class="txtRefer">
+                    <li>‘제조일자(대개체일자)’는 ex)‘2021-04-15 00:00:00.0’ 으로 넣고, 값이 없을 경우에는 ‘공란’으로 처리해주세요.</li>
+                    <li>‘위치코드’는 ex)’ B0000206198002001’ 형식으로 넣어주세요.</li>
+                    <li>‘위도, 경도’ ex)’ 37.579443’, ‘126.938754’ 형식으로 넣어주세요.</li>
+                    <li>'파트명'은 '○○P’ 등록해주세요.</li>
+                </ul>
+            </div>
+            <div class="text-center m-t-20">
+                <button class="btn btn-sm m-w-sm primary" onclick="fn_close()" type="button">닫기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar" class="nav-collapse">
+        <button id="menu-toggle"><i class="fas fa-bars"></i></button>
+        <div class="user-bg">
+            <div class="brand">
+                <img src="./images/logo.png" alt="KTmos wMMS">
+            </div>
+            <div class="user-area">
+                <div class="user-name">
+                	<span style="width: 60%;word-break:break-all;word-wrap:break-word;float: left;">관리자 님</span>
+                	<span class="area-badge">북부</span>
+                </div>
+                <div class="user-btn m--3" style="margin-top: 35px;">
+                    <li><a href="javascript:void(0);" onclick="fn_modify(this)">정보수정</a></li>
+                    <li><a href="javascript:void(0);" onclick="fn_logout(this);">로그아웃</a></li>
+                </div>
+            </div>
+        </div>
+        <!-- 메뉴 표시 -->
+        <ul class="sidebar-menu" id="nav-accordion">
+            <li class="sub-menu"><a href="javascript:showSub1('M01S01')">인수시험관리<span class="dcjq-icon"></span></a>
+                <ul class="sub" id="subMenuM01S01" style="display: none;">
+                    <li><a href="/acceptcheck/list/M01S01" id="" class="" target="">인수시험정보조회</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu"><a href="javascript:showSub1('M02S01')">국소정보<span class="dcjq-icon"></span></a>
+                <ul class="sub" id="subMenuM02S01" style="display: none;">
+                    <li><a href="/device/5glte3g/list/M02S01" id="" class="" target="">국소정보조회-5G/LTE/3G</a></li>
+                    <li><a href="/device/repeater/list/M02S02" id="" class="" target="">국소정보조회-중계기</a></li>
+                    <li><a href="/device/wifi/list/M02S03" id="" class="" target="">국소정보조회-WiFi</a></li>
+                </ul>
+            </li>
+            <!--신규-->
+            <li class="sub-menu"><a href="javascript:showSub1('')">무선국검사<span class="dcjq-icon"></span></a>
+                <ul class="sub" id="subMenuM02S01" style="display: block;">
+                    <li><a href="/device/5glte3g/list/M02S01" id="" class="active" target="">무선국검사 업로드</a></li>
+                    <li><a href="/device/repeater/list/M02S02" id="" class="" target="">무선국 수검 현황</a></li>
+                    <li><a href="/device/wifi/list/M02S03" id="" class="" target="">무선국 수검상세 현황</a></li>
+                    <li><a href="/device/wifi/list/M02S03" id="" class="" target="">불합격 내역 현황</a></li>
+                </ul>
+            </li>
+            <!--//신규-->
+            <li class="sub-menu"><a href="javascript:showSub1('M03S01')">정기점검<span class="dcjq-icon"></span></a>
+                <ul class="sub" id="subMenuM03S01" style="display: none;">
+                    <li><a href="/regularinspection/list/M03S01" id="" class="" target="">정기점검조회</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu"><a href="javascript:showSub1('M05S01')">위험국소<span class="dcjq-icon"></span></a>
+                <ul class="sub" id="subMenuM05S01" style="display: none;">
+                    <li><a href="/dangerinspection/list/M05S01" id="" class="" target="">위험국소조회</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu"><a href="javascript:showSub1('M26S01')">아차사고<span class="dcjq-icon"></span></a>
+                <ul class="sub" id="subMenuM26S01" style="display: none;">
+                    <li><a href="/nearmiss/list/M26S01" id="" class="" target="">아차사고조회</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu"><a href="javascript:showSub1('M06S01')">부대시설<span class="dcjq-icon"></span></a>
+                <ul class="sub" id="subMenuM06S01" style="display: none;">
+                    <li><a href="/additionalfacilities/list/M06S01" id="" class="" target="">부대시설점검조회</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu"><a href="javascript:showSub1('M07S01')">긴급복구물자관리<span class="dcjq-icon"></span></a>
+                <ul class="sub" id="subMenuM07S01" style="display: none;">
+                    <li><a href="/emergencymaterial/status/M07S01" id="" class="" target="">긴급복구현황표</a></li>
+                    <li><a href="/emergencymaterial/master/list/M07S02" id="" class="" target="">긴급복구물자</a></li>
+                    <li><a href="/emergencymaterial/history/list/M07S03" id="" class="" target="">긴급복구물자사용</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu"><a href="javascript:showSub1('M09S01')">안전용품관리<span class="dcjq-icon"></span></a>
+                <ul class="sub" id="subMenuM09S01" style="display: none;">
+                    <li><a href="/item-safety/status/M09S01" id="" class="" target="">현황표</a></li>
+                    <li><a href="/item-safety/list/M09S02" id="" class="" target="">안전용품등록</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu"><a href="javascript:showSub1('M15S01')">현장수시업무<span class="dcjq-icon"></span></a>
+                <ul class="sub" id="subMenuM15S01" style="display: none;">
+                    <li><a href="/onsite/list/M15S01" id="" class="" target="">현장수시업무현황</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu"><a href="javascript:showSub1('M08S01')">Safe365<span class="dcjq-icon"></span></a>
+                <ul class="sub" id="subMenuM08S01" style="display: none;">
+                    <li><a href="/safe365/safety/list/M08S01" id="" class="" target="">안전점검 체크 리스트</a></li>
+                    <li><a href="/safe365/highcar/list/M08S02" id="" class="" target="">고소작업차 사용 작업 계획서</a></li>
+                    <li><a href="/safe365/aerial/list/M08S03" id="" class="" target="">고소작업차 작업 전 점검표</a></li>
+                    <li><a href="/safe365/status/M08S04" id="" class="" target="">현장 안전점검 현황</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu"><a href="javascript:showSub1('M14S01')">작업중지권<span class="dcjq-icon"></span></a>
+                <ul class="sub" id="subMenuM14S01" style="display: none;">
+                    <li><a href="/stopwork/list/M14S01" id="" class="" target="">작업중지권 조회</a></li>
+                    <li><a href="/stopwork/apply/list/M14S02" id="" class="" target="">작업중지권 승인관리</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu"><a href="javascript:showSub1('M16S01')">현장업무지원<span class="dcjq-icon"></span></a>
+                <ul class="sub" id="subMenuM16S01" style="display: none;">
+                    <li><a href="/support/acs/list/M16S01" id="" class="" target="">ACS</a></li>
+                    <li><a href="/support/rsa/list/M16S02" id="" class="" target="">RSA</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu"><a href="javascript:showSub1('M11S01')">예비품관리<span class="dcjq-icon"></span></a>
+                <ul class="sub" id="subMenuM11S01" style="display: none;">
+                    <li><a href="/spare/list/M11S01" id="" class="" target="">예비품관리</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu"><a href="javascript:showSub1('M10S01')">업로드관리<span class="dcjq-icon"></span></a>
+                <ul class="sub" id="subMenuM10S01" style="display: none;"><li><a href="/device/5glte3g/excel/list/M10S01" id="" class="" target="">국소정보업로드-5G/LTE/3G</a></li>
+                    <li><a href="/device/repeater/excel/list/M10S02" id="" class="" target="">국소정보업로드-중계기</a></li>
+                    <li><a href="/device/wifi/excel/list/M10S03" id="" class="" target="">국소정보업로드-WIFI</a></li>
+                    <li><a href="/device/acceptcheck/excel/list/M10S04" id="" class="" target="">인수시험</a></li>
+                    <li><a href="/device/regularinspection/excel/list/M10S05" id="" class="" target="">정기점검</a></li>
+                    <li><a href="/device/regularinspection_riu/excel/list/M10S06" id="" class="" target="">정기점검 RIU</a></li>
+                    <li><a href="/device/regularinspection_du/excel/list/M10S07" id="" class="" target="">정기점검 DU</a></li>
+                    <li><a href="/device/regularinspection_wifi/excel/list/M10S08" id="" class="" target="">정기점검 WiFi</a></li>
+                    <li><a href="/device/additionalfacilities/excel/list/M10S09" id="" class="" target="">부대시설점검</a></li>
+                    <li><a href="/device/electricsafety/excel/list/M10S10" id="" class="" target="">전기안전점검 계획</a></li>
+                    <li><a href="/device/dangerstation/excel/list/M10S11" id="" class="" target="">위험국소</a></li>
+                    <li><a href="/device/emergencymaterial/excel/list/M10S12" id="" class="" target="">긴급복구물자 사용</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu"><a href="javascript:showSub1('M13S01')">대시보드<span class="dcjq-icon"></span></a>
+                <ul class="sub" id="subMenuM13S01" style="display: none;">
+                    <li><a href="/dashboard/inspection/M13S01" id="" class="" target="_blank">정기점검 현황</a></li>
+                    <li><a href="/dashboard/accept/M13S02" id="" class="" target="_blank">인수시험 현황</a></li>
+                    <li><a href="/dashboard/danger/M13S03" id="" class="" target="_blank">위험국소 현황</a></li>
+                    <li><a href="/dashboard/setting/list/M13S04" id="" class="" target="">모수관리</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <link rel="stylesheet" type="text/css" href="./css/multifreezer.css">
+    <script type="text/javascript" src="./js/multifreezerStandalone.js"></script>
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <section class="wrapper">
+            <h1 id="page_tit">무선국 검사 업로드</h1>
+
+            <div class="group-section m-t-15">
+                <table class="hit">
+                    <colgroup>
+                        <col width="10%">
+                        <col width="50%">
+                        <col width="20%">
+                    </colgroup>
+                    <tbody>               
+                        <tr>
+                            <th>업로드 파일</th>
+                            <td>
+                                <select class="type-2">
+                                    <option label="업로드파일명(최근 10개)" value=""></option>
+                                    <option value="85ad3d7f-cb9d-4e27-b50d-3383b13983ff" label="[5712] 메모장업로드_국소정보 (5G/LTE/3G)_20231115161823"></option>
+                                    <option value="60198b31-41bb-4663-85a4-2a66426cc50f" label="[5711] 메모장업로드_국소정보 (5G/LTE/3G)_20231115145000"></option>
+                                    <option value="3fe72dfd-1bdc-46e3-821d-e7f549a04cb7" label="[5708] 메모장업로드_국소정보 (5G/LTE/3G)_20231114141842"></option>
+                                    <option value="8487e426-01e9-4c53-9696-6f5f621e250c" label="[5707] 메모장업로드_국소정보 (5G/LTE/3G)_20231114135841"></option>
+                                    <option value="e7472bff-e7ba-4300-8362-753715219f17" label="[5704] 메모장업로드_국소정보 (5G/LTE/3G)_20231110175652"></option>
+                                    <option value="c9d72e0a-3f3a-43ba-856a-8f0249d913b0" label="[5696] 메모장업로드_국소정보 (5G/LTE/3G)_20231108142204"></option>
+                                    <option value="09fb1c46-dcc2-4dbb-b484-7e2e78089bcb" label="[5695] 메모장업로드_국소정보 (5G/LTE/3G)_20231108142028"></option>
+                                    <option value="452e1dd4-1bea-437e-bed4-d9b2a2fce292" label="[5694] 메모장업로드_국소정보 (5G/LTE/3G)_20231108141901"></option>
+                                    <option value="cca1c065-793e-4b6b-83d3-594b30e7c6bc" label="[5681] 메모장업로드_국소정보 (5G/LTE/3G)_20231107181254"></option>
+                                    <option value="35163808-ce5b-45de-9242-6ec89c3dff87" label="[5680] 메모장업로드_국소정보 (5G/LTE/3G)_20231107174615"></option>
+                                </select>
+                            </td>
+                            <td>
+                                <button id="btnSearch" class="btn btn-search-sm primary-gra" type="button">조회</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>무선국 검사 실적</th>
+                            <td>
+                                <div class="custom-file">
+                                    <input type="file" name="file" class="custom-file-input" id="file" data-url="" accept=".xlsx,.xls">
+                                    <label class="custom-file-label ellipsis" for="file" custom-file-label="">Choose
+                                        file</label>
+                                </div>
+                            </td>
+                            <td>
+                                <button id="btnRegister1" class="btn btn-md" type="button" disabled="">등록</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>KCA 불합격 내역</th>
+                            <td>
+                                <div class="custom-file">
+                                    <input type="file" name="file" class="custom-file-input" id="file" data-url="" accept=".xlsx,.xls">
+                                    <label class="custom-file-label ellipsis" for="file" custom-file-label="">Choose
+                                        file</label>
+                                </div>
+                            </td>
+                            <td>
+                                <button id="btnRegister2" class="btn btn-md" type="button" disabled="">등록</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>무선국 검사</th>
+                            <td colspan="3">
+                                <a href="#none">무선국 검사 실적 템플릿 다운로드 </a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                <a href="#none">KCA 불합격 내역 템플릿 다운로드 </a>
+                                <span>
+                                    <a href="#none" class="openLayerPopup" style="color: red;padding-left: 40px;">*엑셀 업로드 시 확인사항</a>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="group-section m-t-40">
+                <div class="title">
+                    무선국 검사 실적
+                    <span class="title-num"><label id="lblTotalCount">00</label></span>
+                </div>
+                <div class="f-r m-b-10">
+                    <button id="" class="btn btn-md" type="button" onclick="">삭제</button>
+                </div>
+                <div id="grid4">
+                    
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- /#page-content-wrapper -->
+</div>
+<script type="text/javascript">
+    let today = new Date();
+    let startDates;
+    let role = $('#roleCode').val();
+    /* FU,MU(권한자) : 7일로 변경, AU(권한자) : 3개월로 변경 */
+    if(role == 'AU'){
+        startDates = today.setMonth(today.getMonth() - 3);
+    }else if(role == 'FU' || role == 'MU'){
+        startDates = today.setDate(today.getDate() - 7);
+    }else{
+        startDates = today.setMonth(today.getMonth() - 1);
+    }
+
+    // let picker = tui.DatePicker.createRangePicker({
+    //     language: 'ko',
+    //     startpicker: {
+    //         date: startDates,
+    //         input: '#startDate',
+    //         container: '#datepicker-wrapper1'
+    //     },
+    //     endpicker: {
+    //         date: new Date(),
+    //         input: '#endDate',
+    //         container: '#datepicker-wrapper2'
+    //     }
+    // });
+
+    let fromDateVal = $('#startDate').val();
+    let toDateVal = $('#endDate').val();
+    let deviceCategoryVal = $('#deviceCategory').val();
+
+    const dataSource = {
+        api: {
+            readData: {url: '/additionalfacilities/list/data', method: 'GET',
+                initParams: {"startDate": fromDateVal, "endDate": toDateVal, "deviceCategory": deviceCategoryVal}}
+        },
+        initialRequest: false // 디폴트 값은 true, 아래 gridInit를 통해 호출
+    }
+</script>
+<script type="text/javascript">
+    /** TOAST Grid */
+const usersGrid3 = new tui.Grid({
+    el: document.getElementById('grid4'),
+    data: dataSource,
+    scrollX: true,
+    scrollY: true,
+    width: '100%',
+    minBodyHeight: 400,
+    pageOptions: { perPage: 10 },
+    columnOptions: { resizable: true },
+    columns: [
+        {
+            header: 'No',
+            name: 'number',
+            align: 'center',
+            width: 100,
+            sortable: true,
+        },
+        {
+            header: 'KT 본부',
+            name: 'headquarters',
+            align: 'center',
+            width: 140,
+            sortable: false
+        },
+        {
+            header: '허가번호',
+            name: 'Permit_number',
+            align: 'center',
+            width: 155,
+            sortable: false,
+            formatter: function ({row, column, value}) {
+                //console.log("1. row: " + JSON.stringify(row) + "\n2. column: " + JSON.stringify(column) + "\n3. value: " + value);
+                let url = '#';
+                return '<a href="' + url + '" style="text-decoration: underline !important; color:#1baec5;">' + value + '</a>';
+            }
+        },
+        {
+            header: '호출명칭',
+            name: 'callName',
+            align: 'center',
+            width: 180,
+            sortable: false
+        },
+        {
+            header: '주소',
+            name: 'address',
+            align: 'center',
+            width: 290,
+            sortable: false
+        },
+        {
+            header: 'KCA 본부',
+            name: 'KCA_Headquarters',
+            align: 'center',
+            width: 150,
+            sortable: false
+        },
+        {
+            header: '검사종별',
+            name: 'Test_type',
+            align: 'center',
+            width: 150,
+            sortable: false
+        },
+        {
+            header: '검사일자',
+            name: 'Inspeciton_date',
+            align: 'center',
+            width: 150,
+            sortable: false
+        },
+        {
+            header: '합격/불합격',
+            name: 'pass_fail',
+            align: 'center',
+            width: 140,
+            sortable: false
+        },
+        {
+            header: '검사구분',
+            name: 'Inspeciton_category',
+            align: 'center',
+            width: 140,
+            sortable: false
+        }
+    ],
+    data: [
+        {
+        number:'1',
+        headquarters: '강남',
+        Permit_number: '32-2011-11-0010985',
+        callName: 'KTCO삼호한숲APT_RU',
+        address: '서울특별시 영등포구 양평동4가 94',
+        KCA_Headquarters:'북서울본부',
+        Test_type:'정기검사',
+        Inspeciton_date:'2023-03-02',
+        pass_fail:'불합격',
+        Inspeciton_category:'대조'
+        },
+        {
+        number:'2',
+        headquarters: '강남',
+        Permit_number: '32-2011-11-0010985',
+        callName: 'KTCO삼호한숲APT_RU',
+        address: '서울특별시 영등포구 양평동4가 94',
+        KCA_Headquarters:'북서울본부',
+        Test_type:'정기검사',
+        Inspeciton_date:'2023-03-02',
+        pass_fail:'불합격',
+        Inspeciton_category:'대조'
+        },
+        {
+        number:'3',
+        headquarters: '강남',
+        Permit_number: '32-2011-11-0010985',
+        callName: 'KTCO삼호한숲APT_RU',
+        address: '서울특별시 영등포구 양평동4가 94',
+        KCA_Headquarters:'북서울본부',
+        Test_type:'정기검사',
+        Inspeciton_date:'2023-03-02',
+        pass_fail:'불합격',
+        Inspeciton_category:'대조'
+        }
+    ],
+    onGridMounted: function () {
+        //console.log("onGridMounted");
+    },
+    onGridUpdated: function (data) {
+        //console.log("onGridUpdated");
+        let perPage = data.instance.store.data.pageOptions.perPage;
+        let page = data.instance.store.data.pageOptions.page;
+        $perPage.val(perPage);
+        $page.val(page);
+        $lblTotalCount.empty().html(data.instance.store.data.pageOptions.totalCount);
+        loading_mask.close();
+    },
+    onGridBeforeDestroy: function () {
+        //console.log("onGridBeforeDestroy");
+    }
+});
+</script>
+</body>
+</html>
