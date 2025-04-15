@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- Joint Cloud Combat System -->
+<title>KWM</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="ctx" content=""/>
+<meta name="ui_event" content="true"/>
+<meta name="ui_grid_event" content="true"/>
+
+<!-- 정부장님이 만들어놓은 압축 컴파일러 css -->
+<link rel="stylesheet" href="./css/fontawesome6-all.min.css">
+<link rel="stylesheet" href="./css/fonts.min.css">
+<link rel="stylesheet" href="./css/layout.min.css">
+<!-- //정부장님이 만들어놓은 압축 컴파일러 css -->
+
+<link rel="stylesheet" href="./css/mum-t-2.css">
+
+<script type="text/javascript" charset="utf-8" src="./js/commons.js"></script> <!-- 정부장님이 만든 js -->
+<script>
+window.ACCOUNT = {"no":1,"unitNo":1,"name":"어드민","tempPswd":false,"use":false,"hidden":false,"instructable":true,"locSync":false,"chatUuid":"66e90563-513c-4bde-af97-d332dc2103ac","unit":{"unitNo":1,"name":"한국군","organized":false,"unitOrder":0,"icon":{"iconNo":1,"uuid":"3171fdfb-43f5-3824-913d-12f85502bf01","use":false,"deletable":false},"mapType":"unit","placed":false,"rootParentNo":1,"unitOrganized":false,"unitName":"한국군"}};
+</script>
+</head>
+<body class="hide-side hide-crumb hide-footer hide-function">
+
+<!--fz-wrapper-->
+<div class="fz-wrapper">
+    <!--fz-side-wrapper-->
+    <aside class="fz-side-wrapper"> 
+        <a class="fz-side-logo  pl7" href="/">
+            <span class="fz-side-logo-img">
+              <img src="/images/logo.png" width="90" height="38"/>
+            </span>
+            <span class="fz-side-logo-text"></span>
+        </a>
+        <div class="fz-side-search"></div>
+        <div class="fz-side-menu">
+            <nav class="fz-side-nav" role="navigation">
+                <ul class="fz-side-nav-list">
+                    
+                </ul>
+            </nav>
+        </div>
+        <div class="fz-side-function">
+            <div class="separator"></div>
+            <span class="fz-side-logo-text" @click="Profile">
+                <i class="fas fa-user-cog"></i> 
+                <span class="link-text"></span>
+            </span>
+            <span class="fz-side-logo-text" @click="Logout">
+                <i class="fas fa-sign-out-alt fa-lg"></i> 
+                <span class="link-text">Logout</span>
+            </span>
+        </div>
+    </aside>
+    <div class="fz-side-wrapper-toggle" @click="toggleSideMenu">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <!--//fz-side-wrapper-->
+
+    <!--fz-content-wrapper-->
+    <div class="fz-content-wrapper">
+        <nav class="fz-top" role="navigation" style="background-color: #181818;">
+            <div class="top-logo">
+                <a class="fz-logo do-not-hide pl-7" href="/">
+                    <span class="fz-logo-img">
+                        <img src="./images/logo.png" width="90" height="38">
+                    </span>
+                    <span class="fz-logo-text"></span>
+                </a>
+            </div>
+            <div class="top-nav">
+                <nav></nav>
+                <nav>
+                    <button class="button primary m-8">MUM-T 정찰</button>
+                    <ul>
+                        <li class="right">
+                            <a href="javascript:void(0)"><i class="fas fa-user-cog fa-lg text-green"></i>&nbsp;<strong>어드민</strong></a>
+                            <ul class="right">
+                                <li><a href="/profile"><i class="fas fa-id-card fa-lg"></i> 계정 설정</a></li>
+                                <li id="admin-menu"><a href="/config/account"><i class="fa-solid fa-gears fa-lg"></i> 관리</a></li>
+                                <li class="separator"></li>
+                                <li><a href="javascript:void(0)" @click="Logout"><i class="fas fa-sign-out-alt fa-lg"></i> 로그 아웃</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </nav>
+        <ul class="fz-crumb">
+            <li>
+                <a href="/"><i class="fas fa-home fa-lg"></i></a>
+            </li>
+        </ul>
+        <div class="fz-container">
+
+        </div>
+        <footer class="fz-footer">
+            2023 &nbsp;&nbsp;&nbsp;<a href="#">Funzin</a>. All rights reserved.
+        </footer>
+    </div>
+    <!--//fz-content-wrapper-->
+</div>
+<!--//fz-wrapper-->
+<script type="text/javascript" charset="utf-8" src="./app/map.js"></script> <!-- 정부장님이 만든 js -->
+<script type="text/javascript" charset="utf-8" src="./app/index.js"></script>   <!-- 정부장님이 만든 js -->
+
+<!--MUM-T 정찰 fullscreen popup-->
+<div class="popup-dialog mum-t open bg-card fullscreen">
+    <div class="dialog-title bg-dark text-white">MUM-T 정찰</div>
+    <div class="dialog-body">
+        <!--map-area-->
+        <div class="map-area">
+            <div class="Cover_figure" style="background-image: url(./images/bg@2x.png)"></div>
+        </div>
+        <div class="timer">
+            <span id="date_time" style="pointer-events: none;">23/12/11 15:15:30</span>
+        </div>
+        
+        <div class="button-group location">
+            <button type="button" class="button gray2">2D</button>
+            <button type="button" class="button ico-compass" title="나침판"></button>
+            <button type="button" class="button ico-plue" title="+버튼"></button>
+            <button type="button" class="button ico-minus" title="-버튼"></button>
+            <button type="button" class="button gray2" title="초기화" style="margin-left: .5rem !important;">초기화</button>
+        </div>
+
+        <!--ai 표전 인식 부분-->
+        <div class="w-244 p-0 bg-">
+            <div class="fz-card layout mr-0">
+                <div class="fz-card-header no-border">
+                    AI 표적 인식
+                </div>
+                <div class="fz-card-body no-bg" style="height: calc(100vh - 105px);">
+                    <div class="fz-row m-0 row-cols-1" style="position: relative;">
+                        <a href="#none" class="on">
+                            <div class="fz-column col flex-nowrap">
+                                <img src="./images/UAV_001_01.png" class="card-img-top border-bottom">
+                                <!-- <svg class="card-img-top border-bottom" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                                <button class="button positon deepred">지정완료</button>
+                                <div class="card-body">
+                                    <ul class="list-group list">
+                                        <li class="list-group-item">
+                                            <span class="tit">발견시간</span>
+                                            <span class="text-white">2023-12-27일 13시 47분</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="tit">표적위치</span>
+                                            <span class="text-white">125.095929,38.5365666</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="tit">표적</span>
+                                            <span class="text-white">T-54/55</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#none">
+                            <div class="fz-column col flex-nowrap">
+                                <img src="./images/UAV_002_01.png" class="card-img-top border-bottom">
+                                <!-- <svg class="card-img-top border-bottom" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                                <button type="button" class="button positon deegray">표적지정</button>
+                                <div class="card-body">
+                                    <ul class="list-group list">
+                                        <li class="list-group-item">
+                                            <span class="tit">발견시간</span>
+                                            <span class="text-white">xx일 xx시 xx분</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="tit">표적위치</span>
+                                            <span class="text-white">52s 334187 4128701</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="tit">표적 1 </span>
+                                            <span class="text-white">보병</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#none">
+                            <div class="fz-column col flex-nowrap">
+                                <img src="./images/UAV_003_01.png" class="card-img-top border-bottom">
+                                <!-- <svg class="card-img-top border-bottom" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                                <button class="button positon deegray">표적지정</button>
+                                <div class="card-body">
+                                    <ul class="list-group list">
+                                        <li class="list-group-item">
+                                            <span class="tit">발견시간</span>
+                                            <span class="text-white">xx일 xx시 xx분</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="tit">표적위치</span>
+                                            <span class="text-white">52s 334187 4128701</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="tit">표적 1 </span>
+                                            <span class="text-white">보병</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#none">
+                            <div class="fz-column col flex-nowrap">
+                                <img src="./images/UAV_004_01.png" class="card-img-top border-bottom">
+                                <!-- <svg class="card-img-top border-bottom" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                                <button class="button positon deegray">표적지정</button>
+                                <div class="card-body">
+                                    <ul class="list-group list">
+                                        <li class="list-group-item">
+                                            <span class="tit">발견시간</span>
+                                            <span class="text-white">xx일 xx시 xx분</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="tit">표적위치</span>
+                                            <span class="text-white">52s 334187 4128701</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="tit">표적 1 </span>
+                                            <span class="text-white">보병</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#none">
+                            <div class="fz-column col flex-nowrap">
+                                <img src="./images/UAV_005_01.png" class="card-img-top border-bottom">
+                                <!-- <svg class="card-img-top border-bottom" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                                <button class="button positon deegray">표적지정</button>
+                                <div class="card-body">
+                                    <ul class="list-group list">
+                                        <li class="list-group-item">
+                                            <span class="tit">발견시간</span>
+                                            <span class="text-white">xx일 xx시 xx분</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="tit">표적위치</span>
+                                            <span class="text-white">52s 334187 4128701</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="tit">표적 1 </span>
+                                            <span class="text-white">보병</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#none">
+                            <div class="fz-column col flex-nowrap">
+                                <img src="./images/UAV_006_01.png" class="card-img-top border-bottom">
+                                <!-- <svg class="card-img-top border-bottom" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                                <button class="button positon deegray">표적지정</button>
+                                <div class="card-body">
+                                    <ul class="list-group list">
+                                        <li class="list-group-item">
+                                            <span class="tit">발견시간</span>
+                                            <span class="text-white">xx일 xx시 xx분</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="tit">표적위치</span>
+                                            <span class="text-white">52s 334187 4128701</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="tit">표적 1 </span>
+                                            <span class="text-white">보병</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#none">
+                            <div class="fz-column col flex-nowrap">
+                                <img src="./images/UAV_007_01.png" class="card-img-top border-bottom">
+                                <!-- <svg class="card-img-top border-bottom" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                                <button class="button positon deegray">표적지정</button>
+                                <div class="card-body">
+                                    <ul class="list-group list">
+                                        <li class="list-group-item">
+                                            <span class="tit">발견시간</span>
+                                            <span class="text-white">xx일 xx시 xx분</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="tit">표적위치</span>
+                                            <span class="text-white">52s 334187 4128701</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="tit">표적 1 </span>
+                                            <span class="text-white">보병</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#none">
+                            <div class="fz-column col flex-nowrap">
+                                <img src="./images/UAV_008_01.png" class="card-img-top border-bottom">
+                                <!-- <svg class="card-img-top border-bottom" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                                <button class="button positon deegray">표적지정</button>
+                                <div class="card-body">
+                                    <ul class="list-group list">
+                                        <li class="list-group-item">
+                                            <span class="tit">발견시간</span>
+                                            <span class="text-white">xx일 xx시 xx분</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="tit">표적위치</span>
+                                            <span class="text-white">52s 334187 4128701</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="tit">표적 1 </span>
+                                            <span class="text-white">보병</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#none">
+                            <div class="fz-column col flex-nowrap">
+                                <img src="./images/UGV_001_001.png" class="card-img-top border-bottom">
+                                <!-- <svg class="card-img-top border-bottom" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                                <button class="button positon deegray">표적지정</button>
+                                <div class="card-body">
+                                    <ul class="list-group list">
+                                        <li class="list-group-item">
+                                            <span class="tit">발견시간</span>
+                                            <span class="text-white">xx일 xx시 xx분</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="tit">표적위치</span>
+                                            <span class="text-white">52s 334187 4128701</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="tit">표적 1 </span>
+                                            <span class="text-white">보병</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#none">
+                            <div class="fz-column col flex-nowrap">
+                                <img src="./images/UGV_002_001.png" class="card-img-top border-bottom">
+                                <!-- <svg class="card-img-top border-bottom" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                                <button class="button positon deegray">표적지정</button>
+                                <div class="card-body">
+                                    <ul class="list-group list">
+                                        <li class="list-group-item">
+                                            <span class="tit">발견시간</span>
+                                            <span class="text-white">xx일 xx시 xx분</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="tit">표적위치</span>
+                                            <span class="text-white">52s 334187 4128701</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="tit">표적 1 </span>
+                                            <span class="text-white">보병</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--//ai 표전 인식 부분-->
+
+        <!--MUM-T 영역 부분-->
+        <div class="w-502 p-0">
+            <div class="fz-card layout bg-">
+                <div class="fz-card-body p-0 no-bg no-scroll">
+                    <div class="fz-ac">
+                        <section class="fz-ac-contents arrow">
+                            <input type="checkbox" name="ac_0" id="a0" checked>
+                            <label for="a0"><span class="badge no-ani bg-live">LIVE</span> MUM-T (#001)</label>
+                            <article>
+                                <div class="content pb-4" style="width: 100%; height: 100%;">
+                                    <img src="./images/thumbnall_big.png" class="card-img on" style="width: 100%; height: 100%;">
+                                </div>
+                            </article>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript" charset="utf-8" src="./js/jquery-3.7.0.min.js"></script>
+            <script>
+                $(function(){
+                    $('input[type=checkbox][name=ac_0]').change(function() {
+                        if ($(this).is(':checked') == true) {
+                            //alert("체크박스 체크했음!");
+                            //체크했을때 펼치기
+                            console.log('체크 된 상태');
+                            $('.fz-ac section.fz-ac-contents.arrow > input[type=checkbox][name=ac_1] + label + article > .content').css("height","calc(100vh - 439px)");
+                        }
+                        else if($(this).is(':checked') == false){
+                            //alert("체크박스 체크 해제!");
+                            //체크 안했을때 접히기
+                            console.log('체크 안 된 상태');
+                            $('.fz-ac section.fz-ac-contents.arrow > input[type=checkbox][name=ac_1] + label + article > .content').css("height","calc(100vh - 155px)");
+                        }
+                    });
+
+                    $('input:checkbox[name=ac_1]').each(function (index) {
+                        if($(this).is(":checked") == true){{
+                            $('.fz-ac section.fz-ac-contents.arrow > input[type=checkbox][name=ac_1] + label + article > .content').css("height","calc(100vh - 439px)");
+                            }
+                        }
+                    });
+                    
+                    // $('input[type=checkbox][name=ac_1]:checked').change(function() {
+                    //     $('.fz-ac section.fz-ac-contents.arrow > input[type=checkbox][name=ac_1] + label + article > .content').css("height","calc(100vh - 155px)");
+                    // });
+                });
+            </script>
+
+            <div class="fz-card layout bg- mt-4">
+                <div class="fz-card-body p-0 no-bg no-scroll">
+                    <div class="fz-ac">
+                        <section class="fz-ac-contents arrow">
+                            <input type="checkbox" name="ac_1" id="a1" checked>
+                            <label for="a1"><span class="badge no-ani bg-live">LIVE</span> MUM-T (6)</label>
+                            <article>
+                                <div class="content" style="overflow-y: auto !important; height: calc(100vh - 155px);"> 
+                                    <div class="fz-row justify-content-between m-0 row-cols-2">
+                                        <a href="#none" class="on">
+                                            <div class="fz-column col">
+                                                <img src="./images/thumbnall_big.png" class="card-img border-bottom">
+                                                <div class="card-body">
+                                                    <p class="text-white text-b h6 m-0 p-0">UAV #001</p>
+                                                    <ul class="list-group list">
+                                                        <li class="list-group-item">
+                                                            <span class="tit">소속</span>
+                                                            <span class="text-white linebreak">501드론대대</span>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <span class="tit">고도정보</span>
+                                                            <span class="text-white">100m</span>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <span class="tit">현재위치</span>
+                                                            <span class="text-white linebreak">127.00487, 37.53431</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#none">
+                                            <div class="fz-column col">
+                                                <img src="./images/thumbnall_big2.png" class="card-img border-bottom">
+                                                <div class="card-body">
+                                                    <p class="text-white text-b h6 m-0 p-0">UAV #002</p>
+                                                    <ul class="list-group list">
+                                                        <li class="list-group-item">
+                                                            <span class="tit">소속</span>
+                                                            <span class="text-white">501드론대대</span>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <span class="tit">고도정보</span>
+                                                            <span class="text-white">100m</span>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <span class="tit">현재위치</span>
+                                                            <span class="text-white">127.00487, 37.53431</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#none">
+                                            <div class="fz-column col">
+                                                <img src="./images/thumbnall_big3.png" class="card-img border-bottom">
+                                                <div class="card-body">
+                                                    <p class="text-white text-b h6 m-0 p-0">UAV #003</p>
+                                                    <ul class="list-group list">
+                                                        <li class="list-group-item">
+                                                            <span class="tit">소속</span>
+                                                            <span class="text-white">501드론대대</span>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <span class="tit">고도정보</span>
+                                                            <span class="text-white">100m</span>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <span class="tit">현재위치</span>
+                                                            <span class="text-white">127.00487, 37.53431</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#none">
+                                            <div class="fz-column col">
+                                                <img src="./images/thumbnall_big4.png" class="card-img border-bottom">
+                                                <div class="card-body">
+                                                    <p class="text-white text-b h6 m-0 p-0">UAV #004</p>
+                                                    <ul class="list-group list">
+                                                        <li class="list-group-item">
+                                                            <span class="tit">소속</span>
+                                                            <span class="text-white">501드론대대</span>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <span class="tit">고도정보</span>
+                                                            <span class="text-white">100m</span>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <span class="tit">현재위치</span>
+                                                            <span class="text-white">127.00487, 37.53431</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#none">
+                                            <div class="fz-column col">
+                                                <img src="./images/thumbnall_big6.png" class="card-img border-bottom">
+                                                <div class="card-body">
+                                                    <p class="text-white text-b h6 m-0 p-0">UAV #005</p>
+                                                    <ul class="list-group list">
+                                                        <li class="list-group-item">
+                                                            <span class="tit">소속</span>
+                                                            <span class="text-white">501드론대대</span>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <span class="tit">고도정보</span>
+                                                            <span class="text-white">100m</span>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <span class="tit">현재위치</span>
+                                                            <span class="text-white">127.00487, 37.53431</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#none">
+                                            <div class="fz-column col">
+                                                <img src="./images/thumbnall_big5.png" class="card-img border-bottom">
+                                                <div class="card-body">
+                                                    <p class="text-white text-b h6 m-0 p-0">UAV #006</p>
+                                                    <ul class="list-group list">
+                                                        <li class="list-group-item">
+                                                            <span class="tit">소속</span>
+                                                            <span class="text-white">501드론대대</span>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <span class="tit">고도정보</span>
+                                                            <span class="text-white">100m</span>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <span class="tit">현재위치</span>
+                                                            <span class="text-white">127.00487, 37.53431</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#none">
+                                            <div class="fz-column col">
+                                                <svg class="card-img-top border-bottom" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Thumbnail-07</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail-07</text></svg>
+                                                <div class="card-body">
+                                                    <p class="text-white text-b h6 m-0 p-0">UAV #007</p>
+                                                    <ul class="list-group list">
+                                                        <li class="list-group-item">
+                                                            <span class="tit">소속</span>
+                                                            <span class="text-white">501드론대대</span>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <span class="tit">고도정보</span>
+                                                            <span class="text-white">100m</span>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <span class="tit">현재위치</span>
+                                                            <span class="text-white">127.00487, 37.53431</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#none">
+                                            <div class="fz-column col">
+                                                <svg class="card-img-top border-bottom" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Thumbnail-08</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail-08</text></svg>
+                                                <div class="card-body">
+                                                    <p class="text-white text-b h6 m-0 p-0">UAV #008</p>
+                                                    <ul class="list-group list">
+                                                        <li class="list-group-item">
+                                                            <span class="tit">소속</span>
+                                                            <span class="text-white">501드론대대</span>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <span class="tit">고도정보</span>
+                                                            <span class="text-white">100m</span>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <span class="tit">현재위치</span>
+                                                            <span class="text-white">127.00487, 37.53431</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--//MUM-T 영역 부분-->
+    </div>
+    <!-- <div class="dialog-resizer"></div> -->
+    <div class="dialog-close"></div>
+</div>
+<!--MUM-T 정찰 fullscreen popup-->
+</body>
+</html>

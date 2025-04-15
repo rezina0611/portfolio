@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- Joint Cloud Combat System -->
+<title>KWM</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="ctx" content=""/>
+<meta name="ui_event" content="true"/>
+<meta name="ui_grid_event" content="true"/>
+
+<!-- 정부장님이 만들어놓은 압축 컴파일러 css -->
+<link rel="stylesheet" href="./css/fontawesome6-all.min.css">
+<link rel="stylesheet" href="./css/fonts.min.css">
+<link rel="stylesheet" href="./css/layout.min.css">
+<!-- //정부장님이 만들어놓은 압축 컴파일러 css -->
+
+<link rel="stylesheet" href="./css/mum-t.css">
+
+<script type="text/javascript" charset="utf-8" src="./js/commons.js"></script> <!-- 정부장님이 만든 js -->
+<script>
+window.ACCOUNT = {"no":1,"unitNo":1,"name":"어드민","tempPswd":false,"use":false,"hidden":false,"instructable":true,"locSync":false,"chatUuid":"66e90563-513c-4bde-af97-d332dc2103ac","unit":{"unitNo":1,"name":"한국군","organized":false,"unitOrder":0,"icon":{"iconNo":1,"uuid":"3171fdfb-43f5-3824-913d-12f85502bf01","use":false,"deletable":false},"mapType":"unit","placed":false,"rootParentNo":1,"unitOrganized":false,"unitName":"한국군"}};
+</script>
+</head>
+<body class="hide-side hide-crumb hide-footer hide-function">
+
+<!--fz-wrapper-->
+<div class="fz-wrapper">
+    <!--fz-side-wrapper-->
+    <aside class="fz-side-wrapper"> 
+        <a class="fz-side-logo  pl7" href="/">
+            <span class="fz-side-logo-img">
+              <img src="/images/logo.png" width="90" height="38"/>
+            </span>
+            <span class="fz-side-logo-text"></span>
+        </a>
+        <div class="fz-side-search"></div>
+        <div class="fz-side-menu">
+            <nav class="fz-side-nav" role="navigation">
+                <ul class="fz-side-nav-list">
+                    
+                </ul>
+            </nav>
+        </div>
+        <div class="fz-side-function">
+            <div class="separator"></div>
+            <span class="fz-side-logo-text" @click="Profile">
+                <i class="fas fa-user-cog"></i> 
+                <span class="link-text"></span>
+            </span>
+            <span class="fz-side-logo-text" @click="Logout">
+                <i class="fas fa-sign-out-alt fa-lg"></i> 
+                <span class="link-text">Logout</span>
+            </span>
+        </div>
+    </aside>
+    <div class="fz-side-wrapper-toggle" @click="toggleSideMenu">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <!--//fz-side-wrapper-->
+
+    <!--fz-content-wrapper-->
+    <div class="fz-content-wrapper">
+        <nav class="fz-top" role="navigation" style="background-color: #181818;">
+            <div class="top-logo">
+                <a class="fz-logo do-not-hide pl-7" href="/">
+                    <span class="fz-logo-img">
+                        <img src="./images/logo.png" width="90" height="38">
+                    </span>
+                    <span class="fz-logo-text"></span>
+                </a>
+            </div>
+            <div class="top-nav">
+                <nav></nav>
+                <nav>
+                    <button class="button primary m-8">MUM-T 정찰</button>
+                    <ul>
+                        <li class="right">
+                            <a href="javascript:void(0)"><i class="fas fa-user-cog fa-lg text-green"></i>&nbsp;<strong>어드민</strong></a>
+                            <ul class="right">
+                                <li><a href="/profile"><i class="fas fa-id-card fa-lg"></i> 계정 설정</a></li>
+                                <li id="admin-menu"><a href="/config/account"><i class="fa-solid fa-gears fa-lg"></i> 관리</a></li>
+                                <li class="separator"></li>
+                                <li><a href="javascript:void(0)" @click="Logout"><i class="fas fa-sign-out-alt fa-lg"></i> 로그 아웃</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </nav>
+        <ul class="fz-crumb">
+            <li>
+                <a href="/"><i class="fas fa-home fa-lg"></i></a>
+            </li>
+        </ul>
+        <div class="fz-container">
+            
+        </div>
+        <footer class="fz-footer">
+            2023 &nbsp;&nbsp;&nbsp;<a href="#">Funzin</a>. All rights reserved.
+        </footer>
+    </div>
+    <!--//fz-content-wrapper-->
+</div>
+<!--//fz-wrapper-->
+<script type="text/javascript" charset="utf-8" src="./app/map.js"></script> <!-- 정부장님이 만든 js -->
+<script type="text/javascript" charset="utf-8" src="./app/index.js"></script>   <!-- 정부장님이 만든 js -->
+
+</body>
+</html>
