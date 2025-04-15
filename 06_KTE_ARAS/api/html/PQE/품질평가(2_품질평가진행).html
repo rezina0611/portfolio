@@ -1,0 +1,251 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>수행품질평가 - 품질평가</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">    
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/modernizr.custom.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+<body>
+
+<!-- 사유 등록 -->
+<div class="layer h60" id="layer-st-01">
+    <header class="m-header">
+        <h2 class="layer-tt">감점사진/사유등록</h2>
+        <button class="btn btn-close st-01 mr-0"></button>
+    </header>
+
+    <div class="contents">
+        <div class="bg-white">
+            <form class="register m-0">
+
+                <figure class="img-full write">
+                    <div class="photo-btn-group">
+                        <!--<button class="camera">사진촬영</button>-->
+                        <div class="camerabox">
+                            <label for="files">사진촬영</label>
+                            <input type="file" capture="camera" class="tui-input-file">
+                        </div>
+                      
+                        <!--<button class="album">사진보관함</button>-->
+                        <div class="filebox">
+                            <label for="files">파일선택</label>
+                            <input type="file" id="files" name="files" class="tui-input-file">
+                        </div>
+                    </div>
+                </figure>
+                <div class="foot-info">
+                    <div class="desc">
+                        <textarea rows="3" maxlength="100" placeholder="100자 이내로 입력해주세요"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="btn-area btn-2">
+            <a href="" class="btn -grey">취소</a>
+            <a href="" class="btn -primary">등록</a>
+        </div>
+    </div>
+
+</div>
+<!--// 사유 등록  -->
+    
+<div class="page-wrapper d-flex">
+    <main class="main">
+        <header class="m-header">
+            <div class="inner">품질평가</div>
+            <button class="no-bg left"></button>
+            <button class="no-bg home"></button>
+        </header>
+        <div class="contents">
+            <div class="p-1 bg-white">
+                <div class="steps-wrapper">
+                    <ul class="steps">
+                        <li class="done"><span class="step">품질평가 설정</span></li>
+                        <li class="active"><span class="step">품질평가 진행</span></li>
+                        <li><span class="step">품질평가 확인</span></li>
+                    </ul>
+                </div>
+                
+                <form class="register">
+                    <div class="table-wrapper PQE">
+                        <details class="dropdown body">
+                            <summary>
+                                <div class="title">직무수행도 - 현장소장의 일일안전활동 참여여부</div>
+                            </summary>
+                            <!-- 숨겨진 영역 -->
+                            <ul>
+                                <li>
+                                    <div class="check-box">
+                                        <input type="checkbox" id="check-01">
+                                        <label class="d-flex e-check" for="check-01">
+                                            <span>일일안전활동보고 확인</span>
+                                            <span class="score-check">-5</span>
+                                        </label>
+
+                                        <ul class="inline-list">
+                                            <li class="thum">
+                                                <img src="../../images/sample/5.png" alt="">
+                                                <div class="desc">감점사유 감점사유 감점사유 감점사유 감점사유 감점사유 감점사유 감점사유 감점사유</div>
+                                                <button class="btn-delete"></button>
+                                            </li>
+                                        </ul>
+                                        <div class="e-reason">
+                                            <button class="btn -magenta st-01">감점사유를 등록하세요(클릭)</button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!--// 숨겨진 영역 -->
+                        </details>
+                        
+                        <details class="dropdown body">
+                            <summary>
+                                <div class="title">직무수행도 - 본사차원에서의 안전보건관리 지원 여부</div>
+                            </summary>
+                            <!-- 숨겨진 영역 -->
+                            <ul>
+                                <li class="check-box">
+                                    <input type="checkbox" id="check-02">
+                                    <label class="d-flex e-check" for="check-02">
+                                        <span>일일안전활동보고 확인</span>
+                                        <span class="score-check">-5</span>
+                                    </label>
+                                    <div class="e-reason">
+                                        <button class="btn -magenta st-01">감점사유를 등록하세요(클릭)</button>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!--// 숨겨진 영역 -->
+                        </details>
+                        <details class="dropdown body">
+                            <summary>
+                                <div class="title">협의체 확동 및 타공정간 협조 - 협의체회의 참여 여부</div>
+                            </summary>
+                            <!-- 숨겨진 영역 -->
+                            <ul>
+                                <li class="check-box">
+                                    <input type="checkbox" id="check-03">
+                                    <label class="d-flex e-check" for="check-03">
+                                        <span>작업지시서 확인</span>
+                                        <span class="score-check">-5</span>
+                                    </label>
+                                    <div class="e-reason">
+                                        <button class="btn -magenta st-01">감점사유를 등록하세요(클릭)</button>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!--// 숨겨진 영역 -->
+                        </details>
+                        
+                        <details class="dropdown body">
+                            <summary>
+                                <div class="title">라디오 스타일</div>
+                            </summary>
+                            <!-- 숨겨진 영역 -->
+                            <ul>
+                                <li class="check-box">
+                                    <input type="radio" id="radio-1" name="radio-01">
+                                    <label class="d-flex e-check" for="radio-1">
+                                        <span>중상 : -20점</span>
+                                        <span class="score-check">-20</span>
+                                    </label>
+                                    <div class="e-reason">
+                                        <button class="btn -magenta st-01">감점사유를 등록하세요(클릭)</button>
+                                    </div>
+                                </li>
+                                <li class="check-box">
+                                    <input type="radio" id="radio-2" name="radio-01">
+                                    <label class="d-flex e-check" for="radio-2">
+                                        <span>경상 : -10점</span>
+                                        <span class="score-check">-10</span>
+                                    </label>
+                                    <div class="e-reason">
+                                        <button class="btn -magenta st-01">감점사유를 등록하세요(클릭)</button>
+                                    </div>
+                                </li>
+                                <li class="check-box">
+                                    <input type="radio" id="radio-3" name="radio-01">
+                                    <label class="d-flex e-check" for="radio-3">
+                                        <span>부상 : -5점</span>
+                                        <span class="score-check">-5</span>
+                                    </label>
+                                    <div class="e-reason">
+                                        <button class="btn -magenta st-01">감점사유를 등록하세요(클릭)</button>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!--// 숨겨진 영역 -->
+                        </details>
+                        
+                        <details class="dropdown body">
+                            <summary>
+                                <div class="title">작업중지 - 작업중지서 발행</div>
+                            </summary>
+                            <!-- 숨겨진 영역 -->
+                            <ul>
+                                <li class="check-box">
+                                    <input type="checkbox" id="check-05">
+                                    <label class="d-flex e-check" for="check-05">
+                                        <span>중대한 위험상황 또는 심각한 작업지시서 불이행 등 불안전한 상태(지적당 -2점)</span>
+                                        <span class="score-check">-2</span>
+                                    </label>
+                                    <div class="e-reason">
+                                        <button class="btn -magenta st-01">감점사유를 등록하세요(클릭)</button>
+                                    </div>
+                                </li>
+                                <li class="check-box">
+                                    <input type="checkbox" id="check-06">
+                                    <label class="d-flex e-check" for="check-06">
+                                        <span>중대한 위험상황 또는 심각한 작업지시서 불이행 등 불안전한 상태(지적당 -2점)</span>
+                                        <span class="score-check">-2</span>
+                                    </label>
+                                    <div class="e-reason">
+                                        <button class="btn -magenta st-01">감점사유를 등록하세요(클릭)</button>
+                                    </div>
+                                </li>
+                                <div class="d-block a-right">
+                                    <a class="btn-sm minus-btn"></a>
+                                    <a class="btn-sm add-btn"></a>
+                                </div>
+                            </ul>
+                            <!--// 숨겨진 영역 -->
+                        </details>
+                    </div>
+                    
+                    <div class="total d-flex">
+                        <div class="d-flex">
+                            <span>평가점수</span>
+                            <span class="score">95</span>
+                        </div>
+                        <hr>
+                        <div class="d-flex">
+                            <span>감점</span>
+                            <span class="score c-red">5</span>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+            
+            <div class="btn-area btn-2">
+                <a href="" class="btn -grey">취소</a>
+                <a href="" class="btn -primary">등록</a>
+            </div>
+            
+        </div>
+    </main>
+</div>
+    
+
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+
+</body>
+</html>

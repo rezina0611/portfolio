@@ -1,0 +1,167 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>ARAS</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+    
+<body>
+
+<div class="page-wrapper d-flex">
+    <main class="main">
+        <header class="m-header">
+            <div class="inner">정보수정</div>
+            <button class="no-bg left"></button>
+        </header>
+        <div class="contents">
+            <div id="tab-menu" class="tab-menu">
+                <div id="tab-btn" class="tab-btn">
+                    <ul>
+                        <li class="active"><button>비밀번호변경</button></li>
+                        <li><button>대체결제자</button></li>
+                        <li><button>알림방해금지</button></li>
+                    </ul>
+                </div>
+                <div id="tab-cont" class="tab-cont">
+                    <div title="비밀번호변경" >
+                        <form class="changePW p-2">
+                            <fieldset>
+                                <label for="PW-now">현재 비밀번호</label>
+                                <input id="PW-now" type="password" placeholder="현재 비밀번호" tabindex="1">
+                            </fieldset>
+                            <fieldset>
+                                <label for="PW-change">변경 비밀번호</label>
+                                <input type="PW-change" placeholder="변경 비밀번호" tabindex="2">
+                                <p class="help">8자~20자, 영문, 숫자, 특수문자 사용</p>
+                            </fieldset>
+                            <fieldset>
+                                <label for="PW-change-check">변경 비밀번호 확인</label>
+                                <input id="PW-change-check" type="password" placeholder="변경 비밀번호 확인" tabindex="3">
+                            </fieldset>
+                        </form>
+                        <div class="btn-area btn-2 p-a">
+                            <a class="btn -grey" href="">취소</a>
+                            <a class="btn -primary" href="">변경</a>
+                        </div>
+                        
+                    </div>
+
+                    <div title="대체결제자">
+                        <form class="notify p-2">
+                            <fieldset>
+                                <h3><label class="d-flex jc-btw">선택한 날짜에 추가대결을 위임합니다.<input type="checkbox"></label></h3>
+                            </fieldset>
+                            <fieldset>
+                                <label class="mb-15">대체결재자</label>
+                                <label class="pl d-flex jc-btw">
+                                    <span>수행 PL</span>
+                                    <input type="checkbox" id="">
+                                </label>
+                                <label class="pl d-flex jc-btw">
+                                    <span>공통 PL</span>
+                                    <input type="checkbox" id="">
+                                </label> 
+                            </fieldset>
+                            <fieldset>
+                                <label>날짜</label>
+                                <div class="d-flex ai-center input_date_box">
+                                    <input type="date" class="input-tb half">
+                                    <span class="m-6"> ~ </span>
+                                    <input type="date" class="input-tb half">
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <label>사유</label>
+                                <textarea class="textarea m-0" rows="3" maxlength="50" placeholder="최대50자이내"></textarea>
+                            </fieldset>
+                        </form>
+                        <div class="btn-area btn-2 p-a">
+                            <a class="btn -grey" href="">취소</a>
+                            <a class="btn -primary" href="">변경</a>
+                        </div>
+                    </div>
+                    <div title="알림방해금지">
+                        <form class="notify p-2">
+                            <fieldset>
+                                <h3><label class="d-flex jc-btw">선택한 요일과 시간에 알림을 받지 않습니다.<input type="checkbox"></label></h3>
+                            </fieldset>
+                            <fieldset>
+                                <label>요일</label>
+                                <ul class="week">
+                                    <li class="inputGroup">
+                                        <input id="w-0" name="w-0" type="checkbox">
+                                        <label for="w-0">일</label>
+                                    </li>
+                                    <li class="inputGroup">
+                                        <input id="w-1" name="w-1" type="checkbox">
+                                        <label for="w-1">월</label>
+                                    </li>
+                                    <li class="inputGroup">
+                                        <input id="w-2" name="w-2" type="checkbox">
+                                        <label for="w-2">화</label>
+                                    </li>
+                                    <li class="inputGroup">
+                                        <input id="w-3" name="w-3" type="checkbox">
+                                        <label for="w-3">수</label>
+                                    </li>
+                                    <li class="inputGroup">
+                                        <input id="w-4" name="w-4" type="checkbox">
+                                        <label for="w-4">목</label>
+                                    </li>
+                                    <li class="inputGroup">
+                                        <input id="w-5" name="w-5" type="checkbox">
+                                        <label for="w-5">금</label>
+                                    </li>
+                                    <li class="inputGroup">
+                                        <input id="w-6" name="w-6" type="checkbox">
+                                        <label for="w-6">토</label>
+                                    </li>
+                                </ul>
+                            </fieldset>
+                            <fieldset>
+                                <label>시간</label>
+                                <div class="d-flex ai-center">
+                                    <select class="form-select half">
+                                        <option selected="">Select</option>
+                                        <option value="">1</option>
+                                        <option value="">2</option>
+                                        <option value="">3</option>
+                                        <option value="">4</option>
+                                    </select> 
+                                    <span class="m-6"> ~ </span>
+                                    <select class="form-select half">
+                                        <option selected="">Select</option>
+                                        <option value="">1</option>
+                                        <option value="">2</option>
+                                        <option value="">3</option>
+                                        <option value="">4</option>
+                                    </select>
+                                </div>
+                            </fieldset>
+                        </form>
+                        <div class="btn-area btn-2 p-a">
+                            <a class="btn -grey" href="">취소</a>
+                            <a class="btn -primary" href="">변경</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>    
+    </main>
+    
+</div>
+    
+    
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+    
+</body>
+</html>

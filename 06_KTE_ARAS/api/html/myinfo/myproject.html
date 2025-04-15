@@ -1,0 +1,475 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>MY</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+    
+<body>
+
+<div class="page-wrapper d-flex">
+    <main class="main">
+
+        <header class="m-header">
+            <div class="inner">MY</div>
+            <button class="no-bg left" id="goMapBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+        </header>
+
+        <div class="contents">
+            <div class="project-list-wrap">
+                <button class="btn-mm" id="projectTab" onclick="fn_changeTab_my(this)">프로젝트/사업장</button>
+                <button class="btn-mm -gray" id="alarmTab" onclick="fn_changeTab_my(this)">알림</button>
+                <button class="btn-mm -gray" id="todolist" onclick="">To-Do List</button>
+            </div>
+
+            <div id="projectTab_div" class="tab_div">
+                <div class="sidebar-wrapper result">
+                    <div class="sidebar-menu">
+                        <div class="sidebar-result-list">
+                            <div class="project-List" id="projectListDiv">
+                            <dl id="dl_A070095">
+                                <dt>
+                                    <a href="javascript:fn_projectSite('A070095')" class="on">
+                                        <span class="title">[ - ]김천 부항댐건설에 따른 도로유관관로공사</span>
+                                        <span class="arrow"></span>
+                                    </a>
+                                </dt>
+                                <dd id="dd_A070095" style="display: block;">
+                                    <div class="tab-menu">
+                                        <div id="tab-btn-my" class="tab-btn_my">
+                                            <ul class="tab-2-my">
+                                                <li id="tab_0" class="active"><button class="btn" onclick="javascript:fn_tab('0');">전체</button></li>
+                                                <li id="tab_1"><button class="btn -red" onclick="javascript:fn_tab('1');">위험요소</button></li>
+                                            </ul>
+                                        </div>
+                                        <div class="tab-cont2 pt_0 p-1">
+                                            <div title="all">
+                                                <ul class="block-list2">
+                                                    <li><a href="#" onclick="javascript:searchMyWorkplace('A070095-test1234')" class="on"><span>test1234</span></a></li>
+                                                    <li><a href="#" onclick="javascript:searchMyWorkplace('A070095-test5678')" class="on"><span>test5678</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="page" name="page" value="1">
+                    <input type="hidden" id="perPage" name="perPage" value="10">
+                </div>
+            </div>
+
+            <div id="alarmTab_div" class="tab_div" style="display: none;">
+                <div id="tab-menu" class="tab-menu">
+                    <div id="tab-btn-my" class="tab-btn-area">
+                        <ul class="tab-4 round">
+                            <li class="active" onclick="fn_srchAlarm(this)" query-state="A"><button class="btn-sm">전체</button></li>
+                            <li class="" onclick="fn_srchAlarm(this)" query-state="W"><button class="btn-sm">현장관리</button></li>
+                            <li class="" onclick="fn_srchAlarm(this)" query-state="Q"><button class="btn-sm">품질평가</button></li>
+                            <li class="" onclick="fn_srchAlarm(this)" query-state="D"><button class="btn-sm">안전관리</button></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div id="tab-cont2" class="tab-cont2 safety">
+                    <div class="notice-wrapper" style="">
+                        <ul class="notice" id="alarmUl">
+                            <li>
+                                <a href="">
+                                    <div class="noti-head">
+                                        <h5>ARAS - 품질평가</h5>
+                                        <span class="date">2022-06-11 10:01</span>
+                                    </div>
+                                    <p>OOO님(검사자명)이 [지하철(시공)] 품질평가 확인요청을 했습니다. 내용을 확인해주세요.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="noti-head">
+                                        <h5>ARAS - 품질평가 ARAS - 품질평가 ARAS - 품질평가</h5>
+                                        <span class="date">2022-06-11 10:01</span>
+                                    </div>
+                                    <p>OOO님(검사자명)이 000협력사에 대한 (프로젝트명) [지하철(시공)] 품질평가 확인요청을 했습니다. 내용을 확인해주세요.</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <footer>
+                            <p class="info">
+                                <span><i class="fas fa-info-circle" aria-hidden="true"></i></span>
+                                받은 알림은 60일간 보관 후 사라집니다.
+                            </p>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+
+            <div id="" class="tab_div">
+                <ul class="board-list">
+                    <li class="item">
+                        <a href="#">
+                            <p class="title">오늘의 작업 사업장 00건(0/0)</p>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            <p class="title">내일의 작업 사업장 00건</p>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            <p class="title">미결함 00건</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+    </main>
+    
+</div> 
+    
+<script>
+	$( document ).ready(function() {
+		//fn_projectList(); //프로젝트/사업장 리스트
+		//fn_alarmList(); //알림 리스트
+	});
+
+	//뒤로가기 버튼 이벤트
+    $('#goMapBtn').click(function() {
+        location.href = "/";
+    });
+
+	//더보기 버튼 이벤트
+    $('#moreBtn').click(function() {
+		$('#page').val(parseInt($('#page').val())+1);
+
+		var page = $('#page').val();
+		var perPage = $('#perPage').val();
+
+		if(page*perPage >= '{{ totCnt }}'){
+			$(".sidebar-footer").hide();
+		}
+
+        fn_projectList();
+    });
+
+	//포르젝트 리스트
+    function fn_projectList() {
+        $.ajax({
+            url: "/myproject/list/data",
+            contentType: "application/x-www-form-urlencoded;  charset=utf-8",
+            dataType: "json",
+            data : { page : parseInt($('#page').val()) ,perPage : parseInt($('#perPage').val()) },
+            success: function (data) {
+                if (data.length > 0) {
+					$("#projectListDiv dl").remove();
+			        var html = "";
+
+					for (var i = 0; i < data.length; i++) {
+				        html += '<dl id="dl_'+ data[i].projectCode +'">';
+				        html += '<dt>';
+				        html += '<a href="javascript:fn_projectSite(\''+data[i].projectCode+'\')" >';
+				        html += '<span class="title">[' + data[i].bmName + '-' + data[i].bzName + ']' + data[i].projectName + '</span>';
+				        html += '<span class="arrow"></span>';
+				        html += '</a>';
+				        html += '</dt>';
+				        html += '</dl>';
+			        }
+
+					$("#projectListDiv").append(html);
+				}
+            },
+            error: function (xhl, status, error) {
+                console.log('데이터 에러');
+            }
+        });
+    }
+
+    //포르젝트 > 사업장 리스트
+    function fn_projectSite(projectCode){
+        if($("#dd_"+projectCode).css("display") == "block") {
+            $("#projectListDiv dd").slideUp(150);
+            $("#projectListDiv dl").find("a").removeClass('on');
+        } else {
+	        $("#dl_"+projectCode).find("a").addClass('on');
+	        $("#dd_"+projectCode).slideDown(150);
+
+
+	        $.ajax({
+	            url: "/myproject/workplace/list/data",
+	            contentType : "application/x-www-form-urlencoded;  charset=utf-8",
+	            data : { srchProjectCode : projectCode },
+	            dataType: "json",
+	            success: function(data) {
+					$("#projectListDiv dd").slideUp(150);
+					$("#projectListDiv dl").find("a").removeClass('on');
+
+	                var html = "";
+					html += '<dd id="dd_'+ projectCode +'">';
+					html += '<div class="tab-menu">';
+					html += '<div id="tab-btn-my" class="tab-btn_my">';
+					html += '<ul class="tab-2-my">';
+					html += '<li id="tab_0" class="active"><button class="btn" onclick="javascript:fn_tab(\'0\');">전체</button></li>';
+					html += '<li id="tab_1"><button class="btn -red" onclick="javascript:fn_tab(\'1\');">위험요소</button></li>';
+					html += '</ul>';
+					html += '</div>';
+					html += '<div class="tab-cont2 pt_0">';
+					html += '<div title="all">';
+					html += '<ul class="block-list2">';
+	                for(var i = 0; i < data.length; i++){
+
+	                    if(!!data[i].uploadType && (data[i].uploadType == '2' || data[i].uploadType == '3')) {
+	                        html += '<li class="bad_tab">';
+	                    }else{
+	                        html += '<li>';
+	                    }
+
+                        html += '<a href="#" onclick="javascript:searchMyWorkplace(\''+data[i].workplaceCode+'\')">';
+                        //html += '<a href="#" onclick="javascript:gettsetset(\''+data[i]+'\')">';
+	                    if(data[i].plName != null && data[i].plName != '' && data[i].plName != 'undefined'){
+							html += '<span>'+data[i].workplace+'<br/>PL: '+data[i].plName+'</span>';
+						}else{
+							html += '<span>'+ data[i].workplace +'</span>';
+						}
+
+						if(!!data[i].uploadType && (data[i].uploadType == '2' || data[i].uploadType == '3')) {
+	                        html += '<span class="badge -red" style="right:10px;">위험요소</span>';
+	                    }
+                        html += '</a></li>';
+
+	                }//end for
+					html += '</ul>';
+					html += '</div>';
+					html += '</div>';
+					html += '</div>';
+					html += '</dd>';
+
+					$("#projectListDiv dd").remove(); //펼쳐져 있는 dd 제거
+
+					$("#dl_"+projectCode).append(html);
+
+			        if($("#dd_"+projectCode).css("display") == "none") {
+				        $("#dl_"+projectCode).find("a").addClass('on');
+				        $("#dd_"+projectCode).slideDown(150);
+			        }
+	            },
+	            error: function(xhl, status, error) {
+	                console.log('데이터 에러');
+	            }
+	        });
+        }
+    }
+
+	//프로젝트/사업장 > 상세(전체/위험요소)
+    function fn_tab(index){
+        $("#tab-btn-my").find('li').removeClass("active");    //버튼의 클래스를 삭제
+        $("#tab_"+index).addClass("active");       //타겟의 클래스를 추가
+
+        if(index == 1){
+			$(".tab-cont2").find('li').hide();
+            $(".bad_tab").show();
+        }else{
+			$(".tab-cont2").find('li').show();
+        }
+	}
+
+	//프르젝트/사업장 & 알림 탭
+    function fn_changeTab_my(obj){
+        $(".project-list-wrap").find("button").each((idx, el) => {
+            $(el).removeClass('-gray');
+			if($(el).attr('class') == "btn-mm -red"){
+	            $(el).removeClass('-red');
+	            $(el).addClass('-gray');
+			}
+        });
+
+        $(obj).addClass('-red');
+
+		$(".tab_div").hide();
+		$("#"+$(obj).attr('id')+"_div").show();
+
+		if($(obj).attr('id') == 'alarmTab'){
+			fn_alarmList(); //알림 리스트
+		}
+	}
+
+	//알림 목록 조회
+	const no_html = '<li class="none"><div>'
+					+ '<img src="/images/ico_notification.png" alt="">'
+					+ '<p>받은 알림이 없습니다.</p>'
+					+ '</div></li>';
+	let cnt = [];
+    function fn_alarmList(){
+        $.ajax({
+            url: "/myproject/alarm/list/data",
+            contentType : "application/x-www-form-urlencoded;  charset=utf-8",
+            dataType: "json",
+            success: function(data) {
+				$("#alarmUl li").remove();
+
+                var html = "";
+                if (data.length > 0) {
+		            for(var i = 0; i < data.length; i++){
+						var workGubun = 'N';
+						if(data[i].pushType == 'W' && data[i].body.indexOf("종료") > -1){
+							workGubun = 'Y';
+						}
+						if(data[i].pushType == 'D' && data[i].msgType == 'C'){
+							workGubun = 'Y';
+						}
+						//안전관리 알림에서 삭제 추후 추가 될 수있음> if문삭제
+						if(data[i].pushType == 'W' || data[i].pushType == 'Q' || data[i].pushType == 'D'){ //현장관리, 품질평가
+							html += '<li class="pushType_'+ data[i].pushType +'">';
+							// html += '<a href="javascript:fn_movePage(\''+ data[i].pushType +'\', \''+ data[i].msgType +'\', \''+ data[i].resultId +'\', \''+ workGubun +'\');">';
+							html += '<a href="#" onclick="fn_movePage(\''+ data[i].pushType +'\', \''+ data[i].msgType +'\', \''+ data[i].resultId +'\', \''+ workGubun +'\');">';
+							html += '<h5>'+ data[i].title +'</h5>';
+							html += '<p>'+ data[i].body +'</p>';
+							if(data[i].readDate != null){
+								html += '<span class="date">'+ data[i].createDate +'  ['+ data[i].readDate +' 읽음]</span>';
+							}else{
+								html += '<span class="date">'+ data[i].createDate +'</span>';
+							}
+							html += '</a>';
+							html += '</li>';
+
+							cnt.push(data[i].pushType);
+						}
+
+		            }//end for
+					$("#alarmUl").append(html);
+
+                }else{
+					$("#alarmUl").append(no_html);
+				}
+            },
+            error: function(xhl, status, error) {
+                console.log('데이터 에러');
+            }
+        });
+	}
+
+	//알림 탭 (전체/품질평가/현장관리/안전관리)
+    function fn_srchAlarm(obj){
+        $(".tab-4").find("li").each((idx, el) => {
+            $(el).removeClass("active");
+        })
+        $(obj).addClass("active")
+
+		var pushType = $(obj).attr('query-state');
+
+		if(pushType == "A"){
+	        $("#alarmUl li").show();
+	        $(".none").hide();
+		}else{
+			$("#alarmUl").find('li').hide();
+	        $(".pushType_"+pushType).show();
+		}
+
+        if(cnt.length == 0 || (pushType != "A" && cnt.indexOf(pushType) == -1)){
+			if($("#alarmUl").find("li").hasClass("none")){
+				$(".none").show();
+			}else{
+				$("#alarmUl").append(no_html);
+			}
+		}
+	}
+
+	//알림 상세 내용 클릭시 이벤트
+    function fn_movePage(pushType, msgType, resultId, gubun){
+		// alert("pushType : "+pushType + " , "+"msgType : "+msgType);
+        /**
+         * 품질평가
+         */
+        if(pushType == 'Q'){ //품질평가
+            pushHistory(pushType, msgType);
+        }else if(pushType == 'W'){ //현장관리
+
+			//ㅇ 알림 터치시 액션 : 시작은 그냥 알림 확인만하면 됨(동작 없음)
+			// 종료 알림은 현장관리 이력화면으로 이동 (가능할 경우 해당 작업내역 화면으로 이동)
+
+			if(gubun == 'Y'){
+		        $.ajax({
+		            url: '/myproject/alarm/move/'+pushType+'/'+resultId ,
+		            contentType: "application/x-www-form-urlencoded;  charset=utf-8",
+		            dataType: "json",
+		            success: function (data) {
+						if(data){
+							location.href = '/work/detail/'+resultId;
+						}else{
+							alert("해당 내용의 현장이력 정보가 없습니다.");
+						}
+		            },
+		            error: function (xhl, status, error) {
+		                console.log('데이터 에러');
+		            }
+		        });
+			}
+		} else if(pushType == 'D') { //안전관리
+			if(gubun == 'Y') {
+				$.ajax({
+					url: '/myproject/alarm/move/'+pushType+'/'+resultId ,
+					contentType: "application/x-www-form-urlencoded;  charset=utf-8",
+					dataType: "json",
+					success: function (data) {
+						if(data){
+							location.href = '/danger/confirm/view?dailyReportWriteNo='+resultId;
+						}else{
+							alert("해당 내용의 안전관리 정보가 없습니다.");
+						}
+					},
+					error: function (xhl, status, error) {
+						console.log('데이터 에러');
+					}
+				});
+			}
+		} else {
+			//TODO. 추후 안전관리, 현장관리 푸시 작업 완료 되고 웹페이지 이동 작업 해주시면 됩니다.
+		}
+	}
+
+	/**
+     * 앱 푸시 내역에 따른 이동
+     */
+    function pushHistory(pushType, msgType){
+        try{
+            let data = {
+                   pushType : pushType,
+                   msgType : msgType
+            }
+
+             /**
+               * 안드로이드
+               */
+            if(typeof window != "undefined" && typeof window.android != "undefined"){
+                window.android.pushHistory(JSON.stringify(data));
+            }
+
+            /**
+               * 아이폰
+               */
+            if (typeof webkit != "undefined") {
+
+                // ios 의 경우 postMessage 메시지에 파라미터가 없으면 안되어서
+                // 파라미터가 필요 없는 경우 빈 스트링 넘겨줘야 합니다.
+                webkit.messageHandlers.pushHistory.postMessage(JSON.stringify(data));
+            }
+         }catch(err){
+
+         }
+    }
+
+</script>
+    
+</body>
+</html>    

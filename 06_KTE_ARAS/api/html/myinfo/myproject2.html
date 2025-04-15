@@ -1,0 +1,552 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>MY</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+    
+<body>
+
+<div class="page-wrapper d-flex">
+    <main class="main">
+
+        <header class="m-header">
+            <div class="inner">MY</div>
+            <button class="no-bg left"></button>
+        </header>
+
+        <div class="contents">
+            <div class="project-list-wrap">
+                <button class="btn-mm -red" id="projectTab" onclick="fn_changeTab_my(this)">프로젝트/사업장</button>
+                <button class="btn-mm -gray" id="alarmTab" onclick="fn_changeTab_my(this)">알림</button>
+                <button class="btn-mm -gray" id="todolist" onclick="fn_changeTab_my(this)">To-Do List</button>
+            </div>
+
+            <!--프로젝트/사업장-->
+            <div id="projectTab_div" class="tab_div">
+	            <div class="sidebar-wrapper result">
+	                <div class="sidebar-menu">
+	                    <div class="sidebar-result-list">
+	                        <div class="project-List" id="projectListDiv">
+
+                                <dl id="dl_A220133">
+                                    <dt>
+                                        <a href="#" onclick="fn_projectSite('A220133')">
+                                            <span class="title">[무선-인빌딩 ]2021년 무선망 시설공사 총애계약(서부)</span>
+                                            <span class="arrow"></span>
+                                        </a>
+                                    </dt>
+                                    <dd id="dd_A220133" style="display: none;">
+                                        <div class="tab-menu">
+                                            <div id="tab-btn-my" class="tab-btn_my">
+                                                <ul class="tab-2-my">
+                                                    <li id="tab_0" class="active"><button class="btn" onclick="javascript:fn_tab('0');">전체</button></li>
+                                                    <li id="tab_1"><button class="btn -red" onclick="javascript:fn_tab('1');">위험요소</button></li>
+                                                </ul>
+                                            </div>
+                                            <div class="tab-cont2 pt_0 p-b8">
+                                                <div title="전체">
+                                                    <ul class="block-list2">
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>CJ 데이터센터_NR540_주관_KT<br>PL: 이동열</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="bad_tab"> <!--li태그에 bad_tab이 있는부분은 위험요소부분-->
+                                                            <a href="#">
+                                                                <span>LTE DU실 FDF 구성 사업-KT안산지사<br>PL: 위성진</span>
+                                                                <span class="badge -red" style="right:10px;">위험요소</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>LTE DU실 FDF 구성 사업-KT안산지사<br>PL: 위성진</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>NPKG34861S_성곡동_판토스_5G_RIU_D<br>PL: 이동열</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>WIFI 백운역<br>PL: 박일호</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>WIFI 소사역<br>PL: 박일호</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>고등동_수원역한라비발디_RIU_F[A]<br>PL: 이동열</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="bad_tab">
+                                                            <a href="#" class="">
+                                                                <span>공중선정비_광명동_상우2차 아파트<br>PL: 위성진</span>
+                                                                <span class="badge -red" style="right:10px;">위험요소</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="bad_tab">
+                                                            <a href="#" class="">
+                                                                <span>십정동_경인센터01_8TD_D<br>PL: 이동열</span>
+                                                                <span class="badge -red" style="right:10px;">위험요소</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="bad_tab">
+                                                            <a href="#" class="">
+                                                                <span>지상역사_걔양역<br>PL: 박일호</span>
+                                                                <span class="badge -red" style="right:10px;">위험요소</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="tab-cont2 pt_0">
+                                                <div title="위험요소">
+                                                    전체에서 .tab-cont2 안의 li태그의 class="bad_tab" 인것만 골라서 노출
+                                                </div> 
+                                            </div> -->
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl id="dl_A210287">
+                                    <dt>
+                                        <a href="#" onclick="fn_projectSite('A210287')">
+                                            <span class="title">[무선-운용보안공사]2022년 강원 무선철탑 시설물(기지국) 재난재해 예방사업</span>
+                                            <span class="arrow"></span>
+                                        </a>
+                                    </dt>
+                                    <dd id="dd_A210287" style="display: none;">
+                                        <div class="tab-menu">
+                                            <div id="tab-btn-my" class="tab-btn_my">
+                                                <ul class="tab-2-my">
+                                                    <li class="active"><button class="btn" onclick="javascript:fn_tab('0');">전체</button></li>
+                                                    <li><button class="btn -red" onclick="javascript:fn_tab('1');">위험요소</button></li>
+                                                </ul>
+                                            </div>
+                                            <div class="tab-cont2 pt_0 p-1">
+                                                <div title="전체">
+                                                    <ul class="block-list2">
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>CJ 데이터센터_NR540_주관_KT<br>PL: 이동열</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="bad_tab"> <!--li태그에 bad_tab이 있는부분은 위험요소부분-->
+                                                            <a href="#">
+                                                                <span>LTE DU실 FDF 구성 사업-KT안산지사<br>PL: 위성진</span>
+                                                                <span class="badge -red" style="right:10px;">위험요소</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>LTE DU실 FDF 구성 사업-KT안산지사<br>PL: 위성진</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>NPKG34861S_성곡동_판토스_5G_RIU_D<br>PL: 이동열</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>WIFI 백운역<br>PL: 박일호</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>WIFI 소사역<br>PL: 박일호</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>고등동_수원역한라비발디_RIU_F[A]<br>PL: 이동열</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="bad_tab">
+                                                            <a href="#" class="">
+                                                                <span>공중선정비_광명동_상우2차 아파트<br>PL: 위성진</span>
+                                                                <span class="badge -red" style="right:10px;">위험요소</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="bad_tab">
+                                                            <a href="#" class="">
+                                                                <span>십정동_경인센터01_8TD_D<br>PL: 이동열</span>
+                                                                <span class="badge -red" style="right:10px;">위험요소</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="bad_tab">
+                                                            <a href="#" class="">
+                                                                <span>지상역사_걔양역<br>PL: 박일호</span>
+                                                                <span class="badge -red" style="right:10px;">위험요소</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl id="dl_A070095">
+                                    <dt>
+                                        <a href="#" onclick="fn_projectSite('A070095')">
+                                            <span class="title">[에너지-태양광]김천 부항댐건설에 따른 도로유관관로공사</span>
+                                            <span class="arrow"></span>
+                                        </a>
+                                    </dt>
+                                    <dd id="dd_A070095" style="display: none;">
+                                        <div class="tab-menu">
+                                            <div id="tab-btn-my" class="tab-btn_my">
+                                                <ul class="tab-2-my">
+                                                    <li class="active"><button class="btn" onclick="javascript:fn_tab('0');">전체</button></li>
+                                                    <li><button class="btn -red" onclick="javascript:fn_tab('1');">위험요소</button></li>
+                                                </ul>
+                                            </div>
+                                            <div class="tab-cont2 pt_0 p-1">
+                                                <div title="전체">
+                                                    <ul class="block-list2">
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>CJ 데이터센터_NR540_주관_KT<br>PL: 이동열</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="bad_tab"> <!--li태그에 bad_tab이 있는부분은 위험요소부분-->
+                                                            <a href="#">
+                                                                <span>LTE DU실 FDF 구성 사업-KT안산지사<br>PL: 위성진</span>
+                                                                <span class="badge -red" style="right:10px;">위험요소</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>LTE DU실 FDF 구성 사업-KT안산지사<br>PL: 위성진</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>NPKG34861S_성곡동_판토스_5G_RIU_D<br>PL: 이동열</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>WIFI 백운역<br>PL: 박일호</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>WIFI 소사역<br>PL: 박일호</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>고등동_수원역한라비발디_RIU_F[A]<br>PL: 이동열</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="bad_tab">
+                                                            <a href="#" class="">
+                                                                <span>공중선정비_광명동_상우2차 아파트<br>PL: 위성진</span>
+                                                                <span class="badge -red" style="right:10px;">위험요소</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="bad_tab">
+                                                            <a href="#" class="">
+                                                                <span>십정동_경인센터01_8TD_D<br>PL: 이동열</span>
+                                                                <span class="badge -red" style="right:10px;">위험요소</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="bad_tab">
+                                                            <a href="#" class="">
+                                                                <span>지상역사_걔양역<br>PL: 박일호</span>
+                                                                <span class="badge -red" style="right:10px;">위험요소</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+	                    </div>
+	                </div>
+                    <input type="hidden" id="page" name="page" value="1">
+                    <input type="hidden" id="perPage" name="perPage" value="10">
+	            </div>
+		    </div>
+
+            <!--알림 영역-->
+            <div id="alarmTab_div" class="tab_div" style="display: none;">
+	            <div id="tab-menu" class="tab-menu">
+	                <div id="tab-btn-my" class="tab-btn-area">
+                        <!--전체 / 현장관리 / 품질평가 / 안전관리 / 현장정보-->
+	                    <ul class="tab-4 round">
+	                        <li class="active" onclick="fn_srchAlarm(this)" query-state="A" id="A01"><button class="btn-sm">전체</button></li>
+	                        <li onclick="fn_srchAlarm(this)" query-state="W" id="W02"><button class="btn-sm" >현장관리</button></li>
+	                        <li onclick="fn_srchAlarm(this)" query-state="Q" id="Q03"><button class="btn-sm">품질평가</button></li>
+							<li onclick="fn_srchAlarm(this)" query-state="D" id="D04"><button class="btn-sm">안전관리</button></li>
+                            <li onclick="fn_srchAlarm(this)" query-state="H" id="H05"><button class="btn-sm">현장정보</button></li>
+	                    </ul>
+	                </div>
+	            </div>
+	            <div id="tab-cont3" class="tab-cont3 safety">
+                    <!--전체-->
+	                <div class="notice-wrapper" style="min-height: auto;" id="A01_area">
+	                    <ul class="notice">
+                            <li>
+                                <a href="">
+                                    <div class="noti-head">
+                                        <h5>ARAS - 품질평가</h5>
+                                        <span class="date">2022-06-11 10:01</span>
+                                    </div>
+                                    <p>OOO님(검사자명)이 [지하철(시공)] 품질평가 확인요청을 했습니다. 내용을 확인해주세요.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="noti-head">
+                                        <h5>ARAS - 품질평가</h5>
+                                        <span class="date">2022-06-11 10:01</span>
+                                    </div>
+                                    <p>OOO님(검사자명)이 [지하철(시공)] 품질평가 확인요청을 했습니다. 내용을 확인해주세요.</p>
+                                </a>
+                            </li>
+                            <li class="none">
+                                <div><img src="/images/ico_notification.png" alt=""><p>받은 알림이 없습니다.</p></div>
+                            </li>
+                        </ul>
+	                    <footer>
+	                        <p class="info">
+	                            <span><i class="fas fa-info-circle" aria-hidden="true"></i></span>
+	                            받은 알림은 60일간 보관 후 사라집니다.
+	                        </p>
+	                    </footer>
+	                </div>
+                    <!--현장관리-->
+                    <div class="notice-wrapper" style="min-height: auto; display: none;" id="W02_area">
+                        <ul class="notice">
+                            <li>
+                                <a href="">
+                                    <div class="noti-head">
+                                        <h5>ARAS - 현장관리</h5>
+                                        <span class="date">2022-06-11 10:01</span>
+                                    </div>
+                                    <p>OOO님(검사자명)이 000협력사에 대한 (프로젝트명) [지하철(시공)] 현장관리 확인요청을 했습니다. 내용을 확인해주세요.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="noti-head">
+                                        <h5>ARAS - 현장관리</h5>
+                                        <span class="date">2022-06-11 10:01</span>
+                                    </div>
+                                    <p>OOO님(검사자명)이 000협력사에 대한 (프로젝트명) [지하철(시공)] 현장관리 확인요청을 했습니다. 내용을 확인해주세요.</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <footer>
+                            <p class="info">
+                                <span><i class="fas fa-info-circle" aria-hidden="true"></i></span>
+                                받은 알림은 60일간 보관 후 사라집니다.
+                            </p>
+                        </footer>
+                    </div>
+                    <!--품짚평가-->
+                    <div class="notice-wrapper" style="min-height: auto; display: none;" id="Q03_area">
+                        <ul class="notice">
+                            <li>
+                                <a href="">
+                                    <div class="noti-head">
+                                        <h5>ARAS - 품질평가</h5>
+                                        <span class="date">2022-06-11 10:01</span>
+                                    </div>
+                                    <p>OOO님(검사자명)이 000협력사에 대한 (프로젝트명) [지하철(시공)] 품질평가 확인요청을 했습니다. 내용을 확인해주세요.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="noti-head">
+                                        <h5>ARAS - 품질평가</h5>
+                                        <span class="date">2022-06-11 10:01</span>
+                                    </div>
+                                    <p>OOO님(검사자명)이 000협력사에 대한 (프로젝트명) [지하철(시공)] 품질평가 확인요청을 했습니다. 내용을 확인해주세요.</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <footer>
+                            <p class="info">
+                                <span><i class="fas fa-info-circle" aria-hidden="true"></i></span>
+                                받은 알림은 60일간 보관 후 사라집니다.
+                            </p>
+                        </footer>
+                    </div>
+                    <!--안전관리-->
+                    <div class="notice-wrapper" style="min-height: auto; display: none;" id="D04_area">
+                        <ul class="notice">
+                            <li>
+                                <a href="">
+                                    <div class="noti-head">
+                                        <h5>ARAS - 안전관리</h5>
+                                        <span class="date">2022-06-11 10:01</span>
+                                    </div>
+                                    <p>OOO님(검사자명)이 000협력사에 대한 (프로젝트명) [지하철(시공)] 안전관리 확인요청을 했습니다. 내용을 확인해주세요.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="noti-head">
+                                        <h5>ARAS - 안전관리</h5>
+                                        <span class="date">2022-06-11 10:01</span>
+                                    </div>
+                                    <p>OOO님(검사자명)이 000협력사에 대한 (프로젝트명) [지하철(시공)] 안전관리 확인요청을 했습니다. 내용을 확인해주세요.</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <footer>
+                            <p class="info">
+                                <span><i class="fas fa-info-circle" aria-hidden="true"></i></span>
+                                받은 알림은 60일간 보관 후 사라집니다.
+                            </p>
+                        </footer>
+                    </div>
+                    <!--현장정보-->
+                    <div class="notice-wrapper" style="min-height: auto; display: none;" id="H05_area">
+                        <ul class="notice">
+                            <li>
+                                <a href="">
+                                    <div class="noti-head">
+                                        <h5>ARAS - 현장정보</h5>
+                                        <span class="date">2022-06-11 10:01</span>
+                                    </div>
+                                    <p>OOO님(검사자명)이 000협력사에 대한 (프로젝트명) [지하철(시공)] 안전관리 확인요청을 했습니다. 내용을 확인해주세요.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="noti-head">
+                                        <h5>ARAS - 현장정보</h5>
+                                        <span class="date">2022-06-11 10:01</span>
+                                    </div>
+                                    <p>OOO님(검사자명)이 000협력사에 대한 (프로젝트명) [지하철(시공)] 안전관리 확인요청을 했습니다. 내용을 확인해주세요.</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <footer>
+                            <p class="info">
+                                <span><i class="fas fa-info-circle" aria-hidden="true"></i></span>
+                                받은 알림은 60일간 보관 후 사라집니다.
+                            </p>
+                        </footer>
+                    </div>
+	            </div>
+			</div>
+
+            <!-- to-do list -->
+            <div id="todolist_div" class="tab_div" style="display: none;">
+                <ul class="board-list">
+                    <li class="item">
+                        <a href="#">
+                            <p class="title">오늘의 작업 사업장 00건(0/0)</p>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            <p class="title">내일의 작업 사업장 00건</p>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            <p class="title">미결함 00건</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+    
+</div> 
+<script>
+    $(function() {
+        //프로젝트/사업장 목록 드롭다운
+        $(".project-List dl dt a").on("click", function() {
+            if($(this).parent().next().css("display") == "none") {
+                $(".project-List dl dt a").removeClass('on');
+                $(".project-List dl dd").slideUp(150);
+                $(this).addClass('on');
+                $(this).parent().next().slideDown(150);
+            }else{
+                $(".project-List dl dt a").removeClass('on');
+                $(".project-List dl dd").slideUp(150);
+            }
+        }); 
+    });
+
+    // function fn_projectSite(projectCode){
+    //     if($("#dd_"+projectCode).css("display") == "block") { 
+    //         $("#projectListDiv dd").slideUp(150);
+    //         $("#projectListDiv dl").find("a").removeClass('on');
+    //         //$(this).slideUp(150);
+    //         //$(this).parent().find("a").removeClass('on');
+    //     } else {
+    //         $("#dl_"+projectCode).find("a").addClass('on');
+	//         $("#dd_"+projectCode).slideDown(150);
+    //     }
+    // }
+
+    //프로젝트/사업장 - 전체, 위험요소 탭
+    function fn_tab(index){
+        $("#tab-btn-my").find('li').removeClass("active");    //버튼의 클래스를 삭제
+        $("#tab_"+index).addClass("active");       //타겟의 클래스를 추가
+
+        if(index == 1){  
+			$(".tab-cont2").find('li').hide();
+            $(".bad_tab").show();
+        }else{
+			$(".tab-cont2").find('li').show();
+        }
+	}
+
+    //프르젝트/사업장 & 알림 & To-Do List 탭
+    function fn_changeTab_my(obj){
+        $(".project-list-wrap").find("button").each((idx, el) => {
+            $(el).removeClass('-gray');
+			if($(el).attr('class') == "btn-mm -red"){
+	            $(el).removeClass('-red');
+	            $(el).addClass('-gray');
+			}
+        });
+
+        $(obj).addClass('-red');
+
+		$(".tab_div").hide();
+		$("#"+$(obj).attr('id')+"_div").show();
+
+	}
+
+    //알림 탭 (전체 A / 현장관리 W / 품질평가 Q / 안전관리 D / 현장정보 H)
+    function fn_srchAlarm(obj){
+        $(".tab-4").find("li").each((idx, el) => {
+            $(el).removeClass('active');
+            if($(el).attr('class') == "active"){
+                $(el).removeClass('active');
+                //$(el).addClass('active');
+            }
+        });
+        $(obj).addClass('active');
+
+        $(".notice-wrapper").hide();
+        $("#"+$(obj).attr('id')+"_area").show();
+    }
+</script>
+
+</body>
+</html>    

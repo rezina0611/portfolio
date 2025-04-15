@@ -1,0 +1,180 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>안전신문고</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">    
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/modernizr.custom.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+<body>
+    
+<div class="page-wrapper d-flex">
+    <main class="main">
+        <header class="m-header">
+            <div class="inner">안전신문고 관리</div>
+            <button class="no-bg left"></button>
+        </header>
+        <div class="contents">
+            <div class="board-wrapper">
+                <div class="search-area mint">
+                    <input type="search" class="search" placeholder="프로젝트/사업장명을 입력해 검색하세요.">
+                    <div class="input-group-append">
+                        <button class="search-btn"></button>
+                    </div>
+                </div>
+                <div id="tab-menu" class="tab-menu">
+                    <div id="tab-btn" class="tab-btn">
+                        <ul>
+                            <li class="active"><button>전체</button></li>
+                            <li><button>본부</button></li>
+                            <li><button>신고</button></li>
+                            <li><button>조치중</button></li>
+                            <li><button>조치완료</button></li>
+                            <li><button>조치확인</button></li>
+                        </ul>
+                    </div>
+                    <div id="tab-cont" class="tab-cont">
+                        <div title="all">
+                            <ul class="board-list">
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="pjt">프로젝트 or 사업장 주소</h5>
+                                        <p class="title">안전신문고 제목</p>
+                                        <div class="d-flex info-save">
+                                            <span>신고자</span>
+                                            <span class="date">2023-01-19</span>
+                                        </div>
+                                        <span class="badge c-red">신고</span>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="pjt">프로젝트 or 사업장 주소</h5>
+                                        <p class="title">안전신문고 제목</p>
+                                        <div class="d-flex info-save">
+                                            <span>정기안전보건교육</span>
+                                            <span class="date">2023-01-19</span>
+                                        </div>
+                                        <span class="badge c-grey">조치중</span>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="pjt">프로젝트 or 사업장 주소</h5>
+                                        <p class="title">안전신문고 제목</p>
+                                        <div class="d-flex info-save">
+                                            <span>정기안전보건교육</span>
+                                            <span class="date">2023-01-19</span>
+                                        </div>
+                                        <span class="badge c-blue">조치완료</span>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="pjt">프로젝트 or 사업장 주소</h5>
+                                        <p class="title">안전신문고 제목</p>
+                                        <div class="d-flex info-save">
+                                            <span>정기안전보건교육</span>
+                                            <span class="date">2023-01-19</span>
+                                        </div>
+                                        <span class="badge c-green">조치확인</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div title="office">
+                            <ul class="board-list">
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="pjt">프로젝트 or 사업장 주소</h5>
+                                        <p class="title">서대문 가좌국사 최적화 사업</p>
+                                        <div class="d-flex info-save">
+                                            <span>정기안전보건교육</span>
+                                            <span class="date">2023-01-19</span>
+                                        </div>
+                                        <span class="badge c-green">조치확인</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div title="report">
+                            <ul class="board-list">
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="pjt">프로젝트 or 사업장 주소</h5>
+                                        <p class="title">서대문 가좌국사 최적화 사업</p>
+                                        <div class="d-flex info-save">
+                                            <span>신고자</span>
+                                            <span class="date">2023-01-19</span>
+                                        </div>
+                                        <span class="badge c-red">신고</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div title="receive">
+                            <ul class="board-list">
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="pjt">프로젝트 or 사업장 주소</h5>
+                                        <p class="title">서대문 가좌국사 최적화 사업</p>
+                                        <div class="d-flex info-save">
+                                            <span>정기안전보건교육</span>
+                                            <span class="date">2023-01-19</span>
+                                        </div>
+                                        <span class="badge c-grey">조치중</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div title="action">
+                            <ul class="board-list">
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="pjt">프로젝트 or 사업장 주소</h5>
+                                        <p class="title">서대문 가좌국사 최적화 사업</p>
+                                        <div class="d-flex info-save">
+                                            <span>정기안전보건교육</span>
+                                            <span class="date">2023-01-19</span>
+                                        </div>
+                                        <span class="badge c-blue">조치완료</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div title="completed">
+                            <ul class="board-list">
+                                <li class="item">
+                                    <a href="#">
+                                        <h5 class="pjt">프로젝트 or 사업장 주소</h5>
+                                        <p class="title">서대문 가좌국사 최적화 사업</p>
+                                        <div class="d-flex info-save">
+                                            <span>정기안전보건교육</span>
+                                            <span class="date">2023-01-19</span>
+                                        </div>
+                                        <span class="badge c-green">조치확인</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                  
+                    </div>
+			    </div>
+                
+            </div>
+        </div>
+    </main>
+</div>
+    
+
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+
+</body>
+</html>

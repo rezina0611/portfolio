@@ -1,0 +1,177 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>안전신문고</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">    
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/modernizr.custom.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+<body>
+    
+<div class="page-wrapper d-flex">
+    <main class="main">
+        <!-- 모바일 헤더 -->
+        <header class="m-header">
+            <div class="inner">안전신문고</div>
+            <button class="no-bg left"></button>
+        </header>
+        <!--// 모바일 헤더 -->
+        
+        <!-- 모바일 컨텐츠 -->
+        <div class="contents">
+            <div class="bg-white p-1">
+                <div class="regist-info mt--1em">
+                    <details class="dropdown">
+                        <summary>
+                            <ul>
+                                <li class="title">프로젝트 or 사업장 주소</li>
+                                <li>신고자</li>
+                            </ul>
+                        </summary>
+                        <ul class="inline-list">
+                            <li class="d-flex">
+                                <label>소속</label>
+                                <span>소속</span>
+                            </li>
+                            <li class="d-flex">
+                                <label>성명</label>
+                                <span>홍길동</span>
+                            </li>
+                            <li class="d-flex">
+                                <label>연락처</label>
+                                <span>010-1234-9874</span>
+                            </li>
+                            <li class="d-flex">
+                                <label>작성일</label>
+                                <span>2022-07-14</span>
+                            </li>
+                        </ul>
+                    </details>
+                </div>
+                
+                <form class="register">
+                    <div class="table-wrapper">
+                        <div class="dropdown opn-list">
+                            <summary>
+                                <ul>
+                                    <li class="title m-0">안전신문고 작성</li>
+                                </ul>
+                            </summary>
+                            <ul>
+                                <fieldset class="d-block">
+                                    <label>제목 <span class="required">*</span></label>
+                                    <input class="input-tb" id="" type="text" placeholder="제목" value="안전신문고 작성 제목" disabled>
+                                    <div class="ops-check">
+                                        <label>작업중지요청 <input type="checkbox" checked disabled></label>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="d-block mt-2">
+                                    <label>위험종류 <span class="required">*</span></label>
+                                    <div class="selct-multi">
+                                        <label><input type="checkbox" checked disabled>추락</label>
+                                        <label><input type="checkbox" checked disabled>전도(넘어짐)</label>
+                                        <label><input type="checkbox" disabled>끼임</label>
+                                        <label><input type="checkbox" disabled>화학물질 노출</label>
+                                        <label><input type="checkbox" disabled>화재</label>
+                                        <label><input type="checkbox" disabled>감전</label>
+                                        <label><input type="checkbox" disabled>폭발</label>
+                                        <label><input type="checkbox" disabled>근골격계질환</label>
+                                        <label><input type="checkbox" disabled>교통사고</label>
+                                        <label><input type="checkbox" disabled>낙하물</label>
+                                        <label><input type="checkbox" disabled>감정노동</label>
+                                        <label><input type="checkbox" disabled>기타</label>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="d-block mt-2">
+                                    <label>신고 및 제안내용 <span class="required">*</span></label>
+                                    <textarea name="" class="textarea" rows="4" placeholder="현황 및 문제점 *" disabled></textarea>
+                                    <textarea name="" class="textarea" rows="4" placeholder="개선 요구사항 *" disabled></textarea>
+                                </fieldset>
+                                <fieldset class="d-block mt-2">
+                                    <label>첨부파일[사진] <span class="required">*</span></label>
+                                    <p class="ex mb-1">* (첨부 가능 확장자 : jpg, jpeg, png, bmp, tiff) 파일명에 특수문자 포함 불가</p>
+                                    <!--<div class="photo-btn-group">
+                                        <button class="camera">사진촬영</button>
+                                        <button class="album">사진보관함</button>
+                                    </div>-->
+                                    <div class="grid-gallery mt-1">
+                                        <div class="grid-wrap">
+                                            <ul class="grid r-2">
+                                                <li class="img-detail">
+                                                    <!--<button class="btn-close"><i class="fa fa-times" aria-hidden="true"></i></button>-->
+                                                    <figure>
+                                                        <img src="../../images/no_img_md@2x.png" alt="img02">
+                                                    </figure>
+                                                </li>
+                                                <li class="img-detail">
+                                                    <!--<button class="btn-close"><i class="fa fa-times" aria-hidden="true"></i></button>-->
+                                                    <figure>
+                                                        <img src="../../images/sample/2.png" alt="img02">
+                                                    </figure>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </ul>
+                        </div>
+                        
+                        <div class="dropdown opn-list mt-3 b-0">
+                            <summary>
+                                <ul>
+                                    <li class="title m-0">조치정보</li>
+                                </ul>
+                            </summary>
+                            <ul class="inline-list">
+                                <li class="d-flex">
+                                    <label>접수자</label>
+                                    <span>홍길동</span>
+                                </li>
+                                <li class="d-flex">
+                                    <label>접수일</label>
+                                    <span>2022–07-13 (13:00)</span>
+                                </li>
+                                <li class="d-flex">
+                                    <label>담당 수행PM</label>
+                                    <span>김수행</span>
+                                </li>
+                                <li class="d-flex">
+                                    <label>조치완료일</label>
+                                    <span>2022–07-14 (13:00)</span>
+                                </li>
+                                <li class="d-flex">
+                                    <label>조치확인자</label>
+                                    <span>강조치</span>
+                                </li>
+                                <li class="d-flex">
+                                    <label>조치확인일시</label>
+                                    <span>2022–07-16 (13:00)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </form>
+                
+            </div>
+            <div class="btn-area btn-2">
+                <a href="" class="btn -grey">확인</a>
+            </div>
+        </div>
+        <!--// 모바일 컨텐츠 -->
+        
+    </main>
+</div>
+    
+
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+
+</body>
+</html>

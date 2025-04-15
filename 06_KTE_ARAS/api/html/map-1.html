@@ -1,0 +1,957 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>ARAS</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../css/default.css">
+<link rel="stylesheet" href="../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+    
+<body>
+    
+<!-- Modal -->
+<div class="modal-wrapper" id="modal-info">
+    <div class="modal">
+        <div class="header">
+            <h1>
+                <button class="btn btn-close trigger-info"><i class="fa fa-times"></i></button>
+            </h1>
+        </div>
+        <div class="content">
+			<h6 class="table-title">사업장 정보</h6>
+            <table class="table dt no-bg">
+                <colgroup>
+                    <col width="80">
+                    <col>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>사업장명</th>
+                        <td>사패터널</td>
+                    </tr>
+                    <tr>
+                        <th>사업장 주소</th>
+                        <td>서울시 영등포구 당산동5가</td>
+                    </tr>
+                    <tr>
+                        <th>수행PL</th>
+                        <td>이길동, 김길동, 박길동</td>
+                    </tr>
+					<tr>
+						<th>협력사</th>
+						<td>
+							<ul>
+								<li>주식회사 펀진,</li>
+								<li>(주)삼성전자,</li>
+								<li>주식회사 엘지전자</li>
+							</ul>
+						</td>
+					</tr>
+                </tbody>
+            </table>
+			<h6 class="table-title">프로젝트 정보<span class="status -ing">공사중</span></h6>
+			<table class="table dt no-bg">
+                <colgroup>
+                    <col width="80">
+                    <col>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>계약명</th>
+                        <td>지하철신축공사[무선-지하철]</td>
+                    </tr>
+                    <tr>
+                        <th>계약기간</th>
+                        <td>2021.04.01 ~ 2021.08.31</td>
+                    </tr>
+                    <tr>
+                        <th>발주처</th>
+                        <td>주식회사 케이티</td>
+                    </tr>
+					<tr>
+                        <th>계약금액</th>
+                        <td>10,000,000(원)</td>
+                    </tr>
+					<tr>
+                        <th>수행PM</th>
+                        <td>홍길동</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="btn-area btn-2">
+                <a class="btn normal project-info" href=""><i class="fas fa-file-alt"></i>상세정보</a>
+                <a class="btn normal" href="../html/pjt/project_detail.html"><i class="fas fa-file-image"></i>현장사진</a>
+            </div>
+            <div class="btn-area btn-2 mt5">            	  
+                <a class="btn normal project-info" href="/work/history"><i class="fas fa-building fl_left" aria-hidden="true"></i><span class="tex">현장관리</span></a>            	  
+                <a class="btn normal" href="#" onclick="fnMoveQuality(&quot;A220182&quot;,&quot;2022년 무선망 안정운용(철탑시설 구조보강/낙뢰피해 최소화)투자공사&quot;,&quot;A220182-92008953&quot;,&quot;중곡4_대원외고용마관_1.8G&quot;)"><i class="fas fa-clipboard-check fl_left" aria-hidden="true"></i><span class="tex">수행품질평가</span></a>            
+            </div>
+            <div class="btn-area btn-2 mt5">            	  
+                <a class="btn normal project-info" href="javascript:safeItem();"><i class="fas fa-hard-hat fl_left" aria-hidden="true"></i><span class="tex">안전관리용품</span></a>            	  
+                <a class="btn normal" href="/danger/report"><i class="fas fa-hard-hat fl_left" aria-hidden="true"></i><span class="tex">안전관리</span></a>            
+            </div>
+            <div class="btn-area btn-2 half mt5">            	  
+                <a class="btn normal" href="/material/manager"><i class="fas fa-toolbox fl_left" aria-hidden="true"></i><span class="tex">자재관리</span></a>            
+            </div>
+        </div>
+    </div>
+</div>
+<!--// End Modal -->
+
+<!-- 레이어 통합지도검색 -->
+<div class="layer" id="layer-search-result">
+    <header class="m-header">
+        <div class="inner">통합지도검색</div>
+        <button class="no-bg left search-btn"></button>
+    </header>
+    <div class="contents">
+        <div class="search-area mint">
+			<span>금화터널</span>
+			<div class="input-group-append">
+				<span class="input-group-text search-btn"></span>
+			</div>
+		</div>
+		
+        <div class="sidebar-wrapper result">
+            <div class="sidebar-menu">
+                <ul>
+                    <li class="sidebar-updown">
+                        <a href="#"><!-- toggle -->
+                            <div class="case-title">
+                                <h2>검색결과 20건</h2>
+                            </div>
+                        </a>
+                        <div class="sidebar-result-list" style="">
+                            <ul class="result-list">
+                                <li>
+                                    <a href="map-1.html">
+                                        <div>
+                                            <h5>지하철 신축공사 - 사패터널</h5>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <div>
+                                            <h5>지하철 신축공사 - 사패터널</h5>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <div>
+                                            <h5>지하철 신축공사 - 사패터널</h5>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="map-1.html">
+                                        <div>
+                                            <h5>지하철 신축공사 - 사패터널</h5>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <div>
+                                            <h5>지하철 신축공사 - 사패터널</h5>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <div>
+                                            <h5>지하철 신축공사 - 사패터널</h5>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="map-1.html">
+                                        <div>
+                                            <h5>지하철 신축공사 - 사패터널</h5>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <div>
+                                            <h5>지하철 신축공사 - 사패터널</h5>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <div>
+                                            <h5>지하철 신축공사 - 사패터널</h5>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="map-1.html">
+                                        <div>
+                                            <h5>지하철 신축공사 - 사패터널</h5>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <div>
+                                            <h5>지하철 신축공사 - 사패터널</h5>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <div>
+                                            <h5>지하철 신축공사 - 사패터널</h5>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="map-1.html">
+                                        <div>
+                                            <h5>지하철 신축공사 - 사패터널</h5>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <div>
+                                            <h5>지하철 신축공사 - 사패터널</h5>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <div>
+                                            <h5>지하철 신축공사 - 사패터널</h5>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--// 레이어 통합지도검색 -->
+    
+<!-- 레이어 현장관리 -->
+<div class="layer" id="layer-manage-place">
+    <header class="m-header">
+        <div class="inner">현장관리</div>
+        <button class="no-bg left place-info"></button>
+    </header>
+    <div class="contents">
+        <div class="divider"></div>
+        <div class="sidebar-wrapper result">
+            <div class="sidebar-menu">
+                <div class="case-title pd20">
+                    <h2>프로젝트 00건</h2>
+                </div>
+                <div class="sidebar-result-list" style="">
+                    <ul class="result-list">
+                        <li>
+                            <a href="" class="project-info">
+                                <div><h5>지하철 신축공사 - 사패터널</h5></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="project-info">
+                                <div><h5>지하철 신축공사 - 사패터널</h5></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="project-info">
+                                <div><h5>지하철 신축공사 - 사패터널</h5></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="project-info">
+                                <div><h5>지하철 신축공사 - 사패터널</h5></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="project-info">
+                                <div><h5>지하철 신축공사 - 사패터널</h5></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="project-info">
+                                <div><h5>지하철 신축공사 - 사패터널</h5></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="project-info">
+                                <div><h5>지하철 신축공사 - 사패터널</h5></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="project-info">
+                                <div><h5>지하철 신축공사 - 사패터널</h5></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="project-info">
+                                <div><h5>지하철 신축공사 - 사패터널</h5></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="project-info">
+                                <div><h5>지하철 신축공사 - 사패터널</h5></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="project-info">
+                                <div><h5>지하철 신축공사 - 사패터널</h5></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="project-info">
+                                <div><h5>지하철 신축공사 - 사패터널</h5></div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--// 레이어 현장관리-->
+    
+<!-- 레이어 프로젝트 정보 -->
+<div class="layer" id="layer-project-info">
+    <header class="m-header">
+        <div class="inner">프로젝트 관리</div>
+        <button class="no-bg left project-info"></button>
+    </header>
+    <div class="contents">
+        <div class="bg-white p-1">
+            <div class="detail-head">
+                <span class="cate c-yellow">무선-터널</span>
+                <h2 class="title">2022년 무선망 시설공사 총액계약_KT engineering(대구)</h2>
+            </div>
+            <div id="tab-menu2" class="tab-menu">
+				<div id="tab-btn2" class="tab-btn">
+					<ul class="tab-2 round">
+						<li class="active"><button>프로젝트 정보</button></li>
+						<li><button>사업장</button></li>
+					</ul>
+				</div>
+				<div id="tab-cont2" class="tab-cont">
+					<div title="Project Info" style="" class="mb-1">
+                        <!--<h2 class="mt-1">프로젝트 정보</h2>-->
+                        <table class="table dt no-bd">
+                            <colgroup>
+                                <col width="94">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>계약기간</th>
+                                    <td>2021-04-01 ~ 2021-09-30</td>
+                                </tr>
+                                <tr>
+                                    <th>착공일/준공일</th>
+                                    <td>2021-05-01 ~ 2021-08-31</td>
+                                </tr>
+                                <tr>
+                                    <th>발주처</th>
+                                    <td>00000</td>
+                                </tr>
+                                <tr>
+                                    <th>계약금액</th>
+                                    <td>10,000,000원</td>
+                                </tr>
+                                <tr>
+                                    <th>수주부서</th>
+                                    <td>00000</td>
+                                </tr>
+                                <tr>
+                                    <th>영업대표</th>
+                                    <td>00000</td>
+                                </tr>
+                                <tr>
+                                    <th>수행부서</th>
+                                    <td>00000</td>
+                                </tr>
+                                <tr>
+                                    <th>수행PM</th>
+                                    <td>00000</td>
+                                </tr>
+                                <tr>
+                                    <th>수행PL</th>
+                                    <td>000,000,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+					</div>
+					<div title="Place" class="place" style="display: none;">
+                        <div class="search-wrap">
+                            <div class="map-search -place">
+                                <input type="search" class="search" placeholder="사업장명을 입력해 검색하세요.">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <h2>사업장 5건</h2>
+                        <div id="tab-menu" class="tab-menu">
+                            <div id="tab-btn" class="tab-btn">
+                                <!--<ul class="tab-2"> -->
+                                <ul class="tab-round">
+                                    <li class="active"><button class="btn">전체</button></li>
+                                    <li><button class="btn -red">위험요소</button></li>
+                                </ul>
+                            </div>
+                            <div id="tab-cont" class="tab-cont mt-1">
+                                <div title="all">
+                                    <ul class="block-list">
+                                        <li>
+                                            <a href="../html/pjt/프로젝트관리_상세.html">
+                                                <span>
+                                                    <strong>000터널</strong>
+                                                    <div>PL : 김동진 </div>
+                                                </span>
+                                                <span class="badge -red">위험요소</span>
+                                            </a>
+                                            <button class="detail-dropdown"><i class="fas fa-info-circle"></i></button>
+                                            <div class="list-detail-info">
+                                                <h6 class="table-title">사업장 상세정보</h6>
+                                                <table class="table">
+                                                    <colgroup>
+                                                        <col width="50%">
+                                                        <col>
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>장비/국소명</th>
+                                                            <th>협력사</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>서울지방병무청역_A</td>
+                                                            <td>유니넷텍(A)</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>서울지방병무청역_B</td>
+                                                            <td>(주)펀진</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="../html/pjt/프로젝트관리_상세.html">
+                                                <span>
+                                                    <strong>000터널</strong>
+                                                    <div>PL : 김동진 </div>
+                                                </span>
+                                            </a>
+                                            <button class="detail-dropdown"><i class="fas fa-info-circle"></i></button>
+                                            <div class="list-detail-info">
+                                                <h6 class="table-title">사업장 상세정보</h6>
+                                                <table class="table">
+                                                    <colgroup>
+                                                        <col width="50%">
+                                                        <col>
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>장비/국소명</th>
+                                                            <th>협력사</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>서울지방병무청역_A</td>
+                                                            <td>유니넷텍(A)</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>서울지방병무청역_B</td>
+                                                            <td>(주)펀진</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="../html/pjt/프로젝트관리_상세.html">
+                                                <span>
+                                                    <strong>000터널</strong>
+                                                    <div>PL : 김동진 </div>
+                                                </span>
+                                                <span class="badge -red">위험요소</span>
+                                            </a>
+                                            <button class="detail-dropdown"><i class="fas fa-info-circle"></i></button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div title="위험요소">
+                                    <ul class="block-list">
+                                        <li>
+                                            <a href="#">
+                                                <span>
+                                                    <strong>000터널</strong>
+                                                    <div>PL : 김동진 </div>
+                                                </span>
+                                                <span class="badge -red">위험요소</span>
+                                            </a>
+                                            <button class="detail-dropdown"><i class="fas fa-info-circle"></i></button>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span>
+                                                    <strong>000터널</strong>
+                                                    <div>PL : 김동진 </div>
+                                                </span>
+                                                <span class="badge -red">위험요소</span>
+                                            </a>
+                                            <button class="detail-dropdown"><i class="fas fa-info-circle"></i></button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+
+				</div>
+			</div>
+            
+        </div>
+    </div>
+</div>
+<!--// 레이어 -->    
+	
+<!-- 레이어 알림 -->
+<div class="layer" id="layer-notification">
+    <header class="m-header">
+        <div class="inner">알림</div>
+        <button class="no-bg left notification"></button>
+    </header>
+    <div class="contents">
+        <div class="bg-white">
+			<div class="notice-wrapper">
+                <div id="tab-menu3" class="tab-menu">
+                    <div id="tab-btn3" class="tab-btn">
+                        <ul class="tab u-line">
+                            <li class="active"><button>미확인</button></li>
+                            <li class=""><button>확인</button></li>
+                        </ul>
+                    </div>
+                    <div id="tab-cont3" class="tab-cont">
+                        <div title="" class="" style="display: block;">
+                            <ul class="notice">
+                                <li>
+                                    <a href="">
+                                        <div class="noti-head">
+                                            <h5>ARAS - 품질평가</h5>
+                                            <span class="date">2022-06-11 10:01</span>
+                                        </div>
+                                        <p>OOO님(검사자명)이 [지하철(시공)] 품질평가 확인요청을 했습니다. 내용을 확인해주세요.</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <div class="noti-head">
+                                            <h5>ARAS - 품질평가 ARAS - 품질평가 ARAS - 품질평가</h5>
+                                            <span class="date">2022-06-11 10:01</span>
+                                        </div>
+                                        <p>OOO님(검사자명)이 000협력사에 대한 (프로젝트명) [지하철(시공)] 품질평가 확인요청을 했습니다. 내용을 확인해주세요.</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div title="" class="" style="display: none;">
+                            <ul class="notice">
+                                <li class="none">
+                                    <div>
+                                        <img src="../images/ico_notification.png" alt="">
+                                        <p>받은 알림이 없습니다.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <footer>
+                    <p class="info">
+                        <span><i class="fas fa-info-circle" aria-hidden="true"></i></span>
+                        읽은 알림은 30일 경과시 사라집니다.
+                    </p>
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>
+<!--// 레이어 --> 
+    
+<!-- 레이어 설정 -->
+<div class="layer" id="layer-setting">
+    <header class="m-header">
+        <div class="inner">설정</div>
+        <button class="no-bg left setting"></button>
+    </header>
+    <div class="contents">
+        <div class="bg-white">
+			<div class="board-wrapper">
+                <ul class="board-list">
+                    <li class="item p-1 d-flex">
+                        <div>
+                            <p class="title">알림</p>
+                            <p class="info-save mt-0">알림을 받습니다.</p>
+                        </div>
+                        <div class="button-cover">
+                            <div class="button r">
+                                <input type="checkbox" class="checkbox">
+                                <div class="knobs"></div>
+                                <div class="btn-layer"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item p-1 d-flex">
+                        <div>
+                            <p class="title">품질평가</p>
+                        </div>
+                        <div class="button-cover">
+                            <div class="button r">
+                                <input type="checkbox" class="checkbox">
+                                <div class="knobs"></div>
+                                <div class="btn-layer"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item p-1 d-flex">
+                        <div>
+                            <p class="title">현장관리</p>
+                        </div>
+                        <div class="button-cover">
+                            <div class="button r">
+                                <input type="checkbox" class="checkbox">
+                                <div class="knobs"></div>
+                                <div class="btn-layer"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item p-1 d-flex">
+                        <div>
+                            <p class="title">안전관리</p>
+                        </div>
+                        <div class="button-cover">
+                            <div class="button r">
+                                <input type="checkbox" class="checkbox">
+                                <div class="knobs"></div>
+                                <div class="btn-layer"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="p-1">
+                        <p class="info-save c-grey m-0">푸시알림을 받으려면 알림을 켜주세요.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--// 레이어 -->     
+    
+	
+<div class="page-wrapper d-flex">
+    <nav id="side-nav" class="side-nav">
+        <div class="side-nav-header">
+            <div class="ico-menu-list">
+                <!--<button class="ico-btn notification">
+                    <span class="badge noti">99</span>
+                    <img src="../images/icon/ico_notification.png" alt="알림">
+                </button>-->
+                <button class="ico-btn setting">
+                    <img src="../images/icon/ico_setting.png" alt="설정">
+                </button>
+                <button class="ico-btn" id="logOutBtn"><img src="../images/icon/ico_logout_wh.png" alt="로그아웃"></button>
+                <button class="ico-btn menu-toggle"><img src="../images/icon/ico_close_white.png" alt=""></button>
+            </div>
+        </div>
+        <div class="brand-user">
+            <div class="brand">
+                <img src="../images/logo-aras-kr.png" alt="아라스 로고">
+            </div>
+        </div>
+        <div class="user">
+            <a href="../html/myinfo/정보변경.html">
+                <img src="../images/icon/ico_user.png" alt="시스템관리자">
+                <span class="name">시스템관리자</span>
+            </a>
+        </div>
+        <div class="side-menu">
+            <ul>
+                <li><a href=""><img src="../images/icon/ico_sidebar_pj_wh.png" alt="프로잭트">프로젝트 관리</a></li>
+                <li><a href=""><img src="../images/icon/ico_sidebar_place_wh.png" alt="현장관리">현장관리</a></li>
+                <li><a href=""><img src="../images/icon/ico_sidebar_material_wh.png" alt="자재관리">자재관리</a></li>
+                <li class="side-menu-dropdown">
+                    <a href="#"><img src="../images/icon/ico_sidebar_safety_wh.png" alt="안전관리">안전관리</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">일일안전보고설정</a></li>
+                            <li><a href="#">일일안전활동보고</a></li>
+                            <li><a href="#">확인요청보고</a></li>
+                            <li><a href="#">위험성평가 조회</a></li>
+                            <li><a href="#">안전관리용품</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-menu-dropdown">
+                    <a href="#"><img src="../images/icon/ico_sidebar_assess_wh.png" alt="수행품질평가">수행품질평가</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">품질평가/이력</a></li>
+                            <li><a href="#">평가진행현황</a></li>
+                            <li><a href="#">수검자검수</a></li>
+                            <li><a href="#">확인자검수</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-menu-dropdown">
+                    <a href="#"><img src="../images/icon/ico_sidebar_board_wh.png" alt="게시판">게시판</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">프로젝트 게시판</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-menu-dropdown">
+                    <a href="#"><img src="../images/icon/ico_sidebar_stat_wh.png" alt="시스템관리">통계</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">프로젝트수행현황</a></li>
+                            <li><a href="#">공정진행현황</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="main map">
+        <header class="m-header no-bg">
+            <button class="menu-toggle"><i class="fa fa-bars"></i></button>
+            <div class="inner">
+                <div class="search-area">
+                    <div class="map-search">
+                        <input type="search" class="search" placeholder="프로젝트/주소를 입력해 검색하세요.">
+                        <div class="input-group-append">
+                            <span class="input-group-text search-btn"><i class="fa fa-search" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                    <button class="btn bz-sort"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+                    <div class="map-sort-area">
+                        <div class="controller">
+                            <ul>
+                                <li>
+                                    <select class="form-select">
+                                        <option selected="">BM 전체</option>
+                                        <option value="">1</option>
+                                        <option value="">2</option>
+                                        <option value="">3</option>
+                                        <option value="">4</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <select class="form-select">
+                                        <option selected="">조직 전체</option>
+                                        <option value="">1</option>
+                                        <option value="">2</option>
+                                        <option value="">3</option>
+                                        <option value="">4</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <select class="form-select">
+                                        <option selected="">구분 전체</option>
+                                        <option value="">공사전</option>
+                                        <option value="">공사중</option>
+                                        <option value="">공사후</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="topR-control">
+            <ul>
+				<li><a href="../html/myinfo/my.html" class="btn-round -primary"><span>MY</span></a></li>
+                <li><a href="#" class="btn-round bz-toggle"><img src="../images/ico_layer.png" alt=""></a></li>
+            </ul>
+        </div>
+        <div class="foot-control">
+            <a href="#" class="btn-round"><img src="../images/ico_now.png" alt=""></a>
+        </div>
+        
+        <div class="container">
+            <!-- 2022-10-25 추가 as-is 스타일 -->
+            <a class="map-tooltip trigger-info" href="javascript:showModalInfo();" style="top:108px;left:22px">
+                <div class="case-title">
+                    <div class="marker"><img src="../images/marker/ico_line_green.png" alt=""></div>
+                    <div>
+                        <h2>중곡1_삼원특수지사옥1 중곡1_삼원특수지사옥1<span class="status -before">공사전</span></h2>
+                        <h5 onclick="showPopup(30159);">2022년 무선망 시설공사 총액계약(강북)</h5>
+                        <div class="name">[ 무선-인빌딩 ]</div>
+                        <div class="name">서울 광진구 천호대로 549</div>
+                    </div>
+                </div>
+                <hr>
+                <div class="case-title">
+                    <div class="marker"><img src="../images/marker/ico_line_green.png" alt=""></div>
+                    <div>
+                        <h2>kt engineering<span class="status -done">공사후</span></h2>
+                        <h5 onclick="showPopup(27800);">KT VIP 고객관리용 광모듈 납품</h5>
+                        <div class="name">[ KT협력-기타 ]</div>
+                        <div class="name">서울특별시 광진구 천호대로 549 G타워</div>
+                    </div>
+                </div>
+                <hr>
+                <div class="case-title">
+                    <div class="marker"><img src="../images/marker/ico_line_green.png" alt=""></div>
+                    <div>
+                        <h2>전국<span class="status -before">공사전</span></h2>
+                        <h5 onclick="showPopup(5390);">2021년 전자파강도 측정사업</h5>
+                        <div class="name">[ 무선-전자파 ]</div>
+                        <div class="name">서울시 광진구 천호대로 549</div>
+                    </div>
+                </div>
+            </a>
+            <!-- //2022-10-25 추가 as-is 스타일 -->
+            
+            <!--<div class="map-tooltip" style="top:208px;left:22px">
+                <ul>
+                    <li>
+                        <a class="case-title trigger-info" href="#">
+                            <div class="marker"><img src="../images/marker/ico_line_green.png" alt=""></div>
+                            <div>
+                                <h2>22년 네트워크 장비 및 보안장비 유지보수<span class="status -before">공사전</span>
+                                </h2>
+                                <h5>kt 사내망 신증설 및 고도화 [ OSP-기타]</h5>
+                                <div class="name">서울시 강남구 테헤란로 422</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="case-title trigger-info" href="#">
+                            <div class="marker"><img src="../images/marker/ico_line_green.png" alt=""></div>
+                            <div>
+                                <h2>22년 네트워크 장비 및 보안장비 유지보수<span class="status -ing">공사중</span></h2>
+                                <h5>KT VIP 고객관리용 광모듈 납품 [ KT협력-기타 ]</h5>
+                                <div class="name">서울특별시 광진구 천호대로 549 G타워</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>-->
+            
+            <div class="map-marker" style="left:212px; top:622px">
+                <div class="badge">+99</div>
+                <img src="../images/marker/ico_line_green.png" alt="">
+            </div>
+            <div class="map-area">
+                <figure class="Cover_figure" style="background-image: url(../images/sample/map-img.png)"></figure>
+            </div>
+        </div>
+        
+        <!--열기,닫기 사업영역 필터링 기능(영역) 노출-->
+        <div id="Toggle" class="area" style="">
+            <input type="hidden" id="srchBzCode" name="srchBzCode">
+            <!-- 버튼 영역 수정 2022-10-13 -->
+            <div class="top-btn-area">
+                <button class="btn free" id="resetBtn"><i class="fas fa-redo" aria-hidden="true"></i></button>
+                <button class="btn free bz-toggle"><i class="fa fa-times" aria-hidden="true"></i></button>
+            </div>
+            <!-- // 버튼 영역 수정 2022-10-13 -->
+            <ul class="tabs">
+                <li class="tab-link frist current" data-tab="tab-1">사업영역</li>
+            </ul>
+            <div id="tab-1" class="tab-content current">
+                <div class="quick_list">
+                    <div class="quick_item">
+                        <a href="#" class="quick_anchor" tabindex="0" onclick="javascript:fn_search('A04');">
+                            <img src="../images/icon/ico_subway.png" alt=""><span id="span_A04">지하철</span>
+                        </a>
+                    </div>
+                    <div class="quick_item">
+                        <a href="#" class="quick_anchor" tabindex="0" onclick="javascript:fn_search('A01');">
+                            <img src="../images/icon/ico_tunnel.png" alt=""><span id="span_A01">터널</span></a>
+                    </div>
+                    <div class="quick_item">
+                        <a href="#" class="quick_anchor" tabindex="0" onclick="javascript:fn_search('A02');">
+                        <img src="../images/icon/ico_tower.png" alt=""><span id="span_A02">철탑</span></a>
+                    </div>
+                    <div class="quick_item">
+                        <a href="#" class="quick_anchor" tabindex="0" onclick="javascript:fn_search('A03');">
+                        <img src="../images/icon/ico_in-building.png" alt=""><span id="span_A03">인빌딩</span></a>
+                    </div>
+                    <div class="quick_item">
+                        <a href="#" class="quick_anchor" tabindex="0" onclick="javascript:fn_search('A07');">
+                        <img src="../images/icon/ico_cover.png" alt=""><span id="span_A07">가림막</span></a>
+                    </div>
+                    <div class="quick_item">
+                        <a href="#" class="quick_anchor" tabindex="0" onclick="javascript:fn_search('B01');">
+                        <img src="../images/icon/ico_base_optimization.png" alt=""><span id="span_B01">국사최적화</span></a>
+                    </div>
+                    <div class="quick_item">
+                        <a href="#" class="quick_anchor" tabindex="0" onclick="javascript:fn_search('B02');">
+                        <img src="../images/icon/ico_underground-zone.png" alt=""><span id="span_B02">통신구</span></a>
+                    </div>
+                    <div class="quick_item">
+                        <a href="#" class="quick_anchor" tabindex="0" onclick="javascript:fn_search('D01');">
+                        <img src="../images/icon/ico_rural-bcn.png" alt=""><span id="span_D01">농어촌BcN</span></a>
+                    </div>
+                    <div class="quick_item">
+                        <a href="#" class="quick_anchor" tabindex="0" onclick="javascript:fn_search('D02');">
+                        <img src="../images/icon/ico_integrated-network.png" alt=""><span id="span_D02">통합망</span></a>
+                    </div>
+                    <div class="quick_item">
+                        <a href="#" class="quick_anchor" tabindex="0" onclick="javascript:fn_search('H01');">
+                        <img src="../images/icon/ico_idc.png" alt=""><span id="span_H01">IDC</span></a></div>
+                    <div class="quick_item">
+                        <a href="#" class="quick_anchor" tabindex="0" onclick="javascript:fn_search('H02');">
+                        <img src="../images/icon/ico_move_workspace.png" alt=""><span id="span_H02">업무공간이전공사</span></a>
+                    </div>
+                    <div class="quick_item">
+                        <a href="#" class="quick_anchor" tabindex="0" onclick="javascript:fn_search('G01');">
+                        <img src="../images/icon/ico_solar.png" alt=""><span id="span_G01">태양광</span></a>
+                    </div>
+
+                    <!--
+                    <div class="quick_item"><a href="#" class="quick_anchor" tabindex="0" onclick="javascript:fn_search('A05');"><img src="/images/ico_WI-FI.png"><span>Wi-Fi</span></a></div>
+                    <div class="quick_item"><a href="#" class="quick_anchor" tabindex="0" onclick="javascript:fn_search('A09');"><img src="/images/ico_etc.png"><span>기타</span></a></div>
+                    <div class="quick_item"><a href="#" class="quick_anchor" tabindex="0" onclick="javascript:fn_search('B06');"><img src="/images/ico_moving-pole.png"><span>지장이전</span></a></div>
+                    <div class="quick_item"><a href="#" class="quick_anchor" tabindex="0" onclick="javascript:fn_search('none');"><img src="/images/ico_moving-pole.png"><span>회선몰이(미완료)</span></a></div>
+                    <div class="quick_item"><a href="#" class="quick_anchor" tabindex="0" onclick="javascript:fn_search('none');"><img src="/images/ico_moving-pole.png"><span>M/W(미완료)</span></a></div>
+                    -->
+                </div>
+            </div>
+        </div>
+        <!--//열기,닫기 사업영역 필터링 기능(영역) 노출-->
+    </main> 
+    
+</div>
+    
+<!-- partial -->
+<script  src="../js/sidebar.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>안전보건교육일지 상세</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">    
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/modernizr.custom.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+<body>
+    
+<!-- 반려팝업 -->    
+<div class="layer h60" id="layer-st-01">
+    <header class="m-header">
+        <h2 class="layer-tt">반려사유</h2>
+        <button class="btn btn-close st-01"></button>
+    </header>
+    <div class="contents">
+        <div class="bg-white pe-1">
+            <textarea class="textarea m-0" rows="11" placeholder="최대 100자 이내"></textarea>
+        </div>
+        <div class="btn-area btn-2">
+            <a href="" class="btn -grey">취소</a>
+            <a href="" class="btn -primary">등록</a>
+        </div>
+    </div>
+</div>    
+<!--// 반려팝업 -->
+    
+<div class="page-wrapper d-flex">
+    <main class="main">
+        <!-- 모바일 헤더 -->
+        <header class="m-header">
+            <div class="inner">안전보건교육일지</div>
+            <button class="no-bg left"></button>
+            <button class="no-bg home"></button>
+        </header>
+        <!--// 모바일 헤더 -->
+        
+        <!-- 모바일 컨텐츠 -->
+        <div class="contents">
+            <div class="bg-white p-1">
+                <form class="register mb-2">
+                    <fieldset class="d-block">
+                        <label for="">프로젝트 <span class="required">*</span></label>
+                        <select class="input-tb">
+                            <option selected="">프로젝트 선택</option>
+                            <option>1</option>
+                            <option>2</option>
+                        </select>
+                    </fieldset>
+                    <fieldset class="d-block mt-2">
+                        <label for="">사업장 <span class="required">*</span></label>
+                        <select class="input-tb" placehoder="">
+                            <option selected="">사업장 선택</option>
+                            <option>1</option>
+                            <option>2</option>
+                        </select>
+                    </fieldset>
+                    <fieldset class="d-flex mt-2">
+                        <label for="">교육일자 <span class="required">*</span></label>
+                        <div class="input_date_box">
+                            <input type="date" class="input-tb">
+                        </div>
+                    </fieldset>
+                    <fieldset class="d-block mt-2">
+                        <label for="">교육시간 <span class="required">*</span></label>
+                        <div class="d-flex ai-center">
+                            <input type="time" class="input-tb half">
+                            <span> ~ </span>
+                            <input type="time" class="input-tb half">
+                        </div>
+                    </fieldset>
+                    
+                    <fieldset class="d-flex mt-2">
+                        <label for="">교육자<span class="required">*</span></label>
+                        <input class="input-tb" id="" type="text" placeholder="이름 입력">
+                    </fieldset>
+                    <fieldset class="d-flex">
+                        <label for="">교육대상<span class="required">*</span></label>
+                        <input class="input-tb" id="" type="text" placeholder="인원수 입력">
+                    </fieldset>
+                    <fieldset class="d-flex">
+                        <label for="">교육참석자<span class="required">*</span></label>
+                        <input class="input-tb" id="" type="text" placeholder="참석자수 입력">
+                    </fieldset>
+                </form>
+                <div class="register-detail">
+                    <!-- 드롭다운 테이블 스타일 -->
+                    <div class="table-wrapper">
+                        <details class="dropdown opn-list">
+                            <summary>
+                                <ul>
+                                    <li class="title m-0">교육종류 <span class="required">*</span></li>
+                                </ul>
+                            </summary>
+                            <!-- 숨겨진 영역 -->
+                            <ul class="selet-list">
+                                <li><label><input type="radio" name="radio-01">신규채용자교육(일용직1h 제외8h)</label></li>
+                                <li><label><input type="radio" name="radio-01">정기안전보건교육(분기6h 분할가능)</label></li>
+                                <li><label><input type="radio" name="radio-01">관리감독자교육(연간16h)</label></li>
+                                <li>
+                                    <script>
+                                        function setDisplay(){
+                                            //MSDS교육 라디오버튼 선택시에만 대상화학 물질명칭(제품명) 보이기
+                                            if($('input:radio[id=aaa]').is(':checked')){
+                                                $('#divId').show();
+                                            }else{
+                                                $('#divId').hide();
+                                            }
+                                        }
+                                    </script>
+                                    <label><input type="radio" name="radio-01" id="aaa" onchange="setDisplay()">MSDS교육</label>
+                                    <div id="divId" style="margin-left: 3rem; display: none;">
+                                        <h4 class="mt-1">대상화학 물질명칭(제품명)</h4>
+                                        <textarea class="textarea w-100" cols="100" rows="3" placeholder="대상화학 물질명칭 입력해주세요"></textarea>
+                                    </div>
+                                </li>
+                                <li><label><input type="radio" name="radio-01">작업내용 변경 시</label></li>
+                                <li>
+                                    <label><input type="radio" name="radio-06">특별안전교육(일용직2h, 일용직제외16h)</label>
+                                    <select>
+                                        <option selected="">선택</option>
+                                        <option value="1. 고압실 내 작업">1. 고압실 내 작업</option>
+                                        <option value="2. 용접작업">2. 용접작업</option>
+                                        <option value="3. 밀폐된장소에서하는 용접작업,습한 장소 용접작업">3. 밀폐된장소에서하는 용접작업,습한 장소 용접작업</option>
+                                        <option value="4. 폭발성물질, 인화성액체 제조 취급작업">4. 폭발성물질, 인화성액체 제조 취급작업</option>
+                                        <option value="5. 폭발성 물질 중 가스발생장치 취급작업">5. 폭발성 물질 중 가스발생장치 취급작업</option>
+                                        <option value="6. 화학설비 사용 및 세척작업">6. 화학설비 사용 및 세척작업</option>
+                                        <option value="7. 화학설비의 탱크 내 작업">7. 화학설비의 탱크 내 작업</option>
+                                        <option value="8. 저장탱크의 내부작업">8. 저장탱크의 내부작업</option>
+                                        <option value="9. 물건의 가열ㆍ건조작업">9. 물건의 가열ㆍ건조작업</option>
+                                        <option value="10. 집재장치의 조립해체 또는 운반작업">10. 집재장치의 조립해체 또는 운반작업</option>
+                                        <option value="11. 동력에 의하여 작동되는 프레스기계5대이상작업">11. 동력에 의하여 작동되는 프레스기계5대이상작업</option>
+                                        <option value="12. 목재가공용 기계로 하는 작업">12. 목재가공용 기계로 하는 작업</option>
+                                        <option value="13. 운반등하역기계로 하는 작업">13. 운반등하역기계로 하는 작업</option>
+                                        <option value="14. 1톤이상 크레인 사용하는 작업&amp;호이스트 작업">14. 1톤이상 크레인 사용하는 작업&amp;호이스트 작업</option>
+                                        <option value="15.건설용 리프트·곤돌라를 이용한 작업">15.건설용 리프트·곤돌라를 이용한 작업</option>
+                                        <option value="16. 주물 및 단조 작업">16. 주물 및 단조 작업</option>
+                                        <option value="17. 전압75V이상 정전 및 활선 작업">17. 전압75V이상 정전 및 활선 작업</option>
+                                        <option value="18. 콜크리트 파쇄기를 사용하는 파쇄작업">18. 콜크리트 파쇄기를 사용하는 파쇄작업</option>
+                                        <option value="19. 굴착면높이2M이상 굴착 작업">19. 굴착면높이2M이상 굴착 작업</option>
+                                        <option value="20. 흙막이 지보공 보강,동바리설치해체작업">20. 흙막이 지보공 보강,동바리설치해체작업</option>
+                                        <option value="21. 터널안굴착작업,터널거푸집조립작업">21. 터널안굴착작업,터널거푸집조립작업</option>
+                                        <option value="22. 굴착면높이2M이상암석굴착작업">22. 굴착면높이2M이상암석굴착작업</option>
+                                        <option value="23. 높이2M이상물건쌓거나무너뜨리는작업">23. 높이2M이상물건쌓거나무너뜨리는작업</option>
+                                        <option value="24. 선박에 짐쌓거나부리거나이동시키는작업">24. 선박에 짐쌓거나부리거나이동시키는작업</option>
+                                        <option value="25. 거푸집동바리조립,해체작업">25. 거푸집동바리조립,해체작업</option>
+                                        <option value="26. 비계의 조립·해체 또는 변경작업">26. 비계의 조립·해체 또는 변경작업</option>
+                                        <option value="27. 건축물골조등의 조립·해체또는변경작업">27. 건축물골조등의 조립·해체또는변경작업</option>
+                                        <option value="28. 처마높이5M이상,건축물지붕작업">28. 처마높이5M이상,건축물지붕작업</option>
+                                        <option value="28. 처마높이5M이상,건축물지붕작업">28. 처마높이5M이상,건축물지붕작업</option>
+                                        <option value="30. 타워크레인설치·해체작업">30. 타워크레인설치·해체작업</option>
+                                        <option value="31. 보일러설치및취급작업">31. 보일러설치및취급작업</option>
+                                        <option value="32. 게이지압력용기설치및취급작업">32. 게이지압력용기설치및취급작업</option>
+                                        <option value="33. 방사선업무관계작업">33. 방사선업무관계작업</option>
+                                        <option value="34. 밀폐공간에서의작업">34. 밀폐공간에서의작업</option>
+                                        <option value="35. 허가및관리대상유해물질제조취급작업">35. 허가및관리대상유해물질제조취급작업</option>
+                                        <option value="36. 로봇작업">36. 로봇작업</option>
+                                        <option value="37. 석면해체·제거작업">37. 석면해체·제거작업</option>
+                                        <option value="38. 가연물이 있는 장소에서 하는 화재위험작업">38. 가연물이 있는 장소에서 하는 화재위험작업</option>
+                                        <option value="39. 타워크레인을사용하는작업시신호업무를하는작업">39. 타워크레인을사용하는작업시신호업무를하는작업</option>
+                                    </select>
+                                </li>
+                            </ul>
+                            <!--// 숨겨진 영역 -->
+                        </details>
+                        <details class="dropdown opn-list">
+                            <summary>
+                                <ul>
+                                    <li class="title m-0">주요교육내용</li>
+                                </ul>
+                            </summary>
+                            <!-- 숨겨진 영역 -->
+                            <ul>
+                                <li class="opn">
+                                    <div class="text-area disbled" id="educationContents" name="educationContents">
+                                        1. 산업안전 및 사고 예방에 관한 사항
+                                        2. 산업보건 및 직업병 예방에 관한 사항
+                                        3. 건강증진 및 질병 예방에 관한 사항
+                                        4. 유해∙위험 작업환경 관리에 관한 사항
+                                        5. 산업안전보건법령 및 산업재해보상보험 제도에 관한 사항
+                                        6. 직무 스트레스 예방 및 관리에 관한 사항
+                                        7. 직장 내 괴롭힘 고객의 폭언 등으로 인한 건강장해 예방 및 관리에 관한 사항
+                                    </div>
+                                </li>
+                            </ul>
+                            <!--// 숨겨진 영역 -->
+                        </details>
+                        <details class="dropdown opn-list">
+                            <summary>
+                                <ul>
+                                    <li class="title m-0">추가교육내용 <span class="required">*</span></li>
+                                </ul>
+                            </summary>
+                            <!-- 숨겨진 영역 -->
+                            <ul>
+                                <li class="opn">
+                                    <textarea class="textarea w-100" cols="100" rows="5" placeholder="추가교육내용 입력해주세요" 
+                                        id="additionalEducationContents" name="additionalEducationContents" value="111">111</textarea>
+                                </li>
+                            </ul>
+                            <!--// 숨겨진 영역 -->
+                        </details>
+                        <details class="dropdown opn-list">
+                            <summary>
+                                <ul>
+                                    <li class="title m-0">기타 건의사항</li>
+                                </ul>
+                            </summary>
+                            <!-- 숨겨진 영역 -->
+                            <ul>
+                                <li class="opn">
+                                    <textarea class="textarea w-100" cols="100" rows="5" placeholder="기타 건의사항 입력해주세요" 
+                                    id="suggestion" name="suggestion" readonly="" value="222">222</textarea>
+                                </li>
+                            </ul>
+                            <!--// 숨겨진 영역 -->
+                        </details>
+                        <details class="dropdown opn-list">
+                            <summary>
+                                <ul>
+                                    <li class="title m-0">사진/참석자명단 <span class="required">*</span></li>
+                                </ul>
+                            </summary>
+                            <!-- 숨겨진 영역 -->
+                            <ul>
+                                <li class="opn">
+                                    <h5 class="sub-tt">교육사진</h5>
+                                    <!--<div class="photo-btn-group">
+                                        <button class="camera">사진촬영</button>
+                                        <button class="album">사진보관함</button>
+                                    </div>-->
+                                    <div class="grid-gallery">
+                                        <div class="grid-wrap">
+                                            <ul class="grid r-2">
+                                                <li class="img-detail">
+                                                    <a href="">
+                                                        <figure>
+                                                            <img src="../../images/sample/2.png" alt="img02">
+                                                        </figure>
+                                                    </a>    
+                                                </li>
+                                                <li class="img-detail">
+                                                    <a href="">
+                                                        <figure>
+                                                            <img src="../../images/sample/2.png" alt="img02">
+                                                        </figure>
+                                                    </a> 
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="opn">
+                                    <h5 class="sub-tt">참석자명단</h5>
+                                    <!--
+                                        <div class="signbox">
+                                            <label for="signFile">파일선택</label>
+                                            <input pb="PW" type="file" id="signFile"
+                                                   class="upload-hidden image"
+                                                   name="signFile" accept="application/pdf, image/*"/>
+                                        </div>
+                                    -->
+                                    <div class="attachment mt-1">
+                                        <a class="file-down" href="">참석자 명단</a>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!--// 숨겨진 영역 -->
+                        </details>
+                    </div>
+                    <!--// 드롭다운 테이블 스타일 -->
+               
+                </div>
+            </div>
+            <div class="btn-area btn-2">
+                <a href="" class="btn -grey">닫기</a>
+                <a href="" class="btn normal">회수</a>
+                <a href="" class="btn -red st-01">반려</a>
+                <a href="" class="btn -primary">승인</a>
+            </div>
+        </div>
+        <!--// 모바일 컨텐츠 -->
+        
+    </main>
+</div>
+    
+
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+
+</body>
+</html>

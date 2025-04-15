@@ -1,0 +1,140 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>출입인력관리</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">    
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/modernizr.custom.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+<body>
+    
+<div class="page-wrapper d-flex">
+    <main class="main">
+        <header class="m-header">
+            <div class="inner">출입인력관리</div>
+            <button class="no-bg left"></button>
+        </header>
+        <div class="contents">
+            <div class="board-wrapper">
+                <div class="search-area mint">
+                    <input type="search" class="search" placeholder="계약명을 검색하세요.">
+                    <div class="input-group-append">
+                        <button class="search-btn"></button>
+                    </div>
+                </div>
+
+                <div class="list-box">
+                    <button type="button" class="list_">
+                        <span class="cate">A210186</span>
+                        2021년 무선망시설공사 총액계약 강남
+                        <span class="badge count"><strong>10</strong>/10</span>
+                    </button>
+                    <ul class="worker-info">
+                        <li class="card">
+                            <div class="card-head">
+                                <span>정규직</span>
+                                <span>하도급</span>
+                            </div>
+                            <div class="card-body">
+                                <p class="tt"><strong>홍길동</strong> 부장</p>
+                                <p>1980-04-10</p>
+                                <p>010-1234-9876</p>
+                                <p>gildong@emailmail.com</p>
+                                <div class="badge">
+                                    <span class="c-primary">승인</span>
+                                    <span>내국인</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="card-head">
+                                <span>정규직</span>
+                                <span>하도급</span>
+                            </div>
+                            <div class="card-body">
+                                <p class="tt"><strong>홍길동</strong> 부장</p>
+                                <p>1980-04-10</p>
+                                <p>010-1234-9876</p>
+                                <p>gildong@emailmail.com</p>
+                                <div class="badge">
+                                    <span class="c-red">반려</span>
+                                    <span>내국인</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="card-head">
+                                <span>정규직</span>
+                                <span>하도급</span>
+                            </div>
+                            <div class="card-body">
+                                <p class="tt"><strong>홍길동</strong> 부장</p>
+                                <p>1980-04-10</p>
+                                <p>010-1234-9876</p>
+                                <p>gildong@emailmail.com</p>
+                                <div class="badge">
+                                    <span class="c-yellow">요청</span>
+                                    <span>내국인</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list-box">
+                    <button type="button" class="list_">
+                        <span class="cate">A210205</span>
+                        2021년 무선망 시설공사 총액계약(서부)
+                        <span class="badge count"><strong>10</strong>/10</span>
+                    </button>
+                    <ul class="worker-info">
+                        <li class="card">
+                            <div class="card-head">
+                                <span>정규직</span>
+                                <span>하도급</span>
+                            </div>
+                            <div class="card-body">
+                                <p class="tt"><strong>홍길동</strong> 부장</p>
+                                <p>1980-04-10</p>
+                                <p>010-1234-9876</p>
+                                <p>gildong@emailmail.com</p>
+                                <div class="badge">
+                                    <span class="c-primary">승인</span>
+                                    <span>내국인</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+    
+
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+<script>
+    $(document).ready(function(){
+        $('button.list_').click(function(){
+            // let button = $(this).find(' > button');
+            let button = $(this);
+            let ul = button.next("ul");
+            if(button.hasClass('on')){
+                ul.slideUp();
+                button.removeClass('on');
+
+            }else{
+                ul.slideDown();
+                button.addClass('on');
+            }
+        })
+    })
+</script>
+</body>
+</html>

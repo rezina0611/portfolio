@@ -1,0 +1,308 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>현장정보 상세</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">    
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/modernizr.custom.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+<body>
+
+<!-- 레이어 사진 설명 쓰기 -->
+<div class="layer" id="layer-img-desc">
+    <header class="m-header">
+        <div class="inner">사진</div>
+        <button class="no-bg left img-desc"></button>
+        <button class="no-bg home"></button>
+    </header>
+    <div class="contents">
+        <div class="bg-white">
+            <figure class="img-full write">
+                <img src="../../images/sample/1.png" alt="">
+            </figure>
+			<nav class="slide-nav">
+				<span class="icon nav-prev"></span>
+				<span class="icon nav-next"></span>
+			</nav>
+			<div class="foot-info write">
+				<div class="info">
+					<div>등록자</div>
+					<div class="date">2021-05-27</div>
+				</div>
+				<div class="pagination"><strong>2</strong>/2</div>
+				<div class="desc">
+                    <textarea rows="6" maxlength="100" placeholder="100자 이내로 입력해주세요"></textarea>
+				</div>
+                <div class="btn-area btn-2">
+                    <a class="btn -grey" href="" >취소</a>
+                    <a class="btn -red" href="" >삭제</a>
+                    <a class="btn -primary" href="" >등록</a>
+                </div>
+			</div>
+        </div>
+    </div>
+</div>
+<!--// 레이어 사진 설명 쓰기 -->
+	
+<!-- 레이어 이미지 보기 -->
+<div class="layer" id="layer-img-detail">
+    <header class="m-header">
+        <div class="inner">사진</div>
+        <button class="no-bg left img-detail"></button>
+		<a class="btn free -green"><i class="fas fa-image"></i>다운로드</a>
+    </header>
+    <div class="contents">
+        <div class="bg-white">
+            <figure class="img-full">
+                <img src="../../images/sample/1.png" alt="">
+            </figure>
+			<nav class="slide-nav">
+				<span class="icon nav-prev"></span>
+				<span class="icon nav-next"></span>
+			</nav>
+			<div class="foot-info">
+				<a class="btn write img-desc"><i class="fas fa-edit"></i></a>
+				<div class="info">
+					<div>등록자</div>
+					<div class="date">2021-05-27</div>
+				</div>
+				<div class="pagination"><strong>2</strong>/2</div>
+				<div class="desc">
+					사진에 대한 설명입니다.<br>
+					사진에 대한 설명입니다.<br>
+					사진에 대한 설명입니다.<br>
+					사진에 대한 설명입니다.<br>
+					사진에 대한 설명입니다.<br>
+					사진에 대한 설명입니다.<br>
+					사진에 대한 설명입니다.<br>
+					사진에 대한 설명입니다.<br>
+					사진에 대한 설명입니다.<br>
+					사진에 대한 설명입니다.
+				</div>
+			</div>
+        </div>
+    </div>
+</div>
+<!--// 레이어 이미지 보기 -->
+
+<div class="page-wrapper d-flex">
+    <main class="main">
+        <header class="m-header">
+            <div class="inner">현장정보</div>
+            <button class="no-bg left"></button>
+            <button class="no-bg home"></button>
+        </header>
+        <div class="contents">
+            <div class="p-1 bg-white">
+                <table class="table no-bg mb-6">
+                    <colgroup>
+                        <col width="84">
+                        <col width="">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>프로젝트명</th>
+                            <td><input type="text" class="input-tb" placeholder="" disabled></td>
+                        </tr>
+                        <tr>
+                            <th>사업장명</th>
+                            <td>
+                                <select class="form-select" disabled>
+                                    <option selected="">Select</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>사업장주소</th>
+                            <td>
+                                <div class="d-flex">
+                                    <input type="text" class="input-tb" placeholder="" disabled>
+                                    <div class="btn-area">
+                                    <button class="btn-sm -blue"><i class="fa fa-map-marker-alt"></i></button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">
+                                <div class="d-flex title-area">
+                                    <span class="title">현장사진</span>
+                                    <button class="btn-sm -blue">사진추가</button>
+                                </div>
+                                <div class="grid-gallery">
+                                    <section class="grid-wrap">
+                                        <ul class="grid">
+                                            <li class="img-detail">
+                                                <button class="btn-close"><i class="fa fa-times"></i></button>
+                                                <figure>
+                                                    <img src="../../images/sample/1.png" alt="img01"/>
+                                                </figure>
+                                                <div class="info">
+                                                    <div>등록자</div>
+                                                    <div class="date">2021-05-27</div>
+                                                </div>
+                                            </li>
+                                            <li class="img-detail">
+                                                <button class="btn-close"><i class="fa fa-times"></i></button>
+                                                <figure>
+                                                    <img src="../../images/sample/2.png" alt="img02"/>
+                                                </figure>
+                                                <div class="info">
+                                                    <div>등록자</div>
+                                                    <div class="date">2021-05-27</div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <button class="btn-close"><i class="fa fa-times"></i></button>
+                                                <div class="attach m-0">
+                                                    <div class="btn-area">
+                                                        <button class="btn-sm"><i class="fa fa-camera"></i></button>
+                                                        <button class="btn-sm"><i class="fa fa-images"></i></button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </section><!-- // grid-wrap -->
+                                </div><!-- // grid-gallery -->
+                            </th>
+                        </tr>
+          
+                        <tr>
+                            <th colspan="2">
+                                <div class="d-flex title-area">
+                                    <span class="title">위험요소</span>
+                                    <button class="btn-sm -blue">사진추가</button>
+                                </div>
+                   
+                                <div class="d-flex thead">
+                                    <span class="">개선 전</span>
+                                    <span>개선 후</span>
+                                </div>
+                                
+                                <div class="grid-gallery">
+                                    <div class="grid-wrap">
+                                        <ul class="grid mt-1">
+                                            <li class="img-detail">
+                                                <button class="btn-close"><i class="fa fa-times"></i></button>
+                                                <figure>
+                                                    <img src="../../images/sample/1.png" alt="img01"/>
+                                                </figure>
+                                                <div class="info">
+                                                    <div>등록자</div>
+                                                    <div class="date">2021-05-27</div>
+                                                </div>
+                                            </li>
+                                            <li class="img-detail">
+                                                <button class="btn-close"><i class="fa fa-times"></i></button>
+                                                <figure>
+                                                    <img src="../../images/sample/1.png" alt="img01"/>
+                                                </figure>
+                                                <div class="info">
+                                                    <div>등록자</div>
+                                                    <div class="date">2021-05-27</div>
+                                                </div>
+                                            </li>
+                                            <li class="img-detail">
+                                                <button class="btn-close"><i class="fa fa-times"></i></button>
+                                                <figure>
+                                                    <img src="../../images/sample/1.png" alt="img01"/>
+                                                </figure>
+                                                <div class="info">
+                                                    <div>등록자</div>
+                                                    <div class="date">2021-05-27</div>
+                                                </div>
+                                            </li>
+                                            <li class="img-detail">
+                                                <button class="btn-close"><i class="fa fa-times"></i></button>
+                                                <figure>
+                                                    <img src="../../images/sample/2.png" alt="img02"/>
+                                                </figure>
+                                                <div class="info">
+                                                    <div>등록자</div>
+                                                    <div class="date">2021-05-27</div>
+                                                </div>
+                                            </li>
+                                            <li class="img-detail">
+                                                <button class="btn-close"><i class="fa fa-times"></i></button>
+                                                <figure>
+                                                    <img src="../../images/sample/2.png" alt="img02"/>
+                                                </figure>
+                                                <div class="info">
+                                                    <div>등록자</div>
+                                                    <div class="date">2021-05-27</div>
+                                                </div>
+                                            </li>
+                                            <li class="img-detail">
+                                                <button class="btn-close"><i class="fa fa-times"></i></button>
+                                                <figure>
+                                                    <img src="../../images/sample/2.png" alt="img02"/>
+                                                </figure>
+                                                <div class="info">
+                                                    <div>등록자</div>
+                                                    <div class="date">2021-05-27</div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <!-- <button class="btn-close"><i class="fa fa-times"></i></button> -->
+                                                <div class="attach m-0">
+                                                    <div class="btn-area">
+                                                        <button class="btn-sm"><i class="fa fa-camera"></i></button>
+                                                        <button class="btn-sm"><i class="fa fa-images"></i></button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <!-- <button class="btn-close"><i class="fa fa-times"></i></button> -->
+                                                <div class="attach m-0">
+                                                    <div class="btn-area">
+                                                        <button class="btn-sm"><i class="fa fa-camera"></i></button>
+                                                        <button class="btn-sm"><i class="fa fa-images"></i></button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <!-- <button class="btn-close"><i class="fa fa-times"></i></button> -->
+                                                <div class="attach m-0">
+                                                    <div class="btn-area">
+                                                        <button class="btn-sm"><i class="fa fa-camera"></i></button>
+                                                        <button class="btn-sm"><i class="fa fa-images"></i></button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div><!-- // grid-wrap -->
+                                </div><!-- // grid-gallery -->
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+            <div class="btn-area">
+                <button class="btn -primary block">확인</button>
+            </div>
+        </div>
+            
+    </main>
+</div>
+    
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+<!--<script src="../../js/imagesloaded.pkgd.min.js"></script>
+<script src="../../js/masonry.pkgd.min.js"></script>
+<script src="../../js/classie.js"></script>
+<script src="../../js/cbpGridGallery.js"></script>
+<script>
+    new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
+</script>-->
+    
+</body>
+</html>
