@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>KT MOA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="shortcut icon" href="/images/favicon.ico">
+
+<!-- 기존 css -->
+<link rel="stylesheet" type="text/css" href="./css/style.css">
+<link rel="stylesheet" type="text/css" href="./css/resetting.css">
+<link rel="stylesheet" type="text/css" href="./css/dialog.css">
+<link rel="stylesheet" type="text/css" href="./css/wireless.css">
+
+<link href="./css/popup.css" rel="stylesheet" type="text/css">  <!--20220621-->
+
+<!-- tui css -->
+<link rel="stylesheet" type="text/css" href="./css/tui-pagination.css">
+<link rel="stylesheet" type="text/css" href="./css/tui-grid.css">
+<link rel="stylesheet" type="text/css" href="./css/tui-time-picker.css">
+<link rel="stylesheet" type="text/css" href="./css/tui-date-picker.css">
+<link rel="stylesheet" type="text/css" href="./css/toastui-select-box.css">
+
+<!-- toggle css -->
+<link rel="stylesheet" type="text/css" href="./css/simple-sidebar.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+
+<!-- Bootstrap core CSS -->
+
+<!-- FILEUPLOAD -->
+<link rel="stylesheet" type="text/css" href="./css/jquery.fileupload.css">
+<link rel="stylesheet" type="text/css" href="./css/jquery.fileupload-ui.css">
+
+<!-- 기존 js -->
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/script.js"></script>
+<script type="text/javascript" src="./js/scripts.js"></script>
+<script type="text/javascript" src="./js/jquery.nicescroll.js"></script>
+
+<script type="text/javascript" src="./js/main.js"></script>
+<script type="text/javascript" src="./js/common-functions.js"></script>
+
+<!-- tui js -->
+<script type="text/javascript" src="./js/tui-pagination.js"></script>
+<script type="text/javascript" src="./js/tui-grid.js"></script>
+<script type="text/javascript" src="./js/tui-code-snippet.js"></script>
+<script type="text/javascript" src="./js/tui-time-picker.js"></script>
+<script type="text/javascript" src="./js/tui-date-picker.js"></script>
+<script type="text/javascript" src="/js/tui-date-picker-ko.js"></script>
+<script type="text/javascript" src="./js/tui-calendar.js"></script>
+<script type="text/javascript" src="./js/toastui-select-box.js"></script>
+<!-- <script type="text/javascript" src="/grid/device_5glte3g_list_grid.js"></script> -->
+<script>
+const Grid = tui.Grid;
+Grid.applyTheme('default', {
+    outline: {
+        border: '#e0e0e0'
+    },
+    cell: {
+        normal: {
+            background: '#fff',
+            border: '#e0e0e0',
+            color: '#666666'
+        },
+        header: {
+            background: '#f4f4f4',
+            border: '#e0e0e0'
+        },
+        evenRow: {
+            background: '#fff',
+            border: '#e0e0e0',
+            color: '#666666'
+        },
+        oddRow: {
+            background: '#fff',
+            border: '#e0e0e0',
+            color: '#666666'
+        }
+    }
+}); // Call API of static
+</script>
+<style type="text/css" id="tui-grid-theme-style">
+    .tui-grid-border-line-top{border-top:1px solid #e0e0e0}
+    .tui-grid-no-scroll-x .tui-grid-border-line-bottom{border-bottom:1px solid #e0e0e0}.tui-grid-frozen-border{background-color:#aaa}
+    .tui-grid-container ::-webkit-scrollbar{background-color:#fff}.tui-grid-container ::-webkit-scrollbar-thumb{background-color:#ddd}
+    .tui-grid-container ::-webkit-scrollbar-thumb:hover{background-color:#ddd;}
+    .tui-grid-container{scrollbar-3dlight-color:#fff;scrollbar-darkshadow-color:#fff;scrollbar-track-color:#fff;scrollbar-shadow-color:#fff;
+        scrollbar-face-color:#ddd;scrollbar-highlight-color:#ddd;scrollbar-arrow-color:#ddd;}
+    .tui-grid-border-line-bottom{border-bottom:1px solid #eee}
+    .tui-grid-content-area{border-color:#eee}.tui-grid-scrollbar-y-inner-border{background-color:#eee}
+    .tui-grid-scrollbar-y-outer-border{background-color:#eee}
+    .tui-grid-scrollbar-right-top{background-color:#f9f9f9;border-color:#eee}
+    .tui-grid-scrollbar-right-bottom{background-color:#f9f9f9;border-color:#eee}
+    .tui-grid-scrollbar-left-bottom{background-color:#f9f9f9;border-color:#eee}
+    .tui-grid-scrollbar-frozen-border{background-color:#f9f9f9;border-color:#eee}
+    .tui-grid-height-resize-handle{background-color:#fff;border-color:#fff}
+    .tui-grid-pagination{background-color:transparent;border-color:transparent}
+    .tui-grid-layer-selection{background-color:#00A9ff;border-color:#00a9ff}
+    .tui-grid-header-area{background-color:#fff;border-color:#ccc}
+    .tui-grid-body-area{background-color:#fff}.tui-grid-summary-area{background-color:#fff;border-color:#eee}
+    .tui-grid-has-summary-top .tui-grid-body-area{border-color:#eee}
+    .tui-grid-cell{background-color:#fff;border-color:#e0e0e0;border-left-width:0;border-right-width:0;border-top-width:1px;border-bottom-width:1px;color:#333}
+    .tui-grid-cell-editable{background-color:#fff}.tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-header-area .tui-grid-table{border-right-style:solid}
+    .tui-grid-cell-header{background-color:#f4f4f4;border-color:#e0e0e0;border-left-width:1px;border-right-width:1px;border-top-width:1px;border-bottom-width:1px;color:#222}
+    .tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-body-area .tui-grid-table{border-right-style:hidden}
+    .tui-grid-cell-row-header{background-color:#fff;border-color:#eee;border-left-width:0;border-right-width:0;border-top-width:1px;border-bottom-width:1px;color:#333}
+    .tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-summary-area .tui-grid-table{border-right-style:hidden}
+    .tui-grid-cell-summary{background-color:#fff;border-color:#eee;border-left-width:0;border-right-width:0;color:#333}
+    .tui-grid-cell-required{background-color:#fffdeb}
+    .tui-grid-cell-disabled{background-color:#f9f9f9;color:#c1c1c1}
+    .tui-grid-cell-invalid.tui-grid-cell{background-color:#ffe5e5}
+    .tui-grid-cell-header.tui-grid-cell-selected{background-color:#e5f6ff}
+    .tui-grid-cell-row-header.tui-grid-cell-selected{background-color:#e5f6ff}
+    .tui-grid-layer-focus-border{background-color:#00a9ff}.tui-grid-layer-editing{border-color:#00a9ff}
+    .tui-grid-layer-focus-deactive .tui-grid-layer-focus-border{background-color:#aaa}
+    .tui-grid-row-odd>td{background-color:#fff}.tui-grid-row-even>td{background-color:#fff}.tui-grid-cell-dummy{background-color:#fff}
+</style>
+</head>
+
+<body>
+<script>
+    $(function(){
+        //팝업창 열기
+        $(".openLayerPopup").on("click", function(e) {
+            e.preventDefault();
+            $(".layerpopupWrapper").show();
+            $(".mask").fadeIn(150);
+        });
+
+        //팝업창 닫기
+        $(".btnClose").on("click", function(e) {
+            e.preventDefault();
+            $(".layerpopupWrapper").hide();
+            $(".mask").fadeOut(150);
+        });
+    });
+</script>
+<script>
+    function fn_close() {
+        $(".layerpopupWrapper").hide();
+        $(".mask").fadeOut(150);
+    }
+</script>
+<script>
+    $(function(){
+        $("input[name='test']").click(function () {
+            $('#divshow').css('display', ($(this).val() === 'a') ? 'block':'none');
+        });
+    });
+    
+</script>
+<div class="mask" style="display: block;"></div>
+<div class="layerpopupWrapper" style="display: block; top:10%; left:50%;">
+    <div class="layerpopupArea" style="width:400px;">
+        <a class="btnClose" href="#btnClose"><i class="fas fa-times fa-lg" style="color:#999;"></i></a>
+        <div class="layerPopupContent">
+            <div class="d-flex space-between a-item p-b-5 b-bottom-block">
+                <h5>5G/LTE_출력 3</h5>
+            </div>
+            <div class="previousInfo p-m">
+                <div class="box bo-none d-flex space-between a-item m-t-5">
+                    <label class="styled">
+                        <input type="radio" name="test" value="">
+                        <span class="fs13">양호</span>
+                    </label>
+
+                    <label class="styled">
+                        <input type="radio" name="test" value="a" checked>
+                        <span class="fs13">불량</span>
+                    </label>
+
+                    <label class="styled">
+                        <input type="radio" name="test" value="">
+                        <span class="fs13">해당없음</span>
+                    </label>
+                </div>
+                <!--세부 항목 출력 내용-->
+                <div id="divshow" class="m-t-10" style="display: block;" alt="세부 항목 출력 내용">
+                    <div class="m-b-10">
+                        <label class="form-label d-none">장비</label>
+                        <select class="type-2">
+                            <option value="">장비를 선택하세요</option>
+                            <option value="SISL00000001">SISL00000001</option>
+                            <option value="SISL00000002">SISL00000002</option>
+                            <option value="SISL00000003">SISL00000003</option>
+                            <option value="SISL00000004">SISL00000004</option>
+                            <option value="SISL00000005">SISL00000005</option>
+                            <option value="SISL00000006">SISL00000006</option>
+                            <option value="SISL00000007">SISL00000007</option>
+                            <option value="SISL00000008">SISL00000008</option>
+                            <option value="SISL00000009">SISL00000009</option>
+                            <option value="SISL00000010">SISL00000010</option>
+                        </select>
+                    </div>
+                    <div class="m-b-5">
+                        <label class="form-label fs13">불량 세부</label>
+                        <div style="overflow-y: auto; height: 380px; padding: 5px 0;">
+                            <div class="p-rel interval b-b-1 b-t-1">
+                                <div class="f-r m-b-5">
+                                    <button id="" class="btn" type="button" onclick="">삭제</button>
+                                </div>
+                                <div class="m-b-5 d-flex-between clear">
+                                    <span class="w-20 fs13">장비명</span>
+                                    <input type="text" class="form-control disabled" value="강남구중고차매매단지(3층) A" disabled>
+                                </div>
+                                <div class="m-b-5 d-flex-between">
+                                    <span class="w-20 fs13">장비ID</span>
+                                    <input type="text" class="form-control disabled" value="SISL00000002" disabled>
+                                </div>
+                                <div class="d-flex-between">
+                                    <textarea class="textarea scroll m-t-5 Text" placeholder="불량 내용을 입력하세요"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="p-rel interval b-b-1">
+                                <div class="f-r m-b-5">
+                                    <button id="" class="btn" type="button" onclick="">삭제</button>
+                                </div>
+                                <div class="m-b-5 d-flex-between clear">
+                                    <span class="w-20 fs13">장비명</span>
+                                    <input type="text" class="form-control disabled" value="강남구중고차매매단지(3층) B" disabled>
+                                </div>
+                                <div class="m-b-5 d-flex-between">
+                                    <span class="w-20 fs13">장비ID</span>
+                                    <input type="text" class="form-control disabled" value="SISL00000020" disabled>
+                                </div>
+                                <div class="d-flex-between">
+                                    <textarea class="textarea scroll m-t-5 Text" placeholder="불량 내용을 입력하세요"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--//세부 항목 출력 내용-->
+            </div>
+
+            <div class="text-center m-t-20 d-flex">
+                <button class="btn btn-sm w-50 m-r-5 primary" onclick="" type="button">적용</button>
+                <button class="btn btn-sm w-50 gray" onclick="fn_close();" type="button">취소</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar" class="nav-collapse">
+        <button id="menu-toggle"><i class="fas fa-bars"></i></button>
+        <div class="user-bg">
+            <div class="brand">
+                <img src="./images/logo.png" alt="KTmos wMMS">
+            </div>
+            <div class="user-area">
+                <div class="user-name">
+                	<span style="width: 60%;word-break:break-all;word-wrap:break-word;float: left;">관리자 님</span>
+                	<span class="area-badge">북부</span>
+                </div>
+                <div class="user-btn m--3" style="margin-top: 35px;">
+                    <li><a href="javascript:void(0);" onclick="fn_modify(this)">정보수정</a></li>
+                    <li><a href="javascript:void(0);" onclick="fn_logout(this);">로그아웃</a></li>
+                </div>
+            </div>
+        </div>
+        <!-- 메뉴 표시 -->
+        <ul class="sidebar-menu" id="nav-accordion">
+            <li class="sub-menu"><a href="javascript:showSub1('M01S01')">인수시험관리<span class="dcjq-icon"></span></a>
+                <ul class="sub" id="subMenuM01S01" style="display: none;">
+                    <li><a href="/acceptcheck/list/M01S01" id="" class="" target="">인수시험정보조회</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu"><a href="javascript:showSub1('M02S01')">국소정보<span class="dcjq-icon"></span></a>
+                <ul class="sub" id="subMenuM02S01" style="display:none;">
+                    <li><a href="/device/5glte3g/list/M02S01" id="" class="" target="">국소정보조회-5G/LTE/3G</a></li>
+                    <li><a href="/device/repeater/list/M02S02" id="" class="" target="">국소정보조회-중계기</a></li>
+                    <li><a href="/device/wifi/list/M02S03" id="" class="" target="">국소정보조회-WiFi</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu"><a href="javascript:showSub1('M03S01')">정기점검<span class="dcjq-icon"></span></a>
+                <ul class="sub" id="subMenuM03S01" style="display: block;">
+                    <li><a href="/regularinspection/list/M03S01" id="" class="active" target="">정기점검조회</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu"><a href="javascript:showSub1('M04S01')">전기안전점검<span class="dcjq-icon"></span></a>
+                <ul class="sub" id="subMenuM04S01" style="display: none;">
+                    <li><a href="/electricsafety/plan/list/M04S01" id="" class="" target="">계획관리</a></li>
+                    <li><a href="/electricsafety/inspection/list/M04S02" id="" class="" target="">점검관리</a></li>
+                    <li><a href="/electricsafety/result/list/M04S03" id="" class="" target="">대응결과조회</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu"><a href="javascript:showSub1('M05S01')">위험국소<span class="dcjq-icon"></span></a>
+                <ul class="sub" id="subMenuM05S01" style="display: none;">
+                    <li><a href="/dangerinspection/list/M05S01" id="" class="" target="">위험국소조회</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu"><a href="#none">아차사고<span class="dcjq-icon"></span></a>
+                <ul class="sub" id="" style="display: none;">
+                    <li><a href="#none" id="" class="active" target="">아차사고조회</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu"><a href="javascript:showSub1('M06S01')">부대시설<span class="dcjq-icon"></span></a>
+                <ul class="sub" id="subMenuM06S01" style="display: none;">
+                    <li><a href="/additionalfacilities/list/M06S01" id="" class="" target="">부대시설점검조회</a></li>
+                </ul>
+            </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M07S01')">긴급복구물자관리<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM07S01" style="display: none;">
+                        <li><a href="/emergencymaterial/status/M07S01" id="" class="" target="">긴급복구현황표</a></li>
+                        <li><a href="/emergencymaterial/master/list/M07S02" id="" class="" target="">긴급복구물자</a></li>
+                        <li><a href="/emergencymaterial/history/list/M07S03" id="" class="" target="">긴급복구물자사용</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M09S01')">안전용품관리<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM09S01" style="display: none;">
+                        <li><a href="/item-safety/status/M09S01" id="" class="" target="">현황표</a></li>
+                        <li><a href="/item-safety/list/M09S02" id="" class="" target="">안전용품등록</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M15S01')">현장수시업무<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM15S01" style="display: none;">
+                        <li><a href="/onsite/list/M15S01" id="" class="" target="">현장수시업무현황</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M08S01')">Safe365<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM08S01" style="display: none;">
+                        <li><a href="/safe365/safety/list/M08S01" id="" class="" target="">안전점검 체크 리스트</a></li>
+                        <li><a href="/safe365/highcar/list/M08S02" id="" class="" target="">고소작업차 사용 작업 계획서</a></li>
+                        <li><a href="/safe365/aerial/list/M08S03" id="" class="" target="">고소작업차 작업 전 점검표</a></li>
+                        <li><a href="/safe365/status/M08S04" id="" class="" target="">현장 안전점검 현황</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M14S01')">작업중지권<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM14S01" style="display: none;">
+                        <li><a href="/stopwork/list/M14S01" id="" class="" target="">작업중지권 조회</a></li>
+                        <li><a href="/stopwork/apply/list/M14S02" id="" class="" target="">작업중지권 승인관리</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M16S01')">현장업무지원<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM16S01" style="display: none;">
+                        <li><a href="/support/acs/list/M16S01" id="" class="" target="">ACS</a></li>
+                        <li><a href="/support/rsa/list/M16S02" id="" class="" target="">RSA</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M11S01')">예비품관리<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM11S01" style="display: none;">
+                        <li><a href="/spare/list/M11S01" id="" class="" target="">예비품관리</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M10S01')">업로드관리<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM10S01" style="display: none;"><li><a href="/device/5glte3g/excel/list/M10S01" id="" class="" target="">국소정보업로드-5G/LTE/3G</a></li>
+                        <li><a href="/device/repeater/excel/list/M10S02" id="" class="" target="">국소정보업로드-중계기</a></li>
+                        <li><a href="/device/wifi/excel/list/M10S03" id="" class="" target="">국소정보업로드-WIFI</a></li>
+                        <li><a href="/device/acceptcheck/excel/list/M10S04" id="" class="" target="">인수시험</a></li>
+                        <li><a href="/device/regularinspection/excel/list/M10S05" id="" class="" target="">정기점검</a></li>
+                        <li><a href="/device/regularinspection_riu/excel/list/M10S06" id="" class="" target="">정기점검 RIU</a></li>
+                        <li><a href="/device/regularinspection_du/excel/list/M10S07" id="" class="" target="">정기점검 DU</a></li>
+                        <li><a href="/device/regularinspection_wifi/excel/list/M10S08" id="" class="" target="">정기점검 WiFi</a></li>
+                        <li><a href="/device/additionalfacilities/excel/list/M10S09" id="" class="" target="">부대시설점검</a></li>
+                        <li><a href="/device/electricsafety/excel/list/M10S10" id="" class="" target="">전기안전점검 계획</a></li>
+                        <li><a href="/device/dangerstation/excel/list/M10S11" id="" class="" target="">위험국소</a></li>
+                        <li><a href="/device/emergencymaterial/excel/list/M10S12" id="" class="" target="">긴급복구물자 사용</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M13S01')">대시보드<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM13S01" style="display: none;">
+                        <li><a href="/dashboard/inspection/M13S01" id="" class="" target="_blank">정기점검 현황</a></li>
+                        <li><a href="/dashboard/accept/M13S02" id="" class="" target="_blank">인수시험 현황</a></li>
+                        <li><a href="/dashboard/danger/M13S03" id="" class="" target="_blank">위험국소 현황</a></li>
+                        <li><a href="/dashboard/setting/list/M13S04" id="" class="" target="">모수관리</a></li>
+                    </ul>
+                </li>
+        </ul>
+        <!--</div>-->
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <link rel="stylesheet" type="text/css" href="./css/multifreezer.css">
+    <script type="text/javascript" src="./js/multifreezerStandalone.js"></script>
+    <!-- Page Content -->
+<div id="page-content-wrapper">
+    <section class="wrapper">
+        <h1 id="page_tit">정기점검 관리 <span class="sub_tit"> 상세페이지 </span></h1>
+        <form id="deviceDetail" name="deviceDetail">
+            <input type="hidden" id="page" name="page" value="">
+            <input type="hidden" id="perPage" name="perPage" value="">
+            <input type="hidden" id="uniqueNo" name="uniqueNo" value="S5G0000012">
+            <input type="hidden" id="deviceType" name="deviceType" value="RU">
+        
+            <div class="group-section m-t-15">
+                <div class="title">점검내역</div>
+                <div class="f-r m-b-10">
+                    <button id="btnWordDownload" class="btn btn-md blue" onclick="fn_WordDownload();">다운로드</button>
+                </div>
+                <table class="hit hit-p">
+                    <colgroup>
+                        <col width="150">
+                        <col width="170"><col>
+                        <col width="170"><col>
+                        <col width="170"><col>
+                        <col width="170"><col>
+                    </colgroup>
+                    <tbody>
+                        <!-- 장비정보 -->
+                        <tr>
+                            <th rowspan="2" scope="row" class="th">SITE 정보</th>
+                            <th>SITE ID</th>
+                            <td colspan="7">S5G0231319</td>
+                            <!-- <th>장비Category</th> -->
+                            <!-- <td>5G</td>
+                            <th>장비TYPE</th>
+                            <td>RU</td>
+                            <th>네트워크단</th>
+                            <td>강남/서부NW운용본부</td> -->
+                        </tr>
+                        <tr>
+                            <th>네트워크단</th>
+                            <td>강원무선운용센터</td>
+                            <th>운용팀</th>
+                            <td>강원무선운용센터 영동엔지니어링팀</td>
+                            <th>운용본부</th>
+                            <td>강원본부</td>
+                            <th>센터</th>
+                            <td>강원T</td>
+                        </tr>
+                        <!-- <tr>
+                            <th>장비명</th>
+                            <td>암사_남양빌딩_64T_A</td>
+                            <th>위치코드</th>
+                            <td>B0000102447RF1000</td>
+                            <th></th>
+                            <td></td>
+                            <th></th>
+                            <td></td>
+                        </tr> -->
+                        <tr height="8"></tr>
+                        <!-- 주소정보 -->
+                        <tr>
+                            <th rowspan="2" scope="row" class="th">주소정보</th>
+                            <th>우편번호</th>
+                            <td>4215013100</td>
+                            <th>도로명주소</th>
+                            <td>강원도 강릉시 죽전길 7</td>
+                            <th>시/도</th>
+                            <td>강원도</td>
+                            <th>시/군/구</th>
+                            <td>강릉시</td>
+                        </tr>
+                        <tr>
+                            <th>읍/면/동</th>
+                            <td>유천동</td>
+                            <th>번지</th>
+                            <td>413</td>
+                            <th>상세주소</th>
+                            <td colspan="3">[네비일치]강릉대학교 인문관 옥상</td>
+                        </tr>
+                        <tr height="8"></tr>
+    
+                        <!-- 품질 및 성능 -->
+                        <tr>
+                            <th rowspan="5" scope="row" class="th">품질 및 성능</th>
+                            <th>5G/LTE_출력1</th>
+                            <td colspan="3">
+                                <a href="#none">불량</a><br>
+                                <a href="#none">장비ID/장비명/내용</a><br>
+                                <a href="#none">장비ID/장비명/내용</a>
+                            </td>
+                            <!-- <th>5G/LTE_출력2</th>
+                            <td><a href="#none">양호</a></td> -->
+                            <th>5G/LTE_출력2</th>
+                            <td colspan="3"><a href="#none">양호</a></td>
+                            <!-- <th>5G/LTE_출력2</th>
+                            <td><a href="#none">양호</a></td> -->
+                        </tr>
+                        <tr>
+                            <th>5G/LTE_출력3</th>
+                            <td colspan="3"></td>
+                            <th>중계기2.1G_출력</th>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <th>중계기1.8G_출력</th>
+                            <td colspan="3"></td>
+                            <th>중계기900M_출력</th>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <th>광레벨</th>
+                            <td colspan="3"></td>
+                            <th>VSWR</th>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <th>호 시험(RSRP, SINR, TX_ADJ, DL, UL 등)</th>
+                            <td colspan="7">4</td>
+                        </tr>
+                        <tr height="8"></tr>
+    
+                        <!-- 시설 -->
+                        <tr>
+                            <th rowspan="4" scope="row" class="th">시설 및 환경</th>
+                            <th>장비상태</th>
+                            <td colspan="3"></td>
+                            <th>전원상태(분전반 등)</th>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <th>케이블상태</th>
+                            <td colspan="3"></td>
+                            <th>공단자함상태</th>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <th>축전지상태</th>
+                            <td colspan="3"></td>
+                            <th>철탑상태</th>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <th>접지상태</th>
+                            <td colspan="3"></td>
+                            <th>누수/낙수 점검 및 방지 조치</th>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr height="8"></tr>
+                        <!-- 취약시설 -->
+                        <tr>
+                            <th rowspan="3" scope="row" class="th">취약시설</th>
+                            <th>추락 위험성</th>
+                            <td colspan="3"></td>
+                            <th>토사, 구축 등 붕괴 위험성</th>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <th>천재지변 시 위험성 발생 여부</th>
+                            <td colspan="3"></td>
+                            <th>폭발성,발화성 및 인화성 물질 위험성</th>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <th>물체 낙하 위험성</th>
+                            <td colspan="3"></td>
+                            <th>기계, 기구, 그 밖의 설비 위험성</th>
+                            <td colspan="3"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+            </form>
+
+            <!--정기점검 이력-->
+            <div class="group-section m-t-40" style="overflow: hidden;">
+                <div class="title">정기점검 이력</div>
+                <div class="f-r m-b-10">
+                    <button type="button" id="btnXlsDownload" class="btn btn-md green" onclick="">다운로드</button>
+                    <button type="button" id="btnXlsDownload" class="btn btn-md green" onclick="">다운로드(사진포함)</button>
+                </div>
+            </div>
+
+            <!-- 사진 정보  -->
+            <div class="group-section m-t-40" style="overflow: hidden;">
+                <div class="title m-b-10">사진 업로드 정보</div>
+                <div style="clear:both">
+                <div class="row fileupload-buttonbar">
+                <div class="clear d-flex p-rel">
+                <label for="upload-btn" class="btn-file btn">파일업로드</label>
+                <input type="file" class="btn" name="file" id="file" data-url="/device/image/upload/NRSL00434S/5G/C10">
+        
+                <label for="upload-btn" class="btn-file btn" style="margin-left:10px;" onclick="">일괄 다운로드</label>
+                </div>
+        
+            </div>
+        
+            <!-- 장비사진  -->
+            <div class="group-section m-t-40" style="overflow: hidden;">
+                <div class="title m-b-10">장비 사진</div>
+                <div class="product-area">
+                    <ul class="card-gallery"><li class="card border"><div class="img image-link">    <img src="./images/img-no.jpg" alt="img"></div><div class="card-body">    <p class="card-text"></p>    <a class="btn primary">다운로드</a>    <a class="btn">삭제</a></div></li></ul>
+                    <div class="btn-area">
+                        <button class="btn btn-default btn-red" onclick="">미완료</button>
+                        <button class="btn btn-default gray" onclick="">임시저장</button>
+                        <button class="btn btn-default primary" onclick="edit();">수정</button>
+                        <button class="btn btn-default gray" onclick="window.close();">닫기</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+    </section>
+</div>
+<!-- /#page-content-wrapper -->
+</div>
+</body>
+</html>
