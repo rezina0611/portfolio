@@ -1,0 +1,213 @@
+@keyframes swing {
+    0%   {transform: rotate(0deg);}
+    10%  {transform: rotate(10deg);}
+    30%  {transform: rotate(0deg);}
+    40%  {transform: rotate(-10deg);}
+    50%  {transform: rotate(0deg);}
+    60%  {transform: rotate(5deg);}
+    70%  {transform: rotate(0deg);}
+    80%  {transform: rotate(-5deg);}
+    100% {transform: rotate(0deg); }
+}
+
+.page-wrapper.toggled .sidebar-wrapper {left: 0px;}
+.page-wrapper.toggled .page-content {
+    padding-left: 280px;
+}
+.sidebar-wrapper {
+    width: 280px;
+    height: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: -320px;
+    z-index: 99;
+    background: #fff;
+    box-shadow: 0 0 5px 0 rgb(0 0 0 / 10%), 5px 0 5px 0 rgb(0 0 0 / 5%);
+}
+.sidebar-header, .sidebar-search, .sidebar-menu {
+    border-top: 1px solid #ddd;
+}
+.sidebar-content {
+  min-height:100vh ;
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+}
+
+#sidebar .sidebar-search > div {
+    padding: 1rem 2rem;
+}
+.input-group .search-menu {
+    position: relative;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    width: 1%;
+    margin-bottom: 0;
+}
+
+.input-group {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+}
+.input-group-append {
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: -1px;
+    cursor: pointer;
+}
+.sidebar-search .input-group {
+    border-radius: 4px;
+    border:1px solid #ddd;
+    height: 42px; 
+}
+.sidebar-search .input-group:hover {
+    border:1px solid #E30613;
+}
+.sidebar-search .input-group input {
+    border-radius: 4px;
+    padding: 0 8px;
+}
+.input-group-text {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding:.8rem;
+    margin-bottom: 0;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 0.25rem;
+}
+
+.sidebar-wrapper .sidebar-header {
+    padding: 1.6rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sidebar-wrapper .sidebar-header span strong {
+    font-weight: bold;
+    margin-left: 0.4rem;
+}
+
+.sidebar-wrapper .sidebar-menu {}
+.sidebar-wrapper .sidebar-menu > ul > li {
+    border-bottom: 1px solid #eee;
+}
+.sidebar-wrapper .sidebar-menu ul li a {
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    position: relative;
+    padding: 1.2rem 2.4rem 1.2rem 2rem;
+}
+
+.sidebar-wrapper .sidebar-menu ul li a i {
+  margin: 0.4rem 0.8rem  ;
+  font-size: 1rem;
+}
+.sidebar-wrapper .sidebar-menu ul li a:hover > i::before {
+    display: inline-block;
+    animation: swing ease-in-out 0.5s 1 alternate;
+}
+.sidebar-wrapper .sidebar-menu .sidebar-dropdown > a:after {
+    font-family: "FontAwesome";
+    content: "\f078";
+    font-style: normal;
+    display: inline-block;
+    font-variant: normal;
+    text-rendering: auto;
+    position: absolute;
+    right: 15px;
+    top: 16px;
+    font-size: 1.4rem;
+}
+.sidebar-wrapper .sidebar-menu .sidebar-dropdown.active > a:after {
+    transform: rotate(180deg);
+}
+
+#sidebar .sidebar-menu .sidebar-dropdown .sidebar-submenu {
+    background: rgba(39,39,43,.04);
+}
+.case-title {
+    line-height: 1.4;
+}
+.case-title h2 {
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+.sidebar-updown .case-title h2,
+.sidebar-menu .case-title h2{
+    font-size: 14px
+}
+
+.case-title.pd20 {
+    padding:1.2rem 2rem;
+}
+.case-title h5 {
+    font-weight: bold;
+    font-size: 1.4rem;
+    opacity: 0.8;
+}
+.case-title span {
+    font-size: 1.4rem;
+}
+
+.sidebar-wrapper .sidebar-menu .sidebar-dropdown.active > a span {
+    color: #393B44;
+}
+.sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu ul {
+    padding: .8rem 0;
+}
+
+.sidebar-submenu ul > li {
+    padding: .6rem 2.2rem;
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+.sidebar-wrapper .sidebar-menu .sidebar-submenu {
+    display: none;
+}
+.sidebar-submenu ul > li h5 {
+    font-weight: 700;
+}
+
+
+/*--------------------------page-content-----------------------------*/
+
+.page-wrapper .page-content {
+  display: inline-block;
+  width: 100%;
+  padding-left: 0px;
+}
+.page-wrapper .page-content > div {
+  padding: 2rem 4rem
+}
+.page-wrapper .page-content {overflow-x: hidden;}
+
+.map-sort-area ul {
+    display: flex;
+    flex-direction: row;
+}
+.map-sort-area ul li + li {
+    margin-left: 1rem;
+}
+.map-sort-area ul li select{
+    border-radius: 4px;
+    background-color: #fff;
+    padding: .6rem 1.2rem;
+}
+
+
+

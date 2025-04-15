@@ -1,0 +1,54 @@
+
+/* 약관 2021-12-14 */
+
+.terms {}
+.terms .box{
+	margin: 2rem 0;
+	font-size: 1.3rem;
+}
+.terms .box > h4{
+	font-size: 1.4rem;
+	margin-bottom: 1.2rem;
+	color: #333;
+}
+.terms .box > .bd-1{
+	padding: 1rem;
+	border:1px solid #e7e7e7;
+	border-radius: 4px;
+	letter-spacing: -0.5px;
+	color: #555;
+}
+.terms .box > .bd-1 > p + p{
+	margin-top: .6rem
+}
+.terms ul li {
+	line-height: 1.5;
+}
+.terms ul li + li {
+	margin-top: .6rem
+}
+.terms ul li > ul{
+	padding-left: .8rem;
+}
+.terms .num-list {
+	margin:1rem 0 0 1.6rem;
+}
+.terms .num-list > li {
+	list-style: decimal;
+}
+.terms .hyphen-list {
+	margin: 1rem 0 0 1rem;
+}
+.terms .hyphen-list li:before{
+	content: "-";
+	margin-right: 8px;
+}
+
+.m-0 {
+	margin: 0 !important;
+}
+
+
+
+
+

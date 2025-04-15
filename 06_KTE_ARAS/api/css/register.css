@@ -1,0 +1,1259 @@
+
+/* 등록 단계별 상태 2022-10-19 */
+.steps-wrapper {
+    margin: 1.6rem 0;
+}
+.steps {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.steps:after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 12%;
+    left:14%;
+    width: 72%;
+    height: 4px;
+    background: rgba(0 0 0 / 12%);
+}
+.steps li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 33.3%;
+    padding: 0 0 1rem;
+    z-index: 1;
+}
+.steps li:before{
+    content: '';
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    background: #ddd;
+    margin-bottom: .8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.steps li .step {
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+    font-weight: bold;
+    color: #ddd;
+}
+.steps li.active .step {
+    color:#3879E9;
+}
+.steps li.active:before {
+    background:#3879E9;
+}
+.steps li.done .step {
+    color:#999;
+}
+.steps li.done:before {
+    background:#999;
+    font-family: "FontAwesome";
+	content: "\f00c";
+    color: #fff;
+    font-size: 1.2rem;
+}
+.steps.wide {
+    margin: 0 -1rem;
+}
+
+
+
+
+/*일일안전활동보고 등록 2022-10-19*/
+form.register {
+    margin: 1.2rem 0 6rem;
+}
+form.register > .d-flex, 
+form.register fieldset.d-flex {
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: .8rem;
+}
+form.register fieldset label{
+    display: block;
+    color: #666;
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: -0.02em;
+    /*white-space: nowrap;*/
+}
+form.register fieldset label.txt-white{
+    white-space:normal;
+    margin: .5rem 0 0 0;
+    line-height: 1.4;
+}
+form.register .d-flex .input-tb{
+    /*width: 20rem;*/
+    width: 70%;
+    /* text-align: end; */ 
+    text-align: left;
+}
+form.register .d-block > .search-area {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border:1px solid #ddd;
+    border-radius: 4px;
+    /*padding: 0 .6rem;*/
+}
+form.register .d-block > label {
+    margin-bottom: .8rem;
+}
+form.register .d-block .search-area > input {
+    width: 100%;
+    border:0;
+    height: 3.4rem;
+    padding:0 .6rem;
+}
+form.register .d-block > .input-tb{
+    width: 100%;
+}
+form.register .d-block .add-btn {
+    content: '';
+    background: url("../images/icon/ico_plus.png") no-repeat center center / cover;
+    width: 2.4rem;
+    height: 2.4rem;
+    display: inline-block;
+}
+form.register .d-block .minus-btn {
+    content: '';
+    background: url("../images/icon/ico_minus.png") no-repeat center center / cover;
+    width: 2.4rem;
+    height: 2.4rem;
+    display: inline-block;
+}
+form.register label + textarea{
+    margin-top: 0;
+}
+
+.photo-btn-group {
+    background: rgba(221 221 221 / 20%);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    height: 5.4rem;
+}
+.photo-btn-group > button {
+    color: #444;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.photo-btn-group > button + button {
+    border-left:1px solid #ddd;
+}
+.photo-btn-group > button:before {
+    width: 2.4rem;
+    height: 2.4rem;
+    display: block;
+    margin-right: 1.2rem;
+    content: '';
+}
+.photo-btn-group .camera:before{
+    background: url("../images/icon/ico_camera.png") no-repeat center center / cover;
+}
+.photo-btn-group .album:before{
+    background: url("../images/icon/ico_photo.png") no-repeat center center / cover;
+}
+
+.btn.c-yellow {
+    color: #D58300;
+    background: rgba(227 163 19 / 20%);
+}
+.btn.c-blue {
+    color: #3879E9;
+    background: rgba(56 121 233 / 20%);
+}
+
+form .btn.c-blue{
+    border-radius: 4px;
+}
+
+.top.btn-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    position: relative !important;
+}
+.ico-btn.btn-delete {
+    background: rgba(111 111 111 / 20%);
+    width: 3.6rem;
+    height: 3.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    position: inherit;
+}
+.ico-btn.btn-delete > img {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.btn-write {
+    background: rgba(56 121 233 / 20%) url("../images/icon/ico_pen_blue.png") no-repeat left 1rem top 50% / 1.6rem 1.6rem;
+    color: #3879E9;
+    padding: .8rem 1rem .8rem 3.2rem;
+    width: auto !important;
+    border-radius: 4px;
+}
+
+
+/* 수행품질평가 추가 2023-01-18 */
+form.register .d-flex .form-select {
+    width: 70%;
+}
+form.register .d-flex > .search-area {
+    height: 3.6rem;
+    margin: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 .6rem;
+    width: 70%;
+}
+form.register .search-area .search-btn {
+    content: '';
+    border: 0;
+    width: 2.4rem;
+    height: 2.4rem;
+    background: url(../images/icon/ico_search_blue.png) no-repeat 50% 50%/ contain;
+}
+form.register .d-flex > .search-area.disabled {
+    background: #F5F5F5;
+}
+form.register .search-area.disabled .search-btn {
+    background: url("../images/icon/ico_search_grey.png") no-repeat 50% 50%/ contain;
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+form.register .search-area.disabled input {
+    cursor: not-allowed;
+}
+form.register .d-flex > .input_date_box {
+    width: 70%;
+}
+form.register .d-flex > .input_date_box > input {
+    width: 100%;
+}
+form.register .d-flex > input[type="time"] + span,
+form.register .d-flex > input[type="date"] + span {
+    margin: 0 .6rem;
+}
+
+
+/* 수행품질평가 평가 진행 드롭다운 */
+.table-wrapper.PQE .dropdown ul {
+    border: 0;
+}
+.table-wrapper.PQE .dropdown:nth-last-child(1) {
+    border: 0;
+}
+.table-wrapper.PQE details.dropdown[open] {
+    background: #fff;
+}
+.table-wrapper.PQE details.dropdown summary::after {
+	top: calc(50% - 0.35rem);
+    right: .8rem;
+}
+.table-wrapper.PQE details.dropdown[open] summary::after {
+	top: calc(50% - 0.3rem);
+    right: .5rem;
+}
+
+.table-wrapper.PQE .dropdown summary ul{
+    padding: 0;
+}
+.table-wrapper.PQE .dropdown summary .title {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.4;
+    padding: 1rem 2.4rem 1rem 0.2rem;
+    letter-spacing: -0.02em;
+}
+.table-wrapper.PQE details.dropdown[open] summary .title {
+    font-weight: 600;
+}
+.table-wrapper.PQE .check-box {
+    margin-bottom: .8rem;
+}
+.table-wrapper.PQE .check-box > input{
+    display: none;
+}
+.table-wrapper.PQE .check-box label{
+    letter-spacing: -0.02em;
+}
+
+.table-wrapper.PQE .check-box > input + label{
+    justify-content: space-between;
+    align-items: center;
+    border:1px solid #eee;
+    padding: 1.15rem 4rem 1.15rem .8rem;
+    background: url("../images/icon/ico_check_grey.png") no-repeat right 1rem top 50% / 2rem;
+}
+.table-wrapper.PQE .check-box > input + label .score-check {
+    color: #999;
+    font-weight: 600
+}
+.table-wrapper.PQE .check-box > input:checked + label{
+    border:1px solid rgba(56,121,233,.50);
+    background: rgba(56,121,233,.05) url("../images/icon/ico_check_blue.png") no-repeat right 1rem top 50% / 2rem;
+    font-weight: 600;
+}
+.table-wrapper.PQE .check-box > input:checked + label .score-check {
+    color: #3879E9;
+}
+
+.check-box .e-reason {
+    margin-top: .8rem;
+}
+.check-box .e-reason > .btn {
+    width: 100%;
+}
+
+
+form.register .d-block > .btn-sm{
+    margin: .2rem .3rem;
+    padding: 0;
+    border:0;
+    border-radius: .2rem;
+}
+form.register .total {
+    justify-content: space-between;
+    align-items: center;
+    border: solid #666;
+    border-width: 1px 0;
+    padding: 1.4rem .4rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 2rem 0 1rem;
+    box-sizing: border-box;
+}
+form.register .total .score{
+    font-size: 2rem;
+    color: #3879E9;
+}
+form.register .total > hr {
+    height: 1.6rem;
+    width: 1px;
+    border: 1px solid #eee;
+    margin: 0;
+}
+form.register .total > .d-flex {
+    justify-content: space-between;
+    align-items: center;
+    width: 47%;
+}
+
+/* 수행품질평가 평가진행현황 2023-01-18 */
+.block-list li a.w-badge{
+    padding-right: 4.8rem;
+}
+.block-list li a .badge.-primary{
+    right: 1.2rem;
+    top: calc(50% - 1.2rem);
+    background: #3879E9;
+    color: #fff;
+    border:0;
+    width: 2.4rem;
+}
+.block-list li a .n-time{
+    font-size:1.4rem;
+}
+.block-list li a .n-time span:after{
+    content: ",";
+    display: inline-block;
+    margin-right: .6rem;
+}
+.block-list li a .n-time span:nth-last-child(1):after{
+    content:none;
+}
+
+/* 수행품질평가 하단 팝업 2023-01-18 */
+.layer.h60 {
+    height: 60%;
+    bottom:0;
+    background: #fff;
+    top:inherit;
+    box-shadow: 0 0 0 36em rgb(0 0 0 / 20%) !important;
+    max-width: 102.4rem;
+    border-top-left-radius: .8rem;
+    border-top-right-radius: .8rem;
+}
+.layer.h60 > .m-header {
+    box-shadow: 0 0 0;
+    border-radius: .8rem;
+}
+.m-header .layer-tt{
+    margin-left: 1.6rem;
+} 
+.m-header > .btn.btn-close {
+    position: absolute;
+    right: 1.3rem;
+    top: calc(50% - 1.2rem);
+    width: 2.4rem;
+    height: 2.4rem;
+    z-index: 99;
+    background: transparent url(../images/icon/ico_close_grey.png) no-repeat 50% 50% / 20px 20px;
+}
+.layer.h60 > .content, 
+.layer.h60 > .contents {
+    height: calc(60vh - 5.6rem);
+}
+.layer.h60 .search-area{
+    height: 5rem;
+}
+.layer.h60 .board-wrapper{
+    height: 100%;
+    overflow: hidden;
+}
+.layer.h60 .board-list{
+    height: calc(100% - 5rem);
+    overflow-y: auto;
+}
+.layer.h60 .board-list >.item > a {
+    font-size: 1.4rem;
+    padding: 1em;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+}
+.layer.h60 .board-list >.item > a.d-flex span {
+    margin: 0 .4rem;
+}
+.layer .contents .img-full.write {
+    height: 20rem;
+}
+
+/* 수행품질평가 감점사진,사유등록 2023-01-19 */
+form.register .foot-info .desc {
+    height:auto;
+}
+.register .img-full.write .photo-btn-group {
+    position: absolute;
+    width: 80%;
+    left:10%;
+    background: rgba(255 255 255 / 70%);
+    border: 1px dashed #ddd;
+    height: auto;
+    padding: .8rem 0;
+}
+.register .img-full.write .photo-btn-group > button{
+    flex-direction: column;
+    font-size: 1.3rem;
+}
+.register .img-full.write .photo-btn-group > button:before {
+    margin: .4rem 0 1rem;
+}
+.register .img-full.write .photo-btn-group > button + button {
+    border-left: 1px solid #eee;
+}
+
+.register .img-full.write .photo-btn-group .filebox > label,
+.register .img-full.write .photo-btn-group .camerabox > label{
+    flex-direction: column;
+    font-size: 1.3rem;
+    height: auto;
+}
+.register .img-full.write .photo-btn-group .filebox > label:before,
+.register .img-full.write .photo-btn-group .camerabox > label:before{
+    margin: .4rem 0 1rem;
+}
+
+
+
+/* 위험성평가 조회 상세 2023-01-27 */
+.register-detail {
+    margin: 1.2rem 0 6rem;
+}
+.regist-info {
+    background: rgba(0 0 0 / 5%);
+    margin: -.8rem -1em 0;
+    padding: 1rem 1.6rem;
+    position: relative;
+}
+.regist-info p {
+    font-size: 1.4rem;
+    line-height: 1.4;
+}
+.regist-info .date-info {
+    padding-right: 11rem;
+}
+.regist-info > .status {
+    position: absolute;
+    top: 1rem;
+    right: 1.4rem;
+    color: #666;
+}
+.regist-info > .status > span{
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin: 0 .3rem;
+}
+
+.register-detail .sub-tt {
+    font-size: 1.4rem;
+    color: #666;
+    margin: 3rem 0 .8rem;
+}
+
+details.dropdown[open].opn-list {
+	background: #fff;
+}
+.dropdown.opn-list ul {
+    border:0 !important;
+}
+.dropdown ul li.opn {
+    word-break: normal;
+}
+.dropdown ul li.opn + li{
+    margin-top: .6rem;
+}
+.dropdown ul li.opn .sub-tt{
+    margin: 0 0 .4rem;
+    font-weight: 500;
+}
+.dropdown ul li.opn .text-area{
+    border:1px solid #ddd;
+    border-radius: .4rem;
+    padding: 1rem;
+    margin-bottom: .8rem;
+    letter-spacing: -0.02em;
+}
+
+.register-detail .text-area {
+    border:1px solid #ddd;
+    border-radius: .4rem;
+    padding: 1rem;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+}
+.register-detail .text-area.disbled {
+    background: #f5f5f5;
+    color: #999;
+}
+
+.dropdown ul.selet-list {
+    padding-bottom: .8rem;
+}
+.dropdown ul.selet-list li {
+    margin: .4rem 0;
+}
+.dropdown ul.selet-list li label {
+    position: relative;
+    display: flex;
+    padding-left: 3rem; 
+}
+.dropdown ul.selet-list li label > input{
+    position: absolute;
+    top: .1rem;
+    left: .2rem;
+}
+.dropdown ul.selet-list li > select {
+    width: calc(100% - 3rem);
+    height: 3.6rem;
+    box-sizing: border-box;
+    margin: .6rem 0 0 3rem;
+}
+.dropdown .grid-gallery ul {
+    flex-direction: row;
+    margin-bottom: .8rem;
+    margin-top: .8rem;
+}
+.dropdown .grid-gallery .grid.r-2 li{
+    padding: 0;
+    /*height: 16rem;*/
+}
+/* .dropdown .grid-gallery .grid.r-2 li figure{
+    height: 15.5rem;
+} */
+
+
+
+/*han 2023-01-30*/
+/*일일안전활동보고등록- TBM및 안전교육 */
+.list-group{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+    overflow-y: auto;
+}
+.list-group .item{
+    position: relative;
+    display: block;
+    padding: 1.2rem .5rem;
+    color: #222;
+    border: 1px solid #ddd;
+    border-width: 1px 0 0 0;
+    font-size: 1.4rem;
+}
+.list-group .item:last-child{
+    border-width: 1px 0 1px 0;
+}
+.item-row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.item-row .col {
+    flex: 1 0 0%;
+    padding: 0 .5rem;
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column; 
+}
+.item-row .col-auto {
+    flex: 0 0 auto;
+    width: auto;
+    margin-top: .1rem; 
+}
+.item-row strong{
+    font-weight: 600;
+    line-height: 1.4;
+}
+.item-row p {
+    line-height: 1.4;
+}
+.time-area{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.time-area .input-tb{
+    width: 50% !important;
+}
+.time-area span {
+    margin: 0 6px;
+    white-space: pre;
+}
+
+.plr-1{
+    width: auto;
+    padding: 0 .5rem;
+    margin-left: .6rem;
+    font-size: 1.3rem;
+}
+.register .list {
+    padding: .5rem 0 0 2rem;
+}
+.register .list li {
+    list-style: circle;
+    margin: .8rem 0;
+    font-size: 1.4rem;
+    line-height: 120%;
+}
+
+.check-all {
+    padding: .6rem 0 ;
+}
+.check-all > label {
+    font-size: 1.35rem;
+}
+.check-all > label > input[type="checkbox"]  {
+    margin-right: 1rem;
+} 
+.check-list-wrap.entry {
+    /* height: 18rem; */
+	padding: 0 0 .5rem 0;
+    overflow: auto;
+}
+.check-list {
+    width: 100%;
+    display: table;
+    padding: 1rem 1.6rem;
+}
+.check-list .tr {
+    display: table-row;
+    font-size: 1.4rem;
+    padding: 6px;
+    width: 100%;
+    line-height: 1.6;
+}
+.check-list .tr > span {
+    display: table-cell;
+    white-space: normal;
+    padding: .6rem 0;
+    line-height: 1.3;
+    width: 70%;
+    text-align: left;
+}
+.check-list .tr > span.name{
+    width: 30%;
+    white-space: nowrap;
+}
+.check-list .tr > .code {
+    font-weight: bold;
+}
+.check-list .tr .class {
+    display: inline-block;
+    margin-right: .8rem;
+    width: auto;
+    min-width: 45px;
+}
+.check-list .tr .name input[type="checkbox"]{
+    margin: 0 .8rem 0 .4rem;
+}
+.check-list-wrap { 
+    overflow-y: auto;
+}
+.register .check-all {
+    padding: 0 1.6rem;
+}
+.register .filter {
+    padding: 1rem 1.6rem 1rem;
+}
+
+/*일일안전활동보고등록- TBM및 안전교육에 교육자료버튼, 선택버튼 */
+.btn.c-green {
+    background: rgba(2 128 1 / 20%);
+    color: #028001;
+}
+.btn.c-orange {
+    background: rgba(247 121 22 / 20%);
+    color: #F77916;
+}
+form .btn.c-blue, 
+form .btn.c-green,
+form .btn.c-orange{
+    border-radius: .4rem;
+}
+
+/*일일안전활동보고등록에 해당하는 하단팝업*/
+.flex-d{
+    display: flex;
+    flex-direction: column;
+}
+.layer.h60 > .content.h12{
+    height: calc(60vh - 12rem);
+}
+.layer.h60 > .content.h14{
+    height: calc(60vh - 14rem);
+}
+.layer.h60 > .content .btn-area{
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    z-index: 10;
+}
+.pe-2{padding: 0 2rem !important;}
+.h-y{
+    padding: 0 .5rem 4rem 1.5rem;
+    margin-top: .6rem;
+    height: 26rem;
+    overflow-y: auto;
+}
+.d-flex2{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    margin: 0 2rem 0 1.5rem;
+}
+.d-flex2 .left button{
+    left: 0;
+}
+.d-flex2 .right button{
+    right: 0;
+}
+.row{
+    display: flex;
+    flex-direction: row !important;
+}
+
+.total-area{
+    padding: 1.6rem;
+    text-align: center;
+    font-weight: bold;
+    background: rgba(56 121 233 / 12%);
+    color: #3879E9;
+    font-size: 1.4rem;
+}
+.signpad.pr {position: relative;}
+.signpad img{width: 100%; height: 100%;}
+.signpad .position{
+    position: absolute;
+    bottom: .6rem;
+    right: 1rem;
+}
+.table-wrapper .table.sign {
+    margin: 0;
+    letter-spacing: -0.02em;
+    border-bottom: 1px solid #ddd;
+    word-break: keep-all;
+}
+.table-wrapper .table.sign th {
+    border-width: 0;
+    line-height: 1.4;
+    padding: .8rem .8rem .8rem .2rem;
+    color: #6F6F6F;
+}
+.table-wrapper .table.sign td {
+    background: #fff;
+    border-width: 0;
+    line-height: 1.2;
+    text-align: right;
+    padding: .8rem .2rem .8rem .4rem;
+}
+.table-wrapper .dropdown summary .text {
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding: 0 0.2rem;
+    line-height: 1.4;
+    word-break: keep-all;
+}
+
+/*일일안전활동보고등록,상세-건강체크및안전교육참석자*/
+.shadow { 
+    box-shadow: 0px 0px 4px rgba(0 0 0 / 8%);
+    border: 1px solid #eee;
+    border-radius: .4rem;
+    margin: 0 0 .8rem;
+}
+form.register .d-flex .input-tb.sm {
+    min-width: inherit;
+    width: 7.8rem;
+    padding: 0 .8rem;
+    height: 3.4rem;
+    text-align: left;
+}
+.health-wrapper .dropdown {
+    position: relative;
+    font-weight: 500;
+    font-size: 1.4rem;
+    width: 100%;
+    height: auto;
+    padding: 0 .6rem
+}
+.health-wrapper .dropdown summary ul {
+    padding: 1.1rem 1rem;
+}
+.health-wrapper .dropdown ul {
+    display: flex;
+    flex-direction: column;
+}
+.health-wrapper .dropdown ul.health-list li{
+    padding: 0 1rem;
+    margin-bottom: 1.5rem;
+}
+.health-wrapper details.dropdown[open] {
+    background: #fff;
+}
+.health-wrapper details.dropdown[open] summary ul{
+    border:none;
+}
+.health-wrapper .dropdown summary .title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 1.6;
+}
+.health-wrapper .dropdown .d-flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+textarea:disabled {
+    color: #999;
+	opacity: 1;
+    background: #F5F5F5;
+    cursor: not-allowed;
+}
+.signpad.h80{
+    height: 8rem;
+}
+input[type="radio"]:checked[disabled],
+input[type="checkbox"]:checked[disabled]{
+    cursor: not-allowed;
+}
+
+/*일일안전활동보고등록,상세-순회점검*/
+.check-wrapper {
+    /* margin: 2rem 0 6rem; */
+}
+.check-wrapper .dropdown:first-child{
+    border-top: 1px solid #ddd;
+}
+.check-wrapper .dropdown {
+    position: relative;
+    font-weight: 500;
+    font-size: 1.4rem;
+    width: 100%;
+    height: auto;
+}
+.check-wrapper .dropdown[open]{
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+.check-wrapper .dropdown[open] summary ul{
+    border-top: none;
+    border-bottom: none;
+    padding: 1rem 0 1rem;
+}
+/*.check-wrapper .dropdown summary ul.first{
+    border-top: 1px solid #ddd;
+}*/
+.check-wrapper .dropdown summary ul{
+    padding: 1.15rem 0 1.15rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.check-wrapper .dropdown > ul {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #eee;
+    padding: 1rem 0 1rem;
+}
+.check-wrapper .dropdown summary + div {
+    padding: 0 0 1rem;
+}
+.check-wrapper .dropdown summary .title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding: 0 2.8rem 0 0.2rem;
+}
+.check-wrapper .dropdown ul li {
+    line-height: 1.4;
+    word-break: keep-all;
+}
+.s-title {
+    font-size: 1.4rem;
+    color: #6F6F6F;
+    margin-top: 2rem;
+    margin-bottom: .4rem;
+}
+.ss-tit{
+    font-size: 1.4rem;
+    color: #343434;
+    margin-bottom: .6rem;
+}
+.question {
+    display: block;
+    font-size: 1.4rem;
+    margin-bottom: 1.4rem;
+    font-weight: 400;
+}
+.ex {
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.3;
+}
+.radio-list.shadow{
+    position:relative;
+    padding: 1.5rem  1.5rem;
+    margin-top: .8rem;
+}
+.radio-list.shadow.h46{min-height: 4.6rem;}
+.radio-list .d-flex{
+    align-items: center;
+    justify-content: space-between;
+}
+.radio-list label{
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+}
+.radio-list label input[type="radio"],
+.radio-list label input[type="checkbox"]{
+    margin: .2rem .8rem .2rem .2rem;
+}
+/*//han 2023-01-30*/
+
+
+.list li > textarea {
+    vertical-align: top;
+    margin: 0 0 .8rem;
+}
+/*다수 선택 체크박스 3열*/
+.selct-multi {
+    overflow: hidden;
+}
+.selct-multi > label{
+    float: left;
+    width: 33.3%;
+    padding: .6rem 0;
+    display: flex !important;
+    align-items: center;
+    font-size: 1.2rem !important;
+}
+.selct-multi .etc {
+    clear: both;
+    width: 100%;
+}
+.selct-multi .etc > .input-tb{
+    width: 75%;
+    margin-left: .8rem;
+}
+.selct-multi label input[type="checkbox"] {
+    margin: .2rem .8rem .2rem .2rem;
+}
+
+/* 안전신문고 */
+.regist-info.mt--1em {
+    padding: 1.6rem;
+}
+.regist-info .info{
+    font-size: 1.3rem;
+}
+.text-area.policy {
+    border:1px solid #ddd;
+    border-radius: .4rem;
+    padding: .8rem 1.3rem;
+    height: 12rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    overflow-y: auto;
+}
+.ops-check {
+    display: flex;
+    justify-content: flex-end
+}
+.ops-check > label{
+    display: flex !important;
+    align-items: center;
+    margin: .8rem 0 0; 
+}
+.ops-check > label input{
+    margin: .3rem .2rem .2rem .8rem;
+}
+
+.regist-info .dropdown{
+    font-size: 1.4rem;
+}
+.regist-info .dropdown ul li {
+    line-height: 1.4;
+}
+.regist-info .dropdown .title {
+    font-weight: bold;
+    margin-bottom: .2rem;
+}
+.regist-info .dropdown summary ul {
+    padding-right: 3rem;
+}
+.regist-info details.dropdown[open] {
+    background: transparent;
+}
+.regist-info details.dropdown[open] summary ul {
+    border-top:0;
+}
+.regist-info details.dropdown summary::after {
+    right: .8rem;
+    top: 1.6rem;
+}
+.regist-info .dropdown .inline-list {
+    border-top:0;
+}
+.regist-info .dropdown .inline-list li{
+    padding: 0.6rem 0;
+}
+.register .dropdown .inline-list {
+    padding: 0 .2rem;
+}
+.register .dropdown .inline-list li{
+    padding: 0.6rem 0;
+}
+.photo-btn-group .filebox,
+.photo-btn-group .camerabox {
+    width: 100%;
+}
+.photo-btn-group .filebox > label,
+.photo-btn-group .camerabox > label{
+    color: #444 !important;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: transparent;
+}
+.photo-btn-group .filebox > label:before {
+    background: url(../images/icon/ico_photo.png) no-repeat center center / cover;
+    width: 2.4rem;
+    height: 2.4rem;
+    display: block;
+    margin-right: 1.2rem;
+    content: '';
+}
+.photo-btn-group .camerabox > label:before {
+    background: url("../images/icon/ico_camera.png") no-repeat center center / cover;
+    width: 2.4rem;
+    height: 2.4rem;
+    display: block;
+    margin-right: 1.2rem;
+    content: '';
+}
+
+
+/* 현장점검평가표, 적격수급인평가표 상세 han 2023-02-01*/
+.register-detail fieldset label {
+    display: block;
+    color: #666;
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    margin-bottom: 0.8rem;
+}
+.d-none{display: none !important;}
+.pb-2{padding-bottom: 2rem !important;}
+.dropdown .box{
+    padding: 1.4rem 1.5rem;
+    margin-top: .6rem;
+    height: 100%;
+    border: 1px solid #eee;
+    font-size: 1.2rem;
+    color: #222;
+    border-radius: .4rem;
+    text-align: left;
+    line-height: 1.4;
+    font-weight: 400;
+}
+.question.interval{
+    line-height: 1.4;
+    margin-bottom: .8rem;
+}
+.eval{
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    color: rgb(153, 153, 153);
+    font-weight: 400;
+    margin-top: 1.5rem;
+}
+.eval .value {
+    font-size: 1.8rem;
+    color: rgb(56, 121, 233);
+    font-weight: 600;
+}
+.statute{
+    display: block;
+    margin-top: .8rem;
+    margin-bottom: 1.8rem;
+    color: #6F6F6F;
+    font-weight: 400;
+    line-height: 1.4;
+}
+.radio-list.shadow .jeomsu{
+    font-weight: bold;
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+}
+.tit-record{
+    font-size: 1.3rem;
+}
+/*사진대지*/
+.thumlist{margin-bottom: 6rem;}
+.thumlist li{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.thumlist li:last-child{margin-bottom: 0;}
+.thumlist li .thum-area {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+.thumlist li .thum-area > *{
+    width: 100%;
+}
+.thumlist li .thum-area > .img-wrap > img {
+    max-width: 100%;
+    height: 100%;
+}
+.thumlist li .thum-area > .desc-wrap{
+    padding: 0 0 0 1rem;
+    font-size: 1.4rem;
+}
+.desc-wrap .title{
+    margin-bottom: .3rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.6;
+}
+.desc-wrap .ss-title{
+    font-weight: 400;
+}
+.desc-wrap p{
+    height: 12rem;
+    overflow-y: auto;
+    line-height: 1.4;
+    font-size: 1.2rem;
+}
+/*사진대지 - 사진첨부*/
+.fileupload {
+    position: relative;
+    overflow: hidden;
+    height: 17.6rem;
+    background: #f0f0f0;
+    text-align: center;
+    border: 1px dashed #ddd;
+}
+.fileupload .filebox2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.fileupload .filebox2 label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #666;
+    font-size: inherit;
+    line-height: normal;
+    vertical-align: middle;
+    cursor: pointer;
+    font-weight: bold;
+}
+.fileupload .filebox2 label img {
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-right: 0.8rem;
+}
+.filebox2 > input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

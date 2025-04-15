@@ -1,0 +1,175 @@
+/* -- LOADING OVERLAY -- */
+#loading-overlay {
+    background: rgba(0,0,0,0.8);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    /*left: 240px;*/
+    left: 0px;
+    right: 0;
+    display: none;
+    transition: 0.4s all ease-in-out;
+    z-index: 99;
+}
+#loading {
+    /*   width: 60px; */
+    height: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 60px;
+    margin: auto;
+    text-align: center;
+}
+.loading-text {
+    color: #fff;
+    display: inline-block;/*   margin: 0 0 0 -25px; */
+
+}
+.dot-area {
+    padding-bottom: 15px;
+}
+@-webkit-keyframes logopulse {
+    0% {
+        margin: 0 1px;
+        opacity: 1;
+        text-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
+        -webkit-margin: 0 1px;
+        -webkit-opacity: 1;
+        -webkit-text-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
+    }
+    100% {
+        margin: 0 8px;
+        opacity: 0.1;
+        text-shadow: 0 0 0 rgba(255, 255, 255, 0.3);
+        -webkit-margin: 0 8px;
+        -webkit-opacity: 0.1;
+        -webkit-text-shadow: 0 0 0 rgba(255, 255, 255, 0.3);
+    }
+}
+@keyframes logopulse {
+    0% {
+        margin: 0 1px;
+        opacity: 1;
+        text-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
+        -webkit-margin: 0 1px;
+        -webkit-opacity: 1;
+        -webkit-text-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
+    }
+    100% {
+        margin: 0 8px;
+        opacity: 0.1;
+        text-shadow: 0 0 0 rgba(255, 255, 255, 0.3);
+        -webkit-margin: 0 8px;
+        -webkit-opacity: 0.1;
+        -webkit-text-shadow: 0 0 0 rgba(255, 255, 255, 0.3);
+    }
+}
+@-webkit-keyframes dotleftpulse {
+    0% {
+        margin-left: 1px;
+        opacity: 1;
+        box-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
+        -webkit-margin-left: 1px;
+    }
+    100% {
+        margin-left: 8px;
+        opacity: 0.1;
+        box-shadow: 0 0 0 rgba(255, 255, 255, 0.3);
+        -webkit-margin-left: 8px;
+    }
+}
+@keyframes dotleftpulse {
+    0% {
+        margin-left: 1px;
+        opacity: 1;
+        box-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
+        -webkit-margin-left: 1px;
+    }
+    100% {
+        margin-left: 8px;
+        opacity: 0.1;
+        box-shadow: 0 0 0 rgba(255, 255, 255, 0.3);
+        -webkit-margin-left: 8px;
+    }
+}
+@-webkit-keyframes dotrightpulse {
+    0% {
+        margin-right: 1px;
+        opacity: 1;
+        box-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
+        -webkit-margin-right: 1px;
+    }
+    100% {
+        margin-right: 8px;
+        opacity: 0.1;
+        box-shadow: 0 0 0 rgba(255, 255, 255, 0.3);
+        -webkit-margin-right: 8px;
+    }
+}
+@keyframes dotrightpulse {
+    0% {
+        margin-right: 1px;
+        opacity: 1;
+        box-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
+        -webkit-margin-right: 1px;
+    }
+    100% {
+        margin-right: 8px;
+        opacity: 0.1;
+        box-shadow: 0 0 0 rgba(255, 255, 255, 0.3);
+        -webkit-margin-right: 8px;
+    }
+}
+.ic-logo:before {
+    /*content: url(../images/ic-logo.png);*/
+    vertical-align: middle;
+    margin: 0 20px;
+    width: 73px;
+    height: 42px;
+}
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #1baec5;
+    vertical-align: middle;
+    border-radius: 100%;
+    margin-top: -25px;
+}
+.dot.left {
+    margin-left: 5px;
+    -webkit-animation: dotleftpulse 500ms alternate infinite;
+    animation: dotleftpulse 500ms alternate infinite;
+}
+.dot.left.one {
+    -webkit-animation-delay: 150ms;
+    animation-delay: 150ms;
+}
+.dot.left.two {
+    -webkit-animation-delay: 300ms;
+    animation-delay: 300ms;
+}
+.dot.left.three {
+    -webkit-animation-delay: 450ms;
+    animation-delay: 450ms;
+}
+.dot.right {
+    margin-right: 5px;
+    -webkit-animation: dotrightpulse 500ms alternate infinite;
+    animation: dotrightpulse 500ms alternate infinite;
+}
+.dot.right.one {
+    -webkit-animation-delay: 150ms;
+    animation-delay: 150ms;
+}
+.dot.right.two {
+    -webkit-animation-delay: 300ms;
+    animation-delay: 300ms;
+}
+.dot.right.three {
+    -webkit-animation-delay: 450ms;
+    animation-delay: 450ms;
+}
+/* -- LOADING OVERLAY -- */

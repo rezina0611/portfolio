@@ -1,0 +1,518 @@
+/* ----- 통합검색 ----- */
+
+@keyframes swing {
+    0%   {transform: rotate(0deg);}
+    10%  {transform: rotate(10deg);}
+    30%  {transform: rotate(0deg);}
+    40%  {transform: rotate(-10deg);}
+    50%  {transform: rotate(0deg);}
+    60%  {transform: rotate(5deg);}
+    70%  {transform: rotate(0deg);}
+    80%  {transform: rotate(-5deg);}
+    100% {transform: rotate(0deg); }
+}
+
+.page-wrapper.toggled .sidebar-wrapper {left: 0px;}
+.page-wrapper.toggled .page-content {
+    padding-left: 280px;
+}
+.sidebar-wrapper {
+    height: 100%;
+    left: -320px;
+    z-index: 99;
+    background: #fff;
+    box-shadow: 0 0 5px 0 rgb(0 0 0 / 10%), 5px 0 5px 0 rgb(0 0 0 / 5%);
+    position:static;
+    width: 100%;
+    min-height: calc(100vh - 112px);
+}
+
+.sidebar-updown > a:after {
+    font-family: "FontAwesome";
+    content: "\f077";
+    font-style: normal;
+    display: inline-block;
+    font-variant: normal;
+    text-rendering: auto;
+    position: absolute;
+    right: 15px;
+    top: 16px;
+    font-size: 1.4rem;
+}
+.sidebar-updown.active > a:after {
+    transform: rotate(180deg);
+}
+
+.sidebar-footer {
+	position: fixed;
+	bottom:0;
+	left:0;
+	width:100%;
+	height: 4.4rem;
+	border-top:1px solid #eee;
+}
+
+.sidebar-content {
+  min-height:100vh ;
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+}
+
+#sidebar .sidebar-search > div {
+    padding: 1rem 2rem;
+}
+
+.input-group .search-menu {
+    position: relative;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    width: 1%;
+    margin-bottom: 0;
+}
+
+.input-group {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+}
+.input-group-append {
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: -1px;
+    cursor: pointer;
+}
+.input-group-append + .input-group-append {
+    margin-left: 8px;
+}
+.sidebar-search .input-group {
+    border-radius: 4px;
+    border:1px solid #ddd;
+    height: 42px; 
+}
+.sidebar-search .input-group:hover {
+    border:1px solid #E30613;
+}
+.sidebar-search .input-group input {
+    border-radius: 4px;
+    padding: 0 8px;
+}
+.input-group-text {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding:.8rem;
+    margin-bottom: 0;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #3879E9;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 0.25rem;
+}
+
+.sidebar-wrapper .sidebar-header {
+    padding: 1.6rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sidebar-wrapper .sidebar-header span strong {
+    font-weight: bold;
+    margin-left: 0.4rem;
+}
+
+.sidebar-wrapper .sidebar-menu {}
+.sidebar-wrapper .sidebar-menu > ul > li {
+    border-bottom: 1px solid #eee;
+}
+.sidebar-wrapper .sidebar-menu ul li a {
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    position: relative;
+    padding: 1.2rem 2.4rem 1.2rem 2rem;
+}
+
+.sidebar-wrapper .sidebar-menu ul li a i {
+  margin: .4rem .8rem;
+  font-size: 1rem;
+}
+.sidebar-wrapper .sidebar-menu ul li a:hover > i::before {
+    display: inline-block;
+    animation: swing ease-in-out 0.5s 1 alternate;
+}
+.sidebar-wrapper .sidebar-menu .sidebar-dropdown > a:after {
+    font-family: "FontAwesome";
+    content: "\f078";
+    font-style: normal;
+    display: inline-block;
+    font-variant: normal;
+    text-rendering: auto;
+    position: absolute;
+    right: 15px;
+    top: 16px;
+    font-size: 1.4rem;
+}
+.sidebar-wrapper .sidebar-menu .sidebar-dropdown.active > a:after {
+    transform: rotate(180deg);
+}
+
+.sidebar-wrapper .sidebar-menu .sidebar-updown > a {
+    background: #3879E9;
+    color: #fff;
+}
+
+.case-title {
+    line-height: 1.4;
+}
+.case-title h2 {
+    font-weight: bold;
+    font-size: 1.6rem;
+    position: relative;
+}
+.sidebar-updown .case-title h2,
+.sidebar-menu .case-title h2{
+    font-size: 14px
+}
+
+.case-title.pd20 {
+    padding:1.2rem 2rem;
+}
+.case-title h5 {
+    font-weight: bold;
+    font-size: 1.4rem;
+    opacity: 0.8;
+}
+.case-title span {
+    font-size: 1.4rem;
+}
+
+.sidebar-wrapper .sidebar-menu .sidebar-dropdown.active > a span {
+    color: #393B44;
+}
+.sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu ul {
+    padding: .8rem 0;
+}
+
+.sidebar-submenu ul > li {
+    padding: .6rem 2.2rem;
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+
+.sidebar-submenu ul > li h5 {
+    font-weight: 700;
+}
+
+
+.sidebar-result-list {
+    /*height: calc(100vh - 156px);*/
+    height: calc(100vh - 110px); /*2023-03-31*/
+    overflow-y: auto;
+}
+.result-list li {
+    border-top: 1px solid #eee;
+}
+.result-list li a{
+    display: block;
+}
+.result-list li a h5{
+    line-height: 1.6;
+	font-size:14px;
+    text-align: left;
+}
+.result-list li a p{
+    font-size: 1.4rem;
+    line-height: 1.4;
+}
+
+
+
+/*--------------------------page-content-----------------------------*/
+
+.page-wrapper .page-content {
+  display: inline-block;
+  width: 100%;
+  padding-left: 0px;
+}
+.page-wrapper .page-content > div {
+  padding: 2rem 4rem;
+}
+.page-wrapper .page-content {overflow-x: hidden;}
+
+
+/* 지도 통합검색 */
+.main.map {
+    overflow: hidden;
+    min-height: 100vh;
+}
+.main.map .container {
+    height: 100vh;
+}
+.search-area.bg-white {
+    padding: 1.2rem 0 1rem;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 1px 5px 0 rgb(0 0 0 / 10%);
+}
+.search-area .map-search {
+    width: 100%;
+}
+.search-area {
+    display: flex;
+}
+.btn.bz-sort {
+    width: 4rem;
+    height: 4rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    margin-left: .8rem;
+	box-shadow: 0 0 1px rgb(0 0 0 / 10%), 0 3px 6px rgb(0 0 0 / 10%);
+    border-radius: .4rem;
+    color: #666;
+}
+.btn.bz-sort i {
+    margin: 0 !important;
+}
+.search-area .map-sort-area {
+	display: none;
+}
+.search-area.active .bz-sort i {
+    transform: rotate(180deg);
+}
+
+.controller {
+    width:100%;
+    position: absolute;
+    left: 0;
+    top: 56px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    padding: 0 0 10px 0;
+}
+.map-sort-area .controller ul > li {
+	width: 100%;
+}
+.map-sort-area .controller select {
+	width: 100%	
+}
+
+.map-sort-area ul {
+    display: flex;
+    flex-direction: row;
+}
+.map-sort-area ul li + li {
+    margin-left: .6rem;
+}
+.map-sort-area ul li select{
+    border-radius: 4px;
+    background-color: #fff;
+    padding: .6rem 1.2rem;
+    min-width: inherit;
+}
+
+.container .map-sort-area {
+    padding: 0 !important;
+}
+.container .map-sort-area ul {
+    padding: 0 1.2rem .8rem;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+.container .map-sort-area ul li{
+    width: 50%;
+    margin: 0;
+    padding: 4px;
+}
+.container .map-sort-area ul li select{
+    width: 100%; 
+    padding: .8rem 1.2rem;
+    height: 3.6rem;
+    box-shadow: 0 0 1px rgb(0 0 0 / 10%), 0 3px 6px rgb(0 0 0 / 10%);
+}
+
+.map-search {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 4px;
+    border:1px solid #ddd;
+    background: #fff;
+    padding: 0 .4rem 0 .8rem;
+    box-shadow: 0 0 1px rgb(0 0 0 / 10%), 0 3px 6px rgb(0 0 0 / 10%);
+    height: 4rem;
+}
+.map-search .search {
+    width: 100%;
+    padding: 0;
+}
+
+.map-tooltip {
+    position: relative;
+    display: inline-block;
+    width: auto;
+    padding: 1rem; /*2023-03-31*/
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 0 5px 0 rgb(0 0 0 / 10%), 5px 0 15px 0 rgb(0 0 0 / 5%);
+    margin: 4px;
+    max-width: 88vw;
+    z-index: 91;
+}
+a.map-tooltip {
+    padding: 1.4rem;
+}
+.map-tooltip > .close {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+}
+.map-tooltip > hr {
+    border: 1px solid #eee;
+    border-width: 1px 0 0;
+}
+
+/*.map-tooltip:before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: #fff;
+    width: 12px;
+    height: 16px;
+    transform: rotate(45deg);
+    bottom: -7px;
+    left:calc(50% - 6px);
+	z-index: 1;
+}*/
+
+.map-tooltip ul {
+    max-height: 50vh;
+    overflow-y: auto;
+}
+.map-tooltip ul li {}
+.map-tooltip ul li + li{
+    margin-top: 1.2rem;
+}
+.map-tooltip ul li:nth-last-child(1) {
+    padding: 0 0 1.4rem;
+}
+.map-tooltip .case-title {
+    line-height: 1.4;
+    letter-spacing: -.5px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: .6rem;
+}
+.map-tooltip .case-title h2{
+    font-size: 1.5rem;
+    padding-right: 5.6rem;
+    margin-bottom: .6rem
+}
+.map-tooltip .case-title > .marker {
+    width: 3rem;
+    margin: 0 1.6rem 0 0;
+}
+.map-tooltip .case-title > .marker > img {
+    width: 100%
+}
+.map-tooltip .case-title > div:nth-last-child(1) {
+    width: calc(100% - 4rem);
+}
+
+.case-title .name{
+    font-size: 1.4rem;
+}
+.case-title .d-flex {
+    align-items: center;
+}
+.map-tooltip .status{
+    padding:.6rem .8rem;
+    letter-spacing: -.5px;
+    border-radius: 2rem;
+    color: #fff;
+    font-size:12px;
+    font-weight: bold;
+    line-height: 1;
+    margin-left: .8rem;
+	display: inline-block;
+    position: absolute;
+    top: -1px;
+    right: 0;
+    white-space: nowrap;
+}
+
+.map-marker {
+	position: absolute;
+    display: inline-block;
+    width: auto;
+	z-index: 1;
+	font-size: 3.4rem;
+}
+.map-marker img {
+	width: 32px;
+    border-radius: 50%; 
+    box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+}
+.map-marker .badge { 
+	background: #fff;
+    border-radius: 2rem;
+    padding: .2rem .4rem .3rem;
+    border: 1px solid #FF3E1D; 
+    color: #FF3E1D;
+    right:-1.2rem;
+    top: -.6rem;
+}
+
+
+.modal .status{
+    padding: 5px 8px;
+    letter-spacing: -.5px;
+    border-radius: 12px;
+    color: #fff;
+    font-size:13px;
+    font-weight: bold;
+    line-height: 1;
+	height: 24px;
+}
+
+.status.-ing {background-color: green;}
+.status.-before {background-color: #FFE241;color: #222;}
+.status.-done {background-color: royalblue;}
+.status.-finish {background-color: green;}
+.status.-now {background-color: red;}
+
+.map-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.Cover_figure {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+

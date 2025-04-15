@@ -1,0 +1,313 @@
+
+.notice {
+    font-size: 1.4rem
+}
+.notice p {
+    letter-spacing: -0.02em;
+}
+.notice strong {
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+.notice p + p{
+    margin-top: 1rem
+}
+
+form.changePW {
+    padding: 2rem 0;
+    font-size: 1.4rem;
+}
+form.changePW fieldset {
+    margin-bottom: 2rem;
+}
+form.changePW  label {
+    display: block;
+    color: #666;
+    font-size: 1.4rem;
+	font-weight: bold;
+    margin-bottom: .8rem;	
+}
+form.changePW input {
+    border: 1px solid #DDD;
+    border-radius: 4px;
+    width: 100%;
+    padding: .9rem 1.2rem;
+	font-size: 1.4rem;
+}
+form.changePW input:focus {
+    border:1px solid #3879E9;
+}
+form.changePW .help {
+    font-size: 1.3rem;
+}
+form.changePW button.btn {
+    padding: 0;
+}
+
+.notify {}
+.notify fieldset {
+    margin-bottom: 2rem
+}
+.notify fieldset > label {
+    display: block;
+    color: #666;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: .8rem;;
+}
+.notify .btn-area.d-flex > .btn + .btn {
+	margin-left: .6rem;
+}
+
+.week {
+    margin: 0 -1rem;
+}
+.week li {
+    display: inline-block;
+}
+.inputGroup {
+    position: relative;
+}
+li.inputGroup {
+    margin: .4rem .6rem;
+}
+.inputGroup label {
+    padding: 1.2rem 1rem;
+    width: 100%;
+    display: block;
+    text-align: left;
+    color: #999;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 100ms ease-in;
+    overflow: hidden;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+.inputGroup label:before {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    content: "";
+    /* background-color: #5562eb;*/
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%) scale3d(1, 1, 1);
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    z-index: -1;
+}
+.inputGroup label:after {
+    width: 3.2rem;
+    height: 3.2rem;
+    content: "";
+    border: 2px solid #ddd;
+    background-repeat: no-repeat;
+    background-position: 2px 3px;
+    border-radius: 50%;
+    z-index: 2;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: all 50ms ease-in;
+}
+.inputGroup input:checked ~ label {
+    color: #fff;
+}
+.inputGroup input:checked ~ label:before {
+    transform: translate(-50%, -50%) scale3d(56, 56, 1);
+    opacity: 1;
+}
+.inputGroup input:checked ~ label:after {
+    background-color: #3879E9;
+    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+    border-color: #DBE6FA;
+    right: 0;
+}
+.inputGroup input {
+    width: 3.2rem;
+    height: 3.2rem;
+    order: 1;
+    z-index: 2;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    visibility: hidden;
+}
+label.pl {
+    font-size: 1.3rem;
+    padding-left: 0.8rem;
+    margin-bottom: 0.6rem !important;
+}
+.tab-cont > div form.p-2 {
+    padding: 2.4rem 2rem 6rem !important;
+}
+.d-flex.ai-center span.m-6 {
+    margin: 0 .6rem;
+}
+
+
+
+
+/* 알림 210804 추가 */
+/* 알림 2022-10-17 수정 */
+.notice-wrapper {
+	min-height: calc(100vh - 56px);
+    background: #fff;
+}
+.notice-wrapper footer {
+	position: absolute;
+	bottom:0;
+	left:0;
+	width: 100%;
+	height: 4rem;
+	border-top:1px solid #ddd;
+	background: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.notice-wrapper footer p {
+	color: #999;
+	font-size: 1.2rem;
+}
+.notice-wrapper footer p span {
+	margin-right: .6rem;
+}
+ul.notice {
+	margin-bottom: 3.9rem;
+}
+ul.notice li {
+	border-bottom:1px solid #eee;
+}
+ul.notice li a {
+	display: block;
+	padding: 1.6rem 2rem 1.2rem;
+}
+ul.notice li a *{
+	margin-bottom: 4px;
+	line-height: 1.45
+}
+ul.notice li .date {
+	display: block;
+	color: #999;
+	font-size: 1.2rem;
+    margin-left: 1.2rem;
+    white-space: nowrap;
+}
+ul.notice li.none {
+	text-align: center;
+	padding: 6rem 0;
+	border-bottom: none;
+} 
+ul.notice li.none > div {
+	opacity: 0.4;
+} 
+ul.notice li.none img {
+	margin-bottom: 2rem;
+} 
+
+ul.notice li .noti-head {
+    display: flex;
+    justify-content: space-between;
+}
+ul.notice li .noti-head > h5 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* 에러메시지 2021-12-23 */
+.center-wrap {
+    width: 100%;
+    max-width: 100rem;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    min-height: 50vh;
+}
+.center-wrap .img-wrap {
+    width: 46rem;
+}
+.center-wrap .img-wrap img{
+    width: 100%;
+}
+.center-wrap .text-wrap {
+    width: 40rem;
+    /*margin-left: 8rem;*/
+    padding: 3rem;
+    font-family: 'Poppins', 'Noto Sans KR', sans-serif;
+}
+.text-wrap > h1 {
+    font-size: 8rem;
+    line-height: 1.2;
+}
+.text-wrap > h2 {
+    font-size: 4rem;
+    line-height: 1.2;
+}
+.text-wrap > p {
+    font-size: 1.8rem;
+    margin: 3rem auto;
+}
+.center-wrap .text-wrap > .btn {
+    width: 100%;
+    height: 5rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding: 1.6rem 0;
+    text-align: center;
+    background: #294793;
+    color: #fff;
+    letter-spacing: .5px;
+}
+
+
+/* 알림함 탭 언더라인 스타일 2022-10-17 */
+.notice-wrapper .tab-btn {
+    border-bottom:1px solid #ddd;
+}
+.tab.u-line {
+    padding:  0 1.6rem;
+    border:0;
+    background: #fff;
+    margin: 0;
+}
+.tab.u-line li {
+    border:0;
+    min-width: inherit;
+    width: inherit;
+    padding: 0;
+}
+.tab.u-line li button{
+    border:0;
+    background: transparent;
+    height: 4.2rem;
+    width: 8rem;
+    font-size: 1.5rem;
+    color: #666;
+    font-weight: 500;
+}
+.tab.u-line li.active button {
+    border-bottom: 3px solid #3879E9;
+    color: #3879E9;
+    font-weight: bold;
+}
+.notice-wrapper .tab-cont {
+    overflow-y: auto;
+    height: calc(100vh - 13.2rem);
+}
+
+
+
+
+
+

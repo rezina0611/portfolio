@@ -1,0 +1,920 @@
+
+/* 게시판 리스트 */
+.board-wrapper {
+    background: #fff;
+    position: relative;
+    height: calc(100vh - 5.6rem);
+    overflow-y: auto;
+}
+.board-list {}
+.board-list >.item{
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+.board-list >.item a{
+    display: block;
+    padding: 1em 2rem;
+    position: relative;
+}
+.board-list >.item .cate {
+    display: inline-block;
+    font-size: 1.3rem;
+    margin-bottom: .6rem;
+	color: #999;
+    line-height: 1.2;
+    width: 65%;
+}
+.board-list >.item .cate:before {
+    content: "[";
+    margin-right: .2rem;
+}
+.board-list >.item .cate:after {
+    content: "]";
+    margin-left: .2rem;
+}
+.board-list >.item .title {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.4;
+	position: relative;
+    letter-spacing: -0.02em;
+}
+.board-list >.item .title.w80{
+    width: 80%;
+}
+.board-list >.item .date {
+    font-size: 1.2rem;
+    color: #999;
+    margin-top:.6rem;
+    line-height: 1;
+}
+.board-list >.item .cate.Request {
+    color: orange;
+	letter-spacing: 1px;
+}
+.board-list >.item .cate.Notice {
+    letter-spacing: 1px;
+}
+.board-list >.item .cate.Data {
+    color: royalblue;
+	letter-spacing: 1px;
+}
+.board-wrapper .ico-new {
+    display: inline-block;
+    background-color: red;
+    color: #fff;
+    font-size: 1.1rem;
+	line-height: 1;
+	font-weight: 600;
+	text-transform: uppercase;
+	border-radius: 3px;
+	padding: 3px 4px 4px;
+	/*position: absolute;
+	top:3px;*/
+	margin-left: 4px;
+}
+
+/* 품질평가, 현장지원점검 관리 목록 2023-01-27 추가 */
+.board-list >.item .badge {
+    border:0;
+    padding: 0;
+    top: 1.8rem;
+    right: 1.6rem;
+    font-size: 1.3rem;
+}
+.board-list >.item .badge.danger {
+    background: #E30613;
+    color: #fff;
+    padding: .4rem .8rem;
+    font-size: 1.2rem;
+    top: 1.5rem;
+}
+
+.board-list >.item .badge .b-danger{
+    display: inline-block;
+    background: #E30613;
+    color: #fff;
+    padding: .4rem .8rem;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    vertical-align: middle;
+    margin-right: .5rem;
+}
+
+/* 안전보건교육일지 목록 2023-01-27 추가 */
+.board-list >.item .info-save {
+    margin: 1.2rem 0 0;
+    color: #999;
+}
+.board-list >.item .info-save + .info-save {
+    margin: .4rem 0 0;
+}
+.board-list >.item .info-save.c-black > span:nth-child(1){
+    width:41%;
+    text-align:left;
+}
+.board-list >.item .info-save.c-black > span:nth-child(2){
+    width:59%;
+    text-align:right;
+}
+
+
+/* 게시판 상세 */
+.board-wrapper .detail-head {
+	padding: 1em;
+	border-bottom:1px solid #ddd;
+}
+.board-wrapper .detail-head .cate {
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: .4rem;
+    letter-spacing: 1px;
+}
+.board-wrapper .detail-head .cate:before {
+    content: "[";
+}
+.board-wrapper .detail-head .cate:after {
+    content: "]";
+}
+.board-wrapper .detail-head .cate.Request {
+    color: orange;
+}
+.board-wrapper .detail-head .cate.Notice {
+    color: #999;
+}
+.board-wrapper .detail-head .cate.Data {
+    color: royalblue;
+}
+.board-wrapper .detail-head .title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.6;
+	position: relative;
+}
+.board-wrapper .detail-head .from {}
+.board-wrapper .detail-head .from > span {
+	color: #999;
+	font-size: 1.2rem;
+}
+.board-wrapper .detail-head .from > span + span:before {
+	content: "";
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    margin: 0 8px;
+    background-color: #e4e8eb;
+}
+
+.board-wrapper .detail-body {
+	padding: 1em;
+	border-bottom: 1px solid #ddd;
+}
+.board-wrapper .detail-body .detail-content{
+	margin-bottom:1em
+}
+.board-wrapper .detail-body .attachment{}
+.attachment .file-down{
+    background: #FAFBFD;
+    font-size:1.4rem;
+    /*height: 3.6rem;*/
+    border:1px solid #ddd;
+    border-radius: 6px;
+	display: flex;
+    align-items: center;
+	margin-bottom:.5em;
+    padding-right: 2rem;
+    position: relative;
+    box-sizing: border-box;
+    /* display: inherit;
+    white-space: nowrap;
+    overflow: hidden; */
+    text-overflow: ellipsis; 
+    letter-spacing: -0.02em; /*2023-03-31*/
+    line-height: 1.2;
+}
+.attachment .file-down:before {
+	display: inline-flex;
+    align-items: center;
+    /*height: 3.6rem;*/
+    font-family: "FontAwesome";
+    content: "\f0c6";
+	padding: .65rem 1.2rem;
+	border-right:1px solid #eee;
+	margin-right: 1.2rem;
+}
+.attachment .file-down > .delete{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width:2rem;
+    height: 2rem;
+    background: #666;
+    color: #fff;
+    font-size: 1.2rem;
+    border-radius: 3px;
+    margin-left: 6px;
+    position: absolute;
+    right: .8rem;
+}
+.board-wrapper .table td > input[type="file"] {
+    margin-top: .6rem;
+}
+
+
+
+/* 댓글 */
+.comment-wrapper {
+	padding: 1em 1em 4em;
+}
+.comment-wrapper .comments-head{
+	border-bottom: 2px solid #3879E9;
+	padding: 1rem 0;
+	position: relative;
+}
+.comments-head .num-comment{
+	font-size: 1.4rem;
+	font-weight: bold;
+}
+.comments-head .num-comment > .num{
+	font-weight: bold;
+	color: #3879E9;
+	margin-left: .4rem;
+}
+.comments-head .btn.comment {
+	font-size: 1.3rem;
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: 2px;
+	right:0;
+	padding: .8rem;
+	background: #3879E9;
+	border:0;
+    border-radius: 4px;
+	color: #fff;
+}
+.comment-wrapper .comments {}
+.comment-wrapper .comments > ul {}
+.comment-wrapper .comments > ul > li {
+	border-bottom: 1px solid #eee;
+	position: relative;
+}
+.comments .comment-head{
+	position: relative;
+	padding: 1.4rem 0 .5em;
+}
+.comments .comment-head .from{
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+.comments .comment-head .from .date{
+	color: #999;
+	font-size: 1.2rem;
+}
+.comments .comment-head .from .date:before{
+	content: "";
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    margin: 0 8px;
+    background-color: #e4e8eb;
+}
+.comments .comment-head .btn.setting-cmt {
+	width: 2rem;
+	height: 2rem;
+	border:0;
+	position: absolute;
+	right: 4px;
+	top: 8px;
+	padding: .4rem 1rem;
+	background: transparent;
+}
+.btn.setting-cmt i {
+	margin: 0;
+	font-size: 14px;
+	color: #999;
+}
+
+.comments .comment-body{
+	padding: .8rem 0 1rem;
+	font-size: 1.4rem;
+	line-height: 1.6;
+	color: #666;
+}
+.comments .comment-body > textarea{
+	width: 100%;
+	resize: none;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 1.4rem;
+	line-height: 1.6;
+	color: #666;
+}
+
+.comment-wrapper .pagination {
+	margin: 1rem 0 0;
+}
+.comment-wrapper .pagination .center {
+	justify-content: center !important;
+}
+.board-wrapper > .btn-area {
+	padding: 0 1.6rem;
+}
+.board-wrapper .btn-area.pb-2{
+	padding-bottom: 2rem;
+}
+
+.board-wrapper .text-area {
+	padding: 1rem 1.2rem 5rem;
+}
+.board-wrapper .text-area > textarea {
+	border-bottom:1px solid #ddd;
+	width: 100%;
+	height: auto;
+	padding: .8rem;
+	resize: none;
+	font-family: 'Noto Sans KR', sans-serif;
+	line-height: 1.5;
+	font-size: 1.4rem;
+}
+.board-wrapper .text-area .text-count {
+	text-align: right;
+	font-size: 1.4rem;
+	margin-top: .8rem;
+}
+
+.board-wrapper .select-wrapper {
+	width: 100%;
+	padding: 1rem  1.6rem;
+	border-bottom: 1px solid #eee;
+}
+.select-wrapper > select {
+	width: 100%;
+}
+
+
+/* 댓글 설정 레이어 */
+.comments .dropdown {
+	position: relative;
+	width: 2rem;
+	height: 2rem;
+	top: -16px;
+	left: -8px;
+	display: flex;
+	background: transparent;
+}
+.dropdown-cmt-st {
+	position: absolute;
+	background: #fff;
+	height:auto;
+	width: 7rem;
+	right: 2.8rem;
+	top: -3.7rem;
+	pointer-events: none;
+	opacity: 0;
+	transform: translatey(10px);
+	transition: all 0.2s ease;
+	border:1px solid #eee;
+	border-radius: 4px;
+	box-shadow: 0 3px 12px rgba(0,0,0,.1);
+}
+.dropdown-cmt-st li a {
+	display: block;
+	padding: 1rem 1.6rem .8rem;
+	font-size:1.3rem;
+}
+.dropdown.is-active .dropdown-cmt-st {
+	opacity: 1;
+	pointer-events: all;
+	transform: translatey(25px);
+	z-index: 100;
+}
+.dropdown.is-active .dropdown-cmt-st li:hover {
+	background-color: #f0f0f0;
+}
+
+
+/* 프로젝트 게시판 글 등록 */
+.m-header .btn.write {
+	border:0;
+	width: 2.4rem;
+    height: 2.4rem;
+    padding: .4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.m-header .btn.write > i {
+	margin: 0 !important;
+	font-size: 18px;
+}
+.board-wrapper > form {
+    padding: 1rem 1.2rem 6rem;
+}
+span.required {
+    color: #3879E9;
+    margin:0 .2rem;
+    font-weight: bold;
+}
+.board-wrapper > form .table {
+    border-top:0;
+}
+.board-wrapper > form .table th {
+	border-width: 1px 0;
+	font-weight: normal;
+	padding: 1rem 0;
+	color:#666;
+	word-break: keep-all;
+}
+.board-wrapper > form .table th:after {
+	content: ":"
+}
+.board-wrapper > form .table th.no-deco:after {
+	content:none;
+}
+.board-wrapper > form .table td > .options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 3.6rem;
+}
+.board-wrapper > form .table td > .options label {
+    margin-right: 2rem;
+}
+.board-wrapper > form .table td > .options input[type="radio"] {
+	margin: 0 6px 0 0;
+}
+.board-wrapper .text-area.pj {
+    padding: 0;
+	margin-top:1rem;
+}
+.board-wrapper .text-area.pj > textarea {
+    border-bottom: none;
+	padding: 0;
+}
+
+
+
+/* 위험성평가 조회 드롭다운 2022-10-19 */
+.table-wrapper {
+    margin-top: .4rem;
+}
+.table-wrapper .dropdown {
+	position: relative;
+    font-weight: 500;
+    font-size: 1.4rem;
+    width: 100%;
+    height: auto;
+}
+.table-wrapper .dropdown:nth-last-child(1){
+	border-bottom: 1px solid #ddd;
+}
+details.dropdown summary::marker {
+	display:none;
+	content: '';
+	z-index:-10;
+}
+details.dropdown summary::after {
+    content: '';
+    display: inline-block;
+    width:7px; 
+	height:7px;
+    border-bottom:2px solid #6F6F6F;
+    border-left:2px solid #6F6F6F;
+    transform: rotate(316deg) translate(50%, 0%);
+    transform-origin: center center;
+    transition: transform ease-in-out 100ms;
+	position: absolute;
+	right: 1.3rem;
+	top: 2rem;
+}
+.table-wrapper.conference details.dropdown summary::after {
+    top: 1.4rem;
+}
+details.dropdown[open] summary::after {
+	transform: rotate(136deg);
+    right: 1rem;
+}
+details.dropdown summary{
+	cursor:pointer;
+    position: relative;
+}
+.table-wrapper .dropdown summary ul{
+    border-top:1px solid #ddd;
+    padding: 1rem 0 1.2rem;
+}
+.table-wrapper .dropdown > ul{
+	display: flex;
+	flex-direction: column;
+    border-top:1px solid #eee;
+}
+.table-wrapper .dropdown ul.b-notop{
+	border-top:none;
+}
+.table-wrapper .dropdown ul li{
+	padding: 0 .2rem;
+    line-height: 1.4;
+    word-break: keep-all;
+}
+.table-wrapper.conference .dropdown summary .title {
+    height: 1.959rem;
+}
+.table-wrapper .dropdown summary .title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 1.45;
+    padding: 0 2.8rem 0 .2rem;
+    margin-bottom: .6rem;
+}
+.table-wrapper .dropdown summary .title.sm {
+    font-size: 1.4rem;
+    line-height: 1.4;
+    padding: 0 2.8rem 0 .2rem;
+    margin-bottom: .6rem;
+}
+.table-wrapper .dropdown .desc {
+    display: block;
+    font-size: 1.2rem;
+}
+
+.table-wrapper .table.simple {
+    border-top:0;
+    margin: 1rem 0;
+    letter-spacing: -0.02em;
+    word-break: keep-all;
+}
+.table-wrapper .table.simple th {
+    background: #fff;
+    border-width: 0;
+    line-height: 1.4;
+    padding: .8rem .8rem .8rem .2rem;
+    color: #6F6F6F;
+}
+.table-wrapper .table.simple td {
+    background: #fff;
+    border-width: 0;
+    line-height: 1.4;
+    text-align: right;
+    padding: .8rem .2rem .8rem .4rem;
+}
+
+details.dropdown[open] {
+	background: rgba(56,121,233,.05);
+}
+details.dropdown[open] summary ul{
+    border-top:2px solid #333;
+}
+details.dropdown[open] .table th,
+details.dropdown[open] .table td {
+    background: rgba(56,121,233,.05);
+}
+
+.table-wrapper .dropdown.danger {
+    color: #E30413;
+    background: rgba(227,4,19,.08);
+}
+.table-wrapper .dropdown.danger .table th, 
+.table-wrapper .dropdown.danger .table td {
+    background: rgba(227,4,19,.08);
+    color: inherit;
+}
+
+.table-wrapper .dropdown .check-wrapper {
+    position: relative;
+    padding: 1rem 0 1.2rem 2.8rem;
+}
+.table-wrapper .dropdown .check-wrapper input[type="checkbox"] {
+    position: absolute;
+    top: 1.3rem;
+    left: 0
+}
+
+/* 출역하기 2022-12-22 */
+.dropdown > .detail-body {
+    padding: 1rem 0;
+    border:0;
+}
+.dropdown > .detail-body li > p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+}
+.detail-body .agree-check > label{
+    position: relative;
+    display: block;
+    margin: .8rem 0;
+    font-size: 1.4rem;
+}
+.detail-body .agree-check input[type="checkbox"]{
+    position: absolute;
+    top:.4rem;
+    left:0;
+}
+.detail-body .agree-check p{
+    margin-left: 2.4rem;
+}
+.signpad {
+    background: #f5f5f5;
+    border:1px solid #ddd;
+    height: 24rem; 
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.result-list-wrap.p-1 {
+    background: rgba(56,121,233,.05);
+}
+.result-list-wrap.p-1 ul > li {
+    font-size: 1.4rem;
+}
+.result-list-wrap.p-1 li.title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: .8rem;
+}
+
+/* 작업인력 관리 2023-02-01 */
+.board-list >.item .pjt {
+    line-height: 1.4;
+}
+.board-wrapper .list-box {
+    border-width: 0 0 1px;
+    border-color: #eee;
+    border-radius: 0;
+    margin: 0;
+}
+.list-box .cate:before {
+    content: "[";
+    margin-right: .2rem;
+}
+.list-box .cate:after {
+    content: "]";
+    margin-left: .2rem;
+}
+.board-wrapper .list-box > button:before {
+    top:66%;
+}
+.list-box .badge.count {
+    border:0;
+    padding: 0;
+    top: 1.4rem;
+    right: 1.6rem;
+    font-size: 1.3rem;
+    color: #999;
+    font-weight: 600;
+}
+.list-box .badge.count strong {
+    color: #3879E9;
+}
+.list-box .worker-info {
+    padding: 0 1.6rem;
+    border:0;
+}
+.list-box .card{
+    border:1px solid #ddd;
+    border-radius: .4rem;
+    margin: 0 0 .8rem;
+}
+.list-box .card .card-head{
+    background: rgba(0 0 0 / 4%);
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2rem 1.6rem;
+}
+.list-box .card .card-body{
+    padding: 1.2rem 1.6rem;
+    font-size: 1.4rem;
+    position: relative;
+}
+.list-box .card .card-body .tt{
+    margin-bottom: .6rem;
+}
+.list-box .card .card-body p strong{
+    font-weight: bold;
+}
+.list-box .card .badge {
+    border: 0;
+    top: 1rem;
+    right: 1rem;
+    text-align: right;
+    font-size: 1.3rem;
+    color: #666;
+}
+.list-box .card .badge span{
+    display: block;
+    margin-bottom: .8rem;
+}
+
+.list-box li .table {
+    text-align: center;
+    table-layout: fixed;
+    margin-bottom: .8rem;
+    border-top:1px solid #333;
+}
+.list-box li .table th {
+    text-align: center;
+}
+
+
+/*han 2023-02-01*/
+/*현장점검평가표 상세*/
+.table-wrapper .table.simple.none{
+    border-top: 1px solid #333;
+}
+.table-wrapper .table.simple.none th {
+    background: rgba(221 221 221 / 30%);
+}
+
+/*현장지원점검 상세*/
+.box2{
+    padding: 1.3rem 1.5rem;
+    height: 100%;
+    border: 1px solid #ddd;
+    font-size: 1.4rem;
+    color: #6F6F6F;
+    border-radius: 0.4rem;
+    line-height: 1.6;
+    margin-bottom: .8rem;
+}
+.table-wrapper.box2 .table.simple{
+    margin:0;
+}
+.table-wrapper.box2 .table.simple th,
+.table-wrapper.box2 .table.simple td{
+    background-color: #fff;
+}
+
+/* 현장점검평가표 상세 2023-02-02 */
+.board-list >.item .bm,
+.list-box button .bm{
+    display: block;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: .4rem;
+	color: #999;
+}
+.board-list >.item p.bm{
+    margin-bottom: 0;
+}
+
+/* 자재관리 2023-02-06 */
+.list-box.mate .badge.count {
+    right: 3.6rem;
+}
+.list-box.mate > button:before {
+    top: 46%;
+}
+.list-box div.info.no-bortop{
+    border-top: 0;
+    padding: 0 4px;
+}
+.board-list >.item .title.w-70 {
+    padding-right: 5rem;
+}
+
+
+/* 설정 2023-02-06 */
+.board-list >.item.p-1.d-flex {
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 작업있음/없음 토글 2023-02-06 */
+.button-cover{}
+.knobs, .btn-layer{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.button {
+    position: relative;
+    top: 50%;
+    width: 6.4rem;
+    height: 3.2rem;
+    margin: -1.6rem 0;
+    overflow: hidden;
+}
+.button.r, .button.r .btn-layer{
+    border-radius: 100px;
+}
+.button.b2{
+    border-radius: 2px;
+}
+.checkbox{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0 !important;
+    cursor: pointer;
+    z-index: 3;
+    transform: scale(1) !important;
+}
+.button .knobs{z-index: 2;}
+.button .btn-layer{
+    width: 100%;
+    transition: 0.3s ease all;
+    z-index: 1;
+    background-color: #eee;
+}
+.button .knobs:before{
+    content: 'OFF';
+    position: absolute;
+    top: .4rem;
+    left: .4rem;
+    width: 4rem;
+    height: 2.4rem;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: -0.04em;
+    text-align: center;
+    line-height: 1;
+    padding: .45rem .4rem;
+    
+    border-radius: 1.4rem;
+    transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+    background-color: #999;
+}
+.button .checkbox:checked + .knobs:before{
+    content: 'ON';
+    left: 2rem;
+    background-color: #3879E9;
+}
+.button  .checkbox:checked ~ .btn-layer{
+    background-color: #E7EFFD;
+}
+.button .knobs, .button .knobs:before, .button .btn-layer{
+    transition: 0.3s ease all;
+}
+
+
+/* 게시판 상세 대댓글 2023-02-07 */
+.comments .comment-reply {
+    background: #f5f5f5;
+    border-radius: 0.4rem;
+    padding: 0 0 0 1rem;
+    margin: 1rem 0 1rem;
+}
+.comments .comment-reply ul li + li {
+    border-top:1px dashed #e0e0e0;
+}
+
+/* (구)안전관리용품 2023-02-09 */
+.list-box > button .info-save {
+    margin: 1.2rem 0 0;
+    color: #999;
+}
+.list-box .card a{
+    padding: 0;
+}
+
+
+/* 현장지원점검 관리 2023-02-13 */
+.list-box.bb > button:before {
+    top: 48%;
+}
+.list-box.bb button > .title{
+    font-size: 1.6rem;
+    font-weight: 600;
+} 
+.list-box.bb .badge.count { 
+    top: 1.5rem;
+    right: 4rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: inherit;
+    color: inherit;
+}
+.list-box.bb .board-list {
+    padding: 0;
+    background: #f5f5f5;
+}
+.list-box.bb .board-list >.item:nth-last-child(1) {
+    border-bottom: 0;
+}
+.list-box.bb .board-list >.item .title {
+    font-size: 1.4rem;
+}
+/* 현장지원점검 관리 2023-03-06 */
+.board-wrapper .board-list .list-box:nth-last-child(1) {
+    border-width: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
