@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="ui_event" content="true" />
+<title>교전지원 (easyui)</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="./css/reset.css">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/layout2.css">
+
+<!--EasyUI css-->
+<link rel="stylesheet" type="text/css" href="./themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="./themes/color.css">
+<link rel="stylesheet" type="text/css" href="./demo/demo.css">
+
+<!--EasyUI Script -->
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/jquery.easyui.min.js"></script>
+<script>
+    $(document).ready(function(){
+        let winHeight = $('main').innerHeight()  - 55;
+        console.log(winHeight);
+        $("#first .datagrid-view").css("height", winHeight); 
+        $("#first .datagrid-wrap").css("height", winHeight);
+        $("#first .datagrid-body").css("height", winHeight); 
+    });
+</script>
+<script>
+    $(window).resize(function () {
+        let height = $('main').innerHeight()  - 55;
+        console.log(height);
+        $("#first .datagrid-view").css("height", height);
+        $("#first .datagrid-wrap").css("height", height);
+        $("#first .datagrid-body").css("height", height);
+    });
+</script>
+<!-- <script>
+    $(document).ready(function(){
+        let winHeight = $('main').innerHeight() - 55;
+        console.log(winHeight);
+        $(".datagrid-view").css("height", winHeight); 
+        $(".panel-body").css("height", winHeight);
+        $(".datagrid-body").css("height", winHeight);
+    });
+</script>
+<script>
+    $(window).resize(function () {
+        let height = $('main').innerHeight() - 55;
+        console.log(height);
+        $(".datagrid-view").css("height", height);
+        $(".panel-body").css("height", height);
+        $(".datagrid-body").css("height", height);
+    });
+</script> -->
+<script type="text/javascript" src="datagrid_data.json"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#dg1').datagrid({
+            title : 'Column Group',
+            remoteSort: false,
+            singleSelect: true,
+            width : '100%',
+            height : '100%',
+            url:'datagrid_data.json',
+            method:'get',
+            columns:[
+                [
+                    {title:'항적정보', colspan:4},
+                    {title:'경로예측', colspan:4},
+                    {title:'목표예측', colspan:3},
+                ],
+                [
+                    {field:'info',title:'체계항적', resizable:'false', align:'center', width:'9%'},
+                    {field:'LP',title:'LP', resizable:'false', align:'center', width:'6%'},
+                    {field:'Tanjong',title:'탄종', resizable:'false', align:'center', width:'9%'},
+                    {field:'warhead',title:'탄두', resizable:'false', align:'center', width:'9%'},
+                    {field:'po',title:'현재위치', resizable:'false', align:'center', width:'9%'},
+                    {field:'ip',title:'예상IP', resizable:'false', align:'center', width:'9%'},
+                    {field:'form',title:'기동형태', resizable:'false', align:'center', width:'9%'},
+                    {field:'fullup',title:'풀업시점', resizable:'false', align:'center', width:'9%'},
+                    {field:'pathIP',title:'모의경로IP', resizable:'false', align:'center', width:'9%'},
+                    {field:'facility',title:'주요시설', resizable:'false', align:'center', width:'14.2%'},
+                    {field:'target',title:'예상목표', resizable:'false', align:'center', width:'9%'}
+                ]
+            ]
+        });
+    });
+</script> 
+<style>
+    body{
+        min-width: 0px !important;
+        overflow: hidden !important;
+        overflow-x: hidden !important;
+    }
+    .main{
+        overflow: hidden !important;
+    }
+    .datagrid-header{
+        background-color: #90A4AE !important;
+        background: -webkit-linear-gradient(top,#90A4AE 0,#90A4AE 100%) !important;
+        background: -moz-linear-gradient(top,#90A4AE 0,#90A4AE 100%) !important;
+        background: -o-linear-gradient(top,#90A4AE 0,#90A4AE 100%) !important;
+        background: linear-gradient(to bottom,#90A4AE 0,#90A4AE 100%) !important;
+        border-color: transparent !important;
+    }
+    .datagrid .panel-header{
+        display: none !important;
+        border: none !important;
+    }
+    .panel-header, .panel-body{
+        border-color: transparent !important;
+    }
+    /* .panel-header{
+        display: none !important;
+        border: none !important;
+    } */
+    .datagrid-htable{
+        height: 40px !important;
+    }
+    .datagrid-header-row,
+    .datagrid-row {
+        height: 40px !important;
+    }
+    .datagrid-htable{
+        color: #fff !important;
+    }
+    .datagrid-header {
+        border-width: 0 0 0 0 !important;;
+    }
+    .datagrid-body{
+        overflow-x: hidden !important;
+    }
+    .datagrid-header td,
+    .datagrid-body td,
+    .datagrid-footer td {
+        border-width: 0 3px 2px 0 !important;
+        border-style: solid !important;
+        margin: 0;
+        padding: 0;
+    }
+    .datagrid-header td {
+        border-color: #fff !important;
+        background: #90A4AE !important;
+    }
+    .datagrid-header td.datagrid-header-over {
+        background: #90A4AE !important;
+        color: #fff !important;
+        cursor: default;
+    }
+    .datagrid-header td {
+        border-color: #fff !important;
+        background: #90A4AE !important;
+    }
+    .datagrid-header td .datagrid-cell-c1-itemid{
+        text-align: center !important;
+    }
+    .datagrid-body td{
+        border-color: #fff !important;
+        color: #4d4d4d !important;
+    }
+    .datagrid-body td:first-child{
+        text-align: left !important;
+    }
+    .datagrid-body td, .datagrid-footer td {
+        background-color: #ECEFF1 !important;
+    }
+    .datagrid-body tr:nth-child(even) td{
+        background-color: #CFD8DC !important;
+    }
+    .datagrid-header td .datagrid-cell{
+        padding: 1.2rem .7rem !important;
+        vertical-align: middle !important;
+        word-break: break-all !important;
+        font-weight: bold !important;
+        text-align: center !important;
+    }
+    .datagrid-header td .datagrid-cell{
+        white-space: normal !important;
+        height: auto !important;
+        line-height: 1 !important;
+        overflow: initial !important;
+        word-wrap: break-word !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+    .datagrid-body td .datagrid-cell{
+        padding: .9rem .5rem !important;
+        white-space: normal !important;
+        word-break: break-all !important;
+        vertical-align: middle !important;
+    }
+    .datagrid-body td .datagrid-cell:first-child{
+        text-align: left !important;
+    }
+    .dialog-button{
+        text-align: center !important;
+        background: #fff !important;
+        border: none !important;
+        padding: 1rem .5rem !important;
+        border-radius: 0 0 .8rem .8rem !important;
+    }
+    .dialog-button .l-btn{
+        min-width: 12rem !important;
+        min-height: 3.2rem !important;
+        padding: .2rem 1rem !important;
+        border-radius: .4rem;
+        border: 0;
+        background: #606667;
+        color: #fff;
+    }
+    .dialog-button .l-btn + .l-btn{
+        background: #2E7E84 !important;
+    }
+    .dialog-button .l-btn:hover{
+        background: #606667;
+
+    }
+    .window{
+        background-color: #fff;
+        background: -webkit-linear-gradient(top,#fff 0,#fff 20%);
+        background: -moz-linear-gradient(top,#fff 0,#fffF 20%);
+        background: -o-linear-gradient(top,#fff 0,#fff 20%);
+        background: linear-gradient(to bottom,#fff 0,#fff 20%);
+        border-color: transparent !important;
+        border: 0 !important;
+        padding: 0 !important;
+    }
+    .window .panel-header{
+        width: 100% !important;
+        background: #37474F;
+        border-bottom: 1px solid #2F3235;
+        color: #fff !important;
+        height: 4.4rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        border-radius: .8rem .8rem 0 0;
+    }
+    .window .panel-title{
+        width: 100% !important;
+        color: #fff !important;
+        font-size: 1.5rem !important;
+    }
+    .window .window-header .panel-tool {
+        right: 1rem !important;
+    }
+    .window .panel-tool{
+        height: auto;
+    }
+    .window .panel-tool a{
+        width: 2.4rem;
+        height: 2.4rem;
+        opacity: 1;
+    }
+    .panel-tool a:hover {
+        opacity: 1;
+        filter: alpha(opacity=100);
+        background-color: transparent;
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        border-radius: 0;
+    }
+    .window .panel-tool-close {
+        background: url(./images/ico_close@2x.png) no-repeat 50% 50% / 20px 20px;
+    }
+    .window-mask {
+        background: rgba(33, 33, 33, 0.7) !important;
+        opacity: 100 !important;
+    }
+    .window-shadow {
+        background: rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.3);
+        filter: progid:DXImageTransform.Microsoft.Blur(pixelRadius=2,MakeShadow=false,ShadowOpacity=0.2);
+    }
+    .window,
+    .window-shadow {
+        position: absolute;
+        -moz-border-radius: .8rem !important;
+        -webkit-border-radius: .8rem !important;
+        border-radius: .8rem !important;
+        background: transparent !important;
+    }
+    .radiobutton {
+        position: relative;
+        border: 2px solid #2E7E84;
+        border-radius: 50%;
+    }
+    .radiobutton-inner {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #2E7E84;
+        border-radius: 50%;
+        transform: scale(.6);
+    }
+</style>
+</head>
+<body>
+<!--wrapper-->
+<div class="wrapper">
+    <!--header-->
+    <!-- <header class="header">
+        <ul class="top-nav">
+            <li><a href="#none"><img src="./images/ico_home@2x.png" alt="HOME"></a></li>
+            <li><a href="#none">고위협 예측 출력기능</a></li>
+            <li><a href="#none">피해분석 출력기능</a></li>
+            <li><a href="#none" class="on">교전지원 출력기능</a></li>
+        </ul>
+    </header> -->
+    <!--//header-->
+
+    <!--main-->
+    <main class="main">
+        <div class="row">
+            <h2 class="mb-1 fs16">· 교전지원 - 탄도탄의 경로 및 목표 예측 (easyui)</h2>
+            <a href="javascript:void(0)" 
+                class="easyui-linkbutton btn primary" 
+                onclick="$('#dlg1').dialog('open').dialog('center')">모드 설정
+            </a>
+        </div>
+        <div id="first">
+            <table id="dg1" class="easyui-datagrid">
+                <tbody>
+                    <!-- <tr>
+                        <td>TN001</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2, text 3, text 4, text 5, text 6, text 7, text 8, text 9,…text n</td>
+                        <td>AAA</td>
+                    </tr> -->
+                    <!-- <tr>
+                        <td>TN002</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN003</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN004</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN005</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN006</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN007</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN008</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN009</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN010</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN011</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN012</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN013</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN014</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN015</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN016</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN017</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN018</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN019</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN020</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN021</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN022</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN023</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN024</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN025</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN026</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN027</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN028</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN029</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN030</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN031</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN032</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <!--//main-->
+    <!--footer-->
+    <footer class="footer">
+        <div class="inner">
+            <div class="left">
+                <ul>
+                    <li>
+                        <a href="https://www.add.re.kr/kps" target="_blank" title="새창열림">
+                            <img src="./images/logo_afdd@2x.png" alt="국방과학연구소">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.hanwhasystems.com/kr/index.do" target="_blank" title="새창열림">
+                            <img src="./images/logo_hanhwa@2x.png" alt="한화시스템">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="center">정보분석장치 프로토타입 고위협 예측 외 2종 모듈 출력기능</div>
+            <div class="right">
+                <a href="https://www.funzin.co.kr/main" target="_blank" title="새창열림">
+                    <img src="./images/logo_funzin@2x.png" alt="(주)펀진">
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!--//footer-->
+</div>
+<!--//wrapper-->
+<div id="dlg1" class="easyui-dialog" title="Complex Toolbar on Dialog"> 
+    <div class="content">
+        <ul class="select">
+            <li>
+                <form id="rb1">
+                    <input class="easyui-radiobutton" name="ra" value="algorithm" label="알고리즘">
+                </form>
+            </li>
+            <li>
+                <form id="rb2">
+                    <input class="easyui-radiobutton" name="ra" value="aimodel" label="AI모델">
+                </form>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    $(function () {
+        $('#dlg1').dialog({
+            title: '모드 설정', // 다이얼로그 제목
+            iconCls: 'icon-save',
+            autoOpen: false,    //자동으로 열리지않게
+            resizable: true,    //사이즈 조절 가능 여부
+            width : '400',     // 넓이
+            height : '250',     // 높이 /*580*/
+            padding : '10',     // 안쪽여백
+            closed: true,       // dialog 오픈(true), 비오픈 여부(false) 
+            modal: true,        // 배경색 어둡게 true, false  mask
+            onResize: function(){   //사이즈에 따라 center
+                $(this).dialog('center');
+            },
+            buttons: [{  // dialog 하단 버튼들
+                text:'취소',
+                handler:function(){
+						alert('cancel');
+                        $('#dlg1').dialog("close");
+				},
+            },{
+                text:'적용',
+                //click: function(){},
+                handler:function(){
+						alert('ok');
+				}
+            }]
+        }); 
+
+        $('#rb1').radiobutton({
+            labelAlign: 'left',         //label 정렬 left, right     
+            labelPosition:'after',     //label 위치 'before(앞에)','after(뒤에)','top(위에)'
+            label: '알고리즘',
+            value: 'algorithm',
+            checked: false
+        });
+        $('#rb2').radiobutton({
+            labelAlign: 'left', 
+            labelPosition:'after',
+            label: 'AI모델',
+            value: 'aimodel',
+            checked: true
+        });
+
+        $('#date').datebox({
+            labelPosition: 'left',
+            currentText: 'Today',
+            closeText: 'Close', 
+            prompt:'날짜를 선택하세요,',    //placeholder
+            required: false,
+
+            formatter : function(date){
+                var y = date.getFullYear();
+                var m = date.getMonth()+1;
+                var d = date.getDate();
+                m = ((m < 10) ? '0' : 0) + m;
+                d = ((d < 10) ? '0' : 0) + d;
+
+                return y + '-' + m + '-' + d;
+            },
+            parser : function(s){
+                var t = Date.parse(s);
+                if (!isNaN(t)){
+                    return new Date(t);
+                } else {
+                    return null;
+                }
+            }
+
+            /*오늘날짜 표시*/
+            /*value: (new Date().toString('yyyy-mm-dd')),
+            formatter : function(date){
+                var y = date.getFullYear();
+                var m = date.getMonth()+1;
+                var d = date.getDate();
+                return y+'-'+(m<10?('0'+m):m)+'-'+(d<10?('0'+d):d);
+            },
+            parser : function(s){
+                var t = Date.parse(s);
+                if (!isNaN(t)){
+                    return new Date(t);
+                } else {
+                    return null;
+                }
+            }*/
+        });
+        $('#pb').passwordbox({
+            prompt: 'Password',
+            passwordChar: '%u25CF',     //텍스트 상자에 표시할 비밀번호 문자
+            showEye: true,              //눈 아이콘을 표시할지 여부
+            revealed: false,            //숨겨진 비밀번호를 공개할지 여부 true, false
+            lastDelay: '500',           //마지막 입력 문자를 비밀번호 문자로 변환하는 데 걸리는 지연 시간
+            checkInterval: '200'//점검 간격 200 비밀번호 문자로 변환하는 간격 시간
+        });
+        $('#fb').filebox({
+            buttonText: '업로드',
+            labelPosition: 'top',       //top, left, right
+            buttonAlign: 'right',    //let, right
+            prompt:'Choose another file...',    //placeholder
+            buttonIcon: 'fa fa-upload',
+            accept: 'audio/*,video/*,image/*',     //파일유형 지정  '.txt, .docx'
+            multiple: '',    //여러 파일을 허용할지 여부 (true, false)
+            separator: ','//여러 파일 이름 사이의 구분 문
+        });
+
+        //FileBox를 사용하여 DataGrid에 파일을 업로드하는 방법은 무엇입니까? 
+        /*editor:{
+            type:'filebox',
+            options:{
+                buttonText:'...',
+		        accept:'image/*',
+                onChange: function(){
+                    var files = $(this).filebox('files')
+                    var formData = new FormData();
+                    for(var i=0; i<files.length; i++){
+                        var file = files[i];
+                        formData.append('file',file,file.name);
+                    }
+                    $.ajax({
+                        url:...,
+                        type:'post',
+                        data:formData,
+                        contentType:false,
+                        processData:false,
+                        success:function(data){
+                            //...
+                        }
+                    })
+                }
+            }
+        }*/
+    });
+</script>
+</body>
+</html>

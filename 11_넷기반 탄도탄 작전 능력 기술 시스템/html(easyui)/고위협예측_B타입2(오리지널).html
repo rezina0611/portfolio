@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="ui_event" content="true" />
+<title>고위협 예측 - B타입(easyui) 오리지널</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="./css/reset.css">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/layout2.css">
+
+<!--EasyUI css-->
+<link rel="stylesheet" type="text/css" href="./themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="./themes/color.css">
+<link rel="stylesheet" type="text/css" href="./demo/demo.css">
+
+<!--EasyUI Script -->
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/jquery.easyui.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        let winHeight = $('main').innerHeight() - 170;
+        console.log(winHeight);
+        $(".datagrid-view").css("height", winHeight);
+        $(".panel-body").css("height", winHeight); 
+        $(".datagrid-body").css("height", winHeight); 
+    });
+</script>
+<script>
+    $(window).resize(function () {
+        let height = $('main').innerHeight() - 170;
+        console.log(height);
+        $(".datagrid-view").css("height", height);
+        $(".panel-body").css("height", height);
+        $(".datagrid-body").css("height", height);
+    });
+</script> 
+<style>
+    /* body{
+        min-width: 0px !important;
+        overflow: hidden !important;
+        overflow-x: hidden !important;
+    }*/
+    .main{
+        overflow: hidden !important;
+    }
+    .datagrid-header td .datagrid-cell{
+        text-align: center !important;
+    }
+    .datagrid-header td .datagrid-cell{
+        white-space: normal !important;
+        height: auto !important;
+        line-height: 1 !important;
+        overflow: initial !important;
+        word-wrap: break-word !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+    .textbox-label{
+        width: 70px !important;
+    }
+</style>
+
+<!--<script>
+    $(function () {
+        //체계항적 selectbox 동적처리
+        let jaonArr = [ 
+            {no:'0'+1}, {no:'0'+2}, {no:'0'+3}, {no:'0'+4}, {no:'0'+5}, 
+            {no:'0'+6}, {no:'0'+7}, {no:'0'+8}, {no:'0'+9}, {no:10},
+            {no:11}, {no:12}, {no:13}, {no:14}, {no:15}
+        ]
+
+        $(".select").html("");
+
+        for (let i = 0; i < jaonArr.length; i++) {
+            let o = jaonArr[i];
+            let option ="";
+                option += "<option value='"+0+o.no+"'>";    //001
+                option += "TN0"+o.no+"";    //TN001
+                option += "</option>";
+            $(".select").append(option); 
+        }
+
+        let searchValue = "${requestMap.searchValue}";
+        let searchArr = $('.select').find("option");  // class가 'select' 인 selectBox에서 option 태그를 모두 찾아 searchArr 배열에 넣음
+
+        searchArr.each(function(i){     // searchArr 배열 for문 돌림
+            let optionValue = $(this).val();    //해당 value값을 변수에 저장
+            if(optionValue == searchValue){
+                $(this).attr("selected","true");
+            }
+        });
+    });
+</script>-->
+<script>
+    $(function () {
+        $('#dg2').datagrid({
+            title : 'Fluid DataGrid',
+            rownumbers : true,
+            singleSelect : true,
+            remoteSort: false,
+            multiSort: true,
+            width : '100%',
+            height : '100%',
+            url:'',
+            method:'get',
+            columns:[
+                [
+                    {field:'C1H0-1',title:'탄종', resizable:'false', align:'center', width:'6.9%'},
+                    {field:'C1H0-2',title:'탄두', resizable:'false', align:'center', width:'6.9%'},
+                    {field:'C1H1',title:'C1H1', resizable:'false', sortable:'true', align:'right', width:'5.8%'},
+                    {field:'C1H2',title:'C1H2', resizable:'false', sortable:'true', align:'right', width:'5.8%'},
+                    {field:'C1H3',title:'C1H3', resizable:'false', sortable:'true', align:'right', width:'5.8%'},
+                    {field:'C2H1',title:'C2H1', resizable:'false', sortable:'true', align:'right', width:'5.8%'},
+                    {field:'C2H2',title:'C2H2', resizable:'false', sortable:'true', align:'right', width:'5.8%'},
+                    {field:'C2H3',title:'C2H3', resizable:'false', sortable:'true', align:'right', width:'5.8%'},
+                    {field:'C3H1',title:'C3H1', resizable:'false', sortable:'true', align:'right', width:'5.8%'},
+                    {field:'C3H2',title:'C3H2', resizable:'false', sortable:'true', align:'right', width:'5.8%'},
+                    {field:'C3H3',title:'C3H3', resizable:'false', sortable:'true', align:'right', width:'5.8%'},
+                    {field:'C4H1',title:'C4H1', resizable:'false', sortable:'true', align:'right', width:'5.8%'},
+                    {field:'C4H2',title:'C4H2', resizable:'false', sortable:'true', align:'right', width:'5.8%'},
+                    {field:'C4H3',title:'C4H3', resizable:'false', sortable:'true', align:'right', width:'5.8%'},
+                    {field:'C5H1',title:'C5H1', resizable:'false', sortable:'true', align:'right', width:'5.8%'},
+                    {field:'C5H2',title:'C5H2', resizable:'false', sortable:'true', align:'right', width:'5.8%'},
+                    {field:'C5H3',title:'C5H3', resizable:'false', sortable:'true', align:'right', width:'5.8%'}
+                ]
+                // [   
+                //     {field:'C1H0-1',title:'', resizable:'false', sortable:'true', align:'right', width:'6%'},
+                //     {field:'C1H0-2',title:'', resizable:'false', sortable:'true', align:'right', width:'6%'},
+                //     {field:'C1H1',title:'C1H1', resizable:'false', sortable:'true', align:'right', width:'6.75%'},
+                //     {field:'C1H2',title:'C1H2', resizable:'false', sortable:'true', align:'right', width:'6.75%'},
+                //     {field:'C1H3',title:'C1H3', resizable:'false', sortable:'true', align:'right', width:'6.75%'},
+                //     {field:'C2H1',title:'C2H1', resizable:'false', sortable:'true', align:'right', width:'6.75%'},
+                //     {field:'C2H2',title:'C2H2', resizable:'false', sortable:'true', align:'right', width:'6.75%'},
+                //     {field:'C2H3',title:'C2H3', resizable:'false', sortable:'true', align:'right', width:'6.75%'},
+                //     {field:'C3H1',title:'C3H1', resizable:'false', sortable:'true', align:'right', width:'6.75%'},
+                //     {field:'C3H2',title:'C3H2', resizable:'false', sortable:'true', align:'right', width:'6.75%'},
+                //     {field:'C3H3',title:'C3H3', resizable:'false', sortable:'true', align:'right', width:'6.75%'},
+                //     {field:'C4H1',title:'C4H1', resizable:'false', sortable:'true', align:'right', width:'6.75%'},
+                //     {field:'C4H2',title:'C4H2', resizable:'false', sortable:'true', align:'right', width:'6.75%'},
+                //     {field:'C4H3',title:'C4H3', resizable:'false', sortable:'true', align:'right', width:'6.75%'},
+                //     {field:'C5H1',title:'C5H1', resizable:'false', sortable:'true', align:'right', width:'6.75%'},
+                //     {field:'C5H2',title:'C5H2', resizable:'false', sortable:'true', align:'right', width:'6.75%'},
+                //     {field:'C5H3',title:'C5H3', resizable:'false', sortable:'true', align:'right', width:'6.75%'}
+                // ]
+            ]
+        });
+    });
+</script>
+</head>
+<body>
+<!--wrapper-->
+<div class="wrapper">
+    <!--header-->
+    <!-- <header class="header">
+        <ul class="top-nav">
+            <li><a href="#none"><img src="./images/ico_home@2x.png" alt="HOME"></a></li>
+            <li><a href="#none" class="on">고위협 예측 출력기능</a></li>
+            <li><a href="#none">피해분석 출력기능</a></li>
+            <li><a href="#none">교전지원 출력기능</a></li>
+        </ul>
+    </header> -->
+    <!--//header-->
+
+    <!--main-->
+    <main class="main">
+        <div class="row">
+            <h2 class="mb-1 fs16">· 고위협 예측 - 탄종/탄두 조합 확률 예측 (B타입) (easyui) 오리지널</h2>
+        </div>
+        <section>
+            <div class="row flex-end">
+                <!-- <label class="col-form-label">체계항적 : </label> -->
+                <div>
+                    <input id="cc" class="easyui-combobox" style="width:100%;">
+                    <script>
+                        $(function () {
+                            $('#cc').combobox({
+                                //url:'./combobox_data.json',
+                                //method:'get',
+                                data: [
+                                    {value:'TN001',text:'TN001'},
+                                    {value:'TN002',text:'TN002'},
+                                    {value:'TN003',text:'TN003', selected: true},
+                                    {value:'TN004',text:'TN004'},
+                                    {value:'TN005',text:'TN005'},
+                                    {value:'TN006',text:'TN006'},
+                                    {value:'TN007',text:'TN007'}
+                                ],
+                                panelHeight: 'auto',
+                                label: '체계항적 :',
+                                labelPosition: 'left'
+                            });
+                        });
+                    </script>
+                    <!-- <select class="select" name="selectBox">
+                    </select> -->
+                    <!-- <select class="easyui-combobox" name="state" label="" labelPosition="top" style="width:60%;">
+                        <option value="TN001">TN001</option>
+                        <option value="TN002">TN002</option>
+                        <option value="TN003">TN003</option>
+                        <option value="TN004">TN004</option>
+                        <option value="TN005">TN005</option>
+                        <option value="TN006">TN006</option>
+                        <option value="TN007">TN007</option>
+                        <option value="TN008">TN008</option>
+                        <option value="TN009">TN009</option>
+                        <option value="TN010">TN010</option>
+                    </select> -->
+                </div>
+            </div>
+            
+            <table id="dg2" class="easyui-datagrid">
+                <tbody>
+                    <tr>
+                        <td>C1</td>
+                        <td>H2</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                    </tr>
+                    <tr>
+                        <td>C4</td>
+                        <td>H1</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                    </tr>
+                    <tr>
+                        <td>C3</td>
+                        <td>H2</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                    </tr>
+                    <tr>
+                        <td>C1</td>
+                        <td>H2</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                    </tr>
+                    <tr>
+                        <td>C4</td>
+                        <td>H1</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                    </tr>
+                    <tr>
+                        <td>C3</td>
+                        <td>H2</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                    </tr>
+                    <tr>
+                        <td>C1</td>
+                        <td>H2</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>#15</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                        <td>xx%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <!--//main-->
+    <!--footer-->
+    <footer class="footer">
+        <div class="inner">
+            <div class="left">
+                <ul>
+                    <li>
+                        <a href="https://www.add.re.kr/kps" target="_blank" title="새창열림">
+                            <img src="./images/logo_afdd@2x.png" alt="국방과학연구소">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.hanwhasystems.com/kr/index.do" target="_blank" title="새창열림">
+                            <img src="./images/logo_hanhwa@2x.png" alt="한화시스템">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="center">정보분석장치 프로토타입 고위협 예측 외 2종 모듈 출력기능</div>
+            <div class="right">
+                <a href="https://www.funzin.co.kr/main" target="_blank" title="새창열림">
+                    <img src="./images/logo_funzin@2x.png" alt="(주)펀진">
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!--//footer-->
+</div>
+<!--//wrapper-->
+</body>
+</html>

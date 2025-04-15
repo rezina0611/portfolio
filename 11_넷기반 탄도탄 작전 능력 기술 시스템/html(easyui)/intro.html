@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="ui_event" content="true" />
+<title>main</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="./css/reset.css">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/layout2.css">
+
+<!--EasyUI css-->
+<link rel="stylesheet" type="text/css" href="./themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="./themes/color.css">
+<link rel="stylesheet" type="text/css" href="./demo/demo.css">
+
+<!--EasyUI Script -->
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/jquery.easyui.min.js"></script>
+<style>
+    body{
+        min-width: 0px !important;
+        overflow: hidden !important;
+        overflow-x: hidden !important;
+        padding: 0;
+    }
+    .TOPIC-box .s-box .textbox.combo{
+        border: 1px solid #626769;
+        margin-bottom: .5rem;
+    }
+    .TOPIC-box .s-box .textbox.combo .textbox-focused {
+        box-shadow: none !important;
+        -moz-box-shadow:  none !important;
+        -webkit-box-shadow:  none !important;
+        border: none !important;
+    }
+    .TOPIC-box .s-box .textbox.combo .textbox-prompt {
+        font-size: 12px !important;
+        color: #9A9A9A !important;
+    }
+    .TOPIC-box .s-box .textbox.combo .textbox-text {
+        font-size: 12px !important;
+    }
+    .TOPIC-box .s-box .combo-arrow {
+        background-color: transparent;
+        background: url(images/ico_arrow_down@2x.png) no-repeat center center;
+        background-size: 16px 16px;
+    }
+    .TOPIC-box .s-box .textbox.filebox{
+        border: none !important;
+        box-shadow: none !important;
+        -moz-box-shadow:  none !important;
+        -webkit-box-shadow:  none !important;
+        margin-bottom: .5rem;
+    }
+    .TOPIC-box .s-box .textbox.filebox .textbox-focused {
+        box-shadow: none !important;
+        -moz-box-shadow:  none !important;
+        -webkit-box-shadow:  none !important;
+        border: none !important;
+    }
+    .TOPIC-box .s-box .textbox.filebox .textbox-text{
+        width: 100% !important;
+        margin: 0 0 0 84px !important;
+    }
+    .TOPIC-box .s-box .textbox.filebox .l-btn{
+        background-color: #255D33;
+        background: linear-gradient(to bottom, #255D33 0, #255D33 100%);
+        color: #fff;
+    }
+    .TOPIC-box .s-box .textbox.filebox .textbox-prompt{
+        font-size: 12px;
+        color: #9A9A9A;
+    }
+    .TOPIC-box .s-box .textbox.filebox .textbox-button{
+        border-radius: 5px;
+        vertical-align: middle !important;
+    }
+    /*.TOPIC-box .s-box .textbox.filebox .l-btn-text {
+        display: inline-block;
+        vertical-align: top;
+        width: auto;
+        line-height: 28px;
+        font-size: 12px;
+        padding-left: 20px;
+        margin: 0 8px;
+        background: url(./images/xls@2x.png) no-repeat left center;
+        background-size: 16px 16px;
+    }*/
+    .TOPIC-box .s-box .textbox.filebox .l-btn-text{
+        font-size: 12px;
+    }
+    .icon-xls{
+        background: url(./images/xls@2x.png) no-repeat left center;
+        background-size: 16px 16px;
+    }
+    .panel-body{
+        border: 1px solid #626769;
+    }
+    .combobox-item{
+        font-size: 12px !important;
+    }
+    .combo-panel {
+        height: auto !important;
+    }
+    .combobox-item-selected {
+        background-color: #CFD8DC;
+        color: #000000;
+    }
+</style>
+</head>
+<body>
+<!--wrapper-->
+<div class="wrapper bg">
+    <div class="container">
+        <div class="title-area">
+            <span></span>
+            <h2>넷기반 탄도탄 작전능력 기술 정보분석장치 </h2>
+            <p>고위협 예측, 피해분석, 교전지원 모듈 출력기능</p>
+        </div>
+        
+        <ul class="terms">
+            <li><a href="#none">고위협 예측 출력기능</a></li>
+            <li><a href="#none">피해분석 출력기능</a></li>
+            <li><a href="#none">교전지원 출력기능</a></li>
+        </ul>
+
+        <div class="TOPIC-box">
+            <h4>TOPIC 생성 및 실행</h4>
+            <div class="s-box">
+                <div>
+                    <input id="missile" class="easyui-combobox" style="width:250px;">
+                    <input id="fb" type="text" style="width:250px">
+                </div>
+                <button type="button" class="btn no-bg-primary">실행</button>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+    <footer class="footer">
+        <div class="inner">
+            <div class="left">
+                <ul>
+                    <li>
+                        <a href="https://www.add.re.kr/kps" target="_blank" title="새창열림">
+                            <img src="./images/logo_afdd@2x.png" alt="국방과학연구소">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.hanwhasystems.com/kr/index.do" target="_blank" title="새창열림">
+                            <img src="./images/logo_hanhwa@2x.png" alt="한화시스템">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="center">정보분석장치 프로토타입 고위협 예측 외 2종 모듈 출력기능</div>
+            <div class="right">
+                <a href="https://www.funzin.co.kr/main" target="_blank" title="새창열림">
+                    <img src="./images/logo_funzin@2x.png" alt="(주)펀진">
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!--//footer-->
+</div>
+<!--//wrapper-->
+<script>
+    $(function () {
+        $('#missile').combobox({
+            //label: '',            //레이블이름
+            textField:'text',       //기본 데이터 필드 이름
+            editable: false,        //편집 가능여부(true, false)
+            setEditable: false,     //편집 가능한 기능
+            prompt:'TOPIC 타입을 선택하세요.',      //placeholder
+            data: [
+                {value:'typeA',text:'Topic_Type A'},
+                {value:'typeB',text:'Topic_Type B'},
+                {value:'typeC',text:'Topic_Type C'},
+                {value:'typeD',text:'Topic_Type D'},
+                {value:'typeE',text:'Topic_Type E'},
+                {value:'typeF',text:'Topic_Type F'},
+                {value:'typeG',text:'Topic_Type G'},
+                {value:'typeH',text:'Topic_Type H'},
+                {value:'typeI',text:'Topic_Type I'},
+                {value:'typeJ',text:'Topic_Type J'}
+            ]
+        });
+
+        $('#fb').filebox({
+            buttonText: '파일선택',         //button 이름
+            prompt:'선택된 파일 없음',      //placeholder
+            buttonAlign: 'left',            //button 정렬 left, right  
+            buttonIcon:'icon-xls'
+        });
+    });
+</script>
+</body>
+</html>

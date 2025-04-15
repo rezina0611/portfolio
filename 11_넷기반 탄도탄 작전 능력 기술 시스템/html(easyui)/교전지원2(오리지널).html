@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="ui_event" content="true" />
+<title>교전지원 (easyui) 오리지널</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="./css/reset.css">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/layout2.css">
+
+<!--EasyUI css-->
+<link rel="stylesheet" type="text/css" href="./themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="./themes/color.css">
+<link rel="stylesheet" type="text/css" href="./demo/demo.css">
+
+<!--EasyUI Script -->
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/jquery.easyui.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        let winHeight = $('main').innerHeight() - 100;
+        console.log(winHeight);
+        // $(".datagrid-view").css("height", winHeight); 
+        // $(".panel-body").css("height", winHeight);
+        // $(".datagrid-body").css("height", winHeight - 60); 
+        $("#first .datagrid-view").css("height", winHeight); 
+        $("#first .datagrid-wrap").css("height", winHeight);
+        $("#first .datagrid-body").css("height", winHeight); 
+    });
+</script>
+<script>
+    $(window).resize(function () {
+        let height = $('main').innerHeight() - 100;
+        console.log(height);
+        // $(".datagrid-view").css("height", height);
+        // $(".panel-body").css("height", height);
+        // $(".datagrid-body").css("height", height);
+        $("#first .datagrid-view").css("height", height);
+        $("#first .datagrid-wrap").css("height", height);
+        $("#first .datagrid-body").css("height", height);
+    });
+</script> 
+<style>
+    body{
+        min-width: 0px !important;
+        overflow: hidden !important;
+        overflow-x: hidden !important;
+    }
+    .main{
+        overflow: hidden !important;
+    }
+    .dialog-button {
+        text-align: center;
+    }
+    .datagrid-body td .datagrid-cell {
+        white-space: normal !important;
+        word-break: break-all !important;
+        vertical-align: middle !important;
+    }
+</style>
+<script>
+    $(function () {
+        $('#dg1').datagrid({
+            title : 'Column Group',
+            remoteSort: false,
+            singleSelect: true,
+            width : '100%',
+            height : '100%',
+            url:'',
+            method:'get',
+            columns:[
+                [
+                    {title:'항적정보', colspan:4},
+                    {title:'경로예측', colspan:4},
+                    {title:'목표예측', colspan:3},
+                ],
+                [
+                    {field:'info',title:'체계항적', resizable:'false', align:'left', width:'9%'},
+                    {field:'LP',title:'LP', resizable:'false', align:'left', width:'6%'},
+                    {field:'Tanjong',title:'탄종', resizable:'false', align:'left', width:'9%'},
+                    {field:'warhead',title:'탄두', resizable:'false', align:'left', width:'9%'},
+                    {field:'po',title:'현재위치', resizable:'false', align:'left', width:'9%'},
+                    {field:'ip',title:'예상IP', resizable:'false', align:'left', width:'9%'},
+                    {field:'form',title:'기동형태', resizable:'false', align:'left', width:'9%'},
+                    {field:'fullup',title:'풀업시점', resizable:'false', align:'left', width:'9%'},
+                    {field:'pathIP',title:'모의경로IP', resizable:'false', align:'left', width:'9%'},
+                    {field:'facility',title:'주요시설', resizable:'false', align:'left', width:'14.2%'},
+                    {field:'target',title:'예상목표', resizable:'false', align:'left', width:'9%'}
+                ]
+            ]
+        });
+    });
+</script>
+</head>
+<body>
+<!--wrapper-->
+<div class="wrapper">
+    <!--header-->
+    <!-- <header class="header">
+        <ul class="top-nav">
+            <li><a href="#none"><img src="./images/ico_home@2x.png" alt="HOME"></a></li>
+            <li><a href="#none">고위협 예측 출력기능</a></li>
+            <li><a href="#none">피해분석 출력기능</a></li>
+            <li><a href="#none" class="on">교전지원 출력기능</a></li>
+        </ul>
+    </header> -->
+    <!--//header-->
+
+    <!--main-->
+    <main class="main">
+        <div class="row">
+            <h2 class="mb-1 fs16">· 교전지원 - 탄도탄의 경로 및 목표 예측 (easyui) 오리지널</h2>
+            <a href="javascript:void(0)" 
+                class="easyui-linkbutton" 
+                onclick="$('#dlg1').dialog('open').dialog('center')">모드 설정
+            </a>
+        </div>
+        <div id="first">
+            <!--height:795px;-->
+            <table id="dg1" class="easyui-datagrid">
+                <tbody>
+                    <tr>
+                        <td>TN001</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN002</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2, text 3, text 4, text 5, text 6, text 7, text 8, text 9,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN003</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN004</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN005</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN006</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN007</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN008</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN009</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN010</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN011</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN012</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN013</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN014</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN015</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN016</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN017</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN018</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN019</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN020</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN021</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN022</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN023</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN024</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN025</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN026</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN027</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN028</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN029</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN030</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN031</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                    <tr>
+                        <td>TN032</td>
+                        <td>X,Y</td>
+                        <td>P-U</td>
+                        <td>text</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>Boost</td>
+                        <td>X,Y,Z</td>
+                        <td>X,Y</td>
+                        <td>text 1, text 2,…text n</td>
+                        <td>AAA</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <!--//main-->
+    <!--footer-->
+    <footer class="footer">
+        <div class="inner">
+            <div class="left">
+                <ul>
+                    <li>
+                        <a href="https://www.add.re.kr/kps" target="_blank" title="새창열림">
+                            <img src="./images/logo_afdd@2x.png" alt="국방과학연구소">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.hanwhasystems.com/kr/index.do" target="_blank" title="새창열림">
+                            <img src="./images/logo_hanhwa@2x.png" alt="한화시스템">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="center">정보분석장치 프로토타입 고위협 예측 외 2종 모듈 출력기능</div>
+            <div class="right">
+                <a href="https://www.funzin.co.kr/main" target="_blank" title="새창열림">
+                    <img src="./images/logo_funzin@2x.png" alt="(주)펀진">
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!--//footer-->
+</div>
+<!--//wrapper-->
+<div id="dlg1" class="easyui-dialog" title="Complex Toolbar on Dialog"> 
+    <div class="content">
+        <ul class="select">
+            <li>
+                <form id="rb1">
+                    <input class="easyui-radiobutton" name="ra">
+                </form>
+            </li>
+            <li>
+                <form id="rb2">
+                    <input class="easyui-radiobutton" name="ra">
+                </form>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    $(function () {
+        $('#dlg1').dialog({
+            title: '모드 설정', // 다이얼로그 제목
+            iconCls: 'icon-save',
+            autoOpen: false,    //자동으로 열리지않게
+            resizable: true,    //사이즈 조절 가능 여부
+            width : '400',     // 넓이
+            height : '250',     // 높이 /*580*/
+            padding : '10',     // 안쪽여백
+            closed: true,       // dialog 오픈(true), 비오픈 여부(false) 
+            modal: true,        // 배경색 어둡게 true, false  mask
+            onResize: function(){   //사이즈에 따라 center
+                $(this).dialog('center');
+            },
+            buttons: [{  // dialog 하단 버튼들
+                text:'취소',
+                handler:function(){
+						alert('cancel');
+                        $('#dlg').dialog("close");
+				},
+            },{
+                text:'적용',
+                //click: function(){},
+                handler:function(){
+						alert('ok');
+				}
+            }]
+        }); 
+
+        $('#rb1').radiobutton({
+            labelAlign: 'left',         //label 정렬 left, right     
+            labelPosition:'after',     //label 위치 'before(앞에)','after(뒤에)','top(위에)'
+            label: '알고리즘',
+            value: 'algorithm',
+            checked: false
+        });
+        $('#rb2').radiobutton({
+            labelAlign: 'left', 
+            labelPosition:'after',
+            label: 'AI모델',
+            value: 'aimodel',
+            checked: true
+        });
+    });
+</script>
+</body>
+</html>
