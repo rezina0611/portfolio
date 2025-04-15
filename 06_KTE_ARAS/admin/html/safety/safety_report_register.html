@@ -1,0 +1,225 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>안전신문고</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script> 
+</head>
+    
+<body>
+<div class="page-wrapper d-flex">
+    <nav id="side-nav" class="side-nav">
+    </nav>
+	
+    <main class="contents">
+        <section class="wrapper">
+            <h1 class="page-title">안전신문고</h1>
+            <div class="boxGrayTxt">
+                <p>Kt engineering 사업장 내 업무수행 과정에서 사고 발생 위험 등 위험요인이 발견된 경우 아래의 내용을 작성하여 신고하여 주시기바랍니다.</p>
+            </div>
+            <form>
+                <table class="table l-fixed">
+					<colgroup>
+                        <col width="190">
+                        <col width="">
+                        <col width="160">
+                        <col width="">
+                        <col width="160">
+                        <col width="">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>프로젝트 or 사업장 주소 <span class="essential">*</span></th>
+                            <td colspan="3"><input type="text" class="input-tb" placeholder=""></td>
+                        
+                            <th>소속 <span class="essential">*</span></th>
+                            <td><input type="text" class="input-tb" placeholder=""></td>
+                        </tr>
+                        <tr>
+                            <th>성명 <span class="essential">*</span></th>
+                            <td><input type="text" class="input-tb" placeholder=""></td>
+                            <th>연락처 <span class="essential">*</span></th>
+                            <td><input type="text" class="input-tb" placeholder="숫자로 입력"></td>
+                            <th>작성일 <span class="essential">*</span></th>
+                            <td></td><!--신고버튼 클릭시 자동입력-->
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="table  mt-3 v-middle">
+					<colgroup>
+                        <col width="190">
+                        <col width="180">
+                        <col width="">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>제목 <span class="essential">*</span></th>
+                            <td colspan="2">
+                                <div class="d-flex">
+                                    <input type="text" class="input-tb" placeholder="">
+                                    <span class="f-bold"><label><input type="checkbox">작업중지요청</label></span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>위험종류 <span class="essential">*</span></th>
+                            <td colspan="2">
+                                <ul class="devSarterTab">
+                                    <li>
+                                        <label for="safety_r1">
+                                            <input type="checkbox" id="safety_r1">
+                                            <span>추락</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label for="safety_r2">
+                                            <input type="checkbox" name="" id="safety_r2">
+                                            <span>전도(넘어짐)</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label for="safety_r3">
+                                            <input type="checkbox" name="" id="safety_r3">
+                                            <span>끼임</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label for="safety_r4">
+                                            <input type="checkbox" name="" id="safety_r4">
+                                            <span>화학물질 노출</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label for="safety_r5">
+                                            <input type="checkbox" name="" id="safety_r5">
+                                            <span>화재</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label for="safety_r6">
+                                            <input type="checkbox" name="" id="safety_r6">
+                                            <span>감전</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label for="safety_r7">
+                                            <input type="checkbox" name="" id="safety_r7">
+                                            <span>폭발</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label for="safety_r8">
+                                            <input type="checkbox" name="" id="safety_r8">
+                                            <span>근골격계질환</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label for="safety_r9">
+                                            <input type="checkbox" name="" id="safety_r9">
+                                            <span>교통사고</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label for="safety_r10">
+                                            <input type="checkbox" name="" id="safety_r10">
+                                            <span>낙하물</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label for="safety_r11">
+                                            <input type="checkbox" name="" id="safety_r11" checked>
+                                            <span>감정노동</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label for="safety_r12">
+                                            <input type="checkbox" name="" id="safety_r12" checked>
+                                            <span>기타</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">신고 및 제안내용 <span class="essential">*</span></th>
+                            <td class="center">현황 및 문제점 <span class="essential">*</span></td>
+                            <td>
+                                <textarea class="input-tb" cols="100" rows="5" placeholder=""></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="center">개선 요구사항 <span class="essential">*</span></td>
+                            <td>
+                                <textarea class="input-tb" cols="100" rows="5" placeholder=""></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="line-h">첨부파일[사진] <span class="essential">*</span></th>
+                            <td colspan="2">
+                                <div class="filebox">
+                                    <input class="upload-name" value="" placeholder="첨부파일">
+                                    <label for="file-1">파일선택</label> 
+                                    <input type="file" id="file-1">
+                                </div>
+                                <p class="small-txt">* (첨부 가능 확장자 : jpg, jpeg, png, bmp, tiff) 파일명에 특수문자 포함 불가</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>개인정보 수집 동의</th>
+                            <td colspan="2">
+                                <div class="d-flex jc-start ai-center mtb-05">
+                                    <label for="agreeUseMyInfo1" class="mr-2">
+                                        <input type="radio" name="agreeUseMyInfo" id="agreeUseMyInfo1" value="Y" checked="" tabindex="-1">
+                                        <span class="txt">동의</span>
+                                    </label>
+                                    <label for="agreeUseMyInfo2">
+                                        <input type="radio" name="agreeUseMyInfo" id="agreeUseMyInfo2" value="N"  tabindex="-1">
+                                        <span class="txt">비동의</span>
+                                    </label>
+                                </div>
+                                <ul class="hyphen-list">
+                                    <li>수집항목: 성명, 연락처, 소속(1년 후 폐기)</li>
+                                    <li>비동의시 신고 불가합니다.</li>
+                                </ul>
+                                <div class="policy">
+                                    <p>정보주체는 회사에 대해 언제든지 다음의 개인정보 보호 관련 권리를 행사할 수 있습니다.</p>
+                                    <p>정보주체로부터 동의 받은 개인정보 보유기간이 경과하거나 처리목적이 달성되었음에도 불구하고 다른 법령에 따라 개인정보를 계속 보존하여야 하는 경우에는,해당 개인정보를 별도의 데이터베이스(DB)로 옮기거나 보관장소를 달리하여 보존합니다.</p>
+                                    <p>개인정보 파기의 방법은 다음과 같습니다.</p>
+                                    <ul class="hyphen-list mb-1">
+                                        <li>개인정보 열람요구</li>
+                                        <li>오류 등이 있을 경우 정정 요구</li>
+                                        <li>삭제 요구</li>
+                                        <li>처리정지 요구</li>
+                                    </ul>
+                                    <p>정보주체가 개인정보의 오류 등에 대한 정정 또는 삭제를 요구한 경우에는 회사는 완료할 때까지 당해 개인정보를 이용하거나 제공하지 않습니다.</p>
+                                    <p>권리 행사는 정보주체의 법정대리인이나 위임을 받은 자 등 대리인을 통하여 하실 수 있습니다. 이 경우 위임장을 제출하셔야 합니다.</p>
+                                    <p>개인정보 열람 및 처리정지 요구는 개인정보보호법 제35조 제5항, 제37조 제2항에 의하여 정보주체의 권리가 제한 될 수 있습니다.</p>
+                                    <p>개인정보의 정정 및 삭제 요구는 다른 법령에서 그 개인정보가 수집 대상으로 명시되어 있는 경우에는 그 삭제를 요구할 수 없습니다.</p>
+                                    <p>회사는 정보주체 권리에 따른 열람의 요구, 정정·삭제의 요구, 처리정지의 요구 시 열람 등 요구를 한 자가 본인이거나 정당한 대리인인지를 확인합니다.</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+
+			<div class="btn-area">
+                <button class="btn-big -primary">신고</button>
+			</div>
+		</section>
+    </main>
+    
+</div>
+
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+
+</body>
+</html>

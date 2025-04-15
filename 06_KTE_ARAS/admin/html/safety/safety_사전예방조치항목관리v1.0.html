@@ -1,0 +1,299 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>사전예방조치항목 관리</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+    
+<body>
+    
+<div class="page-wrapper d-flex">
+    <nav id="side-nav" class="side-nav">
+    </nav>
+	
+    <main class="contents">
+        <section class="wrapper">
+            <h1 class="page-title">사전예방조치항목 관리 <span class="c-blue"> V1.0</span></h1>
+            <form>
+                <div class="top btn-area jc-end mb-1">
+                    <button class="btn btn-add">추가</button>
+                </div>
+                <table class="table dt center l-fixed v-middle">
+					<colgroup>
+						<col width="70">
+                        <col width="140">
+                        <col width="170">
+						<col width="">
+                        <col width="90">
+                        <col width="130">
+					</colgroup>
+                    <thead>
+                        <tr>
+                            <th>순서</th>
+                            <th>작업구분</th>
+                            <th>세부작업구분</th>
+                            <th>안전주의사항</th>
+                            <th>사용여부</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>1</th>
+							<td>일반사항</td>
+                            <td class="left"><input type="text" class="input-tb"></td>
+                            <td class="left">개인안전보호구 착용</td>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn-sm normal" disabled>위로</button>
+                                    <button class="btn-sm normal">아래로</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>2</th>
+							<td>일반사항</td>
+                            <td class="left"><input type="text" class="input-tb"></td>
+                            <td class="left">작업구간 구획 정리 및 통제</td>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn-sm normal">위로</button>
+                                    <button class="btn-sm normal">아래로</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>3</th>
+							<td>일반사항</td>
+                            <td class="left"><input type="text" class="input-tb"></td>
+                            <td class="left">안전게시판 설치 운영</td>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn-sm normal">위로</button>
+                                    <button class="btn-sm normal">아래로</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>4</th>
+							<td>화기작업</td>
+                            <td class="left"><input type="text" class="input-tb"></td>
+                            <td class="left">불티 비산 방지포 설치 운영</td>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn-sm normal">위로</button>
+                                    <button class="btn-sm normal">아래로</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>5</th>
+							<td>화기작업</td>
+                            <td class="left"><input type="text" class="input-tb"></td>
+                            <td class="left">임시소방시설(소화기 등) 운영</td>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn-sm normal">위로</button>
+                                    <button class="btn-sm normal">아래로</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>6</th>
+							<td>화기작업</td>
+                            <td class="left"><input type="text" class="input-tb"></td>
+                            <td class="left">화기감시자 배치 운영</td>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn-sm normal">위로</button>
+                                    <button class="btn-sm normal">아래로</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>7</th>
+							<td>화기작업</td>
+                            <td class="left"><input type="text" class="input-tb"></td>
+                            <td class="left">화기작업구간 가연성 물질 제거</td>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn-sm normal">위로</button>
+                                    <button class="btn-sm normal">아래로</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>8</th>
+							<td>화기작업</td>
+                            <td class="left"><input type="text" class="input-tb"></td>
+                            <td class="left">접기 자동전격방지지 설치 운영</td>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn-sm normal">위로</button>
+                                    <button class="btn-sm normal" disabled="">아래로</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>9</th>
+							<td>화기작업</td>
+                            <td class="left"><input type="text" class="input-tb"></td>
+                            <td class="left">LPG, 산소 등 MSDS 부착 운영</td>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn-sm normal">위로</button>
+                                    <button class="btn-sm normal" disabled="">아래로</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>10</th>
+							<td>화기작업</td>
+                            <td class="left"><input type="text" class="input-tb"></td>
+                            <td class="left">가스절단기, 용접기, 그라인드 등 점검</td>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn-sm normal">위로</button>
+                                    <button class="btn-sm normal" disabled="">아래로</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>11</th>
+							<td>화기작업</td>
+                            <td class="left"><input type="text" class="input-tb"></td>
+                            <td class="left">게이지 파손여부 및 역화방지기 확인
+                            </td>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn-sm normal">위로</button>
+                                    <button class="btn-sm normal" disabled="">아래로</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>12</th>
+							<td>화기작업</td>
+                            <td class="left"><input type="text" class="input-tb"></td>
+                            <td class="left">용접케이블 확인 및 충전부 절연 조치
+                            </td>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn-sm normal">위로</button>
+                                    <button class="btn-sm normal" disabled="">아래로</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>13</th>
+							<td>고소작업</td>
+                            <td class="left"><input type="text" class="input-tb"></td>
+                            <td class="left">안전난간대 설치 확인</td>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn-sm normal">위로</button>
+                                    <button class="btn-sm normal" disabled="">아래로</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>14</th>
+							<td>고소작업</td>
+                            <td class="left"><input type="text" class="input-tb"></td>
+                            <td class="left">생명줄 설치 (안전벨트 부착설비 포함)
+                            </td>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn-sm normal">위로</button>
+                                    <button class="btn-sm normal" disabled="">아래로</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>29</th>
+							<td>중량물 취급 작업</td>
+                            <td class="left"><input type="text" class="input-tb"></td>
+                            <td class="left">중량물 취급 작업계획서 작성여부<br>(등록증,보험증,면허증 등 서류 일체)
+                            </td>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn-sm normal" disabled="">위로</button>
+                                    <button class="btn-sm normal">아래로</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>38</th>
+							<td>전기취급 작업</td>
+                            <td class="left"><input type="text" class="input-tb"></td>
+                            <td class="left">활선작업 금지(전원 차단 확인)</td>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn-sm normal" disabled="">위로</button>
+                                    <button class="btn-sm normal">아래로</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>55</th>
+							<td>밀폐공간 작업</td>
+                            <td class="left"><input type="text" class="input-tb"></td>
+                            <td class="left">밀폐공간 작업자 특별안전교육 실시 여부</td>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn-sm normal">위로</button>
+                                    <button class="btn-sm normal" disabled="">아래로</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="edit">
+                            <th><input type="text" class="input-tb w100 min-w-auto"></th>
+                            <td class="left"><input type="text" class="input-tb" placeholder=""></td>
+                            <td class="left"><input type="text" class="input-tb" placeholder=""></td>
+							<td class="left">
+                                <textarea class="input-tb" rows="2"></textarea>
+                                <!-- <input type="text" class="input-tb" placeholder=""> -->
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btn-area">
+                    <button class="btn-big -grey">취소</button>
+                    <button class="btn-big -primary">수정</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</div>
+    
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+
+</body>
+</html>
