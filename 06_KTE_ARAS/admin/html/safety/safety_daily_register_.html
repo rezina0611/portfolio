@@ -1,0 +1,1634 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>일일안전활동보고 등록</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+    
+<body>   
+
+<!-- 교육참석 서명 -->    
+<div class="modal-wrapper" id="modal-sign">
+    <div class="modal">
+        <div class="header">
+            <h1>정기안전보건교육 등록
+                <button class="btn btn-close trigger-sign"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <table class="table dt no-bg">
+                <colgroup>
+                    <col width="120">
+                    <col>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>프로젝트</th>
+                        <td>프로젝트명</td>
+                    </tr>
+                    <tr>
+                        <th>사업자</th>
+                        <td>2021-00530-K(강원삼척시)</td>
+                    </tr>
+                    <tr>
+                        <th>서명자</th>
+                        <td>홍길동</td>
+                    </tr>
+                    <tr>
+                        <th>서명일자</th>
+                        <td>2022-11-22</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="mt-1">
+                <label class="d-flex ai-center"><input type="checkbox">  안전교육을 이수하고 건강상태가 이상없음을 확인하며 이에 서명합니다.</label>
+            </div>
+            <div class="signpad mt-15"></div>
+        </div>
+		<div class="btn-area">
+			<button class="btn -grey trigger-sign">취소</button>
+			<button class="btn -primary">등록</button>
+		</div>
+    </div>
+</div>    
+<!-- // 교육참석 서명  -->    
+    
+<!-- 이미지 상세 페이지 -->
+<div class="layer" id="layer-img-detail">
+    <header class="m-header">
+        <div class="inner">사진</div>
+		<a class="btn -green"><i class="fas fa-image" aria-hidden="true"></i>다운로드</a>
+        <button class="btn-close img-detail"></button>
+    </header>
+    <div class="contents">
+        <div class="bg-white">
+            <figure class="img-full">
+                <img src="../../images/sample/1.png" alt="">
+            </figure>
+			<nav class="slide-nav">
+				<span class="icon nav-prev"></span>
+				<span class="icon nav-next"></span>
+			</nav>
+			<div class="foot-info">
+				<div class="info">
+					<div>등록자</div>
+					<div class="date">2021-05-27</div>
+				</div>
+				<div class="pagination"><strong>2</strong>/2</div>
+			</div>
+        </div>
+    </div>
+</div>    
+<!-- End layer -->
+    
+<!-- 출역인원 등록 -->
+<div class="modal-wrapper" id="modal-register-wf">
+    <div class="modal wide">
+        <div class="header">
+            <h1>출역인원 등록
+				<button class="btn btn-close trigger-register-wf"></button>
+			</h1>
+        </div>
+        <div class="content">
+            <div class="register-wf">
+                <div class="d-flex">
+                    <div class="left">
+                        <div class="card">
+                            <div class="card-body">
+								<div id="tab-menu2" class="tab-menu">
+									<div id="tab-btn2" class="tab-btn">
+										<ul class="tab-2 light-grey">
+											<li class="active"><button>협력사</button></li>
+											<li class=""><button>KTE</button></li>
+										</ul>
+									</div>
+									<div id="tab-cont2" class="tab-cont">
+										<div title="partners">
+                                            <div class="card-search">
+                                                <select class="form-select">
+                                                    <option selected="">계약코드</option>
+                                                    <option value="">1</option>
+                                                    <option value="">2</option>
+                                                    <option value="">3</option>
+                                                    <option value="">4</option>
+                                                </select>
+                                                <div class="input-group">
+                                                    <input type="search" placeholder="직원 이름을 입력해 검색하세요.">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="check-all">
+                                                <label><input type="checkbox">선택</label>
+                                            </div>
+                                            <div class="check-list-wrap entry">
+                                                <div class="check-list">
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">과장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>최길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+										<div title="KTE">
+                                            <div class="check-list-wrap" style="height:535px;">
+                                                <div class="check-list">
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                    <label class="tr">
+                                                        <span class="name">
+                                                            <input type="checkbox">
+                                                            <span class="class">부장</span>홍길동
+                                                        </span>
+                                                        <span class="belong">설계팀</span>
+                                                    </label>
+                                                </div>
+                                            
+                                            </div>
+										</div>
+									</div>
+								</div>
+								
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="center">
+                        <button class="btn free">추가<i class="fas fa-chevron-right m-l"></i></button>
+                    </div>
+                    <div class="right">
+                        <div class="card">
+                            <div class="card-header">출역 인원</div>
+                            <div class="card-body">
+                                <div class="total">총 000명</div>
+                                <div class="check-list-wrap">
+                                    <div class="check-list">
+                                        <label class="tr">
+                                            <span class="name"><input type="checkbox">
+                                            <span class="class">본부장</span>홍길동</span>
+                                            <span>KTE엔지니어링</span>
+                                            <span><button><i class="fas fa-minus-circle"></i></button></span>
+                                        </label>
+                                        <label class="tr">
+                                            <span class="name"><input type="checkbox">
+                                            <span class="class">부장</span>홍길동</span>
+                                   
+                                            <span>KTE</span>
+                                            <span><button><i class="fas fa-minus-circle"></i></button></span>
+                                        </label>
+                                        <label class="tr">
+                                            <span class="name"><input type="checkbox">
+                                            <span class="class">부장</span>홍길동</span>
+                                            <span>KTE</span>
+                                            <span><button><i class="fas fa-minus-circle"></i></button></span>
+                                        </label>
+                                        <label class="tr">
+                                            <span class="name"><input type="checkbox">
+                                            <span class="class">부장</span>홍길동</span>
+                                            <span>KTE</span>
+                                            <span><button><i class="fas fa-minus-circle"></i></button></span>
+                                        </label>
+                                        <label class="tr">
+                                            <span class="name"><input type="checkbox">
+                                            <span class="class">차장</span>홍길동</span>
+                                            <span>KTE</span>
+                                            <span><button><i class="fas fa-minus-circle"></i></button></span>
+                                        </label><label class="tr">
+                                            <span class="name"><input type="checkbox">
+                                            <span class="class">과장</span>홍길동</span>
+                                            <span>KTE</span>
+                                            <span><button><i class="fas fa-minus-circle"></i></button></span>
+                                        </label>
+                                        <label class="tr">
+                                            <span class="name"><input type="checkbox">
+                                            <span class="class">부장</span>홍길동</span>
+                                            <span>KTE</span>
+                                            <span><button><i class="fas fa-minus-circle"></i></button></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="setting">
+                                    <input type="checkbox">
+                                    <button class="btn-sm">선택 인력 빼기</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="btn-area">
+			<button class="btn -grey trigger-register-wf">취소</button>
+			<button class="btn -primary">등록</button>
+		</div>
+    </div>
+</div>
+<!-- // 출역인원 등록 -->  
+    
+<!-- 정기안전보건교육 등록 -->    
+<div class="modal-wrapper" id="modal-info">
+    <div class="modal wide">
+        <div class="header">
+            <h1>교육자료 등록
+                <button class="btn btn-close trigger-info"></button>
+            </h1>
+        </div>        <div class="content">
+
+            <table class="table l-fixed">
+                <colgroup>
+                    <col width="140">
+                    <col style="">
+                    <col width="140">
+                    <col style="">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>분류</th>
+                        <td>
+                            <select class="form-select">
+                                <option selected="">분류</option>
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                            </select>
+                        </td>
+                        <th>제목</th>
+                        <td>
+                            <div class="input-group bd-1 w100">
+                                <input type="search" placeholder="교육자료명">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table db-t mt-1">
+                <colgroup>
+                    <col width="60">
+                    <col width="140">
+                    <col width="">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>분류</th>
+                        <th>제목</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>분류</td>
+                        <td><label><span class="file-down">교육자료명</span></label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>분류</td>
+                        <td><label><span class="file-down">교육자료명</span></label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>분류</td>
+                        <td><label><span class="file-down">교육자료명</span></label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>분류</td>
+                        <td><label><span class="file-down">교육자료명</span></label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>분류</td>
+                        <td><label><span class="file-down">교육자료명</span></label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>분류</td>
+                        <td><label><span class="file-down">교육자료명</span></label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>분류</td>
+                        <td><label><span class="file-down">교육자료명</span></label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>분류</td>
+                        <td><label><span class="file-down">교육자료명</span></label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>분류</td>
+                        <td><label><span class="file-down">교육자료명</span></label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>분류</td>
+                        <td><label><span class="file-down">교육자료명</span></label></td>
+                    </tr>
+                </tbody>
+            </table>
+        
+        </div>
+		<div class="btn-area">
+			<button class="btn -grey trigger-info">취소</button>
+			<button class="btn -primary">등록</button>
+		</div>
+    </div>
+</div>    
+<!-- // 정기안전보건교육 등 -->
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#addItemBtn").click(function(){
+            var innerHtml = "";
+                innerHtml += '<tr>';
+                innerHtml += '<td><input type="checkbox"></td>'
+                innerHtml += '<td class="center"><input type="text" class="input-tb a-center sm"></td>'
+                innerHtml += '<td><input type="text" class="input-tb" placeholder="위험분류 입력하세요"></td>'
+                innerHtml += '<td><input type="text" class="input-tb" placeholder="작업위험요인 입력하세요"></td>'
+                innerHtml += '<td><input type="text" class="input-tb" placeholder="예방,개선대책 입력하세요"></td>'
+                innerHtml += '</tr>';
+
+            $("#regTable > tbody:last").append(innerHtml);  //마지막 요소
+        });
+    });
+</script>
+<!-- 위험성평가 등록 -->    
+<div class="modal-wrapper" id="modal-place">
+    <div class="modal wide">
+        <div class="header">
+            <h1>위험성평가 등록
+                <button class="btn btn-close trigger-place"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="d-flex jc-btw ai-center">
+                <h2 class="table-title m-0">프로젝트명 수시위험성 평가 00차</h2>
+                <button class="btn -blue" id="addItemBtn">직접입력</button>
+            </div>
+            
+            <table class="table dt bdt-0 hover mt-1 v-middle" id="regTable">
+                <colgroup>
+                    <col width="60">
+                    <col width="75">
+                    <col width="170">
+                    <col width="">
+                    <col width="">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>선택</th>
+                        <th class="center">번호</th>
+                        <th>위험분류</th>
+                        <th>작업위험요인</th>
+                        <th>예방,개선대책</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td class="center">1</td>
+                        <td>위험분류</td>
+                        <td>작업위험요인</td>
+                        <td>개선대책</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td class="center">2</td>
+                        <td>위험분류</td>
+                        <td>작업위험요인</td>
+                        <td>개선대책</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td class="center">3</td>
+                        <td>위험분류</td>
+                        <td>작업위험요인</td>
+                        <td>개선대책</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td class="center">4</td>
+                        <td>위험분류</td>
+                        <td>작업위험요인</td>
+                        <td>개선대책</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td class="center">5</td>
+                        <td>위험분류</td>
+                        <td>작업위험요인</td>
+                        <td>개선대책</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td class="center"><input type="text" class="input-tb a-center sm"></td>
+                        <td><input type="text" class="input-tb" placeholder="위험분류 입력하세요"></td>
+                        <td><input type="text" class="input-tb" placeholder="작업위험요인 입력하세요"></td>
+                        <td><input type="text" class="input-tb" placeholder="예방,개선대책 입력하세요"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+		<div class="btn-area">
+			<button class="btn -grey trigger-place">취소</button>
+			<button class="btn -primary">등록</button>
+		</div>
+    </div>
+</div>    
+<!-- // 위험성평가 등록 -->
+    
+<div class="page-wrapper d-flex">
+    <nav id="side-nav" class="side-nav">
+    </nav>
+	
+    <main class="contents">		
+        <section class="wrapper">
+            <h1 class="page-title">일일안전활동보고 등록</h1>
+            <form>
+                <table class="table dt l-fixed v-middle">
+					<colgroup>
+						<col width="160">
+						<col width="">
+					</colgroup>
+                    <tbody>
+                        <tr>
+                            <th>프로젝트</th>
+                            <td>프로젝트명</td>
+                        </tr>
+                        <tr>
+							<th>사업장</th>
+                            <td>사업장명</td>
+                        </tr>
+                        <tr>
+                            <th>작성자</th>
+                            <td>홍길동</td>
+                        </tr>
+                        <tr>
+							<th>작업여부/일자</th>
+                            <td>                                
+                                <select class="form-select w-auto">
+                                    <option selected="">작업없음</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
+                                </select>
+                                / 2022-10-07 
+                            </td>
+						</tr>
+                    </tbody>
+                </table>
+            </form>
+            
+            <div class="tui-wrapper">
+                <div id="tab-menu" class="tab-menu">
+                    <div id="tab-btn" class="tab-btn">
+                        <ul class="tab">
+                            <li class="active"><button>고위험 작업</button></li>
+                            <li><button>TBM 및 안전교육</button></li>
+                            <li><button>건강체크 및 안전교육 참석자</button></li>
+                            <li><button>순회점검</button></li>
+                            <div class="top btn-area">
+                                <button class="btn -blue trigger-register-wf">출역인원 등록</button>
+                            </div>
+                        </ul>
+                    </div>
+                    <div id="tab-cont" class="tab-cont">
+                        <div title="tab-cont-1">
+                            <table class="table db-t">
+                                <colgroup>
+                                    <col width="85">
+                                    <col width="">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>작업여부</th>
+                                        <th>작업명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>아세틸렌 용접장치 또는 가스집합 용접장치를 사용하는 용접・용단 또는 가열작업 (발생기・도관 등에 의하여 구성된 용접장치만 해당한다)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>작업명</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>작업명</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>작업명</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>작업명</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>작업명</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>작업명</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>작업명</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>작업명</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>작업명</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                        </div>
+                        <div title="tab-cont-2">
+                            <div class="tui-area" title="tui-area">
+                                <table class="table bdt-0 l-fixed">
+                                    <colgroup>
+                                        <col width="65">
+                                        <col width="90">
+                                        <col width="">
+                                        <col width="140">
+                                        <col width="">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th colspan="2" class="center">교육시간</th>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <input type="time" class="input-tb half">
+                                                    <span> ~ </span>
+                                                    <input type="time" class="input-tb half">
+                                                    <span> (00분)</span>
+                                                </div>
+                                            </td>
+                                            <th class="center">참석인원</th>
+                                            <td>                                                
+                                                KTE : 
+                                                <input type="text" class="input-tb sm" placeholder="00">명 , 
+                                                파트너사 : 00명
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th colspan="2" class="center">교육담당</th>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <input type="text" class="input-tb" placeholder="성명입력">
+                                                    <button class="ico-btn plus" title="플러스"></button>
+                                                    <button class="ico-btn minus" title="마이너스"></button>
+                                                </div>
+                                            </td>
+                                            <th class="center">파트너사</th>
+                                            <td>00통신 주식회사</td>
+                                        </tr>
+                                        <tr>
+                                            <th rowspan="2" class="center bd-r-1">교육 내용</th>
+                                            <th class="center">
+                                                정기안전 보건교육<br>
+                                                <button class="btn-sm -green mt-1 trigger-info">교육자료</button>
+                                            </th>
+                                            <td colspan="3">
+                                                <ul class="list">
+                                                    <li>산업안전 및 사고 예방에 관한 사항</li>
+                                                    <li>산업보건 및 직업병 예방에 관한 사항</li>
+                                                    <li>건강정진 및 질병 예방에 관한 사항</li>
+                                                    <li>유해.위험 작업환경 관리에 관한 사항</li>
+                                                    <li>직무스트레스 예방 및 관리에 관한 사항</li>
+                                                    <li>산업안전보건법령 및 산업재해보상보험 제도에 관한 사항</li>
+                                                    <li>직장 내 괴롭힘, 고객의 폭언 등으로 인한 건강장해 예방 및 관리에 관한 사항</li>
+                                                </ul>
+                                                <ul class="list p-0">
+                                                    <li class="no-style">
+                                                        <input type="text" class="input-tb" placeholder="정기안전보건교육명">   
+                                                    </li>
+                                                    <li class="no-style">
+                                                        <input type="text" class="input-tb" placeholder="정기안전보건교육명">   
+                                                    </li>
+                                                    <li class="no-style">
+                                                        <input type="text" class="input-tb" placeholder="정기안전보건교육명">   
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="center">위험성 평가<br>
+                                                <button class="btn-sm -orange mt-1 trigger-place">선택</button>
+                                            </th>
+                                            <td colspan="3">
+                                                <table class="table result bdt-0">
+                                                    <colgroup>
+                                                        <col width="12%">
+                                                        <col width="44%">
+                                                        <col width="44%">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="center">위험유형</th>
+                                                            <th class="center">위험요인</th>
+                                                            <th class="center">예방개선대책</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="center">위험유형</td>
+                                                            <td>위험요인</td>
+                                                            <td>예방개선대책</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="center">위험유형</td>
+                                                            <td>위험요인</td>
+                                                            <td>예방개선대책</td>
+                                                        </tr>
+                                                        <tr class="edit">
+                                                            <td><input type="text" class="input-tb" placeholder="위험유형"></td>
+                                                            <td><input type="text" class="input-tb" placeholder="위험요인"></td>
+                                                            <td><input type="text" class="input-tb" placeholder="예방개선대책"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th colspan="2" class="center">사진</th>
+                                            <td colspan="3">
+                                                <ul class="thum-list">
+                                                    <li>
+                                                        <div class="attach">
+                                                            <div class="btn-area" style="margin-top: 6.5rem;">
+                                                                <button class="btn"><img src="../../images/icon/ico_photo.png" alt="사진첨부">사진 첨부</button>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="btn-area">
+                                                            <button class="btn-delete"></button>
+                                                        </div>
+                                                        <div class="thum-img"><img src="../../images/sample/1.png" alt="" class="img-detail"></div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="btn-area">
+                                                            <button class="btn-delete"></button>
+                                                        </div>
+                                                        <div class="thum-img"><img src="../../images/sample/2.png" alt=""  class="img-detail"></div>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <div title="tab-cont-3">
+                            <div class="d-flex">
+                                <h4>협력사별 종합 평가결과 조회 </h4>
+                                <div class="top btn-area">
+                                    <button class="btn btn-download">엑셀 다운로드</button>
+                                </div>
+                            </div>
+                            <div class="tui-area" title="tui-area">
+                                <table class="table db-t l-fixed">
+                                    <colgroup>
+                                        <col width="60">
+                                        <col width="120">
+                                        <col width="90">
+                                        <col width="90">
+                                        <col width="120">
+                                        <col width="">
+                                        <col width="90">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>성명</th>
+                                            <th class="center">혈압</th>
+                                            <th class="center">체온</th>
+                                            <th class="center">음주</th>
+                                            <th>증상 및 조치</th>
+                                            <th class="center">전자서명</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="edit">
+                                            <td>1</td>
+                                            <td>홍길동</td>
+                                            <td class="center"><input type="text" class="input-tb sm" placeholder=""></td>
+                                            <td class="center"><input type="text" class="input-tb sm" placeholder=""></td>
+                                            <td class="center"><label>음주 <input type="checkbox"></label></td>
+                                            <td><input type="text" class="input-tb" placeholder=""></td>
+                                            <td class="center"><button class="btn -lightred trigger-sign">전자서명</button></td>
+                                        </tr>
+                                        <tr class="edit">
+                                            <td>2</td>
+                                            <td>홍길동</td>
+                                            <td class="center"><input type="text" class="input-tb sm" placeholder=""></td>
+                                            <td class="center"><input type="text" class="input-tb sm" placeholder=""></td>
+                                            <td class="center"><label>음주 <input type="checkbox"></label></td>
+                                            <td><input type="text" class="input-tb" placeholder=""></td>
+                                            <td class="center"><button class="btn -lightred trigger-sign">전자서명</button></td>
+                                        </tr>
+                                        <tr class="edit">
+                                            <td>3</td>
+                                            <td>홍길동</td>
+                                            <td class="center"><input type="text" class="input-tb sm" placeholder=""></td>
+                                            <td class="center"><input type="text" class="input-tb sm" placeholder=""></td>
+                                            <td class="center"><label>음주 <input type="checkbox"></label></td>
+                                            <td><input type="text" class="input-tb" placeholder=""></td>
+                                            <td class="center"><button class="btn -lightred trigger-sign">전자서명</button></td>
+                                        </tr>
+                                        <tr class="edit">
+                                            <td>4</td>
+                                            <td>홍길동</td>
+                                            <td class="center"><input type="text" class="input-tb sm" placeholder=""></td>
+                                            <td class="center"><input type="text" class="input-tb sm" placeholder=""></td>
+                                            <td class="center"><label>음주 <input type="checkbox"></label></td>
+                                            <td><input type="text" class="input-tb" placeholder=""></td>
+                                            <td class="center"><button class="btn -lightred trigger-sign">전자서명</button></td>
+                                        </tr>
+                                        <tr class="edit">
+                                            <td>5</td>
+                                            <td>홍길동</td>
+                                            <td class="center"><input type="text" class="input-tb sm" placeholder=""></td>
+                                            <td class="center"><input type="text" class="input-tb sm" placeholder=""></td>
+                                            <td class="center"><label>음주 <input type="checkbox"></label></td>
+                                            <td><input type="text" class="input-tb" placeholder=""></td>
+                                            <td class="center"><button class="btn -lightred trigger-sign">전자서명</button></td>
+                                        </tr>
+                                        <tr class="edit">
+                                            <td>6</td>
+                                            <td>홍길동</td>
+                                            <td class="center"><input type="text" class="input-tb sm" placeholder=""></td>
+                                            <td class="center"><input type="text" class="input-tb sm" placeholder=""></td>
+                                            <td class="center"><label>음주 <input type="checkbox"></label></td>
+                                            <td><input type="text" class="input-tb" placeholder=""></td>
+                                            <td class="center"><button class="btn -lightred trigger-sign">전자서명</button></td>
+                                        </tr>
+                                        <tr class="edit">
+                                            <td>7</td>
+                                            <td>홍길동</td>
+                                            <td class="center"><input type="text" class="input-tb sm" placeholder=""></td>
+                                            <td class="center"><input type="text" class="input-tb sm" placeholder=""></td>
+                                            <td class="center"><label>음주 <input type="checkbox"></label></td>
+                                            <td><input type="text" class="input-tb" placeholder=""></td>
+                                            <td class="center"><button class="btn -lightred trigger-sign">전자서명</button></td>
+                                        </tr>
+                                        <tr class="edit">
+                                            <td>8</td>
+                                            <td>홍길동</td>
+                                            <td class="center"><input type="text" class="input-tb sm" placeholder=""></td>
+                                            <td class="center"><input type="text" class="input-tb sm" placeholder=""></td>
+                                            <td class="center"><label>음주 <input type="checkbox"></label></td>
+                                            <td><input type="text" class="input-tb" placeholder=""></td>
+                                            <td class="center"><button class="btn -lightred trigger-sign">전자서명</button></td>
+                                        </tr>
+                                        <tr class="edit">
+                                            <td>9</td>
+                                            <td>홍길동</td>
+                                            <td class="center"><input type="text" class="input-tb sm" placeholder=""></td>
+                                            <td class="center"><input type="text" class="input-tb sm" placeholder=""></td>
+                                            <td class="center"><label>음주 <input type="checkbox"></label></td>
+                                            <td><input type="text" class="input-tb" placeholder=""></td>
+                                            <td class="center"><button class="btn -lightred trigger-sign">전자서명</button></td>
+                                        </tr>
+                                        <tr class="edit">
+                                            <td>10</td>
+                                            <td>홍길동</td>
+                                            <td class="center"><input type="text" class="input-tb sm" placeholder=""></td>
+                                            <td class="center"><input type="text" class="input-tb sm" placeholder=""></td>
+                                            <td class="center"><label>음주 <input type="checkbox"></label></td>
+                                            <td><input type="text" class="input-tb" placeholder=""></td>
+                                            <td class="center"><button class="btn -lightred trigger-sign">전자서명</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div title="tab-cont-4">
+                            <div class="tui-area" title="tui-area">
+                                <table class="table dt bdt-0 center l-fixed v-middle">
+                                    <colgroup>
+                                        <col width="120">
+                                        <col width="50" class="bd-l-1">
+                                        <col width="180" align="left" class="bd-l-1">
+                                        <col width="" class="bd-l-1">
+                                        <col width="260" class="bd-l-1">
+                                        <col width="180" class="bd-l-1">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>구분</th>
+                                            <th colspan="2">점검대상</th>
+                                            <th>Check-List</th>
+                                            <th>준수여부</th>
+                                            <th>비고</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th rowspan="7" class="center">작업자</th>
+                                            <td colspan="2">건강상태확인</td>
+                                            <td class="left">혈압, 체온, 음주여부 및 기타 증상</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-1" > 적합</label>
+                                                    <label><input type="radio" name="choice-1"> 부적합</label>
+                                                    <label><input type="radio" name="choice-1"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="6">보호구착용</td>
+                                            <td class="left">[기본] 상시착용</td>
+                                            <td class="left">안전모/안전조끼/안전화/각반</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-2"> 적합</label>
+                                                    <label><input type="radio" name="choice-2"> 부적합</label>
+                                                    <label><input type="radio" name="choice-2"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td rowspan="6">손상∙파손 보호구 착용금지!<br>
+                                                <span class="ex">보호구 재고 확보</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">[상황별] 고소/비계</td>
+                                            <td class="left">그네식 안전대 <span class="ex">(=전체식 안전벨트)</span></td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-3"> 적합</label>
+                                                    <label><input type="radio" name="choice-3"> 부적합</label>
+                                                    <label><input type="radio" name="choice-3"> N/A</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">[상황별] 야간/밀폐</td>
+                                            <td class="left">반사조끼, 헤드랜턴</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-4"> 적합</label>
+                                                    <label><input type="radio" name="choice-4"> 부적합</label>
+                                                    <label><input type="radio" name="choice-4"> N/A</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">[상황별] 용접</td>
+                                            <td class="left">보안면, 용접장갑, 용접용 방진마스크</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-5"> 적합</label>
+                                                    <label><input type="radio" name="choice-5"> 부적합</label>
+                                                    <label><input type="radio" name="choice-5"> N/A</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">[상황별] 천공/절단</td>
+                                            <td class="left">보안경, 귀마개, 마진마스크</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-6"> 적합</label>
+                                                    <label><input type="radio" name="choice-6"> 부적합</label>
+                                                    <label><input type="radio" name="choice-6"> N/A</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">[상황별] 전기(활선)</td>
+                                            <td class="left">철연용 고무장갑/고무장화</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-7"> 적합</label>
+                                                    <label><input type="radio" name="choice-7"> 부적합</label>
+                                                    <label><input type="radio" name="choice-7"> N/A</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th rowspan="36">작업환경</th>
+                                            <td colspan="2" rowspan="6">사다리</td>
+                                            <td class="left">A형 사다리 사용 <span class="ex">* 보호구 재고 확보</span></td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-8"> 적합</label>
+                                                    <label><input type="radio" name="choice-8"> 부적합</label>
+                                                    <label><input type="radio" name="choice-8"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">2인 1조 작업 <span class="ex">* 단독작업금지</span></td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-9"> 적합</label>
+                                                    <label><input type="radio" name="choice-9"> 부적합</label>
+                                                    <label><input type="radio" name="choice-9"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">최대 길이 3.5m 이하 사용 <span class="ex">* 작업 높이 2m 이상 안전대 사용</span></td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-10"> 적합</label>
+                                                    <label><input type="radio" name="choice-10"> 부적합</label>
+                                                    <label><input type="radio" name="choice-10"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">최상단 작업 금지</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-11"> 적합</label>
+                                                    <label><input type="radio" name="choice-11"> 부적합</label>
+                                                    <label><input type="radio" name="choice-11"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">아웃트리거<span class="ex">(=전도방지대)</span> 정상 설치∙사용</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-12"> 적합</label>
+                                                    <label><input type="radio" name="choice-12"> 부적합</label>
+                                                    <label><input type="radio" name="choice-12"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">벌어짐 방지 조치</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-13"> 적합</label>
+                                                    <label><input type="radio" name="choice-13"> 부적합</label>
+                                                    <label><input type="radio" name="choice-13"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" rowspan="6">고소/비계<br><span class="ex">* 고소 : 작업 높이 2m 이상<br>(작업 높이 : 발을 딛는 디딤대의 높이)</span></td>
+                                            <td class="left">안전난간대 설치</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-14"> 적합</label>
+                                                    <label><input type="radio" name="choice-14"> 부적합</label>
+                                                    <label><input type="radio" name="choice-14"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">안전대 부착 설비 여부<span class="ex">* 수직/수평 구명줄 설치</span></td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-15"> 적합</label>
+                                                    <label><input type="radio" name="choice-15"> 부적합</label>
+                                                    <label><input type="radio" name="choice-15"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">작업자 고소/비계 작업 시 언존댜 착용 및 체결</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-16"> 적합</label>
+                                                    <label><input type="radio" name="choice-16"> 부적합</label>
+                                                    <label><input type="radio" name="choice-16"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">비계 작업발판 폭 최소 40cm, 발판 틈 3cm 이하</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-17"> 적합</label>
+                                                    <label><input type="radio" name="choice-17"> 부적합</label>
+                                                    <label><input type="radio" name="choice-17"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">비계 기둥 간의 적재하중은 400kg 이하</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-18"> 적합</label>
+                                                    <label><input type="radio" name="choice-18"> 부적합</label>
+                                                    <label><input type="radio" name="choice-18"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">추락방호망 설치</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-19"> 적합</label>
+                                                    <label><input type="radio" name="choice-19"> 부적합</label>
+                                                    <label><input type="radio" name="choice-19"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" rowspan="6">건설기계<br><span class="ex">* 크레인/굴삭기/타설/고소작업대</span></td>
+                                            <td class="left">작업지휘자<span class="ex">(유도자/신호수)</span> 배치</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-20"> 적합</label>
+                                                    <label><input type="radio" name="choice-20"> 부적합</label>
+                                                    <label><input type="radio" name="choice-20"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">양중작업 시 하부 통제 실시 <span class="ex">* 작업자 위로 통과 금지</span></td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-21"> 적합</label>
+                                                    <label><input type="radio" name="choice-21"> 부적합</label>
+                                                    <label><input type="radio" name="choice-21"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">자재 양중 시 과적 금지 / 고소작업대로 양중작업 금지</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-22"> 적합</label>
+                                                    <label><input type="radio" name="choice-22"> 부적합</label>
+                                                    <label><input type="radio" name="choice-22"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">운전원은 개인보호구 착용 후 차량에서 하차</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-23"> 적합</label>
+                                                    <label><input type="radio" name="choice-23"> 부적합</label>
+                                                    <label><input type="radio" name="choice-23"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">[크레인/굴삭기] 버킷 등에 작업자 탑승 금지</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-24"> 적합</label>
+                                                    <label><input type="radio" name="choice-24"> 부적합</label>
+                                                    <label><input type="radio" name="choice-24"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">풍속 10m/s 초과 시 작업 중지</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-25"> 적합</label>
+                                                    <label><input type="radio" name="choice-25"> 부적합</label>
+                                                    <label><input type="radio" name="choice-25"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" rowspan="3">차량<br><span class="ex">* 지게차, 트럭 등</span></td>
+                                            <td class="left">차량 고임목 설치 <span class="ex">* 경사면 평지 등 4개소 모두 설치</span></td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-26"> 적합</label>
+                                                    <label><input type="radio" name="choice-26"> 부적합</label>
+                                                    <label><input type="radio" name="choice-26"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">주변 경계/차단 시설 설치</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-27"> 적합</label>
+                                                    <label><input type="radio" name="choice-27"> 부적합</label>
+                                                    <label><input type="radio" name="choice-27"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">도로 점용 작업 시 신호수 배치</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-28"> 적합</label>
+                                                    <label><input type="radio" name="choice-28"> 부적합</label>
+                                                    <label><input type="radio" name="choice-28"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" rowspan="4">개구부<br>
+                                                <span class="ex">* 소형 : 1<var>m<sup>2</sup></var> 이하<br>* 대형 : 2<var>m<sup>2</sup></var> 초과</span>
+                                            </td>
+                                            <td class="left">[소형] 크기 작아도 반드시 개구부 덮개 설치</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-29"> 적합</label>
+                                                    <label><input type="radio" name="choice-29"> 부적합</label>
+                                                    <label><input type="radio" name="choice-29"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">[소형] 덮개 상부판 안전표시 <span class="ex">(예 : 개구부주의 / 추락위험)</span> 부착</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-30"> 적합</label>
+                                                    <label><input type="radio" name="choice-30"> 부적합</label>
+                                                    <label><input type="radio" name="choice-30"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">[대형] 안전난간 및 안전방망 설치</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-31"> 적합</label>
+                                                    <label><input type="radio" name="choice-31"> 부적합</label>
+                                                    <label><input type="radio" name="choice-31"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">[대형] 주변 위험 표시 <span class="ex">* 어두운 곳에서도 식별 가능</span></td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-32"> 적합</label>
+                                                    <label><input type="radio" name="choice-32"> 부적합</label>
+                                                    <label><input type="radio" name="choice-32"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" rowspan="4">밀폐공간/야간<br><span class="ex">* 50w 백열전구 ≒ 약 50룩스<br>
+                                                * 산소 18~23.5%, 탄산가스 1.5%,<br>일산화탄소 30ppm,<br>황화수소 10ppm 미만</span></td>
+                                            <td class="left">작업구간 75럭스<span class="ex">(Lux)</span> 이상 조도<span class="ex">(조명밝기)</span> 확보 *</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-33"> 적합</label>
+                                                    <label><input type="radio" name="choice-33"> 부적합</label>
+                                                    <label><input type="radio" name="choice-33"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">[밀폐공간] 산소 및 유해가스 측정 * <span class="ex">* 환기시설 설치</span></td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-34"> 적합</label>
+                                                    <label><input type="radio" name="choice-34"> 부적합</label>
+                                                    <label><input type="radio" name="choice-34"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">[밀폐공간] 안전장구<span class="ex">(안전대, 구명밧줄 등)</span> 착용</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-35"> 적합</label>
+                                                    <label><input type="radio" name="choice-35"> 부적합</label>
+                                                    <label><input type="radio" name="choice-35"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">[밀폐공간] 일회용 산소호흡기 비치</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-36"> 적합</label>
+                                                    <label><input type="radio" name="choice-36"> 부적합</label>
+                                                    <label><input type="radio" name="choice-36"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" rowspan="7">전기/공구/용접/절단<br><span class="ex">* 전기작업 : 분전반 전암 75볼트 이상 활선작업</span></td>
+                                            <td class="left">핸드그라인더/고속절단기 방호 덮개<span class="ex">안전커버</span> 부착</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-37"> 적합</label>
+                                                    <label><input type="radio" name="choice-37"> 부적합</label>
+                                                    <label><input type="radio" name="choice-37"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">누전차단기 부착형 작업전선 사용 <span class="ex">* 가정용 콘센트/전선 사용 금지</span></td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-38"> 적합</label>
+                                                    <label><input type="radio" name="choice-38"> 부적합</label>
+                                                    <label><input type="radio" name="choice-38"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">전기∙기계∙기구로부터 70cm 이상 작업 공간 확보</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-39"> 적합</label>
+                                                    <label><input type="radio" name="choice-39"> 부적합</label>
+                                                    <label><input type="radio" name="choice-39"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">[용접작업] 주변 가연성 물질 제거 <span class="ex">* 소화기 비치</span></td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-40"> 적합</label>
+                                                    <label><input type="radio" name="choice-40"> 부적합</label>
+                                                    <label><input type="radio" name="choice-40"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">[전기작업] 작업자 절연장갑 및 절연도구 사용</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-41"> 적합</label>
+                                                    <label><input type="radio" name="choice-41"> 부적합</label>
+                                                    <label><input type="radio" name="choice-41"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">[절단작업] 불티비산방지막 설치 <span class="ex">* 소화기 비치</span></td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-42"> 적합</label>
+                                                    <label><input type="radio" name="choice-42"> 부적합</label>
+                                                    <label><input type="radio" name="choice-42"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">[절단작업] 톱날접촉예방장치</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-43"> 적합</label>
+                                                    <label><input type="radio" name="choice-43"> 부적합</label>
+                                                    <label><input type="radio" name="choice-43"> N/A</label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <th>점검사진</th>
+                                            <td colspan="5">
+                                                <ul class="thum-list">
+                                                    <li>
+                                                        <div class="attach">
+                                                            <div class="btn-area">
+                                                                <button class="btn"><img src="../../images/icon/ico_photo.png" alt="사진첨부">사진 첨부</button>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="btn-area">
+                                                            <button class="btn-delete"></button>
+                                                        </div>
+                                                        <div class="thum-img"><img src="../../images/sample/1.png" alt="" class="img-detail"></div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="btn-area">
+                                                            <button class="btn-delete"></button>
+                                                        </div>
+                                                        <div class="thum-img"><img src="../../images/sample/2.png" alt=""  class="img-detail"></div>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>점검 조치사항</th>
+                                            <td colspan="5"><input type="text" class="input-tb" maxlength="200" placeholder="" ></td>
+                                        </tr>
+                                        <tr>
+                                            <th>PM 피드백</th>
+                                            <td colspan="5"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="btn-area">
+                <button class="btn-big normal">임시저장</button>
+                <button class="btn-big -primary">작성완료</button>
+            </div>
+            
+        </section>
+    </main>
+        
+</div>
+    
+    
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+
+</body>
+</html>

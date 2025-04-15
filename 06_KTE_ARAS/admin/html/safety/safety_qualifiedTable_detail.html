@@ -1,0 +1,356 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>적격수급인 평가표 관리 상세</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+    
+<body>
+
+<!-- 반려 사유 -->    
+<div class="modal-wrapper" id="modal-reject">
+    <div class="modal">
+        <div class="header">
+            <h1>반려사유
+                <button class="btn btn-close trigger-reject"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <textarea class="input-tb" cols="100" rows="6" placeholder="반려사유"></textarea>
+        
+        </div>
+		<div class="btn-area">
+			<button class="btn -grey trigger-sign">취소</button>
+			<button class="btn -primary">등록</button>
+		</div>
+    </div>
+</div>    
+<!-- // 반려 사유 -->  
+    
+<div class="page-wrapper d-flex">
+    <nav id="side-nav" class="side-nav">
+    </nav>
+	
+    <main class="contents">
+        <section class="wrapper">
+            <h1 class="page-title">적격수급인 평가표 관리 &gt; 상세</h1>
+            <form>
+                <table class="table dt">
+                    <colgroup>
+                        <col width="150">
+                        <col width="">
+                        <col width="150">
+                        <col width="">
+                        <col width="150">
+                        <col width="">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>평가주관</th>
+                            <td>KT engineering 안전우선본부 안전보건팀 </td>
+                            <th>평가차수</th>
+                            <td>2002년도 2차</td>
+                            <th>회사명</th>
+                            <td>주식회사 펀진</td>
+                        </tr>
+                        <tr>
+                            <th>평가일자</th>
+                            <td>2022-10-07</td>
+                            <th>평가자</th>
+                            <td>홍길동</td>
+                            <th>확인자(팀장)</th>
+                            <td>김남준</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btn-area">
+                    <button class="btn-big -grey">초기화</button>
+                    <button class="btn-big -primary">검색</button>
+                </div>
+            </form>
+            <div class="tui-wrapper">
+                <div id="tab-menu" class="tab-menu">
+                    <div id="tab-btn" class="tab-btn">
+                        <ul class="tab">
+                            <li class="active"><button>선정 평가표</button></li>
+                            <li><button>선정 평가 제출서류 목록</button></li>
+                            <li><button>선정 평가 의견</button></li>
+                            <li><button>평가의견 요약</button></li>
+                        </ul>
+                    </div>
+                    <div id="tab-cont" class="tab-cont">
+                        <!--선정평가표-->
+                        <div title="tab-cont-1" style="display: block;">
+                            <div class="tui-area" title="tui-area">
+                                <table class="table frm-t bdt-0 center">
+                                    <colgroup>
+                                        <col width="200">
+                                        <col width="300" class="bd-l-1">
+                                        <col width="*">
+                                        <col width="80">
+                                        <col width="80">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>구분</th>
+                                            <th>평가항목</th>
+                                            <th>평가내용</th>
+                                            <th>배점</th>
+                                            <th>평가</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td rowspan="3">안전보건<br>관리체계</td>
+                                            <td>평가항목1</td>
+                                            <td class="left">평가내용1</td>
+                                            <td>10</td>
+                                            <td>10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>평가항목2</td>
+                                            <td class="left">평가내용2</td>
+                                            <td>5</td>
+                                            <td>5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>평가항목3</td>
+                                            <td class="left">평가내용3</td>
+                                            <td>5</td>
+                                            <td>5</td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="3">실행수준</td>
+                                            <td>평가항목4</td>
+                                            <td class="left">평가내용4</td>
+                                            <td>5</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>평가항목5</td>
+                                            <td class="left">평가내용5</td>
+                                            <td>10</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>평가항목6</td>
+                                            <td class="left">평가내용6</td>
+                                            <td>10</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2">가감점</td>
+                                            <td>감점</td>
+                                            <td class="left">감점평가내용</td>
+                                            <td></td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>가점</td>
+                                            <td class="left">감점평가내용</td>
+                                            <td></td>
+                                            <td>5</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th colspan="3">총점</th>
+                                            <th>100</th>
+                                            <th>95</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!--선정평가 제출서류 목록-->
+                        <div title="tab-cont-2" style="display: none;">
+                            <div class="tui-area" title="tui-area">
+                                <table class="table frm-t bdt-0 center">
+                                    <colgroup>
+                                        <col width="80">
+                                        <col width="*">
+                                        <col width="260">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>순번</th>
+                                            <th>서류목록</th>
+                                            <th>제출여부</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="center">1</td>
+                                            <td class="left">안전보건경영방침</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-1" checked> 제출</label>
+                                                    <label><input type="radio" name="choice-1"> 미제출</label>
+                                                    <label><input type="radio" name="choice-1"> 해당없음</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center">2</td>
+                                            <td class="left">안전보건경영목표</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-2" checked> 제출</label>
+                                                    <label><input type="radio" name="choice-2"> 미제출</label>
+                                                    <label><input type="radio" name="choice-2"> 해당없음</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center">3</td>
+                                            <td class="left">안전보건경영방침 및 목표 여행 계획서</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-3" checked> 제출</label>
+                                                    <label><input type="radio" name="choice-3"> 미제출</label>
+                                                    <label><input type="radio" name="choice-3"> 해당없음</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center">4</td>
+                                            <td class="left">산업재해예방 활동 여행 계획서</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-4" checked> 제출</label>
+                                                    <label><input type="radio" name="choice-4"> 미제출</label>
+                                                    <label><input type="radio" name="choice-4"> 해당없음</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center">5</td>
+                                            <td class="left">인증서(ISO45001, KOSHA-MS)</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-5" checked> 제출</label>
+                                                    <label><input type="radio" name="choice-5"> 미제출</label>
+                                                    <label><input type="radio" name="choice-5"> 해당없음</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center">6</td>
+                                            <td class="left">일일안전활동</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-6" checked> 제출</label>
+                                                    <label><input type="radio" name="choice-6"> 미제출</label>
+                                                    <label><input type="radio" name="choice-6"> 해당없음</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center">23</td>
+                                            <td class="left">산업재해 발생 보고서(산업재해 조사표)</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-23" checked> 제출</label>
+                                                    <label><input type="radio" name="choice-23"> 미제출</label>
+                                                    <label><input type="radio" name="choice-23"> 해당없음</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center">24</td>
+                                            <td class="left">산업재해율 확인서</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <label><input type="radio" name="choice-24" checked> 제출</label>
+                                                    <label><input type="radio" name="choice-24"> 미제출</label>
+                                                    <label><input type="radio" name="choice-24"> 해당없음</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!--선정 평가 의견-->
+                        <div title="tab-cont-3" style="display: none;">
+                            <div class="tui-area" title="tui-area">
+                                <table class="table frm-t bdt-0">
+                                    <colgroup>
+                                        <col width="200">
+                                        <col width="">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th class="center">구분</th>
+                                            <th>평가의견</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="center">안전보건<br>관리체계</td>
+                                            <td>- 안전보건경영방침 및 목표<br>- 산업재해예방<br>- 안전체계</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center">실행수준</td>
+                                            <td>- 안전작업허가<br>- 안전교육<br>- 안전점검<br>- 위험성평가<br>- 역할/책임</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center">운영관리</td>
+                                            <td>- 위험설비<br>- 보고체계<br>- 비상대책</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center">재해발생</td>
+                                            <td>- 산업재해율 확인 결과(2016-01 ~ 2021.12) 재해율 0.0% 확인됨.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center">가/감점</td>
+                                            <td>- 해당없음</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!--평가의견 요약-->
+                        <div title="tab-cont-4" style="display: none;">
+                            <p class="fs14">
+                                평가의견 요약한 글<br>
+                                보고 싶다 이렇게 <br>
+                                말하니까 더 보고 싶다<br>
+                                너희 사진을 <br>
+                                보고 있어도 보고 싶다<br>
+
+                                너무 야속한 시간 <br>
+                                나는 우리가 밉다<br>
+                                이제 얼굴 한 번 보는 것 조차<br>
+                                힘들어진 우리가<br>
+                                여긴 온통 겨울 뿐이야 <br>
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="btn-area">
+                <button class="btn-big -grey">취소</button>
+                <button class="btn-big -red">회수</button>
+                <button class="btn-big -yellow trigger-reject">반려</button>
+                <button class="btn-big -primary">승인</button>
+            </div>
+        </section>
+    </main> 
+    
+</div>
+    
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+
+</body>
+</html>

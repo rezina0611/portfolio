@@ -1,0 +1,622 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>출입명부 상세</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+<body>
+    
+<!-- 반려이력 팝업 -->    
+<div class="modal-wrapper" id="modal-modify">
+    <div class="modal">
+        <div class="header">
+            <h1>반려이력
+                <button class="btn btn-close trigger-modify"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <ul class="notice return">
+                <li>
+                    <span class="date">2022-06-11 10:01</span>
+                    <p>반려사유입니다.</p>
+                </li>
+                <li>
+                    <span class="date">2022-06-11 10:01</span>
+                    <p>반려사유입니다.</p>
+                </li>
+                <li>
+                    <span class="date">2022-06-11 10:01</span>
+                    <p>반려사유입니다.</p>
+                </li>
+                <li>
+                    <span class="date">2022-06-11 10:01</span>
+                    <p>반려사유입니다.</p>
+                </li>
+                <li>
+                    <span class="date">2022-06-11 10:01</span>
+                    <p>반려사유입니다.</p>
+                </li>
+                <li>
+                    <span class="date">2022-06-11 10:01</span>
+                    <p>반려사유입니다.</p>
+                </li>
+                <li>
+                    <span class="date">2022-06-11 10:01</span>
+                    <p>반려사유입니다.</p>
+                </li>
+                <li>
+                    <span class="date">2022-06-11 10:01</span>
+                    <p>반려사유입니다.</p>
+                </li>
+                <li>
+                    <span class="date">2022-06-11 10:01</span>
+                    <p>반려사유입니다.</p>
+                </li>
+                <li>
+                    <span class="date">2022-06-11 10:01</span>
+                    <p>반려사유입니다.</p>
+                </li>
+            </ul>
+        </div>
+		<div class="btn-area">
+			<button class="btn -primary block">확인</button>
+		</div>
+    </div>
+</div>    
+<!-- // 반려이력 팝업 -->
+    
+<!-- 증빙서류 상세 팝업 -->    
+<div class="modal-wrapper" id="modal-info">
+    <div class="modal">
+        <div class="header">
+            <h1>증빙서류 상세
+                <button class="btn btn-close trigger-info"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <form class="modify">
+				<ul class="form-group">
+					<li>
+						<label>성명</label>
+						<input type="text" class="input-tb" placeholder="" value="홍길동" disabled="">
+					</li>
+					<li class="d-flex">
+						<div>
+							<label>생년월일</label>
+							<div class="input_date_box">
+                                <input type="date" class="input-tb" placeholder="" value="80.01.31" disabled="">
+                            </div>
+						</div>
+						<div>
+							<label>연락처</label>
+							<input type="text" class="input-tb" placeholder="" value="010-1234-5678" disabled="">
+						</div>
+					</li>
+					<li>
+						<label>건강보험자격득실확인서</label>
+                        <div class="filebox">
+                            <input class="upload-name" value="건강보험자격득실확인서.pdf" placeholder="첨부파일">
+                            <label for="file">파일선택</label> 
+                            <input type="file" id="file">
+                        </div>
+					</li>
+                    <li>
+						<label>근로계약서</label>
+                        <div class="filebox">
+                            <input class="upload-name" value="근로계약서.pdf" placeholder="첨부파일">
+                            <label for="file">파일선택</label> 
+                            <input type="file" id="file">
+                        </div>
+					</li>
+                    <li>
+						<label>개인정보제공동의서</label>
+                        <!-- 비활성화일 경우 disbled 추가 -->
+                        <div class="filebox disabled">
+                            <input class="upload-name " value="개인정보제공동의서.pdf" placeholder="첨부파일">
+                            <label for="file">파일선택</label> 
+                            <input type="file" id="file">
+                        </div>
+					</li>
+                    <li>
+						<label>재하도급승인서</label>
+                        <!-- 비활성화일 경우 disbled 추가 -->
+                        <div class="filebox disabled">
+                            <input class="upload-name" value="재하도급승인서.pdf" placeholder="첨부파일">
+                            <label for="file">파일선택</label> 
+                            <input type="file" id="file">
+                        </div>
+					</li>
+				</ul>
+            </form>
+        </div>
+		<div class="btn-area">
+			<button class="btn -grey">취소</button>
+			<button class="btn -primary">저장</button>
+		</div>
+    </div>
+</div>    
+<!-- // 증빙서류 상세 팝업 -->
+    
+<!-- Modal 불러오기 -->
+<div class="modal-wrapper" id="modal-register-wf">
+    <div class="modal wide">
+        <div class="header">
+            <h1>출입인원 불러오기
+				<button class="btn btn-close trigger-register-wf"></button>
+			</h1>
+        </div>
+        <div class="content">
+            <div class="register-wf">
+                <div class="d-flex">
+                    <div class="left">
+                        <div class="card">
+                            <div class="card-header">KTE</div>
+                            <div class="card-body">
+                                <div title="search">
+                                    <div class="card-search">
+                                        <select class="form-select">
+                                            <option selected="">계약코드</option>
+                                            <option value="">1</option>
+                                            <option value="">2</option>
+                                            <option value="">3</option>
+                                            <option value="">4</option>
+                                        </select>
+                                        <div class="input-group">
+                                            <input type="search" placeholder="직원 이름을 입력해 검색하세요.">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="check-all">
+                                        <label><input type="checkbox">선택</label>
+                                    </div>
+                                    <div class="check-list-wrap entry">
+                                        <div class="check-list">
+                                            <label class="tr">
+                                                <span class="name">
+                                                    <input type="checkbox">
+                                                    <span class="class">과장</span>홍길동
+                                                </span>
+                                                <span class="belong">설계팀</span>
+                                            </label>
+                                            <label class="tr">
+                                                <span class="name">
+                                                    <input type="checkbox">
+                                                    <span class="class">부장</span>홍길동
+                                                </span>
+                                                <span class="belong">설계팀</span>
+                                            </label>
+                                            <label class="tr">
+                                                <span class="name">
+                                                    <input type="checkbox">
+                                                    <span class="class">부장</span>홍길동
+                                                </span>
+                                                <span class="belong">설계팀</span>
+                                            </label>
+                                            <label class="tr">
+                                                <span class="name">
+                                                    <input type="checkbox">
+                                                    <span class="class">부장</span>홍길동
+                                                </span>
+                                                <span class="belong">설계팀</span>
+                                            </label>
+                                            <label class="tr">
+                                                <span class="name">
+                                                    <input type="checkbox">
+                                                    <span class="class">부장</span>홍길동
+                                                </span>
+                                                <span class="belong">설계팀</span>
+                                            </label>
+                                            <label class="tr">
+                                                <span class="name">
+                                                    <input type="checkbox">
+                                                    <span class="class">부장</span>홍길동
+                                                </span>
+                                                <span class="belong">설계팀</span>
+                                            </label>
+                                            <label class="tr">
+                                                <span class="name">
+                                                    <input type="checkbox">
+                                                    <span class="class">부장</span>홍길동
+                                                </span>
+                                                <span class="belong">설계팀</span>
+                                            </label>
+                                            <label class="tr">
+                                                <span class="name">
+                                                    <input type="checkbox">
+                                                    <span class="class">부장</span>홍길동
+                                                </span>
+                                                <span class="belong">설계팀</span>
+                                            </label>
+                                            <label class="tr">
+                                                <span class="name">
+                                                    <input type="checkbox">
+                                                    <span class="class">부장</span>홍길동
+                                                </span>
+                                                <span class="belong">설계팀</span>
+                                            </label>
+                                            <label class="tr">
+                                                <span class="name">
+                                                    <input type="checkbox">
+                                                    <span class="class">부장</span>홍길동
+                                                </span>
+                                                <span class="belong">설계팀</span>
+                                            </label>
+                                            <label class="tr">
+                                                <span class="name">
+                                                    <input type="checkbox">
+                                                    <span class="class">부장</span>홍길동
+                                                </span>
+                                                <span class="belong">설계팀</span>
+                                            </label>
+                                            <label class="tr">
+                                                <span class="name">
+                                                    <input type="checkbox">
+                                                    <span class="class">부장</span>홍길동
+                                                </span>
+                                                <span class="belong">설계팀</span>
+                                            </label>
+                                            <label class="tr">
+                                                <span class="name">
+                                                    <input type="checkbox">
+                                                    <span class="class">부장</span>홍길동
+                                                </span>
+                                                <span class="belong">설계팀</span>
+                                            </label>
+                                            <label class="tr">
+                                                <span class="name">
+                                                    <input type="checkbox">
+                                                    <span class="class">부장</span>홍길동
+                                                </span>
+                                                <span class="belong">설계팀</span>
+                                            </label>
+                                            <label class="tr">
+                                                <span class="name">
+                                                    <input type="checkbox">
+                                                    <span class="class">부장</span>홍길동
+                                                </span>
+                                                <span class="belong">설계팀</span>
+                                            </label>
+                                            <label class="tr">
+                                                <span class="name">
+                                                    <input type="checkbox">
+                                                    <span class="class">부장</span>홍길동
+                                                </span>
+                                                <span class="belong">설계팀</span>
+                                            </label>
+                                            <label class="tr">
+                                                <span class="name">
+                                                    <input type="checkbox">
+                                                    <span class="class">부장</span>홍길동
+                                                </span>
+                                                <span class="belong">설계팀</span>
+                                            </label>
+                                            <label class="tr">
+                                                <span class="name">
+                                                    <input type="checkbox">
+                                                    <span class="class">부장</span>최길동
+                                                </span>
+                                                <span class="belong">설계팀</span>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="center">
+                        <button class="btn free">추가<i class="fas fa-chevron-right m-l"></i></button>
+                    </div>
+                    <div class="right">
+                        <div class="card">
+                            <div class="card-header">출입 인원</div>
+                            <div class="card-body">
+                                <div class="total">총 000명</div>
+                                <div class="check-list-wrap">
+                                    <div class="check-list">
+                                        <label class="tr">
+                                            <span class="name"><input type="checkbox">
+                                            <span class="class">본부장</span>홍길동</span>
+                                            <span>KTE엔지니어링</span>
+                                            <span><button><i class="fas fa-minus-circle"></i></button></span>
+                                        </label>
+                                        <label class="tr">
+                                            <span class="name"><input type="checkbox">
+                                            <span class="class">부장</span>홍길동</span>
+                                   
+                                            <span>KTE</span>
+                                            <span><button><i class="fas fa-minus-circle"></i></button></span>
+                                        </label>
+                                        <label class="tr">
+                                            <span class="name"><input type="checkbox">
+                                            <span class="class">부장</span>홍길동</span>
+                                            <span>KTE</span>
+                                            <span><button><i class="fas fa-minus-circle"></i></button></span>
+                                        </label>
+                                        <label class="tr">
+                                            <span class="name"><input type="checkbox">
+                                            <span class="class">부장</span>홍길동</span>
+                                            <span>KTE</span>
+                                            <span><button><i class="fas fa-minus-circle"></i></button></span>
+                                        </label>
+                                        <label class="tr">
+                                            <span class="name"><input type="checkbox">
+                                            <span class="class">차장</span>홍길동</span>
+                                            <span>KTE</span>
+                                            <span><button><i class="fas fa-minus-circle"></i></button></span>
+                                        </label><label class="tr">
+                                            <span class="name"><input type="checkbox">
+                                            <span class="class">과장</span>홍길동</span>
+                                            <span>KTE</span>
+                                            <span><button><i class="fas fa-minus-circle"></i></button></span>
+                                        </label>
+                                        <label class="tr">
+                                            <span class="name"><input type="checkbox">
+                                            <span class="class">부장</span>홍길동</span>
+                                            <span>KTE</span>
+                                            <span><button><i class="fas fa-minus-circle"></i></button></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="setting">
+                                    <input type="checkbox">
+                                    <button class="btn-sm">선택 인력 빼기</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="btn-area">
+			<button class="btn -grey">취소</button>
+			<button class="btn -primary">등록</button>
+		</div>
+    </div>
+</div>
+<!-- End Modal -->    
+    
+<div class="page-wrapper d-flex">
+    <nav id="side-nav" class="side-nav">
+    </nav>
+	
+    <main class="contents">
+        <section class="wrapper">
+            <h1 class="page-title">출입인원관리 &gt; 출입명부 상세</h1>
+            <form>
+                <table class="table dt">
+					<colgroup>
+						<col width="160">
+						<col width="*">
+					</colgroup>
+                    <tbody>
+						<tr>
+                        	<th>파트너사</th>
+							<td>펀진</td>
+                        </tr>
+						<tr>
+                        	<th>계약번호</th>
+							<td>0000000</td>
+                        </tr>
+						<tr>
+                        	<th>계약명</th>
+							<td>0000000</td>
+                        </tr>
+				
+                    </tbody>
+                </table>
+            </form>
+			
+            <div class="tui-wrapper">
+                <div class="d-flex">
+                    <h2>출입인원<span>(00)</span></h2>
+                    <div class="top btn-area">
+                        <button class="btn btn-write">저장</button>
+                        <button class="btn btn-open trigger-register-wf">불러오기</button>
+                        <button class="btn btn-add">추가</button>
+                        <button class="btn btn-delete">삭제</button>
+                        <button class="btn btn-approve">승인요청</button>
+                        <button class="btn btn-download">엑셀 다운로드</button>
+                        <button class="btn btn-download">개인정보동의서 양식 다운로드</button>
+                    </div>
+                </div>
+				
+                <div class="tui-area" title="tui-area">
+                    <table class="table db-t">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox"></th>
+                                <th>승인여부</th>
+								<th>하도급구분<span class="essential">*</span></th>
+								<th>구분<span class="essential">*</span></th>
+                                <th>성명<span class="essential">*</span></th>
+                                <th>직급<span class="essential">*</span></th>
+                                <th>생년월일<span class="essential">*</span></th>
+                                <th>내/외국인<span class="essential">*</span></th>
+                                <th>연락처<span class="essential">*</span></th>
+                                <th>이메일<span class="essential">*</span></th>
+                                <th>계약기간<span class="essential">*</span></th>
+                                <th>첨부1. 건강보험자격득실확인서</th>
+                                <th>첨부2. 근로계약서</th>
+                                <th>첨부3. 개인정보동의서</th>
+                                <th>첨부4. 재하도급승인서</th>
+                                <th class="center">증빙서류</th>
+                                <th class="center">반려이력</th>
+                                <th class="center">승인요청</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="center"><input type="checkbox"></td>
+								<td>승인</td>
+								<td>하도급</td>
+								<td>정규직</td>
+                                <td>성명</td>
+								<td>부장</td>
+								<td>YY.MM.DD</td>
+								<td>내국인</td>
+                                <td>010-1234-5678</td>
+								<td>email@mail.com</td>
+								<td>YY.MM.DD ~ YY.MM.DD</td>
+								<td class="center">O</td>
+                                <td class="center"></td>
+                                <td class="center">O</td>
+                                <td class="center"></td>
+                                <td class="center"><button class="btn -green trigger-info">증빙서류</button></td>
+                                <td class="center"><button class="btn -lightred trigger-modify">반려이력</button></td>
+                                <td class="center"><button class="btn -magenta">승인요청</button></td>
+                            </tr>
+                            <tr>
+                                <td class="center"><input type="checkbox"></td>
+								<td>승인</td>
+								<td>하도급</td>
+								<td>정규직</td>
+                                <td>성명</td>
+								<td>부장</td>
+								<td>YY.MM.DD</td>
+								<td>내국인</td>
+                                <td>010-1234-5678</td>
+								<td>email@mail.com</td>
+								<td>YY.MM.DD ~ YY.MM.DD</td>
+								<td class="center">O</td>
+                                <td class="center"></td>
+                                <td class="center">O</td>
+                                <td class="center"></td>
+                                <td class="center"><button class="btn -green trigger-info">증빙서류</button></td>
+                                <td class="center"><button class="btn -lightred trigger-modify">반려이력</button></td>
+                                <td class="center"><button class="btn -magenta">승인요청</button></td>
+                            </tr>
+                            <tr>
+                                <td class="center"><input type="checkbox"></td>
+								<td>승인</td>
+								<td>하도급</td>
+								<td>정규직</td>
+                                <td>성명</td>
+								<td>부장</td>
+								<td>YY.MM.DD</td>
+								<td>내국인</td>
+                                <td>010-1234-5678</td>
+								<td>email@mail.com</td>
+								<td>YY.MM.DD ~ YY.MM.DD</td>
+								<td class="center">O</td>
+                                <td class="center"></td>
+                                <td class="center">O</td>
+                                <td class="center"></td>
+                                <td class="center"><button class="btn -green trigger-info">증빙서류</button></td>
+                                <td class="center"><button class="btn -lightred trigger-modify">반려이력</button></td>
+                                <td class="center"><button class="btn -magenta">승인요청</button></td>
+                            </tr>
+                            <tr class="edit">
+                                <td class="center"><input type="checkbox"></td>
+								<td></td>
+								<td>
+                                    <select class="form-select">
+                                        <option selected="">Select</option>
+                                        <option value="">1</option>
+                                        <option value="">2</option>
+                                        <option value="">3</option>
+                                        <option value="">4</option>
+                                    </select>
+                                </td>
+								<td>
+                                    <select class="form-select">
+                                        <option selected="">Select</option>
+                                        <option value="">1</option>
+                                        <option value="">2</option>
+                                        <option value="">3</option>
+                                        <option value="">4</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="input-tb" placeholder=""></td>
+								<td><input type="text" class="input-tb" placeholder=""></td>
+								<td>
+                                    <div class="input_date_box">
+                                        <input type="date" class="input-tb">
+                                    </div>
+                                </td>
+								<td>
+                                    <select class="form-select">
+                                        <option selected="">Select</option>
+                                        <option value="">1</option>
+                                        <option value="">2</option>
+                                        <option value="">3</option>
+                                        <option value="">4</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="input-tb" placeholder=""></td>
+								<td><input type="text" class="input-tb" placeholder=""></td>
+								<td>
+                                    <div class="d-flex input_date_box">
+                                        <input type="date" class="input-tb half">
+                                        <span> ~ </span>
+                                        <input type="date" class="input-tb half">
+                                    </div>
+                                </td>
+								<td class="center">O</td>
+                                <td class="center"></td>
+                                <td class="center">O</td>
+                                <td class="center"></td>
+                                <td class="center"><button class="btn -green trigger-info">증빙서류</button></td>
+                                <td class="center"><button class="btn -lightred trigger-modify">반려이력</button></td>
+                                <td class="center"><button class="btn -magenta">승인요청</button></td>
+                            </tr>
+                        </tbody>
+                    </table>	
+                </div>
+				
+				<div class="toolbar">
+					<div id="paging" class="pagination">
+						<a href="#" id="first" class="disabled"><img src="../../images/icon/ico_double_arrow_left.png" alt="첫 페이지"></a> 
+					  	<a href="#" id="prev" class="disabled"><img src="../../images/icon/ico_arrow_left.png" alt="이전 페이지"></a> 
+						<div id="wrapper">
+							<ul class="page-num">
+								<li><a href="" class="active">1</a></li>
+								<li><a href="">2</a></li>
+								<li><a href="">3</a></li>
+								<li><a href="">4</a></li>
+								<li><a href="">5</a></li>
+								<li><a href="">6</a></li>
+								<li><a href="">7</a></li>
+								<li><a href="">8</a></li>
+								<li><a href="">9</a></li>
+								<li><a href="">10</a></li>
+							</ul>
+						</div>
+						<a href="#" id="next"><img src="../../images/icon/ico_arrow_right.png" alt="다음 페이지"></a>
+						<a href="#" id="last"><img src="../../images/icon/ico_double_arrow_right.png" alt="마지막 페이지"></a>
+					</div>
+					<div class="view-num">
+						<select class="form-select">
+							<option selected="">보기설정</option>
+							<option value="">10</option>
+							<option value="">20</option>
+							<option value="">30</option>
+							<option value="">40</option>
+							<option value="">50</option>
+						</select>
+					</div>
+				</div>
+				
+            </div>
+        </section>
+    </main>
+	
+</div>
+    
+    
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+    
+</body>
+</html>

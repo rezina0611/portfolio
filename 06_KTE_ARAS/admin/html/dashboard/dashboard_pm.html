@@ -1,0 +1,1218 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>To-Do List</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+    
+<body>
+    
+<!-- 오늘 작업 사업장 -->
+<div class="modal-wrapper" id="modal-db01">
+    <div class="modal widen">
+        <div class="header">
+            <h1>오늘 작업 사업장
+                <button class="btn btn-close trigger-db01"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="tui-wrapper panel">
+                <table class="table db-t">
+                    <colgroup>
+                        <col width="60">
+                        <col width="120">
+                        <col width="*">
+                        <col width="120">
+                        <col width="150">
+                        <col width="100">
+                        <col width="120">
+                        <col width="100">
+                        <col width="120">
+                        <col width="90">
+                        <col width="200">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>프로젝트코드</th>
+                            <th>프로젝트</th>
+                            <th>사업장</th>
+                            <th class="center">일정 확인</th>
+                            <th class="center">고위험 프로젝트</th>
+                            <th>협력사</th>
+                            <th>작성자</th>
+                            <th class="center">작성완료 여/부</th>
+                            <th>상태</th>
+                            <th>주소</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화 아라스 고도화</td>
+                            <td>A터널</td>
+                            <td class="center" style="position: relative">
+                                <div class="button-cover">
+                                    <div class="button r">
+                                        <input type="checkbox" class="checkbox">
+                                        <div class="knobs"></div>
+                                        <div class="btn-layer"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="center"><i class="fa fa-check c-red"></i></td>
+                            <td>A협력사</td>
+                            <td>ㅁㅁ협력사 김협력</td>
+                            <td class="center"><a href="">작성하기</a></td>
+                            <td>임시저장</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화</td>
+                            <td>A터널</td>
+                            <td class="center" style="position: relative">
+                                <div class="button-cover">
+                                    <div class="button r">
+                                        <input type="checkbox" class="checkbox">
+                                        <div class="knobs"></div>
+                                        <div class="btn-layer"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="center"><i class="fa fa-check c-red"></i></td>
+                            <td>A협력사</td>
+                            <td>ㅁㅁ협력사 김협력</td>
+                            <td class="center"><i class="fa fa-check"></i></td>
+                            <td>작성완료</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화</td>
+                            <td>A터널</td>
+                            <td class="center" style="position: relative">
+                                2022-05-09
+                            </td>
+                            <td class="center"></td>
+                            <td>A협력사</td>
+                            <td>ㅁㅁ협력사 김협력</td>
+                            <td class="center"><i class="fa fa-check"></i></td>
+                            <td>승인요청</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+    
+<!-- 내일 작업 사업장 -->
+<div class="modal-wrapper" id="modal-db02">
+    <div class="modal widen">
+        <div class="header">
+            <h1>내일 작업 사업장
+                <button class="btn btn-close trigger-db02"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="tui-wrapper panel">
+                <table class="table db-t">
+                    <colgroup>
+                        <col width="60">
+                        <col width="120">
+                        <col width="*">
+                        <col width="120">
+                        <col width="110">
+                        <col width="150">
+                        <col width="200">
+                        <col width="150">
+                        <col width="120">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>프로젝트코드</th>
+                            <th>프로젝트</th>
+                            <th class="center">고위험 프로젝트</th>
+                            <th>PM</th>
+                            <th>사업장</th>
+                            <th>주소</th>
+                            <th class="center">일정 확인</th>
+                            <th>협력사</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화 아라스 고도화</td>
+                            <td class="center"><i class="fa fa-check c-red"></i></td>
+                            <td>이피엠</td>
+                            <td>ㅁㅁ철탑</td>
+                            <td>서울시 성동구 연무장5가길 7</td>
+                            <td class="center" style="position: relative">
+                                <div class="button-cover">
+                                    <div class="button r">
+                                        <input type="checkbox" class="checkbox">
+                                        <div class="knobs"></div>
+                                        <div class="btn-layer"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>A협력사</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화 아라스 고도화</td>
+                            <td class="center"><i class="fa fa-check c-red"></i></td>
+                            <td>이피엠</td>
+                            <td>ㅁㅁㅂㅂ철탑</td>
+                            <td>서울시 성동구 연무장5가길 7</td>
+                            <td class="center" style="position: relative">
+                                <div class="button-cover">
+                                    <div class="button r">
+                                        <input type="checkbox" class="checkbox">
+                                        <div class="knobs"></div>
+                                        <div class="btn-layer"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>A협력사</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+    
+<!-- 사업장 미배치 -->
+<div class="modal-wrapper" id="modal-db03">
+    <div class="modal wide">
+        <div class="header">
+            <h1>사업장 미배치
+                <button class="btn btn-close trigger-db03"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="tui-wrapper panel">
+                <table class="table db-t">
+                    <colgroup>
+                        <col width="60">
+                        <col width="120">
+                        <col width="*">
+                        <col width="100">
+                        <col width="140">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>프로젝트코드</th>
+                            <th>프로젝트</th>
+                            <th class="center">사업장 배치유뮤</th>
+                            <th class="center">배치하기</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화 아라스 고도화</td>
+                            <td class="center"><i class="fa fa-remove"></i></td>
+                            <td class="center"><button class="btn -lightred">사업장 배치</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화 아라스 고도화</td>
+                            <td class="center"><i class="fa fa-remove"></i></td>
+                            <td class="center"><button class="btn -lightred">사업장 배치</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>    
+    
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+    
+<!-- 고위험 프로젝트 선정 -->
+<div class="modal-wrapper" id="modal-db04">
+    <div class="modal widen">
+        <div class="header">
+            <h1>고위험프로젝트 선정
+                <button class="btn btn-close trigger-db04"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="tui-wrapper panel">
+                <table class="table db-t center">
+                    <colgroup>
+                        <col width="60">
+                        <col width="120">
+                        <col width="*">
+                        <col width="100">
+                        <col width="70">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="120">
+                        <col width="120">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">구분</th>
+                            <th rowspan="2">프로젝트코드</th>
+                            <th rowspan="2">프로젝트</th>
+                            <th rowspan="2" class="center">버전<br>관리</th>
+                            <th class="center bdt-1" colspan="25">위험요인</th>
+                            <th rowspan="2" class="center">선임팀장<br>승인</th>
+                            <th rowspan="2" class="center">안전보건팀<br>승인/반려</th>
+                        </tr>
+                        <tr>
+                            <th class="center bdb-1">1</th>
+                            <th class="center bdb-1">2</th>
+                            <th class="center bdb-1">3</th>
+                            <th class="center bdb-1">4</th>
+                            <th class="center bdb-1">5</th>
+                            <th class="center bdb-1">6</th>
+                            <th class="center bdb-1">7</th>
+                            <th class="center bdb-1">8</th>
+                            <th class="center bdb-1">9</th>
+                            <th class="center bdb-1">10</th>
+                            <th class="center bdb-1">11</th>
+                            <th class="center bdb-1">12</th>
+                            <th class="center bdb-1">13</th>
+                            <th class="center bdb-1">14</th>
+                            <th class="center bdb-1">15</th>
+                            <th class="center bdb-1">16</th>
+                            <th class="center bdb-1">17</th>
+                            <th class="center bdb-1">18</th>
+                            <th class="center bdb-1">19</th>
+                            <th class="center bdb-1">20</th>
+                            <th class="center bdb-1">21</th>
+                            <th class="center bdb-1">22</th>
+                            <th class="center bdb-1">23</th>
+                            <th class="center bdb-1">24</th>
+                            <th class="center bdb-1">25</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td class="left">A229999</td>
+                            <td class="left">아라스 고도화</td>
+                            <td>1차</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><button class="btn -magenta">승인요청</button></td>
+                            <td><button class="btn -magenta">승인요청</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td class="left">A229999</td>
+                            <td class="left">아라스 고도화</td>
+                            <td>2차</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><button class="btn -magenta">승인요청</button></td>
+                            <td><button class="btn -magenta">승인요청</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>  
+    
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+    
+<!-- 최초, 정기 위험성 평가 대상 -->
+<div class="modal-wrapper" id="modal-db05">
+    <div class="modal widen">
+        <div class="header">
+            <h1>최초, 정기 위험성 평가 대상
+                <button class="btn btn-close trigger-db05"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="tui-wrapper panel">
+                <table class="table db-t v-middle">
+                    <colgroup>
+                        <col width="60">
+                        <col width="120">
+                        <col width="*">
+                        <col width="120">
+                        <col width="120">
+                        <col width="150">
+                        <col width="110">
+                        <col width="150">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>프로젝트코드</th>
+                            <th>프로젝트</th>
+                            <th class="center">최초<br>(착공일~29일)</th>
+                            <th class="center">수시<br>(착공일+30일<br>이후, 한달마다)</th>
+                            <th class="center">정기</th>
+                            <th class="center">PM의견</th>
+                            <th>비고</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화</td>
+                            <td class="center"><i class="fa fa-check"></i></td>
+                            <td class="center"><i class="fa fa-check"></i></td>
+                            <td class="center">프로젝트 착공일 + 1년</td>
+                            <td class="center"><a href="">작성</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화</td>
+                            <td class="center"><i class="fa fa-check"></i></td>
+                            <td class="center"><i class="fa fa-check"></i></td>
+                            <td class="center">프로젝트 착공일 + 1년</td>
+                            <td class="center"><i class="fa fa-check"></i></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화</td>
+                            <td class="center"><a href="">평가</a></td>
+                            <td class="center"><a href="">평가</a></td>
+                            <td class="center">프로젝트 착공일 + 1년</td>
+                            <td class="center"><i class="fa fa-check"></i></td>
+                            <td>협력사가 해야할 일은 푸시알림 보내기</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+
+<!-- 수행품질평가 대상 -->
+<div class="modal-wrapper" id="modal-db06">
+    <div class="modal widen">
+        <div class="header">
+            <h1>수행품질평가 대상
+                <button class="btn btn-close trigger-db06"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="tui-wrapper panel">
+                <table class="table db-t center">
+                    <colgroup>
+                        <col width="60">
+                        <col width="120">
+                        <col width="*">
+                        <col width="120">
+                        <col width="100">
+                        <col width="100">
+                        <col width="100">
+                        <col width="130">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>프로젝트코드</th>
+                            <th>프로젝트</th>
+                            <th>협력사</th>
+                            <th class="center">완료 여/부</th>
+                            <th class="center">시공</th>
+                            <th class="center">안전관리</th>
+                            <th class="center">준공</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td class="left">A229999</td>
+                            <td class="left">아라스 고도화</td>
+                            <td class="left">ㄹㄹ협력사</td>
+                            <td><i class="fa fa-remove"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><a href="">평가하러 가기</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td class="left">A229999</td>
+                            <td class="left">아라스 고도화</td>
+                            <td class="left">ㄹㄹ협력사</td>
+                            <td><i class="fa fa-remove"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><a href="">평가하러 가기</a></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td class="left">A229999</td>
+                            <td class="left">아라스 고도화</td>
+                            <td class="left">ㄹㄹ협력사</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td class="left">A229999</td>
+                            <td class="left">아라스 고도화</td>
+                            <td class="left">ㄹㄹ협력사</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal --> 
+    
+<!-- 수시위험성 평가 회의 대상 -->
+<div class="modal-wrapper" id="modal-db07">
+    <div class="modal widen">
+        <div class="header">
+            <h1>수시위험성 평가 회의 대상
+                <button class="btn btn-close trigger-db07"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="tui-wrapper panel">
+                <table class="table db-t">
+                    <colgroup>
+                        <col width="60">
+                        <col width="120">
+                        <col width="*">
+                        <col width="100">
+                        <col width="100">
+                        <col width="170">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>프로젝트코드</th>
+                            <th>프로젝트</th>
+                            <th class="center">준공일</th>
+                            <th class="center">회의차수</th>
+                            <th class="center">수시위험성평가회의</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화</td>
+                            <td class="center">~ 11-30</td>
+                            <td class="center">1차</td>
+                            <td class="center"><a href="">회의하기</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화</td>
+                            <td class="center">~ 11-30</td>
+                            <td class="center">1차</td>
+                            <td class="center"><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화</td>
+                            <td class="center">~ 11-30</td>
+                            <td class="center">1차</td>
+                            <td class="center"><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화</td>
+                            <td class="center">~ 11-30</td>
+                            <td class="center">4차</td>
+                            <td class="center"><a href="">회의하기</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->  
+
+<!-- 프로젝트별 안전관리 필수 서유 상세 현황 -->
+<div class="modal-wrapper" id="modal-db08">
+    <div class="modal widen">
+        <div class="header">
+            <h1>프로젝트별 안전관리 필수 서유 상세 현황
+                <button class="btn btn-close trigger-db08"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="tui-wrapper panel">
+                <table class="table db-t center">
+                    <colgroup>
+                        <col width="60">
+                        <col width="120">
+                        <col width="*">
+                        <col width="100">
+                        <col width="100">
+                        <col width="100">
+                        <col width="100">
+                        <col width="100">
+                        <col width="100">
+                        <col width="100">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>프로젝트코드</th>
+                            <th>프로젝트</th>
+                            <th>PM</th>
+                            <th class="center">안전보건관리<br>수행계획서</th>
+                            <th class="center">안전보건<br>교육일지</th>
+                            <th class="center">안전점검의<br>날 행사</th>
+                            <th class="center">협의체<br>회의록</th>
+                            <th class="center">사업장 합동<br>안전점검</th>
+                            <th class="center">산업안전보건<br>관리비</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td class="left">A229999</td>
+                            <td class="left">아라스 고도화</td>
+                            <td class="left">홍길동</td>
+                            <td><a href=""><i class="fa fa-remove c-blue"></i></a></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td class="left">A229999</td>
+                            <td class="left">아라스 고도화</td>
+                            <td class="left">홍길동</td>
+                            <td><a href=""><i class="fa fa-remove c-blue"></i></a></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td class="left">A229999</td>
+                            <td class="left">아라스 고도화</td>
+                            <td class="left">홍길동</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->      
+    
+<div class="page-wrapper d-flex">
+    <nav id="side-nav" class="side-nav">
+    </nav>
+   
+    <main class="contents">
+        <section class="wrapper db">
+            <h1 class="page-title">홍길동님 To-Do List<span class="date">2022년 12월 5일(월)</span></h1>
+            <div title="PJT 현황">
+                <ul class="stat">
+                    <li class="panel" style="cursor: default">
+                        <div class="title-area">
+                            <h2>오늘의 할 일</h2>
+                        </div>
+                        <div class="d-flex">
+                            <div class="pie-chart-area" style="width: 16rem; height: 13.2rem">
+                            </div>
+                            <div class="part-index w80">
+                                <div class="dot-list ico-24 trigger-db01 pointer">
+                                    <ul>
+                                        <li class="tit">
+                                            <div>오늘 작업 사업장</div>
+                                            <div class="count"><span class="value">100</span>건</div>
+                                        </li>
+                                        <li>
+                                            <div><img src="../../images/icon/ico_checked.png" alt="">완료</div>
+                                            <div class="count"><span class="value">100</span>건</div>
+                                        </li>
+                                        <li>
+                                            <div><img src="../../images/icon/ico_checkbox.png" alt="">미완료</div>
+                                            <div class="count"><span class="value">100</span>건</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="dot-list ico-24 trigger-db02 pointer">
+                                    <ul>
+                                        <li class="tit">
+                                            <div>내일 사업장</div>
+                                        </li>
+                                        <li>
+                                            <div><img src="../../images/icon/ico_Work.png" alt="">작업있음</div>
+                                            <div class="count"><span class="value">100</span>건</div>
+                                        </li>
+                                        <li>
+                                            <div><img src="../../images/icon/ico_noWork.png" alt="">작업있음</div>
+                                            <div class="count"><span class="value">100</span>건</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="panel ico-box">
+                        <img src="../../images/icon/ico_incomplete.png" alt="">
+                        <div class="d-flex">
+                            <span class="tit">미결함</span>
+                            <div class="count"><span class="value">5</span>건</div>
+                        </div>
+                    </li>
+                    
+                    <li class="panel" style="cursor: default">
+                        <div class="title-area">
+                            <h2>신규 프로젝트에서 해야할 일</h2>
+                        </div>
+                        <div class="d-flex">
+                            <div class="dot-list ico-40">
+                                <ul>
+                                    <li class="trigger-db03 pointer">
+                                        <div><img src="../../images/icon/ico_db_field.png" alt="">사업장 미배치</div>
+                                        <div class="count"><span class="value">2</span>개</div>
+                                    </li>
+                                    <li class="trigger-db04 pointer">
+                                        <div><img src="../../images/icon/ico_db_high-risk.png" alt="">고위험 프로젝트 미선정</div>
+                                        <div class="count"><span class="value">4</span>개</div>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="d-flex w100">
+                                <div class="pie-chart-area" style="width: 16rem; height: 13.2rem"></div>
+                                <div class="part-index w80">
+                                    <div class="dot-list ico-24 w100 trigger-db05 pointer">
+                                        <ul>
+                                            <li class="tit">
+                                                <div>최초 위험성 평가</div>
+                                                <div class="count"><span class="value">100</span>건</div>
+                                            </li>
+                                            <li>
+                                                <div><img src="../../images/icon/ico_checked.png" alt="">완료</div>
+                                                <div class="count"><span class="value">100</span>건</div>
+                                            </li>
+                                            <li>
+                                                <div><img src="../../images/icon/ico_checkbox.png" alt="">미완료</div>
+                                                <div class="count"><span class="value">100</span>건</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="panel">
+                <div class="title-area">
+                    <h2>MY 프로젝트에서 해야할 일</h2>
+                </div>
+                <div class="mt-1">
+                    <ul class="stat myp">
+                        <li class="trigger-db06">
+                            <div class="title-area">
+                                <h3>수행품질평가</h3>
+                            </div>
+                            <div class="d-flex">
+                                <div class="pie-chart-area"></div>
+                                <div class="part-index fd-col">
+                                    <div class="total">
+                                        <span class="tit">total</span>
+                                        <span class="count"><span class="value">75</span>건</span>
+                                    </div>
+                                    <div class="box-list">
+                                        <ul>
+                                            <li>
+                                                <div class="label">완료</div>
+                                                <div class="count"><span class="value">100</span>개</div>
+                                            </li>
+                                            <li>
+                                                <div class="label">미완료</div>
+                                                <div class="count"><span class="value">50</span>개</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <hr>
+                        <li class="trigger-db07">
+                            <div class="title-area">
+                                <h3>수시위험성평가 회의</h3>
+                            </div>
+                            <div class="d-flex">
+                                <div class="pie-chart-area"></div>
+                                <div class="part-index fd-col">
+                                    <div class="total">
+                                        <span class="tit">total</span>
+                                        <span class="count"><span class="value">75</span>건</span>
+                                    </div>
+                                    <div class="box-list">
+                                        <ul>
+                                            <li>
+                                                <div class="label">완료</div>
+                                                <div class="count"><span class="value">100</span>개</div>
+                                            </li>
+                                            <li>
+                                                <div class="label">미완료</div>
+                                                <div class="count"><span class="value">50</span>개</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <hr>
+                        <li>
+                            <div class="title-area">
+                                <h3>정기위험성평가표</h3>
+                            </div>
+                            <div class="d-flex">
+                                <div class="pie-chart-area"></div>
+                                <div class="part-index fd-col">
+                                    <div class="total">
+                                        <span class="tit">total</span>
+                                        <span class="count"><span class="value">75</span>건</span>
+                                    </div>
+                                    <div class="box-list">
+                                        <ul>
+                                            <li>
+                                                <div class="label">완료</div>
+                                                <div class="count"><span class="value">100</span>개</div>
+                                            </li>
+                                            <li>
+                                                <div class="label">미완료</div>
+                                                <div class="count"><span class="value">50</span>개</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="d-flex">
+                <div class="panel ico-box myp trigger-db08">
+                    <img src="../../images/icon/ico_safety_docs.png" alt="">
+                    <div class="d-flex">
+                        <span class="tit">My 프로젝트<br>안전관리<br>필수</span>
+                    </div>
+                    
+                </div>
+                <ul class="ico-box-list">
+                    <li class="panel">
+                        <div class="ico-bg i-01"></div>
+                        <div class="d-flex">
+                            <span class="tit">안전보건관리 수행계획서</span>
+                            <span class="value"></span>
+                        </div>
+                    </li>
+                    <li class="panel active">
+                        <div class="ico-bg i-04"></div>
+                        <div class="d-flex">
+                            <span class="tit">안전보건 교육일지</span>
+                            <span class="value">1</span>
+                        </div>
+                    </li>
+                    <li class="panel">
+                        <div class="ico-bg i-05"></div>
+                        <div class="d-flex">
+                            <span class="tit">안전점검의 날 행사</span>
+                            <span class="value"></span>
+                        </div>
+                    </li>
+                    <li class="panel active">
+                        <div class="ico-bg i-06"></div>
+                        <div class="d-flex">
+                            <span class="tit">협의체 회의록</span>
+                            <span class="value">1</span>
+                        </div>
+                    </li>
+                    <li class="panel">
+                        <div class="ico-bg i-07"></div>
+                        <div class="d-flex">
+                            <span class="tit">사업장 합동 안전점검</span>
+                            <span class="value"></span>
+                        </div>
+                    </li>
+                    <li class="panel">
+                        <div class="ico-bg i-08"></div>
+                        <div class="d-flex">
+                            <span class="tit">산업안전 보건관리비</span>
+                            <span class="value"></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tui-wrapper panel">
+                <div class="d-flex">
+                    <h2>프로젝트 현황(수주/수행)<span>(00)</span></h2>
+                </div>
+                <div class="tui-area" title="tui-area" style="height: 240px">
+                    <table class="table db-t center sticky">
+                        <colgroup>
+                            <col width="80">
+                            <col width="120">
+                            <col width="*">
+                            <col width="110">
+                            <col width="80">
+                            <col width="90">
+                            <col width="120">
+                            <col width="60">
+                            <col width="60">
+                            <col width="60">
+                            <col width="90">
+                            <col width="60">
+                            <col width="60">
+                            <col width="60">
+                            <col width="100">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th rowspan="2">구분</th>
+                                <th rowspan="2">프로젝트코드</th>
+                                <th rowspan="2">프로젝트</th>
+                                <th rowspan="2" class="center">PM</th>
+                                <th rowspan="2" class="center">사업장 수</th>
+                                <th rowspan="2" class="center">PiMS실적<br>(공정률 %)</th>
+                                <th rowspan="2" class="center">고위험 프로젝트</th>
+                                <th colspan="3" class="center bdt-1">위험성평가</th>
+                                <th rowspan="2" class="center">일일안전<br>활동보고</th>
+                                <th colspan="3" class="center bdt-1">수행품질평가</th>
+                                <th rowspan="2" class="center">준공일</th>
+                            </tr>
+                            <tr>
+                                <th class="center bdb-1">최초</th>
+                                <th class="center bdb-1">수시</th>
+                                <th class="center bdb-1">정기</th>
+                                <th class="center bdb-1">시공</th>
+                                <th class="center bdb-1">안전</th>
+                                <th class="center bdb-1">준공</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td class="left">A229999</td>
+                                <td class="left"><a href="">아라스 고도화</a></td>
+                                <td>홍길동</td>
+                                <td><a href="">1</a></td>
+                                <td><a href="">70.61</a></td>
+                                <td><a href=""><i class="fa fa-check c-red"></i></a></td>
+                                <td><a href=""><i class="fa fa-check"></i></a></td>
+                                <td><a href="">3</a></td>
+                                <td><a href="">1</a></td>
+                                <td><a href="">5</a></td>
+                                <td><a href=""><i class="fa fa-check"></i></a></td>
+                                <td><a href=""><i class="fa fa-remove"></i></a></td>
+                                <td><a href=""><i class="fa fa-remove"></i></a></td>
+                                <td>2022-05-20</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="left">A229999</td>
+                                <td class="left"><a href="">아라스 고도화</a></td>
+                                <td>홍길동</td>
+                                <td><a href="">1</a></td>
+                                <td><a href="">70.61</a></td>
+                                <td><a href=""><i class="fa fa-check c-red"></i></a></td>
+                                <td><a href=""><i class="fa fa-check"></i></a></td>
+                                <td><a href="">3</a></td>
+                                <td><a href="">1</a></td>
+                                <td><a href="">5</a></td>
+                                <td><a href=""><i class="fa fa-check"></i></a></td>
+                                <td><a href=""><i class="fa fa-remove"></i></a></td>
+                                <td><a href=""><i class="fa fa-remove"></i></a></td>
+                                <td>2022-05-20</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td class="left">A229999</td>
+                                <td class="left"><a href="">아라스 고도화</a></td>
+                                <td>홍길동</td>
+                                <td><a href="">1</a></td>
+                                <td><a href="">70.61</a></td>
+                                <td><a href=""><i class="fa fa-check c-red"></i></a></td>
+                                <td><a href=""><i class="fa fa-check"></i></a></td>
+                                <td><a href="">3</a></td>
+                                <td><a href="">1</a></td>
+                                <td><a href="">5</a></td>
+                                <td><a href=""><i class="fa fa-check"></i></a></td>
+                                <td><a href=""><i class="fa fa-remove"></i></a></td>
+                                <td><a href=""><i class="fa fa-remove"></i></a></td>
+                                <td>2022-05-20</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td class="left">A229999</td>
+                                <td class="left"><a href="">아라스 고도화</a></td>
+                                <td>홍길동</td>
+                                <td><a href="">1</a></td>
+                                <td><a href="">70.61</a></td>
+                                <td><a href=""><i class="fa fa-check c-red"></i></a></td>
+                                <td><a href=""><i class="fa fa-check"></i></a></td>
+                                <td><a href="">3</a></td>
+                                <td><a href="">1</a></td>
+                                <td><a href="">5</a></td>
+                                <td><a href=""><i class="fa fa-check"></i></a></td>
+                                <td><a href=""><i class="fa fa-remove"></i></a></td>
+                                <td><a href=""><i class="fa fa-remove"></i></a></td>
+                                <td>2022-05-20</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td class="left">A229999</td>
+                                <td class="left"><a href="">아라스 고도화</a></td>
+                                <td>홍길동</td>
+                                <td><a href="">1</a></td>
+                                <td><a href="">70.61</a></td>
+                                <td><a href=""><i class="fa fa-check c-red"></i></a></td>
+                                <td><a href=""><i class="fa fa-check"></i></a></td>
+                                <td><a href="">3</a></td>
+                                <td><a href="">1</a></td>
+                                <td><a href="">5</a></td>
+                                <td><a href=""><i class="fa fa-check"></i></a></td>
+                                <td><a href=""><i class="fa fa-remove"></i></a></td>
+                                <td><a href=""><i class="fa fa-remove"></i></a></td>
+                                <td>2022-05-20</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="left">A229999</td>
+                                <td class="left"><a href="">아라스 고도화</a></td>
+                                <td>홍길동</td>
+                                <td><a href="">1</a></td>
+                                <td><a href="">70.61</a></td>
+                                <td><a href=""><i class="fa fa-check c-red"></i></a></td>
+                                <td><a href=""><i class="fa fa-check"></i></a></td>
+                                <td><a href="">3</a></td>
+                                <td><a href="">1</a></td>
+                                <td><a href="">5</a></td>
+                                <td><a href=""><i class="fa fa-check"></i></a></td>
+                                <td><a href=""><i class="fa fa-remove"></i></a></td>
+                                <td><a href=""><i class="fa fa-remove"></i></a></td>
+                                <td>2022-05-20</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td class="left">A229999</td>
+                                <td class="left"><a href="">아라스 고도화</a></td>
+                                <td>홍길동</td>
+                                <td><a href="">1</a></td>
+                                <td><a href="">70.61</a></td>
+                                <td><a href=""><i class="fa fa-check c-red"></i></a></td>
+                                <td><a href=""><i class="fa fa-check"></i></a></td>
+                                <td><a href="">3</a></td>
+                                <td><a href="">1</a></td>
+                                <td><a href="">5</a></td>
+                                <td><a href=""><i class="fa fa-check"></i></a></td>
+                                <td><a href=""><i class="fa fa-remove"></i></a></td>
+                                <td><a href=""><i class="fa fa-remove"></i></a></td>
+                                <td>2022-05-20</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td class="left">A229999</td>
+                                <td class="left"><a href="">아라스 고도화</a></td>
+                                <td>홍길동</td>
+                                <td><a href="">1</a></td>
+                                <td><a href="">70.61</a></td>
+                                <td><a href=""><i class="fa fa-check c-red"></i></a></td>
+                                <td><a href=""><i class="fa fa-check"></i></a></td>
+                                <td><a href="">3</a></td>
+                                <td><a href="">1</a></td>
+                                <td><a href="">5</a></td>
+                                <td><a href=""><i class="fa fa-check"></i></a></td>
+                                <td><a href=""><i class="fa fa-remove"></i></a></td>
+                                <td><a href=""><i class="fa fa-remove"></i></a></td>
+                                <td>2022-05-20</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+          
+        </section>
+    </main>
+
+    
+</div>
+    
+    
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+<script>
+$( document ).ready(function() {
+  // 대시보드 2022-12-26
+    $('.trigger-db01').on('click', function() {
+        $('#modal-db01').toggleClass('open');
+     return false;
+  }); 
+    
+    $('.trigger-db02').on('click', function() {
+        $('#modal-db02').toggleClass('open');
+     return false;
+  }); 
+    
+    $('.trigger-db03').on('click', function() {
+        $('#modal-db03').toggleClass('open');
+     return false;
+  }); 
+    
+    $('.trigger-db04').on('click', function() {
+        $('#modal-db04').toggleClass('open');
+     return false;
+  }); 
+    
+    $('.trigger-db05').on('click', function() {
+        $('#modal-db05').toggleClass('open');
+     return false;
+  }); 
+    
+    $('.trigger-db06').on('click', function() {
+        $('#modal-db06').toggleClass('open');
+     return false;
+  }); 
+    
+    $('.trigger-db07').on('click', function() {
+        $('#modal-db07').toggleClass('open');
+     return false;
+  }); 
+    
+    $('.trigger-db08').on('click', function() {
+        $('#modal-db08').toggleClass('open');
+     return false;
+  }); 
+    
+    $('.trigger-db09').on('click', function() {
+        $('#modal-db09').toggleClass('open');
+     return false;
+  }); 
+    
+});  
+    
+</script> 
+
+</body>
+</html>

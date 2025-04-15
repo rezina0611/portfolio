@@ -1,0 +1,595 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>최초위험성평가 &gt; 등록</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+    
+<body>
+    
+<!-- 조치확인자 등록 -->     
+<div class="modal-wrapper" id="modal-info">
+    <div class="modal">
+        <div class="header">
+            <h1>조치확인자 등록
+                <button class="btn btn-close trigger-info"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="card w100">
+                <div class="card-header">KTE</div>
+                <div class="card-body">
+                    <div class="card-search">
+                        <div class="input-group">
+                            <input type="search" placeholder="직원 이름을 입력해 검색하세요.">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-wrap">
+                        <div class="check-list">
+                            <label class="tr">
+                                <span class="name"><input type="checkbox"><span class="class">수행PM</span><span class="class">부장</span>홍길동</span>
+                                <span>강북/강원 NW엔지니어링팀</span>
+                            </label>
+                            <label class="tr">
+                                <span class="name"><input type="checkbox"><span class="class">수행PL</span><span class="class">부장</span>홍길동</span>
+                                <span>강북/강원 NW엔지니어링팀</span>
+                            </label>
+                            <label class="tr">
+                                <span class="name"><input type="checkbox"><span class="class">수행PL</span><span class="class">부장</span>홍길동</span>
+                                <span>강북/강원 NW엔지니어링팀</span>
+                            </label>
+                            <label class="tr">
+                                <span class="name"><input type="checkbox"><span class="class">수행PL</span><span class="class">사원</span>홍길동</span>
+                                <span>강북/강원 NW엔지니어링팀</span>
+                            </label>
+                            <label class="tr">
+                                <span class="name"><input type="checkbox"><span class="class">수행PL</span><span class="class">부장</span>홍길동</span>
+                                <span>강북/강원 NW엔지니어링팀</span>
+                            </label>
+                            <label class="tr">
+                                <span class="name"><input type="checkbox"><span class="class">수행PL</span><span class="class">부장</span>홍길동</span>
+                                <span>강북/강원 NW엔지니어링팀</span>
+                            </label>
+                            <label class="tr">
+                                <span class="name"><input type="checkbox"><span class="class">수행PL</span><span class="class">사원</span>홍길동</span>
+                                <span>강북/강원 NW엔지니어링팀</span>
+                            </label>
+                            <label class="tr">
+                                <span class="name"><input type="checkbox"><span class="class">수행PL</span><span class="class">부장</span>홍길동</span>
+                                <span>강북/강원 NW엔지니어링팀</span>
+                            </label>
+                            <label class="tr">
+                                <span class="name"><input type="checkbox"><span class="class">수행PL</span><span class="class">부장</span>홍길동</span>
+                                <span>강북/강원 NW엔지니어링팀</span>
+                            </label>
+                            <label class="tr">
+                                <span class="name"><input type="checkbox"><span class="class">수행PL</span><span class="class">사원</span>홍길동</span>
+                                <span>강북/강원 NW엔지니어링팀</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="setting">
+                        <input type="checkbox">
+                        <button class="btn-sm">일괄등록</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="btn-area">
+            <button class="btn -grey">취소</button>
+			<button class="btn -primary">등록</button>
+		</div>
+    </div>
+</div>
+<!-- // 조치확인자 등록 -->    
+    
+<!-- 조치담당자 등록 -->     
+<div class="modal-wrapper" id="modal-register-wf">
+    <div class="modal">
+        <div class="header">
+            <h1>조치담당자 등록
+                <button class="btn btn-close trigger-register-wf"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="card w100">
+                <div class="card-header">출입인원</div>
+                <div class="card-body">
+                    <div class="card-search">
+                        <div class="input-group">
+                            <input type="search" placeholder="직원 이름을 입력해 검색하세요.">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-wrap">
+                        <div class="check-list">
+                            <label class="tr">
+                                <span class="name"><input type="checkbox"><span class="class">사원</span>홍길동</span>
+                                <span>회사명</span>
+                            </label>
+                            <label class="tr">
+                                <span class="name"><input type="checkbox"><span class="class">부장</span>홍길동</span>
+                                <span>회사명</span>
+                            </label>
+                            <label class="tr">
+                                <span class="name"><input type="checkbox"><span class="class">부장</span>홍길동</span>
+                                <span>회사명</span>
+                            </label>
+                            <label class="tr">
+                                <span class="name"><input type="checkbox"><span class="class">사원</span>홍길동</span>
+                                <span>회사명</span>
+                            </label>
+                            <label class="tr">
+                                <span class="name"><input type="checkbox"><span class="class">부장</span>홍길동</span>
+                                <span>회사명</span>
+                            </label>
+                            <label class="tr">
+                                <span class="name"><input type="checkbox"><span class="class">부장</span>홍길동</span>
+                                <span>회사명</span>
+                            </label>
+                            <label class="tr">
+                                <span class="name"><input type="checkbox"><span class="class">사원</span>홍길동</span>
+                                <span>회사명</span>
+                            </label>
+                            <label class="tr">
+                                <span class="name"><input type="checkbox"><span class="class">부장</span>홍길동</span>
+                                <span>회사명</span>
+                            </label>
+                            <label class="tr">
+                                <span class="name"><input type="checkbox"><span class="class">부장</span>홍길동</span>
+                                <span>회사명</span>
+                            </label>
+                            <label class="tr">
+                                <span class="name"><input type="checkbox"><span class="class">사원</span>홍길동</span>
+                                <span>회사명</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="setting">
+                        <input type="checkbox">
+                        <button class="btn-sm">일괄등록</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="btn-area">
+            <button class="btn -grey">취소</button>
+			<button class="btn -primary">등록</button>
+		</div>
+    </div>
+</div>
+<!-- // 조치담당자 등록 -->
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#addItemBtn2").click(function(){
+            var innerHtml = "";
+                innerHtml += '<tr>';
+                innerHtml += '<td><input type="checkbox"></td>'
+                innerHtml += '<td><input type="text" class="input-tb sm" placeholder="위험유형"></td>'
+                innerHtml += '<td><input type="text" class="input-tb" placeholder="작업위험요인 입력하세요"></td>'
+                innerHtml += '<td><input type="text" class="input-tb" placeholder="예방,개선대책 입력하세요"></td>'
+                innerHtml += '</tr>';
+
+            $("#riskTable > tbody:last").append(innerHtml);  //마지막 요소
+        });
+    });
+</script>
+<!-- 위험요인 추가 -->    
+<div class="modal-wrapper" id="modal-place">
+    <div class="modal wide">
+        <div class="header">
+            <h1>위험요인 추가
+                <button class="btn btn-close trigger-place"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="d-flex jc-btw ai-center">
+                <h2 class="table-title m-0">BM명/사업영역</h2>
+                <button class="btn -blue" id="addItemBtn2">직접입력</button>
+            </div>
+            
+            <table class="table db-t bdt-0 mt-1 l-fixed hover" id="riskTable">
+                <colgroup>
+                    <col width="60">
+                    <col width="100">
+                    <col width="">
+                    <col width="300">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>선택</th>
+                        <th>위험유형</th>
+                        <th>작업위험요인</th>
+                        <th>예방,개선대책</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>추락</td>
+                        <td>안전대 부착설비 미설치 구간에서 무리하게 이동 및 작업 중 추락 위험</td>
+                        <td>예방, 개선대책</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>추락</td>
+                        <td>안전대 부착설비 미설치 구간에서 무리하게 이동 및 작업 중 추락 위험</td>
+                        <td>예방, 개선대책</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>추락</td>
+                        <td>안전대 부착설비 미설치 구간에서 무리하게 이동 및 작업 중 추락 위험</td>
+                        <td>예방, 개선대책</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>추락</td>
+                        <td>안전대 부착설비 미설치 구간에서 무리하게 이동 및 작업 중 추락 위험</td>
+                        <td>예방, 개선대책</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>추락</td>
+                        <td>안전대 부착설비 미설치 구간에서 무리하게 이동 및 작업 중 추락 위험</td>
+                        <td>예방, 개선대책</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>추락</td>
+                        <td>안전대 부착설비 미설치 구간에서 무리하게 이동 및 작업 중 추락 위험</td>
+                        <td>예방, 개선대책</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><input type="text" class="input-tb sm" placeholder="위험유형"></td>
+                        <td><input type="text" class="input-tb" placeholder="작업위험요인 입력하세요"></td>
+                        <td><input type="text" class="input-tb" placeholder="예방,개선대책 입력하세요"></td>
+                    </tr>
+                    <!--<tr class="edit">
+                        <td><input type="checkbox"></td>
+                        <td><input type="text" class="input-tb sm" placeholder=""></td>
+                        <td><input type="text" class="input-tb" placeholder=""></td>
+                        <td><input type="text" class="input-tb" placeholder=""></td>
+                    </tr>-->
+                </tbody>
+            </table>
+        </div>
+		<div class="btn-area">
+			<button class="btn -grey trigger-place">취소</button>
+			<button class="btn -primary">추가</button>
+		</div>
+    </div>
+</div>    
+<!-- // 위험요인 추가 -->
+     
+<div class="page-wrapper d-flex">
+    <nav id="side-nav" class="side-nav">
+    </nav>
+	
+    <main class="contents">
+        <section class="wrapper">
+            <h1 class="page-title">최초위험성평가표 &gt; 등록</h1>
+            <form>
+                <table class="table l-fixed v-middle">
+					<colgroup>
+                        <col width="160">
+                        <col width="">
+                        <col width="160">
+                        <col width="">
+                        <col width="160">
+                        <col width="">
+                    </colgroup>
+                    <tbody>
+                        <tr height="48">
+                            <th>본부</th>
+                            <td>본부</td>
+                            <th>프로젝트코드</th>
+                            <td>프로젝트코드</td>
+                            <th>프로젝트</th>
+                            <td>프로젝트명</td>
+                        </tr>
+                        <tr class="edit">
+                            <th>BM/사업영역</th>
+                            <td>BM/사업영역</td>
+                            <th>등록일자</th>
+                            <td>
+                                <div class="d-flex input_date_box">
+                                    <input type="date" class="input-tb">
+                                </div>
+                            </td>
+                            <th>등록자</th>
+                            <td>홍길동</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+            <div class="tui-wrapper">
+                <div class="d-flex">
+					<div></div>
+                    <div class="top btn-area">
+                        <button class="btn btn-download">엑셀 다운로드</button>
+                        <button class="btn btn-add trigger-place">위험요인 추가</button>
+                    </div>
+                </div>
+                <div class="tui-area" title="tui-area">
+                    <table class="table db-t center v-middle">
+                        <colgroup>
+                            <col width="60">
+                            <col width="150" class="bd-l-1">
+                            <col width="340" class="bd-l-1">
+                            <col width="400" class="bd-l-1">
+                            <col width="200" class="bd-l-1">
+                            <col width="80" class="bd-l-1">
+                            <col width="150" class="bd-l-1">
+                            <col width="150" class="bd-l-1">
+                            <col width="400" class="bd-l-1">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th rowspan="2">번호</th>
+                                <th rowspan="2" class="center">위험분류</th>
+                                <th rowspan="2" class="center">작업위험요인</th>
+                                <th class="center">예방,개선대책</th>
+                                <th class="center">위험성 결정<br><span>(빈도*강도=수준)</span></th>
+                                <th rowspan="2" class="center">평가<br>(종류)</th>
+                                <th rowspan="2" class="center">조치담당자<br>조치확인자</th>
+                                <th rowspan="2" class="center">조치일자</th>
+                                <th rowspan="2" class="center">PM검토의견</th>
+                            </tr>
+                            <tr>
+                                <th>High 위험성 감소대책</th>
+                                <th class="center">High 위험성 감소대책 이후<br>위험성 결정<br><span>(빈도*강도=수준)</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- default -->
+                            <tr class="edit">
+                                <td>1</td>
+                                <td>위험분류</td>
+                                <td class="left">작업위험요인</td>
+                                <td class="left">예방,개선대책</td>
+                                <td>
+                                    <div class="d-flex">
+                                        <input type="text" class="input-tb sm" placeholder="">
+                                        <input type="text" class="input-tb sm" placeholder="">
+                                        <div class="w100"><span>00</span></div>
+                                    </div>
+                                </td>
+                                <td>L</td>
+                                <td>
+                                    <div>
+                                        <div class="input-group bd-1">
+                                            <input type="search" placeholder="">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text trigger-register-wf"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="input-group bd-1">
+                                            <input type="search" placeholder="">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text trigger-info"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                </td>
+                                <td>
+                                    <div class="d-flex input_date_box">
+                                        <input type="date" class="input-tb">
+                                    </div>
+                                </td>
+                                <td>
+                                    <textarea class="input-tb" cols="500" rows="4"  placeholder="PM검토의견"></textarea>
+                                </td>
+                            </tr>
+                            <!--// default -->
+                            <!-- 위험성평가 H case -->
+                            <tr class="edit">
+                                <td>2</td>
+                                <td>위험분류</td>
+                                <td class="left">작업위험요인</td>
+                                <td class="left">예방,개선대책</td>
+                                <td>
+                                    <div class="d-flex">
+                                        <input type="text" class="input-tb sm" placeholder="">
+                                        <input type="text" class="input-tb sm" placeholder="">
+                                        <div class="w100"><span>00</span></div>
+                                    </div>
+                                </td>
+                                <td>H</td>
+                                <td>
+                                    <div>
+                                        <div class="input-group bd-1">
+                                            <input type="search" placeholder="">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text trigger-register-wf"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="input-group bd-1">
+                                            <input type="search" placeholder="">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text trigger-info"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                </td>
+                                <td>
+                                    <div class="d-flex input_date_box">
+                                        <input type="date" class="input-tb">
+                                    </div>
+                                </td>
+                                <td>
+                                    <textarea class="input-tb" cols="500" rows="4"  placeholder="PM검토의견"></textarea>
+                                </td>
+                            </tr>
+                            <tr class="edit">
+                                <td colspan="3"></td>
+                                <td class="left">
+                                    <textarea class="input-tb" cols="100" rows="4"  placeholder="High 위험성 감소대책"></textarea>
+                                </td>
+                                <td>
+                                    <div class="d-flex">
+                                        <input type="text" class="input-tb sm" placeholder="">
+                                        <input type="text" class="input-tb sm" placeholder="">
+                                        <div class="w100"><span>00</span></div>
+                                    </div>
+                                </td>
+                                <td colspan="4"></td>
+                            </tr>
+                            <!-- // 위험성평가 H case -->
+                            <!-- default -->
+                            <tr class="edit">
+                                <td>3</td>
+                                <td>위험분류</td>
+                                <td class="left">작업위험요인</td>
+                                <td class="left">예방,개선대책</td>
+                                <td>
+                                    <div class="d-flex">
+                                        <input type="text" class="input-tb sm" placeholder="">
+                                        <input type="text" class="input-tb sm" placeholder="">
+                                        <div class="w100"><span>00</span></div>
+                                    </div>
+                                </td>
+                                <td>L</td>
+                                <td>
+                                    <div>
+                                        <div class="input-group bd-1">
+                                            <input type="search" placeholder="">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text trigger-register-wf"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="input-group bd-1">
+                                            <input type="search" placeholder="">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text trigger-info"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                </td>
+                                <td>
+                                    <div class="d-flex input_date_box">
+                                        <input type="date" class="input-tb">
+                                    </div>
+                                </td>
+                                <td>
+                                    <textarea class="input-tb" cols="500" rows="4"  placeholder="PM검토의견"></textarea>
+                                </td>
+                            </tr>
+                            <!--// default -->
+                            <!-- default -->
+                            <tr class="edit">
+                                <td>4</td>
+                                <td>위험분류</td>
+                                <td class="left">작업위험요인</td>
+                                <td class="left">예방,개선대책</td>
+                                <td>
+                                    <div class="d-flex">
+                                        <input type="text" class="input-tb sm" placeholder="">
+                                        <input type="text" class="input-tb sm" placeholder="">
+                                        <div class="w100"><span>00</span></div>
+                                    </div>
+                                </td>
+                                <td>L</td>
+                                <td>
+                                    <div>
+                                        <div class="input-group bd-1">
+                                            <input type="search" placeholder="">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text trigger-register-wf"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="input-group bd-1">
+                                            <input type="search" placeholder="">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text trigger-info"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                </td>
+                                <td>
+                                    <div class="d-flex input_date_box">
+                                        <input type="date" class="input-tb">
+                                    </div>
+                                </td>
+                                <td>
+                                    <textarea class="input-tb" cols="500" rows="4"  placeholder="PM검토의견"></textarea>
+                                </td>
+                            </tr>
+                            <!--// default -->
+                            <!-- default -->
+                            <tr class="edit">
+                                <td>5</td>
+                                <td>위험분류</td>
+                                <td class="left">작업위험요인</td>
+                                <td class="left">예방,개선대책</td>
+                                <td>
+                                    <div class="d-flex">
+                                        <input type="text" class="input-tb sm" placeholder="">
+                                        <input type="text" class="input-tb sm" placeholder="">
+                                        <div class="w100"><span>00</span></div>
+                                    </div>
+                                </td>
+                                <td>L</td>
+                                <td>
+                                    <div>
+                                        <div class="input-group bd-1">
+                                            <input type="search" placeholder="">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text trigger-register-wf"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="input-group bd-1">
+                                            <input type="search" placeholder="">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text trigger-info"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                </td>
+                                <td>
+                                    <div class="d-flex input_date_box">
+                                        <input type="date" class="input-tb">
+                                    </div>
+                                </td>
+                                <td>
+                                    <textarea class="input-tb" cols="500" rows="4"  placeholder="PM검토의견"></textarea>
+                                </td>
+                            </tr>
+                            <!--// default -->
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+			
+			<div class="btn-area">
+				<button class="btn-big -grey">취소</button>
+                <button class="btn-big normal">임시저장</button>
+				<button class="btn-big -primary">작성완료</button>
+			</div>
+		</section>
+    </main>
+    
+</div>
+    
+    
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+
+</body>
+</html>

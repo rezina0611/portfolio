@@ -1,0 +1,439 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>ARAS</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+<body>
+
+    
+<div class="page-wrapper d-flex">
+	<nav id="side-nav" class="side-nav">
+		<div class="side-nav-header">
+			<div class="ico-menu-list">
+				<button class="ico-btn"><img src="../../images/icon/ico_notification.png" alt="알림"></button>
+				<button class="ico-btn" id="logOutBtn"><img src="../../images/icon/ico_logout_wh.png" alt="로그아웃"></button>
+			</div>
+		</div>
+        <div class="brand-user">
+            <div class="brand">
+                <img src="../../images/logo-aras-kr.png" alt="아라스 로고">
+            </div>
+        </div>
+		<div class="user">
+			<a href="">
+				<img src="../../images/icon/ico_user.png" alt="시스템관리자">
+				<span class="name">시스템관리자</span>
+			</a>
+		</div>
+        <div class="side-menu">
+            <ul>
+                <li><a href=""><img src="../../images/icon/ico_sidebar_map_wh.png" alt="지도">지도</a></li>
+                <li><a href=""><img src="../../images/icon/ico_sidebar_pj_wh.png" alt="프로잭트">프로젝트</a></li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_place_wh.png" alt="현장관리">현장관리</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">현장정보</a></li>
+                            <li><a href="#">현장관리</a></li>
+                            <li><a href="#">공정분류설정</a></li>
+                            <li><a href="#">OCR데이터관리</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_material_wh.png" alt="자재관리">자재관리</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">자재구매관리</a></li>
+                            <li><a href="#">자재현황관리</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_safety_wh.png" alt="안전관리">안전관리</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">위험성평가회의</a></li>
+                            <li><a href="#">일일안전활동보고</a></li>
+                            <li><a href="#">안전관리용품</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_safety_board_wh.png" alt="안전관리 게시판">안전관리 게시판</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">안전보건관리 수행계획서</a></li>
+                            <li><a href="#">위험작업 사전허가요청서</a></li>
+                            <li><a href="#">작업허가서</a></li>
+                            <li><a href="#">작업계획서</a></li>
+							<li><a href="#">안전보건교육일지</a></li>
+                            <li><a href="#">안전점검의 날 행사</a></li>
+                            <li><a href="#">협의체 회의록</a></li>
+                            <li><a href="#">사업장 합동안전점검</a></li>
+							<li><a href="#">산업안전보건관리비</a></li>
+                            <li><a href="#">임원/교차 합동안전점검</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_assess_wh.png" alt="수행품질평가">수행품질평가</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">품질평가 결과조회</a></li>
+                            <li><a href="#">협력사별 종합표</a></li>
+                            <li><a href="#">프로젝트별 종합표</a></li>
+                            <li><a href="#">품질평가 진행현황</a></li>
+							<li><a href="#">품질평가 항목관리</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_board_wh.png" alt="게시판">게시판</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">프로젝트 게시판</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_sys_manage_wh.png" alt="시스템관리">시스템관리</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">메뉴권한관리</a></li>
+                            <li><a href="#">조직관리</a></li>
+                            <li><a href="#">권한관리</a></li>
+                            <li><a href="#">사용자관리</a></li>
+							<li><a href="#">로그인 히스토리</a></li>
+                            <li><a href="#">공정진행 단계관리</a></li>
+                            <li><a href="#">공정분류 코드관리</a></li>
+                            <li><a href="#">안전장구 물품관리</a></li>
+							<li><a href="#">위험평가항목 코드관리</a></li>
+                            <li><a href="#">품질평가항목관리</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+	
+    <main class="contents">
+        <section class="wrapper">
+            <h1 class="page-title">품질평가 결과조회 &gt; 상세</h1>
+            <div class="tui-wrapper">
+            	<div class="d-flex">
+                    <h2>(프로젝트명)시공 (안전)품질 개별평가표(국소명)</h2>
+                    <div class="top btn-area">
+                        <button class="btn -blue"><i class="fas fa-file-word" aria-hidden="true"></i>워드 다운로드</button>
+                    </div>
+                </div>
+				<div class="p-lr-3 p-b-3">
+					<table class="table dt">
+						<colgroup>
+							<col width="11%">
+							<col width="14%">
+							<col width="11%">
+							<col width="14%">
+							<col width="11%">
+							<col width="14%">
+							<col width="11%">
+							<col width="14%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>프로젝트코드</th>
+								<td></td>
+								<th>프로젝트명</th>
+								<td></td>
+								<th>협력사명</th>
+								<td></td>
+								<th>검사일</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>수검자</th>
+								<td>홍길동<span class="date">(확인일시 2021.02.03)</span></td>
+								<th>검사자</th>
+								<td>홍길동<span class="date">(평가일시 2021.02.03)</span></td>
+								<th>확인자</th>
+								<td>홍길동<span class="date">(확인일시 2021.02.03)</span></td>
+								<th>평가점수</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>평가의견</th>
+								<td colspan="7"></td>
+							</tr>
+							<tr>
+								<th>평가분야</th>
+								<td></td>
+								<th>사업장명</th>
+								<td></td>
+								<th>국소장비명</th>
+								<td colspan="3"></td>
+							</tr>
+						</tbody>
+					</table>
+
+					<table class="table center result mt-3">
+						<colgroup>
+							<col width="140">
+							<col width="140">
+							<col width="*">
+							<col width="60">
+							<col width="60">
+						</colgroup>
+						<thead>
+							<tr>
+								<th class="center" colspan="2">구분</th>
+								<th class="center">세부평가항목</th>
+								<th class="center">배점</th>
+								<th class="center">평가</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th rowspan="20"  class="center">안전관리</th>
+								<td rowspan="2">직무수행도</td>
+								<td class="left">일일안전활동보고 확인</td>
+								<td>5</td>
+								<td><span class="c-red">-5</span></td>
+							</tr>
+							<tr>
+								<td class="left">감리원/현장대리인 지시사항 처리여부</td>
+								<td>2</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td rowspan="4">협의체활동 및 타공정간 협조</td>
+								<td class="left">협의체회의 참석서명지 확인</td>
+								<td>2</td>
+								<td><span class="c-red">-2</span></td>
+							</tr>
+							<tr>
+								<td class="left">작업지시서 등 확인</td>
+								<td>2</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="left">위험성평가표, 일일안전활동보고 등 확인</td>
+								<td>2</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="left">정기합동점검일지 등 확인</td>
+								<td>2</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td rowspan="3">개인보호구</td>
+								<td class="left">개인보호구 지급대장 확인</td>
+								<td>5</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="left">작업지시서 등 확인</td>
+								<td>5</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="left">일일안전활동보고 확인</td>
+								<td>5</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td rowspan="4">안전시설</td>
+								<td class="left">자재인양구, 트레이 등 개구부 방호조치(개구부덮개 또는 난간대)</td>
+								<td>5</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="left">2M이상 추락위험구간 방호조치 (난간대 설치)</td>
+								<td>5</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="left">지게차, 트럭 등 건설기계장비 사용 안전수칙 준수 (신호수 배치)</td>
+								<td>5</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="left">작업 후 안전시설물 복구 등에 관한 사항</td>
+								<td>5</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td rowspan="2">안전작업방법수행</td>
+								<td class="left">그룹 표준작업모델 등 확인</td>
+								<td>2</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="left">안전보건관리 수행계획서 등 확인</td>
+								<td>2</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td rowspan="4">안전교육</td>
+								<td class="left">오전 TBM활동 사진 확인</td>
+								<td>5</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="left">오후 TBM활동 사진 확인</td>
+								<td>5</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="left">관리감독자 정기안전교욱일지 확인</td>
+								<td>2</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="left">근로자 정기안전교육일지 확인</td>
+								<td>2</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>안전관리비</td>
+								<td class="left">안전관리비 사용내역서 확인</td>
+								<td>2</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th rowspan="4" class="center">보건관리</th>
+								<td rowspan="2">근로자건강관리</td>
+								<td class="left">근로자 서약서 작성여부 확인</td>
+								<td>5</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="left">근로자 관리대장 확인</td>
+								<td>5</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td rowspan="2">유해물질관리<br>(MSDS)</td>
+								<td class="left">시멘트, 락카, LPG, 산소, 용접봉 등 위험물저장소입구 게시 확인</td>
+								<td>5</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="left">MSDS 관리대장, 특별안전교육일지 등 확인</td>
+								<td>5</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th colspan="3" class="center">보건관리 득점 합계</th>
+								<th colspan="2" class="center">93</th>
+							</tr>
+							<tr>
+								<th rowspan="6" class="center">안전사고 및 작업중지</th>
+								<td rowspan="4">안전사고</td>
+								<td class="left">사망(중대재해)</td>
+								<td>-40</td>
+								<td><span class="c-red">-40</span></td>
+							</tr>
+							<tr>
+								<td class="left">중상</td>
+								<td>-20</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="left">경상</td>
+								<td>-10</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="left">부상</td>
+								<td>-5</td>
+								<td></td>
+							</tr>
+
+							<tr>
+								<td rowspan="2">작업중지</td>
+								<td class="left">중대한 위험상황 또는 심각한 작업지시서 불이행 등 불안전한 상태(지적당 -2점)</td>
+								<td>-2</td>
+								<td><span class="c-red">-2</span></td>
+							</tr>
+							<tr>
+								<td class="left">음주자, 중대한 위험한 행동 유발 근로자 등 불안전한 행동(근로자당 -2점)</td>
+								<td>-2</td>
+								<td><span class="c-red">-2</span></td>
+							</tr>
+							<tr>
+								<th colspan="3" class="center">감정평가 감점 합계</th>
+								<th colspan="2" class="center">-44</th>
+							</tr>
+						</tbody>
+					</table>
+
+					<h2 class="mt-4">안전관리 - 직무수행도 - 일일안전활동보고 확인 사진</h2>
+					<div class="img-list bg-white mt-1">
+						<ul>
+							<li>
+								<a href="../../images/sample/1.png" target="_blank"><img src="../../images/sample/1.png" alt=""></a>
+								<div class="info">
+									<div class="desc">
+										사진에 대한 설명입니다.
+										사진에 대한 설명입니다.
+										사진에 대한 설명입니다.
+										사진에 대한 설명입니다.
+										사진에 대한 설명입니다.
+										사진에 대한 설명입니다.
+										사진에 대한 설명입니다.
+									</div>
+								</div>
+							</li>
+							<li>
+								<a href="../../images/sample/1.png" target="_blank"><img src="../../images/sample/1.png" alt=""></a>
+								<div class="info">
+									<div class="desc">
+										사진에 대한 설명입니다.
+										사진에 대한 설명입니다.
+										사진에 대한 설명입니다.
+										사진에 대한 설명입니다.
+										사진에 대한 설명입니다.
+										사진에 대한 설명입니다.
+										사진에 대한 설명입니다.
+									</div>
+								</div>
+							</li>
+							<li>
+								<a href="../../images/sample/1.png" target="_blank"><img src="../../images/sample/1.png" alt=""></a>
+								<div class="info">
+									<div class="desc">
+										사진에 대한 설명입니다.
+										사진에 대한 설명입니다.
+										사진에 대한 설명입니다.
+										사진에 대한 설명입니다.
+										사진에 대한 설명입니다.
+										사진에 대한 설명입니다.
+										사진에 대한 설명입니다.
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+        </section>
+    </main>
+    
+</div>
+    
+    
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+    
+</body>
+</html>

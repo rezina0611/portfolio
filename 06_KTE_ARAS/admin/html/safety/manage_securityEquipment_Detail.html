@@ -1,0 +1,383 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>ARAS</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+<body>
+    
+<div class="page-wrapper d-flex">
+    <nav id="side-nav" class="side-nav">
+		<div class="side-nav-header">
+			<div class="ico-menu-list">
+				<button class="ico-btn"><img src="../../images/icon/ico_notification.png" alt="알림"></button>
+				<button class="ico-btn" id="logOutBtn"><img src="../../images/icon/ico_logout_wh.png" alt="로그아웃"></button>
+			</div>
+		</div>
+        <div class="brand-user">
+            <div class="brand">
+                <img src="../../images/logo-aras-kr.png" alt="아라스 로고">
+            </div>
+        </div>
+		<div class="user">
+			<a href="">
+				<img src="../../images/icon/ico_user.png" alt="시스템관리자">
+				<span class="name">시스템관리자</span>
+			</a>
+		</div>
+        <div class="side-menu">
+            <ul>
+                <li><a href=""><img src="../../images/icon/ico_sidebar_map_wh.png" alt="지도">지도</a></li>
+                <li><a href=""><img src="../../images/icon/ico_sidebar_pj_wh.png" alt="프로잭트">프로젝트</a></li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_place_wh.png" alt="현장관리">현장관리</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">현장정보</a></li>
+                            <li><a href="#">현장관리</a></li>
+                            <li><a href="#">공정분류설정</a></li>
+                            <li><a href="#">OCR데이터관리</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_material_wh.png" alt="자재관리">자재관리</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">자재구매관리</a></li>
+                            <li><a href="#">자재현황관리</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_safety_wh.png" alt="안전관리">안전관리</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">위험성평가회의</a></li>
+                            <li><a href="#">일일안전활동보고</a></li>
+                            <li><a href="#">안전관리용품</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_safety_board_wh.png" alt="안전관리 게시판">안전관리 게시판</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">안전보건관리 수행계획서</a></li>
+                            <li><a href="#">위험작업 사전허가요청서</a></li>
+                            <li><a href="#">작업허가서</a></li>
+                            <li><a href="#">작업계획서</a></li>
+							<li><a href="#">안전보건교육일지</a></li>
+                            <li><a href="#">안전점검의 날 행사</a></li>
+                            <li><a href="#">협의체 회의록</a></li>
+                            <li><a href="#">사업장 합동안전점검</a></li>
+							<li><a href="#">산업안전보건관리비</a></li>
+                            <li><a href="#">임원/교차 합동안전점검</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_assess_wh.png" alt="수행품질평가">수행품질평가</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">품질평가 결과조회</a></li>
+                            <li><a href="#">협력사별 종합표</a></li>
+                            <li><a href="#">프로젝트별 종합표</a></li>
+                            <li><a href="#">품질평가 진행현황</a></li>
+							<li><a href="#">품질평가 항목관리</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_board_wh.png" alt="게시판">게시판</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">프로젝트 게시판</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_sys_manage_wh.png" alt="시스템관리">시스템관리</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">메뉴권한관리</a></li>
+                            <li><a href="#">조직관리</a></li>
+                            <li><a href="#">권한관리</a></li>
+                            <li><a href="#">사용자관리</a></li>
+							<li><a href="#">로그인 히스토리</a></li>
+                            <li><a href="#">공정진행 단계관리</a></li>
+                            <li><a href="#">공정분류 코드관리</a></li>
+                            <li><a href="#">안전장구 물품관리</a></li>
+							<li><a href="#">위험평가항목 코드관리</a></li>
+                            <li><a href="#">품질평가항목관리</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+	
+    <main class="contents">
+        <section class="wrapper">
+            <h1 class="page-title">안전관리용품 &gt; 상세</h1>
+            
+			<div class="tui-wrapper">
+                <div class="d-flex">
+                    <h2>안전물품 구매내역서</h2>
+                    <div class="top btn-area">
+                        <button class="btn btn-download">엑셀 다운로드</button>
+                        <button class="btn btn-download">워드 다운로드</button>
+                    </div>
+                </div>
+				<div class="p-lr-3">
+					<h4 class="mt-1">PO내역</h4>
+					<table class="table dt">
+						<colgroup>
+							<col width="160">
+							<col width="">
+							<col width="160">
+							<col width="">
+							<col width="160">
+							<col width="">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th class="center">프로젝트코드</th>
+								<td>A123456</td>
+								<th class="center">프로젝트명</th>
+								<td>지하철 공사</td>
+								<th class="center">협력사</th>
+								<td>펀진</td>
+                            </tr>
+						</tbody>
+					</table>
+                    <br>
+                    <table class="table center result">
+						<colgroup>
+							<col width="">
+							<col width="">
+							<col width="">
+							<col width="">
+							<col width="">
+							<col width="">
+							<col width="">
+							<col width="">
+							<col width="">
+							<col width="">
+                            <col width="">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th class="center">구매오더번호</th>
+								<th class="center">품목명</th>
+                                <th class="center">규격/내역</th>
+                                <th class="center">상품코드 (KTC품목코드)</th>
+								<th class="center">수량</th>
+								<th class="center">1차 입고</th>
+								<th class="center">2차 입고</th>
+								<th class="center">3차 입고</th>
+								<th class="center">구매금액</th>
+								<th class="center">입고 완료일자</th>
+								<th class="center">비고</th>
+							</tr>
+							<tr>
+								<td rowspan="3" class="bd-1">4500000002</td>
+								<td>안전화</td>
+                                <td>전체식, 대구경 자일로프, 레드 + 블랙, 업그레이드 버전</td>
+                                <td>10142804</td>
+								<td>10</td>
+								<td>5</td>
+								<td>3</td>
+								<td>2</td>
+								<td>1,000,000원</td>
+								<td>2021.07.28</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>안전모</td>
+                                <td>전체식, 대구경 자일로프, 레드 + 블랙, 업그레이드 버전</td>
+                                <td>10142804</td>
+								<td>10</td>
+								<td>10</td>
+								<td>5</td>
+                                <td>3</td>
+								<td>1,000,000원</td>
+								<td>2021.07.28</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>장갑</td>
+                                <td>전체식, 대구경 자일로프, 레드 + 블랙, 업그레이드 버전</td>
+                                <td>10142804</td>
+								<td>10</td>
+								<td>10</td>
+								<td>5</td>
+								<td>3</td>
+								<td>1,000,000원</td>
+								<td>2021.07.28</td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+                </div>
+				
+				<div class="p-lr-3 mb-2">
+					<h4 class="mt-3">사진 (송장사진, 물품사진 등)</h4>
+					<table class="table center result">
+						<colgroup>
+							<col width="150">
+							<col width="90">
+							<col width="">
+							<col width="">
+                            <col width="">
+						</colgroup>
+						<thead>
+							<tr>
+								<th class="center">품목명</th>
+								<th class="center">주문제품사진</th>
+                                <th class="center">입고차수</th>
+								<th class="center">송장</th>
+								<th class="center">물품사진 등</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="bd-1 center">안전모</td>
+                                <td>
+                                    <div class="img-list thum">
+										<ul>
+											<li>
+												<a href="../../images/sample/1.png" target="_blank"><img src="../../images/sample/1.png" alt=""></a>
+											</li>
+										</ul>
+									</div>
+                                </td>
+								<td>1차</td>
+								<td>
+									<div class="img-list thum">
+										<ul>
+											<li>
+												<a href="../../images/sample/1.png" target="_blank"><img src="../../images/sample/1.png" alt=""></a>
+											</li>
+										</ul>
+									</div>
+									<div class="bdt-1">홍길동 2021.07.28</div>
+								</td>
+								<td>
+									<div class="img-list thum">
+										<ul>
+											<li>
+												<a href="../../images/sample/1.png" target="_blank"><img src="../../images/sample/1.png" alt=""></a>
+											</li>
+											<li>
+												<a href="../../images/sample/1.png" target="_blank"><img src="../../images/sample/1.png" alt=""></a>
+											</li>
+											<li>
+												<a href="../../images/sample/1.png" target="_blank"><img src="../../images/sample/1.png" alt=""></a>
+											</li>
+										</ul>
+									</div>
+									<div class="bdt-1">홍길동 2021.07.28</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="bd-1 center">안전모</td>
+                                <td>
+                                    <div class="img-list thum">
+										<ul>
+											<li>
+												<a href="../../images/sample/1.png" target="_blank"><img src="../../images/sample/1.png" alt=""></a>
+											</li>
+										</ul>
+									</div>
+                                </td>
+								<td>2차</td>
+								<td>
+									<div class="img-list thum">
+										<ul>
+											<li>
+												<a href="../../images/sample/1.png" target="_blank"><img src="../../images/sample/1.png" alt=""></a>
+											</li>
+										</ul>
+									</div>
+									<div class="bdt-1">홍길동 2021.07.28</div>
+								</td>
+								<td>
+									<div class="img-list thum">
+										<ul>
+											<li>
+												<a href="../../images/sample/1.png" target="_blank"><img src="../../images/sample/1.png" alt=""></a>
+											</li>
+											<li>
+												<a href="../../images/sample/1.png" target="_blank"><img src="../../images/sample/1.png" alt=""></a>
+											</li>
+											<li>
+												<a href="../../images/sample/1.png" target="_blank"><img src="../../images/sample/1.png" alt=""></a>
+											</li>
+										</ul>
+									</div>
+									<div class="bdt-1">홍길동 2021.07.28</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="bd-1 center">장갑</td>
+                                <td>
+                                    <div class="img-list thum">
+										<ul>
+											<li>
+												<a href="../../images/sample/1.png" target="_blank"><img src="../../images/sample/1.png" alt=""></a>
+											</li>
+										</ul>
+									</div>
+                                </td>
+								<td>1차</td>
+								<td>
+									<div class="img-list thum">
+										<ul>
+											<li>
+												<a href="../../images/sample/1.png" target="_blank"><img src="../../images/sample/1.png" alt=""></a>
+											</li>
+										</ul>
+									</div>
+									<div class="bdt-1">홍길동 2021.07.28</div>
+								</td>
+								<td>
+									<div class="img-list thum">
+										<ul>
+											<li>
+												<a href="../../images/sample/1.png" target="_blank"><img src="../../images/sample/1.png" alt=""></a>
+											</li>
+											<li>
+												<a href="../../images/sample/1.png" target="_blank"><img src="../../images/sample/1.png" alt=""></a>
+											</li>
+											<li>
+												<a href="../../images/sample/1.png" target="_blank"><img src="../../images/sample/1.png" alt=""></a>
+											</li>
+										</ul>
+									</div>
+									<div class="bdt-1">홍길동 2021.07.28</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+                </div>
+			</div>
+        </section>
+    </main>
+    
+</div>
+    
+    
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+    
+</body>
+</html>

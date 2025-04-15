@@ -1,0 +1,237 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>안전신문고 관리</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+    
+<body>
+	  
+<div class="page-wrapper d-flex">
+    <nav id="side-nav" class="side-nav">
+    </nav>
+	
+    <main class="contents">
+        <section class="wrapper">
+            <h1 class="page-title">안전신문고 관리</h1>
+            <div class="boxGrayTxt">
+                <p>※ 안전신문고 신고 URL : https://www.safetyreport.go.kr/#safereport/safereport</p>
+            </div>
+            <form>
+                <table class="table l-fixed">
+					<colgroup>
+						<col width="150">
+						<col width="*">
+						<col width="180">
+						<col width="*">
+                        <col width="150">
+						<col width="*">
+					</colgroup>
+                    <tbody>
+						<tr>
+							<th>본부</th>
+                            <td>
+                                <select class="form-select">
+                                    <option selected="">본부</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
+                                </select>
+                            </td>
+                            <th>프로젝트 or 사업장 주소</th>
+                            <td><input type="text" class="input-tb" placeholder="프로젝트 or 사업장 주소"></td>
+                            <th>제목</th>
+                            <td><input type="text" class="input-tb" placeholder="제목"></td>
+						</tr>
+                        <tr>
+                            <th>작업중지여부</th>
+                            <td>
+                                <select class="form-select">
+                                    <option selected="">작업중지여부</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
+                                </select>
+                            </td>
+                            <th>신고일시</th>
+                            <td>
+                                <div class="d-flex ai-center input_date_box">
+                                    <input type="date" class="input-tb half" value="2022-12-15">
+                                    <span> ~ </span>
+                                    <input type="date" class="input-tb half" value="2022-12-15">
+                                </div>
+                            </td>
+                            <th>신고자</th>
+                            <td><input type="text" class="input-tb" placeholder="신고자"></td>
+                        </tr>
+                        <tr>
+                            <th>상태구분</th>
+							<td>
+								<select class="form-select">
+                                    <option selected="">상태구분</option>
+                                    <option value="">신고</option>
+                                    <option value="">접수</option>
+                                </select>
+							</td>
+                            <th>PM</th>
+                            <td><input type="text" class="input-tb" placeholder="PM명"></td>
+                            <th>조치상태</th>
+							<td>
+								<select class="form-select">
+                                    <option selected="">조치상태</option>
+                                    <option value="">조치중</option>
+                                    <option value="">조치완료</option>
+                                    <option value="">확인</option>
+                                </select>
+							</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="btn-area">
+                    <button class="btn-big -grey">초기화</button>
+                    <button class="btn-big -primary">검색</button>
+                </div>
+            </form>
+
+            <div class="tui-wrapper">
+                <div class="d-flex">
+                    <h2>안전신문고 조회<span>(000)</span></h2>
+					<div class="top btn-area">
+                        <button class="btn btn-delete">삭제</button>
+                        <button class="btn btn-download">엑셀 다운로드</button>
+                    </div>
+                </div>
+                <div class="tui-area" title="tui-area">
+                    <table class="table db-t">
+						<colgroup>
+                            <col width="60">
+                            <col width="120">
+							<col width="180">
+							<col width="*">
+							<col width="120">
+							<col width="140">
+							<col width="90">
+                            <col width="90">
+                            <col width="90">
+                            <col width="90">
+						</colgroup>
+                        <thead>
+                            <tr> 
+                                <th><input type="checkbox"></th>
+                                <th>본부</th>
+								<th>프로젝트 or 사업장 주소</th>
+                                <th>제목</th>
+                                <th>작업중지여부</th>
+								<th>신고일시</th>
+								<th>신고자</th>
+                                <th>상태구분</th>
+                                <th>PM</th>
+                                <th>조치상태</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>본부</td>
+								<td>프로젝트 or 사업장 주소</td>
+                                <td><a href="#none">안전신고 제목</a></td>
+                                <td></td>
+                                <td>2021-10-21 08:30</td>
+                                <td>홍길동</td>
+                                <td>신고</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>본부</td>
+								<td>프로젝트 or 사업장 주소</td>
+                                <td><a href="#none">안전신고 제목</a></td>
+                                <td>작업중지</td>
+                                <td>2021-10-21 08:30</td>
+                                <td>홍길동</td>
+                                <td>신고</td>
+                                <td>차은우</td>
+                                <td>조치중</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>본부</td>
+								<td>프로젝트 or 사업장 주소</td>
+                                <td><a href="#none">안전신고 제목</a></td>
+                                <td></td>
+                                <td>2021-10-21 08:30</td>
+                                <td>홍길동</td>
+                                <td>신고</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>본부</td>
+								<td>프로젝트 or 사업장 주소</td>
+                                <td><a href="#none">안전신고 제목</a></td>
+                                <td>작업중지</td>
+                                <td>2021-10-21 08:30</td>
+                                <td>홍길동</td>
+                                <td>신고</td>
+                                <td>이현우</td>
+                                <td>조치완료</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="toolbar">
+					<div id="paging" class="pagination">
+						<a href="#" id="first" class="disabled"><img src="../../images/icon/ico_double_arrow_left.png" alt="첫 페이지"></a> 
+					  	<a href="#" id="prev" class="disabled"><img src="../../images/icon/ico_arrow_left.png" alt="이전 페이지"></a> 
+						<div id="wrapper">
+							<ul class="page-num">
+								<li><a href="" class="active">1</a></li>
+								<li><a href="">2</a></li>
+								<li><a href="">3</a></li>
+								<li><a href="">4</a></li>
+								<li><a href="">5</a></li>
+								<li><a href="">6</a></li>
+								<li><a href="">7</a></li>
+								<li><a href="">8</a></li>
+								<li><a href="">9</a></li>
+								<li><a href="">10</a></li>
+							</ul>
+						</div>
+						<a href="#" id="next"><img src="../../images/icon/ico_arrow_right.png" alt="다음 페이지"></a>
+						<a href="#" id="last"><img src="../../images/icon/ico_double_arrow_right.png" alt="마지막 페이지"></a>
+					</div>
+					<div class="view-num">
+						<select class="form-select">
+							<option selected="">보기설정</option>
+							<option value="">10</option>
+							<option value="">20</option>
+							<option value="">30</option>
+							<option value="">40</option>
+							<option value="">50</option>
+						</select>
+					</div>
+				</div>
+            </div>
+        </section>
+    </main> 
+    
+</div>
+    
+    
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>ARAS</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+    
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+<body>
+    
+<div class="page-wrapper d-flex">
+	<nav id="side-nav" class="side-nav">
+		<div class="side-nav-header">
+			<div class="ico-menu-list">
+				<button class="ico-btn"><img src="../../images/icon/ico_notification.png" alt="알림"></button>
+				<button class="ico-btn" id="logOutBtn"><img src="../../images/icon/ico_logout_wh.png" alt="로그아웃"></button>
+			</div>
+		</div>
+        <div class="brand-user">
+            <div class="brand">
+                <img src="../../images/logo-aras-kr.png" alt="아라스 로고">
+            </div>
+        </div>
+		<div class="user">
+			<a href="">
+				<img src="../../images/icon/ico_user.png" alt="시스템관리자">
+				<span class="name">시스템관리자</span>
+			</a>
+		</div>
+        <div class="side-menu">
+            <ul>
+                <li><a href=""><img src="../../images/icon/ico_sidebar_map_wh.png" alt="지도">지도</a></li>
+                <li><a href=""><img src="../../images/icon/ico_sidebar_pj_wh.png" alt="프로잭트">프로젝트</a></li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_place_wh.png" alt="현장관리">현장관리</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">현장정보</a></li>
+                            <li><a href="#">현장관리</a></li>
+                            <li><a href="#">공정분류설정</a></li>
+                            <li><a href="#">OCR데이터관리</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_material_wh.png" alt="자재관리">자재관리</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">자재구매관리</a></li>
+                            <li><a href="#">자재현황관리</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_safety_wh.png" alt="안전관리">안전관리</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">위험성평가회의</a></li>
+                            <li><a href="#">일일안전활동보고</a></li>
+                            <li><a href="#">안전관리용품</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_safety_board_wh.png" alt="안전관리 게시판">안전관리 게시판</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">안전보건관리 수행계획서</a></li>
+                            <li><a href="#">위험작업 사전허가요청서</a></li>
+                            <li><a href="#">작업허가서</a></li>
+                            <li><a href="#">작업계획서</a></li>
+							<li><a href="#">안전보건교육일지</a></li>
+                            <li><a href="#">안전점검의 날 행사</a></li>
+                            <li><a href="#">협의체 회의록</a></li>
+                            <li><a href="#">사업장 합동안전점검</a></li>
+							<li><a href="#">산업안전보건관리비</a></li>
+                            <li><a href="#">임원/교차 합동안전점검</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_assess_wh.png" alt="수행품질평가">수행품질평가</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">품질평가 결과조회</a></li>
+                            <li><a href="#">협력사별 종합표</a></li>
+                            <li><a href="#">프로젝트별 종합표</a></li>
+                            <li><a href="#">품질평가 진행현황</a></li>
+							<li><a href="#">품질평가 항목관리</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_board_wh.png" alt="게시판">게시판</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">프로젝트 게시판</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_sys_manage_wh.png" alt="시스템관리">시스템관리</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">메뉴권한관리</a></li>
+                            <li><a href="#">조직관리</a></li>
+                            <li><a href="#">권한관리</a></li>
+                            <li><a href="#">사용자관리</a></li>
+							<li><a href="#">로그인 히스토리</a></li>
+                            <li><a href="#">공정진행 단계관리</a></li>
+                            <li><a href="#">공정분류 코드관리</a></li>
+                            <li><a href="#">안전장구 물품관리</a></li>
+							<li><a href="#">위험평가항목 코드관리</a></li>
+                            <li><a href="#">품질평가항목관리</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+	
+    <main class="contents">
+        <section class="wrapper">
+            <div class="box-wrapper">
+                <div class="box tui-wrapper">
+                    <div id="tab-menu" class="tab-menu">
+                    <div id="tab-btn" class="tab-btn">
+                        <ul class="tab">
+                            <li class="active"><button>비밀번호 변경</button></li>
+                            <li class=""><button>대체결제자</button></li>
+                            <li class=""><button>알림방해금지</button></li>
+                        </ul>
+                    </div>
+                    <div id="tab-cont" class="tab-cont">
+                        <div title="tab-cont-1">
+                            <!--<div class="notice">
+                                <h2 class="a-center">정보수정 비밀번호 변경</h2>
+                            </div>-->
+                            <form class="changePW">
+                                <fieldset>
+                                    <label for="PW-now">현재 비밀번호</label>
+                                    <input id="PW-now" type="password" placeholder="현재 비밀번호" tabindex="1">
+                                </fieldset>
+                                <fieldset>
+                                    <label for="PW-change">변경 비밀번호</label>
+                                    <input type="PW-change" placeholder="변경 비밀번호" tabindex="2">
+                                    <p class="help">8자~20자, 영문, 숫자, 특수문자 사용</p>
+                                </fieldset>
+                                <fieldset>
+                                    <label for="PW-change-check">변경 비밀번호 확인</label>
+                                    <input id="PW-change-check" type="password" placeholder="변경 비밀번호 확인" tabindex="3">
+                                </fieldset> 
+                                <div class="btn-area d-flex">
+                                    <button class="btn -grey block">취소</button>
+                                    <button class="btn -primary block">등록</button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <!--대체결제자-->
+                        <div title="tab-cont-2">
+                            <form class="notify">
+                                <fieldset>
+                                    <h3><label class="d-flex jc-btw">선택한 날짜에 추가대결을 위임합니다.<input type="checkbox"></label></h3>
+                                </fieldset>
+                                <fieldset>
+                                    <label class="mb-15">대체결재자</label>
+                                    <label class="pl d-flex jc-btw">
+                                        <span>수행 PL</span>
+                                        <input type="checkbox" id="">
+                                    </label>
+                                    <label class="pl d-flex jc-btw">
+                                        <span>공통 PL</span>
+                                        <input type="checkbox" id="">
+                                    </label> 
+                                </fieldset>
+                                <fieldset>
+                                    <label>날짜</label>
+                                    <div class="d-flex ai-center input_date_box">
+                                        <input type="date" class="input-tb half">
+                                        <span class="m-6"> ~ </span>
+                                        <input type="date" class="input-tb half">
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    <label>사유</label>
+                                    <textarea class="input-tb" cols="100" rows="3" maxlength="50" placeholder="최대50자이내"></textarea>
+                                </fieldset>
+                                <div class="btn-area d-flex">
+                                    <button class="btn -grey block">취소</button>
+                                    <button class="btn -primary block">확인</button>
+                                </div>
+                            </form>
+                        </div>
+                        <!--//대체결제자-->
+                        
+                        <div title="tab-cont-3">
+                            <form class="notify">
+                                <fieldset>
+                                    <h3><label class="d-flex jc-btw">선택한 요일과 시간에 알림을 받지 않습니다.<input type="checkbox"></label></h3>
+                                </fieldset>
+                                <fieldset>
+                                    <label>요일</label>
+                                    <ul class="week">
+                                        <li class="inputGroup">
+                                            <input id="w-0" name="w-0" type="checkbox"/>
+                                            <label for="w-0">일</label>
+                                        </li>
+                                        <li class="inputGroup">
+                                            <input id="w-1" name="w-1" type="checkbox"/>
+                                            <label for="w-1">월</label>
+                                        </li>
+                                        <li class="inputGroup">
+                                            <input id="w-2" name="w-2" type="checkbox"/>
+                                            <label for="w-2">화</label>
+                                        </li>
+                                        <li class="inputGroup">
+                                            <input id="w-3" name="w-3" type="checkbox"/>
+                                            <label for="w-3">수</label>
+                                        </li>
+                                        <li class="inputGroup">
+                                            <input id="w-4" name="w-4" type="checkbox"/>
+                                            <label for="w-4">목</label>
+                                        </li>
+                                        <li class="inputGroup">
+                                            <input id="w-5" name="w-5" type="checkbox"/>
+                                            <label for="w-5">금</label>
+                                        </li>
+                                        <li class="inputGroup">
+                                            <input id="w-6" name="w-6" type="checkbox"/>
+                                            <label for="w-6">토</label>
+                                        </li>
+                                    </ul>
+                                </fieldset>
+                                <fieldset>
+                                    <label>시간</label>
+                                    <div class="d-flex ai-center">
+                                        <select class="form-select half">
+                                            <option selected="">Select</option>
+                                            <option value="">1</option>
+                                            <option value="">2</option>
+                                            <option value="">3</option>
+                                            <option value="">4</option>
+                                        </select> 
+                                        <span class="m-6"> ~ </span>
+                                        <select class="form-select half">
+                                            <option selected="">Select</option>
+                                            <option value="">1</option>
+                                            <option value="">2</option>
+                                            <option value="">3</option>
+                                            <option value="">4</option>
+                                        </select>
+                                    </div>
+                                </fieldset>
+                                <div class="btn-area d-flex">
+                                    <button class="btn -grey block">취소</button>
+                                    <button class="btn -primary block">확인</button>
+                                </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div> 
+                    
+                   
+                </div>
+                
+                           
+                            
+                            
+                
+            </div>
+        </section>
+    </main>
+</div>
+    
+    
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>품질평가 항목관리</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+    
+<body>
+    
+<div class="page-wrapper d-flex">
+	<nav id="side-nav" class="side-nav">
+    </nav>
+
+    <main class="contents">
+        <section class="wrapper">
+            <h1 class="page-title">품질평가 항목수정</h1>
+        
+            <div class="tui-area" title="tui-area">
+                <form id="scoreForm">
+                    <input type="hidden" name="itemVersionNo" id="itemVersionNo" value="1">
+                    <table class="table center result">
+                        <colgroup>
+                            <col width="100">
+                            <col width="150">
+                            <col width="100">
+                            <col width="200">
+                            <col width="100">
+                            <col width="150">
+                            <col width="60">
+                            <col width="60">
+                            <col width="60">
+                            <col width="60">
+                            <col width="80">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="center">구분코드</th>
+                                <th class="center">구분</th>
+                                <th class="center">주요항목 평가코드</th>
+                                <th class="center">주요평가항목</th>
+                                <th class="center">세부항목 평가코드</th>
+                                <th class="center">세부평가항목</th>
+                                <th class="center">감점점수</th>
+                                <th class="center">구분코드순서</th>
+                                <th class="center">주요항목평가 코드순서</th>
+                                <th class="center">세부항목평가 코드순서</th>
+                                <th class="center">항목 삭제여부</th>
+                            </tr>
+                        </thead>
+                        <tbody id="itemBody">
+                            <tr>
+                                <th rowspan="7">A0101</th>
+                                <th rowspan="7">직무수행도</th>
+                                <td>A010101</td>
+                                <td>현장소장의 일일안전활동 참여 여부</td>
+                                <td>A01010101</td>
+                                <td>일일안전활동보고 확인</td>
+                                <td>5</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>
+                                    <select class="form-select">
+										<option selected="">선택</option>
+										<option value="">Y</option>
+										<option value="">N</option>
+									</select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>A010102</td>
+                                <td>본사차원에서의 안전보건관리 지원 여부</td>
+                                <td>A01010102</td>
+                                <td>감리원/현장대리인 지시사항</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>
+                                    <select class="form-select">
+										<option selected="">선택</option>
+										<option value="">Y</option>
+										<option value="">N</option>
+									</select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>A010103</td>
+                                <td>안전관리지원여부1</td>
+                                <td>A01010301</td>
+                                <td>일일안전활동보고 확인</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>
+                                    <select class="form-select">
+										<option selected="">선택</option>
+										<option value="">Y</option>
+										<option value="">N</option>
+									</select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>A010104</td>
+                                <td>안전관리지원여부2</td>
+                                <td>A01010101</td>
+                                <td>일일안전활동보고 확인</td>
+                                <td>5</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>
+                                    <select class="form-select">
+										<option selected="">선택</option>
+										<option value="">Y</option>
+										<option value="">N</option>
+									</select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>A010105</td>
+                                <td>안전관리지원여부3</td>
+                                <td>A01010101</td>
+                                <td>일일안전활동보고 확인</td>
+                                <td>5</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>
+                                    <select class="form-select">
+										<option selected="">선택</option>
+										<option value="">Y</option>
+										<option value="">N</option>
+									</select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>A010106</td>
+                                <td>현장소장의 일일안전활동 참여 여부</td>
+                                <td>A01010101</td>
+                                <td>일일안전활동보고 확인</td>
+                                <td>5</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>
+                                    <select class="form-select">
+										<option selected="">선택</option>
+										<option value="">Y</option>
+										<option value="">N</option>
+									</select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>A010107</td>
+                                <td>현장소장의 일일안전활동 참여 여부</td>
+                                <td>A01010101</td>
+                                <td>일일안전활동보고 확인</td>
+                                <td>5</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>
+                                    <select class="form-select">
+										<option selected="">선택</option>
+										<option value="">Y</option>
+										<option value="">N</option>
+									</select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th rowspan="4">A0102</th>
+                                <th rowspan="4">협의체활동 및 타공정간 협조</th>
+                                <td>A010101</td>
+                                <td>현장소장의 일일안전활동 참여 여부</td>
+                                <td>A01010101</td>
+                                <td>일일안전활동보고 확인</td>
+                                <td>5</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>
+                                    <select class="form-select">
+										<option selected="">선택</option>
+										<option value="">Y</option>
+										<option value="">N</option>
+									</select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>A010102</td>
+                                <td>본사차원에서의 안전보건관리 지원 여부</td>
+                                <td>A01010102</td>
+                                <td>감리원/현장대리인 지시사항</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>
+                                    <select class="form-select">
+										<option selected="">선택</option>
+										<option value="">Y</option>
+										<option value="">N</option>
+									</select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>A010103</td>
+                                <td>안전관리지원여부1</td>
+                                <td>A01010301</td>
+                                <td>일일안전활동보고 확인</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>
+                                    <select class="form-select">
+										<option selected="">선택</option>
+										<option value="">Y</option>
+										<option value="">N</option>
+									</select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>A010104</td>
+                                <td>안전관리지원여부2</td>
+                                <td>A01010101</td>
+                                <td>일일안전활동보고 확인</td>
+                                <td>5</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>
+                                    <select class="form-select">
+										<option selected="">선택</option>
+										<option value="">Y</option>
+										<option value="">N</option>
+									</select>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot id="itemFoot">
+                            <tr>
+                                <th colspan="10" class="a-right"><span class="c-blue f-bold">V1.0</span> 총점</th>
+                                <td id="totalTd">100</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </form>
+                <div class="btn-area" id="btnDiv" style="">
+                    <button type="button" class="btn-big -grey" id="initBtn">취소</button>
+                    <button type="button" class="btn-big -primary" id="saveBtn">수정</button>
+                </div>
+            </div>
+			
+        </section>
+    </main>
+    
+</div>
+    
+    
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+    
+</body>
+</html>

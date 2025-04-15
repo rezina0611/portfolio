@@ -1,0 +1,270 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>품질평가 항목관리</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+    
+<body>
+
+<!-- Modal 평가표 수정-->
+<div class="modal-wrapper" id="modal-modify">
+    <div class="modal">
+        <div class="header">
+            <h1>항목 편집
+                <button class="btn btn-close trigger-modify"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <form class="modify">
+                <table class="table result">
+                    <colgroup>
+							<col width="80">
+							<col width="*">
+						</colgroup>
+                    <tbody>
+                        <tr>
+                            <th>경로</th>
+                            <td><strong>철탑 기초공사 &gt; 터파기 상태 &gt; 레미콘 타설시 섞임기(진동 바이브레이터) 사용 확인</strong></td>
+                        </tr>
+                  
+                        <tr>
+                            <th>순서</th>
+                            <td><input type="text" class="input-tb" value="3"></td>
+                        </tr>
+						<tr>
+                            <th>항목</th>
+                            <td><input type="text" class="input-tb" value="레미콘 타설시 섞임기(진동 바이브레이터) 사용 확인"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+		<div class="btn-area">
+			<button class="btn -grey">취소</button>
+			<button class="btn -primary">수정</button>
+		</div>
+    </div>
+</div>
+<!-- End Modal -->
+    
+<div class="page-wrapper d-flex">
+	<nav id="side-nav" class="side-nav">
+    </nav>
+
+    <main class="contents">
+        <section class="wrapper">
+            <h1 class="page-title">품질평가 항목관리</h1>
+            <form>
+                <table class="table">
+					<colgroup>
+						<col width="160">
+						<col width="">
+					</colgroup>
+                    <tbody>
+                        <tr>
+                            <th>품질평가명</th>
+							<td>
+                                <div class="d-flex">
+                                    <select class="form-select">
+                                        <option selected="">시공</option>
+                                        <option value="">1</option>
+                                        <option value="">2</option>
+                                        <option value="">3</option>
+                                        <option value="">4</option>
+                                    </select>
+                                    <select class="form-select">
+                                        <option selected="">철탑</option>
+                                        <option value="">1</option>
+                                        <option value="">2</option>
+                                        <option value="">3</option>
+                                        <option value="">4</option>
+                                    </select>
+                                </div>
+							</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btn-area">
+                    <button class="btn-big -primary">검색</button>
+                </div>
+            </form>
+			
+			<div class="tui-wrapper">
+				<div class="p-lr-3">
+					<h4 class="mt-3">항목추가</h4>
+					<div class="d-flex add-item">
+						<div>
+							<ul>
+								<li>
+									<label>구분</label>
+									<input type="text" class="input-tb" placeholder="구분 항목 입력">
+								</li>
+								<li>
+									<label>주요 평가항목</label>
+									<select class="form-select">
+										<option selected="">구분 선택</option>
+										<option value="">1</option>
+										<option value="">2</option>
+										<option value="">3</option>
+										<option value="">4</option>
+									</select>
+									<input type="text" class="input-tb" placeholder="주요 평가항목 입력">
+								</li>
+								<li>
+									<label>세부 평가항목</label>
+									<select class="form-select">
+										<option selected="">구분 선택</option>
+										<option value="">1</option>
+										<option value="">2</option>
+										<option value="">3</option>
+										<option value="">4</option>
+									</select>
+									<select class="form-select">
+										<option selected="">주요 평가항목 선택</option>
+										<option value="">1</option>
+										<option value="">2</option>
+										<option value="">3</option>
+										<option value="">4</option>
+									</select>
+									<input type="text" class="input-tb" placeholder="세부 평가항목 입력">
+								</li>
+							</ul>
+						</div>
+						<div>
+							<button href="#" class="btn btn-add">항목 추가</button>
+						</div>
+					</div>
+             
+				
+					<h4 class="mt-3">평가표</h4>
+					<div class="tui-area" title="tui-area">
+						<table class="table result center">
+							<colgroup>
+								<col width="160">
+								<col width="160">
+								<col width="*">
+								<col width="70">
+							</colgroup>
+							<thead>
+								<tr>
+									<th class="center" style="height: 45px">구분</th>
+									<th class="center">주요평가항목</th>
+									<th class="center">세부평가항목</th>
+									<th class="center">배점</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th rowspan="19" class="center"><a href="" class="trigger-modify">철탑 기초공사</a></th>
+									<td rowspan="3"><a href="" class="trigger-modify">터파기 상태</a></td>
+									<td class="left"><a href="" class="trigger-modify">경계측량에 의한 경계확보 확인</a></td>
+									<td><input type="text" class="input-tb center" value="2"></td>
+								</tr>
+								<tr>
+									<td class="left"><a href="" class="trigger-modify">범면 붕괴 방지 경사면 확인</a></td>
+									<td><input type="text" class="input-tb center" value="2"></td>
+								</tr>
+								<tr>
+									<td class="left"><a href="" class="trigger-modify">면적 도면과 일치한지 줄자로 측정</a></td>
+									<td><input type="text" class="input-tb center" value="2"></td>
+								</tr>
+								<tr>
+									<td rowspan="6"><a href="" class="trigger-modify">하부기초 상태</a></td>
+									<td class="left"><a href="" class="trigger-modify">철근규격(19mm/13mm)이 도면과 일치 확인</a></td>
+									<td><input type="text" class="input-tb center" value="2"></td>
+								</tr>
+								<tr>
+									<td class="left"><a href="" class="trigger-modify">철근 배근시 철근을 엮어 사용 확인</a></td>
+									<td><input type="text" class="input-tb center" value="2"></td>
+								</tr>
+								<tr>
+									<td class="left"><a href="" class="trigger-modify">배근간격(200mm) 도면과 확인</a></td>
+									<td><input type="text" class="input-tb center" value="2"></td>
+								</tr>
+								<tr>
+									<td class="left"><a href="" class="trigger-modify">거푸집 수직/수평 보강상태(일직선) 확인</a></td>
+									<td><input type="text" class="input-tb center" value="2"></td>
+								</tr>
+								<tr>
+									<td class="left"><a href="" class="trigger-modify">레미콘 타설시 섞임기(진동 바이브레이터) 사용 확인</a></td>
+									<td><input type="text" class="input-tb center" value="2"></td>
+								</tr>
+								<tr>
+									<td class="left"><a href="" class="trigger-modify">레미콘 양생시 양생시간 확인</a></td>
+									<td><input type="text" class="input-tb center" value="2"></td>
+								</tr>
+								<tr>
+									<td rowspan="5"><a href="" class="trigger-modify">상부기초 상태</a></td>
+									<td class="left"><a href="" class="trigger-modify">철근규격(19mm/13mm)이 도면과 일치 확인</a></td>
+									<td><input type="text" class="input-tb center" value="2"></td>
+								</tr>
+								<tr>
+									<td class="left"><a href="" class="trigger-modify">주철근/띠철근 배근간격 도면과 확인</a></td>
+									<td><input type="text" class="input-tb center" value="2"></td>
+								</tr>
+								<tr>
+									<td class="left"><a href="" class="trigger-modify">철근 배근시 철근을 엮어 사용확인</a></td>
+									<td><input type="text" class="input-tb center" value="2"></td>
+								</tr>
+								<tr>
+									<td class="left"><a href="" class="trigger-modify">레미콘 타설전 ELP관(강관주 ~ 분전반) 3EA설치 확인</a></td>
+									<td><input type="text" class="input-tb center" value="2"></td>
+								</tr>
+								<tr>
+									<td class="left"><a href="" class="trigger-modify">레미콘 타설시 섞임기(진동 바이브레이터) 사용 확인</a></td>
+									<td><input type="text" class="input-tb center" value="2"></td>
+								</tr>
+								<tr>
+									<td rowspan="5"><a href="" class="trigger-modify">줄기초, 패드, 옹벽 상태</a></td>
+									<td class="left"><a href="" class="trigger-modify">줄기초/패드 작업시 철근규격 및 배근간격 도면과 확인</a></td>
+									<td><input type="text" class="input-tb center" value="2"></td>
+								</tr>
+								<tr>
+									<td class="left"><a href="" class="trigger-modify">패드(두께 300mm)/줄기초(두께 300mm) 확인</a></td>
+									<td><input type="text" class="input-tb center" value="2"></td>
+								</tr>
+								<tr>
+									<td class="left"><a href="" class="trigger-modify">패드 품질(미장시공 갈라짐/깨짐) 불량 확인</a></td>
+									<td><input type="text" class="input-tb center" value="2"></td>
+								</tr>
+								<tr>
+									<td class="left"><a href="" class="trigger-modify">패드시공시 상부기초 압축스티로폼(300mm) 시공 확인</a></td>
+									<td><input type="text" class="input-tb center" value="2"></td>
+								</tr>
+								<tr>
+									<td class="left"><a href="" class="trigger-modify">패드모서리 면띠 시공 확인</a></td>
+									<td><input type="text" class="input-tb center" value="2"></td>
+								</tr>
+								<tr>
+									<th colspan="3" style="height: 40px"></th>
+									<th class="center">100</th>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="btn-area mb-2">
+					<button class="btn-big -grey">취소</button>
+					<button class="btn-big -primary">수정</button>
+				</div>
+            </div>
+			
+        </section>
+    </main>
+    
+</div>
+    
+    
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+    
+</body>
+</html>

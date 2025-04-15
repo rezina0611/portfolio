@@ -1,0 +1,843 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>현장점검평가표 등록</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+    
+<body>
+<!-- 프로젝트 조회 -->
+<div class="modal-wrapper" id="modal-info">
+    <div class="modal">
+        <div class="header">
+            <h1>프로젝트 조회
+                <button class="btn btn-close trigger-info"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="card-body">
+                <div class="card-search">
+                    <div class="input-group">
+                        <input type="search" placeholder="프로젝트명">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <ul class="list pjt">
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                </ul>
+                <div class="toolbar">
+					<div id="paging" class="pagination">
+						<a href="#" id="first" class="disabled"><img src="../../images/icon/ico_double_arrow_left.png" alt="첫 페이지"></a> 
+					  	<a href="#" id="prev" class="disabled"><img src="../../images/icon/ico_arrow_left.png" alt="이전 페이지"></a> 
+						<div id="wrapper">
+							<ul class="page-num">
+								<li><a href="" class="active">1</a></li>
+								<li><a href="">2</a></li>
+								<li><a href="">3</a></li>
+								<li><a href="">4</a></li>
+								<li><a href="">5</a></li>
+								<li><a href="">6</a></li>
+								<li><a href="">7</a></li>
+								<li><a href="">8</a></li>
+								<li><a href="">9</a></li>
+								<li><a href="">10</a></li>
+							</ul>
+						</div>
+						<a href="#" id="next"><img src="../../images/icon/ico_arrow_right.png" alt="다음 페이지"></a>
+						<a href="#" id="last"><img src="../../images/icon/ico_double_arrow_right.png" alt="마지막 페이지"></a>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+    
+<div class="page-wrapper d-flex">
+    <nav id="side-nav" class="side-nav">
+    </nav>
+	
+    <main class="contents">
+        <section class="wrapper">
+            <h1 class="page-title">현장점검평가표 &gt; 등록</h1>
+            <form>
+                <table class="table l-fixed">
+                    <colgroup>
+                        <col width="160">
+                        <col width="">
+                        <col width="160">
+                        <col width="">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>프로젝트명</th>
+                            <td colspan="1">
+                                <div class="input-group">
+                                    <input type="search" placeholder="">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text trigger-info">
+                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>현장대리인(PM)</th>
+                            <td><input type="text" class="input-tb"></td>
+                            <th>점검자</th>
+                            <td><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <th>공사금액</th>
+                            <td><input type="text" class="input-tb"></td>
+                            <th>공사기간</th>
+                            <td>
+                                <div class="d-flex ai-center input_date_box">
+                                    <input type="date" class="input-tb half" value="2022-12-15">
+                                    <span> ~ </span>
+                                    <input type="date" class="input-tb half" value="2022-12-15">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>공정율</th>
+                            <td><input type="text" class="input-tb w95">&nbsp; %</td>
+                            <th>재해현황</th>
+                            <td>
+                                <div class="d-flex jc-btw">
+                                    <div class="d-flex ai-center">
+                                        <span>중대재해</span> 
+                                        <span><input type="text" class="input-tb half">&nbsp; 건</span>
+                                    </div>
+                                    <div class="d-flex ai-center">
+                                        <span>일반재해</span>
+                                        <span><input type="text" class="input-tb half">&nbsp; 건</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>점검일</th>
+                            <td>
+                                <div class="d-flex jc-start">
+                                    <div class="w50 mr-1">
+                                        <div class="d-flex input_date_box">
+                                            <input type="date" class="input-tb" value="2022-12-16"> 
+                                        </div>
+                                    </div>
+                                    <div><input type="time" class="input-tb" value="13:00"></div>
+                                </div>
+                            </td>
+                            <th>총점</th>
+                            <td>000</td>
+                        </tr>
+                        <tr>
+                            <th>안전평가 결과총평</th>
+                            <td colspan="3">
+                                <textarea class="input-tb" cols="100" rows="5"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>교육 및 당부사항</th>
+                            <td colspan="3">
+                                <textarea class="input-tb" cols="100" rows="5"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>가/감점 사항</th>
+                            <td colspan="3">
+                                <textarea class="input-tb" cols="100" rows="5" placeholder="ex)가점 아차사고 사례발굴 시 건당 +2점 분기별 최대 3개까지 반영가능. 
+전 분기작성 다음 분기 점수 반영 감점 일반재해 발생시 -15점 중대재해 발생 시 -30점"></textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <table class="table frm-t mt-3">
+                    <colgroup>
+                        <col width="*">
+                        <col width="300">
+                        <col width="60">
+                        <col width="60">
+                        <col width="250">
+                        <col width="300">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th class="center">평가항목(ISO 45001점검 기준반영)</th>
+                            <th class="center">관계법령</th>
+                            <th class="center">양호</th>
+                            <th class="center">불량</th>
+                            <th class="center">세부평가 결과</th>
+                            <th class="center">평가기준</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="f-bold">1. 안전보건관리 수행계획서</td>
+                            <td>건진법시행령 98조, 전사업전보건관리기준</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td rowspan="3">
+                                서류확인<br>
+                                안전보건 관리 수형 계획서 <br>10억이상 공시현장 작성<br>
+                                계정사항 발생 시 계정날짜, 내용 작성
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >- 전사 작성 기준에 맞는 작성 상태<br>(안전보건방침 및 목표)(2점)</td>
+                            <td >중처럽시행령 4조1호</td>
+                            <td class=" center"><input type="checkbox" checked></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td >- 안전보건관리 수행계획서 개정이력 관리 상태(1점)</td>
+                            <td class=""></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="checkbox" checked></td>
+                            <td class=" center"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td class="left  f-bold">2. 안전보건조직도</td>
+                            <td >산안법 15조, 16조 ,32조</td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td  rowspan="2">
+                                서류확인<br>지정서, 교육이수증(교육 이수 날짜 확인)<br>선임일(실작공일)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >- 안전보건총괄책임자, 안전보건관리책임자, <br>괸리감독자 지정서 작성 및 직무교육 이수증 비치 유/무 확인(2점)</td>
+                            <td class=""></td>
+                            <td class=" center"><input type="checkbox" checked></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td class="left  f-bold">3. 안전보건 협의체</td>
+                            <td ></td>
+                            <td ></td>
+                            <td ></td>
+                            <td ></td>
+                            <td  rowspan="3">
+                                서류확인<br>
+                                [2개월1회 노사 협의체 회의실시<br>(건설업 120억 이상 토목 150억 이상)<br>
+                                산압법 75조<br>
+                                중처법시행령 4조7회]
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >- 매월1회 안전 보건 협의체 실시(위험성평가포함)유/무</td>
+                            <td >산안법시행규칙79조<br>중처법시행령 4조 3호</td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td >- 매월 안전점검의 날 행사 실시 및 결과서 작성상태 확인<br>(고위험 현장 및 PM현장 상주 시 현장 별 실시) (2점)</td>
+                            <td >재난 및 안전관리<br>기본법 66조의 7</td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td class="left  f-bold">4. 산업안전보건법 요지 게시</td>
+                            <td >산안법 34조</td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td  rowspan="2">
+                                현장 사무실, 협력사 사무실 통 게시 확인
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >- 현장 사무실, 작업장 게시 유/무 확인(2점)</td>
+                            <td ></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td class="left  f-bold">5. 위험성 평가</td>
+                            <td >산안법 34조, 중처법 4조 3호</td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td  rowspan="4">
+                                서류확인<br>
+                                위험성 평가<br>
+                                고위험 작업에 대한 안전 대책 수립 결과<br> 조치 담당자 지정 확인
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >- 해당 현장에 대한 최초 위험성평가 작성 유/무 확인(2점)</td>
+                            <td class=""></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td >- 작업 공종에 대한 위험요인 도출, 안전대책 수립 및 <br>작업대상 기간 이전 최종 승인 유/무 확인(2점)</td>
+                            <td class=""></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td >- 수시 위험셩평가 결과 근로자 전파교육 실시 유/무 확인<br>(수시 위험셩평가 매월 안전보건 협의제 회의)(2점)</td>
+                            <td >사업장 위험성평가에 <br>관한지침 13조5항</td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td class="left  f-bold">6. 비상상태 대응 훈련</td>
+                            <td >산안법 64조, 중처법시행령 4조 8호</td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td  rowspan="3">
+                                서류확인<br>반기별 1회 실시
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >- 비상 대응훈련 시나리오/훈련 결과 작성 상태(2점)</td>
+                            <td class=""></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td >- 비상연락망 구축 및 잘 보이는 곳 게시 유/무 확인(2점)</td>
+                            <td class=""></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td class="left  f-bold">7. 안전점검 체크리스트 및 실시 기록</td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td  rowspan="3">
+                                서류확인<br>
+                                도급인 = 현장PM<br>
+                                일일 순회점검 -> 일일안전활동보고 대체
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >- 일일 순회점검 실시 결과(2일 1회 이상)(2점)</td>
+                            <td >산안법 시행규칙 80조</td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td >- 도급사업의 활동 안전점검 실시 결과(2개월 1회)(2점)</td>
+                            <td >산안법 시행규칙 82조</td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td class="left  f-bold">8. 산업안전보건관리비 사용 내역</td>
+                            <td >산안법 72조, 산안법시행규칙 89조</td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td class=""></td>
+                        </tr>
+                        <tr>
+                            <td >- 산업안전관리비 사용 시 목적 외 사용여부 확인(2점)</td>
+                            <td class=""></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="text" class="input-tb"></td>
+                            <td  rowspan="3">
+                                서류확인<br>
+                                산업 안전보건 관리비<br>
+                                사용 내역서(매월작성)<br>
+                                6개월 이내 종료되는 현장은 <br>종료시 작성하고 평가는 양호 반영
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >- 산업안전관리비 사용 내역서 작성 상태 확인(2점)</td>
+                            <td class=""></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td >- 개인보호구 지급대장 작성 상태(2점)</td>
+                            <td >산업안전보건기준에 관련규칙 32조</td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td class="left  f-bold">9. 안전보건 교육 (법정 교육 시간 이수 확인 등)</td>
+                            <td >산안법 29조, 산안법 31조, 중처법시행령 6조</td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td  rowspan="4">
+                                서류확인<br>
+                                신규,정기,특별<br>
+                                안전 교육 실시 결과<br>
+                                법정교육 이수시간 확인<br>
+                                (산안법시행규칙별표4.5 참고)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >- 신규 채용자 안전교육 실시 상태<br>(신규자 서약서, 건설업기초안전 보건 교육 이수증 확인)(2점)</td>
+                            <td class=""></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=""><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td >- 정기 안전교육 실시 상태(2점)</td>
+                            <td class=""></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td >- 특별 안전교육 실시 상태(2점)</td>
+                            <td class=""></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td class="left  f-bold">10. 안전보건 계측장비 현황 및 검교정 실시</td>
+                            <td >ISO45001 현장 안전 점검 심사 등록</td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td  rowspan="2">
+                                서류확인<br>
+                                측정기 구매 시 부터 실시<br>
+                                안전 점검 시 측정기 필요한 <br>생활인데 없는 경우 불량 반영, <br>필요없는 경우 양호반영
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >- 복합가스농도 측정기 등 최초 구입 후 2년 검교정 및 매년 실시 상태(1점)</td>
+                            <td class=""></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td class="left  f-bold">11. 재해예방 기술지도</td>
+                            <td >산안법 73조</td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td  rowspan="2">
+                                서류확인<br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >- 재해예방 발생 시 재해 처리 프로세스 준수 상태<br>(사고발생 보고서/재발방지대책 수립 및 교육)(3점)</td>
+                            <td class=""></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td class="left  f-bold">12. 사고 발생 보고서 및 산업재해 조사표</td>
+                            <td >산안법시행규칙 72조 <br>(사고 없을 시 가정 항목으로 점수 반영)</td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td  rowspan="3">
+                                서류확인<br>
+                                재해발생시 1개월 이내<br>
+                                산업재해 조사표 작성 관할 <br>
+                                노동부 보고<br>(협력시보고 가농 가점 점수 3점 착용)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >- 산업재해 발생 시 재해 처리 프로세스 준수 상태<br>(사고발생 보고서/재발방지대책 수립 및 교육)(3점)</td>
+                            <td >산안법 57조</td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td >- 산업재해 발생 시 법정 기간 내 산업재해 조사표 제출 상태<br>(사고은폐여부확인)(3점)</td>
+                            <td >산안법 57조</td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td class="left  f-bold">13. 건설기계, 중량물 취급 작업 계획서</td>
+                            <td >산업안전보건에 관한 규칙 38조</td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td  rowspan="2">
+                                서류확인<br>작업 시작 전 일까지 작성 및 승인완료
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >- 차량계 건설기계 작업 계획서, 차량계 하역 운반기계 <br>작업 계획서, 중량을 취급 작업계획서 작성 상태 확인(2점)</td>
+                            <td class=""></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td class="left  f-bold">14. 작업지시서 작업 중지서 사례</td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td  rowspan="3">
+                                서류확인<br>지시서, 중지서 <br>전사 안전 기준 적용<br>(현장 PM 등 중지서 발행시 <br>가점으로 적용 가점점수3점 적용)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >- 산업재해가 발생할 급박한 위험이 있는 경우 현장<br>작업중시 실시 상태 확인(사업주)(3점)</td>
+                            <td >산안법 51조</td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td >- 근로자 작업중지권 전파을 위한 현장 안전 표지판<br>게시여부(현장소장 연락처 및 안전 조치 사항 전파 등)(2점)</td>
+                            <td >산안법 52조</td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td class="left  f-bold">15. 안전보건법규 등록부 및 반영계획서</td>
+                            <td >중처법시행령 5조</td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td  rowspan="2">
+                                서류확인<br>반기 별 1회 실시
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >- 안전보건법류 등록부 및 반영 계획서 점검 실시 상태(2점)</td>
+                            <td >산안법 51조</td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td class="left  f-bold">16. 개정된 안전보건 문서 확인</td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td class=""></td>
+                            <td  rowspan="2">
+                                서류확인
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >- 전사 안전보건관리규정 작성 및 분기 여행 상태<br>확인 유/무(본부 별 안전보건관리 규정 작성)(2점)</td>
+                            <td >산안법 25조<br>산안법 시행규칙별표2,3</td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="checkbox"></td>
+                            <td class=" center"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td class="left  f-bold">17. 기타 현장 안전점검 기준</td>
+                            <td class="center ">점수</td>
+                            <td class="center " colspan="3">불량 사항 기록(1건 불량 시 - 1점)</td>
+                            <td  rowspan="8">
+                                현장확인<br>현장 작업시<br>안전 보호구 시설물<br>설치 상태 및 정리정돈 등 현장<br>안전 작업 이행 상태 확인<br>
+                                (부분 점수 반영 항목당 <br>5점으로 적용하되 각 항목<br>에서 지적1건 적발시 -1점반영)<br>
+                                지적없음 = 5점반영<br><br>
+                                * 현장 안전점검 기준 별점
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >- 매일 오전/오후 TBM실시여부(음주확인, 위험요인교육)(5점)</td>
+                            <td class="center "><input type="text" class="input-tb"></td>
+                            <td class=" center" colspan="3"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td >- 근로자 개인보호구 착용 여부 확인(5점)</td>
+                            <td class="center "><input type="text" class="input-tb"></td>
+                            <td class=" center" colspan="3"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td >- 추략예방 조치 여부(생명고리체결, 안전난간, 개구부덥개)(5점)</td>
+                            <td class="center "><input type="text" class="input-tb"></td>
+                            <td class=" center" colspan="3"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td >- 화재예방 조치 여부(소화기비치, 화재 감시자 등)(5점)</td>
+                            <td class="center "><input type="text" class="input-tb"></td>
+                            <td class=" center" colspan="3"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td >- 감전사고 예방조치여부(누전차단기, 감전기, 경보기, 접지)(5점)</td>
+                            <td class="center "><input type="text" class="input-tb"></td>
+                            <td class=" center" colspan="3"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td >- 작업장 정리정돈 여부(안전 이동통로 확보)(5점)</td>
+                            <td class="center "><input type="text" class="input-tb"></td>
+                            <td class=" center" colspan="3"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td >- 보건 관리 실시 여부(근로자 건강상태, 혈압, 감염병 예방)(5점)</td>
+                            <td class="center "><input type="text" class="input-tb"></td>
+                            <td class=" center" colspan="3"><input type="text" class="input-tb"></td>
+                        </tr>
+                        <tr>
+                            <td >- 본부 별 안전보건겸영방침 및 목표 세부 실행 계획 이행 결과 확인(5점)</td>
+                            <td class="center "><input type="text" class="input-tb"></td>
+                            <td class=" center" colspan="3"><input type="text" class="input-tb"></td>
+                            <td >
+                                시행시기 별 실천사항 이행<br>
+                                결과 확인(미 이행 시 1건당 -2점)
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <table class="table frm-t mt-3">
+                    <colgroup>
+                        <col width="160">
+                        <col width="">
+                        <col width="160">
+                        <col width="">
+                    </colgroup>
+                    <tbody>
+                        <tr height="40">
+                            <th colspan="4" class="center">사진대지</th>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <ul class="thumlist">
+                                    <li>
+                                        <div class="card">
+                                            <div class="fileupload">
+                                                <div class="filebox2">
+                                                    <label for="ex_file"><img src="../../images/icon/ico_photo.png" alt="사진첨부1"> 사진 첨부1</label> 
+                                                    <input type="file" id="ex_file"> 
+                                                </div>
+                                                <!-- <div class="btn-area">
+                                                    <button class="btn"><img src="../../images/icon/ico_photo.png" alt="사진첨부">사진 첨부</button>
+                                                </div> -->
+                                            </div>
+                                            <div class="card-body d-block">
+                                                <input type="text" class="input-tb" placeholder="제목 최대 100자이내">
+                                                <textarea class="input-tb" cols="100" rows="5" placeholder="내용 최대 100자이내"></textarea>            
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="card">
+                                            <div class="fileupload">
+                                                <div class="filebox2">
+                                                    <label for="ex_file"><img src="../../images/icon/ico_photo.png" alt="사진첨부2"> 사진 첨부2</label> 
+                                                    <input type="file" id="ex_file"> 
+                                                </div>
+                                            </div>
+                                            <div class="card-body d-block">
+                                                <input type="text" class="input-tb" placeholder="제목 최대 100자이내">
+                                                <textarea class="input-tb" cols="100" rows="5" placeholder="내용 최대 100자이내"></textarea>            
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="card">
+                                            <div class="fileupload">
+                                                <div class="filebox2">
+                                                    <label for="ex_file"><img src="../../images/icon/ico_photo.png" alt="사진첨부3"> 사진 첨부3</label> 
+                                                    <input type="file" id="ex_file"> 
+                                                </div>
+                                            </div>
+                                            <div class="card-body d-block">
+                                                <input type="text" class="input-tb" placeholder="제목 최대 100자이내">
+                                                <textarea class="input-tb" cols="100" rows="5" placeholder="내용 최대 100자이내"></textarea>            
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="thumlist mt-1">
+                                    <li>
+                                        <div class="card">
+                                            <div class="fileupload">
+                                                <div class="filebox2">
+                                                    <label for="ex_file"><img src="../../images/icon/ico_photo.png" alt="사진첨부4"> 사진 첨부4</label> 
+                                                    <input type="file" id="ex_file"> 
+                                                </div>
+                                            </div>
+                                            <div class="card-body d-block">
+                                                <input type="text" class="input-tb" placeholder="제목 최대 100자이내">
+                                                <textarea class="input-tb" cols="100" rows="5" placeholder="내용 최대 100자이내"></textarea>            
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="card">
+                                            <div class="fileupload">
+                                                <div class="filebox2">
+                                                    <label for="ex_file"><img src="../../images/icon/ico_photo.png" alt="사진첨부5"> 사진 첨부5</label> 
+                                                    <input type="file" id="ex_file"> 
+                                                </div>
+                                            </div>
+                                            <div class="card-body d-block">
+                                                <input type="text" class="input-tb" placeholder="제목 최대 100자이내">
+                                                <textarea class="input-tb" cols="100" rows="5" placeholder="내용 최대 100자이내"></textarea>            
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="card">
+                                            <div class="fileupload">
+                                                <div class="filebox2">
+                                                    <label for="ex_file"><img src="../../images/icon/ico_photo.png" alt="사진첨부6"> 사진 첨부6</label> 
+                                                    <input type="file" id="ex_file"> 
+                                                </div>
+                                            </div>
+                                            <div class="card-body d-block">
+                                                <input type="text" class="input-tb" placeholder="제목 최대 100자이내">
+                                                <textarea class="input-tb" cols="100" rows="5" placeholder="내용 최대 100자이내"></textarea>            
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="thumlist mt-1">
+                                    <li>
+                                        <div class="card">
+                                            <div class="fileupload">
+                                                <div class="filebox2">
+                                                    <label for="ex_file"><img src="../../images/icon/ico_photo.png" alt="사진첨부7"> 사진 첨부7</label> 
+                                                    <input type="file" id="ex_file"> 
+                                                </div>
+                                            </div>
+                                            <div class="card-body d-block">
+                                                <input type="text" class="input-tb" placeholder="제목 최대 100자이내">
+                                                <textarea class="input-tb" cols="100" rows="5" placeholder="내용 최대 100자이내"></textarea>            
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="card">
+                                            <div class="fileupload">
+                                                <div class="filebox2">
+                                                    <label for="ex_file"><img src="../../images/icon/ico_photo.png" alt="사진첨부8"> 사진 첨부8</label> 
+                                                    <input type="file" id="ex_file"> 
+                                                </div>
+                                            </div>
+                                            <div class="card-body d-block">
+                                                <input type="text" class="input-tb" placeholder="제목 최대 100자이내">
+                                                <textarea class="input-tb" cols="100" rows="5" placeholder="내용 최대 100자이내"></textarea>            
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="card">
+                                            <div class="fileupload">
+                                                <div class="filebox2">
+                                                    <label for="ex_file"><img src="../../images/icon/ico_photo.png" alt="사진첨부9"> 사진 첨부9</label> 
+                                                    <input type="file" id="ex_file"> 
+                                                </div>
+                                            </div>
+                                            <div class="card-body d-block">
+                                                <input type="text" class="input-tb" placeholder="제목 최대 100자이내">
+                                                <textarea class="input-tb" cols="100" rows="5" placeholder="내용 최대 100자이내"></textarea>            
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="thumlist mt-1">
+                                    <li>
+                                        <div class="card">
+                                            <div class="fileupload">
+                                                <div class="filebox2">
+                                                    <label for="ex_file"><img src="../../images/icon/ico_photo.png" alt="사진첨부10"> 사진 첨부10</label> 
+                                                    <input type="file" id="ex_file"> 
+                                                </div>
+                                            </div>
+                                            <div class="card-body d-block">
+                                                <input type="text" class="input-tb" placeholder="제목 최대 100자이내">
+                                                <textarea class="input-tb" cols="100" rows="5" placeholder="내용 최대 100자이내"></textarea>            
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="card">
+                                            <div class="fileupload">
+                                                <div class="filebox2">
+                                                    <label for="ex_file"><img src="../../images/icon/ico_photo.png" alt="사진첨부11"> 사진 첨부11</label> 
+                                                    <input type="file" id="ex_file"> 
+                                                </div>
+                                            </div>
+                                            <div class="card-body d-block">
+                                                <input type="text" class="input-tb" placeholder="제목 최대 100자이내">
+                                                <textarea class="input-tb" cols="100" rows="5" placeholder="내용 최대 100자이내"></textarea>            
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="card">
+                                            <div class="fileupload">
+                                                <div class="filebox2">
+                                                    <label for="ex_file"><img src="../../images/icon/ico_photo.png" alt="사진첨부12"> 사진 첨부12</label> 
+                                                    <input type="file" id="ex_file"> 
+                                                </div>
+                                            </div>
+                                            <div class="card-body d-block">
+                                                <input type="text" class="input-tb" placeholder="제목 최대 100자이내">
+                                                <textarea class="input-tb" cols="100" rows="5" placeholder="내용 최대 100자이내"></textarea>            
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+            <div class="btn-area">
+                <button class="btn-big -grey">취소</button>
+                <button class="btn-big normal">임시저장</button>
+                <button class="btn-big -primary">작성완료</button>
+            </div>
+        </section>
+    </main> 
+    
+</div>
+    
+    
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+
+</body>
+</html>

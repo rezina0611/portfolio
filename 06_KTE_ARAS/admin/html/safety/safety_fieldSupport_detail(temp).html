@@ -1,0 +1,377 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>현장지원점검 관리 &gt; 상세</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+<script>
+    $(function(){
+        var date = new Date();
+        var yyyy = date.getFullYear();
+        var mm = date.getMonth()+1 > 9 ? date.getMonth()+1 : '0' + date.getMonth()+1;
+        var dd = date.getDate() > 9 ? date.getDate() : '0' + date.getDate();
+        $("input[type=date]").val(yyyy+"-"+mm+"-"+dd);
+    });
+</script>    
+</head>
+    
+<body>
+<div class="page-wrapper d-flex">
+    <nav id="side-nav" class="side-nav">
+    </nav>
+	
+    <main class="contents">
+        <section class="wrapper">
+            <h1 class="page-title">현장지원점검 &gt; 상세</h1>
+            <form>
+                <table class="table frm-t">
+					<colgroup>
+                        <col width="160">
+                        <col width="">
+                        <col width="160">
+                        <col width="">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>프로젝트</th>
+                            <td>
+                                <div class="input-group bd-1 w100">
+                                    <input type="search" placeholder="" value="2019년 통신3사 무선국">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <th>본부</th>
+                            <td>IT솔루션 사업부</td>
+                        </tr>
+                        <tr>
+                            <th>점검일자</th>
+                            <td colspan="1">
+                                <div class="d-flex input_date_box">
+                                    <input type="date" class="input-tb" value="2022-12-16">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>점검결과</th>
+                            <td colspan="3">
+                                <input type="text" class="input-tb" value="점검결과 내용 글">
+                            </td>
+                        </tr>
+                        <tr height="40">
+                            <th class="center">구분</th>
+                            <th colspan="2" class="center">점검결과(지원신청)</th>
+                            <th class="center bd-l-1">조치요구사항</th>
+                        </tr>
+                        <tr>
+                            <th class="center">안전보건<br>활동사항</th>
+                            <td colspan="2">
+                                <textarea class="input-tb" cols="100" rows="5">안전보건 점검결과 내용 글</textarea>
+                            </td>
+                            <td class="bd-l-1">
+                                <textarea class="input-tb" cols="100" rows="5">요구사항 내용 글</textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="center">지원내용</th>
+                            <td colspan="3">
+                                <table class="table bdt-0">
+                                    <colgroup>
+                                        <col width="25%">
+                                        <col width="25%">
+                                        <col width="25%">
+                                        <col width="25%">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th class="center">PM 1:1 멘토링</th>
+                                            <th class="center">협력업체소장 교육</th>
+                                            <th class="center">근로자교육</th>
+                                            <th class="center">비고</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <textarea class="input-tb" cols="100" rows="3">지원내용 맨토링 내용</textarea>
+                                            </td>
+                                            <td>
+                                                <textarea class="input-tb" cols="100" rows="3">지원내용 협력업체소장 교육</textarea>
+                                            </td>
+                                            <td>
+                                                <textarea class="input-tb" cols="100" rows="3">지원내용 교육</textarea>
+                                            </td>
+                                            <td>
+                                                <textarea class="input-tb" cols="100" rows="3">지원내용 비고사항 글</textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4">
+                                                <textarea class="input-tb" cols="100" rows="4">지원내용</textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="center">지원계획</th>
+                            <td colspan="3"><textarea class="input-tb" cols="100" rows="4">지원계획 내용글</textarea></td>
+                        </tr>
+                        <tr>
+                            <th class="center">사업장 지원<br><br>사진대지</th>
+                            <td colspan="3">
+                                <ul class="thum-list">
+                                    <li>
+                                        <div class="attach">
+                                            <div class="btn-area">
+                                                <button class="btn"><img src="../../images/icon/ico_photo.png" alt="사진첨부">사진 첨부</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="btn-area">
+                                            <button class="btn-delete"></button>
+                                        </div>
+                                        <div class="thum-img"><img src="../../images/sample/1.png" alt="" class="img-detail"></div>
+                                    </li>
+                                    <li>
+                                        <div class="btn-area">
+                                            <button class="btn-delete"></button>
+                                        </div>
+                                        <div class="thum-img"><img src="../../images/sample/2.png" alt="" class="img-detail"></div>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr height="40">
+                            <th colspan="3" class="center">점검자</th>
+                            <th class="center">확인자</th>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="bd-r-1">
+                                <div class="d-flex">
+                                    <dl class="item">
+                                        <dt>소속 :</dt>
+                                        <dd>IT솔루션사업부</dd>
+                                    </dl>
+                                    <dl class="item">
+                                        <dt>직급 :</dt>
+                                        <dd>과장</dd>
+                                    </dl>
+                                    <dl class="item">
+                                        <dt>성명 :</dt>
+                                        <dd>
+                                            <div class="input-group bd-1 w100">
+                                                <input type="search" placeholder="" value="이철수">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text trigger-register-wf">
+                                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </td>
+                            <td rowspan="2">
+                                <dl class="txtRefer">
+                                    <dt>소속 : </dt>
+                                    <dd>IT솔루션 사업부</dd>
+                                </dl>
+                                <dl class="txtRefer">
+                                    <dt>직급 : </dt>
+                                    <dd>과장</dd>
+                                </dl>
+                                <dl class="txtRefer">
+                                    <dt>성명 : </dt>
+                                    <dd>홍길동</dd>
+                                </dl>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="bd-r-1">
+                                <div class="d-flex">
+                                    <dl class="item">
+                                        <dt>소속 :</dt>
+                                        <dd>IT솔루션사업부</dd>
+                                    </dl>
+                                    <dl class="item">
+                                        <dt>직책 :</dt>
+                                        <dd>과장</dd>
+                                    </dl>
+                                    <dl class="item">
+                                        <dt>성명 :</dt>
+                                        <dd>
+                                            <div class="input-group bd-1 w100">
+                                                <input type="search" placeholder="" value="김영수">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text trigger-register-wf">
+                                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr height="40">
+                            <th colspan="4" class="center">사진대지</th>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <ul class="thumlist">
+                                    <li>
+                                        <div class="card">
+                                            <button class="btn-delete"></button>
+                                            <img src="../../images/sample/2.png" alt="">
+                                            <div class="card-body">
+                                                <div class="tit">
+                                                    <h5>점검사항</h5>
+                                                    <div class="inspection">
+                                                        <label>개선전 <input type="radio" name="choice-1" checked> </label>
+                                                        <label>개선후 <input type="radio" name="choice-1"> </label>
+                                                        <label>지적사항 <input type="radio" name="choice-1"> </label>
+                                                        <label>우수사항 <input type="radio" name="choice-1"> </label>
+                                                    </div>
+                                                </div>
+                                                <div class="text">
+                                                    <textarea class="input-tb h12" cols="100" rows="5">점검사항 #1</textarea>
+                                                </div>                                     
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="card">
+                                            <button class="btn-delete"></button>
+                                            <img src="../../images/sample/2.png" alt="">
+                                            <div class="card-body">
+                                                <div class="tit">
+                                                    <h5>점검사항</h5>
+                                                    <div class="inspection">
+                                                        <label>개선전 <input type="radio" name="choice-2"> </label>
+                                                        <label>개선후 <input type="radio" name="choice-2" checked> </label>
+                                                        <label>지적사항 <input type="radio" name="choice-2"> </label>
+                                                        <label>우수사항 <input type="radio" name="choice-2"> </label>
+                                                    </div>
+                                                </div>
+                                                <div class="text">
+                                                    <textarea class="input-tb h12" cols="100" rows="5">점검사항 #2</textarea>
+                                                </div>                                     
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="card">
+                                            <button class="btn-delete"></button>
+                                            <img src="../../images/sample/2.png" alt="">
+                                            <div class="card-body">
+                                                <div class="tit">
+                                                    <h5>점검사항</h5>
+                                                    <div class="inspection">
+                                                        <label>개선전 <input type="radio" name="choice-3"> </label>
+                                                        <label>개선후 <input type="radio" name="choice-3"> </label>
+                                                        <label>지적사항 <input type="radio" name="choice-3" checked> </label>
+                                                        <label>우수사항 <input type="radio" name="choice-3"> </label>
+                                                    </div>
+                                                </div>
+                                                <div class="text">
+                                                    <textarea class="input-tb h12" cols="100" rows="5">점검사항 #3</textarea>
+                                                </div>                                     
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="thumlist mt-1">
+                                    <li>
+                                        <div class="card">
+                                            <button class="btn-delete"></button>
+                                            <img src="../../images/sample/2.png" alt="">
+                                            <div class="card-body">
+                                                <div class="tit">
+                                                    <h5>점검사항</h5>
+                                                    <div class="inspection">
+                                                        <label>개선전 <input type="radio" name="choice-4"> </label>
+                                                        <label>개선후 <input type="radio" name="choice-4"> </label>
+                                                        <label>지적사항 <input type="radio" name="choice-4"> </label>
+                                                        <label>우수사항 <input type="radio" name="choice-4" checked> </label>
+                                                    </div>
+                                                </div>
+                                                <div class="text">
+                                                    <textarea class="input-tb h12" cols="100" rows="5">점검사항 #4</textarea>
+                                                </div>                                     
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="card">
+                                            <button class="btn-delete"></button>
+                                            <img src="../../images/sample/2.png" alt="">
+                                            <div class="card-body">
+                                                <div class="tit">
+                                                    <h5>점검사항</h5>
+                                                    <div class="inspection">
+                                                        <label>개선전 <input type="radio" name="choice-5" checked> </label>
+                                                        <label>개선후 <input type="radio" name="choice-5"> </label>
+                                                        <label>지적사항 <input type="radio" name="choice-5"> </label>
+                                                        <label>우수사항 <input type="radio" name="choice-5"> </label>
+                                                    </div>
+                                                </div>
+                                                <div class="text">
+                                                    <textarea class="input-tb h12" cols="100" rows="5">점검사항 #5</textarea>
+                                                </div>                                     
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="card">
+                                            <button class="btn-delete"></button>
+                                            <img src="../../images/sample/2.png" alt="">
+                                            <div class="card-body">
+                                                <div class="tit">
+                                                    <h5>점검사항</h5>
+                                                    <div class="inspection">
+                                                        <label>개선전 <input type="radio" name="choice-6"> </label>
+                                                        <label>개선후 <input type="radio" name="choice-6" checked> </label>
+                                                        <label>지적사항 <input type="radio" name="choice-6"> </label>
+                                                        <label>우수사항 <input type="radio" name="choice-6"> </label>
+                                                    </div>
+                                                </div>
+                                                <div class="text">
+                                                    <textarea class="input-tb h12" cols="100" rows="5">점검사항 #6</textarea>
+                                                </div>                                     
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+
+			<div class="btn-area">
+				<button class="btn-big -grey">취소</button>
+                <button class="btn-big normal">임시저장</button>
+                <button class="btn-big -primary">작성완료</button>
+			</div>
+		</section>
+    </main>
+    
+</div>
+
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>재하도급 방지</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+<body>
+    
+<!-- 출입인원 상세 팝업 -->    
+<div class="modal-wrapper" id="modal-info">
+    <div class="modal">
+        <div class="header">
+            <h1>출입인원 상세
+                <button class="btn btn-close trigger-modify"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <form class="modify">
+				<ul class="form-group">
+					<li>
+						<label>파트너사</label>
+						<input type="text" class="input-tb" placeholder="" value="파트너사 A" disabled="">
+					</li>
+                    <li>
+						<label>계약번호</label>
+						<input type="text" class="input-tb" placeholder="" value="계약번호" disabled="">
+					</li>
+                    <li>
+						<label>계약</label>
+						<input type="text" class="input-tb" placeholder="" value="계약명" disabled="">
+					</li>
+                    <li class="d-flex">
+						<div>
+							<label>성명</label>
+                            <input type="text" class="input-tb" placeholder="" value="홍길동" disabled="">
+                            
+						</div>
+						<div>
+							<label>연락처</label>
+							<input type="text" class="input-tb" placeholder="" value="010-1234-5678" disabled="">
+						</div>
+					</li>
+					<li class="d-flex">
+						<div>
+							<label>생년월일</label>
+							<div class="input_date_box">
+                                <input type="date" class="input-tb" placeholder="" value="1980-01-31" disabled="">
+                            </div>
+						</div>
+						<div>
+							<label>내/외국인</label>
+							<input type="text" class="input-tb" placeholder="" value="내국인" disabled="">
+						</div>
+					</li>
+                    <li>
+						<label>이메일</label>
+						<input type="text" class="input-tb" placeholder="" value="gildong@email.com" disabled="">
+					</li>
+                    <li class="d-flex">
+						<div>
+							<label>하도급구분</label>
+                            <input type="text" class="input-tb" placeholder="" value="하도급" disabled="">
+                            
+						</div>
+						<div>
+							<label>구분</label>
+							<input type="text" class="input-tb" placeholder="" value="계약직" disabled="">
+						</div>
+					</li>
+                    <li>
+						<label>계약기간</label>
+						<div class="d-flex ai-center">
+							<input type="date" class="input-tb" placeholder="" value="2022-01-01" disabled="">
+							<span>~</span>
+							<input type="date" class="input-tb" placeholder="" value="2022-12-31" disabled="">
+						</div>
+					</li>
+                    <li>
+						<label>증빙서류</label>
+						<div class="attachment">
+                            <a class="file-down" href="">개인정보제공동의서.pdf</a>
+                            <a class="file-down" href="">건강보험사업장가입명부.pdf</a>
+                        </div>
+					</li>
+                    <li>
+						<label>비고</label>
+						<input type="text" class="input-tb" placeholder="" value="파트너사 A" disabled="">
+					</li>
+                    <li>
+						<label>반려사유</label>
+						<textarea id="" name="" rows="4" placeholder="최대 100자까지 입력가능합니다."></textarea>
+					</li>
+				</ul>
+            </form>
+        </div>
+		<div class="btn-area">
+			<button class="btn -red">반려</button>
+			<button class="btn -primary">승인</button>
+		</div>
+    </div>
+</div>    
+<!-- // 출입인원 상세 팝업 -->    
+    
+<!-- 반려이력 팝업 -->    
+<div class="modal-wrapper" id="modal-info">
+    <div class="modal">
+        <div class="header">
+            <h1>반려이력
+                <button class="btn btn-close trigger-info"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <ul class="notice return">
+                <li>
+                    <span class="date">2022-06-11 10:01</span>
+                    <p>반려사유입니다.</p>
+                </li>
+                <li>
+                    <span class="date">2022-06-11 10:01</span>
+                    <p>반려사유입니다.</p>
+                </li>
+                <li>
+                    <span class="date">2022-06-11 10:01</span>
+                    <p>반려사유입니다.</p>
+                </li>
+                <li>
+                    <span class="date">2022-06-11 10:01</span>
+                    <p>반려사유입니다.</p>
+                </li>
+                <li>
+                    <span class="date">2022-06-11 10:01</span>
+                    <p>반려사유입니다.</p>
+                </li>
+                <li>
+                    <span class="date">2022-06-11 10:01</span>
+                    <p>반려사유입니다.</p>
+                </li>
+                <li>
+                    <span class="date">2022-06-11 10:01</span>
+                    <p>반려사유입니다.</p>
+                </li>
+                <li>
+                    <span class="date">2022-06-11 10:01</span>
+                    <p>반려사유입니다.</p>
+                </li>
+                <li>
+                    <span class="date">2022-06-11 10:01</span>
+                    <p>반려사유입니다.</p>
+                </li>
+                <li>
+                    <span class="date">2022-06-11 10:01</span>
+                    <p>반려사유입니다.</p>
+                </li>
+            </ul>
+        </div>
+		<div class="btn-area">
+			<button class="btn -primary block">확인</button>
+		</div>
+    </div>
+</div>    
+<!-- // 반려이력 팝업 -->
+
+<!-- 반려사유 팝업 -->    
+<div class="modal-wrapper" id="modal-info">
+    <div class="modal">
+        <div class="header">
+            <h1>반려사유
+                <button class="btn btn-close trigger-info"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <form class="modify">
+                <ul class="form-group">
+                    <li>
+                        <label>반려사유</label>
+                        <textarea id="" name="" rows="6" placeholder="최대 100자까지 입력가능합니다."></textarea>
+                    </li>
+                </ul>
+            </form>
+        </div>
+		<div class="btn-area">
+            <button class="btn -grey">취소</button>
+			<button class="btn -primary">확인</button>
+		</div>
+    </div>
+</div>    
+<!-- // 반려사유 팝업 -->
+    
+<div class="page-wrapper d-flex">
+    <nav id="side-nav" class="side-nav">
+    </nav>
+	
+    <main class="contents">
+        <section class="wrapper">
+            <h1 class="page-title">재하도급방지</h1>
+            <form>
+                <table class="table">
+                    <colgroup>
+						<col width="160">
+						<col width="">
+                        <col width="160">
+						<col width="">
+					</colgroup>
+                    <tbody>
+                        <tr>
+                            <th>파트너사</th>
+                            <td><input type="text" class="input-tb" placeholder="파트너사명"></td>
+                            <th>계약번호</th>
+                            <td>
+                                <select class="form-select">
+                                    <option selected="">Select</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
+                                </select>
+                            </td>
+                            <th>계약</th>
+                            <td><input type="text" class="input-tb" placeholder="계약명"></td>
+                        </tr>
+                        <tr>
+                            <th>구매그룹</th>
+                            <td>
+                                <select class="form-select">
+                                    <option selected="">Select</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
+                                </select>
+                            </td>
+                            <th>프로젝트명</th>
+                            <td><input type="text" class="input-tb" placeholder="프로젝트명"</td>
+                            <th>작성자</th>
+                            <td>
+                                <select class="form-select">
+                                    <option selected="">Select</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btn-area">
+                    <button class="btn-big -grey">초기화</button>
+                    <button class="btn-big -primary">검색</button>
+                </div>
+            </form>
+			
+            <div class="tui-wrapper">
+                <div class="d-flex">
+                    <h2>출입명부<span>(00)</span></h2>
+                    <div class="top btn-area">
+                    </div>
+                </div>
+				
+                <div class="tui-area" title="tui-area">
+                    <table class="table db-t">
+                        <thead>
+                            <tr>
+                                <th>카테고리</th>
+								<th>날짜</th>
+								<th>결과</th>
+								<th>상세내용</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="center"></td>
+								<td class="center"></td>
+								<td class="center"></td>
+								<td class="center"></td>
+                            </tr>
+                        </tbody>
+                    </table>	
+                </div>
+				
+				<div class="toolbar">
+					<div id="paging" class="pagination">
+						<a href="#" id="first" class="disabled"><img src="../../images/icon/ico_double_arrow_left.png" alt="첫 페이지"></a> 
+					  	<a href="#" id="prev" class="disabled"><img src="../../images/icon/ico_arrow_left.png" alt="이전 페이지"></a> 
+						<div id="wrapper">
+							<ul class="page-num">
+								<li><a href="" class="active">1</a></li>
+								<li><a href="">2</a></li>
+								<li><a href="">3</a></li>
+								<li><a href="">4</a></li>
+								<li><a href="">5</a></li>
+								<li><a href="">6</a></li>
+								<li><a href="">7</a></li>
+								<li><a href="">8</a></li>
+								<li><a href="">9</a></li>
+								<li><a href="">10</a></li>
+							</ul>
+						</div>
+						<a href="#" id="next"><img src="../../images/icon/ico_arrow_right.png" alt="다음 페이지"></a>
+						<a href="#" id="last"><img src="../../images/icon/ico_double_arrow_right.png" alt="마지막 페이지"></a>
+					</div>
+					<div class="view-num">
+						<select class="form-select">
+							<option selected="">보기설정</option>
+							<option value="">10</option>
+							<option value="">20</option>
+							<option value="">30</option>
+							<option value="">40</option>
+							<option value="">50</option>
+						</select>
+					</div>
+				</div>
+				
+            </div>
+        </section>
+    </main>
+	
+</div>
+    
+    
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+    
+</body>
+</html>

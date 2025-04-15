@@ -1,0 +1,673 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>품질평가 등록</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+<body>
+
+<!-- 업소(국소) 조회 -->
+<div class="modal-wrapper" id="modal-part">
+    <div class="modal">
+        <div class="header">
+            <h1>업소(국소) 조회
+                <button class="btn btn-close trigger-part"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="card-body">
+                <div class="card-search">
+                    <div class="input-group">
+                        <input type="search" placeholder="업소(국소)명">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <ul class="list pjt">
+                    <li>어등산터널(하행)3_8T_A</li>
+                    <li>어등산터널(하행)3_8T_A</li>
+                    <li>어등산터널(하행)3_8T_A</li>
+                    <li>어등산터널(하행)3_8T_A</li>
+                    <li>어등산터널(하행)3_8T_A</li>
+                    <li>어등산터널(하행)3_8T_A</li>
+                    <li>어등산터널(하행)3_8T_A</li>
+                    <li>어등산터널(하행)3_8T_A</li>
+                </ul>
+                <div class="toolbar">
+					<div id="paging" class="pagination">
+						<a href="#" id="first" class="disabled"><img src="../../images/icon/ico_double_arrow_left.png" alt="첫 페이지"></a> 
+					  	<a href="#" id="prev" class="disabled"><img src="../../images/icon/ico_arrow_left.png" alt="이전 페이지"></a> 
+						<div id="wrapper">
+							<ul class="page-num">
+								<li><a href="" class="active">1</a></li>
+								<li><a href="">2</a></li>
+								<li><a href="">3</a></li>
+								<li><a href="">4</a></li>
+								<li><a href="">5</a></li>
+								<li><a href="">6</a></li>
+								<li><a href="">7</a></li>
+								<li><a href="">8</a></li>
+								<li><a href="">9</a></li>
+								<li><a href="">10</a></li>
+							</ul>
+						</div>
+						<a href="#" id="next"><img src="../../images/icon/ico_arrow_right.png" alt="다음 페이지"></a>
+						<a href="#" id="last"><img src="../../images/icon/ico_double_arrow_right.png" alt="마지막 페이지"></a>
+					</div>
+				</div>
+                <div class="btn-area mt-1">
+                    <button class="btn -grey trigger-part">선택없음</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+    
+<!-- 프로젝트 조회 -->
+<div class="modal-wrapper" id="modal-info">
+    <div class="modal">
+        <div class="header">
+            <h1>프로젝트 조회
+                <button class="btn btn-close trigger-info"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="card-body">
+                <div class="card-search">
+                    <div class="input-group">
+                        <input type="search" placeholder="프로젝트명">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <ul class="list pjt">
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                </ul>
+                <div class="toolbar">
+					<div id="paging" class="pagination">
+						<a href="#" id="first" class="disabled"><img src="../../images/icon/ico_double_arrow_left.png" alt="첫 페이지"></a> 
+					  	<a href="#" id="prev" class="disabled"><img src="../../images/icon/ico_arrow_left.png" alt="이전 페이지"></a> 
+						<div id="wrapper">
+							<ul class="page-num">
+								<li><a href="" class="active">1</a></li>
+								<li><a href="">2</a></li>
+								<li><a href="">3</a></li>
+								<li><a href="">4</a></li>
+								<li><a href="">5</a></li>
+								<li><a href="">6</a></li>
+								<li><a href="">7</a></li>
+								<li><a href="">8</a></li>
+								<li><a href="">9</a></li>
+								<li><a href="">10</a></li>
+							</ul>
+						</div>
+						<a href="#" id="next"><img src="../../images/icon/ico_arrow_right.png" alt="다음 페이지"></a>
+						<a href="#" id="last"><img src="../../images/icon/ico_double_arrow_right.png" alt="마지막 페이지"></a>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+    
+<!-- 파트너사 조회 -->
+<div class="modal-wrapper" id="modal-modify">
+    <div class="modal">
+        <div class="header">
+            <h1>파트너사 조회
+                <button class="btn btn-close trigger-modify"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="card-body">
+                <div class="card-search">
+                    <div class="input-group">
+                        <input type="search" placeholder="파트너사명">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <ul class="list pjt">
+                    <li>(주)파트너사000</li>
+                    <li>(주)파트너사000</li>
+                    <li>(주)파트너사000</li>
+                    <li>(주)파트너사000</li>
+                    <li>(주)파트너사000</li>
+                    <li>(주)파트너사000</li>
+                    <li>(주)파트너사000</li>
+                    <li>(주)파트너사000</li>
+                    <li>(주)파트너사000</li>
+                    <li>(주)파트너사000</li>
+                </ul>
+                <div class="toolbar">
+					<div id="paging" class="pagination">
+						<a href="#" id="first" class="disabled"><img src="../../images/icon/ico_double_arrow_left.png" alt="첫 페이지"></a> 
+					  	<a href="#" id="prev" class="disabled"><img src="../../images/icon/ico_arrow_left.png" alt="이전 페이지"></a> 
+						<div id="wrapper">
+							<ul class="page-num">
+								<li><a href="" class="active">1</a></li>
+								<li><a href="">2</a></li>
+								<li><a href="">3</a></li>
+								<li><a href="">4</a></li>
+								<li><a href="">5</a></li>
+								<li><a href="">6</a></li>
+								<li><a href="">7</a></li>
+								<li><a href="">8</a></li>
+								<li><a href="">9</a></li>
+								<li><a href="">10</a></li>
+							</ul>
+						</div>
+						<a href="#" id="next"><img src="../../images/icon/ico_arrow_right.png" alt="다음 페이지"></a>
+						<a href="#" id="last"><img src="../../images/icon/ico_double_arrow_right.png" alt="마지막 페이지"></a>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+    
+<!-- 평가분야 조회 -->
+<div class="modal-wrapper" id="modal-bm">
+    <div class="modal">
+        <div class="header">
+            <h1>평가분야 조회
+                <button class="btn btn-close trigger-bm"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="card-body">
+                <div class="card-search">
+                    <div class="input-group">
+                        <input type="search" placeholder="평가분야">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <ul class="list pjt">
+                    <li>미디어/시공</li>
+                    <li>통신구/시공</li>
+                    <li>와이파이/시공</li>
+                    <li>지하철/시공</li>
+                    <li>미디어/시공</li>
+                    <li>통신구/시공</li>
+                    <li>와이파이/시공</li>
+                    <li>지하철/시공</li>
+                    <li>미디어/시공</li>
+                    <li>통신구/시공</li>
+                </ul>
+                <div class="toolbar">
+					<div id="paging" class="pagination">
+						<a href="#" id="first" class="disabled"><img src="../../images/icon/ico_double_arrow_left.png" alt="첫 페이지"></a> 
+					  	<a href="#" id="prev" class="disabled"><img src="../../images/icon/ico_arrow_left.png" alt="이전 페이지"></a> 
+						<div id="wrapper">
+							<ul class="page-num">
+								<li><a href="" class="active">1</a></li>
+								<li><a href="">2</a></li>
+								<li><a href="">3</a></li>
+								<li><a href="">4</a></li>
+								<li><a href="">5</a></li>
+								<li><a href="">6</a></li>
+								<li><a href="">7</a></li>
+								<li><a href="">8</a></li>
+								<li><a href="">9</a></li>
+								<li><a href="">10</a></li>
+							</ul>
+						</div>
+						<a href="#" id="next"><img src="../../images/icon/ico_arrow_right.png" alt="다음 페이지"></a>
+						<a href="#" id="last"><img src="../../images/icon/ico_double_arrow_right.png" alt="마지막 페이지"></a>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+    
+<!-- 수검자 조회 -->
+<div class="modal-wrapper" id="modal-check">
+    <div class="modal">
+        <div class="header">
+            <h1>수검자 조회
+                <button class="btn btn-close trigger-check"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="card-body">
+                <div class="card-search">
+                    <div class="input-group">
+                        <input type="search" placeholder="수검자">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="list pjt">
+                    <div class="check-list">
+                        <label class="tr">
+                            <span>주식회사 000</span>
+                            <span class="name"><span class="class">본부장</span>홍길동</span>
+                            <span>정규직</span>
+                        </label>
+                        <label class="tr">
+                            <span>주식회사 000</span>
+                            <span class="name"><span class="class">차장</span>홍길동</span>
+                            <span>정규직</span>
+                        </label>
+                        <label class="tr">
+                            <span>주식회사 000</span>
+                            <span class="name"><span class="class">차장</span>홍길동</span>
+                            <span>정규직</span>
+                        </label>
+                        <label class="tr">
+                            <span>주식회사 000</span>
+                            <span class="name"><span class="class">차장</span>홍길동</span>
+                            <span>정규직</span>
+                        </label>
+                        <label class="tr">
+                            <span>주식회사 000</span>
+                            <span class="name"><span class="class">차장</span>홍길동</span>
+                            <span>정규직</span>
+                        </label>
+                        <label class="tr">
+                            <span>주식회사 000</span>
+                            <span class="name"><span class="class">차장</span>홍길동</span>
+                            <span>정규직</span>
+                        </label>
+                        <label class="tr">
+                            <span>주식회사 000</span>
+                            <span class="name"><span class="class">차장</span>홍길동</span>
+                            <span>정규직</span>
+                        </label>
+                        <label class="tr">
+                            <span>주식회사 000</span>
+                            <span class="name"><span class="class">차장</span>홍길동</span>
+                            <span>정규직</span>
+                        </label>
+                        <label class="tr">
+                            <span>주식회사 000</span>
+                            <span class="name"><span class="class">차장</span>홍길동</span>
+                            <span>정규직</span>
+                        </label>
+                        <label class="tr">
+                            <span>주식회사 000</span>
+                            <span class="name"><span class="class">차장</span>홍길동</span>
+                            <span>정규직</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="toolbar">
+					<div id="paging" class="pagination">
+						<a href="#" id="first" class="disabled"><img src="../../images/icon/ico_double_arrow_left.png" alt="첫 페이지"></a> 
+					  	<a href="#" id="prev" class="disabled"><img src="../../images/icon/ico_arrow_left.png" alt="이전 페이지"></a> 
+						<div id="wrapper">
+							<ul class="page-num">
+								<li><a href="" class="active">1</a></li>
+								<li><a href="">2</a></li>
+								<li><a href="">3</a></li>
+								<li><a href="">4</a></li>
+								<li><a href="">5</a></li>
+								<li><a href="">6</a></li>
+								<li><a href="">7</a></li>
+								<li><a href="">8</a></li>
+								<li><a href="">9</a></li>
+								<li><a href="">10</a></li>
+							</ul>
+						</div>
+						<a href="#" id="next"><img src="../../images/icon/ico_arrow_right.png" alt="다음 페이지"></a>
+						<a href="#" id="last"><img src="../../images/icon/ico_double_arrow_right.png" alt="마지막 페이지"></a>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+    
+<!-- 사업장 조회 -->
+<div class="modal-wrapper" id="modal-place">
+    <div class="modal">
+        <div class="header">
+            <h1>사업장 조회
+                <button class="btn btn-close trigger-place"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="card-body">
+                <div class="card-search">
+                    <div class="input-group">
+                        <input type="search" placeholder="사업장">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <ul class="list pjt">
+                    <li>2021-00005-k(경기도 고양시)</li>
+                    <li>2021-00005-k(경기도 고양시)</li>
+                    <li>2021-00005-k(경기도 고양시)</li>
+                    <li>2021-00005-k(경기도 고양시)</li>
+                    <li>2021-00005-k(경기도 고양시)</li>
+                    <li>2021-00005-k(경기도 고양시)</li>
+                    <li>2021-00005-k(경기도 고양시)</li>
+                    <li>2021-00005-k(경기도 고양시)</li>
+                    <li>2021-00005-k(경기도 고양시)</li>
+                    <li>2021-00005-k(경기도 고양시)</li>
+                </ul>
+                <div class="toolbar">
+					<div id="paging" class="pagination">
+						<a href="#" id="first" class="disabled"><img src="../../images/icon/ico_double_arrow_left.png" alt="첫 페이지"></a> 
+					  	<a href="#" id="prev" class="disabled"><img src="../../images/icon/ico_arrow_left.png" alt="이전 페이지"></a> 
+						<div id="wrapper">
+							<ul class="page-num">
+								<li><a href="" class="active">1</a></li>
+								<li><a href="">2</a></li>
+								<li><a href="">3</a></li>
+								<li><a href="">4</a></li>
+								<li><a href="">5</a></li>
+								<li><a href="">6</a></li>
+								<li><a href="">7</a></li>
+								<li><a href="">8</a></li>
+								<li><a href="">9</a></li>
+								<li><a href="">10</a></li>
+							</ul>
+						</div>
+						<a href="#" id="next"><img src="../../images/icon/ico_arrow_right.png" alt="다음 페이지"></a>
+						<a href="#" id="last"><img src="../../images/icon/ico_double_arrow_right.png" alt="마지막 페이지"></a>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+
+<!-- 진행확인 -->
+<div class="modal-wrapper" id="modal-ctn">
+    <div class="modal">
+        <div class="p-1">
+            <button class="btn btn-close trigger-ctn"></button>
+        </div>
+        <div class="content">
+            <p class="a-center mb-1">수행품질평가 안전관리/안전을 진행하시겠습니까?</p>
+        </div>
+        <div class="btn-area">
+			<button class="btn -grey">다음에</button>
+			<button class="btn -primary">진행</button>
+		</div>
+    </div>
+</div>
+<!-- End Modal -->    
+    
+<div class="page-wrapper d-flex">
+    <nav id="side-nav" class="side-nav">
+    </nav>
+	
+    <main class="contents">
+        <section class="wrapper">
+            <h1 class="page-title">품질평가 &gt; 등록</h1>
+            <form>
+                <table class="table">
+					<colgroup>
+						<col width="160">
+                        <col width="">
+                        <col width="160">
+                        <col width="">
+                        <col width="160">
+                        <col width="">
+					</colgroup>
+                    <tbody>
+                        <tr>
+                            <th>프로젝트 <span class="essential">*</span></th>
+                            <td>
+                                <div class="input-group">
+                                    <input type="search" placeholder="">
+                                    <div class="input-group-append trigger-info">
+                                        <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <th>파트너사명 <span class="essential">*</span></th>
+                            <td>
+                                <div class="input-group">
+                                    <input type="search" placeholder="">
+                                    <div class="input-group-append trigger-modify">
+                                        <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <th>평가분야 <span class="essential">*</span></th>
+                            <td>
+                                <div class="input-group">
+                                    <input type="search" placeholder="">
+                                    <div class="input-group-append trigger-bm">
+                                        <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>사업장명</th>
+                            <td>
+                                <div class="input-group">
+                                    <input type="search" placeholder="">
+                                    <div class="input-group-append trigger-place">
+                                        <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <th>업무(국소명)</th>
+                            <td>
+                                <div class="input-group">
+                                    <input type="search" placeholder="">
+                                    <div class="input-group-append trigger-part">
+                                        <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td colspan="2"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </form>
+			<div class="tui-wrapper">
+                <div class="d-flex p-b-0">
+                    <h2></h2>
+                    <div class="top btn-area">
+                        <button class="btn btn-open">평가항목 불러오기</button>
+                    </div>
+                </div>
+                <div class="tui-area" title="tui-area">
+                    <div class="p-lr-3">
+                        <h2 class="m-0">세부항목 평가</h2>
+                        <table class="table result">
+                            <colgroup>
+                                <col width="30%" class="">
+                                <col width="">
+                                <col width="90" class="bd-l-1">
+                                <col width="90">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th colspan="4">평가구분</th>
+                                </tr>
+                                <tr>
+                                    <th>주요평가항목</th>
+                                    <th>세부평가항목</th>
+                                    <th class="center">배점</th>
+                                    <th class="center">선택</th>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <th colspan="3">사진대지/감점사유</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="4"><strong>평가구분1</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>주요평가항목1</td>
+                                    <td>세부평가항목1</td>
+                                    <td class="center">00</td>
+                                    <td class="center"><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>주요평가항목2</td>
+                                    <td>세부평가항목1</td>
+                                    <td class="center">00</td>
+                                    <td class="center"><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4"><strong>평가구분2</strong></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">주요평가항목1</td>
+                                    <td>세부평가항목1</td>
+                                    <td class="center">00</td>
+                                    <td class="center"><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>세부평가항목2</td>
+                                    <td class="center">00</td>
+                                    <td class="center"><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>세부평가항목3</td>
+                                    <td class="center">00</td>
+                                    <td class="center"><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>주요평가항목2</td>
+                                    <td>세부평가항목1</td>
+                                    <td class="center">00</td>
+                                    <td class="center"><input type="checkbox"></td>
+                                </tr>
+                                <tr class="edit">
+                                    <td></td>
+                                    <td colspan="3">
+                                        <div class="img-list">
+                                            <ul>
+                                                <li class="w100 p-0 m-0">
+                                                    <!-- 사진 첨부 되었을 때 -->
+                                                    <!--<a href="../../images/sample/1.png" style="width:18rem; height: 9.4rem;" target="_blank">
+                                                        <button class="btn-delete"></button>
+                                                        <img src="../../images/sample/1.png" alt="">
+                                                    </a>-->
+                                                    <div class="attach">
+                                                        <div class="btn-area">
+                                                            <button class="btn"><img src="../../images/icon/ico_photo.png" alt="사진첨부">사진 첨부</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="info">
+                                                        <textarea class="input-tb" cols="100" rows="4" placeholder="100자 이내로 입력해주세요."></textarea>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4"><strong>평가구분n</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>주요평가항목1</td>
+                                    <td>세부평가항목1</td>
+                                    <td class="center">00</td>
+                                    <td class="center"><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>주요평가항목2</td>
+                                    <td>세부평가항목1</td>
+                                    <td class="center">00</td>
+                                    <td class="center"><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <th colspan="2"></th>
+                                    <th>00</th>
+                                    <th>-00</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <table class="table mt-3 mb-3 l-fixed">
+                            <colgroup>
+                                <col width="160">
+                                <col width="">
+                                <col width="160">
+                                <col width="">
+                            </colgroup>
+                            <tbody>
+                                <tr class="edit">
+                                    <th>종합의견 <span class="essential">*</span></th>
+                                    <td colspan="3"><textarea class="input-tb" cols="100" rows="4" placeholder="100자 이내로 입력해주세요."></textarea></td>
+                                </tr>
+                                <tr>
+                                    <th>품질평가일시 <span class="essential">*</span></th>
+                                    <td><input type="datetime" class="input-tb" placeholder="" value="2022-12-12 12:30" disabled></td>
+                                    <th>점검자 <span class="essential">*</span></th>
+                                    <td><input type="text" class="input-tb" placeholder="" value="홍길동" disabled></td>
+                                </tr>
+                                <tr>
+                                    <th>수검자 <span class="essential">*</span></th>
+                                    <td>
+                                        <div class="input-group disabled">
+                                            <input type="search" placeholder="" value="홍길동" disabled>
+                                            <div class="input-group-append trigger-check">
+                                                <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <th>확인자 <span class="essential">*</span></th>
+                                    <td><input type="text" class="input-tb" placeholder="" value="홍길동" disabled></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    
+                    
+                </div>
+                
+            </div>
+            
+            <div class="btn-area">
+				<button class="btn-big -grey">취소</button>
+                <button class="btn-big normal">임시저장</button>
+				<button class="btn-big -primary trigger-ctn">작성완료</button>
+			</div>
+            
+        </section>
+    </main>
+    
+</div>
+    
+    
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+    
+</body>
+</html>

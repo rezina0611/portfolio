@@ -1,0 +1,262 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>교육자료 관리</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+<body>
+
+<!-- 조회이력 -->    
+<div class="modal-wrapper" id="modal-info">
+    <div class="modal">
+        <div class="header">
+            <h1>조회이력
+                <button class="btn btn-close trigger-info"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <table class="table db-t">
+                <colgroup>
+                    <col width="60">
+                    <col width="*">
+                    <col width="160">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>조회자</th>
+                        <th>조회일시</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>홍길동 [회사명/직급]</td>
+                        <td>2022-10-12 09:00:00</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>홍길동 [회사명/직급]</td>
+                        <td>2022-10-12 09:00:00</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>홍길동 [회사명/직급]</td>
+                        <td>2022-10-12 09:00:00</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>홍길동 [회사명/직급]</td>
+                        <td>2022-10-12 09:00:00</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>홍길동 [회사명/직급]</td>
+                        <td>2022-10-12 09:00:00</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>홍길동 [회사명/직급]</td>
+                        <td>2022-10-12 09:00:00</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>홍길동 [회사명/직급]</td>
+                        <td>2022-10-12 09:00:00</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>홍길동 [회사명/직급]</td>
+                        <td>2022-10-12 09:00:00</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>홍길동 [회사명/직급]</td>
+                        <td>2022-10-12 09:00:00</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>홍길동 [회사명/직급]</td>
+                        <td>2022-10-12 09:00:00</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="toolbar">
+                <div class="pagination">
+                    <a href="#" id="first" class="disabled"><img src="../../images/icon/ico_double_arrow_left.png" alt="첫 페이지"></a> 
+                    <a href="#" id="prev" class="disabled"><img src="../../images/icon/ico_arrow_left.png" alt="이전 페이지"></a> 
+                    <div id="wrapper">
+                        <ul class="page-num">
+                            <li><a href="" class="active">1</a></li>
+                            <li><a href="">2</a></li>
+                            <li><a href="">3</a></li>
+                            <li><a href="">4</a></li>
+                            <li><a href="">5</a></li>
+                            <li><a href="">6</a></li>
+                            <li><a href="">7</a></li>
+                            <li><a href="">8</a></li>
+                            <li><a href="">9</a></li>
+                            <li><a href="">10</a></li>
+                        </ul>
+                    </div>
+                    <a href="#" id="next"><img src="../../images/icon/ico_arrow_right.png" alt="다음 페이지"></a>
+                    <a href="#" id="last"><img src="../../images/icon/ico_double_arrow_right.png" alt="마지막 페이지"></a>
+                </div>
+            </div>
+        </div>
+		<div class="btn-area">
+			<button class="btn -grey block trigger-info">닫기</button>
+		</div>
+    </div>
+</div>    
+<!-- // 조회이력 -->
+    
+<div class="page-wrapper d-flex">
+    <nav id="side-nav" class="side-nav">
+    </nav>
+	
+    <main class="contents">
+        <section class="wrapper">
+            <h1 class="page-title">교육자료 관리</h1>
+            <form>
+                <table class="table">
+					<colgroup>
+						<col width="160">
+						<col width="*">
+                        <col width="160">
+						<col width="*">
+                        <col width="160">
+						<col width="*">
+					</colgroup>
+                    <tbody>
+						<tr>
+                            <th>제목</th>
+							<td>
+                                <select class="form-select">
+                                    <option selected="">분류</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
+                                </select>
+                            </td>
+                        	<th>제목</th>
+							<td><input type="text" class="input-tb" placeholder=""></td>
+                            <th>등록자</th>
+							<td><input type="text" class="input-tb" placeholder=""></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btn-area">
+                    <button class="btn-big -grey">초기화</button>
+                    <button class="btn-big -primary">검색</button>
+                </div>
+            </form>
+			
+            <div class="tui-wrapper">
+                <div class="d-flex">
+                    <h2>교육자료 조회<span>(00)</span></h2>
+                    <div class="top btn-area">
+                        <button class="btn btn-delete">삭제</button>
+						<button class="btn btn-write">등록</button>
+                    </div>
+                </div>
+				
+                <div class="tui-area" title="tui-area">
+                    <table class="table db-t l-fixed">
+                        <colgroup>
+							<col width="60">
+							<col width="70">
+                            <col width="90">
+							<col width="*">
+							<col width="100">
+							<col width="120">
+                            <col width="80">
+						</colgroup>
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox"></th>
+								<th>No</th>
+                                <th>분류</th>
+								<th>제목</th>
+								<th>등록자</th>
+								<th>등록일자</th>
+                                <th>조회수</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox"></td>
+								<td>100</td>
+                                <td>공지</td>
+                                <td class="left"><a href="#">공지사항 입니다.<span class="ico-new">new</span></a></td>
+                                <td>홍길동</td>
+                                <td>2021-12-10</td>
+                                <td><a href="" class="trigger-info">10</a></td>
+                            </tr>
+							<tr>
+                                <td><input type="checkbox"></td>
+								<td>99</td>
+                                <td>일반</td>
+                                <td class="left"><a href="#">공지사항 입니다.</a></td>
+                                <td>홍길동</td>
+                                <td>2021-12-10</td>
+                                <td><a href="" class="trigger-info">20</a></td>
+                            </tr>
+                           
+                        </tbody>
+                    </table>	
+                </div>
+				
+				<div class="toolbar">
+					<div id="paging" class="pagination">
+						<a href="#" id="first" class="disabled"><img src="../../images/icon/ico_double_arrow_left.png" alt="첫 페이지"></a> 
+					  	<a href="#" id="prev" class="disabled"><img src="../../images/icon/ico_arrow_left.png" alt="이전 페이지"></a> 
+						<div id="wrapper">
+							<ul class="page-num">
+								<li><a href="" class="active">1</a></li>
+								<li><a href="">2</a></li>
+								<li><a href="">3</a></li>
+								<li><a href="">4</a></li>
+								<li><a href="">5</a></li>
+								<li><a href="">6</a></li>
+								<li><a href="">7</a></li>
+								<li><a href="">8</a></li>
+								<li><a href="">9</a></li>
+								<li><a href="">10</a></li>
+							</ul>
+						</div>
+						<a href="#" id="next"><img src="../../images/icon/ico_arrow_right.png" alt="다음 페이지"></a>
+						<a href="#" id="last"><img src="../../images/icon/ico_double_arrow_right.png" alt="마지막 페이지"></a>
+					</div>
+					<div class="view-num">
+						<select class="form-select">
+							<option selected="">보기설정</option>
+							<option value="">10</option>
+							<option value="">20</option>
+							<option value="">30</option>
+							<option value="">40</option>
+							<option value="">50</option>
+						</select>
+					</div>
+				</div>
+				
+            </div>
+        </section>
+    </main>
+	
+</div>
+    
+    
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+    
+</body>
+</html>

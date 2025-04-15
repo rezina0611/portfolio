@@ -1,0 +1,277 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>ARAS</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+    
+<body>
+	  
+<div class="page-wrapper d-flex">
+	<nav id="side-nav" class="side-nav">
+    </nav>
+	
+    <main class="contents">
+        <section class="wrapper">
+            <h1 class="page-title">질문 게시판 &gt; 상세</h1>
+            <form>
+                <table class="table dt">
+					<colgroup>
+						<col width="160">
+						<col width="*">
+					</colgroup>
+                    <tbody>
+						<tr>
+							<th>제목</th>
+                            <td>제목입니다.</td>
+						</tr>
+                        <tr>
+                        	<th>내용</th>
+							<td>내용입니다.<br>내용입니다.<br>내용입니다.<br>내용입니다.<br></td>
+                        </tr>
+						<tr>
+                        	<th>등록자</th>
+							<td>홍길동</td>
+                        </tr>
+						<tr>
+                        	<th>등록일</th>
+							<td>2021-11-22</td>
+                        </tr>
+						<tr>
+                        	<th>첨부파일</th>
+							<td>
+								<div class="attachment">
+									<a class="file-down" href="">2차 메뉴얼1</a>
+									<a class="file-down" href="">2차 메뉴얼2</a>
+								</div>
+							</td>
+                        </tr>
+                    </tbody>
+                </table>
+				<div class="comment-wrapper">
+					<div class="comments-head">
+						<span class="num-comment">댓글<span class="num">15</span></span>
+						<!--<a class="btn comment" href="#">댓글 등록</a>-->
+					</div>
+					<div class="comments">
+						<ul>
+                            <!-- 답글 없을 때 default -->
+                            <li>
+								<div class="comment-head">
+									<div class="from">
+										<span class="writer">시스템 관리자</span>
+										<span class="date">2021-11-08 11:40</span>
+									</div>
+                                    <div class="setting-cmt-wrapper">
+                                        <ul class="setting-cmt">
+                                            <li><a href="">수정</a></li>
+                                            <li><a href="">삭제</a></li>
+                                        </ul>
+                                    </div>
+								</div>
+								<div class="comment-body">
+									댓글내용입니다. <br>
+									댓글내용입니다.
+								</div>
+                                <!-- 답글 달기 -->
+                                <details class="comment-reply">
+                                    <summary class="btn-sm -grey">답글</summary>
+                                    <ul>
+                                        <li class="write-box">
+                                            <textarea placeholder="최대 300자까지 입력가능합니다." rows="3"></textarea>
+                                            <div class="count-btn">
+                                                <span>0/300</span>
+                                                <button class="btn-sm -grey">등록</button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </details>
+							</li>
+                            <!-- // 답글 없을 때 default -->
+                            
+                            <!-- 댓글 수정시 -->
+                            <li>
+								<div class="comment-head">
+									<div class="from">
+										<span class="writer">시스템 관리자</span>
+										<span class="date">2021-11-08 11:40</span>
+									</div>
+								</div>
+                                <div class="write-box">
+                                    <textarea placeholder="최대 300자까지 입력가능합니다." rows="3"></textarea>
+                                    <div class="count-btn">
+                                        <span>0/300</span>
+                                        <button class="btn-sm -grey">수정</button>
+                                    </div>
+                                </div>
+							</li>
+                            <!-- // 댓글 수정시 -->
+                            
+                            <!-- 답글 있을때, 답글 수정 포함 -->
+							<li>
+								<div class="comment-head">
+									<div class="from">
+										<span class="writer">홍길동</span>
+										<span class="date">2021-11-08 11:40</span>
+									</div>
+									<div class="setting-cmt-wrapper">
+                                        <ul class="setting-cmt">
+                                            <li><a href="">수정</a></li>
+                                            <li><a href="">삭제</a></li>
+                                        </ul>
+                                    </div>
+								</div>
+								<div class="comment-body">
+									댓글내용입니다. <br>
+									댓글내용입니다.
+								</div>
+                                <!-- 답글 달기 -->
+                                <details class="comment-reply">
+                                    <summary class="btn-sm -grey">답글</summary>
+                                    <ul>
+                                        <li class="write-box">
+                                            <textarea placeholder="최대 300자까지 입력가능합니다." rows="3"></textarea>
+                                            <div class="count-btn">
+                                                <span>0/300</span>
+                                                <button class="btn-sm -grey">등록</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="from">
+                                                <span class="writer">홍길동</span>
+                                                <span class="date">2021.11.08 11:40</span>
+                                            </div>
+                                            <!-- 댓글 > 답글 수정/삭제 추가  2022-10-14 -->
+                                            <div class="setting-cmt-wrapper">
+                                                <ul class="setting-cmt">
+                                                    <li><a href="">수정</a></li>
+                                                    <li><a href="">삭제</a></li>
+                                                </ul>
+                                            </div>
+                                            <!-- // 댓글 > 답글 수정/삭제 추가  2022-10-14 -->
+                                            <div class="reply-txt">
+                                                <p>답글 내용입니다.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="from">
+                                                <span class="writer">홍길동</span>
+                                                <span class="date">2021.11.08 11:40</span>
+                                            </div>
+                                            <div class="write-box">
+                                                <textarea placeholder="최대 300자까지 입력가능합니다." rows="3"></textarea>
+                                                <div class="count-btn">
+                                                    <span>0/300</span>
+                                                    <button class="btn-sm -grey">수정</button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </details>
+							</li>
+                            <!-- // 답글 있을때, 답글 수정 포함 -->
+                            
+                            <!-- 답글 있을때 -->
+							<li>
+								<div class="comment-head">
+									<div class="from">
+										<span class="writer">홍길동</span>
+										<span class="date">2021-11-08 11:40</span>
+									</div>
+									<div class="setting-cmt-wrapper">
+                                        <ul class="setting-cmt">
+                                            <li><a href="">수정</a></li>
+                                            <li><a href="">삭제</a></li>
+                                        </ul>
+                                    </div>
+								</div>
+								<div class="comment-body">
+									댓글내용입니다. <br>
+									댓글내용입니다.
+								</div>
+                                <!-- 답글 달기 -->
+                                <details class="comment-reply">
+                                    <summary class="btn-sm -grey">답글</summary>
+                                    <ul>
+                                        <li class="write-box">
+                                            <textarea placeholder="최대 300자까지 입력가능합니다." rows="3"></textarea>
+                                            <div class="count-btn">
+                                                <span>0/300</span>
+                                                <button class="btn-sm -grey">등록</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="from">
+                                                <span class="writer">홍길동</span>
+                                                <span class="date">2021.11.08 11:40</span>
+                                            </div>
+                                            <!-- 댓글 > 답글 수정/삭제 추가  2022-10-14 -->
+                                            <div class="setting-cmt-wrapper">
+                                                <ul class="setting-cmt">
+                                                    <li><a href="">수정</a></li>
+                                                    <li><a href="">삭제</a></li>
+                                                </ul>
+                                            </div>
+                                            <!-- // 댓글 > 답글 수정/삭제 추가  2022-10-14 -->
+                                            <div class="reply-txt">
+                                                <p>답글 내용입니다.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="from">
+                                                <span class="writer">홍길동</span>
+                                                <span class="date">2021.11.08 11:40</span>
+                                            </div>
+                                            <!-- 댓글 > 답글 수정/삭제 추가  2022-10-14 -->
+                                            <div class="setting-cmt-wrapper">
+                                                <ul class="setting-cmt">
+                                                    <li><a href="">수정</a></li>
+                                                    <li><a href="">삭제</a></li>
+                                                </ul>
+                                            </div>
+                                            <!-- // 댓글 > 답글 수정/삭제 추가  2022-10-14 -->
+                                            <div class="reply-txt">
+                                                <p>답글 내용입니다.</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </details>
+							</li>
+                            <!-- // 답글 있을때 -->
+						</ul>
+                        
+                        <div class="write-box">
+                            <textarea placeholder="최대 300자까지 입력가능합니다." rows="3"></textarea>
+                            <div class="count-btn">
+                                <span>0/300</span>
+                                <button class="btn-sm -grey">등록</button>
+                            </div>
+                        </div>
+					</div>
+				</div>
+				
+                <div class="btn-area">
+                    <button class="btn-big -red">삭제</button>
+                    <button class="btn-big -primary">수정</button>
+                    <button class="btn-big -grey">목록</button>
+                </div>
+            </form>
+
+        </section>
+    </main>
+    
+</div>
+    
+    
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+
+</body>
+</html>

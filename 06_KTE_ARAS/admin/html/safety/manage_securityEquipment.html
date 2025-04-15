@@ -1,0 +1,300 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>ARAS</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+    
+<body>
+
+<!-- Modal -->
+<div class="modal-wrapper" id="modal-modify">
+    <div class="modal">
+        <div class="header">
+            <h1>품목을 등록하세요
+                <button class="btn btn-close trigger-modify"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <form class="modify">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td><input type="text" class="input-tb" placeholder=""></td>
+                        </tr>
+						<tr>
+                            <td><input type="text" class="input-tb" placeholder=""></td>
+                        </tr>
+						<tr>
+                            <td><input type="text" class="input-tb" placeholder=""></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+            <div class="btn-area">
+                <button class="btn -grey">취소</button>
+                <button class="btn -primary">등록</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+
+<div class="page-wrapper d-flex">
+    <nav id="side-nav" class="side-nav">
+		<div class="side-nav-header">
+			<div class="ico-menu-list">
+				<button class="ico-btn"><img src="../../images/icon/ico_notification.png" alt="알림"></button>
+				<button class="ico-btn" id="logOutBtn"><img src="../../images/icon/ico_logout_wh.png" alt="로그아웃"></button>
+			</div>
+		</div>
+        <div class="brand-user">
+            <div class="brand">
+                <img src="../../images/logo-aras-kr.png" alt="아라스 로고">
+            </div>
+        </div>
+		<div class="user">
+			<a href="">
+				<img src="../../images/icon/ico_user.png" alt="시스템관리자">
+				<span class="name">시스템관리자</span>
+			</a>
+		</div>
+        <div class="side-menu">
+            <ul>
+                <li><a href=""><img src="../../images/icon/ico_sidebar_map_wh.png" alt="지도">지도</a></li>
+                <li><a href=""><img src="../../images/icon/ico_sidebar_pj_wh.png" alt="프로잭트">프로젝트</a></li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_place_wh.png" alt="현장관리">현장관리</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">현장정보</a></li>
+                            <li><a href="#">현장관리</a></li>
+                            <li><a href="#">공정분류설정</a></li>
+                            <li><a href="#">OCR데이터관리</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_material_wh.png" alt="자재관리">자재관리</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">자재구매관리</a></li>
+                            <li><a href="#">자재현황관리</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_safety_wh.png" alt="안전관리">안전관리</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">위험성평가회의</a></li>
+                            <li><a href="#">일일안전활동보고</a></li>
+                            <li><a href="#">안전관리용품</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_safety_board_wh.png" alt="안전관리 게시판">안전관리 게시판</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">안전보건관리 수행계획서</a></li>
+                            <li><a href="#">위험작업 사전허가요청서</a></li>
+                            <li><a href="#">작업허가서</a></li>
+                            <li><a href="#">작업계획서</a></li>
+							<li><a href="#">안전보건교육일지</a></li>
+                            <li><a href="#">안전점검의 날 행사</a></li>
+                            <li><a href="#">협의체 회의록</a></li>
+                            <li><a href="#">사업장 합동안전점검</a></li>
+							<li><a href="#">산업안전보건관리비</a></li>
+                            <li><a href="#">임원/교차 합동안전점검</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_assess_wh.png" alt="수행품질평가">수행품질평가</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">품질평가 결과조회</a></li>
+                            <li><a href="#">협력사별 종합표</a></li>
+                            <li><a href="#">프로젝트별 종합표</a></li>
+                            <li><a href="#">품질평가 진행현황</a></li>
+							<li><a href="#">품질평가 항목관리</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_board_wh.png" alt="게시판">게시판</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">프로젝트 게시판</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-menu-dropdown">
+                    <a href="#"><img src="../../images/icon/ico_sidebar_sys_manage_wh.png" alt="시스템관리">시스템관리</a>
+                    <div class="side-menu-submenu">
+                        <ul>
+                            <li><a href="#">메뉴권한관리</a></li>
+                            <li><a href="#">조직관리</a></li>
+                            <li><a href="#">권한관리</a></li>
+                            <li><a href="#">사용자관리</a></li>
+							<li><a href="#">로그인 히스토리</a></li>
+                            <li><a href="#">공정진행 단계관리</a></li>
+                            <li><a href="#">공정분류 코드관리</a></li>
+                            <li><a href="#">안전장구 물품관리</a></li>
+							<li><a href="#">위험평가항목 코드관리</a></li>
+                            <li><a href="#">품질평가항목관리</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+	
+    <main class="contents">
+        <section class="wrapper">
+            <h1 class="page-title">안전관리용품 &gt; 등록</h1>
+            <form>
+                <table class="table l-fixed">
+					<colgroup>
+                        <col width="160">
+                        <col width="">
+                        <col width="160">
+                        <col width="">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>
+                                <div class="d-flex">
+                                    <span>프로젝트코드<span class="required">*</span></span>
+                                    <button type="button" id="projectBtn" class="btn-search"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                </div>
+                            </th>
+							<td><input type="text" class="input-tb" placeholder=""></td>
+                            <th>프로젝트명<span class="required">*</span></th>
+                            <td><input type="text" class="input-tb" placeholder=""></td>
+                        </tr>
+                        <tr>
+                        	<th>협력사<span class="required">*</span></th>
+							<td><input type="text" class="input-tb" placeholder=""></td>
+                            <th>구매오더번호<span class="required">*</span></th>
+                            <td>
+                                <div class="d-flex">
+                                    <input type="text" id="buyOrderCode" name="buyOrderCode" class="input-tb" maxlength="10" value="" placeholder="SAP 구매오더번호 10자리를 입력하세요.">
+                                    <span id="checkTxt"></span>
+                                    <button type="button" id="overlapCheckBtn" name="overlapCheckBtn" class="btn free -blue">중복체크</button>
+                                    <button type="button" id="makeYCodeBtn" onclick="fn_makeBuyOrderCode('Y')" class="btn free -blue">직접구매</button>
+                                    <button type="button" id="makeNCodeBtn" onclick="fn_makeBuyOrderCode('N')" class="btn free -red" style="display: none; margin-left: 5px;">직접구매 취소</button>
+                                </div>
+							</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+            <div class="tui-wrapper">
+                <div class="d-flex">
+					<div></div>
+                    <div class="top btn-area">
+                        <button class="btn -blue"><i class="fas fa-receipt"></i>구매내역추가</button>
+						<button class="btn -blue trigger-modify"><i class="fas fa-plus-square"></i>품목추가</button>
+                    </div>
+                </div>
+                <div class="tui-area" title="tui-area">
+                    <table class="table frm-t">
+                        <colgroup>
+                            <col width="300">
+                            <col width="">
+                            <col width="180">
+                            <col width="100">
+                            <col width="200">
+                            <col width="">
+                            <col width="60">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>품목명<span class="required">*</span></th>
+                                <th>규격/내역</th>
+                                <th>상품코드(KTC품목코드)<span class="required">*</span></th>
+                                <th>구매수량<span class="required">*</span></th>
+                                <th>구매단가<span class="required">*</span></th>
+                                <th>주문제품사진</th>
+                                <th>삭제</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="input-group">
+                                        <input type="search" placeholder="">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><input type="text" class="input-tb" placeholder=""></td>
+                                <td><input type="text" class="input-tb" placeholder=""></td>
+                                <td><input type="text" class="input-tb" placeholder=""></td>
+                                <td><input type="text" class="input-tb" placeholder=""></td>
+                                <td class="center"><input multiple="mutiple" type="file" name="purchaseImage"></td>
+                                <td class="center"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="input-group">
+                                        <input type="search" placeholder="">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><input type="text" class="input-tb" placeholder=""></td>
+                                <td><input type="text" class="input-tb" placeholder=""></td>
+                                <td><input type="text" class="input-tb" placeholder=""></td>
+                                <td><input type="text" class="input-tb" placeholder=""></td>
+                                <td class="center"><input multiple="mutiple" type="file" name="purchaseImage"></td>
+                                <td class="center"><a href="#"><i class="far fa-trash-alt"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="input-group">
+                                        <input type="search" placeholder="">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><input type="text" class="input-tb" placeholder=""></td>
+                                <td><input type="text" class="input-tb" placeholder=""></td>
+                                <td><input type="text" class="input-tb" placeholder=""></td>
+                                <td><input type="text" class="input-tb" placeholder=""></td>
+                                <td class="center"><input multiple="mutiple" type="file" name="purchaseImage"></td>
+                                <td class="center"><a href="#"><i class="far fa-trash-alt"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+			
+			<div class="btn-area">
+				<button class="btn-big -grey">취소</button>
+				<button class="btn-big -primary">등록</button>
+			</div>
+		</section>
+    </main>
+    
+</div>
+    
+    
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1947 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>전사 대시보드</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+    
+<body>
+    
+<!-- 본부별 수행 프로젝트 현황 2023-01-02 -->
+<div class="modal-wrapper" id="modal-db07">
+    <div class="modal widen">
+        <div class="header">
+            <h1>본부별 수행 프로젝트 현황
+                <button class="btn btn-close trigger-db07"></button>
+            </h1>
+        </div>
+        <div class="content p-0">
+            <div class="tui-wrapper panel">
+                <div id="tab-menu" class="tab-menu">
+                    <div id="tab-btn" class="tab-btn">
+                        <ul class="tab">
+                            <li class="active"><button>전체</button></li>
+                            <li class=""><button>고위험</button></li>
+                            <li class=""><button>일반</button></li>
+                        </ul>
+                    </div>
+                    <div id="tab-cont" class="tab-cont">
+                        <div title="tab-cont-total" style="display: block;">
+                            <table class="table db-t">
+                                <colgroup>
+                                    <col width="60">
+                                    <col width="120">
+                                    <col width="*">
+                                    <col width="110">
+                                    <col width="150">
+                                    <col width="100">
+                                    <col width="110">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>구분</th>
+                                        <th>프로젝트코드</th>
+                                        <th>프로젝트</th>
+                                        <th>준공일</th>
+                                        <th class="right">수주금액</th>
+                                        <th>PM</th>
+                                        <th class="center">본부</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>A229999</td>
+                                        <td>아라스 고도화</td>
+                                        <td>2022-06-04</td>
+                                        <td class="right">500,000,000</td>
+                                        <td>홍길동</td>
+                                        <td class="center">NW</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>A229999</td>
+                                        <td>아라스 고도화</td>
+                                        <td>2022-06-04</td>
+                                        <td class="right">500,000,000</td>
+                                        <td>홍길동</td>
+                                        <td class="center">NW</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>A229999</td>
+                                        <td>아라스 고도화</td>
+                                        <td>2022-06-04</td>
+                                        <td class="right">500,000,000</td>
+                                        <td>홍길동</td>
+                                        <td class="center">NW</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>A229999</td>
+                                        <td>아라스 고도화</td>
+                                        <td>2022-06-04</td>
+                                        <td class="right">500,000,000</td>
+                                        <td>홍길동</td>
+                                        <td class="center">NW</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>A229999</td>
+                                        <td>아라스 고도화</td>
+                                        <td>2022-06-04</td>
+                                        <td class="right">500,000,000</td>
+                                        <td>홍길동</td>
+                                        <td class="center">NW</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>A229999</td>
+                                        <td>아라스 고도화</td>
+                                        <td>2022-06-04</td>
+                                        <td class="right">500,000,000</td>
+                                        <td>홍길동</td>
+                                        <td class="center">NW</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>A229999</td>
+                                        <td>아라스 고도화</td>
+                                        <td>2022-06-04</td>
+                                        <td class="right">500,000,000</td>
+                                        <td>홍길동</td>
+                                        <td class="center">NW</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>A229999</td>
+                                        <td>아라스 고도화</td>
+                                        <td>2022-06-04</td>
+                                        <td class="right">500,000,000</td>
+                                        <td>홍길동</td>
+                                        <td class="center">NW</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>A229999</td>
+                                        <td>아라스 고도화</td>
+                                        <td>2022-06-04</td>
+                                        <td class="right">500,000,000</td>
+                                        <td>홍길동</td>
+                                        <td class="center">NW</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>A229999</td>
+                                        <td>아라스 고도화</td>
+                                        <td>2022-06-04</td>
+                                        <td class="right">500,000,000</td>
+                                        <td>홍길동</td>
+                                        <td class="center">NW</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div title="tab-cont-2">
+                            <table class="table db-t v-middle">
+                                <colgroup>
+                                    <col width="60">
+                                    <col width="120">
+                                    <col width="*">
+                                    <col width="120">
+                                    <col width="110">
+                                    <col width="450">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>구분</th>
+                                        <th>프로젝트코드</th>
+                                        <th>프로젝트</th>
+                                        <th>본부</th>
+                                        <th>PM</th>
+                                        <th>위험요인</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>A229999</td>
+                                        <td><a href="#none">2019년 무선망 시설공사 총액계약</a></td>
+                                        <td>NW</td>
+                                        <td>홍길동</td>
+                                        <td>
+                                            <ul class="no-list">
+                                                <li>지붕 작업 중 안전대 부착설비 미설치로 인하여 근로자 추락</li>
+                                                <li>지붕 작업 중 선라이트, 슬레이트 소재의 지붕이 파손되어 근로자 추락</li>
+                                                <li>고소작업차량 탑승하여 작업 중 안전대 미착용으로 인하여 근로자 추락</li>
+                                                <li>근로자 안전화 미착용하여 작업 중 전도 위험</li>
+                                                <li>작업구간 정리정돈 미실시로 인한 안전통로 확보 미흡으로 근로자 전도</li>
+                                                <li>장비 등 시설물 설치 미흡으로 인하여 낙하물 발생 및 하부 보행자 강타</li>
+                                                <li>자재를 불안정하게 적치하여 작업 중 강풍으로 인하여 이탈한 낙하물이 근로자 강타</li>
+                                                <li>크레인 작업 중 샤클 및 하카의 체결 방식 불량으로 인하여 이탈한 낙하물이 근로자 강타</li>
+                                                <li>크레인 작업 반경 내 근로자 접근통제 미흡으로 인하여 낙하물이 근로자 강타</li>
+                                                <li>전원 차단 미실시하여 작업 중 노출된 전원부에 근로자 감전 위험</li>
+                                                <li>이중절연구조 제품이 아닌 전기공도구 사용 중 근로자 감전 위험</li>
+                                                <li>건설기계 진입∙이탈 중 주변 근로자 및 시설물 확인 미흡으로 인하여 충돌</li>
+                                                <li>장비 등 중량물 운반 작업 중 허리, 손목, 발목 등 염좌 위험</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>A229999</td>
+                                        <td><a href="#none">2019년 무선망 시설공사 총액계약</a></td>
+                                        <td>NW</td>
+                                        <td>홍길동</td>
+                                        <td>
+                                            <ul class="no-list">
+                                                <li>지붕 작업 중 안전대 부착설비 미설치로 인하여 근로자 추락</li>
+                                                <li>지붕 작업 중 선라이트, 슬레이트 소재의 지붕이 파손되어 근로자 추락</li>
+                                                <li>고소작업차량 탑승하여 작업 중 안전대 미착용으로 인하여 근로자 추락</li>
+                                                <li>근로자 안전화 미착용하여 작업 중 전도 위험</li>
+                                                <li>작업구간 정리정돈 미실시로 인한 안전통로 확보 미흡으로 근로자 전도</li>
+                                                <li>장비 등 시설물 설치 미흡으로 인하여 낙하물 발생 및 하부 보행자 강타</li>
+                                                <li>자재를 불안정하게 적치하여 작업 중 강풍으로 인하여 이탈한 낙하물이 근로자 강타</li>
+                                                <li>크레인 작업 중 샤클 및 하카의 체결 방식 불량으로 인하여 이탈한 낙하물이 근로자 강타</li>
+                                                <li>크레인 작업 반경 내 근로자 접근통제 미흡으로 인하여 낙하물이 근로자 강타</li>
+                                                <li>전원 차단 미실시하여 작업 중 노출된 전원부에 근로자 감전 위험</li>
+                                                <li>이중절연구조 제품이 아닌 전기공도구 사용 중 근로자 감전 위험</li>
+                                                <li>건설기계 진입∙이탈 중 주변 근로자 및 시설물 확인 미흡으로 인하여 충돌</li>
+                                                <li>장비 등 중량물 운반 작업 중 허리, 손목, 발목 등 염좌 위험</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>A229999</td>
+                                        <td><a href="#none">2019년 무선망 시설공사 총액계약</a></td>
+                                        <td>NW</td>
+                                        <td>홍길동</td>
+                                        <td>
+                                            <ul class="no-list">
+                                                <li>지붕 작업 중 안전대 부착설비 미설치로 인하여 근로자 추락</li>
+                                                <li>지붕 작업 중 선라이트, 슬레이트 소재의 지붕이 파손되어 근로자 추락</li>
+                                                <li>고소작업차량 탑승하여 작업 중 안전대 미착용으로 인하여 근로자 추락</li>
+                                                <li>근로자 안전화 미착용하여 작업 중 전도 위험</li>
+                                                <li>작업구간 정리정돈 미실시로 인한 안전통로 확보 미흡으로 근로자 전도</li>
+                                                <li>장비 등 시설물 설치 미흡으로 인하여 낙하물 발생 및 하부 보행자 강타</li>
+                                                <li>자재를 불안정하게 적치하여 작업 중 강풍으로 인하여 이탈한 낙하물이 근로자 강타</li>
+                                                <li>크레인 작업 중 샤클 및 하카의 체결 방식 불량으로 인하여 이탈한 낙하물이 근로자 강타</li>
+                                                <li>크레인 작업 반경 내 근로자 접근통제 미흡으로 인하여 낙하물이 근로자 강타</li>
+                                                <li>전원 차단 미실시하여 작업 중 노출된 전원부에 근로자 감전 위험</li>
+                                                <li>이중절연구조 제품이 아닌 전기공도구 사용 중 근로자 감전 위험</li>
+                                                <li>건설기계 진입∙이탈 중 주변 근로자 및 시설물 확인 미흡으로 인하여 충돌</li>
+                                                <li>장비 등 중량물 운반 작업 중 허리, 손목, 발목 등 염좌 위험</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div title="tab-cont-3">
+                            <table class="table db-t">
+                                <colgroup>
+                                    <col width="60">
+                                    <col width="120">
+                                    <col width="*">
+                                    <col width="110">
+                                    <col width="150">
+                                    <col width="100">
+                                    <col width="110">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>구분</th>
+                                        <th>프로젝트코드</th>
+                                        <th>프로젝트</th>
+                                        <th>준공일</th>
+                                        <th class="right">수주금액</th>
+                                        <th>PM</th>
+                                        <th class="center">본부</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>A229999</td>
+                                        <td>아라스 고도화</td>
+                                        <td>2022-06-04</td>
+                                        <td class="right">500,000,000</td>
+                                        <td>홍길동</td>
+                                        <td class="center">NW</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>A229999</td>
+                                        <td>아라스 고도화</td>
+                                        <td>2022-06-04</td>
+                                        <td class="right">500,000,000</td>
+                                        <td>홍길동</td>
+                                        <td class="center">NW</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>A229999</td>
+                                        <td>아라스 고도화</td>
+                                        <td>2022-06-04</td>
+                                        <td class="right">500,000,000</td>
+                                        <td>홍길동</td>
+                                        <td class="center">NW</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>A229999</td>
+                                        <td>아라스 고도화</td>
+                                        <td>2022-06-04</td>
+                                        <td class="right">500,000,000</td>
+                                        <td>홍길동</td>
+                                        <td class="center">NW</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>A229999</td>
+                                        <td>아라스 고도화</td>
+                                        <td>2022-06-04</td>
+                                        <td class="right">500,000,000</td>
+                                        <td>홍길동</td>
+                                        <td class="center">NW</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>A229999</td>
+                                        <td>아라스 고도화</td>
+                                        <td>2022-06-04</td>
+                                        <td class="right">500,000,000</td>
+                                        <td>홍길동</td>
+                                        <td class="center">NW</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>A229999</td>
+                                        <td>아라스 고도화</td>
+                                        <td>2022-06-04</td>
+                                        <td class="right">500,000,000</td>
+                                        <td>홍길동</td>
+                                        <td class="center">NW</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>A229999</td>
+                                        <td>아라스 고도화</td>
+                                        <td>2022-06-04</td>
+                                        <td class="right">500,000,000</td>
+                                        <td>홍길동</td>
+                                        <td class="center">NW</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>A229999</td>
+                                        <td>아라스 고도화</td>
+                                        <td>2022-06-04</td>
+                                        <td class="right">500,000,000</td>
+                                        <td>홍길동</td>
+                                        <td class="center">NW</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>A229999</td>
+                                        <td>아라스 고도화</td>
+                                        <td>2022-06-04</td>
+                                        <td class="right">500,000,000</td>
+                                        <td>홍길동</td>
+                                        <td class="center">NW</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+<!-- End Modal -->  
+    
+<!-- 수행 프로젝트 -->
+<div class="modal-wrapper" id="modal-db01">
+    <div class="modal widen">
+        <div class="header">
+            <h1>수행 프로젝트
+                <button class="btn btn-close trigger-db01"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="tui-wrapper panel">
+                <table class="table db-t">
+                    <colgroup>
+                        <col width="60">
+                        <col width="120">
+                        <col width="*">
+                        <col width="110">
+                        <col width="150">
+                        <col width="100">
+                        <col width="110">
+                        <col width="120">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>프로젝트코드</th>
+                            <th>프로젝트</th>
+                            <th>준공일</th>
+                            <th class="right">수주금액</th>
+                            <th>PM</th>
+                            <th class="center">본부</th>
+                            <th class="center">고위험프로젝트</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화</td>
+                            <td>2022-06-04</td>
+                            <td class="right">500,000,000</td>
+                            <td>홍길동</td>
+                            <td class="center">NW</td>
+                            <td class="center"><i class="fa fa-check c-red"></i></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화</td>
+                            <td>2022-06-04</td>
+                            <td class="right">500,000,000</td>
+                            <td>홍길동</td>
+                            <td class="center">NW</td>
+                            <td class="center"><i class="fa fa-check c-red"></i></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화</td>
+                            <td>2022-06-04</td>
+                            <td class="right">500,000,000</td>
+                            <td>홍길동</td>
+                            <td class="center">NW</td>
+                            <td class="center"><i class="fa fa-remove"></i></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화</td>
+                            <td>2022-06-04</td>
+                            <td class="right">500,000,000</td>
+                            <td>홍길동</td>
+                            <td class="center">NW</td>
+                            <td class="center"><i class="fa fa-remove"></i></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화</td>
+                            <td>2022-06-04</td>
+                            <td class="right">500,000,000</td>
+                            <td>홍길동</td>
+                            <td class="center">NW</td>
+                            <td class="center"><i class="fa fa-check c-red"></i></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화</td>
+                            <td>2022-06-04</td>
+                            <td class="right">500,000,000</td>
+                            <td>홍길동</td>
+                            <td class="center">NW</td>
+                            <td class="center"><i class="fa fa-check c-red"></i></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화</td>
+                            <td>2022-06-04</td>
+                            <td class="right">500,000,000</td>
+                            <td>홍길동</td>
+                            <td class="center">NW</td>
+                            <td class="center"><i class="fa fa-remove"></i></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화</td>
+                            <td>2022-06-04</td>
+                            <td class="right">500,000,000</td>
+                            <td>홍길동</td>
+                            <td class="center">NW</td>
+                            <td class="center"><i class="fa fa-remove"></i></td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화</td>
+                            <td>2022-06-04</td>
+                            <td class="right">500,000,000</td>
+                            <td>홍길동</td>
+                            <td class="center">NW</td>
+                            <td class="center"><i class="fa fa-remove"></i></td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화</td>
+                            <td>2022-06-04</td>
+                            <td class="right">500,000,000</td>
+                            <td>홍길동</td>
+                            <td class="center">NW</td>
+                            <td class="center"><i class="fa fa-remove"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="toolbar">
+                <div class="pagination">
+                    <a href="#" id="first" class="disabled"><img src="../../images/icon/ico_double_arrow_left.png" alt="첫 페이지"></a> 
+                    <a href="#" id="prev" class="disabled"><img src="../../images/icon/ico_arrow_left.png" alt="이전 페이지"></a> 
+                    <div id="wrapper">
+                        <ul class="page-num">
+                            <li><a href="" class="active">1</a></li>
+                            <li><a href="">2</a></li>
+                            <li><a href="">3</a></li>
+                            <li><a href="">4</a></li>
+                            <li><a href="">5</a></li>
+                            <li><a href="">6</a></li>
+                            <li><a href="">7</a></li>
+                            <li><a href="">8</a></li>
+                            <li><a href="">9</a></li>
+                            <li><a href="">10</a></li>
+                        </ul>
+                    </div>
+                    <a href="#" id="next"><img src="../../images/icon/ico_arrow_right.png" alt="다음 페이지"></a>
+                    <a href="#" id="last"><img src="../../images/icon/ico_double_arrow_right.png" alt="마지막 페이지"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+    
+<!-- 고위험 프로젝트 -->
+<div class="modal-wrapper" id="modal-db02">
+    <div class="modal widen">
+        <div class="header">
+            <h1>고위험 프로젝트 현황
+                <button class="btn btn-close trigger-db02"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="tui-wrapper panel">
+                <table class="table db-t center">
+                    <colgroup>
+                        <col width="60">
+                        <col width="120">
+                        <col width="*">
+                        <col width="110">
+                        <col width="110">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">구분</th>
+                            <th rowspan="2">프로젝트코드</th>
+                            <th rowspan="2">프로젝트</th>
+                            <th rowspan="2">본부</th>
+                            <th rowspan="2">PM</th>
+                            <th class="center bdt-1" colspan="25">위험요인</th>
+                        </tr>
+                        <tr>
+                            <th class="center bdb-1">1</th>
+                            <th class="center bdb-1">2</th>
+                            <th class="center bdb-1">3</th>
+                            <th class="center bdb-1">4</th>
+                            <th class="center bdb-1">5</th>
+                            <th class="center bdb-1">6</th>
+                            <th class="center bdb-1">7</th>
+                            <th class="center bdb-1">8</th>
+                            <th class="center bdb-1">9</th>
+                            <th class="center bdb-1">10</th>
+                            <th class="center bdb-1">11</th>
+                            <th class="center bdb-1">12</th>
+                            <th class="center bdb-1">13</th>
+                            <th class="center bdb-1">14</th>
+                            <th class="center bdb-1">15</th>
+                            <th class="center bdb-1">16</th>
+                            <th class="center bdb-1">17</th>
+                            <th class="center bdb-1">18</th>
+                            <th class="center bdb-1">19</th>
+                            <th class="center bdb-1">20</th>
+                            <th class="center bdb-1">21</th>
+                            <th class="center bdb-1">22</th>
+                            <th class="center bdb-1">23</th>
+                            <th class="center bdb-1">24</th>
+                            <th class="center bdb-1">25</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td class="left">A229999</td>
+                            <td class="left">아라스 고도화</td>
+                            <td>NW</td>
+                            <td>홍길동</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td class="left">A229999</td>
+                            <td class="left">아라스 고도화</td>
+                            <td>NW</td>
+                            <td>홍길동</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td class="left">A229999</td>
+                            <td class="left">아라스 고도화</td>
+                            <td>NW</td>
+                            <td>홍길동</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td class="left">A229999</td>
+                            <td class="left">아라스 고도화</td>
+                            <td>NW</td>
+                            <td>홍길동</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="toolbar">
+                <div class="pagination">
+                    <a href="#" id="first" class="disabled"><img src="../../images/icon/ico_double_arrow_left.png" alt="첫 페이지"></a> 
+                    <a href="#" id="prev" class="disabled"><img src="../../images/icon/ico_arrow_left.png" alt="이전 페이지"></a> 
+                    <div id="wrapper">
+                        <ul class="page-num">
+                            <li><a href="" class="active">1</a></li>
+                            <li><a href="">2</a></li>
+                            <li><a href="">3</a></li>
+                            <li><a href="">4</a></li>
+                            <li><a href="">5</a></li>
+                            <li><a href="">6</a></li>
+                            <li><a href="">7</a></li>
+                            <li><a href="">8</a></li>
+                            <li><a href="">9</a></li>
+                            <li><a href="">10</a></li>
+                        </ul>
+                    </div>
+                    <a href="#" id="next"><img src="../../images/icon/ico_arrow_right.png" alt="다음 페이지"></a>
+                    <a href="#" id="last"><img src="../../images/icon/ico_double_arrow_right.png" alt="마지막 페이지"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+    
+<!-- 오늘의 작업 사업장 -->
+<div class="modal-wrapper" id="modal-db03">
+    <div class="modal widen">
+        <div class="header">
+            <h1>오늘의 작업 사업장
+                <button class="btn btn-close trigger-db03"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="tui-wrapper panel">
+                <table class="table db-t center">
+                    <colgroup>
+                        <col width="60">
+                        <col width="120">
+                        <col width="*">
+                        <col width="110">
+                        <col width="110">
+                        <col width="150">
+                        <col width="110">
+                        <col width="110">
+                        <col width="130">
+                        <col width="120">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">구분</th>
+                            <th rowspan="2">프로젝트코드</th>
+                            <th rowspan="2">프로젝트</th>
+                            <th rowspan="2">본부</th>
+                            <th rowspan="2">PM</th>
+                            <th rowspan="2">사업장</th>
+                            <th rowspan="2">작성일</th>
+                            <th rowspan="2">협력사</th>
+                            <th rowspan="2">작성자</th>
+                            <th rowspan="2">작업일시</th>
+                            <th class="center bdt-1" colspan="25">위험요인</th>
+                        </tr>
+                        <tr>
+                            <th class="center bdb-1">1</th>
+                            <th class="center bdb-1">2</th>
+                            <th class="center bdb-1">3</th>
+                            <th class="center bdb-1">4</th>
+                            <th class="center bdb-1">5</th>
+                            <th class="center bdb-1">6</th>
+                            <th class="center bdb-1">7</th>
+                            <th class="center bdb-1">8</th>
+                            <th class="center bdb-1">9</th>
+                            <th class="center bdb-1">10</th>
+                            <th class="center bdb-1">11</th>
+                            <th class="center bdb-1">12</th>
+                            <th class="center bdb-1">13</th>
+                            <th class="center bdb-1">14</th>
+                            <th class="center bdb-1">15</th>
+                            <th class="center bdb-1">16</th>
+                            <th class="center bdb-1">17</th>
+                            <th class="center bdb-1">18</th>
+                            <th class="center bdb-1">19</th>
+                            <th class="center bdb-1">20</th>
+                            <th class="center bdb-1">21</th>
+                            <th class="center bdb-1">22</th>
+                            <th class="center bdb-1">23</th>
+                            <th class="center bdb-1">24</th>
+                            <th class="center bdb-1">25</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td class="left">A229999</td>
+                            <td class="left">아라스 고도화</td>
+                            <td>NW</td>
+                            <td>홍길동</td>
+                            <td>강원도 사업장</td>
+                            <td>2022-12-23</td>
+                            <td>ㅁㅁ협력사</td>
+                            <td>ㅁㅁ협력사 홍길동</td>
+                            <td>05-18 12:00</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td class="center"><i class="fa fa-check"></i></td>
+                            <td class="center"><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td class="left">A229999</td>
+                            <td class="left">아라스 고도화</td>
+                            <td>NW</td>
+                            <td>홍길동</td>
+                            <td>강원도 사업장</td>
+                            <td>2022-12-23</td>
+                            <td>ㅁㅁ협력사</td>
+                            <td>ㅁㅁ협력사 홍길동</td>
+                            <td>05-18 12:00</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td class="center"><i class="fa fa-check"></i></td>
+                            <td class="center"><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td class="left">A229999</td>
+                            <td class="left">아라스 고도화</td>
+                            <td>NW</td>
+                            <td>홍길동</td>
+                            <td>강원도 사업장</td>
+                            <td>2022-12-23</td>
+                            <td>ㅁㅁ협력사</td>
+                            <td>ㅁㅁ협력사 홍길동</td>
+                            <td>05-18 12:00</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td class="center"><i class="fa fa-check"></i></td>
+                            <td class="center"><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td class="left">A229999</td>
+                            <td class="left">아라스 고도화</td>
+                            <td>NW</td>
+                            <td>홍길동</td>
+                            <td>강원도 사업장</td>
+                            <td>2022-12-23</td>
+                            <td>ㅁㅁ협력사</td>
+                            <td>ㅁㅁ협력사 홍길동</td>
+                            <td>05-18 12:00</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td class="center"><i class="fa fa-check"></i></td>
+                            <td class="center"><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>    
+            <div class="toolbar">
+                <div class="pagination">
+                    <a href="#" id="first" class="disabled"><img src="../../images/icon/ico_double_arrow_left.png" alt="첫 페이지"></a> 
+                    <a href="#" id="prev" class="disabled"><img src="../../images/icon/ico_arrow_left.png" alt="이전 페이지"></a> 
+                    <div id="wrapper">
+                        <ul class="page-num">
+                            <li><a href="" class="active">1</a></li>
+                            <li><a href="">2</a></li>
+                            <li><a href="">3</a></li>
+                            <li><a href="">4</a></li>
+                            <li><a href="">5</a></li>
+                            <li><a href="">6</a></li>
+                            <li><a href="">7</a></li>
+                            <li><a href="">8</a></li>
+                            <li><a href="">9</a></li>
+                            <li><a href="">10</a></li>
+                        </ul>
+                    </div>
+                    <a href="#" id="next"><img src="../../images/icon/ico_arrow_right.png" alt="다음 페이지"></a>
+                    <a href="#" id="last"><img src="../../images/icon/ico_double_arrow_right.png" alt="마지막 페이지"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+    
+<!-- 작업중 사업장 -->
+<div class="modal-wrapper" id="modal-db04">
+    <div class="modal widen">
+        <div class="header">
+            <h1>작업중 사업장
+                <button class="btn btn-close trigger-db04"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="tui-wrapper panel">
+                <table class="table db-t center">
+                    <colgroup>
+                        <col width="60">
+                        <col width="120">
+                        <col width="*">
+                        <col width="110">
+                        <col width="110">
+                        <col width="150">
+                        <col width="110">
+                        <col width="110">
+                        <col width="130">
+                        <col width="120">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">구분</th>
+                            <th rowspan="2">프로젝트코드</th>
+                            <th rowspan="2">프로젝트</th>
+                            <th rowspan="2">본부</th>
+                            <th rowspan="2">PM</th>
+                            <th rowspan="2">사업장</th>
+                            <th rowspan="2">작성일</th>
+                            <th rowspan="2">협력사</th>
+                            <th rowspan="2">작성자</th>
+                            <th rowspan="2">작업일시</th>
+                            <th class="center bdt-1" colspan="25">위험요인</th>
+                        </tr>
+                        <tr>
+                            <th class="center bdb-1">1</th>
+                            <th class="center bdb-1">2</th>
+                            <th class="center bdb-1">3</th>
+                            <th class="center bdb-1">4</th>
+                            <th class="center bdb-1">5</th>
+                            <th class="center bdb-1">6</th>
+                            <th class="center bdb-1">7</th>
+                            <th class="center bdb-1">8</th>
+                            <th class="center bdb-1">9</th>
+                            <th class="center bdb-1">10</th>
+                            <th class="center bdb-1">11</th>
+                            <th class="center bdb-1">12</th>
+                            <th class="center bdb-1">13</th>
+                            <th class="center bdb-1">14</th>
+                            <th class="center bdb-1">15</th>
+                            <th class="center bdb-1">16</th>
+                            <th class="center bdb-1">17</th>
+                            <th class="center bdb-1">18</th>
+                            <th class="center bdb-1">19</th>
+                            <th class="center bdb-1">20</th>
+                            <th class="center bdb-1">21</th>
+                            <th class="center bdb-1">22</th>
+                            <th class="center bdb-1">23</th>
+                            <th class="center bdb-1">24</th>
+                            <th class="center bdb-1">25</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td class="left">A229999</td>
+                            <td class="left">아라스 고도화</td>
+                            <td>NW</td>
+                            <td>홍길동</td>
+                            <td>강원도 사업장</td>
+                            <td>2022-12-23</td>
+                            <td>ㅁㅁ협력사</td>
+                            <td>ㅁㅁ협력사 홍길동</td>
+                            <td>05-18 12:00</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td class="center"><i class="fa fa-check"></i></td>
+                            <td class="center"><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td class="left">A229999</td>
+                            <td class="left">아라스 고도화</td>
+                            <td>NW</td>
+                            <td>홍길동</td>
+                            <td>강원도 사업장</td>
+                            <td>2022-12-23</td>
+                            <td>ㅁㅁ협력사</td>
+                            <td>ㅁㅁ협력사 홍길동</td>
+                            <td>05-18 12:00</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td class="center"><i class="fa fa-check"></i></td>
+                            <td class="center"><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td class="left">A229999</td>
+                            <td class="left">아라스 고도화</td>
+                            <td>NW</td>
+                            <td>홍길동</td>
+                            <td>강원도 사업장</td>
+                            <td>2022-12-23</td>
+                            <td>ㅁㅁ협력사</td>
+                            <td>ㅁㅁ협력사 홍길동</td>
+                            <td>05-18 12:00</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td class="center"><i class="fa fa-check"></i></td>
+                            <td class="center"><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td class="left">A229999</td>
+                            <td class="left">아라스 고도화</td>
+                            <td>NW</td>
+                            <td>홍길동</td>
+                            <td>강원도 사업장</td>
+                            <td>2022-12-23</td>
+                            <td>ㅁㅁ협력사</td>
+                            <td>ㅁㅁ협력사 홍길동</td>
+                            <td>05-18 12:00</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td class="center"><i class="fa fa-check"></i></td>
+                            <td class="center"><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="toolbar">
+                <div class="pagination">
+                    <a href="#" id="first" class="disabled"><img src="../../images/icon/ico_double_arrow_left.png" alt="첫 페이지"></a> 
+                    <a href="#" id="prev" class="disabled"><img src="../../images/icon/ico_arrow_left.png" alt="이전 페이지"></a> 
+                    <div id="wrapper">
+                        <ul class="page-num">
+                            <li><a href="" class="active">1</a></li>
+                            <li><a href="">2</a></li>
+                            <li><a href="">3</a></li>
+                            <li><a href="">4</a></li>
+                            <li><a href="">5</a></li>
+                            <li><a href="">6</a></li>
+                            <li><a href="">7</a></li>
+                            <li><a href="">8</a></li>
+                            <li><a href="">9</a></li>
+                            <li><a href="">10</a></li>
+                        </ul>
+                    </div>
+                    <a href="#" id="next"><img src="../../images/icon/ico_arrow_right.png" alt="다음 페이지"></a>
+                    <a href="#" id="last"><img src="../../images/icon/ico_double_arrow_right.png" alt="마지막 페이지"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+    
+<!-- 일일안전활동보고 -->
+<div class="modal-wrapper" id="modal-db05">
+    <div class="modal widen">
+        <div class="header">
+            <h1>일일안전활동보고
+                <button class="btn btn-close trigger-db05"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="tui-wrapper panel">
+                <table class="table db-t">
+                    <colgroup>
+                        <col width="60">
+                        <col width="120">
+                        <col width="*">
+                        <col width="110">
+                        <col width="150">
+                        <col width="150">
+                        <col width="110">
+                        <col width="110">
+                        <col width="130">
+                        <col width="110">
+                        <col width="90">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>프로젝트코드</th>
+                            <th>프로젝트</th>
+                            <th>본부</th>
+                            <th>PM</th>
+                            <th>사업장</th>
+                            <th>작성일</th>
+                            <th>협력사</th>
+                            <th>작성자</th>
+                            <th>작업일시</th>
+                            <th>상태</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화</td>
+                            <td>NW</td>
+                            <td>홍길동</td>
+                            <td>A터널</td>
+                            <td>05-18</td>
+                            <td>ㅁㅁ협력사</td>
+                            <td>ㅁㅁ협력사 김협력</td>
+                            <td>05-18 12:00</td>
+                            <td>완료</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="toolbar">
+                <div class="pagination">
+                    <a href="#" id="first" class="disabled"><img src="../../images/icon/ico_double_arrow_left.png" alt="첫 페이지"></a> 
+                    <a href="#" id="prev" class="disabled"><img src="../../images/icon/ico_arrow_left.png" alt="이전 페이지"></a> 
+                    <div id="wrapper">
+                        <ul class="page-num">
+                            <li><a href="" class="active">1</a></li>
+                            <li><a href="">2</a></li>
+                            <li><a href="">3</a></li>
+                            <li><a href="">4</a></li>
+                            <li><a href="">5</a></li>
+                            <li><a href="">6</a></li>
+                            <li><a href="">7</a></li>
+                            <li><a href="">8</a></li>
+                            <li><a href="">9</a></li>
+                            <li><a href="">10</a></li>
+                        </ul>
+                    </div>
+                    <a href="#" id="next"><img src="../../images/icon/ico_arrow_right.png" alt="다음 페이지"></a>
+                    <a href="#" id="last"><img src="../../images/icon/ico_double_arrow_right.png" alt="마지막 페이지"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+
+<!-- 월간 일일안전활동보고 -->
+<div class="modal-wrapper" id="modal-db06">
+    <div class="modal widen">
+        <div class="header">
+            <h1>월간 일일안전활동보고
+                <button class="btn btn-close trigger-db06"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="tui-wrapper panel">
+                <table class="table db-t">
+                    <colgroup>
+                        <col width="60">
+                        <col width="120">
+                        <col width="*">
+                        <col width="110">
+                        <col width="150">
+                        <col width="150">
+                        <col width="110">
+                        <col width="110">
+                        <col width="130">
+                        <col width="80">
+                        <col width="80">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>프로젝트코드</th>
+                            <th>프로젝트</th>
+                            <th>본부</th>
+                            <th>PM</th>
+                            <th>사업장</th>
+                            <th>작성일</th>
+                            <th>협력사</th>
+                            <th>작성자</th>
+                            <th class="center">승인완료</th>
+                            <th class="center">고위험작업</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화</td>
+                            <td>NW</td>
+                            <td>홍길동</td>
+                            <td>A터널</td>
+                            <td>05-18</td>
+                            <td>ㅁㅁ협력사</td>
+                            <td>ㅁㅁ협력사 김협력</td>
+                            <td class="center"><a href=""><i class="fa fa-check"></i></a></td>
+                            <td class="center"><a href=""><i class="fa fa-check c-red"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화</td>
+                            <td>NW</td>
+                            <td>홍길동</td>
+                            <td>A터널</td>
+                            <td>05-18</td>
+                            <td>ㅁㅁ협력사</td>
+                            <td>ㅁㅁ협력사 김협력</td>
+                            <td class="center"><a href=""><i class="fa fa-check"></i></a></td>
+                            <td class="center"><a href=""><i class="fa fa-remove"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화</td>
+                            <td>NW</td>
+                            <td>홍길동</td>
+                            <td>A터널</td>
+                            <td>05-18</td>
+                            <td>ㅁㅁ협력사</td>
+                            <td>ㅁㅁ협력사 김협력</td>
+                            <td class="center"><a href=""><i class="fa fa-remove"></i></a></td>
+                            <td class="center"><a href=""><i class="fa fa-check c-red"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>A229999</td>
+                            <td>아라스 고도화</td>
+                            <td>NW</td>
+                            <td>홍길동</td>
+                            <td>A터널</td>
+                            <td>05-18</td>
+                            <td>ㅁㅁ협력사</td>
+                            <td>ㅁㅁ협력사 김협력</td>
+                            <td class="center"><a href=""><i class="fa fa-remove"></i></a></td>
+                            <td class="center"><a href=""><i class="fa fa-remove"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="toolbar">
+                <div class="pagination">
+                    <a href="#" id="first" class="disabled"><img src="../../images/icon/ico_double_arrow_left.png" alt="첫 페이지"></a> 
+                    <a href="#" id="prev" class="disabled"><img src="../../images/icon/ico_arrow_left.png" alt="이전 페이지"></a> 
+                    <div id="wrapper">
+                        <ul class="page-num">
+                            <li><a href="" class="active">1</a></li>
+                            <li><a href="">2</a></li>
+                            <li><a href="">3</a></li>
+                            <li><a href="">4</a></li>
+                            <li><a href="">5</a></li>
+                            <li><a href="">6</a></li>
+                            <li><a href="">7</a></li>
+                            <li><a href="">8</a></li>
+                            <li><a href="">9</a></li>
+                            <li><a href="">10</a></li>
+                        </ul>
+                    </div>
+                    <a href="#" id="next"><img src="../../images/icon/ico_arrow_right.png" alt="다음 페이지"></a>
+                    <a href="#" id="last"><img src="../../images/icon/ico_double_arrow_right.png" alt="마지막 페이지"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+    
+<div class="page-wrapper d-flex">
+    <nav id="side-nav" class="side-nav">
+    </nav>
+   
+    <main class="contents">
+        <section class="wrapper db">
+            <h1 class="page-title">전사 대시보드<span class="date">2022년 12월 5일(월)</span></h1>
+            <div title="PJT 현황">
+                <ul class="stat">
+                    <li class="panel" style="cursor:default;">
+                        <div class="title-area">
+                            <h2>수행 프로젝트</h2>
+                        </div>
+                        <div class="part-index">
+                            <div class="total trigger-db01 pointer">
+                                <span class="tit">total</span>
+                                <span class="count"><span class="value">75</span>건</span>
+                            </div>
+                            <div class="dot-list ico">
+                                <ul>
+                                    <li class="trigger-db02 pointer">
+                                        <div><img src="../../images/icon/ico_db_high-risk.png" alt="">고위험</div>
+                                        <div class="count"><span class="value">100</span>건</div>
+                                    </li>
+                                    <li>
+                                        <div><img src="../../images/icon/ico_db_normal.png" alt="">일반</div>
+                                        <div class="count"><span class="value">50</span>건</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="panel trigger-db03">
+                        <div class="title-area">
+                            <h2>오늘의 작업 사업장</h2>
+                        </div>
+                        <div class="part-index">
+                            <div class="total">
+                                <span class="tit">total</span>
+                                <span class="count"><span class="value">75</span>건</span>
+                            </div>
+                            <div class="dot-list">
+                                <ul>
+                                    <li>
+                                        <div class="danger"><i class="fas fa-circle"></i>고위험작업</div>
+                                        <div class="count"><span class="value">100</span>건</div>
+                                    </li>
+                                    <li>
+                                        <div class="normal"><i class="fas fa-circle"></i>일반</div>
+                                        <div class="count"><span class="value">100</span>건</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="panel trigger-db04">
+                        <div class="title-area">
+                            <h2>작업중 사업장</h2>
+                        </div>
+                        <div class="part-index">
+                            <div class="total">
+                                <span class="tit">total</span>
+                                <span class="count"><span class="value">75</span>건</span>
+                            </div>
+                            <div class="dot-list">
+                                <ul>
+                                    <li>
+                                        <div class="danger"><i class="fas fa-circle"></i>고위험작업</div>
+                                        <div class="count"><span class="value">100</span>건</div>
+                                    </li>
+                                    <li>
+                                        <div class="normal"><i class="fas fa-circle"></i>일반</div>
+                                        <div class="count"><span class="value">100</span>건</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="chart-list d-flex">
+                <div class="left">
+                    <div class="panel trigger-db07">
+                        <div class="title-area">
+                            <h2>본부별 수행 프로젝트 현황</h2>
+                        </div>
+                        <div class="chart-area">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="right">
+                    <ul class="d-flex">
+                        <li class="panel">
+                            <div class="title-area">
+                                <h2>오늘의 작업 사업장(본부별)</h2>
+                            </div>
+                            <div class="chart-area">
+                            </div>
+                        </li>
+                        
+                        <li class="panel">
+                            <div class="title-area">
+                                <h2>오늘의 작업 사업장(BM별)</h2>
+                            </div>
+                            <div class="chart-area">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="chart-list d-flex">
+                <div class="left">
+                    <ul class="d-flex">
+                        <li class="panel trigger-db05">
+                            <div class="title-area">
+                                <h2>일일안전활동보고</h2>
+                            </div>
+                            <div class="pie-chart-area">
+                            </div>
+                            <div class="dot-list">
+                                <ul>
+                                    <li>
+                                        <div>일일안전활동보고 대상</div>
+                                        <div class="count"><span class="value">100</span>건</div>
+                                    </li>
+                                    <li>
+                                        <div class="done"><i class="fas fa-circle"></i>완료</div>
+                                        <div class="count"><span class="value">100</span>건</div>
+                                    </li>
+                                    <li>
+                                        <div class="normal"><i class="fas fa-circle"></i>미완료</div>
+                                        <div class="count"><span class="value">100</span>건</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        
+                        <li class="panel">
+                            <div class="title-area">
+                                <h2>일일안전활동보고(본부별)</h2>
+                            </div>
+                            <div class="chart-area">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="right">
+                    <div class="panel">
+                        <div class="title-area">
+                            <h2>본부별 작업 인력수</h2>
+                        </div>
+                        <div class="chart-area">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chart-list d-flex">
+                <div class="left">
+                    <div class="panel trigger-db06">
+                        <div class="title-area">
+                            <h2>월간 일일안전활동보고</h2>
+                            <select>
+                                <option>선택</option>
+                                <option>11월</option>
+                                <option>10월</option>
+                            </select>
+                        </div>
+                        <div class="chart-area">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="right">
+                    <div class="panel">
+                        <div class="title-area">
+                            <h2>연간 일일안전활동보고</h2>
+                        </div>
+                        <div class="chart-area">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tui-wrapper panel">
+                <div class="d-flex">
+                    <h2>프로젝트 현황</h2>
+                </div>
+                <div class="tui-area" title="tui-area" style="height: 240px">
+                    <table class="table db-t center sticky">
+                        <colgroup>
+                            <col width="80">
+                            <col width="120">
+                            <col width="*">
+                            <col width="110">
+                            <col width="80">
+                            <col width="120">
+                            <col width="60">
+                            <col width="60">
+                            <col width="60">
+                            <col width="90">
+                            <col width="60">
+                            <col width="60">
+                            <col width="60">
+                            <col width="90">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th rowspan="2">구분</th>
+                                <th rowspan="2">프로젝트코드</th>
+                                <th rowspan="2">프로젝트</th>
+                                <th rowspan="2" class="center">PM</th>
+                                <th rowspan="2" class="center">사업장수</th>
+                                <th rowspan="2" class="center">고위험 프로젝트</th>
+                                <th colspan="3" class="center bdt-1">위험성평가</th>
+                                <th rowspan="2" class="center">일일안전<br>활동보고</th>
+                                <th colspan="3" class="center bdt-1">수행품질평가</th>
+                                <th rowspan="2" class="center">준공일</th>
+                            </tr>
+                            <tr>
+                                <th class="center bdb-1">최초</th>
+                                <th class="center bdb-1">수시</th>
+                                <th class="center bdb-1">정기</th>
+                                <th class="center bdb-1">시공</th>
+                                <th class="center bdb-1">안전</th>
+                                <th class="center bdb-1">준공</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td class="left">A229999</td>
+                                <td class="left">아라스 고도화</td>
+                                <td>홍길동</td>
+                                <td>1</td>
+                                <td><i class="fa fa-check c-red"></i></td>
+                                <td><i class="fa fa-check"></i></td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>5</td>
+                                <td><i class="fa fa-check"></i></td>
+                                <td><i class="fa fa-remove"></i></td>
+                                <td><i class="fa fa-remove"></i></td>
+                                <td>~5/30</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="left">A229999</td>
+                                <td class="left">아라스 고도화</td>
+                                <td>홍길동</td>
+                                <td>1</td>
+                                <td><i class="fa fa-check c-red"></i></td>
+                                <td><i class="fa fa-check"></i></td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>5</td>
+                                <td><i class="fa fa-check"></i></td>
+                                <td><i class="fa fa-remove"></i></td>
+                                <td><i class="fa fa-remove"></i></td>
+                                <td>~5/30</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td class="left">A229999</td>
+                                <td class="left">아라스 고도화</td>
+                                <td>홍길동</td>
+                                <td>1</td>
+                                <td><i class="fa fa-check c-red"></i></td>
+                                <td><i class="fa fa-check"></i></td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>5</td>
+                                <td><i class="fa fa-check"></i></td>
+                                <td><i class="fa fa-remove"></i></td>
+                                <td><i class="fa fa-remove"></i></td>
+                                <td>~5/30</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td class="left">A229999</td>
+                                <td class="left">아라스 고도화</td>
+                                <td>홍길동</td>
+                                <td>1</td>
+                                <td><i class="fa fa-check c-red"></i></td>
+                                <td><i class="fa fa-check"></i></td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>5</td>
+                                <td><i class="fa fa-check"></i></td>
+                                <td><i class="fa fa-remove"></i></td>
+                                <td><i class="fa fa-remove"></i></td>
+                                <td>~5/30</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td class="left">A229999</td>
+                                <td class="left">아라스 고도화</td>
+                                <td>홍길동</td>
+                                <td>1</td>
+                                <td><i class="fa fa-check c-red"></i></td>
+                                <td><i class="fa fa-check"></i></td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>5</td>
+                                <td><i class="fa fa-check"></i></td>
+                                <td><i class="fa fa-remove"></i></td>
+                                <td><i class="fa fa-remove"></i></td>
+                                <td>~5/30</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="left">A229999</td>
+                                <td class="left">아라스 고도화</td>
+                                <td>홍길동</td>
+                                <td>1</td>
+                                <td><i class="fa fa-check c-red"></i></td>
+                                <td><i class="fa fa-check"></i></td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>5</td>
+                                <td><i class="fa fa-check"></i></td>
+                                <td><i class="fa fa-remove"></i></td>
+                                <td><i class="fa fa-remove"></i></td>
+                                <td>~5/30</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td class="left">A229999</td>
+                                <td class="left">아라스 고도화</td>
+                                <td>홍길동</td>
+                                <td>1</td>
+                                <td><i class="fa fa-check c-red"></i></td>
+                                <td><i class="fa fa-check"></i></td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>5</td>
+                                <td><i class="fa fa-check"></i></td>
+                                <td><i class="fa fa-remove"></i></td>
+                                <td><i class="fa fa-remove"></i></td>
+                                <td>~5/30</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td class="left">A229999</td>
+                                <td class="left">아라스 고도화</td>
+                                <td>홍길동</td>
+                                <td>1</td>
+                                <td><i class="fa fa-check c-red"></i></td>
+                                <td><i class="fa fa-check"></i></td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>5</td>
+                                <td><i class="fa fa-check"></i></td>
+                                <td></td>
+                                <td><i class="fa fa-remove"></i></td>
+                                <td>~5/30</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+          
+        </section>
+    </main>
+
+    
+</div>
+    
+    
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+<script>
+$( document ).ready(function() {
+  // 대시보드 2022-12-26
+    $('.trigger-db01').on('click', function() {
+        $('#modal-db01').toggleClass('open');
+     return false;
+  }); 
+    
+    $('.trigger-db02').on('click', function() {
+        $('#modal-db02').toggleClass('open');
+     return false;
+  }); 
+    
+    $('.trigger-db03').on('click', function() {
+        $('#modal-db03').toggleClass('open');
+     return false;
+  }); 
+    
+    $('.trigger-db04').on('click', function() {
+        $('#modal-db04').toggleClass('open');
+     return false;
+  }); 
+    
+    $('.trigger-db05').on('click', function() {
+        $('#modal-db05').toggleClass('open');
+     return false;
+  }); 
+    
+    $('.trigger-db06').on('click', function() {
+        $('#modal-db06').toggleClass('open');
+     return false;
+  }); 
+    
+    $('.trigger-db07').on('click', function() {
+        $('#modal-db07').toggleClass('open');
+     return false;
+  }); 
+    
+});  
+    
+</script>    
+
+</body>
+</html>

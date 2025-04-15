@@ -1,0 +1,536 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>현장지원점검 관리 &gt; 등록</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script> 
+</head>
+    
+<body>
+
+<!-- 프로젝트 조회 -->
+<div class="modal-wrapper" id="modal-info">
+    <div class="modal">
+        <div class="header">
+            <h1>프로젝트 조회
+                <button class="btn btn-close trigger-info"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="card-body">
+                <div class="card-search">
+                    <div class="input-group">
+                        <input type="search" placeholder="프로젝트명">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <ul class="list pjt">
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                    <li>통신3사 무선국 설치환경 개선사업</li>
+                </ul>
+                <div class="toolbar">
+					<div id="paging" class="pagination">
+						<a href="#" id="first" class="disabled"><img src="../../images/icon/ico_double_arrow_left.png" alt="첫 페이지"></a> 
+					  	<a href="#" id="prev" class="disabled"><img src="../../images/icon/ico_arrow_left.png" alt="이전 페이지"></a> 
+						<div id="wrapper">
+							<ul class="page-num">
+								<li><a href="" class="active">1</a></li>
+								<li><a href="">2</a></li>
+								<li><a href="">3</a></li>
+								<li><a href="">4</a></li>
+								<li><a href="">5</a></li>
+								<li><a href="">6</a></li>
+								<li><a href="">7</a></li>
+								<li><a href="">8</a></li>
+								<li><a href="">9</a></li>
+								<li><a href="">10</a></li>
+							</ul>
+						</div>
+						<a href="#" id="next"><img src="../../images/icon/ico_arrow_right.png" alt="다음 페이지"></a>
+						<a href="#" id="last"><img src="../../images/icon/ico_double_arrow_right.png" alt="마지막 페이지"></a>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+    
+<!-- 점검자 조회 -->
+<div class="modal-wrapper" id="modal-check">
+    <div class="modal">
+        <div class="header">
+            <h1>점검자 조회
+                <button class="btn btn-close trigger-check"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="card-body">
+                <div class="card-search">
+                    <div class="input-group">
+                        <input type="search" placeholder="점검자">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="list pjt">
+                    <div class="check-list">
+                        <label class="tr">
+                            <span class="name"><span class="class">본부장</span>홍길동</span>
+                        </label>
+                        <label class="tr">
+                            <span class="name"><span class="class">본부장</span>홍길동</span>
+                        </label>
+                        <label class="tr">
+                            <span class="name"><span class="class">본부장</span>홍길동</span>
+                        </label>
+                        <label class="tr">
+                            <span class="name"><span class="class">본부장</span>홍길동</span>
+                        </label>
+                        <label class="tr">
+                            <span class="name"><span class="class">본부장</span>홍길동</span>
+                        </label>
+                        <label class="tr">
+                            <span class="name"><span class="class">본부장</span>홍길동</span>
+                        </label>
+                        <label class="tr">
+                            <span class="name"><span class="class">본부장</span>홍길동</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="toolbar">
+					<div id="paging" class="pagination">
+						<a href="#" id="first" class="disabled"><img src="../../images/icon/ico_double_arrow_left.png" alt="첫 페이지"></a> 
+					  	<a href="#" id="prev" class="disabled"><img src="../../images/icon/ico_arrow_left.png" alt="이전 페이지"></a> 
+						<div id="wrapper">
+							<ul class="page-num">
+								<li><a href="" class="active">1</a></li>
+								<li><a href="">2</a></li>
+								<li><a href="">3</a></li>
+								<li><a href="">4</a></li>
+								<li><a href="">5</a></li>
+								<li><a href="">6</a></li>
+								<li><a href="">7</a></li>
+								<li><a href="">8</a></li>
+								<li><a href="">9</a></li>
+								<li><a href="">10</a></li>
+							</ul>
+						</div>
+						<a href="#" id="next"><img src="../../images/icon/ico_arrow_right.png" alt="다음 페이지"></a>
+						<a href="#" id="last"><img src="../../images/icon/ico_double_arrow_right.png" alt="마지막 페이지"></a>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->    
+
+<div class="page-wrapper d-flex">
+    <nav id="side-nav" class="side-nav">
+    </nav>
+	
+    <main class="contents">
+        <section class="wrapper">
+            <h1 class="page-title">현장지원점검 &gt; 등록</h1>
+            <form>
+                <table class="table frm-t">
+					<colgroup>
+                        <col width="160">
+                        <col width="">
+                        <col width="160">
+                        <col width="">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>프로젝트</th>
+                            <td>
+                                <div class="input-group bd-1 w100">
+                                    <input type="search" placeholder="">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text trigger-info">
+                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <th>본부</th>
+                            <td>본부</td>
+                        </tr>
+                        <tr>
+                            <th>점검일자</th>
+                            <td>
+                                <div class="d-flex input_date_box">
+                                    <input type="date" class="input-tb">
+                                </div>
+                            </td>
+                            <th>공사여부</th>
+                            <td>
+                                <div class="d-flex jc-start ai-center mtb-05">
+                                    <label for="construction" class="mr-2">
+                                        <input type="radio" name="construction" id="construction" value="Y" checked="" tabindex="-1">
+                                        <span class="txt">공사</span>
+                                    </label>
+                                    <label for="non-construction">
+                                        <input type="radio" name="construction" id="non-construction" value="N" tabindex="-1">
+                                        <span class="txt">비공사</span>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>점검결과</th>
+                            <td colspan="3">
+                                <input type="text" class="input-tb" placeholder="최대 1000자 이내" maxlength="100">
+                            </td>
+                        </tr>
+                        <tr height="40">
+                            <th class="center">구분</th>
+                            <th colspan="2" class="center">점검결과(지원신청)</th>
+                            <th class="center bd-l-1">조치요구사항</th>
+                        </tr>
+                        <tr>
+                            <th class="center">안전보건<br>활동사항</th>
+                            <td colspan="2">
+                                <div class="textarea-wrap">
+                                    <textarea class="input-tb" cols="100" rows="5" maxlength="500"></textarea>
+                                    <span id="counter">0/500</span>
+                                </div>
+                            </td>
+                            <td class="bd-l-1">
+                                <div class="textarea-wrap">
+                                    <textarea class="input-tb" cols="100" rows="5" maxlength="500"></textarea>
+                                    <span id="counter">0/500</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="center">지원내용</th>
+                            <td colspan="3">
+                                <table class="table bdt-0">
+                                    <colgroup>
+                                        <col width="25%">
+                                        <col width="25%">
+                                        <col width="25%">
+                                        <col width="25%">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th class="center">PM 1:1 멘토링</th>
+                                            <th class="center">협력업체소장 교육</th>
+                                            <th class="center">근로자교육</th>
+                                            <th class="center">비고</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <textarea class="input-tb" cols="100" rows="3" placeholder="최대100자이내" maxlength="100"></textarea>
+                                            </td>
+                                            <td>
+                                                <textarea class="input-tb" cols="100" rows="3" placeholder="최대100자이내" maxlength="100"></textarea>
+                                            </td>
+                                            <td>
+                                                <textarea class="input-tb" cols="100" rows="3" placeholder="최대100자이내" maxlength="100"></textarea>
+                                            </td>
+                                            <td>
+                                                <textarea class="input-tb" cols="100" rows="3" placeholder="최대100자이내" maxlength="100"></textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4">
+                                                <div class="textarea-wrap">
+                                                    <textarea class="input-tb" cols="100" rows="4"  maxlength="500"></textarea>
+                                                    <span id="counter">0/500</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="center">지원계획</th>
+                            <td colspan="3">
+                                <div class="textarea-wrap">
+                                    <textarea class="input-tb" cols="100" rows="4"  maxlength="500"></textarea>
+                                    <span id="counter">0/500</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="center">사업장 지원<br><br>사진대지</th>
+                            <td colspan="3">
+                                <ul class="thum-list">
+                                    <li>
+                                        <div class="fileupload">
+                                            <div class="filebox2">
+                                                <label for="ex_file"><img src="../../images/icon/ico_photo.png" alt="사진첨부"> 사진 첨부</label> 
+                                                <input type="file" id="ex_file"> 
+                                            </div>
+                                        </div>
+                                    </li> 
+                                    <!-- <li>
+                                        <div class="fileupload">
+                                            <div class="filebox2" id="divAttach_0" style="display: none;">
+                                                <button type="button" class="btn" name="imgUpload" value="0">
+                                                    <label for="ex_file"><img src="/images/icon/ico_photo.png" alt="사진첨부"> 사진 첨부</label>
+                                                </button> 
+                                            </div>
+                                               
+                                            <div class="filebox2" id="divAttachPreview_0" style="">
+                                                <div class="btn-area">
+                                                    <button type="button" class="btn-delete" id="imgDelBtn_0" onclick="fnDeleteImagebyDB('#imgPreview', '22','#imgFileUpload','0');"></button>
+                                                </div>
+                                                <div class="thum-img" id="imgPreview_0"><img src="../../images/sample/1.png" alt="" class="img-detail"></div>
+                                                <input type="hidden" name="imageNo" id="imageNo_0" value="22">
+                                                <input type="hidden" name="imageYn" id="imageYn_0" value="Y">
+                                                <input type="hidden" name="imageOrder" id="imageOrder_0" value="0">
+                                                <input type="hidden" name="imageType" id="imageType_0" value="M"> 
+                                                
+                                                <input type="radio" name="checkIssue_0" id="checkIssue_0" value="" checked="" style="display:none;">
+                                                <input type="hidden" name="checkIssueCont" value="">
+                                            </div>
+                                            <input type="file" value="" name="photoImage" id="imgFileUpload_0" onchange="previewImage(this, '#imgPreview','0')" accept="image/*" style="display:none;">
+                                        </div>
+                                    </li> -->
+                                    <!-- <li>
+                                        <div class="btn-area">
+                                            <button class="btn-delete"></button>
+                                        </div>
+                                        <div class="thum-img"><img src="../../images/sample/1.png" alt="" class="img-detail"></div>
+                                    </li> -->
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr height="40">
+                            <th colspan="3" class="center">점검자</th>
+                            <th class="center">확인자</th>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="bd-r-1">
+                                <div class="d-flex">
+                                    <dl class="item">
+                                        <dt>소속 :</dt>
+                                        <dd>IT솔루션사업부</dd>
+                                    </dl>
+                                    <dl class="item">
+                                        <dt>직급 :</dt>
+                                        <dd>과장</dd>
+                                    </dl>
+                                    <dl class="item">
+                                        <dt>성명 :</dt>
+                                        <dd>
+                                            <div class="input-group bd-1 w100">
+                                                <input type="search" placeholder="점검자1">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text trigger-check">
+                                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </td>
+                            <td rowspan="2">
+                                <dl class="txtRefer">
+                                    <dt>소속 : </dt>
+                                    <dd>IT솔루션 사업부</dd>
+                                </dl>
+                                <dl class="txtRefer">
+                                    <dt>직급 : </dt>
+                                    <dd></dd>
+                                </dl>
+                                <dl class="txtRefer">
+                                    <dt>성명 : </dt>
+                                    <dd></dd>
+                                </dl>
+                                <dl class="txtRefer">
+                                    <dt>확인일시 : </dt>
+                                    <dd></dd>
+                                </dl>
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <td colspan="3" class="bd-r-1">
+                                <div class="d-flex">
+                                    <dl class="item">
+                                        <dt>소속 :</dt>
+                                        <dd>IT솔루션사업부</dd>
+                                    </dl>
+                                    <dl class="item">
+                                        <dt>직책 :</dt>
+                                        <dd>과장</dd>
+                                    </dl>
+                                    <dl class="item">
+                                        <dt>성명 :</dt>
+                                        <dd>
+                                            <div class="input-group bd-1 w100">
+                                                <input type="search" placeholder="점검자2">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text trigger-check">
+                                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="4" class="center" height="40">사진대지</th>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <ul class="thumlist w-50">
+                                    <li>
+                                        <div class="card">
+                                            <div class="fileupload">
+                                                <div class="filebox2">
+                                                    <label for="ex_file"><img src="../../images/icon/ico_photo.png" alt="사진첨부"> 사진 첨부</label> 
+                                                    <input type="file" id="ex_file"> 
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="tit">
+                                                    개선전
+                                                </div>
+                                                <div class="text">
+                                                    <textarea class="input-tb h12" cols="100" rows="5" placeholder="최대 500자이내"></textarea>
+                                                </div>                                     
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="card">
+                                            <div class="fileupload" style="background-color: #fff;">
+                                                <!-- <div class="filebox2">
+                                                    <label for="ex_file"><img src="../../images/icon/ico_photo.png" alt="사진첨부"> 사진 첨부</label> 
+                                                    <input type="file" id="ex_file"> 
+                                                </div> -->
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="tit">
+                                                    개선후
+                                                </div>
+                                                <div class="text" style="height: 14.4rem;"></div>                                     
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="thumlist w-50">
+                                    <li>
+                                        <div class="card">
+                                            <div class="fileupload">
+                                                <div class="filebox2">
+                                                    <label for="ex_file"><img src="../../images/icon/ico_photo.png" alt="사진첨부"> 사진 첨부</label> 
+                                                    <input type="file" id="ex_file"> 
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="tit">
+                                                    우수사항
+                                                </div>
+                                                <div class="text">
+                                                    <textarea class="input-tb h12" cols="100" rows="5" placeholder="최대 500자이내"></textarea>
+                                                </div>                                     
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="card">
+                                            <div class="fileupload">
+                                                <div class="filebox2">
+                                                    <label for="ex_file"><img src="../../images/icon/ico_photo.png" alt="사진첨부"> 사진 첨부</label> 
+                                                    <input type="file" id="ex_file"> 
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="tit">
+                                                    우수사항
+                                                </div>
+                                                <div class="text">
+                                                    <textarea class="input-tb h12" cols="100" rows="5" placeholder="최대 500자이내"></textarea>
+                                                </div>                                     
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="thumlist w-50">
+                                    <li>
+                                        <div class="card">
+                                            <div class="fileupload">
+                                                <div class="filebox2">
+                                                    <label for="ex_file"><img src="../../images/icon/ico_photo.png" alt="사진첨부"> 사진 첨부</label> 
+                                                    <input type="file" id="ex_file"> 
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="tit">
+                                                    권고사항
+                                                </div>
+                                                <div class="text">
+                                                    <textarea class="input-tb h12" cols="100" rows="5" placeholder="최대 500자이내"></textarea>
+                                                </div>                                     
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="card">
+                                            <div class="fileupload">
+                                                <div class="filebox2">
+                                                    <label for="ex_file"><img src="../../images/icon/ico_photo.png" alt="사진첨부"> 사진 첨부</label> 
+                                                    <input type="file" id="ex_file"> 
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="tit">
+                                                    권고사항
+                                                </div>
+                                                <div class="text">
+                                                    <textarea class="input-tb h12" cols="100" rows="5" placeholder="최대 500자이내"></textarea>
+                                                </div>                                     
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+
+			<div class="btn-area">
+				<button class="btn-big -grey">취소</button>
+                <button class="btn-big normal">임시저장</button>
+                <button class="btn-big -primary">작성완료</button>
+			</div>
+		</section>
+    </main>
+    
+</div>
+
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>안전보건교육 항목 관리</title>
+<!-- CSS -->    
+<link rel="stylesheet" href="../../css/default.css">
+<link rel="stylesheet" href="../../css/style.css">
+<!-- JS -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script src="https://kit.fontawesome.com/7bcf70055f.js"></script>
+</head>
+    
+<body>
+    
+<div class="page-wrapper d-flex">
+    <nav id="side-nav" class="side-nav">
+    </nav>
+	
+    <main class="contents">
+        <section class="wrapper">
+            <h1 class="page-title">안전보건교육 항목 관리 <span class="c-blue"> V1.0</span></h1>
+            <form>
+                <!-- <div class="top btn-area jc-end mb-1">
+                    <button class="btn btn-add">추가</button>
+                </div> -->
+                <table class="table dt center l-fixed v-middle">
+					<colgroup>
+						<col width="70">
+                        <col width="170">
+                        <col width="170">
+						<col width="">
+                        <col width="100">
+                        <!-- <col width="130"> -->
+					</colgroup>
+                    <thead>
+                        <tr>
+                            <th>순서</th>
+                            <th>교육구분</th>
+                            <th>세부교육구분</th>
+                            <th>주요교육사항</th>
+                            <th>사용여부</th>
+                            <!-- <th></th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>1</th>
+							<td>신규채용자교육</td>
+                            <td class="left"></td>
+                            <td class="left">
+                                <p>1. 산업안전 및 사고 예방에 관한 사항</p>
+                                <p>2. 산업보건 및 직업병 예방에 관한 사항</p>
+                                <p>3. 산업안전보건법령 및 산업재해보상보험 제도에 관한 사항</p>
+                                <p>4. 직무스트레스 예방 및 관리에 관한 사항</p>
+                                <p>5. 직장 내 괴롭힘, 고객의 폭언 등으로 인한 건강장해 예방 및 관리에 관한 사항</p>
+                                <p>6. 기계·기구의 위험성과 작업의 순서 및 동선에 관한 사항</p>
+                                <p>7. 작업 개시 전 점검에 관한 사항</p>
+                                <p>8. 정리정돈 및 청소에 관한 사항</p>
+                                <p>9. 사고 발생 시 긴급조치에 관한 사항</p>
+                                <p>10. 물질안전보건자료에 관한 사항</p>
+                            </td>
+                            <td><input type="checkbox" checked></td>
+                            <!-- <td>
+                                <div class="btn-group">
+                                    <button class="btn-sm normal" disabled>위로</button>
+                                    <button class="btn-sm normal">아래로</button>
+                                </div>
+                            </td> -->
+                        </tr>
+                        <tr>
+                            <th>2</th>
+							<td>정기안전보건교육</td>
+                            <td class="left"></td>
+                            <td class="left">
+                                <p>1. 산업안전 및 사고 예방에 관한 사항</p>
+                                <p>2. 산업보건 및 직업병 예방에 관한 사항</p>
+                                <p>3. 건강증진 및 질병 예방에 관한 사항</p>
+                                <p>4. 유해∙위험 작업환경 관리에 관한 사항</p>
+                                <p>5. 산업안전보건법령 및 산업재해보상보험 제도에 관한 사항</p>
+                                <p>6. 직무 스트레스 예방 및 관리에 관한 사항</p>
+                                <p>7. 직장 내 괴롭힘, 고객의 폭언 등으로 인한 건강장해 예방 및 관리에 관한 사항</p>
+                            </td>
+                            <td><input type="checkbox" checked></td>
+                        </tr>
+                        <tr>
+                            <th>3</th>
+							<td>관리감독자교육</td>
+                            <td class="left"></td>
+                            <td class="left">
+                                <p>1. 산업안전 및 사고 예방에 관한 사항</p>
+                                <p>2. 산업보건 및 직업병 예방에 관한 사항</p>
+                                <p>3. 유해·위험 작업환경 관리에에 관한 사항</p>
+                                <p>4. 산업안전보건법령 및 산업재해보상보험 제도에 관한 사항</p>
+                                <p>5. 직무스트레스 예방 및 관리에 관한 사항</p>
+                                <p>6. 직장 내 괴롭힘, 고객의 폭언 등으로 인한 건강장해 예방 및 관리에 관한 사항</p>
+                                <p>7. 작업공정의 유해·위험과 재해 예방대책에 관한 사항</p>
+                                <p>8. 표준안전 작업방법 및 지도 요령에 관한 사항 </p>
+                                <p>9. 관리감독자의 역할과 임무에 관한 사항</p>
+                                <p>10. 안전보건교육 능력 배양에 관한 사항</p>
+                            </td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <th>4</th>
+							<td>MSDS교육</td>
+                            <td class="left"></td>
+                            <td class="left">
+                                <p>1. 대상화학물질의 명칭(또는 제품명)</p>
+                                <p>2. 물리적 위험성 및 건강 유해성</p>
+                                <p>3. 취급상의 주의사항</p>
+                                <p>4. 적절한 보호구</p>
+                                <p>5. 응급조치 요령 및 사고시 대처방법</p>
+                                <p>6. 물질안전보건자료 및 경고표지를 이해하는 방법</p>
+                            </td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <th>6</th>
+							<td>특별안전교육</td>
+                            <td class="left">1.고압실 내 작업</td>
+                            <td class="left">
+                                <p>※ 고압실 내 작업(잠함공법이나 그 밖의 압기 공법으로 대기압을 넘는 기압인 작업실 또는 수갱 내부에서 하는 작업만 해당한다.)</p>
+                                <p>1. 고기압 장해의 인체에 미치는 영향에 관한 사항</p>
+                                <p>2. 작업의 시간·작업 방법 및 절차에 관한 사항</p>
+                                <p>3. 압기공법에 관한 기초지식 및 보호구 착용에 관한 사항</p>
+                                <p>4. 이상 발생 시 응급조치에 관한 사항</p>
+                                <p>5. 그 밖에 안전·보건관리에 필요한 사항</p>
+                            </td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <th>7</th>
+							<td>특별안전교육</td>
+                            <td class="left">2.용접작업</td>
+                            <td class="left">
+                                <p>※ 아세틸렌 용접장치 또는 가스집합 용접장치를 사용하여 행하는 금속의 용접ㆍ용단 또는 가열작업(발생기ㆍ도관등에 의하여 구성되는 용접장치만 해당한다.)</p>
+                                <p>1. 용접 흄, 분진 및 유해광선 등의 유해성에 관한 사항</p>
+                                <p>2. 가스용접기, 압력조정기, 호스 및 취관두 등의 기기점검에 관한 사항</p>
+                                <p>3. 작업방법ㆍ순서 및 응급처치에 관한 사항</p>
+                                <p>4. 안전기 및 보호구의 취급에 관한 사항</p>
+                                <p>5. 화재예방 및 초기대응에 관한 사항</p>
+                                <p>6. 그 밖에 안전∙보건관리에 필요한 사항</p>
+                            </td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btn-area">
+                    <button class="btn-big -grey">취소</button>
+                    <button class="btn-big -primary">저장</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</div>
+    
+<!-- partial -->
+<script  src="../../js/sidebar.js"></script>
+
+</body>
+</html>
