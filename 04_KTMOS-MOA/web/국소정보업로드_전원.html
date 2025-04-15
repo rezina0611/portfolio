@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="./css/resetting.css">
     <link rel="stylesheet" type="text/css" href="./css/dialog.css">
     <link rel="stylesheet" type="text/css" href="./css/wireless.css">
+
+    <link href="./css/popup.css" rel="stylesheet" type="text/css">  <!--20220621-->
     
     <!-- tui css -->
     <link rel="stylesheet" type="text/css" href="./css/tui-pagination.css">
@@ -43,10 +45,9 @@
     <script type="text/javascript" src="./js/tui-code-snippet.js"></script>
     <script type="text/javascript" src="./js/tui-time-picker.js"></script>
     <script type="text/javascript" src="./js/tui-date-picker.js"></script>
-    <script type="text/javascript" src="./js/tui-date-picker-ko.js"></script>
+    <script type="text/javascript" src="/js/tui-date-picker-ko.js"></script>
     <script type="text/javascript" src="./js/tui-calendar.js"></script>
     <script type="text/javascript" src="./js/toastui-select-box.js"></script>
-
     <script>
         const Grid = tui.Grid;
         Grid.applyTheme('default', {
@@ -113,8 +114,66 @@
         .tui-grid-row-odd>td{background-color:#fff}.tui-grid-row-even>td{background-color:#fff}.tui-grid-cell-dummy{background-color:#fff}
     </style>
 </head>
-
 <body>
+    <script>
+        $(function(){
+            //팝업창 열기
+            $(".openLayerPopup").on("click", function(e) {
+                e.preventDefault();
+                $(".layerpopupWrapper").show();
+                $(".mask").fadeIn(150);
+            });
+    
+            //팝업창 닫기
+            $(".btnClose").on("click", function(e) {
+                e.preventDefault();
+                $(".layerpopupWrapper").hide();
+                $(".mask").fadeOut(150);
+            });
+        });
+    </script>
+    <script>
+        function fn_close() {
+            $(".layerpopupWrapper").hide();
+            $(".mask").fadeOut(150);
+        }
+    </script>
+    <div class="mask"></div>
+    <div class="layerpopupWrapper">
+        <div class="layerpopupArea w850">
+            <a class="btnClose" href="#btnClose"><i class="fas fa-times fa-lg" style="color:#999;"></i></a>
+            <div class="layerPopupContent">
+                <h4>※ 엑셀 업로드 시 확인사항</h4>
+                <div class="previousInfo" style="height:450px;">
+                    <h6 class="m-t-10">공통</h6>
+                    <ul class="txtRefer">
+                        <li>서버 부하로 인하여 최대 1,000건 이하로 업로드를 진행해주세요.</li>
+                        <li>'필수항목'은 필수로 기재해주세요. (탬플릿 항목 셀 파란색 표시)</li>
+                        <li>엑셀 작업 시 ‘표시형식’에 따라 값이 변경되는 경우가 있으니 확인해주세요. 
+                            ex) 숫자’0’으로 시작하는 값일 경우 <br>(고유번호: ’0000001’ <i class="fas fa-arrow-right fa-fw"></i>‘1’로 변경되는 경우가 있습니다.)
+                        </li>
+                        <li>데이터를 복사하려면 ‘값만 붙여넣기’를 해서 처리 해야 합니다.</li>
+                        <li>서식형태를 ‘텍스트’로 하여 진행해야 합니다.</li>
+                    </ul>
+
+                    <h6 class="m-t-30">국소정보</h6>
+                    <ul class="txtRefer">
+                        <li>‘위치코드’는 장비를 특정하는 11자리 key값 이므로 중복되지 않게 확인해주세요.</li>
+                        <li>‘위도,경도’ ex)’ 37.579443’, ‘126.938754’ 형식으로 넣어주세요.</li>
+                        <li>'팀/파트'는 'OO팀','OO파트'가 아닌 'OOT' 또는 'OOP' 또는 'OOC'로 등록해주세요.</li>
+                        <li>선택항목들은 '전원국사정보 탬플릿'의 [입력형태]를 참고하여 선택하여 입력해주세요.</li>
+                        <li>(탬플릿 항목명 빨간색 표기)</li>
+                        <li>ex) 국사등급:A/B/C/D/D급미만 ->(택1입력)</li>
+                        <li>'감시장치'는 다중 입력이 가능합니다. 'ELITE2','ELITE3','BIMS'중 해당하는 것들을 콤마(,)로 구분 하여 입력해주세요.(탬플릿 항목명 파란색 표기)</li>
+                    </ul>
+                </div>
+    
+                <div class="text-center m-t-20">
+                    <button class="btn btn-sm m-w-sm primary" onclick="fn_close()" type="button">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
 <div class="d-flex" id="wrapper">
     <!-- Sidebar -->
     <div id="sidebar" class="nav-collapse">
@@ -142,7 +201,7 @@
                     </ul>
                 </li>
                 <li class="sub-menu"><a href="javascript:showSub1('M02S01')">국소정보<span class="dcjq-icon"></span></a>
-                    <ul class="sub" id="subMenuM02S01" style="display: none;">
+                    <ul class="sub" id="subMenuM02S01" style="display:block;">
                         <li><a href="/device/5glte3g/list/M02S01" id="" class="" target="">국소정보조회-5G/LTE/3G</a></li>
                         <li><a href="/device/repeater/list/M02S02" id="" class="" target="">국소정보조회-중계기</a></li>
                         <li><a href="/device/wifi/list/M02S03" id="" class="" target="">국소정보조회-WiFi</a></li>
@@ -166,7 +225,7 @@
                     </ul>
                 </li>
                 <li class="sub-menu"><a href="#none">아차사고<span class="dcjq-icon"></span></a>
-                    <ul class="sub" id="" style="display:block;">
+                    <ul class="sub" id="" style="display: none;">
                         <li><a href="#none" id="" class="active" target="">아차사고조회</a></li>
                     </ul>
                 </li>
@@ -249,355 +308,103 @@
     <link rel="stylesheet" type="text/css" href="./css/multifreezer.css">
     <script type="text/javascript" src="./js/multifreezerStandalone.js"></script>
     <!-- Page Content -->
-    <div id="page-content-wrapper">
-        <section class="wrapper">
-            <h1 id="page_tit">현장수시업무 현황</h1>
-
-            <div class="group-section m-t-15">
-                <table class="hit">
-                    <colgroup>
-                        <col width="10%"><col width="*">
-                        <col width="10%"><col width="*">
-                        <col width="10%"><col width="10%">
-                        <col width="*">
-                    </colgroup>
-                    <tbody>
-                        <tr>
-                            <th>업무명</th>
-                            <td><input type="text" name="deviceId" value="" class="input-st" placeholder="업무명을 입력하세요"></td>
-                            <th>장비ID</th>
-                            <td><input type="text" name="deviceId" value="" class="input-st" placeholder="장비ID를 입력하세요"></td>
-                            <th>상태</th>
-                            <td>
-                                <select name="deviceCategory" id="deviceCategory" class="type-2">
-                                    <option value="전체">전체</option>
-                                    <option value="진행중">진행중</option>
-                                    <option value="종료">종료</option>
-                                </select>
-                            </td>
-                            <td rowspan="2" class="b-l-1 w-120 btn-td-p">
-                            <button id="btnSearch" class="btn btn-search primary-gra w-100" type="button">조회</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>기간</th>
-                            <td>
-                                <div class="d-flex a-item">
-                                    <!-- 시작일 -->
-                                    <div class="tui-datepicker-input  tui-has-focus">
-                                        <input type="text" id="datepicker-input-ko" name="datepicker-input-ko" aria-label="Year-Month" value="2022-08"> 
-                                        <span class="tui-ico-date"></span>
-                                    </div>
-                                    <div id="datepicker-month-ko" style="margin-top: -1px;"></div>
-
-                                    <span class="from">~</span>
-
-                                    <!-- 종료일 -->
-                                    <div class="tui-datepicker-input  tui-has-focus">
-                                        <input type="text" id="datepicker-input-ko2" name="datepicker-input-ko2" aria-label="Year-Month" value="2022-08">
-                                        <span class="tui-ico-date"></span>
-                                    </div>
-                                    <div id="datepicker-month-ko2" style="margin-top: -1px;"></div>
-
-                                    <input type="checkbox" class="checkbox" id="dateUseYn" name="dateUseYn" value="Y" style="width: 5%;margin-left:10px;">
-                                    <span class="w-15" style="margin-left:3px;">전체</span>
-                                </div>
-                            </td>
-                            <th>지역/본부/팀</th>
-                            <td>
-                                <div class="hit-group" style="display: flex; margin:0;">
-                                    <select class="type-2" style="margin-right: 10px; width:165px;">
-                                        <option value="KTN000" label="KT MOS 북부" selected></option>
-                                        <option value="KTS000" label="KT MOS 남부"></option>
-                                    </select>
-
-                                    <select class="type-2" style="margin-right: 10px; width:165px;">
-                                        <option value="" label="본부전체"></option>
-                                        <option value="AD0000" label="경영총괄"></option>
-                                        <option value="AE0000" label="기술총괄"></option>
-                                        <option value="AE0500" label="품질지원센터"></option>
-                                        <option value="BA0000" label="강북본부"></option>
-                                        <option value="BB0000" label="강남본부"></option>
-                                        <option value="BC0000" label="강서본부"></option>
-                                        <option value="BD0000" label="강원본부"></option>
-                                    </select>
-
-                                    <select class="type-2" style="width:165px;">
-                                        <option label="선택하세요" value=""></option>
-                                        <option value="" label="윤리경영실"></option>
-                                        <option value="" label="경영기획팀"></option>
-                                        <option value="" label="재무회계팀"></option>
-                                        <option value="" label="경영지원팀"></option>
-                                        <option value="" label="상생협력팀"></option>
-                                        <option value="" label="안전보건팀"></option>
-                                    </select>
-                                </div>
-                            </td>
-                            <th>페이지별수</th>
-                            <td><input type="text" id="perPage" name="perPage" value="10"></td>
-                        </tr>
-                    </tbody>
-                </table>
+<div id="page-content-wrapper">
+    <section class="wrapper">
+        <h1 id="page_tit">국소정보업로드-전원</h1>
+        <div class="group-section m-t-15">
+            <table class="hit">
+                <colgroup>
+                    <col width="10%">
+                    <col width="50%">
+                    <col width="20%">
+                </colgroup>
+                <tbody>
+                <form id="deviceExcelList" name="deviceExcelList" method="get"></form>
+                    <input type="hidden" id="perPage" name="perPage" value="10">
+                    <input type="hidden" id="page" name="page" value="1">
+                    <input type="hidden" id="uploadFileId" name="uploadFileId">
+                    <input type="hidden" id="menuCode" name="menuCode" value="M10S01">
+                    <tr>
+                        <th>업로된 파일</th>
+                        <td>
+                            <div class="hit-group" style="display: flex;">
+                                &nbsp;
+                                <div id="selectUploadFile" style="width: 50%;margin-left: 15px; z-index: 100"><div class="tui-select-box"><div class="tui-select-box-input" tabindex="0"><p class="tui-select-box-placeholder">업로드파일명(최근 10개)</p><span class="tui-select-box-icon">select</span></div><ul class="tui-select-box-dropdown tui-select-box-hidden"><li class="tui-select-box-item" tabindex="-1" data-value="3aad87c7-1d4c-435b-b919-d536f4316873" data-index="0">[2389] 05.국소정보(5GLTE3G) (1)_20220603160040.xls</li><li class="tui-select-box-item" tabindex="-1" data-value="88e60feb-3ee6-445f-b592-152150ec5b69" data-index="1">[2388] 05.국소정보(5GLTE3G) (1)_20220603155736.xls</li><li class="tui-select-box-item" tabindex="-1" data-value="6e54bb1a-eb25-419e-8a0f-1a90fbac2cc2" data-index="2">[2387] 0603_대구본부(5G_기지국) 업로드_20220603154707.xlsx</li><li class="tui-select-box-item" tabindex="-1" data-value="81bcdd6b-ee91-4a84-91d2-25975e973e62" data-index="3">[2386] 0603_대구본부(5G_기지국) 업로드_20220603145349.xlsx</li><li class="tui-select-box-item" tabindex="-1" data-value="60a3d42c-7abe-422c-ac74-fc8b9bd9ef2f" data-index="4">[2385] 0603_대구본부(5G_기지국) 업로드_20220603145045.xlsx</li><li class="tui-select-box-item" tabindex="-1" data-value="6a12a35b-5925-4569-a2d2-f7c97731fcc8" data-index="5">[2384] 0603_대구본부(5G_기지국) 업로드 (1)_20220603144416.xls</li><li class="tui-select-box-item" tabindex="-1" data-value="4f827964-3ec2-419f-8d9a-3ca6e5ca836d" data-index="6">[2383] 0603_대구본부(5G_기지국) 업로드 (1)_20220603144112.xls</li><li class="tui-select-box-item" tabindex="-1" data-value="63ac5ed1-8f0a-4ae0-8371-cda71b49f6b8" data-index="7">[2382] 0603_대구본부(5G_기지국) 업로드 (1)_20220603141433.xls</li><li class="tui-select-box-item" tabindex="-1" data-value="ca57ebf9-4b8a-468b-88ac-604f7ccd503e" data-index="8">[2381] 0603_대구본부(5G_기지국) 업로드 (1)_20220603141129.xls</li><li class="tui-select-box-item" tabindex="-1" data-value="92c775ce-c215-4e57-9c2f-7f171337e95d" data-index="9">[2380] 0603_대구본부(5G_기지국) 업로드_20220603134923.xls</li></ul><select class="tui-select-box-hidden" tabindex="-1"><option label="업로드파일명(최근 10개)" value=""></option><option value="3aad87c7-1d4c-435b-b919-d536f4316873" label="[2389] 05.국소정보(5GLTE3G) (1)_20220603160040.xls"></option><option value="88e60feb-3ee6-445f-b592-152150ec5b69" label="[2388] 05.국소정보(5GLTE3G) (1)_20220603155736.xls"></option><option value="6e54bb1a-eb25-419e-8a0f-1a90fbac2cc2" label="[2387] 0603_대구본부(5G_기지국) 업로드_20220603154707.xlsx"></option><option value="81bcdd6b-ee91-4a84-91d2-25975e973e62" label="[2386] 0603_대구본부(5G_기지국) 업로드_20220603145349.xlsx"></option><option value="60a3d42c-7abe-422c-ac74-fc8b9bd9ef2f" label="[2385] 0603_대구본부(5G_기지국) 업로드_20220603145045.xlsx"></option><option value="6a12a35b-5925-4569-a2d2-f7c97731fcc8" label="[2384] 0603_대구본부(5G_기지국) 업로드 (1)_20220603144416.xls"></option><option value="4f827964-3ec2-419f-8d9a-3ca6e5ca836d" label="[2383] 0603_대구본부(5G_기지국) 업로드 (1)_20220603144112.xls"></option><option value="63ac5ed1-8f0a-4ae0-8371-cda71b49f6b8" label="[2382] 0603_대구본부(5G_기지국) 업로드 (1)_20220603141433.xls"></option><option value="ca57ebf9-4b8a-468b-88ac-604f7ccd503e" label="[2381] 0603_대구본부(5G_기지국) 업로드 (1)_20220603141129.xls"></option><option value="92c775ce-c215-4e57-9c2f-7f171337e95d" label="[2380] 0603_대구본부(5G_기지국) 업로드_20220603134923.xls"></option></select></div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <button id="btnSearch" class="btn btn-search-sm primary-gra" type="button">조회</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>파일업로드</th>
+                        <td>
+                                                            
+                            <div class="custom-file">
+                                <input type="file" name="file" class="custom-file-input" id="file" data-url="/device/excel/upload/5glte3g" accept=".xlsx,.xls">
+                                <label class="custom-file-label ellipsis" for="file" custom-file-label="">Choose file</label>
+                            </div>
+                        </td>
+                        <td>
+                            <button id="btnRegister" class="btn btn-md" type="button" disabled="">등록</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>마스터적용</th>
+                        <td colspan="3">
+                            <button id="btnMasterExec" class="btn btn-md danger" type="button">마스터 테이블에 적용</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>5G/LTE/3G</th>
+                        <td colspan="3">
+                            <a href="/exceltemplates/05.국소정보(5GLTE3G).xls">국소정보(5G/LTE/3G) 템플릿 다운로드</a>
+                            <span>
+                                <a href="#none" class="openLayerPopup" style="color: red;padding-left: 40px;">※엑셀 업로드 시 확인사항</a></span>
+                        </td>
+                    </tr>
+                
+                </tbody>
+            </table>
+        </div>
+        <div class="group-section m-t-40">
+            <div class="title">
+                전원
+                <span class="title-num"><label id="lblTotalCount">0</label></span>
             </div>
-            
-            <div class="group-section m-t-40">
-                <div class="title">
-                    현장수시업무 현황
-                    <span class="title-num"><label id="lblTotalCount">0</label></span>
-                </div>
-                <div class="f-r m-b-10">
-                    <button class="btn btn-md pink" type="button" onclick="">업무추가</button>
-                    <button id="btnXlsDownload" class="btn btn-md green loading-btn" type="button" onclick="fn_XlsDownload();">다운로드</button>
-                </div>
-                <div id="grid5">
-                </div>
+            <div class="f-r m-b-10">
+                <button id="btnnotepad" class="btn btn-md primary-gra opennotepad" type="button">메모장 업로드</button>
             </div>
-        </section>
-    </div>
-    <!-- /#page-content-wrapper -->
+            <div id="grid">
+
+            </div>
+        </div>
+    </section>
 </div>
-<script type="text/javascript">
-    let today = new Date();
-    let startDates;
-    let role = $('#roleCode').val();
-    /* FU,MU(권한자) : 7일로 변경, AU(권한자) : 3개월로 변경 */
-    if(role == 'AU'){
-        startDates = today.setMonth(today.getMonth() - 3);
-    }else if(role == 'FU' || role == 'MU'){
-        startDates = today.setDate(today.getDate() - 7);
-    }else{
-        startDates = today.setMonth(today.getMonth() - 1);
-    }
-
-    var calMonthKo = new tui.DatePicker('#datepicker-month-ko', {
-            date: startDates,
-            language: 'ko',
-            type: 'month',
-            input: {
-                element: '#datepicker-input-ko',
-                format: 'yyyy-MM'
-            }
-    });
-
-    var calMonthKo = new tui.DatePicker('#datepicker-month-ko2', {
-            date: startDates,
-            language: 'ko',
-            type: 'month',
-            input: {
-                element: '#datepicker-input-ko2',
-                format: 'yyyy-MM'
-            }
-    });
-    // let picker = tui.DatePicker.createRangePicker({
-    //     language: 'ko',
-    //     startpicker: {
-    //         date: startDates,
-    //         input: '#startDate',
-    //         container: '#datepicker-wrapper1'
-    //     },
-    //     endpicker: {
-    //         date: new Date(),
-    //         input: '#endDate',
-    //         container: '#datepicker-wrapper2'
-    //     }
-    // });
-
-    let fromDateVal = $('#startDate').val();
-    let toDateVal = $('#endDate').val();
-    let deviceCategoryVal = $('#deviceCategory').val();
-
-    const dataSource = {
-        api: {
-            readData: {url: '/additionalfacilities/list/data', method: 'GET',
-                initParams: {"startDate": fromDateVal, "endDate": toDateVal, "deviceCategory": deviceCategoryVal}}
-        },
-        initialRequest: false // 디폴트 값은 true, 아래 gridInit를 통해 호출
-    }
-</script>
-<script type="text/javascript">
-    /** TOAST Grid */
-const usersGrid3 = new tui.Grid({
-    el: document.getElementById('grid5'),
-    data: dataSource,
-    scrollX: true,
-    scrollY: true,
-    width: '100%',
-    minBodyHeight: 400,
-    pageOptions: { perPage: 20 },
-    columnOptions: { resizable: true },
-    columns: [
-        {
-            header: '수정',
-            align: 'center',
-            name: 'editBtn',
-            width: '80',
-            sortable: false,
-            formatter: function (rowData) {
-                let url = '#';
-                return '<button class="btn primary-gra" type="button">수정</button>';
-            }
-
-        },
-        {
-            header: '업무명',
-            name: 'onsiteName',
-            align: 'center',
-            width: '270',
-            sortable: true,
-            formatter: function (rowData) {
-                let url = '#';
-                return '<a href="' + url + '">' + rowData.value + '</a>';
-            }
-        },
-        {
-            header: '지역',
-            name: 'dept1name',
-            align: 'center',
-            width: '150',
-            sortable: true
-        },
-        {
-            header: '본부',
-            name: 'dept2name',
-            align: 'center',
-            width: '150',
-            sortable: true
-        },
-        {
-            header: '운용팀',
-            name: 'team',
-            align: 'center',
-            width: '150',
-            sortable: true
-        },
-        {
-            header: '대표장비ID',
-            name: 'deviceId',
-            align: 'center',
-            width: '150',
-            sortable: true
-        },
-        
-        {
-            header: '업무시작일',
-            name: 'strStartDate',
-            align: 'center',
-            width: '125',
-            sortable: true
-
-        },
-        {
-            header: '업무종료일',
-            name: 'strEndDate',
-            align: 'center',
-            width: '125',
-            sortable: true
-
-        },
-        {
-            header: '대상',
-            name: 'totalCnt',
-            align: 'center',
-            width: '80',
-            sortable: false
-        },
-        {
-            header: '완료',
-            name: 'endCnt',
-            align: 'center',
-            width: '80',
-            sortable: false
-        },
-        {
-            header: '진행중',
-            name: 'ingCntNonEndCnt',
-            align: 'center',
-            width: '80',
-            sortable: false
-        },
-        {
-            header: '불가',
-            name: 'nokCnt',
-            align: 'center',
-            width: '80',
-            sortable: false
-        },
-        {
-            header: '진행률',
-            name: 'ingPer',
-            align: 'center',
-            width: '80',
-            sortable: false,
-            formatter: function (rowData) {
-               return rowData.value + '%';
-            }
-        }
-    ],
-    
-    data: [
-        {
-        editBtn:'수정',
-        onsiteName: 'OOO 업무명',       //업무명
-        dept1name: 'KT MOS 북부',       //지역
-        dept2name: '경영총괄',          //본부
-        team: '전체',                   //운용팀
-        deviceId:'USKG004067',          //대표장비ID
-        strStartDate: '2021-09-01',
-        strEndDate: '2021-09-30',
-        totalCnt: '5352',             
-        endCnt: '1562',                 
-        ingCntNonEndCnt: '3738',
-        nokCnt: '7',
-        ingPer: '29'
-        },
-        {
-        editBtn:'수정',
-        onsiteName: 'OOO 업무명',       //업무명
-        dept1name: 'KT MOS 북부',       //지역
-        dept2name: '경영총괄',          //본부
-        team: '윤리경영실',                   //운용팀
-        deviceId:'USKG004060',          //대표장비ID
-        strStartDate: '2021-09-01',
-        strEndDate: '2021-09-30',
-        totalCnt: '1234',             
-        endCnt: '1562',                 
-        ingCntNonEndCnt: '700',
-        nokCnt: '2',
-        ingPer: '5'
-        },
-        {
-        editBtn:'수정',
-        onsiteName: 'OOO 업무명',       //업무명
-        dept1name: 'KT MOS 북부',       //지역
-        dept2name: '경영총괄',          //본부
-        team: '경영기획팀',             //운용팀
-        deviceId:'USKG004059',          //대표장비ID
-        strStartDate: '2021-09-01',
-        strEndDate: '2021-09-30',
-        totalCnt: '1234',             
-        endCnt: '1562',                 
-        ingCntNonEndCnt: '700',
-        nokCnt: '1',
-        ingPer: '6'
-        },
-    ],
-
-    onGridMounted: function () {
-        //console.log("onGridMounted");
-    },
-    onGridUpdated: function (data) {
-        //console.log("onGridUpdated");
-        let perPage = data.instance.store.data.pageOptions.perPage;
-        let page = data.instance.store.data.pageOptions.page;
-        $perPage.val(perPage);
-        $page.val(page);
-        $lblTotalCount.empty().html(data.instance.store.data.pageOptions.totalCount);
-        loading_mask.close();
-    },
-    onGridBeforeDestroy: function () {
-        //console.log("onGridBeforeDestroy");
-    }
-});
-</script>
+<!-- /#page-content-wrapper -->
+<!--loading-->
+    <div id="loading-overlay">
+        <div id="loading">
+            <div class="dot-area">
+                <div class="dot left three"></div>
+                <div class="dot left two"></div>
+                <div class="dot left one"></div>
+                <i class="ic-logo"></i>
+                <div class="dot right one"></div>
+                <div class="dot right two"></div>
+                <div class="dot right three"></div>
+            </div>
+            <h2 class="loading-text">잠시만 기다려주세요</h2>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/dept-select_new.js"></script>
+    <script type="text/javascript" src="./grid/list_info_grid.js"></script>
+    <script type="text/javascript">
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+</div>
 </body>
 </html>

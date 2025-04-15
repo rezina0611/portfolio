@@ -251,36 +251,40 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
         <section class="wrapper">
-            <h1 id="page_tit">현장수시업무 현황</h1>
+            <h1 id="page_tit">현장수시업무 목록 ( OOO업무명 )</h1>
 
             <div class="group-section m-t-15">
                 <table class="hit">
                     <colgroup>
-                        <col width="10%"><col width="*">
-                        <col width="10%"><col width="*">
-                        <col width="10%"><col width="10%">
-                        <col width="*">
+						<col width="10%"><col width="30%">
+						<col width="10%"><col width="30%">
+						<col width="10%"><col width="10%">
+						<col width="10%">
+						<col width="*">
                     </colgroup>
                     <tbody>
                         <tr>
-                            <th>업무명</th>
-                            <td><input type="text" name="deviceId" value="" class="input-st" placeholder="업무명을 입력하세요"></td>
                             <th>장비ID</th>
                             <td><input type="text" name="deviceId" value="" class="input-st" placeholder="장비ID를 입력하세요"></td>
+                            <th>장비명</th>
+                            <td><input type="text" name="deviceName" value="" class="input-st" placeholder="장비명을 입력하세요"></td>
                             <th>상태</th>
                             <td>
-                                <select name="deviceCategory" id="deviceCategory" class="type-2">
-                                    <option value="전체">전체</option>
-                                    <option value="진행중">진행중</option>
-                                    <option value="종료">종료</option>
+                                <select name="status" id="status" class="type-2">
+                                    <option value="ALL">전체</option>
+                                    <option value="">미진행</option>
+                                    <option value="">진행중(임시저장)</option>
+                                    <option value="">완료</option>
+                                    <option value="">블가</option>
                                 </select>
                             </td>
-                            <td rowspan="2" class="b-l-1 w-120 btn-td-p">
-                            <button id="btnSearch" class="btn btn-search primary-gra w-100" type="button">조회</button>
+                            <td rowspan="4" class="b-l-1 w-120 btn-td-p">
+                                <button id="btnSearch" class="btn btn-search primary-gra w-100" type="button">조회</button>
                             </td>
                         </tr>
+                        
                         <tr>
-                            <th>기간</th>
+                            <th>등록일</th>
                             <td>
                                 <div class="d-flex a-item">
                                     <!-- 시작일 -->
@@ -303,8 +307,14 @@
                                     <span class="w-15" style="margin-left:3px;">전체</span>
                                 </div>
                             </td>
-                            <th>지역/본부/팀</th>
-                            <td>
+                            <th>작업자</th>
+                            <td colspan="3">
+                                <input type="text" name="worker" value="" class="input-st" placeholder="작업자를 입력하세요">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>등록부서</th>
+                            <td colspan="3">
                                 <div class="hit-group" style="display: flex; margin:0;">
                                     <select class="type-2" style="margin-right: 10px; width:165px;">
                                         <option value="KTN000" label="KT MOS 북부" selected></option>
@@ -342,14 +352,13 @@
             
             <div class="group-section m-t-40">
                 <div class="title">
-                    현장수시업무 현황
-                    <span class="title-num"><label id="lblTotalCount">0</label></span>
+                    현장수시업무
+                    <span class="title-num"><label id="lblTotalCount">49</label></span>
                 </div>
                 <div class="f-r m-b-10">
-                    <button class="btn btn-md pink" type="button" onclick="">업무추가</button>
                     <button id="btnXlsDownload" class="btn btn-md green loading-btn" type="button" onclick="fn_XlsDownload();">다운로드</button>
                 </div>
-                <div id="grid5">
+                <div id="onsite">
                 </div>
             </div>
         </section>
@@ -417,7 +426,7 @@
 <script type="text/javascript">
     /** TOAST Grid */
 const usersGrid3 = new tui.Grid({
-    el: document.getElementById('grid5'),
+    el: document.getElementById('onsite'),
     data: dataSource,
     scrollX: true,
     scrollY: true,
@@ -427,22 +436,45 @@ const usersGrid3 = new tui.Grid({
     columnOptions: { resizable: true },
     columns: [
         {
-            header: '수정',
+            header: '등록일시',
+            name: 'strWorkDate',
             align: 'center',
-            name: 'editBtn',
-            width: '80',
-            sortable: false,
-            formatter: function (rowData) {
-                let url = '#';
-                return '<button class="btn primary-gra" type="button">수정</button>';
-            }
-
+            width: '230',
+            sortable: true
         },
         {
-            header: '업무명',
-            name: 'onsiteName',
+            header: '본부',
+            name: 'dept2name',
             align: 'center',
-            width: '270',
+            width: '230',
+            sortable: true
+        },
+        {
+            header: '팀',
+            name: 'dept3name',
+            align: 'center',
+            width: '230',
+            sortable: true
+        },
+        {
+            header: '진행상태',
+            name: 'statusNm',
+            align: 'center',
+            width: '230',
+            sortable: true
+        },
+        {
+            header: '작업자',
+            name: 'workerNm',
+            align: 'center',
+            width: '230',
+            sortable: true
+        },
+        {
+            header: '장비ID',
+            name: 'deviceId',
+            align: 'center',
+            width: '230',
             sortable: true,
             formatter: function (rowData) {
                 let url = '#';
@@ -450,135 +482,42 @@ const usersGrid3 = new tui.Grid({
             }
         },
         {
-            header: '지역',
-            name: 'dept1name',
+            header: '장비명',
+            name: 'deviceName',
             align: 'center',
-            width: '150',
+            width: '230',
             sortable: true
-        },
-        {
-            header: '본부',
-            name: 'dept2name',
-            align: 'center',
-            width: '150',
-            sortable: true
-        },
-        {
-            header: '운용팀',
-            name: 'team',
-            align: 'center',
-            width: '150',
-            sortable: true
-        },
-        {
-            header: '대표장비ID',
-            name: 'deviceId',
-            align: 'center',
-            width: '150',
-            sortable: true
-        },
-        
-        {
-            header: '업무시작일',
-            name: 'strStartDate',
-            align: 'center',
-            width: '125',
-            sortable: true
-
-        },
-        {
-            header: '업무종료일',
-            name: 'strEndDate',
-            align: 'center',
-            width: '125',
-            sortable: true
-
-        },
-        {
-            header: '대상',
-            name: 'totalCnt',
-            align: 'center',
-            width: '80',
-            sortable: false
-        },
-        {
-            header: '완료',
-            name: 'endCnt',
-            align: 'center',
-            width: '80',
-            sortable: false
-        },
-        {
-            header: '진행중',
-            name: 'ingCntNonEndCnt',
-            align: 'center',
-            width: '80',
-            sortable: false
-        },
-        {
-            header: '불가',
-            name: 'nokCnt',
-            align: 'center',
-            width: '80',
-            sortable: false
-        },
-        {
-            header: '진행률',
-            name: 'ingPer',
-            align: 'center',
-            width: '80',
-            sortable: false,
-            formatter: function (rowData) {
-               return rowData.value + '%';
-            }
         }
     ],
     
     data: [
         {
-        editBtn:'수정',
-        onsiteName: 'OOO 업무명',       //업무명
-        dept1name: 'KT MOS 북부',       //지역
-        dept2name: '경영총괄',          //본부
-        team: '전체',                   //운용팀
-        deviceId:'USKG004067',          //대표장비ID
-        strStartDate: '2021-09-01',
-        strEndDate: '2021-09-30',
-        totalCnt: '5352',             
-        endCnt: '1562',                 
-        ingCntNonEndCnt: '3738',
-        nokCnt: '7',
-        ingPer: '29'
+        strWorkDate:'2023-01-30 14:48:57',
+        dept2name: '강서본부', 
+        dept3name: '평택운용팀', 
+        statusNm: '완료',
+        workerNm: '홍길동',
+        deviceId: 'KG0827K',  
+        deviceName: '평택화10-K',
+
         },
         {
-        editBtn:'수정',
-        onsiteName: 'OOO 업무명',       //업무명
-        dept1name: 'KT MOS 북부',       //지역
-        dept2name: '경영총괄',          //본부
-        team: '윤리경영실',                   //운용팀
-        deviceId:'USKG004060',          //대표장비ID
-        strStartDate: '2021-09-01',
-        strEndDate: '2021-09-30',
-        totalCnt: '1234',             
-        endCnt: '1562',                 
-        ingCntNonEndCnt: '700',
-        nokCnt: '2',
-        ingPer: '5'
+        strWorkDate:'2023-01-30 14:48:57',
+        dept2name: '강서본부', 
+        dept3name: '평택운용팀', 
+        statusNm: '완료',
+        workerNm: '홍길동',
+        deviceId: 'KG0827K',  
+        deviceName: '평택화9-K',
         },
         {
-        editBtn:'수정',
-        onsiteName: 'OOO 업무명',       //업무명
-        dept1name: 'KT MOS 북부',       //지역
-        dept2name: '경영총괄',          //본부
-        team: '경영기획팀',             //운용팀
-        deviceId:'USKG004059',          //대표장비ID
-        strStartDate: '2021-09-01',
-        strEndDate: '2021-09-30',
-        totalCnt: '1234',             
-        endCnt: '1562',                 
-        ingCntNonEndCnt: '700',
-        nokCnt: '1',
-        ingPer: '6'
+        strWorkDate:'2023-01-30 14:48:57',
+        dept2name: '강서본부', 
+        dept3name: '평택운용팀', 
+        statusNm: '완료',
+        workerNm: '홍길동',
+        deviceId: 'KG0827K',  
+        deviceName: '평택화8-K',
         },
     ],
 

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>KT MOA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- 기존 css -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/resetting.css">
+    <link rel="stylesheet" type="text/css" href="./css/dialog.css">
+    <link rel="stylesheet" type="text/css" href="./css/wireless.css">
+
+    <!-- popup css 추가 20220623 -->
+    <link rel="stylesheet" type="text/css" href="./css/popup.css">
+    
+    <!-- tui css -->
+    <link rel="stylesheet" type="text/css" href="./css/tui-pagination.css">
+    <link rel="stylesheet" type="text/css" href="./css/tui-grid.css">
+    <link rel="stylesheet" type="text/css" href="./css/tui-time-picker.css">
+    <link rel="stylesheet" type="text/css" href="./css/tui-date-picker.css">
+    <link rel="stylesheet" type="text/css" href="./css/toastui-select-box.css">
+
+    <!-- toggle css -->
+    <link rel="stylesheet" type="text/css" href="./css/simple-sidebar.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+
+    <!-- Bootstrap core CSS -->
+
+    <!-- FILEUPLOAD -->
+    <link rel="stylesheet" type="text/css" href="./css/jquery.fileupload.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery.fileupload-ui.css">
+
+    <!-- 기존 js -->
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+    <script type="text/javascript" src="./js/scripts.js"></script>
+    <script type="text/javascript" src="./js/jquery.nicescroll.js"></script>
+
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/common-functions.js"></script>
+
+    <!-- tui js -->
+    <script type="text/javascript" src="./js/tui-pagination.js"></script>
+    <script type="text/javascript" src="./js/tui-grid.js"></script>
+    <script type="text/javascript" src="./js/tui-code-snippet.js"></script>
+    <script type="text/javascript" src="./js/tui-time-picker.js"></script>
+    <script type="text/javascript" src="./js/tui-date-picker.js"></script>
+    <script type="text/javascript" src="./js/tui-date-picker-ko.js"></script>
+    <script type="text/javascript" src="./js/tui-calendar.js"></script>
+    <script type="text/javascript" src="./js/toastui-select-box.js"></script>
+
+    <script>
+        const Grid = tui.Grid;
+        Grid.applyTheme('default', {
+            outline: {
+                border: '#e0e0e0'
+            },
+            cell: {
+                normal: {
+                    background: '#fff',
+                    border: '#e0e0e0',
+                    color: '#666666'
+                },
+                header: {
+                    background: '#f4f4f4',
+                    border: '#e0e0e0'
+                },
+                evenRow: {
+                    background: '#fff',
+                    border: '#e0e0e0',
+                    color: '#666666'
+                },
+                oddRow: {
+                    background: '#fff',
+                    border: '#e0e0e0',
+                    color: '#666666'
+                }
+            }
+        }); // Call API of static
+    </script>
+    <style type="text/css" id="tui-grid-theme-style">
+        .tui-grid-border-line-top{border-top:1px solid #e0e0e0}
+        .tui-grid-no-scroll-x .tui-grid-border-line-bottom{border-bottom:1px solid #e0e0e0}.tui-grid-frozen-border{background-color:#aaa}
+        .tui-grid-container ::-webkit-scrollbar{background-color:#fff}.tui-grid-container ::-webkit-scrollbar-thumb{background-color:#ddd}
+        .tui-grid-container ::-webkit-scrollbar-thumb:hover{background-color:#ddd;}
+        .tui-grid-container{scrollbar-3dlight-color:#fff;scrollbar-darkshadow-color:#fff;scrollbar-track-color:#fff;scrollbar-shadow-color:#fff;
+            scrollbar-face-color:#ddd;scrollbar-highlight-color:#ddd;scrollbar-arrow-color:#ddd;}
+        .tui-grid-border-line-bottom{border-bottom:1px solid #eee}
+        .tui-grid-content-area{border-color:#eee}.tui-grid-scrollbar-y-inner-border{background-color:#eee}
+        .tui-grid-scrollbar-y-outer-border{background-color:#eee}
+        .tui-grid-scrollbar-right-top{background-color:#f9f9f9;border-color:#eee}
+        .tui-grid-scrollbar-right-bottom{background-color:#f9f9f9;border-color:#eee}
+        .tui-grid-scrollbar-left-bottom{background-color:#f9f9f9;border-color:#eee}
+        .tui-grid-scrollbar-frozen-border{background-color:#f9f9f9;border-color:#eee}
+        .tui-grid-height-resize-handle{background-color:#fff;border-color:#fff}
+        .tui-grid-pagination{background-color:transparent;border-color:transparent}
+        .tui-grid-layer-selection{background-color:#00A9ff;border-color:#00a9ff}
+        .tui-grid-header-area{background-color:#fff;border-color:#ccc}
+        .tui-grid-body-area{background-color:#fff}.tui-grid-summary-area{background-color:#fff;border-color:#eee}
+        .tui-grid-has-summary-top .tui-grid-body-area{border-color:#eee}
+        .tui-grid-cell{background-color:#fff;border-color:#e0e0e0;border-left-width:0;border-right-width:0;border-top-width:1px;border-bottom-width:1px;color:#333}
+        .tui-grid-cell-editable{background-color:#fff}.tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-header-area .tui-grid-table{border-right-style:solid}
+        .tui-grid-cell-header{background-color:#f4f4f4;border-color:#e0e0e0;border-left-width:1px;border-right-width:1px;border-top-width:1px;border-bottom-width:1px;color:#222}
+        .tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-body-area .tui-grid-table{border-right-style:hidden}
+        .tui-grid-cell-row-header{background-color:#fff;border-color:#eee;border-left-width:0;border-right-width:0;border-top-width:1px;border-bottom-width:1px;color:#333}
+        .tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-summary-area .tui-grid-table{border-right-style:hidden}
+        .tui-grid-cell-summary{background-color:#fff;border-color:#eee;border-left-width:0;border-right-width:0;color:#333}
+        .tui-grid-cell-required{background-color:#fffdeb}
+        .tui-grid-cell-disabled{background-color:#f9f9f9;color:#c1c1c1}
+        .tui-grid-cell-invalid.tui-grid-cell{background-color:#ffe5e5}
+        .tui-grid-cell-header.tui-grid-cell-selected{background-color:#e5f6ff}
+        .tui-grid-cell-row-header.tui-grid-cell-selected{background-color:#e5f6ff}
+        .tui-grid-layer-focus-border{background-color:#00a9ff}.tui-grid-layer-editing{border-color:#00a9ff}
+        .tui-grid-layer-focus-deactive .tui-grid-layer-focus-border{background-color:#aaa}
+        .tui-grid-row-odd>td{background-color:#fff}.tui-grid-row-even>td{background-color:#fff}.tui-grid-cell-dummy{background-color:#fff}
+    </style>
+</head>
+<body class="over-hidden">
+    <div class="d-flex" id="wrapper">
+        <div id="page-content-wrapper">
+            <section class="wrapper">
+                <h1 id="page_tit">현장수시업무 불러오기</h1>
+        
+                    <div class="group-section m-t-15">
+                        <table class="hit">
+                            <colgroup>
+                                <col width="15%"><col width="30%">
+                                <col width="15%"><col width="30%">
+                                <col width="*">
+                            </colgroup>
+                            <tbody>
+                                <form id="onsiteList" name="onsiteList" method="get"></form>
+                                <input type="hidden" id="page" name="page" value="1">
+                                <input type="hidden" id="menuCode" name="menuCode" value="">
+                                <input type="hidden" id="deptCodePath" name="deptCodePath" value="KTN000/AE0000/AE0100">
+                                <input type="hidden" id="roleCode" name="roleCode" value="AU">
+                                <tr>
+                                    <th>업무명</th>
+                                    <td><input type="text" name="onSiteName" value="" class="input-st" placeholder="업무명를 입력하세요"></td>
+                                    <th>기간</th>
+                                    <td>
+                                        <div class="d-flex a-item">
+                                            <!-- 시작일 -->
+                                            <div class="tui-datepicker-input  tui-has-focus">
+                                                <input type="text" id="datepicker-input-ko" name="datepicker-input-ko" aria-label="Year-Month" value=""> 
+                                                <span class="tui-ico-date"></span>
+                                            </div>
+                                            <div id="datepicker-month-ko" style="margin-top: -1px;"></div>
+        
+                                            <span class="from">~</span>
+        
+                                            <!-- 종료일 -->
+                                            <div class="tui-datepicker-input  tui-has-focus">
+                                                <input type="text" id="datepicker-input-ko2" name="datepicker-input-ko2" aria-label="Year-Month" value="">
+                                                <span class="tui-ico-date"></span>
+                                            </div>
+                                            <div id="datepicker-month-ko2" style="margin-top: -1px;"></div>
+                                        </div>
+                                    </td>
+                                    <td rowspan="2" class="b-l-1 w-120 btn-td-p">
+                                    <button id="btnSearch" class="btn btn-search primary-gra w-100" type="button">조회</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>지역/본부/운용팀</th>
+                                    <td>
+                                        <div class="hit-group d-flex m-0">
+                                            <select class="type-2 m-r-10" style=" width:165px;">
+                                                <option value="KTN000" label="KT MOS 북부" selected></option>
+                                                <option value="KTS000" label="KT MOS 남부"></option>
+                                            </select>
+
+                                            <select class="type-2 m-r-10" style="width:165px;">
+                                                <option value="" label="본부전체"></option>
+                                                <option value="AD0000" label="경영총괄"></option>
+                                                <option value="AE0000" label="기술총괄"></option>
+                                                <option value="AE0500" label="품질지원센터"></option>
+                                                <option value="BA0000" label="강북본부"></option>
+                                                <option value="BB0000" label="강남본부"></option>
+                                                <option value="BC0000" label="강서본부"></option>
+                                                <option value="BD0000" label="강원본부"></option>
+                                            </select>
+
+                                            <select class="type-2" style="width:165px;">
+                                                <option value="" label="선택하세요" >선택하세요</option>
+                                                <option value="AC0001" label="윤리경영실"></option>
+                                                <option value="AD0100" label="경영기획팀"></option>
+                                                <option value="AD0200" label="재무회계팀"></option>
+                                                <option value="AD0300" label="경영지원팀"></option>
+                                                <option value="AD0400" label="상생협력팀"></option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <th>페이지별수</th>
+                                    <td><input type="text" id="perPage" name="perPage" value="10"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                <div class="group-section m-t-40">
+                    <div class="title">
+                        업무내역
+                        <span class="title-num"><label id="lblTotalCount">49</label></span>
+                    </div>
+                    <div id="onsite"></div>
+                </div>
+
+                <div class="btn-area">
+                        <button class="btn btn-default primary" onclick="window.close();">닫기</button>
+                    </div>
+            </section>
+        </div>
+    </div>
+<script type="text/javascript">
+    let today = new Date();
+    let startDates;
+    let role = $('#roleCode').val();
+    /* FU,MU(권한자) : 7일로 변경, AU(권한자) : 3개월로 변경 */
+    if(role == 'AU'){
+        startDates = today.setMonth(today.getMonth());
+    }else if(role == 'FU' || role == 'MU'){
+        startDates = today.setDate(today.getDate() - 7);
+    }else{
+        startDates = today.setMonth(today.getMonth() - 1);
+    }
+
+    var calMonthKo = new tui.DatePicker('#datepicker-month-ko', {
+            date: startDates,
+            language: 'ko',
+            type: 'month',
+            input: {
+                element: '#datepicker-input-ko',
+                format: 'yyyy-MM'
+            }
+    });
+
+    var calMonthKo = new tui.DatePicker('#datepicker-month-ko2', {
+            date: startDates,
+            language: 'ko',
+            type: 'month',
+            input: {
+                element: '#datepicker-input-ko2',
+                format: 'yyyy-MM'
+            }
+    });
+
+    let fromDateVal = $('#startDate').val();
+    let toDateVal = $('#endDate').val();
+    let deviceCategoryVal = $('#deviceCategory').val();
+
+    const dataSource = {
+        api: {
+            readData: {url: '/additionalfacilities/list/data', method: 'GET',
+                initParams: {"startDate": fromDateVal, "endDate": toDateVal, "deviceCategory": deviceCategoryVal}}
+        },
+        initialRequest: false // 디폴트 값은 true, 아래 gridInit를 통해 호출
+    }
+</script>
+<script type="text/javascript">
+    /** TOAST Grid */
+const usersGrid3 = new tui.Grid({
+    el: document.getElementById('onsite'),
+    data: dataSource,
+    scrollX: true,
+    scrollY: true,
+    width: '100%',
+    minBodyHeight: 340,
+    pageOptions: { perPage: 20},
+    columnOptions: { resizable: true },
+    columns: [
+        {
+            header: '업무명',
+            name: 'onsiteName',
+            align: 'center',
+            width: '300',
+            sortable: true
+        },
+        {
+            header: '본부',
+            name: 'dept2name',
+            align: 'center',
+            width: '230',
+            sortable: true
+        },
+        {
+            header: '운용팀',
+            name: 'team',
+            align: 'center',
+            width: '230',
+            sortable: true
+        },
+        {
+            header: '업무시작일',
+            name: 'strStartDate',
+            align: 'center',
+            width: '230',
+            sortable: true
+
+        },
+        {
+            header: '업무종료일',
+            name: 'strEndDate',
+            align: 'center',
+            width: '230',
+            sortable: true
+
+        },
+        {
+            header: '선택',
+            align: 'center',
+            name: 'registBtn',
+            width: '100',
+            sortable: false,
+            formatter: function (rowData) {
+                let url = '#';
+                return '<button class="btn primary-gra" type="button">선택</button>';
+            }
+
+        },
+    ],
+    
+    data: [
+        {
+            onsiteName: 'OOO 업무명',      
+            dept2name: '경영총괄',      
+            team: '전체',                 
+            strStartDate: '2021-09-01',
+            strEndDate: '2021-09-30',                
+            registBtn: ''
+        },
+        {
+            onsiteName: 'OOO 업무명',      
+            dept2name: '경영총괄',      
+            team: '경영기획팀',                 
+            strStartDate: '2021-09-01',
+            strEndDate: '2021-09-30',                
+            registBtn: ''
+        },
+    ],
+
+    onGridMounted: function () {
+        //console.log("onGridMounted");
+    },
+    onGridUpdated: function (data) {
+        //console.log("onGridUpdated");
+        let perPage = data.instance.store.data.pageOptions.perPage;
+        let page = data.instance.store.data.pageOptions.page;
+        $perPage.val(perPage);
+        $page.val(page);
+        $lblTotalCount.empty().html(data.instance.store.data.pageOptions.totalCount);
+        loading_mask.close();
+    },
+    onGridBeforeDestroy: function () {
+        //console.log("onGridBeforeDestroy");
+    }
+});
+</script>
+</body>
+</html>

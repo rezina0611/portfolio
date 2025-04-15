@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+    <meta charset="UTF-8">
+    <title>KT MOA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- 기존 css -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/resetting.css">
+    <link rel="stylesheet" type="text/css" href="./css/dialog.css">
+    <link rel="stylesheet" type="text/css" href="./css/wireless.css">
+
+    <link href="./css/popup.css" rel="stylesheet" type="text/css">
+    
+    <!-- tui css -->
+    <link rel="stylesheet" type="text/css" href="./css/tui-pagination.css">
+    <link rel="stylesheet" type="text/css" href="./css/tui-grid.css">
+    <link rel="stylesheet" type="text/css" href="./css/tui-time-picker.css">
+    <link rel="stylesheet" type="text/css" href="./css/tui-date-picker.css">
+    <link rel="stylesheet" type="text/css" href="./css/toastui-select-box.css">
+
+    <!-- toggle css -->
+    <link rel="stylesheet" type="text/css" href="./css/simple-sidebar.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+
+    <!-- Bootstrap core CSS -->
+
+    <!-- FILEUPLOAD -->
+    <link rel="stylesheet" type="text/css" href="./css/jquery.fileupload.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery.fileupload-ui.css">
+
+    <!-- 기존 js -->
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+    <script type="text/javascript" src="./js/scripts.js"></script>
+    <script type="text/javascript" src="./js/jquery.nicescroll.js"></script>
+
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/common-functions.js"></script>
+
+    <!-- tui js -->
+    <script type="text/javascript" src="./js/tui-pagination.js"></script>
+    <script type="text/javascript" src="./js/tui-grid.js"></script>
+    <script type="text/javascript" src="./js/tui-code-snippet.js"></script>
+    <script type="text/javascript" src="./js/tui-time-picker.js"></script>
+    <script type="text/javascript" src="./js/tui-date-picker.js"></script>
+    <script type="text/javascript" src="./js/tui-date-picker-ko.js"></script>
+    <script type="text/javascript" src="./js/tui-calendar.js"></script>
+    <script type="text/javascript" src="./js/toastui-select-box.js"></script>
+    <!-- <script type="text/javascript" src="/grid/device_5glte3g_list_grid.js"></script> -->
+    <script>
+        const Grid = tui.Grid;
+        Grid.applyTheme('default', {
+            outline: {
+                border: '#e0e0e0'
+            },
+            cell: {
+                normal: {
+                    background: '#fff',
+                    border: '#e0e0e0',
+                    color: '#666666'
+                },
+                header: {
+                    background: '#f4f4f4',
+                    border: '#e0e0e0'
+                },
+                evenRow: {
+                    background: '#fff',
+                    border: '#e0e0e0',
+                    color: '#666666'
+                },
+                oddRow: {
+                    background: '#fff',
+                    border: '#e0e0e0',
+                    color: '#666666'
+                }
+            }
+        }); // Call API of static
+    </script>
+    <style type="text/css" id="tui-grid-theme-style">
+            .tui-grid-border-line-top{border-top:1px solid #e0e0e0}
+            .tui-grid-no-scroll-x .tui-grid-border-line-bottom{border-bottom:1px solid #e0e0e0}.tui-grid-frozen-border{background-color:#aaa}
+            .tui-grid-container ::-webkit-scrollbar{background-color:#fff}.tui-grid-container ::-webkit-scrollbar-thumb{background-color:#ddd}
+            .tui-grid-container ::-webkit-scrollbar-thumb:hover{background-color:#ddd;}
+            .tui-grid-container{scrollbar-3dlight-color:#fff;scrollbar-darkshadow-color:#fff;scrollbar-track-color:#fff;scrollbar-shadow-color:#fff;
+                scrollbar-face-color:#ddd;scrollbar-highlight-color:#ddd;scrollbar-arrow-color:#ddd;}
+            .tui-grid-border-line-bottom{border-bottom:1px solid #eee}
+            .tui-grid-content-area{border-color:#eee}.tui-grid-scrollbar-y-inner-border{background-color:#eee}
+            .tui-grid-scrollbar-y-outer-border{background-color:#eee}
+            .tui-grid-scrollbar-right-top{background-color:#f9f9f9;border-color:#eee}
+            .tui-grid-scrollbar-right-bottom{background-color:#f9f9f9;border-color:#eee}
+            .tui-grid-scrollbar-left-bottom{background-color:#f9f9f9;border-color:#eee}
+            .tui-grid-scrollbar-frozen-border{background-color:#f9f9f9;border-color:#eee}
+            .tui-grid-height-resize-handle{background-color:#fff;border-color:#fff}
+            .tui-grid-pagination{background-color:transparent;border-color:transparent}
+            .tui-grid-layer-selection{background-color:#00A9ff;border-color:#00a9ff}
+            .tui-grid-header-area{background-color:#fff;border-color:#ccc}
+            .tui-grid-body-area{background-color:#fff}.tui-grid-summary-area{background-color:#fff;border-color:#eee}
+            .tui-grid-has-summary-top .tui-grid-body-area{border-color:#eee}
+            .tui-grid-cell{background-color:#fff;border-color:#e0e0e0;border-left-width:0;border-right-width:0;border-top-width:1px;border-bottom-width:1px;color:#333}
+            .tui-grid-cell-editable{background-color:#fff}.tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-header-area .tui-grid-table{border-right-style:solid}
+            .tui-grid-cell-header{background-color:#f4f4f4;border-color:#e0e0e0;border-left-width:1px;border-right-width:1px;border-top-width:1px;border-bottom-width:1px;color:#222}
+            .tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-body-area .tui-grid-table{border-right-style:hidden}
+            .tui-grid-cell-row-header{background-color:#fff;border-color:#eee;border-left-width:0;border-right-width:0;border-top-width:1px;border-bottom-width:1px;color:#333}
+            .tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-summary-area .tui-grid-table{border-right-style:hidden}
+            .tui-grid-cell-summary{background-color:#fff;border-color:#eee;border-left-width:0;border-right-width:0;color:#333}
+            .tui-grid-cell-required{background-color:#fffdeb}
+            .tui-grid-cell-disabled{background-color:#f9f9f9;color:#c1c1c1}
+            .tui-grid-cell-invalid.tui-grid-cell{background-color:#ffe5e5}
+            .tui-grid-cell-header.tui-grid-cell-selected{background-color:#e5f6ff}
+            .tui-grid-cell-row-header.tui-grid-cell-selected{background-color:#e5f6ff}
+            .tui-grid-layer-focus-border{background-color:#00a9ff}.tui-grid-layer-editing{border-color:#00a9ff}
+            .tui-grid-layer-focus-deactive .tui-grid-layer-focus-border{background-color:#aaa}
+            .tui-grid-row-odd>td{background-color:#fff}.tui-grid-row-even>td{background-color:#fff}.tui-grid-cell-dummy{background-color:#fff}
+    </style>
+    <script>
+        //승인반려 사유 팝업창
+        function Companion(){
+            $(".layerpopupWrapper").show();
+            $(".mask").fadeIn(150);
+        }
+    </script>
+    <script>
+        $(function(){
+            //승인반려 팝업창 닫기
+            $(".mask").on("click", function(e) {
+                e.preventDefault();
+                $(".layerpopupWrapper").hide();
+                $(".mask").fadeOut(150);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="mask"></div>
+    <div class="layerpopupWrapper pos1">
+        <div class="layerpopupArea w300">
+            <div class="layerPopupContent">
+                <h4>승인반려 사유</h4>
+                <div class="previousInfo he">
+                    <textarea class="textarea scroll" style="height:120px;">승인반려 사유를 입력해주세요</textarea>
+                </div>
+    
+                <div class="text-center m-t-10">
+                    <button class="btn btn-sm danger" onclick="" type="button">반려</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar" class="nav-collapse">
+        <button id="menu-toggle"><i class="fas fa-bars"></i></button>
+        <div class="user-bg">
+            <div class="brand">
+                <img src="./images/logo.png" alt="KTmos wMMS">
+            </div>
+            <div class="user-area">
+                <div class="user-name">
+                	<span style="width: 60%;word-break:break-all;word-wrap:break-word;float: left;">관리자 님</span>
+                	<span class="area-badge">북부</span>
+                </div>
+                <div class="user-btn m--3" style="margin-top: 35px;">
+                    <li><a href="javascript:void(0);" onclick="fn_modify(this)">정보수정</a></li>
+                    <li><a href="javascript:void(0);" onclick="fn_logout(this);">로그아웃</a></li>
+                </div>
+            </div>
+        </div>
+            <!-- 메뉴 표시 -->
+            <ul class="sidebar-menu" id="nav-accordion">
+                <li class="sub-menu"><a href="javascript:showSub1('M01S01')">인수시험관리<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM01S01" style="display: none;">
+                        <li><a href="/acceptcheck/list/M01S01" id="" class="" target="">인수시험정보조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M02S01')">국소정보<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM02S01" style="display: none;">
+                        <li><a href="/device/5glte3g/list/M02S01" id="" class="" target="">국소정보조회-5G/LTE/3G</a></li>
+                        <li><a href="/device/repeater/list/M02S02" id="" class="" target="">국소정보조회-중계기</a></li>
+                        <li><a href="/device/wifi/list/M02S03" id="" class="" target="">국소정보조회-WiFi</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M03S01')">정기점검<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM03S01" style="display: none;">
+                        <li><a href="/regularinspection/list/M03S01" id="" class="" target="">정기점검조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M04S01')">전기안전점검<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM04S01" style="display: none;">
+                        <li><a href="/electricsafety/plan/list/M04S01" id="" class="" target="">계획관리</a></li>
+                        <li><a href="/electricsafety/inspection/list/M04S02" id="" class="" target="">점검관리</a></li>
+                        <li><a href="/electricsafety/result/list/M04S03" id="" class="" target="">대응결과조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M05S01')">위험국소<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM05S01" style="display: none;">
+                        <li><a href="/dangerinspection/list/M05S01" id="" class="" target="">위험국소조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="#none">아차사고<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="" style="display:none;">
+                        <li><a href="#none" id="" class="" target="">아차사고조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M06S01')">부대시설<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM06S01" style="display: none;">
+                        <li><a href="/additionalfacilities/list/M06S01" id="" class="" target="">부대시설점검조회</a></li>
+                    </ul>
+                </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M07S01')">긴급복구물자관리<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM07S01" style="display: none;">
+                            <li><a href="/emergencymaterial/status/M07S01" id="" class="" target="">긴급복구현황표</a></li>
+                            <li><a href="/emergencymaterial/master/list/M07S02" id="" class="" target="">긴급복구물자</a></li>
+                            <li><a href="/emergencymaterial/history/list/M07S03" id="" class="" target="">긴급복구물자사용</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M09S01')">안전용품관리<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM09S01" style="display: none;">
+                            <li><a href="/item-safety/status/M09S01" id="" class="" target="">현황표</a></li>
+                            <li><a href="/item-safety/list/M09S02" id="" class="" target="">안전용품등록</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M15S01')">현장수시업무<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM15S01" style="display: none;">
+                            <li><a href="/onsite/list/M15S01" id="" class="" target="">현장수시업무현황</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M08S01')">Safe365<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM08S01" style="display:block;">
+                            <li><a href="/safe365/safety/list/M08S01" id="" class="" target="">안전점검 체크 리스트</a></li>
+                            <li><a href="/safe365/highcar/list/M08S02" id="" class="" target="">고소작업차 사용 작업 계획서</a></li>
+                            <li><a href="/safe365/aerial/list/M08S03" id="" class="" target="">고소작업차 작업 전 점검표</a></li>
+                            <li><a href="/safe365/status/M08S04" id="" class="" target="">현장 안전점검 현황</a></li>
+                            <li><a href="#none" id="" class="active" target="">위험성평가 </a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M14S01')">작업중지권<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM14S01" style="display: none;">
+                            <li><a href="/stopwork/list/M14S01" id="" class="" target="">작업중지권 조회</a></li>
+                            <li><a href="/stopwork/apply/list/M14S02" id="" class="" target="">작업중지권 승인관리</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M16S01')">현장업무지원<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM16S01" style="display: none;">
+                            <li><a href="/support/acs/list/M16S01" id="" class="" target="">ACS</a></li>
+                            <li><a href="/support/rsa/list/M16S02" id="" class="" target="">RSA</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M11S01')">예비품관리<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM11S01" style="display: none;">
+                            <li><a href="/spare/list/M11S01" id="" class="" target="">예비품관리</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M10S01')">업로드관리<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM10S01" style="display: none;"><li><a href="/device/5glte3g/excel/list/M10S01" id="" class="" target="">국소정보업로드-5G/LTE/3G</a></li>
+                            <li><a href="/device/repeater/excel/list/M10S02" id="" class="" target="">국소정보업로드-중계기</a></li>
+                            <li><a href="/device/wifi/excel/list/M10S03" id="" class="" target="">국소정보업로드-WIFI</a></li>
+                            <li><a href="/device/acceptcheck/excel/list/M10S04" id="" class="" target="">인수시험</a></li>
+                            <li><a href="/device/regularinspection/excel/list/M10S05" id="" class="" target="">정기점검</a></li>
+                            <li><a href="/device/regularinspection_riu/excel/list/M10S06" id="" class="" target="">정기점검 RIU</a></li>
+                            <li><a href="/device/regularinspection_du/excel/list/M10S07" id="" class="" target="">정기점검 DU</a></li>
+                            <li><a href="/device/regularinspection_wifi/excel/list/M10S08" id="" class="" target="">정기점검 WiFi</a></li>
+                            <li><a href="/device/additionalfacilities/excel/list/M10S09" id="" class="" target="">부대시설점검</a></li>
+                            <li><a href="/device/electricsafety/excel/list/M10S10" id="" class="" target="">전기안전점검 계획</a></li>
+                            <li><a href="/device/dangerstation/excel/list/M10S11" id="" class="" target="">위험국소</a></li>
+                            <li><a href="/device/emergencymaterial/excel/list/M10S12" id="" class="" target="">긴급복구물자 사용</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M13S01')">대시보드<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM13S01" style="display: none;">
+                            <li><a href="/dashboard/inspection/M13S01" id="" class="" target="_blank">정기점검 현황</a></li>
+                            <li><a href="/dashboard/accept/M13S02" id="" class="" target="_blank">인수시험 현황</a></li>
+                            <li><a href="/dashboard/danger/M13S03" id="" class="" target="_blank">위험국소 현황</a></li>
+                            <li><a href="/dashboard/setting/list/M13S04" id="" class="" target="">모수관리</a></li>
+                        </ul>
+                    </li>
+                </ul>
+        <!--</div>-->
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <link rel="stylesheet" type="text/css" href="./css/multifreezer.css">
+    <script type="text/javascript" src="./js/multifreezerStandalone.js"></script>
+    <!-- Page Content -->
+<div id="page-content-wrapper">
+    <section class="wrapper">
+        <h1 id="page_tit">위험성평가표 <span class="sub_tit"> 승인처리</span></h1>
+
+        <div class="group-section m-t-15">
+            <table class="hit">
+                <colgroup>
+                    <col width="10%"><col width="15%">
+                    <col width="10%"><col width="15%">
+                    <col width="10%"><col width="15%">
+                </colgroup>
+                <tbody>
+                <form id="deviceList" name="deviceList" method="get">
+                <tr>
+                    <th>구분</th>
+                    <td>정기</td>
+                    <th><strong class="star">*</strong> 부서</th>
+                    <td>KT MOS 북부/기술총괄/사업계획팀</td>
+                    <th><strong class="star">*</strong> 등록자</th>
+                    <td>박몽룡</td>
+                </tr>
+                <tr>
+                    <th><strong class="star">*</strong> 담당업무</th>
+                    <td>운용팀</td>
+                    <th><strong class="star">*</strong> 공정명</th>
+                    <td>기지국/중계기 유지보 </td>
+                    <th><strong class="star">*</strong> 부서장 </th>
+                    <td>춘향육</td>
+                </tr>
+                </form>
+                </tbody>
+            </table>
+        </div>
+
+        <script>
+            //행삭제(항목 삭제) td rowspan="2" 일 경우 
+            $(document).on("click","button[name=tr_delete]",function(){
+                $(this).parent().parent().next().remove();
+                $(this).parent().parent().remove();
+                //let trHtml = $(this).parent().parent();
+                //trHtml.remove(); //tr 테그 삭제
+            });
+        </script>
+        <script>
+            $(function(){
+                //etc(기타) 일때 disabled(비활성화) => 활성화,  나머지는 활성화 => disabled(비활성화)
+                $(document).on("change", "select[name=list]", function(){
+                    let value = $(this).find("option:selected").val();
+                    let inputText = $(this).closest('.selectBox').find('.Text');
+                    //let flag = false;
+                    if (value == 'etc') { //기타
+                        $(inputText).attr("disabled", false);  //활성화
+                        //flag = true;
+                        //$(inputText).val('');
+                    }else{
+                        $(inputText).attr("disabled", true);  //disabled(비활성화)
+                        //$(".textarea").empty();  //.textarea클래스 요소의 내용을 모두지움.
+                        //$("#mytxt1").empty();
+                        let mytxt = $("textarea:disabled").length;
+                        console.log(mytxt);
+                        $("textarea:disabled").empty();
+                    }
+                });
+                // $('#selectBox2').change(function() {
+                //     var state = $('#selectBox2 option:selected').val();
+                //     if ( state == 'etc' ) {
+                //         $('.textarea').removeAttr('disabled'); 
+                //     }else{
+                //         return false;
+                //     }
+                // });
+            });
+        </script>
+        <div class="group-section m-t-40">
+            <div style="overflow:scroll; width:100%; height:600px;"> <!--min-height:520px;-->
+                <table class="hit bor-right table-type" id="table_tr_item">
+                    <colgroup>
+                        <col style="width:83px;">
+                        <col style="width:450px;">
+                        <col style="width:205px;">
+                        <col style="width:420px;">
+                        <col style="width:420px;">
+                        <col style="width:180px;">
+                        <col style="width:80px;">
+                        <col style="width:80px;">
+                        <col style="width:90px;">
+                        <col style="width:180px;">
+                        <col style="width:150px;">
+                        <col style="width:180px;">
+                        <col style="width:90px;">
+                        <col style="width:90px;">
+                        <col style="width:90px;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">삭제</th>
+                            <th rowspan="2">현황 및 문제점</th>
+                            <th rowspan="2">유해위엄요인</th>
+                            <th rowspan="2">관련법규</th>
+                            <th rowspan="2">현재안전조치</th>
+                            <th rowspan="2">개선 전 사진</th>
+                            <th colspan="3">위험성 추정<br>(기능성*중대성)</th>
+                            <th rowspan="2">개선대책</th>
+                            <th>개선<br>예정일</th>
+                            <th rowspan="2">개선 후 사진(최대 2장)</th>
+                            <th colspan="3">위험성 추정<br>(기능성*중대성)</th>
+                        </tr>
+                        <tr>
+                            <th>가능성</th>
+                            <th>중대성</th>
+                            <th class="tac bgige">위험성추정</th>
+                            <th>개선<br>완료일</th>
+                            <th>가능성</th>
+                            <th>중대성</th>
+                            <th class="tac bgige">위험성추정</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2"><button type="button" class="btn btn-leri danger" name="tr_delete">삭제</button></td>
+                            <td rowspan="2">
+                                <div class="selectBox">
+                                    <select class="type-2" name="list">
+                                        <option value="">선택하세요</option>
+                                        <option value="" selected>차량운행 전 차량점검 미시행(경고등 확인 등)</option>
+                                        <option value="">운전자 건강상태 미확인(숙취, 피곤함)</option>
+                                        <option value="">운전중 휴대폰, 네비게이션 조작 시행</option>
+                                        <option value="">작업 전 보호구 상태 미확인(구멍, 찢어짐, 훼손 등)</option>
+                                        <option value="">작업에 맞는 적정보호구 미착용 및 착용상태 불량(턱끈 미조임)</option>
+                                        <option value="">고소작업 시 장비 및 자재 운반용 로프 미사용</option>
+                                        <option value="">고정식 사다리 이동 시 안전대 미사용</option>
+                                        <option value="">A형 사다리 이용 시 고정상태 미확인(아웃트리거, 상단고정 등)</option>
+                                        <option value="">고소작업차 작업 시 작업계획서 및 점검표 미작성</option>
+                                        <option value="">교통법규 미준수(과속, 신호위반, 통행방법 위반 등)</option>
+                                        <option value="">옥탑에 시설된 사다리 고정상태 불량</option>
+                                        <option value="">옥상 장비 안전펜스 미설치로 인한 추락 위험</option>
+                                        <option value="">옥상 및 옥탐 등 공간협소로 인한 불안전한 작업</option>
+                                        <option value="">버켓에 작업인력탑승 상태에서 고소작업차 이동</option>
+                                        <option value="">분전함 및 전원작업으로 감전 위험</option>
+                                        <option value="">차량운행 중 휴대폰 사용</option>
+                                        <option value="">중량물 운반시 무리한 작업 및 이동</option>
+                                        <option value="">A형 사다리 걸쇠 불량으로 인한 넘어짐</option>
+                                        <option value="">작업국소 및 방문장소 미끄러짐에 의한 넘어짐</option>
+                                        <option value="">발전시 가동시 감전 및 화재</option>
+                                        <option value="">옥상 및 옥탑 지선 등 돌출부에 의한 넘어짐</option>
+                                        <option value="">졸음운전</option>
+                                        <option value="">고소작업차 오작동으로 인한 전도 및 추돌사고</option>
+                                        <option value="">옥외국소 작업 시 말벌 등 해충에 의한 피해</option>
+                                        <option value="">눈길,빗길,빙판길로 인한 추돌사고</option>
+                                        <option value="">조도가 확보되지 않은 장소 이동으로 인한 충돌 및 넘어짐</option>
+                                        <option value="">장비교체 등 중량물 낙하로 인한 사고</option>
+        
+                                        <option value="">정기적인 사무실 환기 미시행</option>
+                                        <option value="">사무실 내 소화기 위치, 작동방법 미숙지</option>
+                                        <option value="">화재 시 대피방법, 비상구 위치 미숙지</option>
+                                        <option value="">승인되지 않은 전열기구 사용(전자레인지, 전기난로, 전기방석 등)</option>
+                                        <option value="">젖은 손으로 전기기구 접촉</option>
+                                        <option value="">VDT작업 시 불안전한 자세</option>
+                                        <option value="">모니터 감시로 인한 눈피로도 증가</option>
+                                        <option value="">출입문에 손가락 끼임 위험</option>
+                                        <option value="">전원 케이블 및 콘센트 등에 걸려 넘어짐 위험</option>
+                                        <option value="">휴대폰 사용하며 통로 및 계단 이용</option>
+                                        <option value="">사무기기 콘센트 과부하 및 감전</option>
+                                        <option value="">조명 및 명암에 따른 시력저하</option>
+                                        <option value="">콘센트 부하 및 누전으로 인한 화재발생 위험</option>
+                                        <option value="">중량물 운반시 무리한 작업 및 이동</option>
+        
+                                        <option value="">차량운행 전 차량점검 미시행(경고등 확인 등)</option>
+                                        <option value="">운전자 건강상태 미확인(숙취, 피곤함)</option>
+                                        <option value="">운전중 휴대폰, 네비게이션 조작 시행</option>
+                                        <option value="">작업 전 보호구 상태 미확인(구멍, 찢어짐, 훼손 등)</option>
+                                        <option value="">작업에 맞는 적정보호구 미착용 및 착용상태 불량(턱끈 미조임)</option>
+                                        <option value="">댁내형 시설 작업 시 안전장갑 미사용</option>
+                                        <option value="">전동드릴 사용 시 한손으로 작업</option>
+                                        <option value="">고객응대 매뉴얼에 따라 응대 미시행</option>
+                                        <option value="">정기적인 사무실 환기 미시행</option>
+                                        <option value="">사무실 내 소화기 위치, 작동방법 미숙지</option>
+                                        <option value="">화재 시 대피방법, 비상구 위치 미숙지</option>
+                                        <option value="">승인되지 않은 전열기구 사용(전자레인지, 전기난로, 전기방석 등)</option>
+                                        <option value="">젖은 손으로 전기기구 접촉</option>
+                                        <option value="">VDT작업 시 불안전한 자세</option>
+                                        <option value="">모니터 감시로 인한 눈피로도 증가</option>
+                                        <option value="">출입문에 손가락 끼임 위험</option>
+                                        <option value="">전원 케이블 및 콘센트 등에 걸려 넘어짐 위험</option>
+                                        <option value="">휴대폰 사용하며 통로 및 계단 이용</option>
+                                        <option value="">사무기기 콘센트 과부하 및 감전</option>
+                                        <option value="">조명 및 명암에 따른 시력저하</option>
+                                        <option value="">콘센트 부하 및 누전으로 인한 화재발생 위험</option>
+                                        <option value="">중량물 운반시 무리한 작업 및 이동</option>
+        
+                                        <option value="">정기적인 사무실 환기 미시행</option>
+                                        <option value="">사무실 내 소화기 위치, 작동방법 미숙지</option>
+                                        <option value="">화재 시 대피방법, 비상구 위치 미숙지</option>
+                                        <option value="">승인되지 않은 전열기구 사용(전자레인지, 전기난로, 전기방석 등)</option>
+                                        <option value="">젖은 손으로 전기기구 접촉</option>
+                                        <option value="">VDT작업 시 불안전한 자세</option>
+                                        <option value="">모니터 감시로 인한 눈피로도 증가</option>
+                                        <option value="">출입문에 손가락 끼임 위험</option>
+                                        <option value="">전원 케이블 및 콘센트 등에 걸려 넘어짐 위험</option>
+                                        <option value="">휴대폰 사용하며 통로 및 계단 이용</option>
+                                        <option value="">사무기기 콘센트 과부하 및 감전</option>
+                                        <option value="">조명 및 명암에 따른 시력저하</option>
+                                        <option value="">콘센트 부하 및 누전으로 인한 화재발생 위험</option>
+                                        <option value="">중량물 운반시 무리한 작업 및 이동</option>
+        
+                                        <option value="">수리작업 시 불안전한 자세</option>
+                                        <option value="">환풍기 시설 미작동시에도 작업</option>
+                                        <option value="">중량물 취급 시 안전작업 방법 미시행(수레 미사용, 올바른 자세 등)</option>
+                                        <option value="">장비 적재물 무너짐 위험</option>
+                                        <option value="">이동공간 내 안전통로 미확보</option>
+                                        <option value="">모듈수리 시 보호구 미착용(안전장갑, 방진마스크 등)</option>
+                                        <option value="">유해 화학물질의 MSDS자료 미게시 및 교육 미시행</option>
+                                        <option value="">전기기계∙기구 사용 시 누전여부 미확인</option>
+                                        <option value="">작업장소 조도 불량시에도 작업시행</option>
+                                        <option value="etc">기타</option>
+                                    </select>
+                                    <div><textarea class="textarea scroll m-t-5 Text" disabled></textarea></div>
+                                </div>
+                            </td>
+                            <td rowspan="2">
+                                <div class="selectBox">
+                                    <select class="type-2" name="list">
+                                        <option value="">선택하세요</option>
+                                        <option value="">추락</option>
+                                        <option value="" selected>전도</option>
+                                        <option value="">감전</option>
+                                        <option value="">끼임</option>
+                                        <option value="">충돌</option>
+                                        <option value="">낙하</option>
+                                        <option value="">화재</option>
+                                        <option value="">감염병</option>
+                                        <option value="">차량사고</option>
+                                        <option value="">호흡기 질환</option>
+                                        <option value="">근골격계 질환</option>
+                                        <option value="etc">기타</option>
+                                    </select>
+                                    <div><textarea class="textarea scroll m-t-5 Text" disabled></textarea></div>
+                                </div>
+                            </td>
+                            <td rowspan="2">
+                                <div class="selectBox">
+                                    <select class="type-2" name="list">
+                                        <option value="">선택하세요</option>
+                                        <option value="">도로교통법 제46조의3(난폭운전 금지)</option>
+                                        <option value="">도로교통법 제49조(모든 운전자의 준수사항 등)</option>
+                                        <option value="">산업안전보건법 제29조(근로자에 대한 안전보건교육)</option>
+                                        <option value="">산업안전보건법 제37조(안전보건표지의 설치ㆍ부착)</option>
+                                        <option value="">산업안전보건법 제38조(안전조치)</option>
+                                        <option value="">산업안전보건법 제39조(보건조치)</option>
+                                        <option value="">산업안전보건법 제40조(근로자의 안전조치 및 보건조치 준수)</option>
+                                        <option value="">산업안전보건법 제52조(근로자의 작업중지)</option>
+                                        <option value="etc" selected>기타</option>
+                                    </select>
+                                    <div><textarea class="textarea scroll m-t-5 Text">도로교통법 제 123조(적용)</textarea></div>
+                                </div>
+                            </td>
+                            <td rowspan="2">
+                                <div class="selectBox">
+                                    <select class="type-2" name="list">
+                                        <option value="">선택하세요</option>
+                                        <option value="">정기적인 스트레칭 시행</option>
+                                        <option value="" selected>차량 운행 시 교대운전</option>
+                                        <option value="">갓길 또는 졸음쉼터에서 휴식</option>
+                                        <option value="">차량 정기점검 시행</option>
+                                        <option value="">차량 안전운전교육 시행</option>
+                                        <option value="">사고사례 전파를 통한 동종사고 예방</option>
+                                        <option value="">블루투스 이어폰 또는 차량 블루투스기능 사용</option>
+                                        <option value="">작업중지권 사용</option>
+                                        <option value="">정기적인 보호구 상태점검</option>
+                                        <option value="">안전보호구 착용(안전모, 안전화, 안전대 등)</option>
+                                        <option value="">2인1조 작업</option>
+                                        <option value="">사다리 안전작업지침 준수</option>
+                                        <option value="">스노우 체인 사용</option>
+                                        <option value="">비상연락망 숙지(경찰서, 소방서, 병원 등)</option>
+                                        <option value="">작업 전 위험요소 제거</option>
+                                        <option value="">안전보건 표지 부착</option>
+                                        <option value="">절연 보호구 착용</option>
+                                        <option value="">우천 시 전기작업 금지</option>
+                                        <option value="">전기작업 전 차단기 OFF</option>
+                                        <option value="">활선경보기 사용</option>
+                                        <option value="">특수차량 전담 작업자 선정(고소작업차, 이동발전차, 이동기지국 등)</option>
+                                        <option value="">작업반경 내 작업 표지판 및 신호수 배치</option>
+                                        <option value="">고소작업차  작업 전 비상정지버튼 이상유무 확인</option>
+                                        <option value="">관리감독자 등 부서장 지시하에 작업</option>
+                                        <option value="">터널구간 작업 시 전방에 경광봉 설치</option>
+                                        <option value="">소화기 위치 표시 및 비상구 표시 부착</option>
+                                        <option value="">중량물 취급주의 표시 부착</option>
+                                        <option value="">사무실 수기 환기 시행</option>
+                                        <option value="">노후화된 책상 및 의자 교체</option>
+                                        <option value="">적정 콘센트 지급</option>
+                                        <option value="">이동 시 휴대혼 사용금지</option>
+                                        <option value="">조도 상태 개선 및 랜턴 사용</option>
+                                        <option value="">접지형 콘센트 및 플러그 사용</option>
+                                        <option value="">안전보건 교육 시행</option>
+                                        <option value="">올바른 공구 및 안전용품 사용</option>
+                                        <option value="">고소작업차 사용</option>
+                                        <option value="">지하실 등이 침수시 배전반의 스위치 전원 확인후 장비 점검</option>
+                                        <option value="">전후방 완전한 시야확보후 이동</option>
+                                        <option value="">운반도구 사용</option>
+                                        <option value="">해충스프레이 사용</option>
+                                        <option value="etc">기타</option>
+                                    </select>
+                                    <div><textarea class="textarea scroll m-t-5 Text" disabled></textarea></div>
+                                </div>
+                            </td>
+                            <td rowspan="2">
+                                <div class="photo-img">
+                                    <div class="img image-link">
+                                        <img src="./images/Untitled-1.jpg" alt="img" onclick="imagePopup('./images/big_untitled-1.jpg');">
+                                    </div>
+                                    <div class="img image-link">
+                                        <img src="./images/Untitled-2.jpg" alt="img" onclick="imagePopup('./images/big_untitled-2.jpg');">
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="tac" rowspan="2">5</td>
+                            <td class="tac" rowspan="2">4</td>
+                            <td class="tac bgige" rowspan="2"><span style="color:red;">20</span></td>
+                            <td rowspan="2">
+                                <textarea class="textarea scroll" style="height:85px;">조심하겠다</textarea>
+                            </td>
+                            <td>
+                                <!--개선예정일-->
+                                <div class="tui-datepicker-input tui-has-focus">
+                                    <input type="text" id="startDate" name="startDate" aria-label="Date-Time" value="2022-08-05">
+                                    <span class="tui-ico-date"></span>
+                                </div>
+                                <div id="datepicker-wrapper1" style="position:relative;"></div>
+                            </td>
+                            <td rowspan="2">
+                                <div class="clear d-flex jcc p-rel" style="width:60px; margin:0 auto;">
+                                    <label for="upload-btn" class="btn-file btn">업로드</label>
+                                    <input type="file" class="btn file-btn" name="file" data-url="" style="width:58px; top:-6px; left:0;">
+                                </div>
+                                <div class="photo-img">
+                                    <div class="img image-link">
+                                        <button class="img-del" title="삭제"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                        <img src="./images/Untitled-1.jpg" alt="img" onclick="imagePopup('./images/big_untitled-1.jpg');">
+                                    </div>
+                                    <div class="img image-link">
+                                        <button class="img-del" title="삭제"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                        <img src="./images/Untitled-2.jpg" alt="img" onclick="imagePopup('./images/big_untitled-2.jpg');">
+                                    </div>
+                                </div>
+                            </td>
+                            <td rowspan="2" class="tac">
+                                <select class="type-2">
+                                    <option value="">선택</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3" selected>3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </td>
+                            <td rowspan="2" class="tac">
+                                <select class="type-2">
+                                    <option value="">선택</option>
+                                    <option value="1">1</option>
+                                    <option value="2" selected>2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                            <td rowspan="2" class="tac bgige">6</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <!-- 개선완료일 -->
+                                <div class="tui-datepicker-input tui-has-focus">
+                                    <input type="text" id="endDate" name="endDate" aria-label="Date-Time" value="2022-08-05">
+                                    <span class="tui-ico-date"></span>
+                                </div>
+                                <div id="datepicker-wrapper2" style="position:relative;"></div>
+                                <!-- <div id="datepicker-wrapper2" style="margin-top: -1px; top:30%; left:-55%;position:relative;"></div> -->
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td rowspan="2"><button type="button" class="btn btn-leri danger" name="tr_delete">삭제</button></td>
+                            <td rowspan="2">
+                                <div class="selectBox">
+                                    <select class="type-2" name="list">
+                                        <option value="">선택하세요</option>
+                                        <option value="">차량운행 전 차량점검 미시행(경고등 확인 등)</option>
+                                        <option value="">운전자 건강상태 미확인(숙취, 피곤함)</option>
+                                        <option value="">운전중 휴대폰, 네비게이션 조작 시행</option>
+                                        <option value="">작업 전 보호구 상태 미확인(구멍, 찢어짐, 훼손 등)</option>
+                                        <option value="">작업에 맞는 적정보호구 미착용 및 착용상태 불량(턱끈 미조임)</option>
+                                        <option value="">고소작업 시 장비 및 자재 운반용 로프 미사용</option>
+                                        <option value="">고정식 사다리 이동 시 안전대 미사용</option>
+                                        <option value="">A형 사다리 이용 시 고정상태 미확인(아웃트리거, 상단고정 등)</option>
+                                        <option value="">고소작업차 작업 시 작업계획서 및 점검표 미작성</option>
+                                        <option value="">교통법규 미준수(과속, 신호위반, 통행방법 위반 등)</option>
+                                        <option value="">옥탑에 시설된 사다리 고정상태 불량</option>
+                                        <option value="">옥상 장비 안전펜스 미설치로 인한 추락 위험</option>
+                                        <option value="">옥상 및 옥탐 등 공간협소로 인한 불안전한 작업</option>
+                                        <option value="">버켓에 작업인력탑승 상태에서 고소작업차 이동</option>
+                                        <option value="">분전함 및 전원작업으로 감전 위험</option>
+                                        <option value="">차량운행 중 휴대폰 사용</option>
+                                        <option value="">중량물 운반시 무리한 작업 및 이동</option>
+                                        <option value="">A형 사다리 걸쇠 불량으로 인한 넘어짐</option>
+                                        <option value="">작업국소 및 방문장소 미끄러짐에 의한 넘어짐</option>
+                                        <option value="">발전시 가동시 감전 및 화재</option>
+                                        <option value="">옥상 및 옥탑 지선 등 돌출부에 의한 넘어짐</option>
+                                        <option value="">졸음운전</option>
+                                        <option value="">고소작업차 오작동으로 인한 전도 및 추돌사고</option>
+                                        <option value="">옥외국소 작업 시 말벌 등 해충에 의한 피해</option>
+                                        <option value="">눈길,빗길,빙판길로 인한 추돌사고</option>
+                                        <option value="">조도가 확보되지 않은 장소 이동으로 인한 충돌 및 넘어짐</option>
+                                        <option value="">장비교체 등 중량물 낙하로 인한 사고</option>
+        
+                                        <option value="">정기적인 사무실 환기 미시행</option>
+                                        <option value="">사무실 내 소화기 위치, 작동방법 미숙지</option>
+                                        <option value="">화재 시 대피방법, 비상구 위치 미숙지</option>
+                                        <option value="">승인되지 않은 전열기구 사용(전자레인지, 전기난로, 전기방석 등)</option>
+                                        <option value="">젖은 손으로 전기기구 접촉</option>
+                                        <option value="">VDT작업 시 불안전한 자세</option>
+                                        <option value="">모니터 감시로 인한 눈피로도 증가</option>
+                                        <option value="">출입문에 손가락 끼임 위험</option>
+                                        <option value="">전원 케이블 및 콘센트 등에 걸려 넘어짐 위험</option>
+                                        <option value="">휴대폰 사용하며 통로 및 계단 이용</option>
+                                        <option value="">사무기기 콘센트 과부하 및 감전</option>
+                                        <option value="">조명 및 명암에 따른 시력저하</option>
+                                        <option value="">콘센트 부하 및 누전으로 인한 화재발생 위험</option>
+                                        <option value="">중량물 운반시 무리한 작업 및 이동</option>
+        
+                                        <option value="">차량운행 전 차량점검 미시행(경고등 확인 등)</option>
+                                        <option value="">운전자 건강상태 미확인(숙취, 피곤함)</option>
+                                        <option value="">운전중 휴대폰, 네비게이션 조작 시행</option>
+                                        <option value="">작업 전 보호구 상태 미확인(구멍, 찢어짐, 훼손 등)</option>
+                                        <option value="">작업에 맞는 적정보호구 미착용 및 착용상태 불량(턱끈 미조임)</option>
+                                        <option value="">댁내형 시설 작업 시 안전장갑 미사용</option>
+                                        <option value="">전동드릴 사용 시 한손으로 작업</option>
+                                        <option value="">고객응대 매뉴얼에 따라 응대 미시행</option>
+                                        <option value="">정기적인 사무실 환기 미시행</option>
+                                        <option value="">사무실 내 소화기 위치, 작동방법 미숙지</option>
+                                        <option value="">화재 시 대피방법, 비상구 위치 미숙지</option>
+                                        <option value="">승인되지 않은 전열기구 사용(전자레인지, 전기난로, 전기방석 등)</option>
+                                        <option value="">젖은 손으로 전기기구 접촉</option>
+                                        <option value="">VDT작업 시 불안전한 자세</option>
+                                        <option value="">모니터 감시로 인한 눈피로도 증가</option>
+                                        <option value="">출입문에 손가락 끼임 위험</option>
+                                        <option value="">전원 케이블 및 콘센트 등에 걸려 넘어짐 위험</option>
+                                        <option value="">휴대폰 사용하며 통로 및 계단 이용</option>
+                                        <option value="">사무기기 콘센트 과부하 및 감전</option>
+                                        <option value="">조명 및 명암에 따른 시력저하</option>
+                                        <option value="">콘센트 부하 및 누전으로 인한 화재발생 위험</option>
+                                        <option value="">중량물 운반시 무리한 작업 및 이동</option>
+        
+                                        <option value="">정기적인 사무실 환기 미시행</option>
+                                        <option value="">사무실 내 소화기 위치, 작동방법 미숙지</option>
+                                        <option value="">화재 시 대피방법, 비상구 위치 미숙지</option>
+                                        <option value="">승인되지 않은 전열기구 사용(전자레인지, 전기난로, 전기방석 등)</option>
+                                        <option value="">젖은 손으로 전기기구 접촉</option>
+                                        <option value="">VDT작업 시 불안전한 자세</option>
+                                        <option value="">모니터 감시로 인한 눈피로도 증가</option>
+                                        <option value="">출입문에 손가락 끼임 위험</option>
+                                        <option value="">전원 케이블 및 콘센트 등에 걸려 넘어짐 위험</option>
+                                        <option value="">휴대폰 사용하며 통로 및 계단 이용</option>
+                                        <option value="">사무기기 콘센트 과부하 및 감전</option>
+                                        <option value="">조명 및 명암에 따른 시력저하</option>
+                                        <option value="">콘센트 부하 및 누전으로 인한 화재발생 위험</option>
+                                        <option value="">중량물 운반시 무리한 작업 및 이동</option>
+        
+                                        <option value="">수리작업 시 불안전한 자세</option>
+                                        <option value="">환풍기 시설 미작동시에도 작업</option>
+                                        <option value="">중량물 취급 시 안전작업 방법 미시행(수레 미사용, 올바른 자세 등)</option>
+                                        <option value="">장비 적재물 무너짐 위험</option>
+                                        <option value="">이동공간 내 안전통로 미확보</option>
+                                        <option value="">모듈수리 시 보호구 미착용(안전장갑, 방진마스크 등)</option>
+                                        <option value="">유해 화학물질의 MSDS자료 미게시 및 교육 미시행</option>
+                                        <option value="">전기기계∙기구 사용 시 누전여부 미확인</option>
+                                        <option value="">작업장소 조도 불량시에도 작업시행</option>
+                                        <option value="etc" selected>기타</option>
+                                    </select>
+                                    <div><textarea class="textarea scroll m-t-5 Text">여러가지 이유로 많은 문제점을 가지고 있다</textarea></div>
+                                </div>
+                            </td>
+                            <td rowspan="2">
+                                <div class="selectBox">
+                                    <select class="type-2" name="list">
+                                        <option value="">선택하세요</option>
+                                        <option value="">추락</option>
+                                        <option value="">전도</option>
+                                        <option value="">감전</option>
+                                        <option value="">끼임</option>
+                                        <option value="">충돌</option>
+                                        <option value="">낙하</option>
+                                        <option value="">화재</option>
+                                        <option value="">감염병</option>
+                                        <option value="">차량사고</option>
+                                        <option value="">호흡기 질환</option>
+                                        <option value="">근골격계 질환</option>
+                                        <option value="etc" selected>기타</option>
+                                    </select>
+                                    <div><textarea class="textarea scroll m-t-5 Text">모든 주변 상황이 위해</textarea></div>
+                                </div>
+                            </td>
+                            <td rowspan="2">
+                                <div class="selectBox">
+                                    <select class="type-2" name="list">
+                                        <option value="">선택하세요</option>
+                                        <option value="">도로교통법 제46조의3(난폭운전 금지)</option>
+                                        <option value="" selected>도로교통법 제49조(모든 운전자의 준수사항 등)</option>
+                                        <option value="">산업안전보건법 제29조(근로자에 대한 안전보건교육)</option>
+                                        <option value="">산업안전보건법 제37조(안전보건표지의 설치ㆍ부착)</option>
+                                        <option value="">산업안전보건법 제38조(안전조치)</option>
+                                        <option value="">산업안전보건법 제39조(보건조치)</option>
+                                        <option value="">산업안전보건법 제40조(근로자의 안전조치 및 보건조치 준수)</option>
+                                        <option value="">산업안전보건법 제52조(근로자의 작업중지)</option>
+                                        <option value="etc">기타</option>
+                                    </select>
+                                    <div><textarea class="textarea scroll m-t-5 Text" disabled>도로교통법 제 123조(적용)</textarea></div>
+                                </div>
+                            </td>
+                            <td rowspan="2">
+                                <div class="selectBox">
+                                    <select class="type-2" name="list">
+                                        <option value="">선택하세요</option>
+                                        <option value="">정기적인 스트레칭 시행</option>
+                                        <option value="" selected>차량 운행 시 교대운전</option>
+                                        <option value="">갓길 또는 졸음쉼터에서 휴식</option>
+                                        <option value="">차량 정기점검 시행</option>
+                                        <option value="">차량 안전운전교육 시행</option>
+                                        <option value="">사고사례 전파를 통한 동종사고 예방</option>
+                                        <option value="">블루투스 이어폰 또는 차량 블루투스기능 사용</option>
+                                        <option value="">작업중지권 사용</option>
+                                        <option value="">정기적인 보호구 상태점검</option>
+                                        <option value="">안전보호구 착용(안전모, 안전화, 안전대 등)</option>
+                                        <option value="">2인1조 작업</option>
+                                        <option value="">사다리 안전작업지침 준수</option>
+                                        <option value="">스노우 체인 사용</option>
+                                        <option value="">비상연락망 숙지(경찰서, 소방서, 병원 등)</option>
+                                        <option value="">작업 전 위험요소 제거</option>
+                                        <option value="">안전보건 표지 부착</option>
+                                        <option value="">절연 보호구 착용</option>
+                                        <option value="">우천 시 전기작업 금지</option>
+                                        <option value="">전기작업 전 차단기 OFF</option>
+                                        <option value="">활선경보기 사용</option>
+                                        <option value="">특수차량 전담 작업자 선정(고소작업차, 이동발전차, 이동기지국 등)</option>
+                                        <option value="">작업반경 내 작업 표지판 및 신호수 배치</option>
+                                        <option value="">고소작업차  작업 전 비상정지버튼 이상유무 확인</option>
+                                        <option value="">관리감독자 등 부서장 지시하에 작업</option>
+                                        <option value="">터널구간 작업 시 전방에 경광봉 설치</option>
+                                        <option value="">소화기 위치 표시 및 비상구 표시 부착</option>
+                                        <option value="">중량물 취급주의 표시 부착</option>
+                                        <option value="">사무실 수기 환기 시행</option>
+                                        <option value="">노후화된 책상 및 의자 교체</option>
+                                        <option value="">적정 콘센트 지급</option>
+                                        <option value="">이동 시 휴대혼 사용금지</option>
+                                        <option value="">조도 상태 개선 및 랜턴 사용</option>
+                                        <option value="">접지형 콘센트 및 플러그 사용</option>
+                                        <option value="">안전보건 교육 시행</option>
+                                        <option value="">올바른 공구 및 안전용품 사용</option>
+                                        <option value="">고소작업차 사용</option>
+                                        <option value="">지하실 등이 침수시 배전반의 스위치 전원 확인후 장비 점검</option>
+                                        <option value="">전후방 완전한 시야확보후 이동</option>
+                                        <option value="">운반도구 사용</option>
+                                        <option value="">해충스프레이 사용</option>
+                                        <option value="etc">기타</option>
+                                    </select>
+                                    <div><textarea class="textarea scroll m-t-5 Text" disabled></textarea></div>
+                                </div>
+                            </td>
+                            <td rowspan="2">
+                                <div class="photo-img">
+                                    <div class="img image-link">
+                                        <img src="./images/Untitled-1.jpg" alt="img" onclick="imagePopup('./images/big_untitled-1.jpg');">
+                                    </div>
+                                    <!-- <div class="img image-link">
+                                        <img src="./images/Untitled-2.jpg" alt="img" onclick="imagePopup('./images/big_untitled-2.jpg');">
+                                    </div> -->
+                                </div>
+                            </td>
+                            <td class="tac" rowspan="2">3</td>
+                            <td class="tac" rowspan="2">3</td>
+                            <td class="tac bgige" rowspan="2"><span style="color:red;">9</span></td>
+                            <td rowspan="2">
+                                <textarea class="textarea scroll" style="height:85px;"></textarea>
+                            </td>
+                            <td>
+                                <!--개선예정일-->
+                                <div class="tui-datepicker-input tui-has-focus">
+                                    <input type="text" id="startDate3" aria-label="Date-Time" value="2022-08-05">
+                                    <span class="tui-ico-date"></span>
+                                </div>
+                                <div id="datepicker-wrapper3" style="position:relative;"></div>
+                            </td>
+                            <td rowspan="2">
+                                <div class="clear d-flex jcc p-rel" style="width:60px; margin:0 auto;">
+                                    <label for="upload-btn" class="btn-file btn">업로드</label>
+                                    <input type="file" class="btn file-btn" name="file" data-url="" style="width:58px; top:-6px; left:0;">
+                                </div>
+                                <div class="photo-img">
+                                    <div class="img image-link">
+                                        <img src="./images/no_images.jpg" alt="img">
+                                    </div>
+                                    <div class="img image-link">
+                                        <img src="./images/no_images.jpg" alt="img">
+                                    </div>
+                                </div>
+                            </td>
+                            <td rowspan="2" class="tac">
+                                <select class="type-2">
+                                    <option value="" selected>선택</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </td>
+                            <td rowspan="2" class="tac">
+                                <select class="type-2">
+                                    <option value="" selected>선택</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                            <td rowspan="2" class="tac bgige"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <!-- 개선완료일 -->
+                                <div class="tui-datepicker-input tui-has-focus">
+                                    <input type="text" id="endDate4" aria-label="Date-Time" value="2022-08-05">
+                                    <span class="tui-ico-date"></span>
+                                </div>
+                                <div id="datepicker-wrapper4" style="position:relative;"></div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="2"><button type="button" class="btn btn-leri danger" name="tr_delete">삭제</button></td>
+                            <td rowspan="2">
+                                <div class="selectBox">
+                                    <select class="type-2" name="list">
+                                        <option value="">선택하세요</option>
+                                        <option value="" selected>차량운행 전 차량점검 미시행(경고등 확인 등)</option>
+                                        <option value="">운전자 건강상태 미확인(숙취, 피곤함)</option>
+                                        <option value="">운전중 휴대폰, 네비게이션 조작 시행</option>
+                                        <option value="">작업 전 보호구 상태 미확인(구멍, 찢어짐, 훼손 등)</option>
+                                        <option value="">작업에 맞는 적정보호구 미착용 및 착용상태 불량(턱끈 미조임)</option>
+                                        <option value="">고소작업 시 장비 및 자재 운반용 로프 미사용</option>
+                                        <option value="">고정식 사다리 이동 시 안전대 미사용</option>
+                                        <option value="">A형 사다리 이용 시 고정상태 미확인(아웃트리거, 상단고정 등)</option>
+                                        <option value="">고소작업차 작업 시 작업계획서 및 점검표 미작성</option>
+                                        <option value="">교통법규 미준수(과속, 신호위반, 통행방법 위반 등)</option>
+                                        <option value="">옥탑에 시설된 사다리 고정상태 불량</option>
+                                        <option value="">옥상 장비 안전펜스 미설치로 인한 추락 위험</option>
+                                        <option value="">옥상 및 옥탐 등 공간협소로 인한 불안전한 작업</option>
+                                        <option value="">버켓에 작업인력탑승 상태에서 고소작업차 이동</option>
+                                        <option value="">분전함 및 전원작업으로 감전 위험</option>
+                                        <option value="">차량운행 중 휴대폰 사용</option>
+                                        <option value="">중량물 운반시 무리한 작업 및 이동</option>
+                                        <option value="">A형 사다리 걸쇠 불량으로 인한 넘어짐</option>
+                                        <option value="">작업국소 및 방문장소 미끄러짐에 의한 넘어짐</option>
+                                        <option value="">발전시 가동시 감전 및 화재</option>
+                                        <option value="">옥상 및 옥탑 지선 등 돌출부에 의한 넘어짐</option>
+                                        <option value="">졸음운전</option>
+                                        <option value="">고소작업차 오작동으로 인한 전도 및 추돌사고</option>
+                                        <option value="">옥외국소 작업 시 말벌 등 해충에 의한 피해</option>
+                                        <option value="">눈길,빗길,빙판길로 인한 추돌사고</option>
+                                        <option value="">조도가 확보되지 않은 장소 이동으로 인한 충돌 및 넘어짐</option>
+                                        <option value="">장비교체 등 중량물 낙하로 인한 사고</option>
+        
+                                        <option value="">정기적인 사무실 환기 미시행</option>
+                                        <option value="">사무실 내 소화기 위치, 작동방법 미숙지</option>
+                                        <option value="">화재 시 대피방법, 비상구 위치 미숙지</option>
+                                        <option value="">승인되지 않은 전열기구 사용(전자레인지, 전기난로, 전기방석 등)</option>
+                                        <option value="">젖은 손으로 전기기구 접촉</option>
+                                        <option value="">VDT작업 시 불안전한 자세</option>
+                                        <option value="">모니터 감시로 인한 눈피로도 증가</option>
+                                        <option value="">출입문에 손가락 끼임 위험</option>
+                                        <option value="">전원 케이블 및 콘센트 등에 걸려 넘어짐 위험</option>
+                                        <option value="">휴대폰 사용하며 통로 및 계단 이용</option>
+                                        <option value="">사무기기 콘센트 과부하 및 감전</option>
+                                        <option value="">조명 및 명암에 따른 시력저하</option>
+                                        <option value="">콘센트 부하 및 누전으로 인한 화재발생 위험</option>
+                                        <option value="">중량물 운반시 무리한 작업 및 이동</option>
+        
+                                        <option value="">차량운행 전 차량점검 미시행(경고등 확인 등)</option>
+                                        <option value="">운전자 건강상태 미확인(숙취, 피곤함)</option>
+                                        <option value="">운전중 휴대폰, 네비게이션 조작 시행</option>
+                                        <option value="">작업 전 보호구 상태 미확인(구멍, 찢어짐, 훼손 등)</option>
+                                        <option value="">작업에 맞는 적정보호구 미착용 및 착용상태 불량(턱끈 미조임)</option>
+                                        <option value="">댁내형 시설 작업 시 안전장갑 미사용</option>
+                                        <option value="">전동드릴 사용 시 한손으로 작업</option>
+                                        <option value="">고객응대 매뉴얼에 따라 응대 미시행</option>
+                                        <option value="">정기적인 사무실 환기 미시행</option>
+                                        <option value="">사무실 내 소화기 위치, 작동방법 미숙지</option>
+                                        <option value="">화재 시 대피방법, 비상구 위치 미숙지</option>
+                                        <option value="">승인되지 않은 전열기구 사용(전자레인지, 전기난로, 전기방석 등)</option>
+                                        <option value="">젖은 손으로 전기기구 접촉</option>
+                                        <option value="">VDT작업 시 불안전한 자세</option>
+                                        <option value="">모니터 감시로 인한 눈피로도 증가</option>
+                                        <option value="">출입문에 손가락 끼임 위험</option>
+                                        <option value="">전원 케이블 및 콘센트 등에 걸려 넘어짐 위험</option>
+                                        <option value="">휴대폰 사용하며 통로 및 계단 이용</option>
+                                        <option value="">사무기기 콘센트 과부하 및 감전</option>
+                                        <option value="">조명 및 명암에 따른 시력저하</option>
+                                        <option value="">콘센트 부하 및 누전으로 인한 화재발생 위험</option>
+                                        <option value="">중량물 운반시 무리한 작업 및 이동</option>
+        
+                                        <option value="">정기적인 사무실 환기 미시행</option>
+                                        <option value="">사무실 내 소화기 위치, 작동방법 미숙지</option>
+                                        <option value="">화재 시 대피방법, 비상구 위치 미숙지</option>
+                                        <option value="">승인되지 않은 전열기구 사용(전자레인지, 전기난로, 전기방석 등)</option>
+                                        <option value="">젖은 손으로 전기기구 접촉</option>
+                                        <option value="">VDT작업 시 불안전한 자세</option>
+                                        <option value="">모니터 감시로 인한 눈피로도 증가</option>
+                                        <option value="">출입문에 손가락 끼임 위험</option>
+                                        <option value="">전원 케이블 및 콘센트 등에 걸려 넘어짐 위험</option>
+                                        <option value="">휴대폰 사용하며 통로 및 계단 이용</option>
+                                        <option value="">사무기기 콘센트 과부하 및 감전</option>
+                                        <option value="">조명 및 명암에 따른 시력저하</option>
+                                        <option value="">콘센트 부하 및 누전으로 인한 화재발생 위험</option>
+                                        <option value="">중량물 운반시 무리한 작업 및 이동</option>
+        
+                                        <option value="">수리작업 시 불안전한 자세</option>
+                                        <option value="">환풍기 시설 미작동시에도 작업</option>
+                                        <option value="">중량물 취급 시 안전작업 방법 미시행(수레 미사용, 올바른 자세 등)</option>
+                                        <option value="">장비 적재물 무너짐 위험</option>
+                                        <option value="">이동공간 내 안전통로 미확보</option>
+                                        <option value="">모듈수리 시 보호구 미착용(안전장갑, 방진마스크 등)</option>
+                                        <option value="">유해 화학물질의 MSDS자료 미게시 및 교육 미시행</option>
+                                        <option value="">전기기계∙기구 사용 시 누전여부 미확인</option>
+                                        <option value="">작업장소 조도 불량시에도 작업시행</option>
+                                        <option value="etc">기타</option>
+                                    </select>
+                                    <div><textarea class="textarea scroll m-t-5 Text" disabled></textarea></div>
+                                </div>
+                            </td>
+                            <td rowspan="2">
+                                <div class="selectBox">
+                                    <select class="type-2" name="list">
+                                        <option value="">선택하세요</option>
+                                        <option value="">추락</option>
+                                        <option value="">전도</option>
+                                        <option value="">감전</option>
+                                        <option value="">끼임</option>
+                                        <option value="">충돌</option>
+                                        <option value="">낙하</option>
+                                        <option value="">화재</option>
+                                        <option value="">감염병</option>
+                                        <option value="">차량사고</option>
+                                        <option value="">호흡기 질환</option>
+                                        <option value="">근골격계 질환</option>
+                                        <option value="etc" selected>기타</option>
+                                    </select>
+                                    <div><textarea class="textarea scroll m-t-5 Text">모든 주변 상황이 위해</textarea></div>
+                                </div>
+                            </td>
+                            <td rowspan="2">
+                                <div class="selectBox">
+                                    <select class="type-2" name="list">
+                                        <option value="">선택하세요</option>
+                                        <option value="">도로교통법 제46조의3(난폭운전 금지)</option>
+                                        <option value="" selected>도로교통법 제49조(모든 운전자의 준수사항 등)</option>
+                                        <option value="">산업안전보건법 제29조(근로자에 대한 안전보건교육)</option>
+                                        <option value="">산업안전보건법 제37조(안전보건표지의 설치ㆍ부착)</option>
+                                        <option value="">산업안전보건법 제38조(안전조치)</option>
+                                        <option value="">산업안전보건법 제39조(보건조치)</option>
+                                        <option value="">산업안전보건법 제40조(근로자의 안전조치 및 보건조치 준수)</option>
+                                        <option value="">산업안전보건법 제52조(근로자의 작업중지)</option>
+                                        <option value="etc">기타</option>
+                                    </select>
+                                    <div><textarea class="textarea scroll m-t-5 Text" disabled></textarea></div>
+                                </div>
+                            </td>
+                            <td rowspan="2">
+                                <div class="selectBox">
+                                    <select class="type-2" name="list">
+                                        <option value="">선택하세요</option>
+                                        <option value="">정기적인 스트레칭 시행</option>
+                                        <option value="">차량 운행 시 교대운전</option>
+                                        <option value="">갓길 또는 졸음쉼터에서 휴식</option>
+                                        <option value="">차량 정기점검 시행</option>
+                                        <option value="">차량 안전운전교육 시행</option>
+                                        <option value="">사고사례 전파를 통한 동종사고 예방</option>
+                                        <option value="">블루투스 이어폰 또는 차량 블루투스기능 사용</option>
+                                        <option value="">작업중지권 사용</option>
+                                        <option value="">정기적인 보호구 상태점검</option>
+                                        <option value="">안전보호구 착용(안전모, 안전화, 안전대 등)</option>
+                                        <option value="">2인1조 작업</option>
+                                        <option value="">사다리 안전작업지침 준수</option>
+                                        <option value="">스노우 체인 사용</option>
+                                        <option value="">비상연락망 숙지(경찰서, 소방서, 병원 등)</option>
+                                        <option value="">작업 전 위험요소 제거</option>
+                                        <option value="">안전보건 표지 부착</option>
+                                        <option value="">절연 보호구 착용</option>
+                                        <option value="">우천 시 전기작업 금지</option>
+                                        <option value="">전기작업 전 차단기 OFF</option>
+                                        <option value="">활선경보기 사용</option>
+                                        <option value="">특수차량 전담 작업자 선정(고소작업차, 이동발전차, 이동기지국 등)</option>
+                                        <option value="">작업반경 내 작업 표지판 및 신호수 배치</option>
+                                        <option value="">고소작업차  작업 전 비상정지버튼 이상유무 확인</option>
+                                        <option value="">관리감독자 등 부서장 지시하에 작업</option>
+                                        <option value="">터널구간 작업 시 전방에 경광봉 설치</option>
+                                        <option value="">소화기 위치 표시 및 비상구 표시 부착</option>
+                                        <option value="">중량물 취급주의 표시 부착</option>
+                                        <option value="">사무실 수기 환기 시행</option>
+                                        <option value="">노후화된 책상 및 의자 교체</option>
+                                        <option value="">적정 콘센트 지급</option>
+                                        <option value="">이동 시 휴대혼 사용금지</option>
+                                        <option value="">조도 상태 개선 및 랜턴 사용</option>
+                                        <option value="">접지형 콘센트 및 플러그 사용</option>
+                                        <option value="">안전보건 교육 시행</option>
+                                        <option value="">올바른 공구 및 안전용품 사용</option>
+                                        <option value="">고소작업차 사용</option>
+                                        <option value="">지하실 등이 침수시 배전반의 스위치 전원 확인후 장비 점검</option>
+                                        <option value="">전후방 완전한 시야확보후 이동</option>
+                                        <option value="">운반도구 사용</option>
+                                        <option value="">해충스프레이 사용</option>
+                                        <option value="etc" selected>기타</option>
+                                    </select>
+                                    <div><textarea class="textarea scroll m-t-5 Text">여러가지 이유로 많은 문제점을 지님</textarea></div>
+                                </div>
+                            </td>
+                            <td rowspan="2">
+                                <div class="photo-img">
+                                    <div class="img image-link">
+                                        <img src="./images/Untitled-1.jpg" alt="img" onclick="imagePopup('./images/big_untitled-1.jpg');">
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="tac" rowspan="2">3</td>
+                            <td class="tac" rowspan="2">3</td>
+                            <td class="tac bgige" rowspan="2">6</td>
+                            <td rowspan="2"></td>
+                            <td></td>
+                            <td rowspan="2"></td>
+                            <td rowspan="2" class="tac"></td>
+                            <td rowspan="2" class="tac"></td>
+                            <td rowspan="2" class="tac bgige"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="2"><button type="button" class="btn btn-leri danger" name="tr_delete">삭제</button></td>
+                            <td rowspan="2">
+                                <div class="selectBox">
+                                    <select class="type-2" name="list">
+                                        <option value="">선택하세요</option>
+                                        <option value="" selected>차량운행 전 차량점검 미시행(경고등 확인 등)</option>
+                                        <option value="">운전자 건강상태 미확인(숙취, 피곤함)</option>
+                                        <option value="">운전중 휴대폰, 네비게이션 조작 시행</option>
+                                        <option value="">작업 전 보호구 상태 미확인(구멍, 찢어짐, 훼손 등)</option>
+                                        <option value="">작업에 맞는 적정보호구 미착용 및 착용상태 불량(턱끈 미조임)</option>
+                                        <option value="">고소작업 시 장비 및 자재 운반용 로프 미사용</option>
+                                        <option value="">고정식 사다리 이동 시 안전대 미사용</option>
+                                        <option value="">A형 사다리 이용 시 고정상태 미확인(아웃트리거, 상단고정 등)</option>
+                                        <option value="">고소작업차 작업 시 작업계획서 및 점검표 미작성</option>
+                                        <option value="">교통법규 미준수(과속, 신호위반, 통행방법 위반 등)</option>
+                                        <option value="">옥탑에 시설된 사다리 고정상태 불량</option>
+                                        <option value="">옥상 장비 안전펜스 미설치로 인한 추락 위험</option>
+                                        <option value="">옥상 및 옥탐 등 공간협소로 인한 불안전한 작업</option>
+                                        <option value="">버켓에 작업인력탑승 상태에서 고소작업차 이동</option>
+                                        <option value="">분전함 및 전원작업으로 감전 위험</option>
+                                        <option value="">차량운행 중 휴대폰 사용</option>
+                                        <option value="">중량물 운반시 무리한 작업 및 이동</option>
+                                        <option value="">A형 사다리 걸쇠 불량으로 인한 넘어짐</option>
+                                        <option value="">작업국소 및 방문장소 미끄러짐에 의한 넘어짐</option>
+                                        <option value="">발전시 가동시 감전 및 화재</option>
+                                        <option value="">옥상 및 옥탑 지선 등 돌출부에 의한 넘어짐</option>
+                                        <option value="">졸음운전</option>
+                                        <option value="">고소작업차 오작동으로 인한 전도 및 추돌사고</option>
+                                        <option value="">옥외국소 작업 시 말벌 등 해충에 의한 피해</option>
+                                        <option value="">눈길,빗길,빙판길로 인한 추돌사고</option>
+                                        <option value="">조도가 확보되지 않은 장소 이동으로 인한 충돌 및 넘어짐</option>
+                                        <option value="">장비교체 등 중량물 낙하로 인한 사고</option>
+        
+                                        <option value="">정기적인 사무실 환기 미시행</option>
+                                        <option value="">사무실 내 소화기 위치, 작동방법 미숙지</option>
+                                        <option value="">화재 시 대피방법, 비상구 위치 미숙지</option>
+                                        <option value="">승인되지 않은 전열기구 사용(전자레인지, 전기난로, 전기방석 등)</option>
+                                        <option value="">젖은 손으로 전기기구 접촉</option>
+                                        <option value="">VDT작업 시 불안전한 자세</option>
+                                        <option value="">모니터 감시로 인한 눈피로도 증가</option>
+                                        <option value="">출입문에 손가락 끼임 위험</option>
+                                        <option value="">전원 케이블 및 콘센트 등에 걸려 넘어짐 위험</option>
+                                        <option value="">휴대폰 사용하며 통로 및 계단 이용</option>
+                                        <option value="">사무기기 콘센트 과부하 및 감전</option>
+                                        <option value="">조명 및 명암에 따른 시력저하</option>
+                                        <option value="">콘센트 부하 및 누전으로 인한 화재발생 위험</option>
+                                        <option value="">중량물 운반시 무리한 작업 및 이동</option>
+        
+                                        <option value="">차량운행 전 차량점검 미시행(경고등 확인 등)</option>
+                                        <option value="">운전자 건강상태 미확인(숙취, 피곤함)</option>
+                                        <option value="">운전중 휴대폰, 네비게이션 조작 시행</option>
+                                        <option value="">작업 전 보호구 상태 미확인(구멍, 찢어짐, 훼손 등)</option>
+                                        <option value="">작업에 맞는 적정보호구 미착용 및 착용상태 불량(턱끈 미조임)</option>
+                                        <option value="">댁내형 시설 작업 시 안전장갑 미사용</option>
+                                        <option value="">전동드릴 사용 시 한손으로 작업</option>
+                                        <option value="">고객응대 매뉴얼에 따라 응대 미시행</option>
+                                        <option value="">정기적인 사무실 환기 미시행</option>
+                                        <option value="">사무실 내 소화기 위치, 작동방법 미숙지</option>
+                                        <option value="">화재 시 대피방법, 비상구 위치 미숙지</option>
+                                        <option value="">승인되지 않은 전열기구 사용(전자레인지, 전기난로, 전기방석 등)</option>
+                                        <option value="">젖은 손으로 전기기구 접촉</option>
+                                        <option value="">VDT작업 시 불안전한 자세</option>
+                                        <option value="">모니터 감시로 인한 눈피로도 증가</option>
+                                        <option value="">출입문에 손가락 끼임 위험</option>
+                                        <option value="">전원 케이블 및 콘센트 등에 걸려 넘어짐 위험</option>
+                                        <option value="">휴대폰 사용하며 통로 및 계단 이용</option>
+                                        <option value="">사무기기 콘센트 과부하 및 감전</option>
+                                        <option value="">조명 및 명암에 따른 시력저하</option>
+                                        <option value="">콘센트 부하 및 누전으로 인한 화재발생 위험</option>
+                                        <option value="">중량물 운반시 무리한 작업 및 이동</option>
+        
+                                        <option value="">정기적인 사무실 환기 미시행</option>
+                                        <option value="">사무실 내 소화기 위치, 작동방법 미숙지</option>
+                                        <option value="">화재 시 대피방법, 비상구 위치 미숙지</option>
+                                        <option value="">승인되지 않은 전열기구 사용(전자레인지, 전기난로, 전기방석 등)</option>
+                                        <option value="">젖은 손으로 전기기구 접촉</option>
+                                        <option value="">VDT작업 시 불안전한 자세</option>
+                                        <option value="">모니터 감시로 인한 눈피로도 증가</option>
+                                        <option value="">출입문에 손가락 끼임 위험</option>
+                                        <option value="">전원 케이블 및 콘센트 등에 걸려 넘어짐 위험</option>
+                                        <option value="">휴대폰 사용하며 통로 및 계단 이용</option>
+                                        <option value="">사무기기 콘센트 과부하 및 감전</option>
+                                        <option value="">조명 및 명암에 따른 시력저하</option>
+                                        <option value="">콘센트 부하 및 누전으로 인한 화재발생 위험</option>
+                                        <option value="">중량물 운반시 무리한 작업 및 이동</option>
+        
+                                        <option value="">수리작업 시 불안전한 자세</option>
+                                        <option value="">환풍기 시설 미작동시에도 작업</option>
+                                        <option value="">중량물 취급 시 안전작업 방법 미시행(수레 미사용, 올바른 자세 등)</option>
+                                        <option value="">장비 적재물 무너짐 위험</option>
+                                        <option value="">이동공간 내 안전통로 미확보</option>
+                                        <option value="">모듈수리 시 보호구 미착용(안전장갑, 방진마스크 등)</option>
+                                        <option value="">유해 화학물질의 MSDS자료 미게시 및 교육 미시행</option>
+                                        <option value="">전기기계∙기구 사용 시 누전여부 미확인</option>
+                                        <option value="">작업장소 조도 불량시에도 작업시행</option>
+                                        <option value="etc">기타</option>
+                                    </select>
+                                    <div><textarea class="textarea scroll m-t-5 Text" disabled></textarea></div>
+                                </div>
+                            </td>
+                            <td rowspan="2">
+                                <div class="selectBox">
+                                    <select class="type-2" name="list">
+                                        <option value="">선택하세요</option>
+                                        <option value="">추락</option>
+                                        <option value="">전도</option>
+                                        <option value="">감전</option>
+                                        <option value="">끼임</option>
+                                        <option value="">충돌</option>
+                                        <option value="">낙하</option>
+                                        <option value="">화재</option>
+                                        <option value="">감염병</option>
+                                        <option value="">차량사고</option>
+                                        <option value="">호흡기 질환</option>
+                                        <option value="">근골격계 질환</option>
+                                        <option value="etc" selected>기타</option>
+                                    </select>
+                                    <div><textarea class="textarea scroll m-t-5 Text">모든 주변 상황이 위해</textarea></div>
+                                </div>
+                            </td>
+                            <td rowspan="2">
+                                <div class="selectBox">
+                                    <select class="type-2" name="list">
+                                        <option value="">선택하세요</option>
+                                        <option value="">도로교통법 제46조의3(난폭운전 금지)</option>
+                                        <option value="" selected>도로교통법 제49조(모든 운전자의 준수사항 등)</option>
+                                        <option value="">산업안전보건법 제29조(근로자에 대한 안전보건교육)</option>
+                                        <option value="">산업안전보건법 제37조(안전보건표지의 설치ㆍ부착)</option>
+                                        <option value="">산업안전보건법 제38조(안전조치)</option>
+                                        <option value="">산업안전보건법 제39조(보건조치)</option>
+                                        <option value="">산업안전보건법 제40조(근로자의 안전조치 및 보건조치 준수)</option>
+                                        <option value="">산업안전보건법 제52조(근로자의 작업중지)</option>
+                                        <option value="etc">기타</option>
+                                    </select>
+                                    <div><textarea class="textarea scroll m-t-5 Text" disabled></textarea></div>
+                                </div>
+                            </td>
+                            <td rowspan="2">
+                                <div class="selectBox">
+                                    <select class="type-2" name="list">
+                                        <option value="">선택하세요</option>
+                                        <option value="">정기적인 스트레칭 시행</option>
+                                        <option value="">차량 운행 시 교대운전</option>
+                                        <option value="">갓길 또는 졸음쉼터에서 휴식</option>
+                                        <option value="">차량 정기점검 시행</option>
+                                        <option value="">차량 안전운전교육 시행</option>
+                                        <option value="">사고사례 전파를 통한 동종사고 예방</option>
+                                        <option value="">블루투스 이어폰 또는 차량 블루투스기능 사용</option>
+                                        <option value="">작업중지권 사용</option>
+                                        <option value="">정기적인 보호구 상태점검</option>
+                                        <option value="">안전보호구 착용(안전모, 안전화, 안전대 등)</option>
+                                        <option value="">2인1조 작업</option>
+                                        <option value="">사다리 안전작업지침 준수</option>
+                                        <option value="">스노우 체인 사용</option>
+                                        <option value="">비상연락망 숙지(경찰서, 소방서, 병원 등)</option>
+                                        <option value="">작업 전 위험요소 제거</option>
+                                        <option value="">안전보건 표지 부착</option>
+                                        <option value="">절연 보호구 착용</option>
+                                        <option value="">우천 시 전기작업 금지</option>
+                                        <option value="">전기작업 전 차단기 OFF</option>
+                                        <option value="">활선경보기 사용</option>
+                                        <option value="">특수차량 전담 작업자 선정(고소작업차, 이동발전차, 이동기지국 등)</option>
+                                        <option value="">작업반경 내 작업 표지판 및 신호수 배치</option>
+                                        <option value="">고소작업차  작업 전 비상정지버튼 이상유무 확인</option>
+                                        <option value="">관리감독자 등 부서장 지시하에 작업</option>
+                                        <option value="">터널구간 작업 시 전방에 경광봉 설치</option>
+                                        <option value="">소화기 위치 표시 및 비상구 표시 부착</option>
+                                        <option value="">중량물 취급주의 표시 부착</option>
+                                        <option value="">사무실 수기 환기 시행</option>
+                                        <option value="">노후화된 책상 및 의자 교체</option>
+                                        <option value="">적정 콘센트 지급</option>
+                                        <option value="">이동 시 휴대혼 사용금지</option>
+                                        <option value="">조도 상태 개선 및 랜턴 사용</option>
+                                        <option value="">접지형 콘센트 및 플러그 사용</option>
+                                        <option value="">안전보건 교육 시행</option>
+                                        <option value="">올바른 공구 및 안전용품 사용</option>
+                                        <option value="">고소작업차 사용</option>
+                                        <option value="">지하실 등이 침수시 배전반의 스위치 전원 확인후 장비 점검</option>
+                                        <option value="">전후방 완전한 시야확보후 이동</option>
+                                        <option value="">운반도구 사용</option>
+                                        <option value="">해충스프레이 사용</option>
+                                        <option value="etc" selected>기타</option>
+                                    </select>
+                                    <div><textarea class="textarea scroll m-t-5 Text">여러가지 이유로 많은 문제점을 지님</textarea></div>
+                                </div>
+                            </td>
+                            <td rowspan="2">
+                                <div class="photo-img">
+                                    <div class="img image-link">
+                                        <img src="./images/Untitled-1.jpg" alt="img" onclick="imagePopup('./images/big_untitled-1.jpg');">
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="tac" rowspan="2">3</td>
+                            <td class="tac" rowspan="2">3</td>
+                            <td class="tac bgige" rowspan="2">6</td>
+                            <td rowspan="2"></td>
+                            <td></td>
+                            <td rowspan="2"></td>
+                            <td rowspan="2" class="tac"></td>
+                            <td rowspan="2" class="tac"></td>
+                            <td rowspan="2" class="tac bgige"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="btn-area">
+            <button class="btn btn-default primary">승인요청</button>
+            <button class="btn btn-default green-gra">임시저장</button>
+            <button class="btn btn-default danger" onclick="Companion();">반려</button>
+            <button class="btn btn-default gray">취소</button>
+        </div>
+    </section>
+</div>
+<script type="text/javascript">
+    let today = new Date();
+    let startDates;
+    let role = $('#roleCode').val();
+    if(role == 'AU'){
+        startDates = today.setMonth(today.getMonth() - 3);
+    }else if(role == 'FU' || role == 'MU'){
+        startDates = today.setDate(today.getDate() - 7);
+    }else{
+        startDates = today.setMonth(today.getMonth() - 1);
+    }
+
+    let picker = tui.DatePicker.createRangePicker({
+        language: 'ko',
+        startpicker: {
+            date: startDates,
+            input: '#startDate',
+            container: '#datepicker-wrapper1'
+        },
+        endpicker: {
+            date: new Date(),
+            input: '#endDate',
+            container: '#datepicker-wrapper2'
+        }
+    });
+</script>
+
+
+<script type="text/javascript">
+    let today2 = new Date();
+    let startDates2;
+    let role2 = $('#roleCode').val();
+    if(role == 'AU'){
+        startDates3 = today2.setMonth(today2.getMonth() - 3);
+    }else if(role2 == 'FU' || role == 'MU'){
+        startDates3 = today2.setDate(today2.getDate() - 7);
+    }else{
+        startDates3 = today2.setMonth(today2.getMonth() - 1);
+    }
+
+    let picker5 = tui.DatePicker.createRangePicker({
+        language: 'ko',
+        startpicker: {
+            date: startDates3,
+            input: '#startDate3',
+            container: '#datepicker-wrapper3'
+        },
+        endpicker: {
+            date: new Date(),
+            input: '#endDate4',
+            container: '#datepicker-wrapper4'
+        }
+    });
+</script>
+
+
+<!-- 팝업 모달 -->
+<div id="element_to_pop_up">
+    <a class="b-close"><img src="./images/ic_close.png" style="width:80%; height:80%"></a>
+    <a>
+        <img id="popupImg" src="" alt="img" style="padding-top:20px; max-height:800px; max-width:800px;">
+    </a>
+</div>
+<!--loading-->
+<div id="loading-overlay">
+    <div id="loading">
+        <div class="dot-area">
+            <div class="dot left three"></div>
+            <div class="dot left two"></div>
+            <div class="dot left one"></div>
+            <i class="ic-logo"></i>
+            <div class="dot right one"></div>
+            <div class="dot right two"></div>
+            <div class="dot right three"></div>
+        </div>
+        <h2 class="loading-text">잠시만 기다려주세요</h2>
+    </div>
+</div>
+<!-- /#page-content-wrapper -->
+</div>
+<script type="text/javascript" src="http://moa-ktmos.com/js/jquery.bpopup.min.js"></script>
+<script type="text/javascript">
+
+    function imagePopup(url){
+        $("#popupImg").attr("src", url);
+        $('#element_to_pop_up').bPopup({
+            position: [550, 30] //x, y
+        });
+    }
+</script>  
+</body>
+</html>

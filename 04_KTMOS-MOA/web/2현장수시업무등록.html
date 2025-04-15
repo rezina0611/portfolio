@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>KT MOA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- 기존 css -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/resetting.css">
+    <link rel="stylesheet" type="text/css" href="./css/dialog.css">
+    <link rel="stylesheet" type="text/css" href="./css/wireless.css">
+
+    <!-- popup css 추가 20220623 -->
+    <link rel="stylesheet" type="text/css" href="./css/popup.css">
+    
+    <!-- tui css -->
+    <link rel="stylesheet" type="text/css" href="./css/tui-pagination.css">
+    <link rel="stylesheet" type="text/css" href="./css/tui-grid.css">
+    <link rel="stylesheet" type="text/css" href="./css/tui-time-picker.css">
+    <link rel="stylesheet" type="text/css" href="./css/tui-date-picker.css">
+    <link rel="stylesheet" type="text/css" href="./css/toastui-select-box.css">
+
+    <!-- toggle css -->
+    <link rel="stylesheet" type="text/css" href="./css/simple-sidebar.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+
+    <!-- Bootstrap core CSS -->
+
+    <!-- FILEUPLOAD -->
+    <link rel="stylesheet" type="text/css" href="./css/jquery.fileupload.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery.fileupload-ui.css">
+
+    <!-- 기존 js -->
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+    <script type="text/javascript" src="./js/scripts.js"></script>
+    <script type="text/javascript" src="./js/jquery.nicescroll.js"></script>
+
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/common-functions.js"></script>
+
+    <!-- tui js -->
+    <script type="text/javascript" src="./js/tui-pagination.js"></script>
+    <script type="text/javascript" src="./js/tui-grid.js"></script>
+    <script type="text/javascript" src="./js/tui-code-snippet.js"></script>
+    <script type="text/javascript" src="./js/tui-time-picker.js"></script>
+    <script type="text/javascript" src="./js/tui-date-picker.js"></script>
+    <script type="text/javascript" src="./js/tui-date-picker-ko.js"></script>
+    <script type="text/javascript" src="./js/tui-calendar.js"></script>
+    <script type="text/javascript" src="./js/toastui-select-box.js"></script>
+
+    <script>
+        const Grid = tui.Grid;
+        Grid.applyTheme('default', {
+            outline: {
+                border: '#e0e0e0'
+            },
+            cell: {
+                normal: {
+                    background: '#fff',
+                    border: '#e0e0e0',
+                    color: '#666666'
+                },
+                header: {
+                    background: '#f4f4f4',
+                    border: '#e0e0e0'
+                },
+                evenRow: {
+                    background: '#fff',
+                    border: '#e0e0e0',
+                    color: '#666666'
+                },
+                oddRow: {
+                    background: '#fff',
+                    border: '#e0e0e0',
+                    color: '#666666'
+                }
+            }
+        }); // Call API of static
+    </script>
+    <style type="text/css" id="tui-grid-theme-style">
+        .tui-grid-border-line-top{border-top:1px solid #e0e0e0}
+        .tui-grid-no-scroll-x .tui-grid-border-line-bottom{border-bottom:1px solid #e0e0e0}.tui-grid-frozen-border{background-color:#aaa}
+        .tui-grid-container ::-webkit-scrollbar{background-color:#fff}.tui-grid-container ::-webkit-scrollbar-thumb{background-color:#ddd}
+        .tui-grid-container ::-webkit-scrollbar-thumb:hover{background-color:#ddd;}
+        .tui-grid-container{scrollbar-3dlight-color:#fff;scrollbar-darkshadow-color:#fff;scrollbar-track-color:#fff;scrollbar-shadow-color:#fff;
+            scrollbar-face-color:#ddd;scrollbar-highlight-color:#ddd;scrollbar-arrow-color:#ddd;}
+        .tui-grid-border-line-bottom{border-bottom:1px solid #eee}
+        .tui-grid-content-area{border-color:#eee}.tui-grid-scrollbar-y-inner-border{background-color:#eee}
+        .tui-grid-scrollbar-y-outer-border{background-color:#eee}
+        .tui-grid-scrollbar-right-top{background-color:#f9f9f9;border-color:#eee}
+        .tui-grid-scrollbar-right-bottom{background-color:#f9f9f9;border-color:#eee}
+        .tui-grid-scrollbar-left-bottom{background-color:#f9f9f9;border-color:#eee}
+        .tui-grid-scrollbar-frozen-border{background-color:#f9f9f9;border-color:#eee}
+        .tui-grid-height-resize-handle{background-color:#fff;border-color:#fff}
+        .tui-grid-pagination{background-color:transparent;border-color:transparent}
+        .tui-grid-layer-selection{background-color:#00A9ff;border-color:#00a9ff}
+        .tui-grid-header-area{background-color:#fff;border-color:#ccc}
+        .tui-grid-body-area{background-color:#fff}.tui-grid-summary-area{background-color:#fff;border-color:#eee}
+        .tui-grid-has-summary-top .tui-grid-body-area{border-color:#eee}
+        .tui-grid-cell{background-color:#fff;border-color:#e0e0e0;border-left-width:0;border-right-width:0;border-top-width:1px;border-bottom-width:1px;color:#333}
+        .tui-grid-cell-editable{background-color:#fff}.tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-header-area .tui-grid-table{border-right-style:solid}
+        .tui-grid-cell-header{background-color:#f4f4f4;border-color:#e0e0e0;border-left-width:1px;border-right-width:1px;border-top-width:1px;border-bottom-width:1px;color:#222}
+        .tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-body-area .tui-grid-table{border-right-style:hidden}
+        .tui-grid-cell-row-header{background-color:#fff;border-color:#eee;border-left-width:0;border-right-width:0;border-top-width:1px;border-bottom-width:1px;color:#333}
+        .tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-summary-area .tui-grid-table{border-right-style:hidden}
+        .tui-grid-cell-summary{background-color:#fff;border-color:#eee;border-left-width:0;border-right-width:0;color:#333}
+        .tui-grid-cell-required{background-color:#fffdeb}
+        .tui-grid-cell-disabled{background-color:#f9f9f9;color:#c1c1c1}
+        .tui-grid-cell-invalid.tui-grid-cell{background-color:#ffe5e5}
+        .tui-grid-cell-header.tui-grid-cell-selected{background-color:#e5f6ff}
+        .tui-grid-cell-row-header.tui-grid-cell-selected{background-color:#e5f6ff}
+        .tui-grid-layer-focus-border{background-color:#00a9ff}.tui-grid-layer-editing{border-color:#00a9ff}
+        .tui-grid-layer-focus-deactive .tui-grid-layer-focus-border{background-color:#aaa}
+        .tui-grid-row-odd>td{background-color:#fff}.tui-grid-row-even>td{background-color:#fff}.tui-grid-cell-dummy{background-color:#fff}
+    </style>
+</head>
+
+<body>
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar" class="nav-collapse">
+        <button id="menu-toggle"><i class="fas fa-bars"></i></button>
+        <div class="user-bg">
+            <div class="brand">
+                <img src="./images/logo.png" alt="KTmos wMMS">
+            </div>
+            <div class="user-area">
+                <div class="user-name">
+                	<span style="width: 60%;word-break:break-all;word-wrap:break-word;float: left;">관리자 님</span>
+                	<span class="area-badge">북부</span>
+                </div>
+                <div class="user-btn m--3" style="margin-top: 35px;">
+                    <li><a href="javascript:void(0);" onclick="fn_modify(this)">정보수정</a></li>
+                    <li><a href="javascript:void(0);" onclick="fn_logout(this);">로그아웃</a></li>
+                </div>
+            </div>
+        </div>
+            <!-- 메뉴 표시 -->
+            <ul class="sidebar-menu" id="nav-accordion">
+                <li class="sub-menu"><a href="javascript:showSub1('M01S01')">인수시험관리<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM01S01" style="display: none;">
+                        <li><a href="/acceptcheck/list/M01S01" id="" class="" target="">인수시험정보조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M02S01')">국소정보<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM02S01" style="display: none;">
+                        <li><a href="/device/5glte3g/list/M02S01" id="" class="" target="">국소정보조회-5G/LTE/3G</a></li>
+                        <li><a href="/device/repeater/list/M02S02" id="" class="" target="">국소정보조회-중계기</a></li>
+                        <li><a href="/device/wifi/list/M02S03" id="" class="" target="">국소정보조회-WiFi</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M03S01')">정기점검<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM03S01" style="display: none;">
+                        <li><a href="/regularinspection/list/M03S01" id="" class="" target="">정기점검조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M04S01')">전기안전점검<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM04S01" style="display: none;">
+                        <li><a href="/electricsafety/plan/list/M04S01" id="" class="" target="">계획관리</a></li>
+                        <li><a href="/electricsafety/inspection/list/M04S02" id="" class="" target="">점검관리</a></li>
+                        <li><a href="/electricsafety/result/list/M04S03" id="" class="" target="">대응결과조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M05S01')">위험국소<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM05S01" style="display: none;">
+                        <li><a href="/dangerinspection/list/M05S01" id="" class="" target="">위험국소조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="#none">아차사고<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="" style="display:block;">
+                        <li><a href="#none" id="" class="active" target="">아차사고조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M06S01')">부대시설<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM06S01" style="display: none;">
+                        <li><a href="/additionalfacilities/list/M06S01" id="" class="" target="">부대시설점검조회</a></li>
+                    </ul>
+                </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M07S01')">긴급복구물자관리<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM07S01" style="display: none;">
+                            <li><a href="/emergencymaterial/status/M07S01" id="" class="" target="">긴급복구현황표</a></li>
+                            <li><a href="/emergencymaterial/master/list/M07S02" id="" class="" target="">긴급복구물자</a></li>
+                            <li><a href="/emergencymaterial/history/list/M07S03" id="" class="" target="">긴급복구물자사용</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M09S01')">안전용품관리<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM09S01" style="display: none;">
+                            <li><a href="/item-safety/status/M09S01" id="" class="" target="">현황표</a></li>
+                            <li><a href="/item-safety/list/M09S02" id="" class="" target="">안전용품등록</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M15S01')">현장수시업무<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM15S01" style="display: none;">
+                            <li><a href="/onsite/list/M15S01" id="" class="" target="">현장수시업무현황</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M08S01')">Safe365<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM08S01" style="display: none;">
+                            <li><a href="/safe365/safety/list/M08S01" id="" class="" target="">안전점검 체크 리스트</a></li>
+                            <li><a href="/safe365/highcar/list/M08S02" id="" class="" target="">고소작업차 사용 작업 계획서</a></li>
+                            <li><a href="/safe365/aerial/list/M08S03" id="" class="" target="">고소작업차 작업 전 점검표</a></li>
+                            <li><a href="/safe365/status/M08S04" id="" class="" target="">현장 안전점검 현황</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M14S01')">작업중지권<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM14S01" style="display: none;">
+                            <li><a href="/stopwork/list/M14S01" id="" class="" target="">작업중지권 조회</a></li>
+                            <li><a href="/stopwork/apply/list/M14S02" id="" class="" target="">작업중지권 승인관리</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M16S01')">현장업무지원<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM16S01" style="display: none;">
+                            <li><a href="/support/acs/list/M16S01" id="" class="" target="">ACS</a></li>
+                            <li><a href="/support/rsa/list/M16S02" id="" class="" target="">RSA</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M11S01')">예비품관리<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM11S01" style="display: none;">
+                            <li><a href="/spare/list/M11S01" id="" class="" target="">예비품관리</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M10S01')">업로드관리<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM10S01" style="display: none;"><li><a href="/device/5glte3g/excel/list/M10S01" id="" class="" target="">국소정보업로드-5G/LTE/3G</a></li>
+                            <li><a href="/device/repeater/excel/list/M10S02" id="" class="" target="">국소정보업로드-중계기</a></li>
+                            <li><a href="/device/wifi/excel/list/M10S03" id="" class="" target="">국소정보업로드-WIFI</a></li>
+                            <li><a href="/device/acceptcheck/excel/list/M10S04" id="" class="" target="">인수시험</a></li>
+                            <li><a href="/device/regularinspection/excel/list/M10S05" id="" class="" target="">정기점검</a></li>
+                            <li><a href="/device/regularinspection_riu/excel/list/M10S06" id="" class="" target="">정기점검 RIU</a></li>
+                            <li><a href="/device/regularinspection_du/excel/list/M10S07" id="" class="" target="">정기점검 DU</a></li>
+                            <li><a href="/device/regularinspection_wifi/excel/list/M10S08" id="" class="" target="">정기점검 WiFi</a></li>
+                            <li><a href="/device/additionalfacilities/excel/list/M10S09" id="" class="" target="">부대시설점검</a></li>
+                            <li><a href="/device/electricsafety/excel/list/M10S10" id="" class="" target="">전기안전점검 계획</a></li>
+                            <li><a href="/device/dangerstation/excel/list/M10S11" id="" class="" target="">위험국소</a></li>
+                            <li><a href="/device/emergencymaterial/excel/list/M10S12" id="" class="" target="">긴급복구물자 사용</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M13S01')">대시보드<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM13S01" style="display: none;">
+                            <li><a href="/dashboard/inspection/M13S01" id="" class="" target="_blank">정기점검 현황</a></li>
+                            <li><a href="/dashboard/accept/M13S02" id="" class="" target="_blank">인수시험 현황</a></li>
+                            <li><a href="/dashboard/danger/M13S03" id="" class="" target="_blank">위험국소 현황</a></li>
+                            <li><a href="/dashboard/setting/list/M13S04" id="" class="" target="">모수관리</a></li>
+                        </ul>
+                    </li>
+                </ul>
+        <!--</div>-->
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <link rel="stylesheet" type="text/css" href="./css/multifreezer.css">
+    <script type="text/javascript" src="./js/multifreezerStandalone.js"></script>
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <section class="wrapper">
+            <h1 id="page_tit"> 현장수시업무관리 <span class="sub_tit">현장수시업무 등록</span></h1>
+
+            <div class="group-section m-t-15">
+                <form id="onsiteNewRegister" name="onsiteNewRegister" action="/onsite/regist/save" method="post" autocomplete="off">
+                    <input type="hidden" id="materialId" name="materialId" value="">
+                    <input type="hidden" id="region" name="region" value="">
+                    <input type="hidden" id="headoffice" name="headoffice" value="">
+                    <input type="hidden" id="team" name="team" value="">
+                    <input type="hidden" id="part" name="part" value="">
+                    <input type="hidden" id="center" name="center" value="">
+                    <div class="group-section m-t-15">
+                    <div class="title">기본정보</div> <br>
+                        <div class="f-r m-b-10">
+                            <p class="fs13"><span class="font-red">*</span> 은 필수입력사항입니다.</p>
+                        </div>
+                    </div>
+
+                    <table class="hit hit-p">
+                        <colgroup>
+                            <col width="180"><col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th><span class="font-red">*</span>업무명</th>
+                                <td><input type="text" id="onsiteName" name="onsiteName" value="" placeholder="업무명을 입력하세요"></td>
+                            </tr>
+                            <tr>
+                                <th><span class="font-red">*</span>작업기간</th>
+                                <td>
+                                    <div class="d-flex a-item">
+                                        <!-- 시작일 -->
+                                        <div class="tui-datepicker-input  tui-has-focus">
+                                            <input type="text" id="datepicker-input-ko" name="datepicker-input-ko" aria-label="Year-Month" value="2022-08"> 
+                                            <span class="tui-ico-date"></span>
+                                        </div>
+                                        <div id="datepicker-month-ko" style="margin-top: -1px;"></div>
+    
+                                        <span class="from">~</span>
+    
+                                        <!-- 종료일 -->
+                                        <div class="tui-datepicker-input  tui-has-focus">
+                                            <input type="text" id="datepicker-input-ko2" name="datepicker-input-ko2" aria-label="Year-Month" value="2022-08">
+                                            <span class="tui-ico-date"></span>
+                                        </div>
+                                        <div id="datepicker-month-ko2" style="margin-top: -1px;"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><span class="font-red">*</span>지역/본부/운용팀</th>
+                                <td>
+                                    <div class="hit-group d-flex m-0">
+                                        <select class="type-2 m-r-10" style="width:165px;">
+                                            <option value="KTN000" label="KT MOS 북부" selected></option>
+                                            <option value="KTS000" label="KT MOS 남부"></option>
+                                        </select>
+                                        
+                                        <select class="type-2 m-r-10" style="width:165px;">
+                                            <option value="" label="본부전체"></option>
+                                            <option value="AD0000" label="경영총괄"></option>
+                                            <option value="AE0000" label="기술총괄"></option>
+                                            <option value="AE0500" label="품질지원센터"></option>
+                                            <option value="BA0000" label="강북본부"></option>
+                                            <option value="BB0000" label="강남본부"></option>
+                                            <option value="BC0000" label="강서본부"></option>
+                                            <option value="BD0000" label="강원본부"></option>
+                                        </select>
+    
+                                        <select class="type-2" style="width:165px;">
+                                            <option value="" label="선택하세요" >선택하세요</option>
+                                            <option value="AC0001" label="윤리경영실"></option>
+                                            <option value="AD0100" label="경영기획팀"></option>
+                                            <option value="AD0200" label="재무회계팀"></option>
+                                            <option value="AD0300" label="경영지원팀"></option>
+                                            <option value="AD0400" label="상생협력팀"></option>
+                                        </select>
+                                    </div>
+                                    <ul class="dotline m-t-10">
+                                        <li>※ 본부는 필수로 선택해주세요</li>
+                                        <li>※ 본부선택 / 선택하세요 : 선택한 본부별 전체 운용팀에서 사용</li>
+                                        <li>※ 본부선택 / 단일 운용팀선택 : 선택한 본부의 해당 운용팀에서만 사용</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><span class="font-red">*</span>대상장비 건수</th>
+                                <td class="p-l-r-0">
+                                    <div class="count">
+                                        <span class="value">0 <span>건</span></span>
+                                        <!-- <span>ssfsf</span> -->
+                                    </div>
+                                    <div style="padding: 15px;">
+                                        <div class="filebox bs-primary">
+                                            <label for="ex_filename">장비ID 기준 엑셀 업로드</label> 
+                                            <input type="file" id="ex_filename" class="upload-hidden" value="선택된 파일 없음"> 
+                                            <input class="upload-name" value="선택된 파일 없음" disabled="disabled">
+                                        </div>
+
+                                        <div class="filebox bs-primary">
+                                            <button class="btn btn-md openLayerPopup" data-target="personalItem03">장비 카테고리 기준 업로드</button> 
+                                            <input type="text" class="upload-name" value="선택된 파일 없음" disabled="disabled">
+                                        </div>
+                                        <script>
+                                            //장비ID 기준 엑셀 업로드 
+                                            $(document).ready(function(){
+                                                var fileTarget = $('.filebox .upload-hidden');
+
+                                                fileTarget.on('change', function(){
+                                                    if(window.FileReader){
+                                                        var filename = $(this)[0].files[0].name;
+                                                    } else {
+                                                        var filename = $(this).val().split('/').pop().split('\\').pop();
+                                                    }
+
+                                                    $(this).siblings('.upload-name').val(filename);
+                                                });
+                                            }); 
+                                        </script>
+                                        <ul class="dotline m-t-10">
+                                            <li>※ 장비ID 기준 : 엑셀 파일에 반드시 "장비ID" 컬럼이 존재해야 합니다. / "장비ID" 값이 중복되지 않게 업로드 해주세요.</li>
+                                            <li>※ 장비 카테고리 기준 : 팝업화면에서 장비 카테고리를 선택하세요</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+            
+            <div class="group-section m-t-40" id="groupA">
+                <div class="title m-b-10">
+                    장비 정보
+                    <input type="checkbox" id="chkA00" onclick="fn_checkBox_Click(this.id)" class="w-auto">
+                </div>
+                <div class="f-r m-b-10">
+                    <button type="button" id="btnTempLoad" class="btn btn-md pink" onclick="goPopup();">불러오기</button>
+                </div>
+                <table id="A00" class="hit">
+                    <colgroup>
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+                    </colgroup>
+                    <tbody>
+                        <!-- 1row -->
+                        <tr>
+                            <th>고유번호</th>
+                            <td>
+                                <input type="checkbox" id="uniqueNo" class="checkbox" value="고유번호">
+                            </td>
+                            <th>장비카테고리</th>
+                            <td>
+                                <input type="checkbox" id="deviceCategory" class="checkbox" value="장비카테고리">
+                            </td>
+                            <th>장비타입</th>
+                            <td>
+                                <input type="checkbox" id="deviceType" class="checkbox" value="장비타입">
+                            </td>
+                            <th>네트워크단</th>
+                            <td>
+                                <input type="checkbox" id="ktNetworkCorps" class="checkbox" value="네트워크단">
+                            </td>
+                        </tr>
+
+                        <!-- 2row -->
+                        <tr>
+                            <th>운용팀</th>
+                            <td>
+                                <input type="checkbox" id="ktOperationTeam" class="checkbox" value="운용팀">
+                            </td>
+                            <th>운용본부</th>
+                            <td>
+                                <input type="checkbox" id="operationHeadoffice" class="checkbox" value="운용본부">
+                            </td>
+                            <th>센터</th>
+                            <td>
+                                <input type="checkbox" id="operationCenter" class="checkbox" value="센터">
+                            </td>
+                            <th>장비ID</th>
+                            <td>
+                                <input type="checkbox" id="deviceId" class="checkbox" value="장비ID">
+                            </td>
+                        </tr>
+
+                        <!-- 3row -->
+                        <tr>
+                            <th>장비명</th>
+                            <td>
+                                <input type="checkbox" id="deviceName" class="checkbox" value="장비명">
+                            </td>
+                            <th>위치코드</th>
+                            <td>
+                                <input type="checkbox" id="locationCode" class="checkbox" value="위치코드">
+                            </td>
+                            <th>정류기타입</th>
+                            <td>
+                                <input type="checkbox" id="rectifierType" class="checkbox" value="정류기타입">
+                            </td>
+                            <th>장비SN</th>
+                            <td>
+                                <input type="checkbox" id="deviceSerialNo" class="checkbox" value="장비SN">
+                            </td>
+                        </tr>
+
+                        <!-- 4row -->
+                        <tr>
+                            <th>제조회사</th>
+                            <td>
+                                <input type="checkbox" id="manufacturer" class="checkbox" value="제조회사">
+                            </td>
+                            <th>기기모델명</th>
+                            <td>
+                                <input type="checkbox" id="deviceModelName" class="checkbox" value="기기모델명">
+                            </td>
+                            <th>장비상태</th>
+                            <td>
+                                <input type="checkbox" id="deviceState" class="checkbox" value="장비상태">
+                            </td>
+                            <th>PN/PCI</th>
+                            <td>
+                                <input type="checkbox" id="devicePnPci" class="checkbox" value="PN/PCI">
+                            </td>
+                        </tr>
+
+                        <!-- 5row -->
+                        <tr>
+                            <th>집중국명</th>
+                            <td>
+                                <input type="checkbox" id="tollCenterName" class="checkbox" value="집중국명">
+                            </td>
+                            <th></th>
+                            <td></td>
+                            <th></th>
+                            <td></td>
+                            <th></th>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="group-section m-t-15" id="groupB">
+                <div class="title m-b-10">주소정보
+                <input type="checkbox" id="chkB00" onclick="fn_checkBox_Click(this.id)" class="w-auto">
+                </div>
+
+                    <table id="B00" class="hit">
+                        <colgroup>
+                            <col width="20%">
+                            <col width="5%">
+                            <col width="20%">
+                            <col width="5%">
+                            <col width="20%">
+                            <col width="5%">
+                            <col width="20%">
+                            <col width="5%">
+
+                        </colgroup>
+                        <tbody>
+
+                            <!-- 1row -->
+                            <tr>
+                                <th>도로명주소</th>
+                                <td>
+                                    <input type="checkbox" id="streetNameAddress" class="checkbox" value="도로명주소">
+                                </td>
+                                <th>시/도</th>
+                                <td>
+                                    <input type="checkbox" id="sido" class="checkbox" value="시/도">
+                                </td>
+                                <th>시/군/구</th>
+                                <td>
+                                    <input type="checkbox" id="sigungu" class="checkbox" value="시/군/구">
+                                </td>
+                                <th>읍/면/동</th>
+                                <td>
+                                    <input type="checkbox" id="eubmyundong" class="checkbox" value="읍/면/동">
+                                </td>
+                                </tr>
+                                <!-- 2row -->
+                                <tr>
+                                <th>번지</th>
+                                <td>
+                                    <input type="checkbox" id="bungi" class="checkbox" value="번지">
+                                </td>
+                                <th>상세주소</th>
+                                <td>
+                                    <input type="checkbox" id="addressDetail" class="checkbox" value="상세주소">
+                                </td>
+                                <th></th>
+                                <td> </td>
+                                <th></th>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                  </table>
+            </div>
+
+            <div class="group-section m-t-15" id="groupC">
+                <div class="title m-b-10">건물정보
+                    <input type="checkbox" id="chkC00" onclick="fn_checkBox_Click(this.id)" class="w-auto">
+                </div>
+
+
+                    <table id="C00" class="hit">
+
+                    <colgroup>
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+
+                    </colgroup>
+
+                    <tbody>
+
+                    <!-- 1row -->
+                        <tr>
+                            <th>건물명</th>
+                            <td>
+                                <input type="checkbox" id="buildingName" class="checkbox" value="건물명">
+                            </td>
+                            <th>장비위치층</th>
+                            <td>
+                                <input type="checkbox" id="deviceLocationFloor" class="checkbox" value="장비위치층">
+                            </td>
+                            <th>도서지역여부</th>
+                            <td>
+                                <input type="checkbox" id="islands" class="checkbox" value="도서지역여부">
+                            </td>
+                            <th>건물층수</th>
+                            <td>
+                                <input type="checkbox" id="buildingFloor" class="checkbox" value="건물층수">
+                            </td>
+                            </tr>
+                            <!-- 2row -->
+                            <tr>
+                            <th>국사형태</th>
+                            <td>
+                                <input type="checkbox" id="stationShape" class="checkbox" value="국사형태">
+                            </td>
+                            <th>건물주연락처</th>
+                            <td>
+                                <input type="checkbox" id="buildingOwnerTel" class="checkbox" value="건물주연락처">
+                            </td>
+                            <th>관리자연락처</th>
+                            <td>
+                                <input type="checkbox" id="buildingManagerTel" class="checkbox" value="관리자연락처">
+                            </td>
+                            <th></th>
+                            <td>
+
+                            </td>
+                        </tr>
+
+                    </tbody>
+                  </table>
+            </div>
+
+            <div class="group-section m-t-15" id="groupD">
+                <div class="title m-b-10">출입정보
+                <input type="checkbox" id="chkD00" onclick="fn_checkBox_Click(this.id)" class="w-auto">
+                </div>
+
+                    <table id="D00" class="hit">
+                    <colgroup>
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+
+                    </colgroup>
+                    <tbody>
+
+                    <!-- 1row -->
+                    <tr>
+                    <th>출입제한</th>
+                    <td>
+                        <input type="checkbox" id="accessRestrictions" class="checkbox" value="출입제한">
+                    </td>
+                    <th>출입제한시간대</th>
+                    <td>
+                        <input type="checkbox" id="accessRestrictionsTimeZone" class="checkbox" value="출입제한시간대">
+                    </td>
+                    <th>출입관계</th>
+                    <td>
+                        <input type="checkbox" id="accessInfo" class="checkbox" value="출입관계">
+                    </td>
+                    <th>고소차(진입/사용)여부</th>
+                    <td>
+                        <input type="checkbox" id="elevatedCarNeedsYn" class="checkbox" value="고소차(진입/사용)여부">
+                    </td>
+                    </tr>
+                    <!-- 2row -->
+                    <tr>
+                    <th>운용차량진입여부</th>
+                    <td>
+                        <input type="checkbox" id="operatingVehicleEnterYn" class="checkbox" value="운용차량진입여부">
+                    </td>
+                    <th>이동소요시간</th>
+                    <td>
+                        <input type="checkbox" id="moveTime" class="checkbox" value="이동소요시간">
+                    </td>
+                    <th></th>
+                    <td>
+
+                    </td>
+                    <th></th>
+                    <td>
+
+                    </td>
+                    </tr>
+                    </tbody>
+                  </table>
+            </div>
+
+            <div class="group-section m-t-15" id="groupE">
+                <div class="title m-b-10">회선정보
+                <input type="checkbox" id="chkE00" onclick="fn_checkBox_Click(this.id)" class="w-auto">
+                </div>
+                    <table id="E00" class="hit">
+
+                    <colgroup>
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+
+                    </colgroup>
+
+                    <tbody>
+
+                    <!-- 1row -->
+                    <tr>
+                    <th>회선번호</th>
+                    <td>
+                        <input type="checkbox" id="circuitNo" class="checkbox" value="회선번호">
+                    </td>
+                    <th>FDF 선번1(BAY-SHELF-PORT)</th>
+                    <td>
+                        <input type="checkbox" id="fdf1" class="checkbox" value="FDF 선번1(BAY-SHELF-PORT)">
+                    </td>
+                    <th>FDF 선번2(BAY-SHELF-PORT)</th>
+                    <td>
+                        <input type="checkbox" id="fdf2" class="checkbox" value="FDF 선번2(BAY-SHELF-PORT)">
+                    </td>
+                    <th>FDF 선번3(BAY-SHELF-PORT)</th>
+                    <td>
+                        <input type="checkbox" id="fdf3" class="checkbox" value="FDF 선번3(BAY-SHELF-PORT)">
+                    </td>
+                    </tr>
+                    <!-- 2row -->
+                    <tr>
+                    <th>RU MUX 사용유무</th>
+                    <td>
+                        <input type="checkbox" id="ruMuxUseYn" class="checkbox" value="RU MUX 사용유무">
+                    </td>
+                    <th>SFP종류</th>
+                    <td>
+                        <input type="checkbox" id="sfpKind" class="checkbox" value="SFP종류">
+                    </td>
+                    <th>MUX 선번(BAY-SHLF-SLOT)</th>
+                    <td>
+                        <input type="checkbox" id="muxBayShelfSlot" class="checkbox" value="MUX 선번(BAY-SHLF-SLOT)">
+                    </td>
+                    <th></th>
+                    <td>
+
+                    </td>
+                    </tr>
+
+                    </tbody>
+                  </table>
+            </div>
+
+            <div class="group-section m-t-15" id="groupF">
+                <div class="title m-b-10">전기정보
+                <input type="checkbox" id="chkF00" onclick="fn_checkBox_Click(this.id)" class="w-auto">
+                </div>
+
+                    <table id="F00" class="hit">
+
+                    <colgroup>
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+
+                    </colgroup>
+                    <tbody>
+
+                    <!-- 1row -->
+                    <tr>
+                    <th>전기구분</th>
+                    <td>
+                        <input type="checkbox" id="electricityDivision" class="checkbox" value="전기구분">
+                    </td>
+                    <th>계량기 위치</th>
+                    <td>
+                        <input type="checkbox" id="electricityMeterLocation" class="checkbox" value="계량기 위치">
+                    </td>
+                    <th>계량기 번호</th>
+                    <td>
+                        <input type="checkbox" id="electricityMeterNo" class="checkbox" value="계량기 번호">
+                    </td>
+                    <th>인입전원</th>
+                    <td>
+                        <input type="checkbox" id="incomingPowerSupply" class="checkbox" value="인입전원">
+                    </td>
+                    </tr>
+                    <!-- 2row -->
+                    <tr>
+                    <th>계량기 내 차단기 용량</th>
+                    <td>
+                        <input type="checkbox" id="electricityBreakerVolume" class="checkbox" value="계량기 내 차단기 용량">
+                    </td>
+                    <th>계량기 내 차단기 종류</th>
+                    <td>
+                        <input type="checkbox" id="electricityBreakerKind" class="checkbox" value="계량기 내 차단기 종류">
+                    </td>
+                    <th>한전 고객번호</th>
+                    <td>
+                        <input type="checkbox" id="electricityCustomerNo" class="checkbox" value="한전 고객번호">
+                    </td>
+                    <th></th>
+                    <td>
+
+                    </td>
+                    </tr>
+
+                    <!-- 3row -->
+                    <tr>
+                    <th>1차 분전함 위치</th>
+                    <td>
+                        <input type="checkbox" id="distributionBoxLocation1st" class="checkbox" value="1차 분전함 위치">
+                    </td>
+                    <th>1차 차단기 용량</th>
+                    <td>
+                        <input type="checkbox" id="breakerVolume1st" class="checkbox" value="1차 차단기 용량">
+                    </td>
+                    <th>1차 차단기 종류</th>
+                    <td>
+                        <input type="checkbox" id="breakerKind1st" class="checkbox" value="1차 차단기 종류">
+                    </td>
+                    <th>1차 차단기 제조사</th>
+                    <td>
+                        <input type="checkbox" id="breakerManufacturer1st" class="checkbox" value="1차 차단기 제조사">
+                    </td>
+                    </tr>
+
+                    <!-- 4row -->
+                    <tr>
+                    <th>2차 차단기 위치</th>
+                    <td>
+                        <input type="checkbox" id="breakerLocation2nd" class="checkbox" value="2차 차단기 위치">
+                    </td>
+                    <th>2차 차단기 용량</th>
+                    <td>
+                        <input type="checkbox" id="breakerVolume2nd" class="checkbox" value="2차 차단기 용량">
+                    </td>
+                    <th>2차 차단기 종류</th>
+                    <td>
+                        <input type="checkbox" id="breakerKind2nd" class="checkbox" value="2차 차단기 종류">
+                    </td>
+                    <th>2차 차단기 제조사</th>
+                    <td>
+                        <input type="checkbox" id="breakerManufacturer2st" class="checkbox" value="2차 차단기 제조사">
+                    </td>
+                    </tr>
+
+                    <!-- 5row -->
+                    <tr>
+                    <th>3차 차단기 위치</th>
+                    <td>
+                        <input type="checkbox" id="breakerLocation3rd" class="checkbox" value="3차 차단기 위치">
+                    </td>
+                    <th>3차 차단기 용량</th>
+                    <td>
+                        <input type="checkbox" id="breakerVolume3rd" class="checkbox" value="3차 차단기 용량">
+                    </td>
+                    <th>3차 차단기 종류</th>
+                    <td>
+                        <input type="checkbox" id="breakerKind3rd" class="checkbox" value="3차 차단기 종류">
+                    </td>
+                    <th>3차 차단기 제조사</th>
+                    <td>
+                        <input type="checkbox" id="breakerManufacturer3st" class="checkbox" value="3차 차단기 제조사">
+                    </td>
+                    </tr>
+
+                    <!-- 6row -->
+                    <tr>
+                    <th>4차 차단기 위치</th>
+                    <td>
+                        <input type="checkbox" id="breakerLocation4th" class="checkbox" value="4차 차단기 위치">
+                    </td>
+                    <th>4차 차단기 용량</th>
+                    <td>
+                        <input type="checkbox" id="breakerVolume4th" class="checkbox" value="4차 차단기 용량">
+                    </td>
+                    <th>4차 차단기 종류</th>
+                    <td>
+                        <input type="checkbox" id="breakerKind4th" class="checkbox" value="4차 차단기 종류">
+                    </td>
+                    <th>4차 차단기 제조사</th>
+                    <td>
+                        <input type="checkbox" id="breakerManufacturer4st" class="checkbox" value="4차 차단기 제조사">
+                    </td>
+                    </tr>
+
+                    </tbody>
+                  </table>
+            </div>
+
+            <div class="group-section m-t-15" id="groupG">
+                <div class="title m-b-10">철탑정보
+                <input type="checkbox" id="chkG00" onclick="fn_checkBox_Click(this.id)" class="w-auto">
+                </div>
+
+
+                    <table id="G00" class="hit">
+
+                    <colgroup>
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+
+                    </colgroup>
+
+                    <tbody>
+
+                    <!-- 1row -->
+                    <tr>
+                    <th>철탑위치</th>
+                    <td>
+                        <input type="checkbox" id="towerLocation" class="checkbox" value="철탑위치">
+                    </td>
+                    <th>철탑유형</th>
+                    <td>
+                        <input type="checkbox" id="towerType" class="checkbox" value="철탑유형">
+                    </td>
+                    <th>기타철탑</th>
+                    <td>
+                        <input type="checkbox" id="towerEtc" class="checkbox" value="기타철탑">
+                    </td>
+                    <th>철탑높이</th>
+                    <td>
+                        <input type="checkbox" id="towerHeight" class="checkbox" value="철탑높이">
+                    </td>
+                    </tr>
+                    <!-- 2row -->
+                    <tr>
+                    <th>철탑공용주체 주관사</th>
+                    <td>
+                        <input type="checkbox" id="towerSharingMain" class="checkbox" value="철탑공용주체 주관사">
+                    </td>
+                    <th>철탑공용 참여사</th>
+                    <td>
+                        <input type="checkbox" id="towerSharingParticipation" class="checkbox" value="철탑공용 참여사">
+                    </td>
+                    <th>환경친화유형</th>
+                    <td>
+                        <input type="checkbox" id="environmentFriendlyType" class="checkbox" value="환경친화유형">
+                    </td>
+                    <th>지선운용수량</th>
+                    <td>
+                        <input type="checkbox" id="branchLineOperationCount" class="checkbox" value="지선운용수량">
+                    </td>
+                    </tr>
+
+                    <!-- 3row -->
+                    <tr>
+                    <th>지선운용상태</th>
+                    <td>
+                        <input type="checkbox" id="branchLineOperationState" class="checkbox" value="지선운용상태">
+                    </td>
+                    <th></th>
+                    <td>
+
+                    </td>
+                    <th></th>
+                    <td>
+
+                    </td>
+                    <th></th>
+                    <td>
+
+                    </td>
+                    </tr>
+
+                    </tbody>
+                  </table>
+            </div>
+
+            <div class="group-section m-t-15" id="groupH">
+                <div class="title m-b-10">개통정보
+                <input type="checkbox" id="chkH00" onclick="fn_checkBox_Click(this.id)" class="w-auto">
+                </div>
+
+
+                    <table id="H00" class="hit">
+
+                    <colgroup>
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+
+                    </colgroup>
+
+                    <tbody>
+
+                    <!-- 1row -->
+                    <tr>
+                    <th>공사업체</th>
+                    <td>
+                        <input type="checkbox" id="constructionCompany" class="checkbox" value="공사업체">
+                    </td>
+                    <th>설치업체</th>
+                    <td>
+                        <input type="checkbox" id="installCompany" class="checkbox" value="설치업체">
+                    </td>
+                    <th></th>
+                    <td>
+
+                    </td>
+                    <th></th>
+                    <td>
+
+                    </td>
+                    </tr>
+
+                    </tbody>
+                  </table>
+            </div>
+
+            <div class="group-section m-t-15" id="groupI">
+                <div class="title m-b-10">축전지정보
+                <input type="checkbox" id="chkI00" onclick="fn_checkBox_Click(this.id)" class="w-auto">
+                </div>
+
+
+                    <table id="I00" class="hit">
+
+                    <colgroup>
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+
+                    </colgroup>
+
+                    <tbody>
+
+                    <!-- 1row -->
+                    <tr>
+                    <th>용량</th>
+                    <td>
+                        <input type="checkbox" id="storageBatteryCapacity" class="checkbox" value="용량">
+                    </td>
+                    <th>종류</th>
+                    <td>
+                        <input type="checkbox" id="storageBatteryType" class="checkbox" value="종류">
+                    </td>
+                    <th>제조사</th>
+                    <td>
+                        <input type="checkbox" id="storageBatteryManufacturer" class="checkbox" value="제조사">
+                    </td>
+                    <th>제조일자(대개체일자)</th>
+                    <td>
+                        <input type="checkbox" id="storageBatteryManufactureDate" class="checkbox" value="제조일자(대개체일자)">
+                    </td>
+                    </tr>
+                    <!-- 2row -->
+                    <tr>
+                    <th>내부저항 1cell</th>
+                    <td>
+                        <input type="checkbox" id="storageBatteryResist1st" class="checkbox" value="내부저항 1cell">
+                    </td>
+                    <th>내부저항 2cell</th>
+                    <td>
+                        <input type="checkbox" id="storageBatteryResist2st" class="checkbox" value="내부저항 2cell">
+                    </td>
+                    <th>내부저항 3cell</th>
+                    <td>
+                        <input type="checkbox" id="storageBatteryResist3st" class="checkbox" value="내부저항 3cell">
+                    </td>
+                    <th>내부저항 4cell</th>
+                    <td>
+                        <input type="checkbox" id="storageBatteryResist4st" class="checkbox" value="내부저항 4cell">
+                    </td>
+                    </tr>
+
+                    <!-- 3row -->
+                    <tr>
+                    <th>축전지 상태</th>
+                    <td>
+                        <input type="checkbox" id="storageBatteryState" class="checkbox" value="축전지 상태">
+                    </td>
+                    <th></th>
+                    <td>
+
+                    </td>
+                    <th></th>
+                    <td>
+
+                    </td>
+                    <th></th>
+                    <td>
+
+                    </td>
+                    </tr>
+
+                    </tbody>
+                  </table>
+            </div>
+
+            <div class="group-section m-t-15" id="groupJ">
+                <div class="title m-b-10">기타
+                <input type="checkbox" id="chkJ00" onclick="fn_checkBox_Click(this.id)" class="w-auto">
+                </div>
+
+
+                    <table id="J00" class="hit">
+
+                    <colgroup>
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+
+                    </colgroup>
+
+                    <tbody>
+
+                    <!-- 1row -->
+                    <tr>
+                    <th>기타 시설 보안사항</th>
+                    <td>
+                        <input type="checkbox" id="etcFacilitySupplementInfomation" class="checkbox" value="기타 시설 보안사항">
+                    </td>
+                    <th></th>
+                    <td>
+
+                    </td>
+                    <th></th>
+                    <td>
+
+                    </td>
+                    <th></th>
+                    <td>
+
+                    </td>
+                    </tr>
+
+                    </tbody>
+                  </table>
+            </div>
+
+            <div class="group-section m-t-15" id="groupK">
+                <div class="title m-b-10">특이사항
+                <input type="checkbox" id="chkK00" onclick="fn_checkBox_Click(this.id)" class="w-auto">
+                </div>
+
+
+                    <table id="K00" class="hit">
+
+                    <colgroup>
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+
+                    </colgroup>
+
+                    <tbody>
+
+                    <!-- 1row -->
+                    <tr>
+                    <th>추가정보(특이사항)</th>
+                    <td>
+                        <input type="checkbox" id="additionalInfomation" class="checkbox" value="추가정보(특이사항)">
+                    </td>
+                    <th></th>
+                    <td>
+
+                    </td>
+                    <th></th>
+                    <td>
+
+                    </td>
+                    <th></th>
+                    <td>
+
+                    </td>
+                    </tr>
+
+                    </tbody>
+                  </table>
+            </div>
+
+            <div class="group-section m-t-15" id="groupL">
+                <div class="title m-b-10">위험국소
+                <input type="checkbox" id="chkL00" onclick="fn_checkBox_Click(this.id)" class="w-auto">
+                </div>
+
+
+                    <table id="L00" class="hit">
+
+                    <colgroup>
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="5%">
+
+                    </colgroup>
+
+                    <tbody>
+
+                    <!-- 1row -->
+                    <tr>
+                    <th>위험국소여부</th>
+                    <td>
+                        <input type="checkbox" id="dangerStationYn" class="checkbox" value="위험국소여부">
+                    </td>
+                    <th>건물불량</th>
+                    <td>
+                        <input type="checkbox" id="buildingDefect" class="checkbox" value="건물불량">
+                    </td>
+                    <th>사다리불량</th>
+                    <td>
+                        <input type="checkbox" id="ladderDefect" class="checkbox" value="사다리불량">
+                    </td>
+                    <th>시설불량</th>
+                    <td>
+                        <input type="checkbox" id="facilityDefect" class="checkbox" value="시설불량">
+                    </td>
+                    </tr>
+                    <!-- 2row -->
+                    <tr>
+                    <th>장비설치높이</th>
+                    <td>
+                        <input type="checkbox" id="deviceInstallHeight" class="checkbox" value="장비설치높이">
+                    </td>
+                    <th>전주불량</th>
+                    <td>
+                        <input type="checkbox" id="poleDefect" class="checkbox" value="전주불량">
+                    </td>
+                    <th>환경불량</th>
+                    <td>
+                        <input type="checkbox" id="environmentDefect" class="checkbox" value="환경불량">
+                    </td>
+                    <th>위험도시급성</th>
+                    <td>
+                        <input type="checkbox" id="dangerUrgency" class="checkbox" value="위험도시급성">
+                    </td>
+                    </tr>
+
+                    </tbody>
+                  </table>
+            </div>
+
+            <div class="group-section m-t-15">
+                <div class="title" id="add_work_btn">업무지시 항목</div>
+                <table id="B00" class="hit hit-p" style="border : 0;">
+                    <colgroup>
+                        <col width="33%">
+                        <col width="33%">
+                        <col width="33%">
+                    </colgroup>
+                    <tbody>
+                        <tr style="border : 0;">
+                            <td><button class="btn primary" onclick="fn_label_add()">텍스트 항목 추가</button></td>
+                            <td>
+                                <select id="radioNum" class="type-2" style="width:180px;">
+                                <option value="0">항목 개수 선택하세요</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                                <button class="btn primary" onclick="fn_radio_add()">단일선택 항목 추가</button>
+                            </td>
+                            <td>
+                                <select id="checkNum" class="type-2" style="width:180px;">
+                                    <option value="0">항목 개수 선택하세요</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                                <button class="btn primary" onclick="fn_check_add()">복합선택 항목 추가</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="group-section m-t-40">
+                <div class="title m-b-10 w-100" style="float: none;">업무지시 항목 추가 내역 
+                    <span class="point inline">※ 단일선택, 복합선택일 경우 현장수시업무 화면 내 비고란이 추가로 생성됩니다.</span>
+                </div>
+                
+                <div style="overflow-x: auto; width: 100%;"> <!--white-space: nowrap;-->
+                    <table class="hit hit-p p-5 b-r-1 fixed">
+                        <colgroup>
+                            <col width="60px">
+                            <col width="100px">
+                            <col width="110px">
+                            <col width="100px">
+                            <col width="280px">
+                            <col width="240px"><col width="240px"><col width="240px"><col width="240px"><col width="240px">
+                            <col width="240px"><col width="240px"><col width="240px"><col width="240px"><col width="240px">
+                        </colgroup>
+                        <tbody>
+                            <tr id="order1">
+                                <th><button class="btn primary" onclick="">삭제</button></th>
+                                <th>텍스트항목</th>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn-sm w-45 normal" disabled=""><i class="fas fa-caret-up fa-lg"></i></button>
+                                        <button class="btn-sm w-45 normal"><i class="fas fa-caret-down fa-lg"></i></button>
+                                    </div>
+                                </td>
+                                <td>필수유무 <input type="checkbox" class="w-auto"></td>
+                                <td colspan="11" class="text-left"><input type="text" name="" placeholder="타이틀입력 (최대 20자)" maxlength="20" class="w-100"></td>
+                            </tr>
+                            <tr id="order2"> <!--항목1개 추가했을때-->
+                                <th><button class="btn primary" onclick="">삭제</button></th>
+                                <th>단일선택</th>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn-sm w-45 normal"><i class="fas fa-caret-up fa-lg"></i></button>
+                                        <button class="btn-sm w-45 normal"><i class="fas fa-caret-down fa-lg"></i></button>
+                                    </div>
+                                </td>
+                                <td>필수유무 <input type="checkbox" class="w-auto"></td>
+    
+                                <td><input type="text" name="" placeholder="타이틀입력 (최대 20자)" maxlength="20" class="w-100" value=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                            </tr>
+                            <tr id="order3"> <!--항목2개 추가했을때-->
+                                <th><button class="btn primary" onclick="">삭제</button></th>
+                                <th>단일선택</th>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn-sm w-45 normal"><i class="fas fa-caret-up fa-lg"></i></button>
+                                        <button class="btn-sm w-45 normal"><i class="fas fa-caret-down fa-lg"></i></button>
+                                    </div>
+                                </td>
+                                <td>필수유무 <input type="checkbox" class="w-auto"></td>
+    
+                                <td><input type="text" name="" placeholder="타이틀입력 (최대 20자)" maxlength="20" class="w-100"></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                            </tr>
+                            <tr id="order4"> <!--항목3개 추가했을때-->
+                                <th><button class="btn primary" onclick="">삭제</button></th>
+                                <th>단일선택</th>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn-sm w-45 normal"><i class="fas fa-caret-up fa-lg"></i></button>
+                                        <button class="btn-sm w-45 normal"><i class="fas fa-caret-down fa-lg"></i></button>
+                                    </div>
+                                </td>
+                                <td>필수유무 <input type="checkbox" class="w-auto"></td>
+    
+                                <td><input type="text" name="" placeholder="타이틀입력 (최대 20자)" maxlength="20" class="w-100"></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                            </tr>
+                            <tr id="order5"> <!--항목4개 추가했을때-->
+                                <th><button class="btn primary" onclick="">삭제</button></th>
+                                <th>단일선택</th>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn-sm w-45 normal"><i class="fas fa-caret-up fa-lg"></i></button>
+                                        <button class="btn-sm w-45 normal"><i class="fas fa-caret-down fa-lg"></i></button>
+                                    </div>
+                                </td>
+                                <td>필수유무 <input type="checkbox" class="w-auto"></td>
+    
+                                <td><input type="text" name="" placeholder="타이틀입력 (최대 20자)" maxlength="20" class="w-100"></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                            </tr>
+                            <tr id="order6"> <!--항목5개 추가했을때-->
+                                <th><button class="btn primary" onclick="">삭제</button></th>
+                                <th>단일선택</th>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn-sm w-45 normal"><i class="fas fa-caret-up fa-lg"></i></button>
+                                        <button class="btn-sm w-45 normal"><i class="fas fa-caret-down fa-lg"></i></button>
+                                    </div>
+                                </td>
+                                <td>필수유무 <input type="checkbox" class="w-auto"></td>
+    
+                                <td><input type="text" name="" placeholder="타이틀입력 (최대 20자)" maxlength="20" class="w-100"></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                            </tr>
+                            <tr id="order7"> <!--항목6개 추가했을때-->
+                                <th><button class="btn primary" onclick="">삭제</button></th>
+                                <th>단일선택</th>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn-sm w-45 normal"><i class="fas fa-caret-up fa-lg"></i></button>
+                                        <button class="btn-sm w-45 normal"><i class="fas fa-caret-down fa-lg"></i></button>
+                                    </div>
+                                </td>
+                                <td>필수유무 <input type="checkbox" class="w-auto"></td>
+    
+                                <td><input type="text" name="" placeholder="타이틀입력 (최대 20자)" maxlength="20" class="w-100"></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                            </tr>
+                            <tr id="order8"> <!--항목7개 추가했을때-->
+                                <th><button class="btn primary" onclick="">삭제</button></th>
+                                <th>단일선택</th>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn-sm w-45 normal"><i class="fas fa-caret-up fa-lg"></i></button>
+                                        <button class="btn-sm w-45 normal"><i class="fas fa-caret-down fa-lg"></i></button>
+                                    </div>
+                                </td>
+                                <td>필수유무 <input type="checkbox" class="w-auto"></td>
+    
+                                <td><input type="text" name="" placeholder="타이틀입력 (최대 20자)" maxlength="20" class="w-100"></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                            </tr>
+                            <tr id="order9"> <!--항목8개 추가했을때-->
+                                <th><button class="btn primary" onclick="">삭제</button></th>
+                                <th>단일선택</th>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn-sm w-45 normal"><i class="fas fa-caret-up fa-lg"></i></button>
+                                        <button class="btn-sm w-45 normal"><i class="fas fa-caret-down fa-lg"></i></button>
+                                    </div>
+                                </td>
+                                <td>필수유무 <input type="checkbox" class="w-auto"></td>
+    
+                                <td><input type="text" name="" placeholder="타이틀입력 (최대 20자)" maxlength="20" class="w-100"></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                            </tr>
+                            <tr id="order10"> <!--항목9개 추가했을때-->
+                                <th><button class="btn primary" onclick="">삭제</button></th>
+                                <th>단일선택</th>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn-sm w-45 normal"><i class="fas fa-caret-up fa-lg"></i></button>
+                                        <button class="btn-sm w-45 normal"><i class="fas fa-caret-down fa-lg"></i></button>
+                                    </div>
+                                </td>
+                                <td>필수유무 <input type="checkbox" class="w-auto"></td>
+                                <td><input type="text" name="" placeholder="타이틀입력 (최대 20자)" maxlength="20" class="w-100"></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                            </tr>
+                            <tr id="order11"> <!--항목10개 추가했을때-->
+                                <th><button class="btn primary" onclick="">삭제</button></th>
+                                <th>단일선택</th>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn-sm w-45 normal"><i class="fas fa-caret-up fa-lg"></i></button>
+                                        <button class="btn-sm w-45 normal"><i class="fas fa-caret-down fa-lg"></i></button>
+                                    </div>
+                                </td>
+                                <td>필수유무 <input type="checkbox" class="w-auto"></td>
+    
+                                <td><input type="text" name="" placeholder="타이틀입력 (최대 20자)" maxlength="20" class="w-100"></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                            </tr>
+                            <tr id="order12">
+                                <th><button class="btn primary" onclick="">삭제</button></th>
+                                <th>복합선택</th>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn-sm w-45 normal"><i class="fas fa-caret-up fa-lg"></i></button>
+                                        <button class="btn-sm w-45 normal" disabled=""><i class="fas fa-caret-down fa-lg"></i></button>
+                                    </div>
+                                </td>
+                                <td>필수유무 <input type="checkbox" class="w-auto"></td>
+                                <td><input type="text" name="" placeholder="타이틀입력 (최대 20자)" maxlength="20" class="w-100"></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                            </tr>
+                            <tr id="order13"> 
+                                <th><button class="btn primary" onclick="">삭제</button></th>
+                                <th>복합선택</th>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn-sm w-45 normal"><i class="fas fa-caret-up fa-lg"></i></button>
+                                        <button class="btn-sm w-45 normal"><i class="fas fa-caret-down fa-lg"></i></button>
+                                    </div>
+                                </td>
+                                <td>필수유무 <input type="checkbox" class="w-auto"></td>
+    
+                                <td><input type="text" name="" placeholder="타이틀입력 (최대 20자)" maxlength="20" class="w-100"></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                            </tr>
+                            <tr id="order14"> 
+                                <th><button class="btn primary" onclick="">삭제</button></th>
+                                <th>복합선택</th>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn-sm w-45 normal"><i class="fas fa-caret-up fa-lg"></i></button>
+                                        <button class="btn-sm w-45 normal"><i class="fas fa-caret-down fa-lg"></i></button>
+                                    </div>
+                                </td>
+                                <td>필수유무 <input type="checkbox" class="w-auto"></td>
+    
+                                <td><input type="text" name="" placeholder="타이틀입력 (최대 20자)" maxlength="20" class="w-100"></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                                <td>항목: <input type="text" name=""></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="btn-area">
+                <button type="button" class="btn btn-default primary" id="btnSave">등록</button>
+                <button type="button" class="btn btn-default gray" id="btnCancel">취소</button>
+            </div>
+        </section>
+    </div>
+    <!-- /#page-content-wrapper -->
+</div>
+<script type="text/javascript" src="./js/dept-select_new.js"></script>
+<script type="text/javascript">
+    let today = new Date();
+    let startDates;
+    let role = $('#roleCode').val();
+    /* FU,MU(권한자) : 7일로 변경, AU(권한자) : 3개월로 변경 */
+    if(role == 'AU'){
+        startDates = today.setMonth(today.getMonth());
+    }else if(role == 'FU' || role == 'MU'){
+        startDates = today.setDate(today.getDate() - 7);
+    }else{
+        startDates = today.setMonth(today.getMonth() - 1);
+    }
+
+    var calMonthKo = new tui.DatePicker('#datepicker-month-ko', {
+            date: startDates,
+            language: 'ko',
+            type: 'month',
+            input: {
+                element: '#datepicker-input-ko',
+                format: 'yyyy-MM'
+            }
+    });
+
+    var calMonthKo = new tui.DatePicker('#datepicker-month-ko2', {
+            date: startDates,
+            language: 'ko',
+            type: 'month',
+            input: {
+                element: '#datepicker-input-ko2',
+                format: 'yyyy-MM'
+            }
+    });
+
+    let fromDateVal = $('#startDate').val();
+    let toDateVal = $('#endDate').val();
+    let deviceCategoryVal = $('#deviceCategory').val();
+
+    const dataSource = {
+        api: {
+            readData: {url: '/additionalfacilities/list/data', method: 'GET',
+                initParams: {"startDate": fromDateVal, "endDate": toDateVal, "deviceCategory": deviceCategoryVal}}
+        },
+        initialRequest: false // 디폴트 값은 true, 아래 gridInit를 통해 호출
+    }
+</script>
+<script>
+    //불러오기 팝업창  2-1 장비 카테고리 기준 업로드_pop
+    function goPopup(){
+ 		var url = "2-2현장수시업무불러오기_pop.html";
+
+        var name = "popup 현장수시업무불러오기";
+
+        var option = "width=1400, height=800, top = 100, left = 200, toolbar=no, directories=no, status=no, scrollorbars=no, resizable=no";
+
+        window.open(url, name, option);
+	}
+</script>
+<div id="loading-overlay">
+    <div id="loading">
+        <div class="dot-area">
+            <div class="dot left three"></div>
+            <div class="dot left two"></div>
+            <div class="dot left one"></div>
+            <i class="ic-logo"></i>
+            <div class="dot right one"></div>
+            <div class="dot right two"></div>
+            <div class="dot right three"></div>
+        </div>
+        <h2 class="loading-text">잠시만 기다려주세요</h2>
+    </div>
+</div>
+
+<div class="mask" style="display: none;"></div>
+
+<div class="layerpopupWrapper2" style="margin-left: -200px; display: none;">
+    <div class="layerpopupArea">
+        <a class="btnClose" href="#" onclick="fn_close2()"><i class="fas fa-times fa-lg" style="color:#999;"></i></a>
+
+        <!--2-1 장비 카테고리 기준 업로드_pop-->
+        <div id="personalItem03" class="layerContent">
+            <h4>장비 카테고리 기준 업로드</h4>
+            <div class="previousInfo category">
+                <div class="group-section">
+                    <table class="tableStyle text-center">
+                        <colgroup>
+                            <col width="33.3%">
+                            <col width="33.3%">
+                            <col width="33.3%">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>5G</th>
+                            <th>LTE</th>
+                            <th>3G</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" class="w-auto"> DU</td>
+                                <td><input type="checkbox" class="w-auto" checked> DU</td>
+                                <td><input type="checkbox" class="w-auto"> DU</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="w-auto"> RU</td>
+                                <td><input type="checkbox" class="w-auto" checked> RU</td>
+                                <td><input type="checkbox" class="w-auto" checked> RU</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="w-auto"> RIU</td>
+                                <td><input type="checkbox" class="w-auto"> RIU</td>
+                                <td><input type="checkbox" class="w-auto"> RIU</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="text-center m-t-20">
+                <button class="btn btn-default primary" type="button">저장</button>
+                <button class="btn btn-default gray" onclick="fn_close2()" type="button">취소</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    //장비ID 추가, 장비ID 삭제 팝업, 장비 카테고리 기준 업로드 팝업
+    $(".openLayerPopup").on("click", function(e) {
+      e.preventDefault();
+      var targetID = $(this).attr("data-target");
+      $(".mask").fadeIn(150);
+      $(".layerContent").removeClass("opened");
+      $("#" + targetID).addClass("opened");
+
+      setTimeout(function() {
+        $(".layerpopupWrapper2").attr("tabindex", "0").show()
+          .focus();
+        }, 150);
+    });
+
+    function fn_close2(){
+        $(".layerContent").removeClass("opened");
+        $(".layerpopupWrapper2").hide();
+        $(".layerpopupWrapper2").removeAttr("tabindex");
+        $(".mask").fadeOut(150);
+    }
+</script>
+</body>
+</html>

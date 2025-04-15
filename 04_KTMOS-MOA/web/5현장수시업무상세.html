@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>KT MOA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- 기존 css -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/resetting.css">
+    <link rel="stylesheet" type="text/css" href="./css/dialog.css">
+    <link rel="stylesheet" type="text/css" href="./css/wireless.css">
+
+    <!-- popup css 추가 20220623 -->
+    <link rel="stylesheet" type="text/css" href="./css/popup.css">
+    
+    <!-- tui css -->
+    <link rel="stylesheet" type="text/css" href="./css/tui-pagination.css">
+    <link rel="stylesheet" type="text/css" href="./css/tui-grid.css">
+    <link rel="stylesheet" type="text/css" href="./css/tui-time-picker.css">
+    <link rel="stylesheet" type="text/css" href="./css/tui-date-picker.css">
+    <link rel="stylesheet" type="text/css" href="./css/toastui-select-box.css">
+
+    <!-- toggle css -->
+    <link rel="stylesheet" type="text/css" href="./css/simple-sidebar.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+
+    <!-- Bootstrap core CSS -->
+
+    <!-- FILEUPLOAD -->
+    <link rel="stylesheet" type="text/css" href="./css/jquery.fileupload.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery.fileupload-ui.css">
+
+    <!-- 기존 js -->
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+    <script type="text/javascript" src="./js/scripts.js"></script>
+    <script type="text/javascript" src="./js/jquery.nicescroll.js"></script>
+
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/common-functions.js"></script>
+
+    <!-- tui js -->
+    <script type="text/javascript" src="./js/tui-pagination.js"></script>
+    <script type="text/javascript" src="./js/tui-grid.js"></script>
+    <script type="text/javascript" src="./js/tui-code-snippet.js"></script>
+    <script type="text/javascript" src="./js/tui-time-picker.js"></script>
+    <script type="text/javascript" src="./js/tui-date-picker.js"></script>
+    <script type="text/javascript" src="./js/tui-date-picker-ko.js"></script>
+    <script type="text/javascript" src="./js/tui-calendar.js"></script>
+    <script type="text/javascript" src="./js/toastui-select-box.js"></script>
+
+    <script>
+        const Grid = tui.Grid;
+        Grid.applyTheme('default', {
+            outline: {
+                border: '#e0e0e0'
+            },
+            cell: {
+                normal: {
+                    background: '#fff',
+                    border: '#e0e0e0',
+                    color: '#666666'
+                },
+                header: {
+                    background: '#f4f4f4',
+                    border: '#e0e0e0'
+                },
+                evenRow: {
+                    background: '#fff',
+                    border: '#e0e0e0',
+                    color: '#666666'
+                },
+                oddRow: {
+                    background: '#fff',
+                    border: '#e0e0e0',
+                    color: '#666666'
+                }
+            }
+        }); // Call API of static
+    </script>
+    <style type="text/css" id="tui-grid-theme-style">
+        .tui-grid-border-line-top{border-top:1px solid #e0e0e0}
+        .tui-grid-no-scroll-x .tui-grid-border-line-bottom{border-bottom:1px solid #e0e0e0}.tui-grid-frozen-border{background-color:#aaa}
+        .tui-grid-container ::-webkit-scrollbar{background-color:#fff}.tui-grid-container ::-webkit-scrollbar-thumb{background-color:#ddd}
+        .tui-grid-container ::-webkit-scrollbar-thumb:hover{background-color:#ddd;}
+        .tui-grid-container{scrollbar-3dlight-color:#fff;scrollbar-darkshadow-color:#fff;scrollbar-track-color:#fff;scrollbar-shadow-color:#fff;
+            scrollbar-face-color:#ddd;scrollbar-highlight-color:#ddd;scrollbar-arrow-color:#ddd;}
+        .tui-grid-border-line-bottom{border-bottom:1px solid #eee}
+        .tui-grid-content-area{border-color:#eee}.tui-grid-scrollbar-y-inner-border{background-color:#eee}
+        .tui-grid-scrollbar-y-outer-border{background-color:#eee}
+        .tui-grid-scrollbar-right-top{background-color:#f9f9f9;border-color:#eee}
+        .tui-grid-scrollbar-right-bottom{background-color:#f9f9f9;border-color:#eee}
+        .tui-grid-scrollbar-left-bottom{background-color:#f9f9f9;border-color:#eee}
+        .tui-grid-scrollbar-frozen-border{background-color:#f9f9f9;border-color:#eee}
+        .tui-grid-height-resize-handle{background-color:#fff;border-color:#fff}
+        .tui-grid-pagination{background-color:transparent;border-color:transparent}
+        .tui-grid-layer-selection{background-color:#00A9ff;border-color:#00a9ff}
+        .tui-grid-header-area{background-color:#fff;border-color:#ccc}
+        .tui-grid-body-area{background-color:#fff}.tui-grid-summary-area{background-color:#fff;border-color:#eee}
+        .tui-grid-has-summary-top .tui-grid-body-area{border-color:#eee}
+        .tui-grid-cell{background-color:#fff;border-color:#e0e0e0;border-left-width:0;border-right-width:0;border-top-width:1px;border-bottom-width:1px;color:#333}
+        .tui-grid-cell-editable{background-color:#fff}.tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-header-area .tui-grid-table{border-right-style:solid}
+        .tui-grid-cell-header{background-color:#f4f4f4;border-color:#e0e0e0;border-left-width:1px;border-right-width:1px;border-top-width:1px;border-bottom-width:1px;color:#222}
+        .tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-body-area .tui-grid-table{border-right-style:hidden}
+        .tui-grid-cell-row-header{background-color:#fff;border-color:#eee;border-left-width:0;border-right-width:0;border-top-width:1px;border-bottom-width:1px;color:#333}
+        .tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-summary-area .tui-grid-table{border-right-style:hidden}
+        .tui-grid-cell-summary{background-color:#fff;border-color:#eee;border-left-width:0;border-right-width:0;color:#333}
+        .tui-grid-cell-required{background-color:#fffdeb}
+        .tui-grid-cell-disabled{background-color:#f9f9f9;color:#c1c1c1}
+        .tui-grid-cell-invalid.tui-grid-cell{background-color:#ffe5e5}
+        .tui-grid-cell-header.tui-grid-cell-selected{background-color:#e5f6ff}
+        .tui-grid-cell-row-header.tui-grid-cell-selected{background-color:#e5f6ff}
+        .tui-grid-layer-focus-border{background-color:#00a9ff}.tui-grid-layer-editing{border-color:#00a9ff}
+        .tui-grid-layer-focus-deactive .tui-grid-layer-focus-border{background-color:#aaa}
+        .tui-grid-row-odd>td{background-color:#fff}.tui-grid-row-even>td{background-color:#fff}.tui-grid-cell-dummy{background-color:#fff}
+    </style>
+</head>
+
+<body>
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar" class="nav-collapse">
+        <button id="menu-toggle"><i class="fas fa-bars"></i></button>
+        <div class="user-bg">
+            <div class="brand">
+                <img src="./images/logo.png" alt="KTmos wMMS">
+            </div>
+            <div class="user-area">
+                <div class="user-name">
+                	<span style="width: 60%;word-break:break-all;word-wrap:break-word;float: left;">관리자 님</span>
+                	<span class="area-badge">북부</span>
+                </div>
+                <div class="user-btn m--3" style="margin-top: 35px;">
+                    <li><a href="javascript:void(0);" onclick="fn_modify(this)">정보수정</a></li>
+                    <li><a href="javascript:void(0);" onclick="fn_logout(this);">로그아웃</a></li>
+                </div>
+            </div>
+        </div>
+            <!-- 메뉴 표시 -->
+            <ul class="sidebar-menu" id="nav-accordion">
+                <li class="sub-menu"><a href="javascript:showSub1('M01S01')">인수시험관리<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM01S01" style="display: none;">
+                        <li><a href="/acceptcheck/list/M01S01" id="" class="" target="">인수시험정보조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M02S01')">국소정보<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM02S01" style="display: none;">
+                        <li><a href="/device/5glte3g/list/M02S01" id="" class="" target="">국소정보조회-5G/LTE/3G</a></li>
+                        <li><a href="/device/repeater/list/M02S02" id="" class="" target="">국소정보조회-중계기</a></li>
+                        <li><a href="/device/wifi/list/M02S03" id="" class="" target="">국소정보조회-WiFi</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M03S01')">정기점검<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM03S01" style="display: none;">
+                        <li><a href="/regularinspection/list/M03S01" id="" class="" target="">정기점검조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M04S01')">전기안전점검<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM04S01" style="display: none;">
+                        <li><a href="/electricsafety/plan/list/M04S01" id="" class="" target="">계획관리</a></li>
+                        <li><a href="/electricsafety/inspection/list/M04S02" id="" class="" target="">점검관리</a></li>
+                        <li><a href="/electricsafety/result/list/M04S03" id="" class="" target="">대응결과조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M05S01')">위험국소<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM05S01" style="display: none;">
+                        <li><a href="/dangerinspection/list/M05S01" id="" class="" target="">위험국소조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="#none">아차사고<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="" style="display:block;">
+                        <li><a href="#none" id="" class="active" target="">아차사고조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M06S01')">부대시설<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM06S01" style="display: none;">
+                        <li><a href="/additionalfacilities/list/M06S01" id="" class="" target="">부대시설점검조회</a></li>
+                    </ul>
+                </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M07S01')">긴급복구물자관리<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM07S01" style="display: none;">
+                            <li><a href="/emergencymaterial/status/M07S01" id="" class="" target="">긴급복구현황표</a></li>
+                            <li><a href="/emergencymaterial/master/list/M07S02" id="" class="" target="">긴급복구물자</a></li>
+                            <li><a href="/emergencymaterial/history/list/M07S03" id="" class="" target="">긴급복구물자사용</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M09S01')">안전용품관리<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM09S01" style="display: none;">
+                            <li><a href="/item-safety/status/M09S01" id="" class="" target="">현황표</a></li>
+                            <li><a href="/item-safety/list/M09S02" id="" class="" target="">안전용품등록</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M15S01')">현장수시업무<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM15S01" style="display: none;">
+                            <li><a href="/onsite/list/M15S01" id="" class="" target="">현장수시업무현황</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M08S01')">Safe365<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM08S01" style="display: none;">
+                            <li><a href="/safe365/safety/list/M08S01" id="" class="" target="">안전점검 체크 리스트</a></li>
+                            <li><a href="/safe365/highcar/list/M08S02" id="" class="" target="">고소작업차 사용 작업 계획서</a></li>
+                            <li><a href="/safe365/aerial/list/M08S03" id="" class="" target="">고소작업차 작업 전 점검표</a></li>
+                            <li><a href="/safe365/status/M08S04" id="" class="" target="">현장 안전점검 현황</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M14S01')">작업중지권<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM14S01" style="display: none;">
+                            <li><a href="/stopwork/list/M14S01" id="" class="" target="">작업중지권 조회</a></li>
+                            <li><a href="/stopwork/apply/list/M14S02" id="" class="" target="">작업중지권 승인관리</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M16S01')">현장업무지원<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM16S01" style="display: none;">
+                            <li><a href="/support/acs/list/M16S01" id="" class="" target="">ACS</a></li>
+                            <li><a href="/support/rsa/list/M16S02" id="" class="" target="">RSA</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M11S01')">예비품관리<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM11S01" style="display: none;">
+                            <li><a href="/spare/list/M11S01" id="" class="" target="">예비품관리</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M10S01')">업로드관리<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM10S01" style="display: none;"><li><a href="/device/5glte3g/excel/list/M10S01" id="" class="" target="">국소정보업로드-5G/LTE/3G</a></li>
+                            <li><a href="/device/repeater/excel/list/M10S02" id="" class="" target="">국소정보업로드-중계기</a></li>
+                            <li><a href="/device/wifi/excel/list/M10S03" id="" class="" target="">국소정보업로드-WIFI</a></li>
+                            <li><a href="/device/acceptcheck/excel/list/M10S04" id="" class="" target="">인수시험</a></li>
+                            <li><a href="/device/regularinspection/excel/list/M10S05" id="" class="" target="">정기점검</a></li>
+                            <li><a href="/device/regularinspection_riu/excel/list/M10S06" id="" class="" target="">정기점검 RIU</a></li>
+                            <li><a href="/device/regularinspection_du/excel/list/M10S07" id="" class="" target="">정기점검 DU</a></li>
+                            <li><a href="/device/regularinspection_wifi/excel/list/M10S08" id="" class="" target="">정기점검 WiFi</a></li>
+                            <li><a href="/device/additionalfacilities/excel/list/M10S09" id="" class="" target="">부대시설점검</a></li>
+                            <li><a href="/device/electricsafety/excel/list/M10S10" id="" class="" target="">전기안전점검 계획</a></li>
+                            <li><a href="/device/dangerstation/excel/list/M10S11" id="" class="" target="">위험국소</a></li>
+                            <li><a href="/device/emergencymaterial/excel/list/M10S12" id="" class="" target="">긴급복구물자 사용</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M13S01')">대시보드<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM13S01" style="display: none;">
+                            <li><a href="/dashboard/inspection/M13S01" id="" class="" target="_blank">정기점검 현황</a></li>
+                            <li><a href="/dashboard/accept/M13S02" id="" class="" target="_blank">인수시험 현황</a></li>
+                            <li><a href="/dashboard/danger/M13S03" id="" class="" target="_blank">위험국소 현황</a></li>
+                            <li><a href="/dashboard/setting/list/M13S04" id="" class="" target="">모수관리</a></li>
+                        </ul>
+                    </li>
+                </ul>
+        <!--</div>-->
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <link rel="stylesheet" type="text/css" href="./css/multifreezer.css">
+    <script type="text/javascript" src="./js/multifreezerStandalone.js"></script>
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <section class="wrapper">
+            <h1 id="page_tit"> 현장수시업무 목록 <span class="sub_tit">현장수시업무 상세 </span></h1>
+
+            <div class="group-section m-t-15">
+                <form id="onsiteNewRegister" name="onsiteNewRegister" action="/onsite/regist/save" method="post" autocomplete="off">
+                    <input type="hidden" id="materialId" name="materialId" value="">
+                    <input type="hidden" id="region" name="region" value="">
+                    <input type="hidden" id="headoffice" name="headoffice" value="">
+                    <input type="hidden" id="team" name="team" value="">
+                    <input type="hidden" id="part" name="part" value="">
+                    <input type="hidden" id="center" name="center" value="">
+                    <div class="group-section m-t-15">
+                        <div class="title">기본정보</div>
+                        <br>
+                        <div class="f-r m-b-10">
+                            <a id="btnWordDownload" class="btn btn-md blue" onclick="fn_WordDownload();">다운로드</a>
+                        </div>
+                    </div>
+
+                    <table class="hit hit-p">
+                        <colgroup>
+                            <col width="180"><col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>업무명</th>
+                                <td>OOO 업무명</td>
+                            </tr>
+                            <tr>
+                                <th>작업기간</th>
+                                <td>
+                                    2021-09-01 ~ 2021-09-30
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>진행일시</th>
+                                <td>
+                                    2021-09-05 06:18:59
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>진행상태</th>
+                                <td>
+                                    임시저장
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+            
+            <div class="group-section m-t-40" id="groupA">
+                <div class="title m-b-10">
+                    장비 정보
+                </div>
+                <table id="A00" class="hit">
+                    <colgroup>
+                        <col width="7%">
+                        <col width="18%">
+                        <col width="7%">
+                        <col width="18%">
+                        <col width="7%">
+                        <col width="18%">
+                        <col width="7%">
+                        <col width="18%">
+                    </colgroup>
+                    <tbody>
+
+					    <!-- 1row -->
+						<tr>
+						<th>고유번호</th>
+						<td>
+							<span id="uniqueNo" title="고유번호"> 0014141 </span>
+						</td>
+						<th>장비카테고리</th>
+						<td>
+							<span id="deviceCategory" title="장비카테고리"> 3G </span>
+						</td>
+						<th>장비타입</th>
+						<td>
+							<span id="deviceType" title="장비타입"> RU </span>
+						</td>
+						<th>네트워크단</th>
+						<td>
+							<span id="ktNetworkCorps" title="네트워크단"> 강서무선운용센터 </span>
+						</td>
+						</tr>
+						<!-- 2row -->
+						<tr>
+						<th>운용팀</th>
+						<td>
+							<span id="ktOperationTeam" title="운용팀"> 강서무선운용센터 수원엔지니어링팀 </span>
+						</td>
+						<th>운용본부</th>
+						<td>
+							<span id="operationHeadoffice" title="운용본부"> 강서본부 </span>
+						</td>
+						<th>센터</th>
+						<td>
+							<span id="operationCenter" title="센터"> 평택T </span>
+						</td>
+						<th>장비ID</th>
+						<td>
+							<span title="장비ID"> KG1199K </span>
+						</td>
+						</tr>
+
+						<!-- 3row -->
+						<tr>
+						<th>장비명</th>
+						<td>
+							<span id="deviceName" title="장비명"> 평택안정3-K </span>
+						</td>
+						<th>위치코드</th>
+						<td>
+							<span id="locationCode" title="위치코드"> P0001137170000000 </span>
+						</td>
+						<th>정류기타입</th>
+						<td>
+							<span id="rectifierType" title="정류기타입">  </span>
+						</td>
+						<th>장비SN</th>
+						<td>
+							<span id="deviceSerialNo" title="장비SN"> 901201 </span>
+						</td>
+						</tr>
+
+						<!-- 4row -->
+						<tr>
+						<th>제조회사</th>
+						<td>
+							<span id="manufacturer" title="제조회사"> 엘지노텔(주) </span>
+						</td>
+						<th>기기모델명</th>
+						<td>
+							<span id="deviceModelName" title="기기모델명"> iBTS Indoor KH[엘지노텔3G-표준-옥내-W-05년] </span>
+						</td>
+						<th>장비상태</th>
+						<td>
+							<span id="deviceState" title="장비상태"> 운용 </span>
+						</td>
+						<th>PN/PCI</th>
+						<td>
+							<span id="devicePnPci" title="PN/PCI"> - </span>
+						</td>
+						</tr>
+
+						<!-- 5row -->
+						<tr>
+						<th>집중국명</th>
+						<td>
+							<span id="tollCenterName" title="집중국명">  </span>
+						</td>
+						<th></th>
+						<td>
+						</td>
+						<th></th>
+						<td>
+						</td>
+						<th></th>
+						<td>
+						</td>
+						</tr>
+
+					</tbody>
+                </table>
+            </div>
+
+            <div class="group-section m-t-15" id="groupB">
+                <div class="title m-b-10">주소정보</div>
+                    <table id="B00" class="hit">
+                        <colgroup>
+                            <col width="7%">
+                            <col width="18%">
+                            <col width="7%">
+                            <col width="18%">
+                            <col width="7%">
+                            <col width="18%">
+                            <col width="7%">
+                            <col width="18%">
+                        </colgroup>
+                        <tbody>
+
+					    <!-- 1row -->
+						<tr>
+						<th>도로명주소</th>
+						<td>
+							<span id="streetNameAddress" title="도로명주소">  </span>
+						</td>
+						<th>시/도</th>
+						<td>
+							<span id="sido" title="시/도"> 경기도 </span>
+						</td>
+						<th>시/군/구</th>
+						<td>
+							<span id="sigungu" title="시/군/구"> 평택시 </span>
+						</td>
+						<th>읍/면/동</th>
+						<td>
+							<span id="eubmyundong" title="읍/면/동"> 팽성읍 안정리 </span>
+						</td>
+						</tr>
+						<!-- 2row -->
+						<tr>
+						<th>번지</th>
+						<td>
+							<span id="bungi" title="번지"> 154-7 </span>
+						</td>
+						<th>상세주소</th>
+						<td>
+							<span id="addressDetail" title="상세주소"> 안정순환로66번길 99M 직진 후 안정순환로 우회전 후 299M이동 후 안정로 팽성읍사무소(평택)방면으로 우회전 후 419M 이동 부근건물 </span>
+						</td>
+						<th></th>
+						<td>
+
+						</td>
+						<th></th>
+						<td>
+
+						</td>
+						</tr>
+					    </tbody>
+                  </table>
+            </div>
+
+            <div class="group-section m-t-15" id="groupC">
+                <div class="title m-b-10">건물정보
+                </div>
+                    <table id="C00" class="hit">
+
+                        <colgroup>
+                            <col width="7%">
+                            <col width="18%">
+                            <col width="7%">
+                            <col width="18%">
+                            <col width="7%">
+                            <col width="18%">
+                            <col width="7%">
+                            <col width="18%">
+                        </colgroup>
+
+                    <tbody>
+
+					    <!-- 1row -->
+						<tr>
+						<th>건물명</th>
+						<td>
+							<span id="buildingName" title="건물명"> 영보빌딩 </span>
+						</td>
+						<th>장비위치층</th>
+						<td>
+							<span id="deviceLocationFloor" title="장비위치층">  </span>
+						</td>
+						<th>도서지역여부</th>
+						<td>
+							<span id="islands" title="도서지역여부">  </span>
+						</td>
+						<th>건물층수</th>
+						<td>
+							<span id="buildingFloor" title="건물층수"> 4층 </span>
+						</td>
+						</tr>
+						<!-- 2row -->
+						<tr>
+						<th>국사형태</th>
+						<td>
+							<span id="stationShape" title="국사형태"> 일반건물 </span>
+						</td>
+						<th>건물주연락처</th>
+						<td>
+							<span id="buildingOwnerTel" title="건물주연락처"> 019-573-2234 </span>
+						</td>
+						<th>관리자연락처</th>
+						<td>
+							<span id="buildingManagerTel" title="관리자연락처">  </span>
+						</td>
+						<th></th>
+						<td>
+
+						</td>
+						</tr>
+
+					    </tbody>
+                  </table>
+            </div>
+
+            <div class="group-section m-t-15" id="groupD">
+                <div class="title m-b-10">출입정보
+                </div>
+
+                    <table id="D00" class="hit">
+                        <colgroup>
+							<col width="7%">
+							<col width="18%">
+							<col width="7%">
+							<col width="18%">
+							<col width="7%">
+							<col width="18%">
+							<col width="7%">
+							<col width="18%">
+						</colgroup>
+                    <tbody>
+
+					    <!-- 1row -->
+						<tr>
+						<th>출입제한</th>
+						<td>
+							<span id="accessRestrictions" title="출입제한"> 제한없음 </span>
+						</td>
+						<th>출입제한시간대</th>
+						<td>
+							<span id="accessRestrictionsTimeZone" title="출입제한시간대"> 없음 </span>
+						</td>
+						<th>출입관계</th>
+						<td>
+							<span id="accessInfo" title="출입관계"> 없음,없음/해당사항없음 </span>
+						</td>
+						<th>고소차(진입/사용)여부</th>
+						<td>
+							<span id="elevatedCarNeedsYn" title="고소차(진입/사용)여부">  </span>
+						</td>
+						</tr>
+						<!-- 2row -->
+						<tr>
+						<th>운용차량진입여부</th>
+						<td>
+							<span id="operatingVehicleEnterYn" title="운용차량진입여부">  </span>
+						</td>
+						<th>이동소요시간</th>
+						<td>
+							<span id="moveTime" title="이동소요시간">  </span>
+						</td>
+						<th></th>
+						<td>
+
+						</td>
+						<th></th>
+						<td>
+
+						</td>
+						</tr>
+					    </tbody>
+                  </table>
+            </div>
+
+            <div class="group-section m-t-15" id="groupE">
+                <div class="title m-b-10">회선정보</div>
+                    <table id="E00" class="hit">
+                        <colgroup>
+							<col width="7%">
+							<col width="18%">
+							<col width="7%">
+							<col width="18%">
+							<col width="7%">
+							<col width="18%">
+							<col width="7%">
+							<col width="18%">
+						</colgroup>
+                        <tbody>
+
+                            <!-- 1row -->
+                            <tr>
+                            <th>회선번호</th>
+                            <td>
+                                <span id="circuitNo" title="회선번호">  </span>
+                            </td>
+                            <th>FDF 선번1(BAY-SHELF-PORT)</th>
+                            <td>
+                                <span id="fdf1" title="FDF 선번1(BAY-SHELF-PORT)">  </span>
+                            </td>
+                            <th>FDF 선번2(BAY-SHELF-PORT)</th>
+                            <td>
+                                <span id="fdf2" title="FDF 선번2(BAY-SHELF-PORT)">  </span>
+                            </td>
+                            <th>FDF 선번3(BAY-SHELF-PORT)</th>
+                            <td>
+                                <span id="fdf3" title="FDF 선번3(BAY-SHELF-PORT)">  </span>
+                            </td>
+                            </tr>
+                            <!-- 2row -->
+                            <tr>
+                            <th>RU MUX 사용유무</th>
+                            <td>
+                                <span id="ruMuxUseYn" title="RU MUX 사용유무">  </span>
+                            </td>
+                            <th>SFP종류</th>
+                            <td>
+                                <span id="sfpKind" title="SFP종류">  </span>
+                            </td>
+                            <th>MUX 선번(BAY-SHLF-SLOT)</th>
+                            <td>
+                                <span id="muxBayShelfSlot" title="MUX 선번(BAY-SHLF-SLOT)">  </span>
+                            </td>
+                            <th></th>
+                            <td>
+    
+                            </td>
+                            </tr>
+    
+                        </tbody>
+                  </table>
+            </div>
+
+            <div class="group-section m-t-15" id="groupF">
+                <div class="title m-b-10">전기정보</div>
+
+                    <table id="F00" class="hit">
+
+                        <colgroup>
+							<col width="7%">
+							<col width="18%">
+							<col width="7%">
+							<col width="18%">
+							<col width="7%">
+							<col width="18%">
+							<col width="7%">
+							<col width="18%">
+						</colgroup>
+                        <tbody>
+
+                            <!-- 1row -->
+                            <tr>
+                            <th>전기구분</th>
+                            <td>
+                                <span id="electricityDivision" title="전기구분"> 한전 </span>
+                            </td>
+                            <th>계량기 위치</th>
+                            <td>
+                                <span id="electricityMeterLocation" title="계량기 위치">  </span>
+                            </td>
+                            <th>계량기 번호</th>
+                            <td>
+                                <span id="electricityMeterNo" title="계량기 번호"> TH346181564 </span>
+                            </td>
+                            <th>인입전원</th>
+                            <td>
+                                <span id="incomingPowerSupply" title="인입전원"> 단상220V </span>
+                            </td>
+                            </tr>
+                            <!-- 2row -->
+                            <tr>
+                            <th>계량기 내 차단기 용량</th>
+                            <td>
+                                <span id="electricityBreakerVolume" title="계량기 내 차단기 용량">  </span>
+                            </td>
+                            <th>계량기 내 차단기 종류</th>
+                            <td>
+                                <span id="electricityBreakerKind" title="계량기 내 차단기 종류">  </span>
+                            </td>
+                            <th>한전 고객번호</th>
+                            <td>
+                                <span id="electricityCustomerNo" title="한전 고객번호"> 0216351285 </span>
+                            </td>
+                            <th></th>
+                            <td>
+    
+                            </td>
+                            </tr>
+    
+                            <!-- 3row -->
+                            <tr>
+                            <th>1차 분전함 위치</th>
+                            <td>
+                                <span id="distributionBoxLocation1st" title="1차 분전함 위치">  </span>
+                            </td>
+                            <th>1차 차단기 용량</th>
+                            <td>
+                                <span id="breakerVolume1st" title="1차 차단기 용량">  </span>
+                            </td>
+                            <th>1차 차단기 종류</th>
+                            <td>
+                                <span id="breakerKind1st" title="1차 차단기 종류">  </span>
+                            </td>
+                            <th>1차 차단기 제조사</th>
+                            <td>
+                                <span id="breakerManufacturer1st" title="1차 차단기 제조사">  </span>
+                            </td>
+                            </tr>
+    
+                            <!-- 4row -->
+                            <tr>
+                            <th>2차 차단기 위치</th>
+                            <td>
+                                <span id="breakerLocation2nd" title="2차 차단기 위치">  </span>
+                            </td>
+                            <th>2차 차단기 용량</th>
+                            <td>
+                                <span id="breakerVolume2nd" title="2차 차단기 용량">  </span>
+                            </td>
+                            <th>2차 차단기 종류</th>
+                            <td>
+                                <span id="breakerKind2nd" title="2차 차단기 종류">  </span>
+                            </td>
+                            <th>2차 차단기 제조사</th>
+                            <td>
+                                <span id="breakerManufacturer2st" title="2차 차단기 제조사">  </span>
+                            </td>
+                            </tr>
+    
+                            <!-- 5row -->
+                            <tr>
+                            <th>3차 차단기 위치</th>
+                            <td>
+                                <span id="breakerLocation3rd" title="3차 차단기 위치">  </span>
+                            </td>
+                            <th>3차 차단기 용량</th>
+                            <td>
+                                <span id="breakerVolume3rd" title="3차 차단기 용량">  </span>
+                            </td>
+                            <th>3차 차단기 종류</th>
+                            <td>
+                                <span id="breakerKind3rd" title="3차 차단기 종류">  </span>
+                            </td>
+                            <th>3차 차단기 제조사</th>
+                            <td>
+                                <span id="breakerManufacturer3st" title="3차 차단기 제조사">  </span>
+                            </td>
+                            </tr>
+    
+                            <!-- 6row -->
+                            <tr>
+                            <th>4차 차단기 위치</th>
+                            <td>
+                                <span id="breakerLocation4th" title="4차 차단기 위치">  </span>
+                            </td>
+                            <th>4차 차단기 용량</th>
+                            <td>
+                                <span id="breakerVolume4th" title="4차 차단기 용량">  </span>
+                            </td>
+                            <th>4차 차단기 종류</th>
+                            <td>
+                                <span id="breakerKind4th" title="4차 차단기 종류">  </span>
+                            </td>
+                            <th>4차 차단기 제조사</th>
+                            <td>
+                                <span id="breakerManufacturer4st" title="4차 차단기 제조사">  </span>
+                            </td>
+                            </tr>
+    
+                            </tbody>
+                  </table>
+            </div>
+
+            <div class="group-section m-t-15" id="groupG">
+                <div class="title m-b-10">철탑정보
+                </div>
+                    <table id="G00" class="hit">
+
+                        <colgroup>
+							<col width="7%">
+							<col width="18%">
+							<col width="7%">
+							<col width="18%">
+							<col width="7%">
+							<col width="18%">
+							<col width="7%">
+							<col width="18%">
+						</colgroup>
+
+                        <tbody>
+
+                            <!-- 1row -->
+                            <tr>
+                            <th>철탑위치</th>
+                            <td>
+                                <span id="towerLocation" title="철탑위치">  </span>
+                            </td>
+                            <th>철탑유형</th>
+                            <td>
+                                <span id="towerType" title="철탑유형">  </span>
+                            </td>
+                            <th>기타철탑</th>
+                            <td>
+                                <span id="towerEtc" title="기타철탑"> - </span>
+                            </td>
+                            <th>철탑높이</th>
+                            <td>
+                                <span id="towerHeight" title="철탑높이">  </span>
+                            </td>
+                            </tr>
+                            <!-- 2row -->
+                            <tr>
+                            <th>철탑공용주체 주관사</th>
+                            <td>
+                                <span id="towerSharingMain" title="철탑공용주체 주관사">  </span>
+                            </td>
+                            <th>철탑공용 참여사</th>
+                            <td>
+                                <span id="towerSharingParticipation" title="철탑공용 참여사">  </span>
+                            </td>
+                            <th>환경친화유형</th>
+                            <td>
+                                <span id="environmentFriendlyType" title="환경친화유형">  </span>
+                            </td>
+                            <th>지선운용수량</th>
+                            <td>
+                                <span id="branchLineOperationCount" title="지선운용수량">  </span>
+                            </td>
+                            </tr>
+    
+                            <!-- 3row -->
+                            <tr>
+                            <th>지선운용상태</th>
+                            <td>
+                                <span id="branchLineOperationState" title="지선운용상태">  </span>
+                            </td>
+                            <th></th>
+                            <td>
+    
+                            </td>
+                            <th></th>
+                            <td>
+    
+                            </td>
+                            <th></th>
+                            <td>
+    
+                            </td>
+                            </tr>
+    
+                            </tbody>
+                  </table>
+            </div>
+
+            <div class="group-section m-t-15" id="groupH">
+                <div class="title m-b-10">개통정보
+                </div>
+                    <table id="H00" class="hit">
+
+                        <colgroup>
+							<col width="7%">
+							<col width="18%">
+							<col width="7%">
+							<col width="18%">
+							<col width="7%">
+							<col width="18%">
+							<col width="7%">
+							<col width="18%">
+						</colgroup>
+
+                    <tbody>
+
+					    <!-- 1row -->
+						<tr>
+						<th>공사업체</th>
+						<td>
+							<span id="constructionCompany" title="공사업체"> 서울전자통신(주) </span>
+						</td>
+						<th>설치업체</th>
+						<td>
+							<span id="installCompany" title="설치업체"> 엘지노텔(주) </span>
+						</td>
+						<th></th>
+						<td>
+
+						</td>
+						<th></th>
+						<td>
+
+						</td>
+						</tr>
+
+					    </tbody>
+                  </table>
+            </div>
+
+            <div class="group-section m-t-15" id="groupI">
+                <div class="title m-b-10">축전지정보
+                </div>
+                    <table id="I00" class="hit">
+
+                        <colgroup>
+							<col width="7%">
+							<col width="18%">
+							<col width="7%">
+							<col width="18%">
+							<col width="7%">
+							<col width="18%">
+							<col width="7%">
+							<col width="18%">
+						</colgroup>
+
+                        <tbody>
+
+                            <!-- 1row -->
+                            <tr>
+                            <th>용량</th>
+                            <td>
+                                <span id="storageBatteryCapacity" title="용량">  </span>
+                            </td>
+                            <th>종류</th>
+                            <td>
+                                <span id="storageBatteryType" title="종류">  </span>
+                            </td>
+                            <th>제조사</th>
+                            <td>
+                                <span id="storageBatteryManufacturer" title="제조사">  </span>
+                            </td>
+                            <th>제조일자(대개체일자)</th>
+                            <td>
+                                <span id="storageBatteryManufactureDate" title="제조일자(대개체일자)">  </span>
+                            </td>
+                            </tr>
+                            <!-- 2row -->
+                            <tr>
+                            <th>내부저항 1cell</th>
+                            <td>
+                                <span id="storageBatteryResist1st" title="내부저항 1cell">  </span>
+                            </td>
+                            <th>내부저항 2cell</th>
+                            <td>
+                                <span id="storageBatteryResist2st" title="내부저항 2cell">  </span>
+                            </td>
+                            <th>내부저항 3cell</th>
+                            <td>
+                                <span id="storageBatteryResist3st" title="내부저항 3cell">  </span>
+                            </td>
+                            <th>내부저항 4cell</th>
+                            <td>
+                                <span id="storageBatteryResist4st" title="내부저항 4cell">  </span>
+                            </td>
+                            </tr>
+    
+                            <!-- 3row -->
+                            <tr>
+                            <th>축전지 상태</th>
+                            <td>
+                                <span id="storageBatteryState" title="축전지 상태">  </span>
+                            </td>
+                            <th></th>
+                            <td>
+    
+                            </td>
+                            <th></th>
+                            <td>
+    
+                            </td>
+                            <th></th>
+                            <td>
+    
+                            </td>
+                            </tr>
+    
+                            </tbody>
+                  </table>
+            </div>
+
+            <div class="group-section m-t-15" id="groupJ">
+                <div class="title m-b-10">기타
+                </div>
+
+
+                    <table id="J00" class="hit">
+
+                        <colgroup>
+							<col width="7%">
+							<col width="18%">
+							<col width="7%">
+							<col width="18%">
+							<col width="7%">
+							<col width="18%">
+							<col width="7%">
+							<col width="18%">
+						</colgroup>
+
+                    <tbody>
+
+					    <!-- 1row -->
+						<tr>
+						<th>기타 시설 보안사항</th>
+						<td>
+							<span id="etcFacilitySupplementInfomation" title="기타 시설 보안사항"> - </span>
+						</td>
+						<th></th>
+						<td>
+
+						</td>
+						<th></th>
+						<td>
+
+						</td>
+						<th></th>
+						<td>
+
+						</td>
+						</tr>
+
+					    </tbody>
+                  </table>
+            </div>
+
+            <div class="group-section m-t-15" id="groupK">
+                <div class="title m-b-10">특이사항
+                </div>
+
+
+                    <table id="K00" class="hit">
+
+                        <colgroup>
+							<col width="7%">
+							<col width="18%">
+							<col width="7%">
+							<col width="18%">
+							<col width="7%">
+							<col width="18%">
+							<col width="7%">
+							<col width="18%">
+						</colgroup>
+
+                        <tbody>
+
+                            <!-- 1row -->
+                            <tr>
+                            <th>추가정보(특이사항)</th>
+                            <td>
+                                <span id="additionalInfomation" title="추가정보(특이사항)"> - </span>
+                            </td>
+                            <th></th>
+                            <td>
+    
+                            </td>
+                            <th></th>
+                            <td>
+    
+                            </td>
+                            <th></th>
+                            <td>
+    
+                            </td>
+                            </tr>
+    
+                            </tbody>
+                  </table>
+            </div>
+
+            <div class="group-section m-t-15" id="groupL">
+                <div class="title m-b-10">위험국소
+                </div>
+
+
+                    <table id="L00" class="hit">
+
+                        <colgroup>
+							<col width="7%">
+							<col width="18%">
+							<col width="7%">
+							<col width="18%">
+							<col width="7%">
+							<col width="18%">
+							<col width="7%">
+							<col width="18%">
+						</colgroup>
+
+                    <tbody>
+
+					    <!-- 1row -->
+						<tr>
+						<th>위험국소여부</th>
+						<td>
+							<span id="dangerStationYn" title="위험국소여부"> N </span>
+						</td>
+						<th>건물불량</th>
+						<td>
+							<span id="buildingDefect" title="건물불량">  </span>
+						</td>
+						<th>사다리불량</th>
+						<td>
+							<span id="ladderDefect" title="사다리불량">  </span>
+						</td>
+						<th>시설불량</th>
+						<td>
+							<span id="facilityDefect" title="시설불량">  </span>
+						</td>
+						</tr>
+						<!-- 2row -->
+						<tr>
+						<th>장비설치높이</th>
+						<td>
+							<span id="deviceInstallHeight" title="장비설치높이">  </span>
+						</td>
+						<th>전주불량</th>
+						<td>
+							<span id="poleDefect" title="전주불량">  </span>
+						</td>
+						<th>환경불량</th>
+						<td>
+							<span id="environmentDefect" title="환경불량">  </span>
+						</td>
+						<th>위험도시급성</th>
+						<td>
+							<span id="dangerUrgency" title="위험도시급성">  </span>
+						</td>
+						</tr>
+
+					    </tbody>
+                  </table>
+            </div>
+
+            <!-- <div class="group-section m-t-15">
+                <div class="title" id="add_work_btn">업무지시 항목</div>
+                <table id="B00" class="hit hit-p" style="border : 0;">
+                    <colgroup>
+                        <col width="33%">
+                        <col width="33%">
+                        <col width="33%">
+                    </colgroup>
+                    <tbody>
+                        <tr style="border : 0;">
+                            <td><button class="btn primary" onclick="fn_label_add()">텍스트 항목 추가</button></td>
+                            <td>
+                                <select id="radioNum" class="type-2" style="width:180px;">
+                                <option value="0">항목 개수 선택하세요</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                                <button class="btn primary" onclick="fn_radio_add()">단일선택 항목 추가</button>
+                            </td>
+                            <td>
+                                <select id="checkNum" class="type-2" style="width:180px;">
+                                    <option value="0">항목 개수 선택하세요</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                                <button class="btn primary" onclick="fn_check_add()">복합선택 항목 추가</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> -->
+
+            <div class="group-section m-t-40">
+                <div class="title m-b-10 w-100">업무지시 내역 <p class="fs13 f-r"><span class="font-red">*</span> 은 필수입력사항입니다.</p></div>
+
+                <table class="hit hit-p fixed" id="add_work">
+                    <colgroup>
+                        <col width="180px">
+                        <col width="100px">
+                        <col width="*">
+                    </colgroup>
+                    <tr>
+                        <th>해피콜 일자(0000-00-00)</th>
+                        <th>입력내용</th>
+                        <td>2021-11-30</td>
+                    </tr>
+                    <tr>
+                        <th>해피콜 내역</th>
+                        <th>입력내용</th>
+                        <td>예정없음</td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2"><span class="font-red">*</span>해피콜 대응</th>
+                        <th>선택항목</th>
+                        <td>
+                            <input type="radio" name="onsiteInputValueDto[7].radioValue" value="1" style="width:30px" checked>이동발전기
+                            <input type="radio" name="onsiteInputValueDto[7].radioValue" value="2" style="width:30px">발전차
+                            <input type="radio" name="onsiteInputValueDto[7].radioValue" value="3" style="width:30px">발전차+이동발전기
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>비고</th>
+                        <td>
+                            <textarea id="text" name="text" class="textarea" style="overflow: auto; height: 80px;"></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th rowspan="2"><span class="font-red">*</span>해피콜 대응</th>
+                        <th>선택항목</th>
+                        <td>
+                            <input type="checkbox" name="" value="1" style="width:30px" checked>이동발전기
+                            <input type="checkbox" name="" value="2" style="width:30px">발전차
+                            <input type="checkbox" name="" value="3" style="width:30px">발전차+이동발전기
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>비고</th>
+                        <td>
+                            <textarea id="text" name="text" class="textarea" style="overflow: auto; height: 80px;"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="group-section m-t-40">
+                <div class="title m-b-10">사진 업로드 정보</div>
+                <div class="row fileupload-buttonbar">
+			        <div class="clear d-flex p-rel">
+			        <label for="upload-btn" class="btn-file btn">파일업로드</label>
+			        <input type="file" class="btn" name="file" id="file" data-url="/onsite/image/upload/M230500000278/KG1199K">
+			        <label for="upload-btn" class="btn-file btn" style="margin-left:10px;" onclick="imageDownload()">일괄 다운로드</label>
+			        </div>
+			    </div>
+            </div>
+
+            <div class="group-section m-t-40">
+                <div class="title m-b-10">장비 사진</div>
+                <div class="product-area">
+                    <ul class="card-gallery">
+                        <li class="card border">
+                            <div class="img image-link"><img src="./images/img-no.jpg" alt="img"></div>
+                            <div class="card-body">
+                                <p class="card-text"></p>
+                                <a class="btn primary">다운로드</a>
+                                <a class="btn">삭제</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="btn-area">
+                <button type="button" class="btn btn-default primary" id="btnSave">목록</button>
+            </div>
+
+            <p class="font-red fs13 m-t-10">※ 불가는 App에서만 설정 가능합니다.</p>
+            <div class="btn-area">
+                <button type="button" class="btn btn-default gray" id="btnCancel">취소</button>
+                <button type="button" class="btn btn-default btn-primary-outline" id="btnSave">임시저장</button>
+                <button type="button" class="btn btn-default primary" id="btnSave">완료</button>
+                
+            </div>
+        </section>
+    </div>
+    <!-- /#page-content-wrapper -->
+</div>
+<script type="text/javascript" src="./js/dept-select_new.js"></script>
+<script type="text/javascript">
+    let today = new Date();
+    let startDates;
+    let role = $('#roleCode').val();
+    /* FU,MU(권한자) : 7일로 변경, AU(권한자) : 3개월로 변경 */
+    if(role == 'AU'){
+        startDates = today.setMonth(today.getMonth());
+    }else if(role == 'FU' || role == 'MU'){
+        startDates = today.setDate(today.getDate() - 7);
+    }else{
+        startDates = today.setMonth(today.getMonth() - 1);
+    }
+
+    var calMonthKo = new tui.DatePicker('#datepicker-month-ko', {
+            date: startDates,
+            language: 'ko',
+            type: 'month',
+            input: {
+                element: '#datepicker-input-ko',
+                format: 'yyyy-MM'
+            }
+    });
+
+    var calMonthKo = new tui.DatePicker('#datepicker-month-ko2', {
+            date: startDates,
+            language: 'ko',
+            type: 'month',
+            input: {
+                element: '#datepicker-input-ko2',
+                format: 'yyyy-MM'
+            }
+    });
+
+    let fromDateVal = $('#startDate').val();
+    let toDateVal = $('#endDate').val();
+    let deviceCategoryVal = $('#deviceCategory').val();
+
+    const dataSource = {
+        api: {
+            readData: {url: '/additionalfacilities/list/data', method: 'GET',
+                initParams: {"startDate": fromDateVal, "endDate": toDateVal, "deviceCategory": deviceCategoryVal}}
+        },
+        initialRequest: false // 디폴트 값은 true, 아래 gridInit를 통해 호출
+    }
+</script>
+
+<div id="loading-overlay">
+    <div id="loading">
+        <div class="dot-area">
+            <div class="dot left three"></div>
+            <div class="dot left two"></div>
+            <div class="dot left one"></div>
+            <i class="ic-logo"></i>
+            <div class="dot right one"></div>
+            <div class="dot right two"></div>
+            <div class="dot right three"></div>
+        </div>
+        <h2 class="loading-text">잠시만 기다려주세요</h2>
+    </div>
+</div>
+
+<!--2-1 장비 카테고리 기준 업로드_pop-->
+<div class="mask" style="display: none;"></div>
+<!--<div class="layerpopupWrapper" style="margin-left: -200px; display: none;">
+    <div class="layerpopupArea">
+        <a class="btnClose" href="#" onclick="fn_close()"><i class="fas fa-times fa-lg" style="color:#999;"></i></a>
+        <div class="layerPopupContent">
+            <h4>장비 카테고리 기준 업로드</h4>
+            <div class="previousInfo category">
+                <div class="group-section">
+                    <table class="tableStyle text-center">
+                        <colgroup>
+                            <col width="33.3%">
+                            <col width="33.3%">
+                            <col width="33.3%">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>5G</th>
+                            <th>LTE</th>
+                            <th>3G</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" class="w-auto"> DU</td>
+                                <td><input type="checkbox" class="w-auto" checked> DU</td>
+                                <td><input type="checkbox" class="w-auto"> DU</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="w-auto"> RU</td>
+                                <td><input type="checkbox" class="w-auto" checked> RU</td>
+                                <td><input type="checkbox" class="w-auto" checked> RU</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="w-auto"> RIU</td>
+                                <td><input type="checkbox" class="w-auto"> RIU</td>
+                                <td><input type="checkbox" class="w-auto"> RIU</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="text-center m-t-20">
+                <button class="btn btn-default primary" type="button">등록</button>
+                <button class="btn btn-default gray" onclick="fn_close()" type="button">취소</button>
+            </div>
+        </div>
+    </div>
+</div>-->
+<!-- <script>
+    //장비 카테고리 기준 업로드 팝업
+    $('#btncategory').click(function (e) {
+        e.preventDefault();
+        $(".layerpopupWrapper").show();
+        $(".mask").fadeIn(150);
+    });
+
+    function fn_close(){
+        $(".layerpopupWrapper").hide();
+        $(".mask").fadeOut(150);
+    }
+</script> -->
+
+
+<div class="layerpopupWrapper2" style="margin-left: -200px; display: none;">
+    <div class="layerpopupArea">
+        <a class="btnClose" href="#" onclick="fn_close2()"><i class="fas fa-times fa-lg" style="color:#999;"></i></a>
+
+        <!--장비ID 추가 팝업-->
+        <div id="personalItem01" class="layerContent">
+            <h4>장비ID 추가</h4>
+            <p class="font-red fs13 m-t-10">※ 엑셀에서 장비ID 복사 후 입력화면 내 붙여넣기 하세요</p>
+            <div class="previousInfo id">
+                <textarea id="notepad" name="notepad" class="textarea" style="overflow: auto; height: 300px;" placeholder="'추가할 장비ID를 입력하세요."></textarea>
+            </div>
+            <div class="text-center m-t-20">
+                <button class="btn btn-default primary" type="button">저장</button>
+                <button class="btn btn-default gray" onclick="fn_close2()" type="button">취소</button>
+            </div>
+        </div>
+
+        <!--장비ID 삭제 팝업-->
+        <div id="personalItem02" class="layerContent">
+            <h4>장비ID 삭제</h4>
+            <p class="font-red fs13 m-t-10">※ 엑셀에서 장비ID 복사 후 입력화면 내 붙여넣기 하세요</p>
+            <div class="previousInfo id">
+                <textarea id="notepad" name="notepad" class="textarea" style="overflow: auto; height: 300px;" placeholder="'삭제할 장비ID를 입력하세요."></textarea>
+            </div>
+            <div class="text-center m-t-20">
+                <button class="btn btn-default primary" type="button">저장</button>
+                <button class="btn btn-default gray" onclick="fn_close2()" type="button">취소</button>
+            </div>
+        </div>
+
+        <!--2-1 장비 카테고리 기준 업로드_pop-->
+        <div id="personalItem03" class="layerContent">
+            <h4>장비 카테고리 기준 업로드</h4>
+            <div class="previousInfo category">
+                <div class="group-section">
+                    <table class="tableStyle text-center">
+                        <colgroup>
+                            <col width="33.3%">
+                            <col width="33.3%">
+                            <col width="33.3%">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>5G</th>
+                            <th>LTE</th>
+                            <th>3G</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" class="w-auto"> DU</td>
+                                <td><input type="checkbox" class="w-auto" checked> DU</td>
+                                <td><input type="checkbox" class="w-auto"> DU</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="w-auto"> RU</td>
+                                <td><input type="checkbox" class="w-auto" checked> RU</td>
+                                <td><input type="checkbox" class="w-auto" checked> RU</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="w-auto"> RIU</td>
+                                <td><input type="checkbox" class="w-auto"> RIU</td>
+                                <td><input type="checkbox" class="w-auto"> RIU</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="text-center m-t-20">
+                <button class="btn btn-default primary" type="button">저장</button>
+                <button class="btn btn-default gray" onclick="fn_close2()" type="button">취소</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    //장비ID 추가, 장비ID 삭제 팝업, 장비 카테고리 기준 업로드 팝업
+    $(".openLayerPopup").on("click", function(e) {
+      e.preventDefault();
+      var targetID = $(this).attr("data-target");
+      $(".mask").fadeIn(150);
+      $(".layerContent").removeClass("opened");
+      $("#" + targetID).addClass("opened");
+
+      setTimeout(function() {
+        $(".layerpopupWrapper2").attr("tabindex", "0").show()
+          .focus();
+        }, 150);
+    });
+
+    function fn_close2(){
+        $(".layerContent").removeClass("opened");
+        $(".layerpopupWrapper2").hide();
+        $(".layerpopupWrapper2").removeAttr("tabindex");
+        $(".mask").fadeOut(150);
+    }
+</script>
+</body>
+</html>

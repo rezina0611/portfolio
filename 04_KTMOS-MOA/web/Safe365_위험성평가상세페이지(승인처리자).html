@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+    <meta charset="UTF-8">
+    <title>KT MOA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- 기존 css -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/resetting.css">
+    <link rel="stylesheet" type="text/css" href="./css/dialog.css">
+    <link rel="stylesheet" type="text/css" href="./css/wireless.css">
+
+    <link href="./css/popup.css" rel="stylesheet" type="text/css">
+    
+    <!-- tui css -->
+    <link rel="stylesheet" type="text/css" href="./css/tui-pagination.css">
+    <link rel="stylesheet" type="text/css" href="./css/tui-grid.css">
+    <link rel="stylesheet" type="text/css" href="./css/tui-time-picker.css">
+    <link rel="stylesheet" type="text/css" href="./css/tui-date-picker.css">
+    <link rel="stylesheet" type="text/css" href="./css/toastui-select-box.css">
+
+    <!-- toggle css -->
+    <link rel="stylesheet" type="text/css" href="./css/simple-sidebar.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+
+    <!-- Bootstrap core CSS -->
+
+    <!-- FILEUPLOAD -->
+    <link rel="stylesheet" type="text/css" href="./css/jquery.fileupload.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery.fileupload-ui.css">
+
+    <!-- 기존 js -->
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+    <script type="text/javascript" src="./js/scripts.js"></script>
+    <script type="text/javascript" src="./js/jquery.nicescroll.js"></script>
+
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/common-functions.js"></script>
+
+    <!-- tui js -->
+    <script type="text/javascript" src="./js/tui-pagination.js"></script>
+    <script type="text/javascript" src="./js/tui-grid.js"></script>
+    <script type="text/javascript" src="./js/tui-code-snippet.js"></script>
+    <script type="text/javascript" src="./js/tui-time-picker.js"></script>
+    <script type="text/javascript" src="./js/tui-date-picker.js"></script>
+    <script type="text/javascript" src="./js/tui-date-picker-ko.js"></script>
+    <script type="text/javascript" src="./js/tui-calendar.js"></script>
+    <script type="text/javascript" src="./js/toastui-select-box.js"></script>
+    <!-- <script type="text/javascript" src="/grid/device_5glte3g_list_grid.js"></script> -->
+    <script>
+        const Grid = tui.Grid;
+        Grid.applyTheme('default', {
+            outline: {
+                border: '#e0e0e0'
+            },
+            cell: {
+                normal: {
+                    background: '#fff',
+                    border: '#e0e0e0',
+                    color: '#666666'
+                },
+                header: {
+                    background: '#f4f4f4',
+                    border: '#e0e0e0'
+                },
+                evenRow: {
+                    background: '#fff',
+                    border: '#e0e0e0',
+                    color: '#666666'
+                },
+                oddRow: {
+                    background: '#fff',
+                    border: '#e0e0e0',
+                    color: '#666666'
+                }
+            }
+        }); // Call API of static
+    </script>
+    <style type="text/css" id="tui-grid-theme-style">
+            .tui-grid-border-line-top{border-top:1px solid #e0e0e0}
+            .tui-grid-no-scroll-x .tui-grid-border-line-bottom{border-bottom:1px solid #e0e0e0}.tui-grid-frozen-border{background-color:#aaa}
+            .tui-grid-container ::-webkit-scrollbar{background-color:#fff}.tui-grid-container ::-webkit-scrollbar-thumb{background-color:#ddd}
+            .tui-grid-container ::-webkit-scrollbar-thumb:hover{background-color:#ddd;}
+            .tui-grid-container{scrollbar-3dlight-color:#fff;scrollbar-darkshadow-color:#fff;scrollbar-track-color:#fff;scrollbar-shadow-color:#fff;
+                scrollbar-face-color:#ddd;scrollbar-highlight-color:#ddd;scrollbar-arrow-color:#ddd;}
+            .tui-grid-border-line-bottom{border-bottom:1px solid #eee}
+            .tui-grid-content-area{border-color:#eee}.tui-grid-scrollbar-y-inner-border{background-color:#eee}
+            .tui-grid-scrollbar-y-outer-border{background-color:#eee}
+            .tui-grid-scrollbar-right-top{background-color:#f9f9f9;border-color:#eee}
+            .tui-grid-scrollbar-right-bottom{background-color:#f9f9f9;border-color:#eee}
+            .tui-grid-scrollbar-left-bottom{background-color:#f9f9f9;border-color:#eee}
+            .tui-grid-scrollbar-frozen-border{background-color:#f9f9f9;border-color:#eee}
+            .tui-grid-height-resize-handle{background-color:#fff;border-color:#fff}
+            .tui-grid-pagination{background-color:transparent;border-color:transparent}
+            .tui-grid-layer-selection{background-color:#00A9ff;border-color:#00a9ff}
+            .tui-grid-header-area{background-color:#fff;border-color:#ccc}
+            .tui-grid-body-area{background-color:#fff}.tui-grid-summary-area{background-color:#fff;border-color:#eee}
+            .tui-grid-has-summary-top .tui-grid-body-area{border-color:#eee}
+            .tui-grid-cell{background-color:#fff;border-color:#e0e0e0;border-left-width:0;border-right-width:0;border-top-width:1px;border-bottom-width:1px;color:#333}
+            .tui-grid-cell-editable{background-color:#fff}.tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-header-area .tui-grid-table{border-right-style:solid}
+            .tui-grid-cell-header{background-color:#f4f4f4;border-color:#e0e0e0;border-left-width:1px;border-right-width:1px;border-top-width:1px;border-bottom-width:1px;color:#222}
+            .tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-body-area .tui-grid-table{border-right-style:hidden}
+            .tui-grid-cell-row-header{background-color:#fff;border-color:#eee;border-left-width:0;border-right-width:0;border-top-width:1px;border-bottom-width:1px;color:#333}
+            .tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-summary-area .tui-grid-table{border-right-style:hidden}
+            .tui-grid-cell-summary{background-color:#fff;border-color:#eee;border-left-width:0;border-right-width:0;color:#333}
+            .tui-grid-cell-required{background-color:#fffdeb}
+            .tui-grid-cell-disabled{background-color:#f9f9f9;color:#c1c1c1}
+            .tui-grid-cell-invalid.tui-grid-cell{background-color:#ffe5e5}
+            .tui-grid-cell-header.tui-grid-cell-selected{background-color:#e5f6ff}
+            .tui-grid-cell-row-header.tui-grid-cell-selected{background-color:#e5f6ff}
+            .tui-grid-layer-focus-border{background-color:#00a9ff}.tui-grid-layer-editing{border-color:#00a9ff}
+            .tui-grid-layer-focus-deactive .tui-grid-layer-focus-border{background-color:#aaa}
+            .tui-grid-row-odd>td{background-color:#fff}.tui-grid-row-even>td{background-color:#fff}.tui-grid-cell-dummy{background-color:#fff}
+    </style>
+</head>
+<body>
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar" class="nav-collapse">
+        <button id="menu-toggle"><i class="fas fa-bars"></i></button>
+        <div class="user-bg">
+            <div class="brand">
+                <img src="./images/logo.png" alt="KTmos wMMS">
+            </div>
+            <div class="user-area">
+                <div class="user-name">
+                	<span style="width: 60%;word-break:break-all;word-wrap:break-word;float: left;">관리자 님</span>
+                	<span class="area-badge">북부</span>
+                </div>
+                <div class="user-btn m--3" style="margin-top: 35px;">
+                    <li><a href="javascript:void(0);" onclick="fn_modify(this)">정보수정</a></li>
+                    <li><a href="javascript:void(0);" onclick="fn_logout(this);">로그아웃</a></li>
+                </div>
+            </div>
+        </div>
+            <!-- 메뉴 표시 -->
+            <ul class="sidebar-menu" id="nav-accordion">
+                <li class="sub-menu"><a href="javascript:showSub1('M01S01')">인수시험관리<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM01S01" style="display: none;">
+                        <li><a href="/acceptcheck/list/M01S01" id="" class="" target="">인수시험정보조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M02S01')">국소정보<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM02S01" style="display: none;">
+                        <li><a href="/device/5glte3g/list/M02S01" id="" class="" target="">국소정보조회-5G/LTE/3G</a></li>
+                        <li><a href="/device/repeater/list/M02S02" id="" class="" target="">국소정보조회-중계기</a></li>
+                        <li><a href="/device/wifi/list/M02S03" id="" class="" target="">국소정보조회-WiFi</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M03S01')">정기점검<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM03S01" style="display: none;">
+                        <li><a href="/regularinspection/list/M03S01" id="" class="" target="">정기점검조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M04S01')">전기안전점검<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM04S01" style="display: none;">
+                        <li><a href="/electricsafety/plan/list/M04S01" id="" class="" target="">계획관리</a></li>
+                        <li><a href="/electricsafety/inspection/list/M04S02" id="" class="" target="">점검관리</a></li>
+                        <li><a href="/electricsafety/result/list/M04S03" id="" class="" target="">대응결과조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M05S01')">위험국소<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM05S01" style="display: none;">
+                        <li><a href="/dangerinspection/list/M05S01" id="" class="" target="">위험국소조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="#none">아차사고<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="" style="display:none;">
+                        <li><a href="#none" id="" class="" target="">아차사고조회</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu"><a href="javascript:showSub1('M06S01')">부대시설<span class="dcjq-icon"></span></a>
+                    <ul class="sub" id="subMenuM06S01" style="display: none;">
+                        <li><a href="/additionalfacilities/list/M06S01" id="" class="" target="">부대시설점검조회</a></li>
+                    </ul>
+                </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M07S01')">긴급복구물자관리<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM07S01" style="display: none;">
+                            <li><a href="/emergencymaterial/status/M07S01" id="" class="" target="">긴급복구현황표</a></li>
+                            <li><a href="/emergencymaterial/master/list/M07S02" id="" class="" target="">긴급복구물자</a></li>
+                            <li><a href="/emergencymaterial/history/list/M07S03" id="" class="" target="">긴급복구물자사용</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M09S01')">안전용품관리<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM09S01" style="display: none;">
+                            <li><a href="/item-safety/status/M09S01" id="" class="" target="">현황표</a></li>
+                            <li><a href="/item-safety/list/M09S02" id="" class="" target="">안전용품등록</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M15S01')">현장수시업무<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM15S01" style="display: none;">
+                            <li><a href="/onsite/list/M15S01" id="" class="" target="">현장수시업무현황</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M08S01')">Safe365<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM08S01" style="display:block;">
+                            <li><a href="/safe365/safety/list/M08S01" id="" class="" target="">안전점검 체크 리스트</a></li>
+                            <li><a href="/safe365/highcar/list/M08S02" id="" class="" target="">고소작업차 사용 작업 계획서</a></li>
+                            <li><a href="/safe365/aerial/list/M08S03" id="" class="" target="">고소작업차 작업 전 점검표</a></li>
+                            <li><a href="/safe365/status/M08S04" id="" class="" target="">현장 안전점검 현황</a></li>
+                            <li><a href="#none" id="" class="active" target="">위험성평가 </a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M14S01')">작업중지권<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM14S01" style="display: none;">
+                            <li><a href="/stopwork/list/M14S01" id="" class="" target="">작업중지권 조회</a></li>
+                            <li><a href="/stopwork/apply/list/M14S02" id="" class="" target="">작업중지권 승인관리</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M16S01')">현장업무지원<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM16S01" style="display: none;">
+                            <li><a href="/support/acs/list/M16S01" id="" class="" target="">ACS</a></li>
+                            <li><a href="/support/rsa/list/M16S02" id="" class="" target="">RSA</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M11S01')">예비품관리<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM11S01" style="display: none;">
+                            <li><a href="/spare/list/M11S01" id="" class="" target="">예비품관리</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M10S01')">업로드관리<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM10S01" style="display: none;"><li><a href="/device/5glte3g/excel/list/M10S01" id="" class="" target="">국소정보업로드-5G/LTE/3G</a></li>
+                            <li><a href="/device/repeater/excel/list/M10S02" id="" class="" target="">국소정보업로드-중계기</a></li>
+                            <li><a href="/device/wifi/excel/list/M10S03" id="" class="" target="">국소정보업로드-WIFI</a></li>
+                            <li><a href="/device/acceptcheck/excel/list/M10S04" id="" class="" target="">인수시험</a></li>
+                            <li><a href="/device/regularinspection/excel/list/M10S05" id="" class="" target="">정기점검</a></li>
+                            <li><a href="/device/regularinspection_riu/excel/list/M10S06" id="" class="" target="">정기점검 RIU</a></li>
+                            <li><a href="/device/regularinspection_du/excel/list/M10S07" id="" class="" target="">정기점검 DU</a></li>
+                            <li><a href="/device/regularinspection_wifi/excel/list/M10S08" id="" class="" target="">정기점검 WiFi</a></li>
+                            <li><a href="/device/additionalfacilities/excel/list/M10S09" id="" class="" target="">부대시설점검</a></li>
+                            <li><a href="/device/electricsafety/excel/list/M10S10" id="" class="" target="">전기안전점검 계획</a></li>
+                            <li><a href="/device/dangerstation/excel/list/M10S11" id="" class="" target="">위험국소</a></li>
+                            <li><a href="/device/emergencymaterial/excel/list/M10S12" id="" class="" target="">긴급복구물자 사용</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu"><a href="javascript:showSub1('M13S01')">대시보드<span class="dcjq-icon"></span></a>
+                        <ul class="sub" id="subMenuM13S01" style="display: none;">
+                            <li><a href="/dashboard/inspection/M13S01" id="" class="" target="_blank">정기점검 현황</a></li>
+                            <li><a href="/dashboard/accept/M13S02" id="" class="" target="_blank">인수시험 현황</a></li>
+                            <li><a href="/dashboard/danger/M13S03" id="" class="" target="_blank">위험국소 현황</a></li>
+                            <li><a href="/dashboard/setting/list/M13S04" id="" class="" target="">모수관리</a></li>
+                        </ul>
+                    </li>
+                </ul>
+        <!--</div>-->
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <!-- Page Content -->
+<div id="page-content-wrapper">
+    <section class="wrapper">
+        <h1 id="page_tit">위험성평가표 <span class="sub_tit"> 상세</span></h1><!--승인처리(승인완료)-->
+
+        <div class="group-section m-t-15">
+            <table class="hit">
+                <colgroup>
+                    <col width="10%"><col width="15%">
+                    <col width="10%"><col width="15%">
+                    <col width="10%"><col width="15%">
+                </colgroup>
+                <tbody>
+                <form id="deviceList" name="deviceList" method="get">
+                <tr>
+                    <th>구분</th>
+                    <td>정기</td>
+                    <th><strong class="star">*</strong> 부서</th>
+                    <td>KT MOS 북부/기술총괄/사업계획팀</td>
+                    <th><strong class="star">*</strong> 등록자</th>
+                    <td>박몽룡</td>
+                </tr>
+                <tr>
+                    <th><strong class="star">*</strong> 담당업무</th>
+                    <td>운용팀</td>
+                    <th><strong class="star">*</strong> 공정명</th>
+                    <td>기지국/중계기 유지보 </td>
+                    <th><strong class="star">*</strong> 부서장 </th>
+                    <td>춘향육</td>
+                </tr>
+                </form>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="group-section m-t-40">
+            <div style="overflow:scroll; width:100%; height:400px;">
+                <table class="hit bor-right table-type" style="white-space:initial;">
+                    <colgroup>
+                        <col style="width:100px;">
+                        <col style="width:300px;">
+                        <col style="width:130px;">
+                        <col style="width:200px;">
+                        <col style="width:200px;">
+                        <col style="width:180px;">
+                        <col style="width:80px;">
+                        <col style="width:80px;">
+                        <col style="width:100px;">
+                        <col style="width:180px;">
+                        <col style="width:150px;">
+                        <col style="width:180px;">
+                        <col style="width:90px;">
+                        <col style="width:90px;">
+                        <col style="width:100px;">
+                        <col style="width:160px;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">No.</th>
+                            <th rowspan="2">현황 및 문제점</th>
+                            <th rowspan="2">유해위엄요인</th>
+                            <th rowspan="2">관련법규</th>
+                            <th rowspan="2">현재안전조치</th>
+                            <th rowspan="2">개선 전 사진</th>
+                            <th colspan="3">위험성 추정<br>(기능성*중대성)</th>
+                            <th rowspan="2">개선대책</th>
+                            <th>개선예정일</th>
+                            <th rowspan="2">개선 후 사진(최대 2장)</th>
+                            <th colspan="3">위험성 추정<br>(기능성*중대성)</th>
+                            <th rowspan="2">다운로드</th>
+                        </tr>
+                        <tr>
+                            <th>가능성</th>
+                            <th>중대성</th>
+                            <th class="tac bgige">위험성추정</th>
+                            <th>개선완료일</th>
+                            <th>가능성</th>
+                            <th>중대성</th>
+                            <th class="tac bgige">위험성추정</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2" class="tac">1</td>
+                            <td rowspan="2" class="tac">차량운행 전 차량점검 미시행(경고등 확인 등)</td>
+                            <td rowspan="2" class="tac">전도</td>
+                            <td rowspan="2" class="tac">도로교통법 제 123조(적용)</td>
+                            <td rowspan="2" class="tac">차량 운행 시 교대운전</td>
+                            <td rowspan="2">
+                                <div class="photo-img">
+                                    <div class="img image-link">
+                                        <img src="./images/Untitled-1.jpg" alt="img" onclick="imagePopup('./images/big_untitled-1.jpg');">
+                                    </div>
+                                    <div class="img image-link">
+                                        <img src="./images/Untitled-2.jpg" alt="img" onclick="imagePopup('./images/big_untitled-2.jpg');">
+                                    </div>
+                                </div>
+                            </td>
+                            <td rowspan="2" class="tac">5</td>
+                            <td rowspan="2" class="tac">4</td>
+                            <td rowspan="2" class="tac bgige"><span style="color:red;">20</span></td>
+                            <td rowspan="2" class="tac">조심하겠다</td>
+                            <td class="tac">2022-08-03</td>
+                            <td rowspan="2">
+                                <div class="photo-img">
+                                    <div class="img image-link">
+                                        <img src="./images/Untitled-1.jpg" alt="img" onclick="imagePopup('./images/big_untitled-1.jpg');">
+                                    </div>
+                                    <div class="img image-link">
+                                        <img src="./images/Untitled-2.jpg" alt="img" onclick="imagePopup('./images/big_untitled-2.jpg');">
+                                    </div>
+                                </div>
+                            </td>
+                            <td rowspan="2" class="tac">3</td>
+                            <td rowspan="2" class="tac">2</td>
+                            <td rowspan="2" class="tac bgige">6</td>
+                            <td rowspan="2"><button id="btnWordDownload" class="btn btn-md blue" onclick="fn_WordDownload();">다운로드</button></td>
+                        </tr>
+                        <tr>
+                            <td class="tac">2022-08-03</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="tac">2</td>
+                            <td rowspan="2" class="tac">여러가지 이유로 많은 문제점을 가지고 있다</td>
+                            <td rowspan="2" class="tac">전도</td>
+                            <td rowspan="2" class="tac">도로교통법 제 123조(적용)</td>
+                            <td rowspan="2" class="tac">차량 운행 시 교대운전</td>
+                            <td rowspan="2">
+                                <div class="photo-img">
+                                    <div class="img image-link">
+                                        <img src="./images/Untitled-1.jpg" alt="img" onclick="imagePopup('./images/big_untitled-1.jpg');">
+                                    </div>
+                                    <div class="img image-link">
+                                        <img src="./images/Untitled-2.jpg" alt="img" onclick="imagePopup('./images/big_untitled-2.jpg');">
+                                    </div>
+                                </div>
+                            </td>
+                            <td rowspan="2" class="tac">3</td>
+                            <td rowspan="2" class="tac">3</td>
+                            <td class="tac bgige" rowspan="2"><span style="color:red;">9</span></td>
+                            <td rowspan="2" class="tac">잘하겠다</td>
+                            <td class="tac">2022-08-03</td>
+                            <td rowspan="2">
+                                <div class="photo-img">
+                                    <div class="img image-link">
+                                        <img src="./images/Untitled-1.jpg" alt="img" onclick="imagePopup('./images/big_untitled-1.jpg');">
+                                    </div>
+                                    <div class="img image-link">
+                                        <img src="./images/Untitled-2.jpg" alt="img" onclick="imagePopup('./images/big_untitled-2.jpg');">
+                                    </div>
+                                </div>
+                            </td>
+                            <td rowspan="2" class="tac">2</td>
+                            <td rowspan="2" class="tac">2</td>
+                            <td rowspan="2" class="tac bgige">4</td>
+                            <td rowspan="2"><button id="btnWordDownload" class="btn btn-md blue" onclick="fn_WordDownload();">다운로드</button></td>
+                        </tr>
+                        <tr>
+                            <td class="tac">2022-08-03</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="tac">3</td>
+                            <td rowspan="2" class="tac">여러가지 이유로 많은 문제점을 가지고 있다</td>
+                            <td rowspan="2" class="tac">전도</td>
+                            <td rowspan="2" class="tac">도로교통법 제 123조(적용)</td>
+                            <td rowspan="2" class="tac">차량 운행 시 교대운전</td>
+                            <td rowspan="2">
+                                <div class="photo-img">
+                                    <div class="img image-link">
+                                        <img src="./images/Untitled-1.jpg" alt="img" onclick="imagePopup('./images/big_untitled-1.jpg');">
+                                    </div>
+                                </div>
+                            </td>
+                            <td rowspan="2" class="tac">3</td>
+                            <td rowspan="2" class="tac">3</td>
+                            <td rowspan="2" class="tac bgige"><span style="color:red;">9</span></td>
+                            <td rowspan="2" class="Disabled-bg"></td>
+                            <td rowspan="2" class="Disabled-bg"></td>
+                            <td rowspan="2" class="tac Disabled-bg"></td>
+                            <td rowspan="2" class="tac Disabled-bg"></td>
+                            <td rowspan="2" class="tac Disabled-bg"></td>
+                            <td rowspan="2" class="tac Disabled-bg"></td>
+                            <td rowspan="2" class="Disabled-bg"><button id="btnWordDownload" class="btn btn-md blue" onclick="fn_WordDownload();">다운로드</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="group-section m-t-10">
+            <table class="hit">
+                <colgroup>
+                    <col width="10%"><col width="*">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>반려사유</th>
+                        <td style="line-height:2em;">
+                            이번 위험성평가표는<br>
+이러 이러한 이유로 승인반려 합니다.<br>
+다시 제출 바랍니다.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="btn-area">
+            <button class="btn btn-default gray">취소</button>
+        </div>
+    </section>
+</div>
+<!-- 팝업 모달 -->
+<div id="element_to_pop_up">
+    <a class="b-close"><img src="./images/ic_close.png" style="width:80%; height:80%"></a>
+    <a>
+        <img id="popupImg" src="" alt="img" style="padding-top:20px; max-height:800px; max-width:800px;">
+    </a>
+</div>
+<!--loading-->
+<div id="loading-overlay">
+    <div id="loading">
+        <div class="dot-area">
+            <div class="dot left three"></div>
+            <div class="dot left two"></div>
+            <div class="dot left one"></div>
+            <i class="ic-logo"></i>
+            <div class="dot right one"></div>
+            <div class="dot right two"></div>
+            <div class="dot right three"></div>
+        </div>
+        <h2 class="loading-text">잠시만 기다려주세요</h2>
+    </div>
+</div>
+<!-- /#page-content-wrapper -->
+</div> 
+<script type="text/javascript" src="http://moa-ktmos.com/js/jquery.bpopup.min.js"></script>
+<script type="text/javascript">
+
+    function imagePopup(url){
+        $("#popupImg").attr("src", url);
+        $('#element_to_pop_up').bPopup({
+            position: [550, 30] //x, y
+        });
+    }
+</script> 
+</body>
+</html>
