@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>설정 - 연동목록관리</title>
+<meta charset="UTF-8">
+<meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="ui_event" content="true" />
+
+<link rel="stylesheet" href="./css/fontawesome6-all.css">
+<link rel="stylesheet" href="./css/style.css">
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery-3.7.0.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/script.js"></script>
+</head>
+<body>
+<!--robot-wrapper-->
+<div class="robot-wrapper">
+    <!--robot-header-->
+    <header class="robot-header">
+        <div class="d-flex">
+            <div class="left">
+                <img src="./images/logo@2x.png" alt="인천국제공항">
+                <ul class="top-nav">
+                    <li><a href="#none">대시보드</a></li>
+                    <li><a href="#none">주차장 모니터링</a></li>
+                    <li><a href="#none">통계</a></li>
+                    <li><a href="#none">인프라 모니터링</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="top-btns">
+                    <button type="button">
+                        <img src="./images/ico_sb_setting@2x.png" alt="설정">
+                    </button>
+                    <button type="button">
+                        <span class="badge circled bg-danger"></span>
+                        <img src="./images/ico_sb_alarm@2x.png" alt="알림">
+                    </button>
+                    <details>
+                        <summary><img src="./images/ico_sb_user@2x.png" alt="user"></summary>
+                        <ul>
+                            <li class="user-area">
+                                <p class="user-img"></p>
+                                <div class="user-info">
+                                    <strong class="js-user-name">한정성</strong>
+                                    <span class="js-admin">Super admin</span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#none" onclick="fnShowPop('pop_pwd')">비밀번호 변경</a>
+                            </li>
+                            <li>
+                                <a href="#none">로그아웃</a>
+                            </li>
+                        </ul>
+                    </details>
+                </div>
+                <div class="timer">
+                    <span class="date" id="date" style="pointer-events: none;">2023년 3월 15일 </span>
+                    <span class="time" id="time" style="pointer-events: none;">15:30</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--//robot-header-->
+    
+    <!--robot-main-->
+    <main class="robot-main">
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="#">사용자 관리</a></li>
+                    <li><a href="#">코드 관리</a></li>
+                    <li><a href="#">로봇 관리</a></li>
+                    <li><a href="#">로그 관리</a></li>
+                    <li><a href="#" class="on">연동목록 관리</a></li>
+                </ul>
+            </nav>
+        </div>
+        <section class="contents">
+            <!--tab-->
+            <section class="tabs mt-2">
+                <input id="tab-1" name="sample_tab" type="radio" class="tab-input" checked="checked">
+                <label for="tab-1" class="tab-label">PMS 연동목록</label>
+    
+                <input id="tab-2" name="sample_tab" type="radio" class="tab-input">
+                <label for="tab-2" class="tab-label">로봇 연동목록</label>
+    
+                <div class="tab-contents">
+                    <div class="content">
+                        <form>
+                            <table class="styled fixed" style="margin: 1.5rem 0;">
+                                <colgroup>
+                                    <col width="110">
+                                    <col width="">
+                                    <col width="110">
+                                    <col width="">
+                                    <col width="110">
+                                    <col width="">
+                                </colgroup>
+                                <tbody>
+                                <tr>
+                                    <th>인터페이스 ID</th>
+                                    <td>
+                                        <input type="text" class="form-control" name="id" placeholder="입력하세요">
+                                    </td>
+                                    <th>인터페이스 명</th>
+                                    <td>
+                                        <input type="text" class="form-control" name="name" placeholder="입력하세요">
+                                    </td>
+                                    <th>설명</th>
+                                    <td>
+                                        <input type="text" class="form-control" name="description" placeholder="입력하세요">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>송신</th>
+                                    <td>
+                                        <select class="form-control" name="send">
+                                            <option value="">전체</option>
+                                            
+                                            <option value="PMS">PMS</option>
+                                            
+                                            <option value="RMS">RMS</option>
+                                            
+                                            <option value="ROBOT">ROBOT</option>
+                                            
+                                        </select>
+                                    </td>
+                                    <th>수신</th>
+                                    <td>
+                                        <select class="form-control" name="receive">
+                                            <option value="">전체</option>
+                                            
+                                            <option value="PMS">PMS</option>
+                                            
+                                            <option value="RMS">RMS</option>
+                                            
+                                            <option value="ROBOT">ROBOT</option>
+                                            
+                                        </select>
+                                    </td>
+                                    <th>통신방식</th>
+                                    <td>
+                                        <select class="form-control" name="protocol">
+                                            <option value="">전체</option>
+                                            
+                                            <option value="MQTT">MQTT</option>
+                                            
+                                        </select>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                        <div class="btn-gruoup">
+                            <button class="btn secondary">초기화</button>
+                            <button class="btn base">검색</button>
+                        </div>
+                        <div class="d-space-between mt-1-6">
+                            <ul class="tab_list">
+                                <li><a href="#none" class="on">전체(10)</a></li>
+                            </ul>
+                            <div class="d-flex">
+                                <select class="form-control" style="min-width: 7.2rem;">
+                                    <option value="10" selected>10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mt-0-8">
+                            <table class="styled fixed hover left">
+                                <colgroup>
+                                    <col width="80">
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col width="180">
+                                    <col width="180">
+                                    <col width="180">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>인터페이스 ID</th>
+                                        <th>인터페이스 명</th>
+                                        <th>설명</th>
+                                        <th class="tac">송신</th>
+                                        <th class="tac">수신</th>
+                                        <th class="tac">통싱방식</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>IF-PMS-001</td>
+                                        <td>parking_lot</td>
+                                        <td>주차장 정보</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">MQTT</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>IF-PMS-002</td>
+                                        <td>Car_info</td>
+                                        <td>차량 정보</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">MQTT</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>IF-PMS-003</td>
+                                        <td>set_blocking_bar</td>
+                                        <td>차단방 개폐 요청 / 응답</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">MQTT</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>IF-PMS-004</td>
+                                        <td>transfer_car</td>
+                                        <td>차량 이동 요청 /응답</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">MQTT</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>IF-PMS-005</td>
+                                        <td>set_parking_lot</td>
+                                        <td>주차면 변화 정보</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">MQTT</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>IF-PMS-006</td>
+                                        <td>exit_car</td>
+                                        <td>출차 요청 / 응답</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">MQTT</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>IF-PMS-007</td>
+                                        <td>select robot</td>
+                                        <td>로봇선택(다수로봇에서 2대 선택)</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">MQTT</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>IF-PMS-008</td>
+                                        <td>sapf</td>
+                                        <td>단일 경로 탐색(협조이동)</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">MQTT</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>IF-PMS-009</td>
+                                        <td>set_blocking_bar</td>
+                                        <td>차단봉 개폐 요청 / 응답</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">MQTT</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>IF-PMS-010</td>
+                                        <td>transfter car</td>
+                                        <td>차량 이동 요청 / 응답</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">MQTT</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="page-area">
+                            <div class="pagination">
+                                <a href="#" id="first" onclick="setPage('fist')"><img src="./images/ico_2arrow_left@2x.png" title="첫 페이지"></a>
+                                <a href="#" id="prev" onclick="setPage('prev')"><img src="./images/ico_arrow_left@2x.png" title="이전 페이지"></a>
+                                <span class="form-control" name="page" id="page" style="width: 4rem !important;">1</span>
+                    <!-- <input type="text" class="form-control page" value="1" name="page" id="page"> -->
+                                of
+                                <input type="text" class="total_pages" value="1"  name="total_pages" id="total_pages" disabled>
+                                <a href="#" id="next" onclick="setPage('next')"><img src="./images/ico_arrow_right@2x.png" title="다음 페이지"></a>
+                                <a href="#" id="last" onclick="setPage('last')"><img src="./images/ico_2arrow_right@2x.png" title="마지막 페이지"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <form>
+                            <table class="styled fixed" style="margin: 1.5rem 0;">
+                                <colgroup>
+                                    <col width="110">
+                                    <col width="">
+                                    <col width="110">
+                                    <col width="">
+                                    <col width="110">
+                                    <col width="">
+                                </colgroup>
+                                <tbody>
+                                <tr>
+                                    <th>인터페이스 ID</th>
+                                    <td>
+                                        <input type="text" class="form-control" name="id" placeholder="입력하세요">
+                                    </td>
+                                    <th>인터페이스 명</th>
+                                    <td>
+                                        <input type="text" class="form-control" name="name" placeholder="입력하세요">
+                                    </td>
+                                    <th>설명</th>
+                                    <td>
+                                        <input type="text" class="form-control" name="description" placeholder="입력하세요">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>송신</th>
+                                    <td>
+                                        <select class="form-control" name="send">
+                                            <option value="">전체</option>
+                                            
+                                            <option value="PMS">PMS</option>
+                                            
+                                            <option value="RMS">RMS</option>
+                                            
+                                            <option value="ROBOT">ROBOT</option>
+                                            
+                                        </select>
+                                    </td>
+                                    <th>수신</th>
+                                    <td>
+                                        <select class="form-control" name="receive">
+                                            <option value="">전체</option>
+                                            
+                                            <option value="PMS">PMS</option>
+                                            
+                                            <option value="RMS">RMS</option>
+                                            
+                                            <option value="ROBOT">ROBOT</option>
+                                            
+                                        </select>
+                                    </td>
+                                    <th>통신방식</th>
+                                    <td>
+                                        <select class="form-control" name="protocol">
+                                            <option value="">전체</option>
+                                            
+                                            <option value="MQTT">MQTT</option>
+                                            
+                                        </select>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                        <div class="btn-gruoup">
+                            <button class="btn secondary">초기화</button>
+                            <button class="btn base">검색</button>
+                        </div>
+                        <div class="d-space-between mt-1-6">
+                            <ul class="tab_list">
+                                <li><a href="#none" class="on">전체(10)</a></li>
+                            </ul>
+                            <div class="d-flex">
+                                <select class="form-control" style="min-width: 7.2rem;">
+                                    <option value="10" selected>10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mt-0-8">
+                            <table class="styled fixed hover left">
+                                <colgroup>
+                                    <col width="80">
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col width="180">
+                                    <col width="180">
+                                    <col width="180">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>인터페이스 ID</th>
+                                        <th>인터페이스 명</th>
+                                        <th>설명</th>
+                                        <th class="tac">송신</th>
+                                        <th class="tac">수신</th>
+                                        <th class="tac">통싱방식</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>IF-PMS-001</td>
+                                        <td>parking_lot</td>
+                                        <td>주차장 정보</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">MQTT</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>IF-PMS-002</td>
+                                        <td>Car_info</td>
+                                        <td>차량 정보</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">MQTT</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>IF-PMS-003</td>
+                                        <td>set_blocking_bar</td>
+                                        <td>차단방 개폐 요청 / 응답</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">MQTT</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>IF-PMS-004</td>
+                                        <td>transfer_car</td>
+                                        <td>차량 이동 요청 /응답</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">MQTT</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>IF-PMS-005</td>
+                                        <td>set_parking_lot</td>
+                                        <td>주차면 변화 정보</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">MQTT</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>IF-PMS-006</td>
+                                        <td>exit_car</td>
+                                        <td>출차 요청 / 응답</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">MQTT</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>IF-PMS-007</td>
+                                        <td>select robot</td>
+                                        <td>로봇선택(다수로봇에서 2대 선택)</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">MQTT</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>IF-PMS-008</td>
+                                        <td>sapf</td>
+                                        <td>단일 경로 탐색(협조이동)</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">MQTT</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>IF-PMS-009</td>
+                                        <td>set_blocking_bar</td>
+                                        <td>차단봉 개폐 요청 / 응답</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">MQTT</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>IF-PMS-010</td>
+                                        <td>transfter car</td>
+                                        <td>차량 이동 요청 / 응답</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">PMS</td>
+                                        <td class="tac">MQTT</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="page-area">
+                            <div class="pagination">
+                                <a href="#" id="first" onclick="setPage('fist')"><img src="./images/ico_2arrow_left@2x.png" title="첫 페이지"></a>
+                                <a href="#" id="prev" onclick="setPage('prev')"><img src="./images/ico_arrow_left@2x.png" title="이전 페이지"></a>
+                                <span class="form-control" name="page" id="page" style="width: 4rem !important;">1</span>
+                    <!-- <input type="text" class="form-control page" value="1" name="page" id="page"> -->
+                                of
+                                <input type="text" class="total_pages" value="1"  name="total_pages" id="total_pages" disabled>
+                                <a href="#" id="next" onclick="setPage('next')"><img src="./images/ico_arrow_right@2x.png" title="다음 페이지"></a>
+                                <a href="#" id="last" onclick="setPage('last')"><img src="./images/ico_2arrow_right@2x.png" title="마지막 페이지"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </section>
+            <!--//tab-->
+        </section>
+    </main>
+    <!--//robot-main-->
+</div>
+<!--//robot-wrapper-->
+</body>
+</html>

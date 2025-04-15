@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>대시보드</title>
+<meta charset="UTF-8">
+<meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="ui_event" content="true" />
+
+<!-- <link rel="shortcut icon" href="./images/logo_esper.png" type="image/x-icon"/> -->
+<link rel="stylesheet" href="./css/fontawesome6-all.css">
+<link rel="stylesheet" href="./css/style.css">
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery-3.7.0.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/script.js"></script>
+</head>
+<body>
+<!--robot-wrapper-->
+<div class="robot-wrapper">
+    <!--robot-header-->
+    <header class="robot-header">
+        <div class="d-flex">
+            <div class="left">
+                <img src="./images/logo@2x.png" alt="인천국제공항">
+                <ul class="top-nav">
+                    <li><a href="#none" class="on">대시보드</a></li>
+                    <li><a href="#none">주차장 모니터링</a></li>
+                    <li><a href="#none">통계</a></li>
+                    <li><a href="#none">인프라 모니터링</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="top-btns">
+                    <button type="button">
+                        <img src="./images/ico_sb_setting@2x.png" alt="설정" title="설정">
+                    </button>
+                    <button type="button" onclick="alarm();">
+                        <span class="badge circled bg-danger"></span>
+                        <img src="./images/ico_sb_alarm@2x.png" alt="알림" title="알림">
+                    </button>
+                    <details>
+                        <summary><img src="./images/ico_sb_user@2x.png" alt="user" title="user"></summary>
+                        <ul>
+                            <li class="user-area">
+                                <p class="user-img"></p>
+                                <div class="user-info">
+                                    <strong class="js-user-name">한정성</strong>
+                                    <span class="js-admin">Super admin</span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#none" onclick="fnShowPop('pop_pwd')">비밀번호 변경</a>
+                            </li>
+                            <li>
+                                <a href="#none">로그아웃</a>
+                            </li>
+                        </ul>
+                    </details>
+                </div>
+                <div class="timer">
+                    <span class="date" id="date" style="pointer-events: none;">2023년 3월 15일 </span>
+                    <span class="time" id="time" style="pointer-events: none;">15:30</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--//robot-header-->
+    
+    <!--robot-main-->
+    <main class="robot-main">
+        <div class="row row-deck" style="height: calc(100vh - 10.5rem);">
+            <div class="col-lg-8 d-block">
+                <div class="card mb-1">
+                    <div class="card-header radius">
+                        <h3 class="card-title">주차장 현황</h3>
+                        <button class="btn more">More</button>
+                    </div>
+                    <div class="card-body">
+                        <div class="darkbg p-1-5 parking">
+                            <table class="styled fixed center">
+                                <colgroup>
+                                    <col width="177">
+                                    <col width=""><col width=""><col width=""><col width="">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th class="tac white">출차대기 <span >0</span></th>
+                                        <td colspan="4" class="total">전체 주차구역 <span class="fs15">100</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="tac white">주차대기 <span>1</span></th>
+                                        <td>주차중 <span class="color1 fs18 ml-2">1</span></td>
+                                        <td>주차  <span class="color2 fs18 ml-2">3</span></td>
+                                        <td>출차중 <span class="color3 fs18 ml-2">0</span></td>
+                                        <td>주차가능 <span class="color4 fs18 ml-2">96</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- <table class="styled fixed center bd">
+                                <colgroup>
+                                    <col width="177">
+                                    <col width=""><col width=""><col width=""><col width="">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th class="h">출차대기 <span>0</span></th>
+                                        <td colspan="4" class="h total">전체 주차구역 <span class="fs15">100</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="h">주차대기 <span>1</span></th>
+                                        <td class="h">주차중  <span class="color1 fs18">1</span></td>
+                                        <td class="h">주차  <span class="color2 fs18">3</span></td>
+                                        <td class="h">출차중 <span class="color3 fs18">0</span></td>
+                                        <td class="h">주차가능 <span class="color4 fs18">96</span></td>
+                                    </tr>
+                                </tbody>
+                            </table> -->
+                        </div>
+                    </div>
+                </div>
+                <!--금일주차현황-->
+                <div class="card mb-1">
+                    <div class="card-header radius">
+                        <h3 class="card-title">금일 주차 현황</h3>
+                        <button class="btn more">More</button>
+                    </div>
+                    <div class="card-body">
+                        <div class="row row-deck">
+                            <div class="col-lg-4">
+                                <div class="card bd-none">
+                                    <div class="card-header">
+                                        <div class="tit">주차 수</div>
+                                        <span class="count"><span class="value">012</span> 건</span>
+                                    </div>
+                                    <table class="styled fixed center bd">
+                                        <colgroup>
+                                            <col width=""><col width=""><col width="">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th class="th-2 h-4">R1</th>
+                                                <th class="th-3 h-4">R2</th>
+                                                <th class="th-4 h-4">R3</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="th-3 h-4">00</td>
+                                                <td class="th-3 h-4">00</td>
+                                                <td class="th-3 h-4">00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card bd-none">
+                                    <div class="card-header">
+                                        <div class="tit">주차 수</div>
+                                        <span class="count"><span class="value">012</span>건</span>
+                                    </div>
+                                    <table class="styled fixed center bd">
+                                        <colgroup>
+                                            <col width=""><col width=""><col width="">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th class="th-2 h-4">R1</th>
+                                                <th class="th-3 h-4">R2</th>
+                                                <th class="th-4 h-4">R3</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="th-3 h-4">00</td>
+                                                <td class="th-3 h-4">00</td>
+                                                <td class="th-3 h-4">00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card bd-none">
+                                    <div class="card-header">
+                                        <div class="tit">주차 수</div>
+                                        <span class="count"><span class="value">012</span>건</span>
+                                    </div>
+                                    <table class="styled fixed center bd">
+                                        <colgroup>
+                                            <col width=""><col width=""><col width="">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th class="th-2 h-4">R1</th>
+                                                <th class="th-3 h-4">R2</th>
+                                                <th class="th-4 h-4">R3</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="th-3 h-4">00</td>
+                                                <td class="th-3 h-4">00</td>
+                                                <td class="th-3 h-4">00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-deck mt-1">
+                            <div class="col-lg-4">
+                                <div class="card bd-none">
+                                    <div class="card-header">
+                                        <div class="tit">주차 소요시간</div>
+                                        <span class="count">
+                                            <span class="value">00</span>시간&nbsp;
+                                            <span class="value">00</span>분&nbsp;
+                                            <span class="value">00</span>초
+                                        </span>
+                                    </div>
+                                    <table class="styled fixed center bd">
+                                        <colgroup>
+                                            <col width=""><col width=""><col width="">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th class="th-2 h-4">R1</th>
+                                                <th class="th-3 h-4">R2</th>
+                                                <th class="th-4 h-4">R3</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="th-3 h-4">00:00:00</td>
+                                                <td class="th-3 h-4">00:00:00</td>
+                                                <td class="th-3 h-4">00:00:00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card bd-none">
+                                    <div class="card-header">
+                                        <div class="tit">주차 소요시간</div>
+                                        <span class="count">
+                                            <span class="value">00</span>시간&nbsp;
+                                            <span class="value">00</span>분&nbsp;
+                                            <span class="value">00</span>초
+                                        </span>
+                                    </div>
+                                    <table class="styled fixed center bd">
+                                        <colgroup>
+                                            <col width=""><col width=""><col width="">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th class="th-2 h-4">R1</th>
+                                                <th class="th-3 h-4">R2</th>
+                                                <th class="th-4 h-4">R3</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="th-3 h-4">00:00:00</td>
+                                                <td class="th-3 h-4">00:00:00</td>
+                                                <td class="th-3 h-4">00:00:00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card bd-none">
+                                    <div class="card-header">
+                                        <div class="tit">주차 소요시간</div>
+                                        <span class="count">
+                                            <span class="value">00</span>시간&nbsp;
+                                            <span class="value">00</span>분&nbsp;
+                                            <span class="value">00</span>초
+                                        </span>
+                                    </div>
+                                    <table class="styled fixed center bd">
+                                        <colgroup>
+                                            <col width=""><col width=""><col width="">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th class="th-2 h-4">R1</th>
+                                                <th class="th-3 h-4">R2</th>
+                                                <th class="th-4 h-4">R3</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="th-3 h-4">00:00:00</td>
+                                                <td class="th-3 h-4">00:00:00</td>
+                                                <td class="th-3 h-4">00:00:00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--//금일주차현황-->
+                <!--인프라 모니터링 현황-->
+                <div class="card">
+                    <div class="card-header radius">
+                        <h3 class="card-title">인프라 모니터링 현황</h3>
+                        <button class="btn more">More</button>
+                    </div>
+                    <div class="card-body">
+                        <div class="row row-deck">
+                            <div class="col-lg-4">
+                                <div class="card bd-none">
+                                    <div class="card-header">
+                                        <div class="tit">CPU 점유율</div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="chart-box-2">
+                                            <div class="chart">
+                                                <img src="./images/diagram0.png">
+                                                <span class="fs11 text-green" style="margin-top: -30px;">61.0%</span> 
+                                            </div>
+                                            <span class="fs12 text-gray">{instance=“172.16..}</span>
+
+                                            <div class="chart mt-0-8">
+                                                <img src="./images/diagram1.png">
+                                                <span class="fs11 text-danger" style="margin-top: -30px;">28.2%</span>
+                                            </div>
+                                            <span class="fs12 text-gray">{instance=“172.16..}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card bd-none">
+                                    <div class="card-header">
+                                        <div class="tit">메모리 점유율</div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="chart-box">
+                                            <div><img src="./images/diagram.png"></div>
+                                            <span class="fs20 text-green" style="margin-top: -75px;">NO DATA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card bd-none">
+                                    <div class="card-header">
+                                        <div class="tit">디스크 사용률(%)</div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="chart-box">
+                                            <div><img src="./images/diagram2.png"></div>
+                                            <span class="fs20 text-green" style="margin-top: -75px;">25.0%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--//인프라 모니터링 현황-->
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-header radius">
+                        <h3 class="card-title">로봇현황</h3>
+                        <button class="btn more">More</button>
+                    </div>
+                    <div class="card-body darkbg">
+                        <table class="styled fixed center bd">
+                            <colgroup>
+                                <col width="19%">
+                                <col width="15%">
+                                <col width="22%">
+                                <col width="22%">
+                                <col width="22%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="th-1">로봇</th>
+                                    <th class="th-2">R1</th>
+                                    <th class="th-3">R2</th>
+                                    <th class="th-4">R3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="th-1" rowspan="3">상태</td>
+                                    <td class="th-2">충전</td>
+                                    <td class="th-3"><span class="text-green">80%</span></td>
+                                    <td class="th-4"><span class="text-green">75%</span></td>
+                                    <td class="th-5"><span class="text-danger">15%</span></td>
+                                </tr>
+                                <tr>
+                                    <!-- <td class="th-1">상태</td> -->
+                                    <td class="th-2">연결</td>
+                                    <td class="th-3"><span class="text-green">Connecting</span></td>
+                                    <td class="th-4"><span class="text-green">Connecting</span></td>
+                                    <td class="th-5"><span class="text-gray">Disconnecting</span></td>
+                                </tr>
+                                <tr>
+                                    <!-- <td class="th-1">상태</td> -->
+                                    <td class="th-2">현재</td>
+                                    <td class="th-3">주차중</td>
+                                    <td class="th-4">대기</td>
+                                    <td class="th-5">충전중</td>
+                                </tr>
+                                <tr>
+                                    <td class="th-1" rowspan="4">운행로그</td>
+                                    <td class="th-2">주차</td>
+                                    <td class="th-3">000</td>
+                                    <td class="th-4">000</td>
+                                    <td class="th-5">000</td>
+                                </tr>
+                                <tr>
+                                    <!-- <td class="th-1">운행로그</td> -->
+                                    <td class="th-2">줄차</td>
+                                    <td class="th-3">000</td>
+                                    <td class="th-4">000</td>
+                                    <td class="th-5">000</td>
+                                </tr>
+                                <tr>
+                                    <!-- <td class="th-1">운행로그</td> -->
+                                    <td class="th-2">이동주차</td>
+                                    <td class="th-3">000</td>
+                                    <td class="th-4">000</td>
+                                    <td class="th-5">000</td>
+                                </tr>
+                                <tr>
+                                    <!-- <td class="th-1">운행로그</td> -->
+                                    <td class="th-2">전체</td>
+                                    <td class="th-3">000</td>
+                                    <td class="th-4">000</td>
+                                    <td class="th-5">000</td>
+                                </tr>
+                                <tr>
+                                    <td class="th-1" rowspan="2">운행거리(m)</td>
+                                    <td class="th-2">평균</td>
+                                    <td class="th-3">15.5</td>
+                                    <td class="th-4">15.5</td>
+                                    <td class="th-5">15.5</td>
+                                </tr>
+                                <tr>
+                                    <!-- <td class="th-1">운행거리(m)</td> -->
+                                    <td class="th-2">전체</td>
+                                    <td class="th-3">154.2</td>
+                                    <td class="th-4">154.2</td>
+                                    <td class="th-5">154.2</td>
+                                </tr>
+                                <tr>
+                                    <td class="th-1" rowspan="2">운행시간</td>
+                                    <td class="th-2">평균</td>
+                                    <td class="th-3">00:00:15</td>
+                                    <td class="th-4">00:00:15</td>
+                                    <td class="th-5">00:00:15</td>
+                                </tr>
+                                <tr>
+                                    <!-- <td class="th-1">운행시간</td> -->
+                                    <td class="th-2">전체</td>
+                                    <td class="th-3">05:25:12</td>
+                                    <td class="th-4">05:25:12</td>
+                                    <td class="th-5">05:25:12</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--//robot-main-->
+</div>
+<!--//robot-wrapper-->
+
+<!--시스템알림관리 - 긴급알림 -->
+<div class="alarm-layer" id="layer-noti">
+    <header class="alarm-head">
+        <div class="inner">긴급알림</div>
+        <button class="btn-close" onclick="alarm();"></button>
+    </header>
+    <div class="alarm-content">
+        <ul class="notice">
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ Robot 1 ]</strong> 배터리 충전이 필요합니다.
+                    </span>
+                    <p class="date">2023.08.15 10:30:25</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ Robot 2 ]</strong> 배터리 온도가 너무 높습니다.</span>
+                    <p class="date">2023.08.15 10:30:25</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span><strong>[ Robot 3 ]</strong> 배터리 전압이 너무 낮습니다.</span>
+                    <p class="date">2023.08.15 10:30:25</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span><strong>[ Robot 3 ]</strong> 배터리 전압이 너무 낮습니다.</span>
+                    <p class="date">2023.08.15 10:30:25</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span><strong>[ Robot 1 ]</strong> 배터리 충전이 필요합니다.</span>
+                    <p class="date">2023.08.15 10:30:25</p>
+                </a>
+            </li>
+        </ul>
+        <div class="alarm-none" style="display: none;">
+            <p>긴급알림이 없습니다.</p>
+        </div>
+    </div>
+</div>
+
+
+<!--비밀번호 변경 popup-->
+<div class="modal-wrapper" id="pop_pwd">
+    <div class="modal small">
+        <div class="header">
+            <h1>
+                비밀번호 변경
+                <button class="btn btn-close" alt="닫기" onclick="fnHidePop('pop_pwd');"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <p class="fs14 pt-0 tex-gray">보안을 위해 최소 3개월 마다 비밀번호를 변경해주세요.</p>
+            <hr class="line">
+            <div class="input-group mb-2 eye">
+                <label class="required input-group-text mt--2">현재 비밀번호</label>
+                <div class="input-input-group">
+                    <input type="password" class="form-control" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                    <span class="d-block fs12 mt-0-8">※ 현재 비밀번호를 입력하세요.</span>
+                </div> 
+            </div>
+            <div class="input-group mb-0-8 eye">
+                <label class="required input-group-text">변경 비밀번호</label>
+                <div class="input-input-group">
+                    <input type="password" class="form-control" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                </div>
+            </div>
+            <div class="input-group mb-0-8 eye">
+                <label class="required input-group-text mt--2">비밀번호 확인</label>
+                <div class="input-input-group">
+                    <input type="password" class="form-control" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                    <span class="d-block fs12 mt-0-8">※ 비밀번호를 다시한번 입력하세요.</span>
+                </div>
+            </div>
+        </div>
+        <div class="btn-gruoup mt-0">
+            <button class="btn secondary">취소</button>
+            <button class="btn base">확인</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

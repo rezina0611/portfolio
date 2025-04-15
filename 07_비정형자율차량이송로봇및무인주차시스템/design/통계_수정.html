@@ -1,1 +1,773 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>통계</title>
+<meta charset="UTF-8">
+<meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="ui_event" content="true" />
 
+<link rel="stylesheet" href="./css/fontawesome6-all.css">
+<link rel="stylesheet" href="./css/style.css">
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery-3.7.0.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/script.js"></script>
+</head>
+<body>
+<!--robot-wrapper-->
+<div class="robot-wrapper">
+    <!--robot-header-->
+    <header class="robot-header">
+        <div class="d-flex">
+            <div class="left">
+                <img src="./images/logo@2x.png" alt="인천국제공항">
+                <ul class="top-nav">
+                    <li><a href="#none">대시보드</a></li>
+                    <li><a href="#none">주차장 모니터링</a></li>
+                    <li><a href="#none" class="on">통계</a></li>
+                    <li><a href="#none">인프라 모니터링</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="top-btns">
+                    <button type="button">
+                        <img src="./images/ico_sb_setting@2x.png" alt="설정" title="설정">
+                    </button>
+                    <button type="button" onclick="alarm();">
+                        <span class="badge circled bg-danger"></span>
+                        <img src="./images/ico_sb_alarm@2x.png" alt="알림" title="알림">
+                    </button>
+                    <details>
+                        <summary><img src="./images/ico_sb_user@2x.png" alt="user" title="user"></summary>
+                        <ul>
+                            <li class="user-area">
+                                <p class="user-img"></p>
+                                <div class="user-info">
+                                    <strong class="js-user-name">한정성</strong>
+                                    <span class="js-admin">Super admin</span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#none" onclick="fnShowPop('pop_pwd')">비밀번호 변경</a>
+                            </li>
+                            <li>
+                                <a href="#none">로그아웃</a>
+                            </li>
+                        </ul>
+                    </details>
+                </div>
+                <div class="timer">
+                    <span class="date" id="date" style="pointer-events: none;">2023년 3월 15일 </span>
+                    <span class="time" id="time" style="pointer-events: none;">15:30</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--//robot-header-->
+    
+    <!--robot-main-->
+    <main class="robot-main">
+        <section class="contents">
+            <section class="tabs">
+                <input id="tab-1" name="sample_tab" type="radio" class="tab-input">
+                <label for="tab-1" class="tab-label" style="width: 33.3%;">로봇 운행 통계</label>
+                <input id="tab-2" name="sample_tab" type="radio" class="tab-input" checked="checked">
+                <label for="tab-2" class="tab-label" style="width: 33.3%;">비상정지 통계</label>
+                <input id="tab-3" name="sample_tab" type="radio" class="tab-input">
+                <label for="tab-3" class="tab-label" style="width: 33.3%;">배터리 통계</label>
+                <div class="tab-contents">
+                    <!--로봇 운행 통계-->
+                    <div class="content">
+                        <div class="d-space-between" style="margin: 1rem 0;">
+                            <div class="date-area">
+                                <button class="btn">전일</button>
+                                <button class="btn on">최근 7일</button>
+                                <button class="btn">최근 30일</button>
+                                <button class="btn">최근 1년</button>
+                            </div>
+                            <div class="d-flex">
+                                <div class="input-group">
+                                    <input type="date" class="form-control">
+                                    <span>~</span>
+                                    <input type="date" class="form-control">
+                                </div>
+                                <button class="btn-search"></button>
+                            </div>
+                        </div>
+                        <div class="row row-deck">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-header radius">
+                                        <h3 class="card-title pl-0-6">로봇별 운행건수</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="darkbg p-1-5">
+                                            <div class="d-flex flex-end mr-4">
+                                                <!-- <button class="btn outline" onclick="fnShowPop('pop_robot1')">Robot 선택</button> -->
+                                                <button class="ro-select" onclick="toggleAct(this)">
+                                                    Robot 선택
+                                                    <span class="ico-arrow"></span> 
+                                                </button>
+                                            </div>
+                                            <div class="robot-layer" id="pop_robot1">
+                                                <ul>
+                                                    <li>
+                                                        <label class="styled">
+                                                            <input type="checkbox" name='selectall' value="selectall" onclick='selectAll(this)'>
+                                                            <i>전체</i>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="styled">
+                                                            <input type="checkbox" name='robot' value="Robot-1" onclick='checkSelectAll()' checked>
+                                                            <i>Robot 1</i>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="styled">
+                                                            <input type="checkbox" name='robot' value="Robot-2" onclick='checkSelectAll()' checked>
+                                                            <i>Robot 2</i>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="styled">
+                                                            <input type="checkbox" name='robot' value="Robot-3" onclick='checkSelectAll()' checked>
+                                                            <i>Robot 3</i>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="styled">
+                                                            <input type="checkbox" name='robot' value="Robot-4" onclick='checkSelectAll()'>
+                                                            <i>Robot 4</i>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="styled">
+                                                            <input type="checkbox" name='robot' value="Robot-5" onclick='checkSelectAll()'>
+                                                            <i>Robot 5</i>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                                <!-- <div class="tac">
+                                                    <button class="btn base" onclick="fnHidePop('pop_robot1')">확인</button>
+                                                </div> -->
+                                            </div>    
+                                            <div class="bar-graph" style="height: 210px;">
+                                                막대그래프 영역
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                
+                        <div class="row row-deck mt-1">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-header radius">
+                                        <h3 class="card-title pl-0-6">기간 별 운행건수 및 수행시간</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="darkbg p-1">
+                                            <table class="styled fixed center h30" id="table-th" style="width: calc(100% - .5rem);">
+                                                <colgroup>
+                                                    <col width="14.2%"><col width="14.2%"><col width="14.2%">
+                                                    <col width="14.2%"><col width="14.2%"><col width="14.2%">
+                                                    <col width="14.2%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th class="b-b-l no-bg" rowspan="2">구분</th>
+                                                        <th class="b-b-l" colspan="2">전체</th>
+                                                        <th class="b-b-l" colspan="2">입차</th>
+                                                        <th class="b-b-l" colspan="2">출차</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="b-b-l">건수</th>
+                                                        <th class="b-b-l">수행시간</th>
+                                                        <th class="b-b-l">건수</th>
+                                                        <th class="b-b-l">수행시간</th>
+                                                        <th class="b-b-l">건수</th>
+                                                        <th class="b-b-l">수행시간</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                            <div style="height: 25rem; overflow-y: auto;" id="myTable">
+                                                <table class="styled fixed center h30 bd-none" style="border-top: 0;">
+                                                    <colgroup>
+                                                        <col width="14.2%"><col width="14.2%"><col width="14.2%">
+                                                        <col width="14.2%"><col width="14.2%"><col width="14.2%">
+                                                        <col width="14.2%">
+                                                    </colgroup>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>전 체</td>
+                                                            <td>100</td>
+                                                            <td>12050:55:07</td>
+                                                            <td>70</td>
+                                                            <td>865:33:57</td>
+                                                            <td>30</td>
+                                                            <td>865:33:57</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>1일 평균</td>
+                                                            <td>14.3</td>
+                                                            <td>05:25:12</td>
+                                                            <td>10</td>
+                                                            <td>03:12:22</td>
+                                                            <td>4.3</td>
+                                                            <td>03:12:22</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>08.23</td>
+                                                            <td>7</td>
+                                                            <td>00:48:24</td>
+                                                            <td>4</td>
+                                                            <td>00:22:36</td>
+                                                            <td>3</td>
+                                                            <td>00:22:36</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>08.24</td>
+                                                            <td>7</td>
+                                                            <td>00:48:24</td>
+                                                            <td>4</td>
+                                                            <td>00:22:36</td>
+                                                            <td>3</td>
+                                                            <td>00:22:36</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>08.25</td>
+                                                            <td>7</td>
+                                                            <td>00:48:24</td>
+                                                            <td>4</td>
+                                                            <td>00:22:36</td>
+                                                            <td>3</td>
+                                                            <td>00:22:36</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>08.26</td>
+                                                            <td>7</td>
+                                                            <td>00:48:24</td>
+                                                            <td>4</td>
+                                                            <td>00:22:36</td>
+                                                            <td>3</td>
+                                                            <td>00:22:36</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>08.27</td>
+                                                            <td>7</td>
+                                                            <td>00:48:24</td>
+                                                            <td>4</td>
+                                                            <td>00:22:36</td>
+                                                            <td>3</td>
+                                                            <td>00:22:36</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>08.28</td>
+                                                            <td>7</td>
+                                                            <td>00:48:24</td>
+                                                            <td>4</td>
+                                                            <td>00:22:36</td>
+                                                            <td>3</td>
+                                                            <td>00:22:36</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>08.29</td>
+                                                            <td>7</td>
+                                                            <td>00:48:24</td>
+                                                            <td>4</td>
+                                                            <td>00:22:36</td>
+                                                            <td>3</td>
+                                                            <td>00:22:36</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>08.30</td>
+                                                            <td>7</td>
+                                                            <td>00:48:24</td>
+                                                            <td>4</td>
+                                                            <td>00:22:36</td>
+                                                            <td>3</td>
+                                                            <td>00:22:36</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>08.31</td>
+                                                            <td>7</td>
+                                                            <td>00:48:24</td>
+                                                            <td>4</td>
+                                                            <td>00:22:36</td>
+                                                            <td>3</td>
+                                                            <td>00:22:36</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//로봇 운행 통계-->
+
+                    <!--비상정지 통계-->
+                    <div class="content">
+                        <div class="d-space-between" style="margin: 1rem 0;">
+                            <div class="date-area">
+                                <button class="btn">전일</button>
+                                <button class="btn on">최근 7일</button>
+                                <button class="btn">최근 30일</button>
+                                <button class="btn">최근 1년</button>
+                            </div>
+                            <div class="d-flex">
+                                <div class="input-group">
+                                    <input type="date" class="form-control">
+                                    <span>~</span>
+                                    <input type="date" class="form-control">
+                                </div>
+                                <button class="btn-search"></button>
+                            </div>
+                        </div>
+                        <div class="row row-deck">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-header radius">
+                                        <h3 class="card-title pl-0-6">로봇별 비상정지 횟수</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="darkbg p-1-5">
+                                            <div class="d-flex flex-end mr-4">
+                                                <button class="ro-select" onclick="toggleAct(this)">
+                                                    Robot 선택
+                                                    <span class="ico-arrow"></span> 
+                                                </button>
+                                            </div>
+                                            <div class="robot-layer" id="pop_robot2">
+                                                <ul>
+                                                    <li>
+                                                        <label class="styled">
+                                                            <input type="checkbox" name='selectall' value="selectall" onclick='selectAll(this)'>
+                                                            <i>전체</i>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="styled">
+                                                            <input type="checkbox" name='robot' value="Robot-1" onclick='checkSelectAll()'>
+                                                            <i>Robot 1</i>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="styled">
+                                                            <input type="checkbox" name='robot' value="Robot-2" onclick='checkSelectAll()'>
+                                                            <i>Robot 2</i>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="styled">
+                                                            <input type="checkbox" name='robot' value="Robot-3" onclick='checkSelectAll()'>
+                                                            <i>Robot 3</i>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="styled">
+                                                            <input type="checkbox" name='robot' value="Robot-4" onclick='checkSelectAll()'>
+                                                            <i>Robot 4</i>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="styled">
+                                                            <input type="checkbox" name='robot' value="Robot-5" onclick='checkSelectAll()'>
+                                                            <i>Robot 5</i>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                                <div class="tac">
+                                                    <button class="btn base" onclick="fnHidePop('pop_robot2')">확인</button>
+                                                </div>
+                                            </div>  
+                                            <div class="bar-graph" style="height: 250px;">
+                                                막대그래프 영역
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="row row-deck mt-1">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-header radius">
+                                        <h3 class="card-title pl-0-6">기간 별 비상정지 횟수</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="darkbg p-1-5">
+                                            <table class="styled fixed center h30" id="table-th" style="width: calc(100% - .5rem);"> <!--style="width: calc(100% - .5rem);"-->
+                                                <colgroup>
+                                                    <col width="25%"><col width="25%"><col width="25%"><col width="25%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th class="b-b-l">구분</th>
+                                                        <th class="b-b-l">전체</th>
+                                                        <th class="b-b-l">수동정지</th>
+                                                        <th class="b-b-l">자동정지</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                            <div style="height: 25rem; overflow-y: auto;" id="myTable">
+                                                <table class="styled fixed center h30" style="border-top: 0;">
+                                                    <colgroup>
+                                                        <col width="25%"><col width="25%"><col width="25%"><col width="25%">
+                                                    </colgroup>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>전 체</td>
+                                                            <td>100</td>
+                                                            <td>70</td>
+                                                            <td>30</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>1일 평균</td>
+                                                            <td>14.3</td>
+                                                            <td>10</td>
+                                                            <td>4.3</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>08.23</td>
+                                                            <td>7</td>
+                                                            <td>4</td>
+                                                            <td>3</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>08.24</td>
+                                                            <td>7</td>
+                                                            <td>4</td>
+                                                            <td>3</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>08.25</td>
+                                                            <td>7</td>
+                                                            <td>4</td>
+                                                            <td>3</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>08.26</td>
+                                                            <td>7</td>
+                                                            <td>4</td>
+                                                            <td>3</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>08.27</td>
+                                                            <td>7</td>
+                                                            <td>4</td>
+                                                            <td>3</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>08.28</td>
+                                                            <td>7</td>
+                                                            <td>4</td>
+                                                            <td>3</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>08.29</td>
+                                                            <td>7</td>
+                                                            <td>4</td>
+                                                            <td>3</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>08.30</td>
+                                                            <td>7</td>
+                                                            <td>4</td>
+                                                            <td>3</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>08.31</td>
+                                                            <td>7</td>
+                                                            <td>4</td>
+                                                            <td>3</td>
+                                                        </tr> 
+                                                    </tbody>
+                                                </table> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//비상정지 통계-->
+
+                    <!--배터리 통계-->
+                    <div class="content">
+                        <div class="d-space-between" style="margin: 1rem 0;">
+                            <div class="date-area">
+                                <button class="btn">전일</button>
+                                <button class="btn on">최근 7일</button>
+                                <button class="btn">최근 30일</button>
+                                <button class="btn">최근 1년</button>
+                            </div>
+                            <div class="d-flex">
+                                <div class="input-group">
+                                    <input type="date" class="form-control">
+                                    <span>~</span>
+                                    <input type="date" class="form-control">
+                                </div>
+                                <button class="btn-search"></button>
+                            </div>
+                        </div>
+                        
+                        <div class="row row-deck">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-header radius">
+                                        <h3 class="card-title pl-0-6">로봇별 충전 횟수</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="darkbg p-1-5">
+                                            <div class="d-flex flex-end mr-4">
+                                                <button class="ro-select" onclick="toggleAct(this)">
+                                                    Robot 선택
+                                                    <span class="ico-arrow"></span> 
+                                                </button>
+                                            </div>
+                                            <div class="robot-layer" id="pop_robot3">
+                                                <ul>
+                                                    <li>
+                                                        <label class="styled">
+                                                            <input type="checkbox" name='selectall' value="selectall" onclick='selectAll(this)'>
+                                                            <i>전체</i>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="styled">
+                                                            <input type="checkbox" name='robot' value="Robot-1" onclick='checkSelectAll()'>
+                                                            <i>Robot 1</i>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="styled">
+                                                            <input type="checkbox" name='robot' value="Robot-2" onclick='checkSelectAll()'>
+                                                            <i>Robot 2</i>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="styled">
+                                                            <input type="checkbox" name='robot' value="Robot-3" onclick='checkSelectAll()'>
+                                                            <i>Robot 3</i>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="styled">
+                                                            <input type="checkbox" name='robot' value="Robot-4" onclick='checkSelectAll()'>
+                                                            <i>Robot 4</i>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="styled">
+                                                            <input type="checkbox" name='robot' value="Robot-5" onclick='checkSelectAll()'>
+                                                            <i>Robot 5</i>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                                <div class="tac">
+                                                    <button class="btn base" onclick="fnHidePop('pop_robot3')">확인</button>
+                                                </div>
+                                            </div>  
+                                            <div class="bar-graph" style="height: 210px;">
+                                                그래프 영역
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                
+                        <div class="row row-deck mt-1">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-header radius">
+                                        <h3 class="card-title pl-0-6">기간 별 충전 횟수 및 충전시간 </h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="darkbg p-1-5">
+                                            <table class="styled fixed center h30" id="table-th" style="width: calc(100% - .5rem);">
+                                                <colgroup>
+                                                    <col width="11.1%"><col width="11.1%"><col width="11.1%">
+                                                    <col width="11.1%"><col width="11.1%"><col width="11.1%">
+                                                    <col width="11.1%"><col width="11.1%"><col width="11.1%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th class="b-b-l no-bg" rowspan="2">구분</th>
+                                                        <th class="b-b-l" colspan="2">전체</th>
+                                                        <th class="b-b-l" colspan="2">Robot 1</th>
+                                                        <th class="b-b-l" colspan="2">Robot 2</th>
+                                                        <th class="b-b-l" colspan="2">Robot 3</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="b-b-l">횟수</th>
+                                                        <th class="b-b-l">충전시간</th>
+                                                        <th class="b-b-l">횟수</th>
+                                                        <th class="b-b-l">충전시간</th>
+                                                        <th class="b-b-l">횟수</th>
+                                                        <th class="b-b-l">충전시간</th>
+                                                        <th class="b-b-l">횟수</th>
+                                                        <th class="b-b-l">충전시간</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                            <div style="height: 25rem; overflow-y: auto;" id="myTable">
+                                                <table class="styled fixed center h30" style="border-top: 0;">
+                                                    <colgroup>
+                                                        <col width="11.1%"><col width="11.1%"><col width="11.1%">
+                                                        <col width="11.1%"><col width="11.1%"><col width="11.1%">
+                                                        <col width="11.1%"><col width="11.1%"><col width="11.1%">
+                                                    </colgroup>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>전 체</td>
+                                                            <td>100</td>
+                                                            <td>12050:55:07</td>
+                                                            <td>70</td>
+                                                            <td>865:33:57</td>
+                                                            <td>70</td>
+                                                            <td>865:33:57</td>
+                                                            <td>30</td>
+                                                            <td>865:33:57</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>1일 평균</td>
+                                                            <td>14.3</td>
+                                                            <td>05:25:12</td>
+                                                            <td>10</td>
+                                                            <td>03:12:22</td>
+                                                            <td>10</td>
+                                                            <td>03:12:22</td>
+                                                            <td>4.3</td>
+                                                            <td>03:12:22</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>08.23</td>
+                                                            <td>7</td>
+                                                            <td>00:48:24</td>
+                                                            <td>4</td>
+                                                            <td>00:22:36</td>
+                                                            <td>4</td>
+                                                            <td>00:22:36</td>
+                                                            <td>3</td>
+                                                            <td>00:22:36</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>08.24</td>
+                                                            <td>7</td>
+                                                            <td>00:48:24</td>
+                                                            <td>4</td>
+                                                            <td>00:22:36</td>
+                                                            <td>4</td>
+                                                            <td>00:22:36</td>
+                                                            <td>3</td>
+                                                            <td>00:22:36</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>08.25</td>
+                                                            <td>7</td>
+                                                            <td>00:48:24</td>
+                                                            <td>4</td>
+                                                            <td>00:22:36</td>
+                                                            <td>4</td>
+                                                            <td>00:22:36</td>
+                                                            <td>3</td>
+                                                            <td>00:22:36</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>08.26</td>
+                                                            <td>7</td>
+                                                            <td>00:48:24</td>
+                                                            <td>4</td>
+                                                            <td>00:22:36</td>
+                                                            <td>4</td>
+                                                            <td>00:22:36</td>
+                                                            <td>3</td>
+                                                            <td>00:22:36</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>08.27</td>
+                                                            <td>7</td>
+                                                            <td>00:48:24</td>
+                                                            <td>4</td>
+                                                            <td>00:22:36</td>
+                                                            <td>4</td>
+                                                            <td>00:22:36</td>
+                                                            <td>3</td>
+                                                            <td>00:22:36</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>08.28</td>
+                                                            <td>7</td>
+                                                            <td>00:48:24</td>
+                                                            <td>4</td>
+                                                            <td>00:22:36</td>
+                                                            <td>4</td>
+                                                            <td>00:22:36</td>
+                                                            <td>3</td>
+                                                            <td>00:22:36</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>08.29</td>
+                                                            <td>7</td>
+                                                            <td>00:48:24</td>
+                                                            <td>4</td>
+                                                            <td>00:22:36</td>
+                                                            <td>4</td>
+                                                            <td>00:22:36</td>
+                                                            <td>3</td>
+                                                            <td>00:22:36</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>08.30</td>
+                                                            <td>7</td>
+                                                            <td>00:48:24</td>
+                                                            <td>4</td>
+                                                            <td>00:22:36</td>
+                                                            <td>4</td>
+                                                            <td>00:22:36</td>
+                                                            <td>3</td>
+                                                            <td>00:22:36</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>08.31</td>
+                                                            <td>7</td>
+                                                            <td>00:48:24</td>
+                                                            <td>4</td>
+                                                            <td>00:22:36</td>
+                                                            <td>4</td>
+                                                            <td>00:22:36</td>
+                                                            <td>3</td>
+                                                            <td>00:22:36</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//배터리 통계-->
+                </div>
+            </section>
+        </section>
+
+    </main>
+    <!--//robot-main-->
+</div>
+<!--//robot-wrapper-->
+</body>
+</html>

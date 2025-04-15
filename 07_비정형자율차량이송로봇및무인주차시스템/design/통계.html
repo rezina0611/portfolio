@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>통계</title>
+<meta charset="UTF-8">
+<meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="ui_event" content="true" />
+
+<link rel="stylesheet" href="./css/fontawesome6-all.css">
+<link rel="stylesheet" href="./css/style.css">
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery-3.7.0.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/script.js"></script>
+</head>
+<body>
+<!--robot-wrapper-->
+<div class="robot-wrapper">
+    <!--robot-header-->
+    <header class="robot-header">
+        <div class="d-flex">
+            <div class="left">
+                <img src="./images/logo@2x.png" alt="인천국제공항">
+                <ul class="top-nav">
+                    <li><a href="#none">대시보드</a></li>
+                    <li><a href="#none">주차장 모니터링</a></li>
+                    <li><a href="#none" class="on">통계</a></li>
+                    <li><a href="#none">인프라 모니터링</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="top-btns">
+                    <button type="button">
+                        <img src="./images/ico_sb_setting@2x.png" alt="설정" title="설정">
+                    </button>
+                    <button type="button" onclick="alarm();">
+                        <span class="badge circled bg-danger"></span>
+                        <img src="./images/ico_sb_alarm@2x.png" alt="알림" title="알림">
+                    </button>
+                    <details>
+                        <summary><img src="./images/ico_sb_user@2x.png" alt="user" title="user"></summary>
+                        <ul>
+                            <li class="user-area">
+                                <p class="user-img"></p>
+                                <div class="user-info">
+                                    <strong class="js-user-name">한정성</strong>
+                                    <span class="js-admin">Super admin</span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#none" onclick="fnShowPop('pop_pwd')">비밀번호 변경</a>
+                            </li>
+                            <li>
+                                <a href="#none">로그아웃</a>
+                            </li>
+                        </ul>
+                    </details>
+                </div>
+                <div class="timer">
+                    <span class="date" id="date" style="pointer-events: none;">2023년 3월 15일 </span>
+                    <span class="time" id="time" style="pointer-events: none;">15:30</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--//robot-header-->
+    
+    <!--robot-main-->
+    <main class="robot-main">
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="#none" class="on">로봇 운행 통계</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="d-space-between" style="margin: 1.5rem 0;">
+            <script>
+                $(document).ready(function () {
+                    $(".date-area .btn").each(function () {
+                        $(this).click(function(){
+                            $(this).addClass("on"); 
+
+                            $(this).siblings().removeClass("on");
+                        });
+                    });
+                });
+            </script>
+            <div class="date-area">
+                <button class="btn">전일</button>
+                <button class="btn on">최근 7일</button>
+                <button class="btn">최근 30일</button>
+                <button class="btn">최근 1년</button>
+            </div>
+            <div class="d-flex">
+                <div class="input-group">
+                    <input type="date" class="form-control">
+                    <span>~</span>
+                    <input type="date" class="form-control">
+                </div>
+                <button class="btn-search"></button>
+            </div>
+        </div>
+        
+        <div class="row row-deck mt-2">
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-header radius">
+                        <h3 class="card-title pl-0-6">운행횟수</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="darkbg p-1-5">
+                            <table class="styled fixed center h30">
+                                <colgroup>
+                                    <col width="25%"><col width="25%"><col width="25%">
+                                    <col width="25%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="b-b-l">구분</th>
+                                        <th class="b-b-l">전체</th>
+                                        <th class="b-b-l">입차</th>
+                                        <th class="b-b-l">출차</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>R1</td>
+                                        <td>000</td>
+                                        <td>00</td>
+                                        <td>00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>R2</td>
+                                        <td>000</td>
+                                        <td>00</td>
+                                        <td>00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>R3</td>
+                                        <td>000</td>
+                                        <td>00</td>
+                                        <td>00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>평균</td>
+                                        <td>000</td>
+                                        <td>00</td>
+                                        <td>00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="bar-graph" style="display: flex; align-items: center; justify-content: center;">
+                    막대그래프 영역
+                </div>
+            </div>
+        </div>
+        <div class="row row-deck mt-1">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header radius">
+                        <h3 class="card-title pl-0-6">운행시간 ( hh : mm : ss )</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="darkbg p-1-5">
+                            <table class="styled fixed center h30">
+                                <colgroup>
+                                    <col width="25%"><col width="25%"><col width="25%">
+                                    <col width="25%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="b-b-l">구분</th>
+                                        <th class="b-b-l">1회 평균</th>
+                                        <th class="b-b-l">1일 평균</th>
+                                        <th class="b-b-l">전 체</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Robot 1</td>
+                                        <td>00 : 00 : 15</td>
+                                        <td>05 : 25 : 12</td>
+                                        <td>12050 : 55 : 07</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Robot 2</td>
+                                        <td>00 : 00 : 15</td>
+                                        <td>05 : 25 : 12</td>
+                                        <td>12050 : 55 : 07</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Robot 3</td>
+                                        <td>00 : 00 : 15</td>
+                                        <td>05 : 25 : 12</td>
+                                        <td>12050 : 55 : 07</td>
+                                    </tr>
+                                    <tr>
+                                        <td>평균</td>
+                                        <td>00 : 00 : 15</td>
+                                        <td>05 : 25 : 12</td>
+                                        <td>12050 : 55 : 07</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="darkbg p-1-5 d-space-end">
+                            <div class="mr-2" style="height: 21rem; width: 45%;">
+                                <canvas id="myPieChart01" title="도넛차트"></canvas>
+                            </div>
+                            <div class="half">
+                                <table class="styled fixed center h30 dimgray">
+                                    <colgroup>
+                                        <col width="30%"><col width="15%">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th class="b-b-l bg-dimgray">오류명</th>
+                                            <th class="b-b-l">횟수</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>시스템 연결 오류</td>
+                                            <td>18</td>
+                                        </tr>
+                                        <tr>
+                                            <td>리프트 오류</td>
+                                            <td>18</td>
+                                        </tr>
+                                        <tr>
+                                            <td>구동장치 오류</td>
+                                            <td>18</td>
+                                        </tr>
+                                        <tr>
+                                            <td>경로설정 오류</td>
+                                            <td>18</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header radius">
+                        <h3 class="card-title pl-0-6">운행거리 ( m )</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="darkbg p-1-5">
+                            <table class="styled fixed center h30">
+                                <colgroup>
+                                    <col width="25%"><col width="25%"><col width="25%">
+                                    <col width="25%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="b-b-l">구분</th>
+                                        <th class="b-b-l">1회 평균</th>
+                                        <th class="b-b-l">1일 평균</th>
+                                        <th class="b-b-l">전 체</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Robot 1</td>
+                                        <td>15.5</td>
+                                        <td>154.2</td>
+                                        <td>4584.35</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Robot 2</td>
+                                        <td>15.5</td>
+                                        <td>154.2</td>
+                                        <td>4584.35</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Robot 3</td>
+                                        <td>15.5</td>
+                                        <td>154.2</td>
+                                        <td>4584.35</td>
+                                    </tr>
+                                    <tr>
+                                        <td>평균</td>
+                                        <td>15.5</td>
+                                        <td>154.2</td>
+                                        <td>4584.35</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="darkbg p-1-5 d-space-end">
+                            <div class="mr-2" style="width: 45%; height: 21rem;">
+                                <canvas id="myPieChart02" title="도넛차트"></canvas>
+                            </div>
+                            <div class="half">
+                                <table class="styled fixed center h30 dimgray">
+                                    <colgroup>
+                                        <col width="30%"><col width="15%">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th class="b-b-l bg-dimgray">오류명</th>
+                                            <th class="b-b-l">횟수</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>장애물 감지</td>
+                                            <td>18</td>
+                                        </tr>
+                                        <tr>
+                                            <td>긴급정지</td>
+                                            <td>18</td>
+                                        </tr>
+                                        <tr>
+                                            <td>원인 1</td>
+                                            <td>18</td>
+                                        </tr>
+                                        <tr>
+                                            <td>원인 2</td>
+                                            <td>18</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--//robot-main-->
+</div>
+<!--//robot-wrapper-->
+</body>
+</html>

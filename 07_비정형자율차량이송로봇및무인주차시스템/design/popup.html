@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>팝업</title>
+<meta charset="UTF-8">
+<meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="ui_event" content="true" />
+
+<link rel="stylesheet" href="./css/fontawesome6-all.css">
+<link rel="stylesheet" href="./css/style.css">
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery-3.7.0.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/script.js"></script>
+<style>
+    .modal-wrapper{
+        width: auto;
+        height: auto;
+    }
+</style>
+</head>
+<body>
+
+<!-- <div class="modal-dialog-mask"></div> -->
+
+<!--ID 찾기 popup-->
+<div class="modal-wrapper open" id="pop_id" style="top: 40px; left: 20px;">
+    <div class="modal small">
+        <div class="header">
+            <h1>
+                ID 찾기
+                <button class="btn btn-close" alt="닫기" onclick="fnHidePop('pop_id');"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="input-group mb-0-8">
+                <label class="required input-group-text">이름</label>
+                <input type="text" class="form-control" placeholder="입력하세요">
+            </div>
+            <div class="input-group mb-0-8 eye">
+                <label class="required input-group-text">비밀번호</label>
+                <div class="input-input-group">
+                    <input type="password" class="form-control" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                </div> 
+            </div>
+            <div class="input-group mb-0-8">
+                <label class="required input-group-text mt--2">이메일</label>
+                <div class="input-input-group">
+                    <input type="text" class="form-control" placeholder="입력하세요">
+                    <span class="d-block fs12 mt-0-8">※ 등록된 이메일을 입력하세요.</span>
+                </div>
+            </div>
+        </div>
+        <div class="btn-gruoup mt-0">
+            <button class="btn secondary">취소</button>
+            <button class="btn base">확인</button>
+        </div>
+    </div>
+</div>
+
+<!--ID 찾기 결과 popup-->
+<div class="modal-wrapper open" id="pop_id_result" style="top: 50px; left: 480px;">
+    <div class="modal small">
+        <div class="header">
+            <h1>
+                ID 찾기 결과
+                <button class="btn btn-close" alt="닫기" onclick="fnHidePop('pop_id_result');"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <p>000 회원님 안녕하세요.<br>
+                회원님의 ID는 <span class="text-white">aaaaaaaa</span> 입니다. 
+                <br><br>
+                감사합니다.
+            </p>
+        </div>
+        <div class="btn-gruoup mt-0">
+            <button class="btn base">확인</button>
+        </div>
+    </div>
+</div>
+
+<!--비밀번호 초기화 popup-->
+<div class="modal-wrapper open" id="pop_reset" style="top: 330px; left: 20px;">
+    <div class="modal small">
+        <div class="header">
+            <h1>
+                비밀번호 초기화
+                <button class="btn btn-close" alt="닫기" onclick="fnHidePop('pop_reset');"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <p class="fs20 pt-0 tex-gray">최초 발급된 비밀번호로 초기화 합니다.</p>
+            <hr class="line">
+            <div class="input-group mb-0-8">
+                <label class="required input-group-text">이름</label>
+                <input type="text" class="form-control" placeholder="입력하세요">
+            </div>
+            <div class="input-group mb-0-8">
+                <label class="required input-group-text">ID</label>
+                <input type="text" class="form-control" placeholder="입력하세요">
+            </div>
+            <div class="input-group mb-0-8">
+                <label class="required input-group-text mt--2">이메일</label>
+                <div class="input-input-group">
+                    <input type="text" class="form-control" placeholder="입력하세요">
+                    <span class="d-block fs12 mt-0-8">※ 등록된 이메일을 입력하세요.</span>
+                </div>
+            </div>
+        </div>
+        <div class="btn-gruoup mt-0">
+            <button class="btn secondary">취소</button>
+            <button class="btn base">확인</button>
+        </div>
+    </div>
+</div>
+
+<!--비밀번호 변경 popup-->
+<div class="modal-wrapper open" id="pop_pwd" style="top: 340px; left: 480px;">
+    <div class="modal small">
+        <div class="header">
+            <h1>
+                비밀번호 변경
+                <button class="btn btn-close" alt="닫기" onclick="fnHidePop('pop_pwd');"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <p class="fs14 pt-0 tex-gray">보안을 위해 최소 3개월 마다 비밀번호를 변경해주세요.</p>
+            <hr class="line">
+            <div class="input-group mb-2 eye">
+                <label class="required input-group-text mt--2">현재 비밀번호</label>
+                <div class="input-input-group">
+                    <input type="password" class="form-control" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                    <span class="d-block fs12 mt-0-8">※ 현재 비밀번호를 입력하세요.</span>
+                </div> 
+            </div>
+            <div class="input-group mb-0-8 eye">
+                <label class="required input-group-text">변경 비밀번호</label>
+                <div class="input-input-group">
+                    <input type="password" class="form-control" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                </div>
+            </div>
+            <div class="input-group mb-0-8 eye">
+                <label class="required input-group-text mt--2">비밀번호 확인</label>
+                <div class="input-input-group">
+                    <input type="password" class="form-control" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                    <span class="d-block fs12 mt-0-8">※ 비밀번호를 다시한번 입력하세요.</span>
+                </div>
+            </div>
+        </div>
+        <div class="btn-gruoup mt-0">
+            <button class="btn secondary">취소</button>
+            <button class="btn base">확인</button>
+        </div>
+    </div>
+</div>
+
+<!--사용자등록 popup-->
+<div class="modal-wrapper open" id="pop_User_reg" style="top: 50px; left: 930px;">
+    <div class="modal small">
+        <div class="header">
+            <h1>
+                사용자등록
+                <button class="btn btn-close" alt="닫기" onclick="fnHidePop('pop_User_reg');"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="input-group mb-0-8">
+                <label class="required input-group-text">권한</label>
+                <select class="form-control h32 mr2">
+                    <option selected="">선택하세요</option>
+                    <option value="">관리자</option>
+                    <option value="">운영자</option>
+                </select>
+            </div>
+            <div class="input-group mb-0-8">
+                <label class="required input-group-text">이름</label>
+                <input type="text" class="form-control" placeholder="입력하세요">
+            </div>
+            <div class="input-group mb-0-8">
+                <label class="required input-group-text">사용자 ID</label>
+                <div class="input-input-group">
+                    <input type="text" name="" class="form-control" placeholder="입력하세요">
+                    <button type="button" class="btn base fs13">중복확인</button>
+                </div>
+            </div>
+            <div class="input-group mb-0-8">
+                <label class="required input-group-text">이메일</label>
+                <div class="input-input-group">
+                    <input type="text" name="" class="form-control" placeholder="입력하세요">
+                    <button type="button" class="btn base fs13">중복확인</button>
+                </div>
+            </div>
+            <div class="input-group mb-0-8 eye">
+                <label class="required input-group-text">비밀번호</label>
+                <div class="input-input-group">
+                    <input type="password" class="form-control" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                </div>
+            </div>
+            <div class="input-group mb-0-8 eye">
+                <label class="required input-group-text mt--2">비밀번호 확인</label>
+                <div class="input-input-group">
+                    <input type="password" class="form-control" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                    <span class="d-block fs12 mt-0-8">※ 비밀번호를 다시한번 입력하세요.</span>
+                </div> 
+            </div>
+            <div class="input-group mt-2">
+                <label class="input-group-text">비고</label>
+                <textarea class="form-control textarea" rows="2" placeholder="입력하세요"></textarea>
+            </div>
+        </div>
+        <div class="btn-gruoup mt-0">
+            <button class="btn secondary">취소</button>
+            <button class="btn base">등록</button>
+        </div>
+    </div>
+</div>
+
+<!--권한그룹추가 popup-->
+<div class="modal-wrapper open" id="pop_group_plue" style="top: 50px; left: 1390px;">
+    <div class="modal small">
+        <div class="header">
+            <h1>
+                권한그룹추가
+                <button class="btn btn-close" alt="닫기" onclick="fnHidePop('pop_group_plue')"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="tar mb-0-8">
+                <button type="button" class="btn btn-add" onclick="rowAdd()">추가</button>
+            </div>
+            
+            <table class="styled fixed hover center"> 
+                <colgroup>
+                    <col width="70">
+                    <col>
+                    <col width="70">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>권한그룹</th>
+                        <th>삭제</th>
+                    </tr>
+                </thead>
+            </table>
+            <div style="height: 220px; overflow-y: auto;">
+                <table class="styled fixed hover center" id="myTable"> 
+                    <colgroup>
+                        <col width="70">
+                        <col>
+                        <col width="70">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td class="tal">Super admin</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>
+                                <input type="text" class="form-control" value="admin">
+                            </td>
+                            <td>
+                                <button class="btn-delete on" onclick="rowDel(this);" title="삭제">
+                                    <img src="./images/ico_trash@2x.png">
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>
+                                <input type="text" class="form-control" value="user">
+                            </td>
+                            <td>
+                                <button class="btn-delete" onclick="rowDel(this);" title="삭제">
+                                    <img src="./images/ico_trash@2x.png">
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="입력하세요">
+                            </td>
+                            <td>
+                                <button class="btn-delete" onclick="rowDel(this);" title="삭제">
+                                    <img src="./images/ico_trash@2x.png">
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="btn-gruoup mt-0">
+            <button class="btn secondary">취소</button>
+            <button class="btn base">등록</button>
+        </div>
+    </div>
+</div>
+
+<!--로봇 등록 popup-->
+<div class="modal-wrapper open" id="pop_robot_add" style="top: 530px; left: 930px;">
+    <div class="modal small">
+        <div class="header">
+            <h1>
+                로봇 등록
+                <button class="btn btn-close" alt="닫기" onclick="fnHidePop('pop_robot_add')"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="input-group mb-0-8">
+                <label class="required input-group-text">로봇명</label>
+                <div class="input-input-group">
+                    <input type="text" name="" class="form-control" placeholder="입력하세요">
+                    <button type="button" class="btn base fs13">중복확인</button>
+                </div>
+            </div>
+            <div class="input-group align-start mb-0-8">
+                <label class="input-group-text mt-0-8">UUID</label>
+                <div class="input-input-group">
+                    <input type="text" class="form-control" placeholder="입력하세요">
+                    <span class="d-block fs12 mt-0-8" style="line-height: 18px;">
+                        ※ UUID는 직접 입력하지 않을 경우 등록 시 자동 발급됩니다. <br>
+                        ※ 자동 발급된 UUID를 로봇에 등록해야 RMS 시스템과 정상 연결됩니다.
+                    </span>
+                </div> 
+            </div>
+            <div class="input-group">
+                <label class="input-group-text">비고</label>
+                <textarea class="form-control textarea" rows="3" placeholder="입력하세요"></textarea>
+            </div>
+        </div>
+        <div class="btn-gruoup mt-0">
+            <button class="btn secondary">취소</button>
+            <button class="btn base">등록</button>
+        </div>
+    </div>
+</div>
+
+<!--로봇 상세/수정 popup-->
+<div class="modal-wrapper open" id="pop_robot_detail" style="top: 530px; left: 1380px;">
+    <div class="modal small">
+        <div class="header">
+            <h1>
+                로봇 상세
+                <button class="btn btn-close" alt="닫기" onclick="fnHidePop('pop_robot_detail')"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <ul class="list-group">
+                <li class="list-group-item row">
+                    <div>연결 상태</div>
+                    <div class="d-flex">
+                        <span class="badge circled14 bg-mint mr-0-6"></span>
+                        <span class="text-mint">Connecting</span>
+                    </div>
+                </li>
+                <li class="list-group-item row">
+                    <div>로봇명</div>
+                    <div>
+                        Robot 1
+                    </div>
+                </li>
+                <li class="list-group-item row">
+                    <div>식별코드</div>
+                    <div>
+                        r123456
+                    </div>
+                </li>
+                <li class="list-group-item row">
+                    <div>비고</div>
+                    <div>
+                        첫번째 로봇입니다.
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="btn-gruoup mt-0">
+            <button class="btn secondary">취소</button>
+            <button class="btn base">수정</button>
+        </div>
+    </div>
+</div>
+
+<!--이용약관 popup-->
+<div class="modal-wrapper open" id="pop_terms" style="top: 700px; left: 20px;">
+    <div class="modal small">
+        <div class="header">
+            <h1>
+                이용약관
+                <button class="btn btn-close" alt="닫기" onclick="fnHidePop('pop_terms');"></button>
+            </h1>
+        </div>
+        <div class="content">
+            준비중입니다.
+        </div> 
+    </div>
+</div>
+
+<!--개인정보 보호정책 popup-->
+<div class="modal-wrapper open" id="pop_privacy" style="top: 830px; left: 20px;">
+    <div class="modal small">
+        <div class="header">
+            <h1>
+                개인정보 보호정책
+                <button class="btn btn-close" alt="닫기" onclick="fnHidePop('pop_privacy');"></button>
+            </h1>
+        </div>
+        <div class="content">
+            준비중입니다.
+        </div> 
+    </div>
+</div>
+
+</body>
+</html>

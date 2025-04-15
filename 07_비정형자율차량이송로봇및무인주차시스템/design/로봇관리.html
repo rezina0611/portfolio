@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>설정 - 로봇관리</title>
+<meta charset="UTF-8">
+<meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="ui_event" content="true" />
+
+<link rel="stylesheet" href="./css/fontawesome6-all.css">
+<link rel="stylesheet" href="./css/style.css">
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery-3.7.0.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/script.js"></script>
+</head>
+<body>
+<!--robot-wrapper-->
+<div class="robot-wrapper">
+    <!--robot-header-->
+    <header class="robot-header">
+        <div class="d-flex">
+            <div class="left">
+                <img src="./images/logo@2x.png" alt="인천국제공항">
+                <ul class="top-nav">
+                    <li><a href="#none">대시보드</a></li>
+                    <li><a href="#none">주차장 모니터링</a></li>
+                    <li><a href="#none">통계</a></li>
+                    <li><a href="#none">인프라 모니터링</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="top-btns">
+                    <button type="button">
+                        <img src="./images/ico_sb_setting@2x.png" alt="설정">
+                    </button>
+                    <button type="button">
+                        <span class="badge circled bg-danger"></span>
+                        <img src="./images/ico_sb_alarm@2x.png" alt="알림">
+                    </button>
+                    <details>
+                        <summary><img src="./images/ico_sb_user@2x.png" alt="user"></summary>
+                        <ul>
+                            <li class="user-area">
+                                <p class="user-img"></p>
+                                <div class="user-info">
+                                    <strong class="js-user-name">한정성</strong>
+                                    <span class="js-admin">Super admin</span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#none" onclick="fnShowPop('pop_pwd')">비밀번호 변경</a>
+                            </li>
+                            <li>
+                                <a href="#none">로그아웃</a>
+                            </li>
+                        </ul>
+                    </details>
+                </div>
+                <div class="timer">
+                    <span class="date" id="date" style="pointer-events: none;">2023년 3월 15일 </span>
+                    <span class="time" id="time" style="pointer-events: none;">15:30</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--//robot-header-->
+    
+    <!--robot-main-->
+    <main class="robot-main">
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="#">사용자 관리</a></li>
+                    <li><a href="#">코드 관리</a></li>
+                    <li><a href="#" class="on">로봇 관리</a></li>
+                    <li><a href="#">로그 관리</a></li>
+                    <li><a href="#">연동목록 관리</a></li>
+                </ul>
+            </nav>
+        </div>
+        <section class="contents">
+            <form>
+                <table class="styled fixed" style="margin: 1.5rem 0;">
+                    <colgroup>
+                        <col width="110">
+                        <col width="">
+                        <col width="110">
+                        <col width="">
+                        <col width="110">
+                        <col width="">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>로봇명</th>
+                            <td>
+                                <input type="text" class="form-control" name="id" placeholder="입력하세요">
+                            </td>
+                            <th>UUID</th>
+                            <td>
+                                <input type="text" class="form-control" name="id" placeholder="입력하세요">
+                            </td>
+                            <th>연결상태</th>
+                            <td>
+                                <select class="form-control">
+                                    <option>전체</option>
+                                    <option value="">Connected</option>
+                                    <option value="">Disconnected</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+            <div class="btn-gruoup">
+                <button class="btn secondary">초기화</button>
+                <button class="btn base">검색</button>
+            </div>
+
+            <div class="d-space-between mt-1-6">
+                <ul class="tab_list">
+                    <li><a href="#none" class="on">전체(10)</a></li>
+                </ul>
+                <div class="d-flex">
+                    <select class="form-control mr-0-6" style="min-width: 7.2rem;">
+                        <option value="10" selected>10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                    </select>
+                    <button class="btn btn-write" style="min-width: 9.9rem;" onclick="fnShowPop('pop_robot_add')">
+                        로봇 등록
+                    </button>
+                </div>
+            </div>
+
+            <div class="mt-0-8">
+                <table class="styled fixed hover left">
+                    <colgroup>
+                        <col width="80">
+                        <col width="250">
+                        <col>
+                        <col>
+                        <col>
+                        <col width="80">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>등록일</th>
+                            <th>로봇명</th>
+                            <th>UUID</th>
+                            <th>연결상태</th>
+                            <th class="tac">삭제</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>10</td>
+                            <td>2023.09.05</td>
+                            <td><a href="#none" onclick="fnShowPop('pop_robot_detail')">Robot 1</a></td>
+                            <td>r123456</td>
+                            <td>
+                                <span class="badge circled14 bg-mint mr-0-6"></span>
+                                <span class="text-mint">Connecting</span>
+                            </td>
+                            <td class="tac">
+                                <button class="btn-delete" title="삭제">
+                                    <img src="./images/ico_trash@2x.png">
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>2023.09.05</td>
+                            <td><a href="#none">Robot 2</a></td>
+                            <td>r123456</td>
+                            <td>
+                                <span class="badge circled14 bg-gray mr-0-6"></span>
+                                <span class="text-gray7">Disconnected</span>
+                            </td>
+                            <td class="tac">
+                                <button class="btn-delete" title="삭제">
+                                    <img src="./images/ico_trash@2x.png">
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>2023.09.05</td>
+                            <td><a href="#none">Robot 3</a></td>
+                            <td>r123456</td>
+                            <td>
+                                <span class="badge circled14 bg-mint mr-0-6"></span>
+                                <span class="text-mint">Connecting</span>
+                            </td>
+                            <td class="tac">
+                                <button class="btn-delete" title="삭제">
+                                    <img src="./images/ico_trash@2x.png">
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>2023.09.05</td>
+                            <td><a href="#none">Robot 4</a></td>
+                            <td>r123456</td>
+                            <td>
+                                <span class="badge circled14 bg-mint mr-0-6"></span>
+                                <span class="text-mint">Connecting</span>
+                            </td>
+                            <td class="tac">
+                                <button class="btn-delete" title="삭제">
+                                    <img src="./images/ico_trash@2x.png">
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>2023.09.05</td>
+                            <td><a href="#none">Robot 5</a></td>
+                            <td>r123456</td>
+                            <td>
+                                <span class="badge circled14 bg-gray mr-0-6"></span>
+                                <span class="text-gray7">Disconnected</span>
+                            </td>
+                            <td class="tac">
+                                <button class="btn-delete" title="삭제">
+                                    <img src="./images/ico_trash@2x.png">
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="page-area">
+                <div class="pagination">
+                    <a href="#" id="first" onclick="setPage('fist')"><img src="./images/ico_2arrow_left@2x.png" title="첫 페이지"></a>
+                    <a href="#" id="prev" onclick="setPage('prev')"><img src="./images/ico_arrow_left@2x.png" title="이전 페이지"></a>
+                    <span class="form-control" name="page" id="page" style="width: 4rem !important;">1</span>
+                    <!-- <input type="text" class="form-control page" value="1" name="page" id="page"> -->
+                    of
+                    <input type="text" class="total_pages" value="1"  name="total_pages" id="total_pages" disabled>
+                    <a href="#" id="next" onclick="setPage('next')"><img src="./images/ico_arrow_right@2x.png" title="다음 페이지"></a>
+                    <a href="#" id="last" onclick="setPage('last')"><img src="./images/ico_2arrow_right@2x.png" title="마지막 페이지"></a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--//robot-main-->
+</div>
+<!--//robot-wrapper-->
+
+<!--로봇 등록 popup-->
+<div class="modal-wrapper" id="pop_robot_add">
+    <div class="modal small">
+        <div class="header">
+            <h1>
+                로봇 등록
+                <button class="btn btn-close" alt="닫기" onclick="fnHidePop('pop_robot_add')"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="input-group mb-0-8">
+                <label class="required input-group-text">로봇명</label>
+                <div class="input-input-group">
+                    <input type="text" name="" class="form-control" placeholder="입력하세요">
+                    <button type="button" class="btn base fs13">중복확인</button>
+                </div>
+            </div>
+            <div class="input-group align-start mb-0-8">
+                <label class="input-group-text mt-0-8">UUID</label>
+                <div class="input-input-group">
+                    <input type="text" class="form-control" placeholder="입력하세요">
+                    <span class="d-block fs12 mt-0-8" style="line-height: 18px;">
+                        ※ UUID는 직접 입력하지 않을 경우 등록 시 자동 발급됩니다. <br>
+                        ※ 자동 발급된 UUID를 로봇에 등록해야 RMS 시스템과 정상 연결됩니다.
+                    </span>
+                </div> 
+            </div>
+            <div class="input-group">
+                <label class="input-group-text">비고</label>
+                <textarea class="form-control textarea" rows="3" placeholder="입력하세요"></textarea>
+            </div>
+        </div>
+        <div class="btn-gruoup mt-0">
+            <button class="btn secondary">취소</button>
+            <button class="btn base">등록</button>
+        </div>
+    </div>
+</div>
+
+<!--로봇 상세/수정 popup-->
+<div class="modal-wrapper" id="pop_robot_detail">
+    <div class="modal small">
+        <div class="header">
+            <h1>
+                로봇 상세
+                <button class="btn btn-close" alt="닫기" onclick="fnHidePop('pop_robot_detail')"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <ul class="list-group">
+                <li class="list-group-item row">
+                    <div>연결 상태</div>
+                    <div class="d-flex">
+                        <span class="badge circled14 bg-mint mr-0-6"></span>
+                        <span class="text-mint">Connecting</span>
+                    </div>
+                </li>
+                <li class="list-group-item row">
+                    <div>로봇명</div>
+                    <div>
+                        Robot 1
+                    </div>
+                </li>
+                <li class="list-group-item row">
+                    <div>식별코드</div>
+                    <div>
+                        r123456
+                    </div>
+                </li>
+                <li class="list-group-item row">
+                    <div>비고</div>
+                    <div>
+                        첫번째 로봇입니다.
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="btn-gruoup mt-0">
+            <button class="btn secondary">취소</button>
+            <button class="btn base">수정</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

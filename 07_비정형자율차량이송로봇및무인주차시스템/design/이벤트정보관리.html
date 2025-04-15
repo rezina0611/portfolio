@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>설정 - 이벤트정보 관리</title>
+<meta charset="UTF-8">
+<meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="ui_event" content="true" />
+
+<!-- <link rel="shortcut icon" href="./images/logo_esper.png" type="image/x-icon"/> -->
+<link rel="stylesheet" href="./css/fontawesome6-all.css">
+<link rel="stylesheet" href="./css/style.css">
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery-3.7.0.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/script.js"></script>
+</head>
+<body>
+<!--robot-wrapper-->
+<div class="robot-wrapper">
+    <!--robot-header-->
+    <header class="robot-header">
+        <div class="d-flex">
+            <div class="left">
+                <img src="./images/logo@2x.png" alt="인천국제공항">
+                <ul class="top-nav">
+                    <li><a href="#none" class="on">모니터링</a></li>
+                    <li><a href="#none">통계</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="top-btns">
+                    <button type="button">
+                        <img src="./images/ico_sb_setting@2x.png" alt="설정">
+                    </button>
+                    <button type="button">
+                        <span class="badge circled bg-danger"></span>
+                        <img src="./images/ico_sb_alarm@2x.png" alt="알림">
+                    </button>
+                    <details>
+                        <summary><img src="./images/ico_sb_user@2x.png" alt="user"></summary>
+                        <ul>
+                            <li class="user-area">
+                                <p class="user-img"></p>
+                                <div class="user-info">
+                                    <strong class="js-user-name">한정성</strong>
+                                    <span class="js-admin">Super admin</span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#none" onclick="fnShowPop('pop_pwd')">비밀번호 변경</a>
+                            </li>
+                            <li>
+                                <a href="#none">로그아웃</a>
+                            </li>
+                        </ul>
+                    </details>
+                </div>
+                <div class="timer">
+                    <span class="date" id="date" style="pointer-events: none;">2023년 3월 15일 </span>
+                    <span class="time" id="time" style="pointer-events: none;">15:30</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--//robot-header-->
+    
+    <!--robot-main-->
+    <main class="robot-main">
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="#">사용자 관리</a></li>
+                    <li><a href="#">코드 관리</a></li>
+                    <li><a href="#">로봇 관리</a></li>
+                    <li><a href="#" class="on">이벤트 정보</a></li>
+                    <li><a href="#">로그 관리</a></li>
+                    <li><a href="#">연동목록 관리</a></li>
+                </ul>
+            </nav>
+        </div>
+        <section class="contents">
+            <div class="d-space-between mt-1-6">
+                <div class="d-flex">
+                    <select class="form-control mr-0-6" style="min-width: 8.8rem !important;">
+                        <option selected="">전체</option>
+                        <option value="로봇">로봇</option>
+                        <option value="PMS">PMS</option>
+                    </select>
+                    <div class="input-group">
+                        <input type="date" class="form-control">
+                        <span>~</span>
+                        <input type="date" class="form-control">
+                    </div>
+                    <button class="btn-search"></button>
+                </div>
+                <div class="d-flex">
+                    <select class="form-control" style="min-width: 7.2rem;">
+                        <option value="10" selected="">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                    </select>
+                </div>
+            </div>
+            <div style="margin-top: 2rem; text-align: center;">
+                준비중입니다.
+            </div> 
+        </section>
+    </main>
+    <!--//robot-main-->
+</div>
+<!--//robot-wrapper-->
+</body>
+</html>

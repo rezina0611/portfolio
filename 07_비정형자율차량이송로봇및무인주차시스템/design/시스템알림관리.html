@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>설정 - 시스템알림관리</title>
+<meta charset="UTF-8">
+<meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="ui_event" content="true" />
+
+<!-- <link rel="shortcut icon" href="./images/logo_esper.png" type="image/x-icon"/> -->
+<link rel="stylesheet" href="./css/fontawesome6-all.css">
+<link rel="stylesheet" href="./css/style.css">
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery-3.7.0.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/script.js"></script>
+</head>
+<body>
+<!--robot-wrapper-->
+<div class="robot-wrapper">
+    <!--robot-header-->
+    <header class="robot-header">
+        <div class="d-flex">
+            <div class="left">
+                <img src="./images/logo@2x.png" alt="인천국제공항">
+                <ul class="top-nav">
+                    <li><a href="#none" class="on">모니터링</a></li>
+                    <li><a href="#none">통계</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="top-btns">
+                    <button type="button">
+                        <img src="./images/ico_sb_setting@2x.png" alt="설정">
+                    </button>
+                    <button type="button" onclick="alarm();">
+                        <span class="badge circled bg-danger"></span>
+                        <img src="./images/ico_sb_alarm@2x.png" alt="알림">
+                    </button>
+                    <details>
+                        <summary><img src="./images/ico_sb_user@2x.png" alt="user"></summary>
+                        <ul>
+                            <li class="user-area">
+                                <p class="user-img"></p>
+                                <div class="user-info">
+                                    <strong class="js-user-name">한정성</strong>
+                                    <span class="js-admin">Super admin</span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#none" onclick="fnShowPop('pop_pwd')">비밀번호 변경</a>
+                            </li>
+                            <li>
+                                <a href="#none">로그아웃</a>
+                            </li>
+                        </ul>
+                    </details>
+                </div>
+                <div class="timer">
+                    <span class="date" id="date" style="pointer-events: none;">2023년 3월 15일 </span>
+                    <span class="time" id="time" style="pointer-events: none;">15:30</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--//robot-header-->
+    
+    <!--robot-main-->
+    <main class="robot-main">
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li>
+                        <span class="Single on">시스템알림 관리</span>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <section class="contents">
+            <form>
+                <table class="styled fixed" style="margin: 1.5rem 0;">
+                    <colgroup>
+                        <col width="110">
+                        <col width="">
+                        <col width="110">
+                        <col width="">
+                        <col width="110">
+                        <col width="">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>구분</th>
+                            <td>
+                                <select class="form-control">
+                                    <option>전체</option>
+                                    <option value="">배터리</option>
+                                    <option value="">로봇장애</option>
+                                    <option value="">시스템</option>
+                                </select>
+                            </td>
+                            <th>대상</th>
+                            <td>
+                                <select class="form-control">
+                                    <option>전체</option>
+                                    <option value="">Robot 1</option>
+                                    <option value="">Robot 2</option>
+                                    <option value="">Robot 3</option>
+                                </select>
+                            </td>
+                            <th>발생일</th>
+                            <td>
+                                <div class="input-group">
+                                    <input type="date" class="form-control">
+                                    <span>~</span>
+                                    <input type="date" class="form-control">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>내용</th>
+                            <td colspan="5">
+                                <input type="text" class="form-control" placeholder="입력하세요">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+            <div class="btn-gruoup">
+                <button class="btn secondary">초기화</button>
+                <button class="btn base">검색</button>
+            </div>
+
+            <div class="d-space-between">
+                <ul class="tab_list">
+                    <li><a href="#none" class="on">전체35</a></li>
+                </ul>
+                <div class="d-flex">
+                    <select class="form-control" style="min-width: 7.2rem;">
+                        <option value="10" selected>10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="mt-0-8">
+                <table class="styled fixed hover left">
+                    <colgroup>
+                        <col width="80">
+                        <col width="150">
+                        <col width="200">
+                        <col width="160">
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>발생일시</th>
+                            <th>구분</th>
+                            <th>대상</th>
+                            <th>내용</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span class="bar"></span>10
+                            </td>
+                            <td>2023.08.15 10:30:25</td>
+                            <td>배터리</td>
+                            <td>R1</td>
+                            <td>“R1”의 배터리 잔량이 “28”% 입니다. </td>
+                        </tr>
+                        <tr>
+                            <td><span class="bar"></span>9</td>
+                            <td>2023.08.15 10:30:25</td>
+                            <td>배터리</td>
+                            <td>R2</td>
+                            <td>“R2”의 배터리 잔량이 “5”% 입니다. </td>
+                        </tr>
+                        <tr>
+                            <td><span class="bar"></span>8</td>
+                            <td>2023.08.15 10:30:25</td>
+                            <td>배터리</td>
+                            <td>R3</td>
+                            <td>“R3”의 배터리가 방전되었습니다. </td>
+                        </tr>
+                        <tr>
+                            <td><span class="bar"></span>7</td>
+                            <td>2023.08.15 10:30:25</td>
+                            <td>로봇장애</td>
+                            <td>R1</td>
+                            <td>“R1”의 진행방향에 장애물이 감지되어 정지합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>2023.08.15 10:30:25</td>
+                            <td>로봇장애</td>
+                            <td>R2</td>
+                            <td>“R2”이 다시 이동합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>2023.08.15 10:30:25</td>
+                            <td>로봇장애</td>
+                            <td>R3</td>
+                            <td>“R2”의 “우측 리프트 이상” 장애가 감지되어 정지합니다. </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>2023.08.15 10:30:25</td>
+                            <td>시스템</td>
+                            <td>시스템</td>
+                            <td>“Memory”의 사용량을 초과하였습니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>2023.08.15 10:30:25</td>
+                            <td>시스템</td>
+                            <td>시스템</td>
+                            <td>“PMS 통신 트래픽 이상” 이상 징후가 발견되었습니다.</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>2023.08.15 10:30:25</td>
+                            <td>시스템</td>
+                            <td>Robot</td>
+                            <td>“Robot”과 통신에서 “mission_request” “수신” 오류가 발생했습니다.</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2023.08.15 10:30:25</td>
+                            <td>배터리</td>
+                            <td>PMS</td>
+                            <td>“R3”의 배터리 잔량이 “29”% 입니다. </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="page-area">
+                <div class="pagination">
+                    <a href="#" id="first" onclick="setPage('fist')"><img src="./images/ico_2arrow_left@2x.png" title="첫 페이지"></a>
+                    <a href="#" id="prev" onclick="setPage('prev')"><img src="./images/ico_arrow_left@2x.png" title="이전 페이지"></a>
+                    <span class="form-control" name="page" id="page" style="width: 4rem !important;">1</span>
+                    <!-- <input type="text" class="form-control page" value="1" name="page" id="page"> -->
+                    of
+                    <input type="text" class="total_pages" value="1"  name="total_pages" id="total_pages" disabled>
+                    <a href="#" id="next" onclick="setPage('next')"><img src="./images/ico_arrow_right@2x.png" title="다음 페이지"></a>
+                    <a href="#" id="last" onclick="setPage('last')"><img src="./images/ico_2arrow_right@2x.png" title="마지막 페이지"></a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--//robot-main-->
+</div>
+<!--//robot-wrapper-->
+
+<div class="alarm-layer" id="layer-noti">
+    <header class="alarm-head">
+        <div class="inner">긴급알림</div>
+        <button class="btn-close" onclick="alarm();"></button>
+    </header>
+    <div class="alarm-content">
+        <ul class="notice">
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ Robot 1 ]</strong> 배터리 충전이 필요합니다.
+                    </span>
+                    <p class="date">2023.08.15 10:30:25</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ Robot 2 ]</strong> 배터리 온도가 너무 높습니다.</span>
+                    <p class="date">2023.08.15 10:30:25</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span><strong>[ Robot 3 ]</strong> 배터리 전압이 너무 낮습니다.</span>
+                    <p class="date">2023.08.15 10:30:25</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span><strong>[ Robot 3 ]</strong> 배터리 전압이 너무 낮습니다.</span>
+                    <p class="date">2023.08.15 10:30:25</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span><strong>[ Robot 1 ]</strong> 배터리 충전이 필요합니다.</span>
+                    <p class="date">2023.08.15 10:30:25</p>
+                </a>
+            </li>
+        </ul>
+        <div class="alarm-none" style="display: none;">
+            <p>긴급알림이 없습니다.</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

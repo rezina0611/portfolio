@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>팝업</title>
+<meta charset="UTF-8">
+<meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="ui_event" content="true" />
+
+<link rel="stylesheet" href="./css/fontawesome6-all.css">
+<link rel="stylesheet" href="./css/style.css">
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery-3.7.0.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/script.js"></script>
+<style>
+    .modal-wrapper{
+        width: auto;
+        height: auto;
+    }
+    .contentsBox01 {
+        margin-top: 1rem;
+        padding: 2rem;
+        background: rgba(217, 252, 255, 0.05);
+        color: #8B9190;
+        font-size: 1.3rem;
+        line-height: 2rem;
+        font-weight: 500;
+        margin-bottom: 2rem;
+        border-radius: .4rem;
+    }
+    ul.txtRefer li {
+        line-height: 1.6;
+        /* padding-left: 1.4rem;
+        background: url('./image/bul_refer2.gif') 0 6px no-repeat; */
+    }
+    .info_ttl {
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: #8B9190;
+        letter-spacing: -0.05em;
+        padding-bottom: 1rem;
+    }
+    
+    ul.info_item > li {
+        padding-bottom: 1.6rem;
+    }
+    ul.info_item > li .info_ttl01 {
+        font-size: 1.3rem;
+        color: #dddddd;
+        letter-spacing: -0.05em;
+        padding-bottom: 1rem;
+    }
+    ul.info_item > li .info_txt {
+        font-size: 1.4rem;
+        color: #fff;
+        letter-spacing: -0.05em;
+        padding-bottom: 2rem;
+        text-align: left;
+    }
+    ul.info_item > li .num_list {
+        counter-reset: circle 0;
+    }
+    ul.info_item > li .num_list > li {
+        position: relative;
+        font-size: 1.3rem;
+        color: #8B9190;
+        letter-spacing: -0.05em;
+        padding-bottom: .8rem;
+        padding-left: 1.6rem;
+        list-style: none;
+        line-height: 1.5;
+    }
+    ul.info_item > li .num_list > li::before {
+        position: absolute;
+        top: 1rem;
+        left: 4px;
+        transform: translate(-50%, -50%);
+        counter-increment: circle 1;
+        content: counter(circle);
+        font-size: 1.3rem;
+    }
+    ul.info_item > li .num_list > li .numCircle_list {
+        counter-reset: circle 0;
+        margin-top: 1.1rem;
+    }
+    ul.info_item > li .num_list > li .numCircle_list:first-child{
+        margin-top: 0;
+    }
+    ul.info_item > li .num_list > li .numCircle_list > li {
+        position: relative;
+        font-size: 1.3rem;
+        color: #8B9190;
+        letter-spacing: -0.05em;
+        padding-left: 2rem;
+        list-style: none;
+    }
+    ul.info_item > li .num_list > li .numCircle_list > li::before {
+        position: absolute;
+        top: 10px;
+        left: 7px;
+        transform: translate(-50%, -50%);
+        counter-increment: circle 1;
+        content: counter(circle);
+        font-size: .9rem;
+    }
+    ul.info_item > li .num_list > li .numCircle_list > li::after {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 0;
+        transform: translateY(-50%);
+        display: inline-block;
+        border: 1px solid #666;
+        border-radius: 50%;
+        width: 1.2em;
+        height: 1.2em;
+        box-sizing: border-box;
+    }
+</style>
+</head>
+<body>
+
+<!--이용약관 popup-->
+<div class="modal-wrapper open" id="pop_terms" style="top: 50px; left: 250px;">
+    <div class="modal wide">
+        <div class="header">
+            <h1>
+                이용약관
+                <button class="btn btn-close" alt="닫기" onclick="fnHidePop('pop_terms');"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="contentsBox01">
+                <ul class="txtRefer">
+                    <li>주택도시보증공사(이하 공사)가 처리하는 모든 개인정보는 「개인정보보호법」 및 「주택도시기금법」 등 관련 법령에 근거하여 수집, 보유 및 처리되고 있으며, 개인정보의 처리 목적에 필요한 최소한의 정보만 수집합니다. </li>
+                    <li>「개인정보보호법」은 이러한 개인정보의 취급에 대한 일반적 규범을 제시하고 있으며, 공사는 이러한 법령의 규정에 따라 수집 · 보유 및 처리하는 개인정보를 공공업무의 적절한 수행과 이용자의 권익을 보호하기 위해 적법하고 적정하게 취급할 것입니다. </li>
+                    <li>또한, 공사는 관련 법령에서 규정한 바에 따라 보유하고 있는 개인정보에 대한 열람, 정정 · 삭제, 처리정지 요구 등 이용자의 권익을 존중하며, 정보주체는 이러한 법령상 권익의 침해 등에 대하여 행정심판법에서 정하는 바에 따라 행정심판을 청구할 수 있습니다. </li>
+                </ul>
+            </div>
+            <h4 class="info_ttl">제 1 장 총칙</h4>
+            <ul class="info_item">
+                <li>
+                    <h5 class="info_ttl01">제 1 조 (목적)</h5>
+                    <ol class="num_list">
+                        <li>이 약관은 ㈜투비소프트 (이하 "회사"라고 칭함) 가 운영하는 투비소프트 홈페이지 (www.tobesoft.com) (이하 "홈페이지"이라 칭함)에서 제공하는 인터넷 관련 서비스(이하 "서비스"라 한다)를 이용함에 있어 회사와 이용자의 권리, 의무, 절차 및 책임사항을 규정함을 목적으로 합니다.</li>
+                        <li>이 약관은 이 약관은 본 사이트가 제공하는 서비스 중에서 개인정보가 필요한 때에 효력이 발생합니다. 회사는 회사의 사정 변경이나 영업상 중요한 사유가 발생하면 약관을 변경 할 수 있으며, 변경된 약관은 회사의 홈페이지에 변경에 관한 통지가 게시되는 순간부터 효력을 발생합니다.</li>
+                        <li>본 약관에 정하는 범위 이외의 이용자와 회사의 권리, 의무 및 책임사항에 관해서는 전기통신사업법, 정보통신망 이용촉진 및 정보보호 등에 관한 법률 및 기타 관련 법령의 규정에 따릅니다.</li>
+                    </ol>
+                </li>
+                <li>
+                    <h5 class="info_ttl01">제 2 조 (정의)</h5>
+                    <ol class="num_list">
+                        <li>"홈페이지" 이란 ㈜투비소프트가 서비스 또는 용역을 이용자에게 제공하기 위하여 컴퓨터 등 정보통신설비를 이용하여 서비스 또는 용역을 거래할 수 있도록 설정한 가상의 영업장을 말하며, 아울러 홈페이지를 운영하는 사업자의 의미로도 사용합니다.
+                            <ol class="numCircle_list">
+                                <li>서비스 또는 용역에 대한 정보 제공</li>
+                                <li>기타 "홈페이지"가 정하는 업무</li>
+                            </ol>
+                        </li>
+                        <li>"이용자"란 "홈페이지"에 접속하여 이 약관에 따라 "홈페이지"가 제공하는 서비스를 받는 사용자를 말합니다.</li>
+                        <li>"계약"이라 함은 이용자가 "홈페이지"에 서비스를 신청하여 "홈페이지"가 이에 대해 승낙하는 것을 말합니다.</li>
+                        <li>"홈페이지" 이란 ㈜투비소프트가 서비스 또는 용역을 이용자에게 제공하기 위하여 컴퓨터 등 정보통신설비를 이용하여 서비스 또는 용역을 거래할 수 있도록 설정한 가상의 영업장을 말하며, 아울러 홈페이지를 운영하는 사업자의 의미로도 사용합니다.
+                        </li>
+                        <li>"이용자"란 "홈페이지"에 접속하여 이 약관에 따라 "홈페이지"가 제공하는 서비스를 받는 사용자를 말합니다.</li>
+                        <li>"계약"이라 함은 이용자가 "홈페이지"에 서비스를 신청하여 "홈페이지"가 이에 대해 승낙하는 것을 말합니다.</li>
+                    </ol>
+                </li>
+                <li class="info_item">
+                    <h5 class="info_ttl01">제 3 조 (약관의 명시와 개정)</h5>
+                    <ol class="num_list">
+                        <li>"홈페이지"는 이 약관의 내용과 상호, 영업소 소재지, 대표자의 성명, 사업자등록번호, 연락처(전화, 팩스, 전자우편 주소 등) 등을 이용자가 알 수 있도록 홈페이지 내에 게시합니다.</li>
+                        <li>"홈페이지"는 약관의규제에관한법률, 전자거래기본법, 전자서명법, 정보통신망이용촉진등에관한법률, 소비자보호법 등 관련법을 위배하지 않는 범위에서 이 약관을 개정할 수 있습니다.</li>
+                        <li>"홈페이지"가 약관을 개정할 경우에는 적용일자 및 개정사유를 명시하여 현행약관과 함께 홈페이지에 그 적용일자 7일 이전부터 적용일자 전일까지 공지합니다.</li>
+                        <li>"홈페이지"가 약관을 개정할 경우에는 그 개정약관은 그 적용일자 이후에 체결되는 계약에만 적용되고 그 이전에 이미 체결된 계약에 대해서는 개정전의 약관조항이 그대로 적용됩니다.<br>다만 이미 계약을 체결한 이용자가 개정약관 조항의 적용을 받기를 원하는 뜻을 제3항에 의한 개정약관의 공지 기간 내에 "홈페이지"에 송신하여 "홈페이지"의 동의를 받은 경우에는 개정약관 조항이 적용됩니다.</li>
+                        <li>이 약관에서 정하지 아니한 사항과 이 약관의 해석에 관하여는 정부가 제정한 전자거래소비자 보호지침 및 관계법령 또는 상관례에 따릅니다.</li>
+                    </ol>
+                </li>
+                <li class="info_item">
+                    <h5 class="info_ttl01">제 4 조 (서비스의 제공 및 변경)</h5>
+                    <ol class="num_list">
+                        <li>
+                            "홈페이지"는 다음과 같은 업무를 수행합니다.
+                            <ol class="numCircle_list">
+                                <li>서비스 또는 용역에 대한 정보 제공</li>
+                                <li>기타 "홈페이지"가 정하는 업무</li>
+                            </ol>
+                        </li>
+                        <li>"홈페이지"는 서비스의 변경 또는 기술적 사양의 변경 등의 경우에는 장차 체결되는 계약에 의해 제공할 서비스 용역의 내용을 변경할 수 있습니다.<br>이 경우에는 변경된 서비스 용역의 내용 및 제공일자를 명시 하여 현재의 서비스 용역의 내용을 게시한 곳에 공지합니다.</li>
+                        <li>"홈페이지"가 제공하기로 이용자와 계약을 체결한 서비스의 내용을 서비스의 변경 또는 기술적 사양의 변경 등의 사유로 변경할 경우, "홈페이지"는 이로 인하여 이용자가 입은 손해를 배상할 수 있습니다.<br>단, "홈페이지"에 고의 또는 과실이 없는 경우에는 그러하지 아니합니다.</li>
+                    </ol>
+                </li>
+                <li class="info_item">
+                    <h5 class="info_ttl01">제 5 조 (서비스의 중단)</h5>
+                    <ol class="num_list">
+                        <li>"홈페이지"는 컴퓨터 등 정보통신설비의 보수점검 교체 및 고장, 통신의 두절 등의 사유가 발생한 경우에는 서비스의 제공을 일시적으로 중단할 수 있습니다.</li>
+                        <li>제1항에 의한 서비스 중단의 경우에는 "홈페이지"는 제8조에 정한 방법으로 이용자에게 통지합니다.</li>
+                        <li>"홈페이지"는 제1항의 사유로 서비스의 제공이 일시적으로 중단됨으로 인하여 이용자 또는 제3자가 입은 손해에 대하여 배상할 수 있습니다.<br>단 "홈페이지"에 고의 또는 과실이 없는 경우에는 그러하지 아니합니다.</li>
+                    </ol>
+                </li>
+                <li class="info_item">
+                    <h5 class="info_ttl01">제 6 조 ("홈페이지"의 의무)</h5>
+                    <ol class="num_list">
+                        <li class="pc_pb_0">"홈페이지는 법령과 이 약관이 금지하거나 미풍양속에 반하는 행위를 하지 않으며 이 약관이 정하는 바에 따라 지속적이고, 안정적으로 서비스 용역을 제공하는 데 최선을 다하여야 합니다.</li>
+                        <li>"홈페이지"는 이용자가 안전하게 인터넷 서비스를 이용할 수 있도록 이용자의 개인정보(신용정보 포함) 보호를 위한 보안 시스템을 갖추어야 합니다.</li>
+                    </ol>
+                </li>
+                <li class="info_item">
+                    <h5 class="info_ttl01">제 7 조 (이용자의 의무)</h5>
+                    <p class="info_txt pt-0">이용자는 다음 행위를 하여서는 안됩니다.</p>
+                    <ol class="num_list">
+                        <li>신청 또는 변경 시 허위내용의 등록</li>
+                        <li>타인의 정보 도용</li>
+                        <li>"홈페이지"에 게시된 정보의 변경</li>
+                        <li>"홈페이지"가 정한 정보 이외의 정보(컴퓨터 프로그램 등)의 송신 또는 게시</li>
+                        <li>"홈페이지" 기타 제 3자의 저작권 등 지적재산권에 대한 침해</li>
+                        <li>"홈페이지" 기타 제 3자의 명예를 손상시키거나 업무를 방해하는 행위</li>
+                        <li>외설 또는 폭력적인 메시지, 화상, 음성, 기타 미풍양속에 반하는 정보를 홈페이지에 공개 또는 게시하는 행위</li>
+                    </ol>
+                </li>
+            </ul>
+        </div> 
+    </div>
+</div>
+
+<!--개인정보 보호정책 popup-->
+<div class="modal-wrapper" id="pop_privacy" style="top: 50px; left: 780px;">
+    <div class="modal wide">
+        <div class="header">
+            <h1>
+                개인정보 보호정책
+                <button class="btn btn-close" alt="닫기" onclick="fnHidePop('pop_privacy');"></button>
+            </h1>
+        </div>
+        <div class="content">
+            준비중입니다.
+        </div> 
+    </div>
+</div>
+
+</body>
+</html>

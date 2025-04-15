@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>메인-모니터링</title>
+<meta charset="UTF-8">
+<meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="ui_event" content="true" />
+
+<!-- <link rel="shortcut icon" href="./images/logo_esper.png" type="image/x-icon"/> -->
+<link rel="stylesheet" href="./css/fontawesome6-all.css">
+<link rel="stylesheet" href="./css/style.css">
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery-3.7.0.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/script.js"></script>
+</head>
+<body>
+<!--robot-wrapper-->
+<div class="robot-wrapper">
+    <!--robot-header-->
+    <header class="robot-header">
+        <div class="d-flex">
+            <div class="left">
+                <img src="./images/logo@2x.png" alt="인천국제공항">
+                <ul class="top-nav">
+                    <li><a href="#none" class="on">대시보드</a></li>
+                    <li><a href="#none">주차장 모니터링</a></li>
+                    <li><a href="#none">통계</a></li>
+                    <li><a href="#none">인프라 모니터링</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="top-btns">
+                    <button type="button">
+                        <img src="./images/ico_sb_setting@2x.png" alt="설정" title="설정">
+                    </button>
+                    <button type="button" onclick="alarm();">
+                        <span class="badge circled bg-danger"></span>
+                        <img src="./images/ico_sb_alarm@2x.png" alt="알림" title="알림">
+                    </button>
+                    <details>
+                        <summary><img src="./images/ico_sb_user@2x.png" alt="user" title="user"></summary>
+                        <ul>
+                            <li class="user-area">
+                                <p class="user-img"></p>
+                                <div class="user-info">
+                                    <strong class="js-user-name">한정성</strong>
+                                    <span class="js-admin">Super admin</span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#none" onclick="fnShowPop('pop_pwd')">비밀번호 변경</a>
+                            </li>
+                            <li>
+                                <a href="#none">로그아웃</a>
+                            </li>
+                        </ul>
+                    </details>
+                </div>
+                <div class="timer">
+                    <span class="date" id="date" style="pointer-events: none;">2023년 3월 15일 </span>
+                    <span class="time" id="time" style="pointer-events: none;">15:30</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--//robot-header-->
+    
+    <!--robot-main-->
+    <main class="robot-main">
+        <ul class="location" style="display: none;">
+            <li>
+                <a href="#none">
+                    <img src="./images/ico_home@2x.png" alt="홈">
+                </a>
+            </li>
+            <li><span>설정</span></li>
+            <li><span class="space">Watch 로그관리</span></li>
+        </ul>
+
+        <!-- <div style="color: #fff; text-align: center; margin-top: 1rem;
+                display: flex; justify-content: center; 
+                height: 775px; align-items: center;">준비중입니다.
+        </div> -->
+        <div class="row gx-lg-5">
+            <div class="col-lg-12 mb-5 mb-lg-0">
+                sfsfdsf
+            </div>
+            <div class="col-lg-12 mb-5 mb-lg-0 d-lg-block">
+                dsfsdsdfs
+            </div>
+        </div>
+    </main>
+    <!--//robot-main-->
+</div>
+<!--//robot-wrapper-->
+
+<!--시스템알림관리 - 긴급알림 -->
+<div class="alarm-layer" id="layer-noti">
+    <header class="alarm-head">
+        <div class="inner">긴급알림</div>
+        <button class="btn-close" onclick="alarm();"></button>
+    </header>
+    <div class="alarm-content">
+        <ul class="notice">
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ Robot 1 ]</strong> 배터리 충전이 필요합니다.
+                    </span>
+                    <p class="date">2023.08.15 10:30:25</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ Robot 2 ]</strong> 배터리 온도가 너무 높습니다.</span>
+                    <p class="date">2023.08.15 10:30:25</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span><strong>[ Robot 3 ]</strong> 배터리 전압이 너무 낮습니다.</span>
+                    <p class="date">2023.08.15 10:30:25</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span><strong>[ Robot 3 ]</strong> 배터리 전압이 너무 낮습니다.</span>
+                    <p class="date">2023.08.15 10:30:25</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span><strong>[ Robot 1 ]</strong> 배터리 충전이 필요합니다.</span>
+                    <p class="date">2023.08.15 10:30:25</p>
+                </a>
+            </li>
+        </ul>
+        <div class="alarm-none" style="display: none;">
+            <p>긴급알림이 없습니다.</p>
+        </div>
+    </div>
+</div>
+
+
+<!--비밀번호 변경 popup-->
+<div class="modal-wrapper" id="pop_pwd">
+    <div class="modal small">
+        <div class="header">
+            <h1>
+                비밀번호 변경
+                <button class="btn btn-close" alt="닫기" onclick="fnHidePop('pop_pwd');"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <p class="fs14 pt-0 tex-gray">보안을 위해 최소 3개월 마다 비밀번호를 변경해주세요.</p>
+            <hr class="line">
+            <div class="input-group mb-2 eye">
+                <label class="required input-group-text mt--2">현재 비밀번호</label>
+                <div class="input-input-group">
+                    <input type="password" class="form-control" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                    <span class="d-block fs12 mt-0-8">※ 현재 비밀번호를 입력하세요.</span>
+                </div> 
+            </div>
+            <div class="input-group mb-0-8 eye">
+                <label class="required input-group-text">변경 비밀번호</label>
+                <div class="input-input-group">
+                    <input type="password" class="form-control" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                </div>
+            </div>
+            <div class="input-group mb-0-8 eye">
+                <label class="required input-group-text mt--2">비밀번호 확인</label>
+                <div class="input-input-group">
+                    <input type="password" class="form-control" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                    <span class="d-block fs12 mt-0-8">※ 비밀번호를 다시한번 입력하세요.</span>
+                </div>
+            </div>
+        </div>
+        <div class="btn-gruoup mt-0">
+            <button class="btn secondary">취소</button>
+            <button class="btn base">확인</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

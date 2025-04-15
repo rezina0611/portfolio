@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>주차장 모니터링</title>
+<meta charset="UTF-8">
+<meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="ui_event" content="true" />
+
+<!-- <link rel="shortcut icon" href="./images/logo_esper.png" type="image/x-icon"/> -->
+<link rel="stylesheet" href="./css/fontawesome6-all.css">
+<link rel="stylesheet" href="./css/style.css">
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery-3.7.0.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/script.js"></script>
+</head>
+<body>
+<!--robot-wrapper-->
+<div class="robot-wrapper">
+    <!--robot-header-->
+    <header class="robot-header">
+        <div class="d-flex">
+            <div class="left">
+                <img src="./images/logo@2x.png" alt="인천국제공항">
+                <ul class="top-nav">
+                    <li><a href="#none">대시보드</a></li>
+                    <li><a href="#none" class="on">주차장 모니터링</a></li>
+                    <li><a href="#none">통계</a></li>
+                    <li><a href="#none">인프라 모니터링</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="top-btns">
+                    <button type="button">
+                        <img src="./images/ico_sb_setting@2x.png" alt="설정" title="설정">
+                    </button>
+                    <button type="button" onclick="alarm();">
+                        <span class="badge circled bg-danger"></span>
+                        <img src="./images/ico_sb_alarm@2x.png" alt="알림" title="알림">
+                    </button>
+                    <details>
+                        <summary><img src="./images/ico_sb_user@2x.png" alt="user" title="user"></summary>
+                        <ul>
+                            <li class="user-area">
+                                <p class="user-img"></p>
+                                <div class="user-info">
+                                    <strong class="js-user-name">한정성</strong>
+                                    <span class="js-admin">Super admin</span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#none" onclick="fnShowPop('pop_pwd')">비밀번호 변경</a>
+                            </li>
+                            <li>
+                                <a href="#none">로그아웃</a>
+                            </li>
+                        </ul>
+                    </details>
+                </div>
+                <div class="timer">
+                    <span class="date" id="date" style="pointer-events: none;">2023년 3월 15일 </span>
+                    <span class="time" id="time" style="pointer-events: none;">15:30</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--//robot-header-->
+    
+    <!--robot-main-->
+    <main class="robot-main">
+        <div class="parking-area">
+            <table class="styled fixed">
+                <colgroup>
+                    <col width="112">
+                    <col width=""><col width=""><col width=""><col width="">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>출차대기 <span>0</span></th>
+                        <td colspan="4" style="background: rgba(217, 252, 255, 0.06);">전체 주차구역 <span>100</span></td>
+                    </tr>
+                    <tr>
+                        <th>주차대기 <span>1</span></th>
+                        <td>입차중  <span class="col-sky">1</span></td>
+                        <td>주차  <span class="col-orange">3</span></td>
+                        <td>출차중 <span class="col-green">0</span></td>
+                        <td>주차가능 <span class="col-bluegreen">96</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="grid-map-wrapper" id="border">
+            <canvas id="grid" style="touch-action: none; cursor: inherit;"></canvas>
+        </div>
+
+        <div class="row row-deck"><!--style="height: 25.2rem; overflow: hidden;"-->
+            <!--통신로그-->
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="fs14 mb-0-5">통신 로그</h3>
+                        <textarea class="log-w">   
+2024-02-20 16:39:43.205954 
+rb request 0ae412b2-e92f-4b18-a89e-b88c479943a7 
+[cmd_type:lift] 2024-02-20 16:39:43.172532 rb result_response 0ae412b2-e92f-4b18-a89e-b88c479943a7 [remain_waypoints:] 2024-02-20 16:39:41.118533 rb result_response 5ffd66f3-21ef-4d95-bbcf-1cb5d73fac7c [remain_waypoints:] 2024-02-20 16:39:41.078388 rb feedback 0ae412b2-e92f-4b18-a89e-b88c479943a7 [cur_waypoint:1, cur_pos:x:3, y:46, yaw:0] 2024-02-20 16:39:41.077684 rb feedback 0ae412b2-e92f-4b18-a89e-b88c479943a7 2024-02-20 16:39:41.078388 rb feedback 0ae412b2-e92f-4b18-a89e-b88c479943a7 [cur_waypoint:1, cur_pos:x:3, y:46, yaw:0] 2024-02-20 16:39:41.077684 rb feedback
+2024-02-20 16:39:43.205954 
+rb request 0ae412b2-e92f-4b18-a89e-b88c479943a7 
+[cmd_type:lift] 2024-02-20 16:39:43.172532 rb result_response 0ae412b2-e92f-4b18-a89e-b88c479943a7 [remain_waypoints:] 2024-02-20 16:39:41.118533 rb result_response 5ffd66f3-21ef-4d95-bbcf-1cb5d73fac7c [remain_waypoints:] 2024-02-20 16:39:41.078388 rb feedback 0ae412b2-e92f-4b18-a89e-b88c479943a7 [cur_waypoint:1, cur_pos:x:3, y:46, yaw:0] 2024-02-20 16:39:41.077684 rb feedback 0ae412b2-e92f-4b18-a89e-b88c479943a7 2024-02-20 16:39:41.078388 rb feedback 0ae412b2-e92f-4b18-a89e-b88c479943a7 [cur_waypoint:1, cur_pos:x:3, y:46, yaw:0] 2024-02-20 16:39:41.077684 rb feedback
+                           
+                        </textarea>
+                    </div>
+                </div>
+            </div>
+            <!--//통신로그-->
+            <!--미션 목록-->
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="fs14 mb-0-5">미션 목록</h3>
+                        <div class="tabel bg">
+                            <table style="width: calc(100% - 6px);">
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>구분</th>
+                                        <th>차량번호</th>
+                                        <th>주차면</th>
+                                        <th>로봇</th>
+                                        <th>진행상태</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        
+                        <div class="tbl-content">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>35</td>
+                                        <td>주차</td>
+                                        <td>01가1111</td>
+                                        <td>LOT.001</td>
+                                        <td>Robot1</td>
+                                        <td><span class="text-cyan">진행중</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>34</td>
+                                        <td>줄차</td>
+                                        <td>02나2222</td>
+                                        <td>LOT.002</td>
+                                        <td>Robot2</td>
+                                        <td><span class="text-cyan">진행중</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>33</td>
+                                        <td>주차</td>
+                                        <td>03다3333</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>예약</td>
+                                    </tr>
+                                    <tr>
+                                        <td>32</td>
+                                        <td>주차</td>
+                                        <td>03다4444</td>
+                                        <td>LOT.001</td>
+                                        <td>Robot3</td>
+                                        <td><span class="text-cyan">진행중</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>31</td>
+                                        <td>주차</td>
+                                        <td>03다5555</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>예약</td>
+                                    </tr>
+                                    <tr>
+                                        <td>30</td>
+                                        <td>주차</td>
+                                        <td>03다6666</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>예약</td>
+                                    </tr>
+                                    <tr>
+                                        <td>29</td>
+                                        <td>주차</td>
+                                        <td>03다6666</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>예약</td>
+                                    </tr>
+                                    <tr>
+                                        <td>28</td>
+                                        <td>주차</td>
+                                        <td>03다6666</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>예약</td>
+                                    </tr>
+                                    <tr>
+                                        <td>27</td>
+                                        <td>주차</td>
+                                        <td>03다6666</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>예약</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//미션 목록-->
+            <div class="col-lg-6" style="overflow-x: auto;">
+                <!--로봇01-->
+                <div class="col-lg-4 mr-1">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex mb-0-3 p-r">
+                                <span class="name full">Robot 1</span>
+                                <div class="battery full">
+                                    <span>100%</span>
+                                </div>
+                            </div>
+                            <ul class="list-group">
+                                <li class="list-group-item2">
+                                    <div class="le">연결</div>
+                                    <div class="text-mint">Connecting</div>  <!--연결 중-->
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">상태</div>
+                                    <div>주차면 이동</div>
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">속도</div>
+                                    <div>20 Km/h</div>
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">미션</div>
+                                    <div>주차</div>
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">차량번호</div>
+                                    <div>00가0000</div>
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">주차면</div>
+                                    <div>LOT.001</div>
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">소요시간</div>
+                                    <div>03분 15초</div>
+                                </li>
+                            </ul>
+                            <div class="card-footer">
+                                <button class="btn darkblue">대기장소이동</button>
+                                <button class="btn deepred">긴급정지</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!--//로봇01-->
+                <!--로봇02-->
+                <div class="col-lg-4 mr-1">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex mb-0-3 p-r">
+                                <span class="name charge">Robot 2</span>
+                                <div class="battery charge">
+                                    <span>0%</span>
+                                </div>
+                            </div>
+                            <ul class="list-group">
+                                <li class="list-group-item2">
+                                    <div class="le">연결</div>
+                                    <div class="text-gray">Disconnecting</div> <!--연결 끊기-->
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">상태</div>
+                                    <div></div>
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">속도</div>
+                                    <div></div>
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">미션</div>
+                                    <div></div>
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">차량번호</div>
+                                    <div></div>
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">주차면</div>
+                                    <div></div>
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">소요시간</div>
+                                    <div></div>
+                                </li>
+                            </ul>
+                            <div class="card-footer">
+                                <button class="btn darkblue">대기장소이동</button>
+                                <button class="btn deepred" disabled>긴급정지</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--//로봇02-->
+                <!--로봇03-->
+                <div class="col-lg-4 mr-1">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex mb-0-3 p-r">
+                                <span class="name full">Robot 3</span>
+                                <div class="battery low">
+                                    <span>10%</span>
+                                </div>
+                            </div>
+                            <ul class="list-group">
+                                <li class="list-group-item2">
+                                    <div class="le">연결</div>
+                                    <div class="text-mint">Connecting</div>  <!--연결 중-->
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">상태</div>
+                                    <div>주차면 이동</div>
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">속도</div>
+                                    <div>20 Km/h</div>
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">미션</div>
+                                    <div>주차</div>
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">차량번호</div>
+                                    <div>00가0000</div>
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">주차면</div>
+                                    <div>LOT.001</div>
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">소요시간</div>
+                                    <div>03분 15초</div>
+                                </li>
+                            </ul>
+                            <div class="card-footer">
+                                <button class="btn darkblue">대기장소이동</button>
+                                <button class="btn deepred" disabled>긴급정지</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--//로봇03-->
+                <!--로봇04-->
+                <div class="col-lg-4 mr-1">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex mb-0-3 p-r">
+                                <span class="name full">Robot 4</span>
+                                <div class="battery full">
+                                    <span>100%</span>
+                                </div>
+                            </div>
+                            <ul class="list-group">
+                                <li class="list-group-item2">
+                                    <div class="le">연결</div>
+                                    <div class="text-mint">Connecting</div>  <!--연결 중-->
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">상태</div>
+                                    <div>주차면 이동</div>
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">속도</div>
+                                    <div>20 Km/h</div>
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">미션</div>
+                                    <div>주차</div>
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">차량번호</div>
+                                    <div>00가0000</div>
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">주차면</div>
+                                    <div>LOT.001</div>
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">소요시간</div>
+                                    <div>03분 15초</div>
+                                </li>
+                            </ul>
+                            <div class="card-footer">
+                                <button class="btn darkblue">대기장소이동</button>
+                                <button class="btn deepred">긴급정지</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!--//로봇04-->
+                <!--로봇05-->
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex mb-0-3 p-r">
+                                <span class="name full">Robot 5</span>
+                                <div class="battery full">
+                                    <span>100%</span>
+                                </div>
+                            </div>
+                            <ul class="list-group">
+                                <li class="list-group-item2">
+                                    <div class="le">연결</div>
+                                    <div class="text-mint">Connecting</div>  <!--연결 중-->
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">상태</div>
+                                    <div>주차면 이동</div>
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">속도</div>
+                                    <div>20 Km/h</div>
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">미션</div>
+                                    <div>주차</div>
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">차량번호</div>
+                                    <div>00가0000</div>
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">주차면</div>
+                                    <div>LOT.001</div>
+                                </li>
+                                <li class="list-group-item2">
+                                    <div class="le">소요시간</div>
+                                    <div>03분 15초</div>
+                                </li>
+                            </ul>
+                            <div class="card-footer">
+                                <button class="btn darkblue">대기장소이동</button>
+                                <button class="btn deepred">긴급정지</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!--//로봇05-->
+            </div>
+            
+        </div>
+    </main>
+    <!--//robot-main-->
+</div>
+<!--//robot-wrapper-->
+
+<!--시스템알림관리 - 긴급알림 -->
+<div class="alarm-layer" id="layer-noti">
+    <header class="alarm-head">
+        <div class="inner">긴급알림</div>
+        <button class="btn-close" onclick="alarm();"></button>
+    </header>
+    <div class="alarm-content">
+        <ul class="notice">
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ Robot 1 ]</strong> 배터리 충전이 필요합니다.
+                    </span>
+                    <p class="date">2023.08.15 10:30:25</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ Robot 2 ]</strong> 배터리 온도가 너무 높습니다.</span>
+                    <p class="date">2023.08.15 10:30:25</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span><strong>[ Robot 3 ]</strong> 배터리 전압이 너무 낮습니다.</span>
+                    <p class="date">2023.08.15 10:30:25</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span><strong>[ Robot 3 ]</strong> 배터리 전압이 너무 낮습니다.</span>
+                    <p class="date">2023.08.15 10:30:25</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span><strong>[ Robot 1 ]</strong> 배터리 충전이 필요합니다.</span>
+                    <p class="date">2023.08.15 10:30:25</p>
+                </a>
+            </li>
+        </ul>
+        <div class="alarm-none" style="display: none;">
+            <p>긴급알림이 없습니다.</p>
+        </div>
+    </div>
+</div>
+
+<!--비밀번호 변경 popup-->
+<div class="modal-wrapper" id="pop_pwd">
+    <div class="modal small">
+        <div class="header">
+            <h1>
+                비밀번호 변경
+                <button class="btn btn-close" alt="닫기" onclick="fnHidePop('pop_pwd');"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <p class="fs14 pt-0 tex-gray">보안을 위해 최소 3개월 마다 비밀번호를 변경해주세요.</p>
+            <hr class="line">
+            <div class="input-group mb-2 eye">
+                <label class="required input-group-text mt--2">현재 비밀번호</label>
+                <div class="input-input-group">
+                    <input type="password" class="form-control" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                    <span class="d-block fs12 mt-0-8">※ 현재 비밀번호를 입력하세요.</span>
+                </div> 
+            </div>
+            <div class="input-group mb-0-8 eye">
+                <label class="required input-group-text">변경 비밀번호</label>
+                <div class="input-input-group">
+                    <input type="password" class="form-control" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                </div>
+            </div>
+            <div class="input-group mb-0-8 eye">
+                <label class="required input-group-text mt--2">비밀번호 확인</label>
+                <div class="input-input-group">
+                    <input type="password" class="form-control" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                    <span class="d-block fs12 mt-0-8">※ 비밀번호를 다시한번 입력하세요.</span>
+                </div>
+            </div>
+        </div>
+        <div class="btn-gruoup mt-0">
+            <button class="btn secondary">취소</button>
+            <button class="btn base">확인</button>
+        </div>
+    </div>
+</div>
+
+<!--대기장소선택-->
+<div class="modal-wrapper" id="pop_waiting">
+    <div class="modal ssmall">
+        <div class="header">
+            <h1>
+                대기장소 선택
+                <button class="btn btn-close" alt="닫기" onclick="fnHidePop('pop_waiting');"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <div style="padding: 0 2rem;">
+                <label class="styled mb-1-5">
+                    <input type="radio" name="radios" checked="">
+                    <i><span class="pl-0-6">입차 스테이션</span></i> 
+                </label>
+                <label class="styled mb-1-5">
+                    <input type="radio" name="radios">
+                    <i><span class="pl-0-6">출차 스테이션</span></i>
+                </label>
+                <label class="styled mb-1-5">
+                    <input type="radio" name="radios">
+                    <i><span class="pl-0-6">대기 구역 1</span></i>
+                </label>
+                <label class="styled">
+                    <input type="radio" name="radios">
+                    <i><span class="pl-0-6">대기 구역 2</span></i>
+                </label>
+            </div>
+        </div>
+        <div class="btn-gruoup mt-0">
+            <button class="btn secondary">취소</button>
+            <button class="btn base">이동</button>
+        </div> 
+    </div>
+</div>
+
+</body>
+</html>

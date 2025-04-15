@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<title>통계-차트</title>
+<meta charset="UTF-8">
+<meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="ui_event" content="true" />
+
+<link rel="stylesheet" href="./css/fontawesome6-all.css">
+<link rel="stylesheet" href="./css/style.css">
+
+<!-- <script type="text/javascript" charset="utf-8" src="./js/jquery-3.7.0.min.js"></script> -->
+<!-- <script type="text/javascript" charset="utf-8" src="./js/script.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- <script>
+    const ctx = document.getElementById("myChart");
+
+    const data = {
+        labels: [
+            "Red", 
+            "Blue", 
+            "Yellow"
+        ],
+        datasets: [{
+            label: "My First Dataset",
+            data: [300, 50, 100],
+            backgroundColor: [
+                "rgb(255, 99, 132)",
+                "rgb(54, 162, 235)",
+                "rgb(255, 205, 86)",
+            ],
+            hoverOffset: 4
+            }]
+        };
+    const config = {
+        type: 'doughnut',
+        data: data,
+    };
+</script> -->
+
+</head>
+<body style="background: #fff; color: #000;">
+    <!--https://ziszini.tistory.com/192
+        https://noanomal.tistory.com/3
+        https://www.chartjs.org/docs/latest/charts/doughnut.html
+    https://codepen.io/momalcy/pen/BaQQazV
+    https://jnoony-code.tistory.com/23
+-->
+<div>
+    <canvas id="myChart"></canvas>
+</div>
+<script>
+    const ctx = document.getElementById('myChart');
+  
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 2, 3],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,  // 0부터 시작하게 합니다.
+            stepSize: 10   // 10 씩 증가하도록 설정합니다.
+          }
+
+        }
+        
+      }
+    });
+</script>
+<!-- <script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        "type": "doughnut",
+        "data": {
+            labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+            datasets: [{
+            label: "Population (millions)",
+            backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+            data: [2478, 5267, 734, 784, 433] 
+                }] 
+            }
+    });
+</script> -->
+    
+</body>
+</html>
