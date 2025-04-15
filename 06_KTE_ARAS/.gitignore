@@ -1,0 +1,6 @@
+# common ignored directories
+.gradle/
+.settings/
+.idea/
+.jpa/
+.jpb/
