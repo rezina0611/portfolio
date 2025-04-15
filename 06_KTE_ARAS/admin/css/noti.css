@@ -1,0 +1,243 @@
+/* -- 알림함 2022-10-12 -- */
+
+#layer-noti, #layer-setting {
+    left: 24rem;
+    width: 40rem;
+    height: 100vh;
+    box-shadow: 1px 0 8px rgb(0 0 0 / 10%);
+}
+#layer-noti > .m-header,
+#layer-setting > .m-header {
+    box-shadow: 0 0 0;
+    height: 5rem;
+}
+#layer-noti > .m-header .btn-close,
+#layer-setting > .m-header .btn-close{
+    width: 2.4rem;
+    height: 2.4rem;
+    border: 0;
+    padding: 0;
+    background: url(../images/icon/ico_close_grey.png) no-repeat 50% 50% / 20px 20px;
+}
+
+#layer-noti .contents,
+#layer-setting .contents {
+    height: calc(100vh - 5rem);
+    position: relative;
+    background: #fff;
+}
+
+/* 알림 목록 */
+.notice-wrapper {
+	min-height: calc(100vh - 9.1rem);
+}
+.notice-wrapper footer {
+	position: absolute;
+	bottom:0;
+	left:0;
+	width: 100%;
+	height: 4rem;
+	border-top:1px solid #ddd;
+	background: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.notice-wrapper footer p {
+	color: #999;
+	font-size: 1.2rem;
+}
+.notice-wrapper footer p span {
+	margin-right: .6rem;
+}
+ul.notice {}
+ul.notice li {
+	border-bottom:1px solid #eee;
+}
+ul.notice li a {
+	display: block;
+	padding: 1.6rem 2rem 1.2rem;
+}
+ul.notice li a *{
+	margin-bottom: 4px;
+	line-height: 1.45
+}
+ul.notice li a > p{font-size:1.35rem;}
+ul.notice li .date {
+	display: block;
+	color: #999;
+	font-size: 1.3rem;
+    margin-left: 2rem;
+    white-space: nowrap;
+}
+ul.notice li.none {
+	text-align: center;
+	padding: 6rem 0;
+	border-bottom: none;
+    height: calc(100vh - 13.2rem);
+    background: #f5f5f5;
+} 
+ul.notice li.none > div {
+	opacity: 0.5;
+} 
+ul.notice li.none img {
+	margin-bottom: 2rem;
+} 
+ul.notice li .noti-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+ul.notice li .noti-head > h5 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+/* 알림함 탭 언더라인 스타일 */
+.notice-wrapper .tab-btn {
+    border-bottom:1px solid #ddd;
+}
+.tab.u-line {
+    padding: .6rem 2rem 0;
+}
+
+.tab.u-line li {
+    border:0;
+    min-width: inherit;
+    background: #fff;
+}
+.tab.u-line li button{
+    border:0;
+    background: transparent;
+    height: 3.6rem;
+    width: 8rem;
+    font-size: 1.5rem;
+    color: #666;
+    font-weight: 500;
+}
+.tab.u-line li.active button {
+    border-bottom: 3px solid #3879E9;
+    color: #3879E9;
+    font-weight: bold;
+}
+.notice-wrapper .tab-cont {
+    overflow-y: auto;
+    height: calc(100vh - 13.2rem);
+}
+
+
+
+/* 반려이력 2022-10-24 */
+ul.notice.return {
+    margin: -2rem -3rem;
+}
+ul.notice.return li {
+	padding: 1.6rem 2rem 1.3rem;
+}
+ul.notice.return li .date {
+    margin: 0 0 .6rem;
+}
+ul.notice.return li p {
+    
+}
+
+
+/* 체크리스트 2022-11-14 */
+ul.notice.check-list {
+    width: calc(100% + 6rem);
+    padding: .5rem 0;
+}
+ul.notice.check-list li{
+    border:0;
+    padding: .4rem .5rem;
+}
+ul.notice.check-list li label{
+    display: block;
+}
+.notice.check-list li .file-down{
+    border:0;
+    background: transparent;
+}
+.notice.check-list li .file-down:before{
+    border:0;
+    margin-right: 0;
+}
+
+
+/*알림설정*/
+.notice-setting{}
+.notice-setting > li{
+    padding: 1.5rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+.notice-setting > li .title{
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.4;
+    position: relative;
+    letter-spacing: -0.02em;
+}
+.notice-setting > li .info-save {
+    margin: 1.2rem 0 0;
+    color: #999;
+}
+
+.button.on-off {
+    position: relative;
+    top: 50%;
+    width: 6.4rem;
+    height: 3.2rem;
+    margin: -1.6rem 0;
+    overflow: hidden;
+}
+.button.on-off .btn-layer{
+    width: 100%;
+    transition: 0.3s ease all;
+    z-index: 1;
+    background-color: #eee;
+}
+.button.on-off .knobs:before{
+    content: 'OFF';
+    position: absolute;
+    top: .4rem;
+    left: .4rem;
+    width: 4rem;
+    height: 2.4rem;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: -0.04em;
+    text-align: center;
+    line-height: 1;
+    padding: .45rem .4rem;
+    background-color: #999;
+    border-radius: 1.4rem;
+    transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+}
+.button.on-off .checkbox:checked + .knobs:before{
+    content: 'ON';
+    left: 2rem;
+    background-color: #3879E9;
+}
+.button.on-off  .checkbox:checked ~ .btn-layer{
+    background-color: #E7EFFD;
+}
+.button.on-off .knobs, .button .knobs:before, .button .btn-layer{
+    transition: 0.3s ease all;
+}
+
+
+
+
+
+
+
+
+

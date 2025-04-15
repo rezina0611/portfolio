@@ -1,0 +1,246 @@
+/* dashboard dark mode */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
+
+main.contents.dark {
+    background: #2c2c2c;
+	color:#fff;
+}
+main.contents.dark .wrapper {
+    overflow: auto;
+}
+
+.dashboard-wrapper {
+    width: 100%;
+    display: flex;
+	min-width: 162rem;
+	margin-top: 1rem;
+}
+.panel-left{
+    width: 100%;
+    min-width: 84rem;
+}
+.panel-right{
+	min-width: 76rem;
+    margin-left: 2rem;
+}
+.panel {
+    background: #393939;
+    margin-bottom: 1.6rem;
+	border-radius: .5rem;
+	box-shadow: 0 6px 13px rgba(21,33,56,.5);
+}
+.value {
+	font-family: 'Roboto', sans-serif;
+}
+.stat{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.stat > li{
+    display: block;
+    width: 100%;
+	padding: 2.2rem 2rem;
+}
+.stat > li + li{
+    margin-left: 1.6rem;
+}
+.stat li > div.d-flex{
+    justify-content: space-between;
+}
+.stat li .title {
+	font-size: 1.8rem;
+	font-weight: 500;
+}
+.stat li strong.value{
+    font-size: 5.4rem;
+    font-weight: 500;
+    text-align: right;
+}
+.section-1 .part-index {
+    display: flex;
+	justify-content: space-between;
+}
+.section-1 .part-index .donut-chart-area {
+    width: 40%;
+	margin-top: -2rem;
+}
+.section-1 .part-index .dot-list {
+	width: 60%;	
+}
+.dot-list > ul > li {
+    display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 1.6rem;
+}
+.dot-list li i {
+    margin-right: 1.1rem;
+}
+.dot-list .blue > i {
+    color:#1F8EFA;
+}
+.dot-list .yellow > i {
+    color:#FFAB4F;
+}
+.dot-list .green > i {
+    color:#05C985;
+}
+.dot-list > ul > li .value > span {
+	color: #98A7B9;
+	margin-left: .4rem;
+}
+
+.color-panel {}
+.color-panel > li {
+	padding: 1.5rem;
+}
+.color-panel .panel.mint{
+	background: #1BAEC5;
+}
+.color-panel .panel.blue{
+	background: #1F8EFA;
+}
+.color-panel .panel.red{
+	background: #EE423D;
+}
+.color-panel .panel.mint .part-total{
+	background: url("../images/ico_dashboard_01.png") no-repeat 6px 4px;
+	background-size: 48px;
+}
+.color-panel .panel.blue .part-total{
+	background: url("../images/ico_dashboard_02.png") no-repeat 6px 8px;
+	background-size: 48px;
+}
+.color-panel .panel.red .part-total{
+	background: url("../images/ico_dashboard_03.png") no-repeat 6px 4px;
+	background-size: 48px;
+}
+.color-panel .part-total{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	margin: .8rem 0;
+}
+.color-panel .part-total .title{
+	font-size: 1.6rem;
+}
+.color-panel .part-total .value{
+	font-size: 3.6rem;
+	margin: .8rem 0 .2rem;
+}
+.color-panel .part-index{}
+.color-panel .part-index ul{
+	width: 100%;
+    display: flex;
+    flex-direction: row;
+	justify-content: space-between;
+}
+.color-panel .part-index ul li{
+	background: rgba(19,26,39,.1);
+	border-radius: .3rem;
+	padding: .8rem;
+	letter-spacing: -0.05em;
+	width: 32%;
+}
+.color-panel .part-index ul li span{
+	color: rgba(255,255,255,.8);
+}
+.color-panel .part-index ul li .value{
+	font-size: 2.4rem;
+	margin-top: .4rem;
+}
+.color-panel .part-index ul li .value > span{
+	font-size: 1.3rem;
+	margin-left: .4rem;
+}
+
+.panel .title-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+	padding: 2rem;
+}
+.title-area > h2{
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+.panel .left-chart, 
+.panel .right-chart{
+	width: 100%;
+}
+.panel .left-chart .chart-area, 
+.panel .right-chart .chart-area{
+	height: 40rem;
+}
+.panel .chart-area {
+    width: 100%;
+    height: 30rem;
+}
+.panel .title.round-pill {
+	background: #444;
+	padding: .4rem 1.2rem .6rem;
+	border-radius: 1.6rem;
+	font-weight: 500;
+	display: flex;
+	justify-content: center;
+	width: fit-content;
+	margin: auto;
+}
+
+.panel .map-area{
+    width: 100%;
+    height: 88rem;
+}
+
+.chart-list {
+	min-width: 162rem;
+}
+.chart-list > ul{
+	display: flex;
+	flex-direction: row;
+}
+.chart-list > ul > li{
+	display: block;
+	width: 100%;
+	margin-bottom: 0;
+}
+.chart-list > ul > li + li{
+	margin-left: 1.6rem;
+}
+.chart-list > ul > li .title-area{
+	align-items: baseline;
+}
+main.dark select {
+    background: #2c2c2c url(../images/ico_dropdown.png) right center no-repeat;
+	color:#98A7B9;
+	border:0;
+	height: 2.8rem;
+	padding: .4rem .8rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

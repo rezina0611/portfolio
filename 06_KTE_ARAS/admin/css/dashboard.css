@@ -1,0 +1,886 @@
+/* dashboard */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
+
+main.contents.dark {
+    background: #2c2c2c;
+	color:#fff;
+}
+main.contents.dark .wrapper {
+    overflow: auto;
+}
+.dashboard-wrapper {
+    width: 100%;
+    display: flex;
+	min-width: 162rem;
+	margin-top: 1rem;
+}
+.panel-left{
+    width: 100%;
+    min-width: 84rem;
+}
+.panel-right{
+	min-width: 76rem;
+    margin-left: 2rem;
+}
+.contents.dark .panel {
+    background: #393939;
+    margin-bottom: 1.6rem;
+	border-radius: .5rem;
+	box-shadow: 0 6px 13px rgba(21,33,56,.5);
+}
+.value {
+	font-family: 'Roboto', sans-serif;
+}
+.stat{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    min-width: 160rem;
+}
+.stat > li{
+    display: block;
+    width: 100%;
+	padding: 2.2rem 2rem;
+}
+.stat > li + li{
+    margin-left: 1.6rem;
+}
+.stat li > div.d-flex{
+    justify-content: space-between;
+}
+.stat li .title {
+	font-size: 1.8rem;
+	font-weight: 500;
+}
+.stat li strong.value{
+    font-size: 5.4rem;
+    font-weight: 500;
+    text-align: right;
+}
+.part-index {
+    display: flex;
+	justify-content: space-between;
+}
+.section-1 .part-index .donut-chart-area {
+    width: 40%;
+	margin-top: -2rem;
+}
+.section-1 .part-index .dot-list {
+	width: 60%;	
+}
+.dot-list > ul > li {
+    display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 1.6rem;
+}
+.dot-list li i {
+    margin-right: 1.1rem;
+}
+.dot-list .blue > i {
+    color:#1F8EFA;
+}
+.dot-list .yellow > i {
+    color:#FFAB4F;
+}
+.dot-list .green > i {
+    color:#05C985;
+}
+.dot-list > ul > li .value > span {
+	color: #98A7B9;
+	margin-left: .4rem;
+}
+
+.color-panel {}
+.color-panel > li {
+	padding: 1.5rem;
+}
+.color-panel .panel.mint{
+	background: #1BAEC5;
+}
+.color-panel .panel.blue{
+	background: #1F8EFA;
+}
+.color-panel .panel.red{
+	background: #EE423D;
+}
+.color-panel .panel.mint .part-total{
+	background: url("../images/ico_dashboard_01.png") no-repeat 6px 4px;
+	background-size: 48px;
+}
+.color-panel .panel.blue .part-total{
+	background: url("../images/ico_dashboard_02.png") no-repeat 6px 8px;
+	background-size: 48px;
+}
+.color-panel .panel.red .part-total{
+	background: url("../images/ico_dashboard_03.png") no-repeat 6px 4px;
+	background-size: 48px;
+}
+.color-panel .part-total{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	margin: .8rem 0;
+}
+.color-panel .part-total .title{
+	font-size: 1.6rem;
+}
+.color-panel .part-total .value{
+	font-size: 3.6rem;
+	margin: .8rem 0 .2rem;
+}
+.color-panel .part-index{}
+.color-panel .part-index ul{
+	width: 100%;
+    display: flex;
+    flex-direction: row;
+	justify-content: space-between;
+}
+.color-panel .part-index ul li{
+	background: rgba(19,26,39,.1);
+	border-radius: .3rem;
+	padding: .8rem;
+	letter-spacing: -0.05em;
+	width: 32%;
+}
+.color-panel .part-index ul li span{
+	color: rgba(255,255,255,.8);
+}
+.color-panel .part-index ul li .value{
+	font-size: 2.4rem;
+	margin-top: .4rem;
+}
+.color-panel .part-index ul li .value > span{
+	font-size: 1.3rem;
+	margin-left: .4rem;
+}
+
+.panel .title-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+	padding: 2rem; 
+}
+.title-area > h2{
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+.panel .left-chart, 
+.panel .right-chart{
+	width: 100%;
+}
+.panel .left-chart .chart-area, 
+.panel .right-chart .chart-area{
+	height: 40rem;
+}
+.panel .chart-area {
+    width: 100%;
+    height: 30rem;
+}
+.panel .title.round-pill {
+	background: #444;
+	padding: .4rem 1.2rem .6rem;
+	border-radius: 1.6rem;
+	font-weight: 500;
+	display: flex;
+	justify-content: center;
+	width: fit-content;
+	margin: auto;
+}
+
+.panel .map-area{
+    width: 100%;
+    height: 88rem;
+}
+
+.chart-list {
+	min-width: 162rem;
+}
+.chart-list > ul{
+	display: flex;
+	flex-direction: row;
+}
+.chart-list > ul > li{
+	display: block;
+	width: 100%;
+	margin-bottom: 0;
+}
+.chart-list > ul > li + li{
+	margin-left: 1.6rem;
+}
+.chart-list > ul > li .title-area{
+	align-items: baseline;
+}
+main.dark select {
+    background: #2c2c2c url(../images/ico_dropdown.png) right center no-repeat;
+	color:#98A7B9;
+	border:0;
+	height: 2.8rem;
+	padding: .4rem .8rem;
+}
+.chart-list .panel{
+    cursor: pointer;
+}
+
+
+
+/* dashboard 2022-12-13 수정 */
+main .wrapper.db {
+    /*padding: 3rem 4rem;*/ /*han 2023-01-11*/
+    padding: 3rem;
+}
+main .wrapper.db .value {
+	font-family: inherit;
+}
+main .wrapper.db .page-title {
+	margin: .4rem 0 1.2rem;
+}
+.page-title .date {
+    font-size: 1.6rem;
+    font-weight: normal;
+    color: #6F6F6F;
+    margin-left: 1.6rem;
+}
+.wrapper.db > div {
+    margin-bottom: 2rem;  
+}
+.wrapper.db .panel {
+    background: #fff;
+	border-radius: .8rem;
+	box-shadow: 0 2px 5px rgba(111 111 111 / 12%);
+    padding: 2rem 2.4rem;
+    width: 100%;
+}
+/* .wrapper.db .panel.w60{
+    width: 57.5%;
+    margin-left: 2rem;
+} */
+
+.wrapper.db .stat > li {
+    cursor: pointer;
+}
+.wrapper.db .stat > li + li {
+    margin-left: 2rem;
+}
+.wrapper.db .panel .title-area {
+    padding: 0;
+    position: relative;
+}
+.wrapper.db .panel .title-area h2{
+    font-weight: 600;
+    line-height: 1.25;
+}
+.wrapper.db .panel .part-index {
+    margin-top: 1.5rem;
+}
+.panel .part-index .total {
+    background: rgba(56 121 233/ 10%);
+    border: 1px solid rgba(56 121 233/ 8%);
+    color: #3879E9;
+    border-radius: .8rem;
+    padding: 1.4rem 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    height: 8.6rem;
+    margin-right: 1rem;
+}
+.panel .part-index .total > .tit {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.panel .part-index .total > .count {
+    display: flex;
+    align-items: flex-end;
+}
+.panel .part-index .total > .count .value {
+    font-size: 3.2rem;
+    font-weight: 600;
+}
+.panel .part-index .dot-list {
+    width: 50%;
+    margin: 0 1rem;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+.panel .part-index .dot-list + .dot-list{
+    margin-left: 3rem;
+}
+.panel .dot-list ul {
+    width: 100%;
+}
+.panel .dot-list ul > li{
+    margin: inherit;
+}
+.panel .dot-list ul > li + li{
+    margin-top: 1.6rem
+}
+.panel .dot-list.ico ul > li + li{
+    margin-top: .6rem
+}
+.panel .dot-list li > div {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+.panel .dot-list li .count {
+    font-weight: 700;
+}
+.panel .dot-list li img {
+    width: 3.6rem;
+    margin-right: 1.4rem;
+}
+.wrapper.db .panel .dot-list i {
+    font-size: 1rem;
+}
+.dot-list .danger > i {
+    color: #E30413;
+}
+.dot-list .normal > i {
+    color: #aaa;
+}
+.dot-list .done > i {
+    color: #2C84F1
+}
+
+.panel .dot-list.ico-40 {
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+    min-width: 27.2rem;
+}
+.panel .dot-list.ico-40 li {
+    padding: .5rem;
+}
+.panel .dot-list.ico-40 li + li {
+    margin-top: .6rem;
+}
+.panel .dot-list.ico-40 li > div {
+    letter-spacing: -0.03em;
+}
+.panel .dot-list.ico-40 li img {
+    width: 4rem;
+    margin-right: 1.4rem;
+}
+
+.panel .dot-list.ico-24 li img {
+    width: 2.4rem;
+    margin-right: .8rem;
+}
+.panel .dot-list.ico-24 ul > li + li{
+    margin-top: 1.2rem
+}
+.panel .dot-list li.tit {
+    margin-bottom: 1.8rem;
+}
+.panel .dot-list li.tit > div {
+    font-weight: 600;
+}
+
+.panel > .dot-list {
+    width: 78%;
+    margin: 0 auto;
+}
+.panel > .dot-list {
+    width: 78%;
+    margin: 0 auto;
+    font-size: 1.4rem;
+}
+.chart-list .panel .pie-chart-area {
+    height: 20rem;
+}
+
+.wrapper.db .chart-list {
+	min-width: 160rem;
+}
+.wrapper.db .chart-list ul {
+	width: 100%;
+}
+.wrapper.db .chart-list > ul > li + li,
+.wrapper.db .chart-list .d-flex > li + li {
+    margin-left: 2rem;
+}
+.wrapper.db .chart-list .left {
+	width: 50%;
+    margin: 0 2rem 0 0;
+}
+.wrapper.db .chart-list .right {
+	width: 50%
+}
+.panel select {
+    height: 3.2rem;
+    min-width: 7rem;
+}
+.wrapper.db .panel select {
+    position: absolute;
+    right:0;
+}
+.wrapper.db .chart-list .chart-area {
+	min-height: 28rem;
+    height: inherit;
+}
+
+.tui-wrapper.panel {
+    padding: 0 !important;
+    border:0;
+    margin-top: 0;
+}
+.tui-wrapper.panel .d-flex > h2 {
+    margin-left: .8rem;
+}
+.tui-wrapper.panel .table th {
+    line-height: 1.2;
+}
+.tui-wrapper.panel .table.sticky thead th {
+    padding: .6rem;
+    line-height: 1.2;
+}
+.tui-wrapper.panel .table.db-t .bdt-1 {
+    border-width: 1px 0 0;
+    padding: .6rem .6rem .4rem;
+    line-height: 1;
+}
+.tui-wrapper.panel .table.db-t .bdb-1 {
+    border-width: 0 0 1px;
+    font-size: 1.3rem;
+    font-weight:500;
+    padding: .4rem .6rem .6rem;
+    line-height: 1;
+}
+
+.table.sticky {}
+.table.sticky thead {
+    position: sticky;
+    left:0;
+    top:0;
+    background: #f9f9f9;
+}
+
+/* 미결함, 마이프로젝트 안전관리 필수 */
+.panel.ico-box {
+    width: 10rem !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1.8rem 1.6rem !important;
+    cursor: pointer;
+}
+.panel.ico-box > img {
+    width: 6.4rem;
+}
+.panel.ico-box > .d-flex {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+.panel.ico-box .tit{
+    font-weight: 500;
+    margin: .8rem 0;
+}
+.panel.ico-box .count{
+    font-weight: 600;
+}
+.panel.ico-box .value{
+    font-size: 2.4rem;
+}
+
+/* 마이프로젝트 안전관리 필수 */
+.panel.ico-box.myp .tit{
+    color: #028001;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 1rem -1rem 0;
+    text-align: center;
+    letter-spacing: -0.1em;
+    line-height: 1.3;
+}
+.panel.ico-box.myp .count{
+    color: #028001;
+}
+
+/* 마이프로젝트 */
+.panel.ico-box.mypjt .tit{
+    color: #3879E9;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 1rem -1rem 0;
+    text-align: center;
+    line-height: 1.3;
+}
+.panel.ico-box.mypjt .count{
+    color: #3879E9;
+}
+
+/* 수행품질평가(PQE) */
+.panel.ico-box.PQE{
+    width: 16rem !important
+}
+.panel.ico-box.PQE .tit{
+    color: #C42F77;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 1rem -1rem 0;
+    text-align: center;
+    line-height: 1.3;
+}
+.panel.ico-box.PQE .fs13,
+.panel.ico-box.PQE .count{
+    color: #C42F77;
+}
+
+.panel.ico-box.place .tit{
+    color: #666;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 1rem -1rem 0;
+    text-align: center;
+    line-height: 1.3;
+}
+.panel.ico-box.place .fs13{
+    color: #999;
+}
+.panel.ico-box.place .count{
+    color: #666;
+}
+
+
+/* MY 프로젝트에서 해야할 일 */
+.stat.myp {
+    min-width: inherit;
+}
+.stat.myp li .pie-chart-area {
+    margin-top: 1.5rem;
+    width: 16rem;
+    height: 13.2rem;
+}
+.stat.myp > li {
+    padding: .8rem .8rem 0 .8rem;
+    position: relative;
+}
+.stat.myp > hr {
+    margin: 1rem 1.6rem 0 2rem;
+    border: .5px solid #eee;
+}
+
+.panel .box-list {
+    margin-top: .6rem;
+}
+.panel .box-list ul{
+    display: flex;
+    flex-direction: row;
+}
+.panel .box-list ul li{
+    background: rgba(239 239 239 / 60%);
+    border-radius: .8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    padding: 1.2rem .8rem;
+    height: 8.2rem;
+}
+.panel .box-list ul li > .label{
+    color: #6F6F6F;
+    font-weight: 500;
+}
+.panel .box-list ul li > .count{
+    color: #222;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: .8rem;
+}
+.panel .box-list ul li + li{
+    margin-left: .6rem;
+}
+.panel .part-index.fd-col {
+    min-width: 30rem;
+}
+.panel .part-index.fd-col .total{
+    width: 100%;
+    height: 4.4rem;
+    align-items: center;
+}
+.panel .part-index.fd-col .total > .count{
+    align-items: baseline;
+}
+.panel .part-index.fd-col .total > .count .value {
+    font-size: 2rem;
+}
+
+.ico-box-list {
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.ico-box-list > li + li {
+    margin-left: .8rem;
+}
+.ico-box-list > li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1.2rem !important;
+    cursor: pointer;
+}
+.ico-box-list li .ico-bg{
+    width: 6.8rem;
+    height: 6.8rem;
+    border-radius: .8rem;
+    background: rgba(238 238 238 / 60%);
+    padding: 1rem;
+    margin: .4rem 0 1.2rem;
+}
+.ico-box-list li > .d-flex{
+    color: #6f6f6f;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 4.4rem;
+}
+.ico-box-list li.active > .d-flex{
+    color: #3879E9;
+}
+.ico-box-list li .value{
+    display: none;
+}
+.ico-box-list li.active .value{
+    display: block;
+}
+.ico-box-list li .tit{
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+.ico-box-list li .value{
+    font-size: 3.2rem;
+    font-weight: 600;
+}
+
+/*협력사 수행 품질평가 han 2023-01-13*/
+.evaluation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    cursor: pointer;
+}
+.evaluation .ico-bg {
+    width: 6.8rem;
+    height: 6.8rem;
+    border-radius: 0.8rem;
+    background: rgba(238 238 238 / 60%);
+    padding: 1rem;
+    margin: 0.4rem 0 1.2rem;
+}
+.evaluation.active > .d-flex {
+    color: #3879E9;
+}
+.evaluation > .d-flex {
+    color: #6f6f6f;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.evaluation .tit {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+.evaluation .tit + .tit{
+    margin: 1.2rem 0; 
+    font-weight: 500;
+}
+.evaluation .count {
+    font-weight: 600;
+}
+.evaluation .value {
+    font-size: 3.2rem;
+    font-weight: 600;
+}
+
+/* 01 안전보건관리 수행계획서 */
+.ico-box-list li .ico-bg.i-01{
+    background: rgba(238 238 238 / 60%) url("../images/icon/ico_pjt_docs_01.png") no-repeat 50% 50% / 48px 48px;
+}
+.ico-box-list li.active .ico-bg.i-01{
+    background: rgba(56 121 233 / 10%) url("../images/icon/ico_pjt_docs_01_bl.png") no-repeat 50% 50% / 48px 48px;
+}
+
+/* 02 작업허가서 */
+.ico-box-list li .ico-bg.i-02{
+    background: rgba(238 238 238 / 60%) url("../images/icon/ico_pjt_docs_02.png") no-repeat 50% 50% / 48px 48px;
+}
+.ico-box-list li.active .ico-bg.i-02{
+    background: rgba(56 121 233 / 10%) url("../images/icon/ico_pjt_docs_02_bl.png") no-repeat 50% 50% / 48px 48px;
+}
+
+/* 03 작업계획서 */
+.ico-box-list li .ico-bg.i-03{
+    background: rgba(238 238 238 / 60%) url("../images/icon/ico_pjt_docs_03.png") no-repeat 50% 50% / 48px 48px;
+}
+.ico-box-list li.active .ico-bg.i-03{
+    background: rgba(56 121 233 / 10%) url("../images/icon/ico_pjt_docs_03_bl.png") no-repeat 50% 50% / 48px 48px;
+}
+
+/* 04 안전보건 교육일지 */
+.ico-box-list li .ico-bg.i-04{
+    background: rgba(238 238 238 / 60%) url("../images/icon/ico_pjt_docs_04.png") no-repeat 50% 50% / 48px 48px;
+}
+.ico-box-list li.active .ico-bg.i-04{
+    background: rgba(56 121 233 / 10%) url("../images/icon/ico_pjt_docs_04_bl.png") no-repeat 50% 50% / 48px 48px;
+}
+
+/* 05 안전점검의 날 행사 */
+.ico-box-list li .ico-bg.i-05{
+    background: rgba(238 238 238 / 60%) url("../images/icon/ico_pjt_docs_05.png") no-repeat 50% 50% / 48px 48px;
+}
+.ico-box-list li.active .ico-bg.i-05{
+    background: rgba(56 121 233 / 10%) url("../images/icon/ico_pjt_docs_05_bl.png") no-repeat 50% 50% / 48px 48px;
+}
+
+/* 06 협의체 회의록 */
+.ico-box-list li .ico-bg.i-06{
+    background: rgba(238 238 238 / 60%) url("../images/icon/ico_pjt_docs_06.png") no-repeat 50% 50% / 48px 48px;
+}
+.ico-box-list li.active .ico-bg.i-06{
+    background: rgba(56 121 233 / 10%) url("../images/icon/ico_pjt_docs_06_bl.png") no-repeat 50% 50% / 48px 48px;
+}
+
+/* 07 사업장 합동 안전점검 */
+.ico-box-list li .ico-bg.i-07{
+    background: rgba(238 238 238 / 60%) url("../images/icon/ico_pjt_docs_07.png") no-repeat 50% 50% / 48px 48px;
+}
+.ico-box-list li.active .ico-bg.i-07{
+    background: rgba(56 121 233 / 10%) url("../images/icon/ico_pjt_docs_07_bl.png") no-repeat 50% 50% / 48px 48px;
+}
+
+/* 08 산업안전 보건관리비 */
+.ico-box-list li .ico-bg.i-08{
+    background: rgba(238 238 238 / 60%) url("../images/icon/ico_pjt_docs_08.png") no-repeat 50% 50% / 48px 48px;
+}
+.ico-box-list li.active .ico-bg.i-08{
+    background: rgba(56 121 233 / 10%) url("../images/icon/ico_pjt_docs_08_bl.png") no-repeat 50% 50% / 48px 48px;
+}
+
+/*09 수행품질평가 2023-01-13*/
+.evaluation .ico-bg.i-09{
+    background: rgba(238 238 238 / 60%) url("../images/icon/ico_pjt_docs_03.png") no-repeat 50% 50% / 48px 48px;
+}
+.evaluation.active .ico-bg.i-09{
+    background: rgba(56 121 233 / 10%) url("../images/icon/ico_pjt_docs_03_bl.png") no-repeat 50% 50% / 48px 48px;
+}
+
+.pointer {cursor: pointer}
+
+
+/* 작업있음/없음 토글 2022-12-27 */
+.button-cover{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(50% - 4.5rem);
+}
+.knobs, .btn-layer{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.button {
+    position: relative;
+    top: 50%;
+    width: 9rem;
+    height: 3.2rem;
+    margin: -1.6rem 0;
+    overflow: hidden;
+}
+
+.button.r, .button.r .btn-layer{
+    border-radius: 100px;
+}
+.button.b2{
+    border-radius: 2px;
+}
+.checkbox{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0 !important;
+    cursor: pointer;
+    z-index: 3;
+    transform: scale(1) !important;
+}
+.button .knobs{z-index: 2;}
+.button .btn-layer{
+    width: 100%;
+    background-color: #ebf7fc;
+    transition: 0.3s ease all;
+    z-index: 1;
+}
+
+.button .knobs:before{
+    content: '작업있음';
+    position: absolute;
+    top: .4rem;
+    left: .4rem;
+    width: 6.6rem;
+    height: 2.4rem;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: -0.04em;
+    text-align: center;
+    line-height: 1;
+    padding: .45rem .4rem;
+    background-color: #03A9F4;
+    border-radius: 1.4rem;
+    transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+}
+.button .checkbox:checked + .knobs:before{
+    content: '작업없음';
+    left: 2rem;
+    background-color: #f44336;
+}
+.button  .checkbox:checked ~ .btn-layer{
+    background-color: #fcebeb;
+}
+.button .knobs, .button .knobs:before, .button .btn-layer{
+    transition: 0.3s ease all;
+}
+
+
+.no-list {
+    padding-left: 2rem; 
+}
+.no-list li {
+    list-style: decimal;
+}
+
+.modal .tui-wrapper.panel .tab-cont > div {
+    max-height: 56rem;
+    overflow-y: scroll;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
