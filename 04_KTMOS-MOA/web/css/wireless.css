@@ -1,0 +1,215 @@
+
+.dashBoard {
+	width: 100%;
+    background: #F2F4F5;
+    padding: 30px;
+    min-height: 100vh;
+}
+.dFlex {display:flex}
+.head {
+    width: 100%;
+    height: 45px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(49,55,82,.1);
+    display: flex;
+    justify-content: space-between;
+}
+.head h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+#tab-menu {}
+#tab-btn ul {
+    overflow: hidden;
+    margin-left: 30px;
+    display: inline-flex;
+}
+#tab-btn li {
+    display: inline-block;
+    text-align: center;
+    margin-left: -1px;
+}
+#tab-btn li:nth-child(1) {margin-left: 0;}
+#tab-btn li a {
+    display: block;
+    color: #999;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 11px 24px 10px;
+    background: #f5f5f5;
+    border: solid #ddd;
+    border-width: 1px 1px 0 1px;
+    border-radius: 12px 12px 0 0;
+}
+#tab-btn li.active a {
+    color: #222;
+    transition: all 0.2s ease-in-out;
+    background: #fff;
+}
+
+#tab-cont {width: 100%;}
+
+.search-wrapper { margin: 0;}
+.search-wrapper label {
+    display: inline-block;
+    margin-right: 24px;
+    font-size: 13px
+}
+.search-wrapper input[type=date] {
+    border: 1px solid #E4E8F0;
+    border-radius: 4px;
+    height: 36px;
+    width:140px;
+    margin: 0 !important;
+}
+.search-wrapper span {
+    display: inline-block;
+    margin: 0 4px;
+}
+.search-wrapper input[type=button] {
+    width: 54px;
+    height: 36px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    margin-left: 4px !important;
+}
+.search-wrapper input[type=button]:hover {
+    transition: 0.1s linear;
+}
+
+.dFlex .half { width:100%;}
+.dFlex > .half + .half { margin-left:20px;}
+
+h2.title {float: none !important; font-weight: 500;}
+#tab-cont .group-section {padding:20px 0;}
+.dFlex > .half > div {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 1.5em;
+    margin-top:10px;
+}
+#tab-cont .half > div.highcharts-container {
+    border: 0 none;
+    padding: 0;
+    margin-top: 0;
+}
+
+.chart-area {
+    display: flex;
+    overflow: hidden;
+}
+.chart-area h3 {
+    font-size:16px;
+}
+.chart-area .half {
+    height: 368px;
+    padding: 0 !important;
+}
+.chart-area .half + .half { margin-left:10px;}
+
+.summary-wrap {padding: 0 !important}
+ul.summary {
+    display: flex;
+    padding: 20px 0 16px;
+}
+ul.summary li {
+    width: 100%;
+    padding: 0 20px;
+}
+ul.summary li + li {border-left: 1px solid #ddd;}
+ul.summary li span {
+    display: block;
+    text-align: right;
+}
+ul.summary li .label{
+    font-size:13px;
+    color: #666;
+    text-align: left;
+}
+ul.summary li strong{
+    display: inline-block;
+    font-size: 32px;
+    color: #222;
+    margin-top: 4px;
+    word-break: keep-all;
+}
+
+table.tui-table {
+    font-size: 13px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    table-layout: fixed;
+    margin-top: 6px;
+    width: 100%;
+}
+table.tui-table caption {display:none;}
+table.tui-table tr {
+    border-bottom: 1px solid #ddd;
+}
+table.tui-table th {
+    background: #f4f4f4;
+    padding: 8px;
+    border-left: 1px solid #ddd;
+}
+table.tui-table th:nth-child(1){border-left:none;}
+
+table.tui-table td {
+    border-left: 1px solid #ddd;
+}
+
+
+.dFlex .half .vt {
+    display: flex;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    margin-top: 4px;
+    height: 41vh;
+}
+.vt .summary-wrap {
+    background: #fff;
+    border: 1px solid #ddd;
+}
+.vt ul.summary {
+    flex-direction: column;
+    padding: 0 20px;
+    max-width: 190px;
+    min-width: 160px;
+}
+.vt ul.summary li {
+    padding: 1.8vh 0;
+}
+.vt ul.summary li + li {
+    border-left:none;
+    border-top: 1px solid #ddd;
+}
+.vt ul.summary li strong{
+    line-height: 1.3;
+}
+.vt .chart-area-wrap {
+    margin-left: 10px;
+    height: 41vh;
+}
+.vt .chart-area,
+.vt .table-wrap {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 12px 16px;
+    flex-wrap: wrap;
+}
+.vt .chart-area .half {
+    width: 50%;
+    height:calc(41vh - 177px);
+}
+.vt .chart-area .half + .half {
+    margin: 0;
+}
+.vt .table-wrap {
+    margin-top: 10px;
+}
+.vt .table-wrap th {
+    padding: 4px;
+}
+
+
+

@@ -1,0 +1,1327 @@
+/*
+==============================================
+                   button                     
+==============================================
+*/
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+  margin-top: -1px;
+}
+
+button {
+  outline: none !important;
+}
+
+button.button,
+span.button {
+  user-select: none;
+  display: inline-block;
+  outline: none !important;
+  text-align: center;
+  text-decoration: none;
+  padding: 7px 18px;
+  font-size: 12px !important;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  overflow: visible !important;
+  letter-spacing: 2px !important;
+  white-space: nowrap;
+  font-weight: normal;
+  height: auto;
+  width: auto;
+  border: none;
+  margin: 0 1px 1px 1px;
+}
+button.button.strong,
+span.button.strong {
+  font-weight: bold;
+}
+button.button:not(:disabled):not(.disabled):not([disabled="disabled"]):not(.fixed),
+span.button:not(:disabled):not(.disabled):not([disabled="disabled"]):not(.fixed) {
+  cursor: pointer;
+}
+button.button.fixed,
+span.button.fixed {
+  cursor: default !important;
+}
+button.button.floating,
+span.button.floating {
+  position: absolute;
+}
+button.button:disabled, button.button.disabled, button.button[disabled],
+span.button:disabled,
+span.button.disabled,
+span.button[disabled] {
+  cursor: not-allowed;
+  box-shadow: none;
+  color: #b5b5b5 !important;
+  border: solid 1px #d6d6d6 !important;
+  background: #eaeaea !important;
+}
+button.button:hover,
+span.button:hover {
+  text-decoration: none;
+}
+button.button:active:not(:disabled):not(.disabled):not([disabled="disabled"]):not(.fixed):not(.floating),
+span.button:active:not(:disabled):not(.disabled):not([disabled="disabled"]):not(.fixed):not(.floating) {
+  position: relative;
+  top: 1px;
+}
+button.button.square,
+span.button.square {
+  padding: 4px 15px;
+}
+button.button.box,
+span.button.box {
+  border-radius: 0;
+}
+button.button.rounded,
+span.button.rounded {
+  border-radius: 6.5em;
+}
+button.button.circle,
+span.button.circle {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+button.button.circle.s10,
+span.button.circle.s10 {
+  width: 10px;
+  height: 10px;
+}
+button.button.circle.s20,
+span.button.circle.s20 {
+  width: 20px;
+  height: 20px;
+}
+button.button.circle.s30,
+span.button.circle.s30 {
+  width: 30px;
+  height: 30px;
+}
+button.button.circle.s40,
+span.button.circle.s40 {
+  width: 40px;
+  height: 40px;
+}
+button.button.circle.s50,
+span.button.circle.s50 {
+  width: 50px;
+  height: 50px;
+}
+button.button.circle.s60,
+span.button.circle.s60 {
+  width: 60px;
+  height: 60px;
+}
+button.button.circle.s70,
+span.button.circle.s70 {
+  width: 70px;
+  height: 70px;
+}
+button.button.circle.s80,
+span.button.circle.s80 {
+  width: 80px;
+  height: 80px;
+}
+button.button.circle.s90,
+span.button.circle.s90 {
+  width: 90px;
+  height: 90px;
+}
+button.button.circle.s100,
+span.button.circle.s100 {
+  width: 100px;
+  height: 100px;
+}
+button.button.circle.s110,
+span.button.circle.s110 {
+  width: 110px;
+  height: 110px;
+}
+button.button.circle.s120,
+span.button.circle.s120 {
+  width: 120px;
+  height: 120px;
+}
+button.button.circle.s130,
+span.button.circle.s130 {
+  width: 130px;
+  height: 130px;
+}
+button.button.circle.s140,
+span.button.circle.s140 {
+  width: 140px;
+  height: 140px;
+}
+button.button.circle.s150,
+span.button.circle.s150 {
+  width: 150px;
+  height: 150px;
+}
+button.button.circle.s160,
+span.button.circle.s160 {
+  width: 160px;
+  height: 160px;
+}
+button.button.circle.s170,
+span.button.circle.s170 {
+  width: 170px;
+  height: 170px;
+}
+button.button.circle.s180,
+span.button.circle.s180 {
+  width: 180px;
+  height: 180px;
+}
+button.button.circle.s190,
+span.button.circle.s190 {
+  width: 190px;
+  height: 190px;
+}
+button.button.circle.s200,
+span.button.circle.s200 {
+  width: 200px;
+  height: 200px;
+}
+button.button.circle.s210,
+span.button.circle.s210 {
+  width: 210px;
+  height: 210px;
+}
+button.button.circle.s220,
+span.button.circle.s220 {
+  width: 220px;
+  height: 220px;
+}
+button.button.circle.s230,
+span.button.circle.s230 {
+  width: 230px;
+  height: 230px;
+}
+button.button.circle.s240,
+span.button.circle.s240 {
+  width: 240px;
+  height: 240px;
+}
+button.button.circle.s250,
+span.button.circle.s250 {
+  width: 250px;
+  height: 250px;
+}
+button.button.circle.s260,
+span.button.circle.s260 {
+  width: 260px;
+  height: 260px;
+}
+button.button.circle.s270,
+span.button.circle.s270 {
+  width: 270px;
+  height: 270px;
+}
+button.button.circle.s280,
+span.button.circle.s280 {
+  width: 280px;
+  height: 280px;
+}
+button.button.circle.s290,
+span.button.circle.s290 {
+  width: 290px;
+  height: 290px;
+}
+button.button.circle.s300,
+span.button.circle.s300 {
+  width: 300px;
+  height: 300px;
+}
+button.button.circle.s310,
+span.button.circle.s310 {
+  width: 310px;
+  height: 310px;
+}
+button.button.circle.s320,
+span.button.circle.s320 {
+  width: 320px;
+  height: 320px;
+}
+button.button.circle.s330,
+span.button.circle.s330 {
+  width: 330px;
+  height: 330px;
+}
+button.button.circle.s340,
+span.button.circle.s340 {
+  width: 340px;
+  height: 340px;
+}
+button.button.circle.s350,
+span.button.circle.s350 {
+  width: 350px;
+  height: 350px;
+}
+button.button.circle.s360,
+span.button.circle.s360 {
+  width: 360px;
+  height: 360px;
+}
+button.button.circle.s370,
+span.button.circle.s370 {
+  width: 370px;
+  height: 370px;
+}
+button.button.circle.s380,
+span.button.circle.s380 {
+  width: 380px;
+  height: 380px;
+}
+button.button.circle.s390,
+span.button.circle.s390 {
+  width: 390px;
+  height: 390px;
+}
+button.button.circle.s400,
+span.button.circle.s400 {
+  width: 400px;
+  height: 400px;
+}
+button.button.circle.s410,
+span.button.circle.s410 {
+  width: 410px;
+  height: 410px;
+}
+button.button.circle.s420,
+span.button.circle.s420 {
+  width: 420px;
+  height: 420px;
+}
+button.button.circle.s430,
+span.button.circle.s430 {
+  width: 430px;
+  height: 430px;
+}
+button.button.circle.s440,
+span.button.circle.s440 {
+  width: 440px;
+  height: 440px;
+}
+button.button.circle.s450,
+span.button.circle.s450 {
+  width: 450px;
+  height: 450px;
+}
+button.button.circle.s460,
+span.button.circle.s460 {
+  width: 460px;
+  height: 460px;
+}
+button.button.circle.s470,
+span.button.circle.s470 {
+  width: 470px;
+  height: 470px;
+}
+button.button.circle.s480,
+span.button.circle.s480 {
+  width: 480px;
+  height: 480px;
+}
+button.button.circle.s490,
+span.button.circle.s490 {
+  width: 490px;
+  height: 490px;
+}
+button.button.circle.s500,
+span.button.circle.s500 {
+  width: 500px;
+  height: 500px;
+}
+button.button.tiny,
+span.button.tiny {
+  font-size: 10px !important;
+  padding: 2px 4px;
+}
+button.button.small,
+span.button.small {
+  font-size: 11px !important;
+  padding: 4px 10px;
+}
+button.button.big,
+span.button.big {
+  font-size: 18px !important;
+  padding: 6px 28px;
+}
+button.button.block,
+span.button.block {
+  display: block !important;
+  width: calc(100% - 2px) !important;
+}
+button.button.w20,
+span.button.w20 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(20px - 4px) !important;
+  min-width: calc(20px - 4px) !important;
+}
+button.button.w30,
+span.button.w30 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(30px - 4px) !important;
+  min-width: calc(30px - 4px) !important;
+}
+button.button.w40,
+span.button.w40 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(40px - 4px) !important;
+  min-width: calc(40px - 4px) !important;
+}
+button.button.w50,
+span.button.w50 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(50px - 4px) !important;
+  min-width: calc(50px - 4px) !important;
+}
+button.button.w60,
+span.button.w60 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(60px - 4px) !important;
+  min-width: calc(60px - 4px) !important;
+}
+button.button.w70,
+span.button.w70 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(70px - 4px) !important;
+  min-width: calc(70px - 4px) !important;
+}
+button.button.w80,
+span.button.w80 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(80px - 4px) !important;
+  min-width: calc(80px - 4px) !important;
+}
+button.button.w90,
+span.button.w90 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(90px - 4px) !important;
+  min-width: calc(90px - 4px) !important;
+}
+button.button.w100,
+span.button.w100 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(100px - 4px) !important;
+  min-width: calc(100px - 4px) !important;
+}
+button.button.w110,
+span.button.w110 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(110px - 4px) !important;
+  min-width: calc(110px - 4px) !important;
+}
+button.button.w120,
+span.button.w120 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(120px - 4px) !important;
+  min-width: calc(120px - 4px) !important;
+}
+button.button.w130,
+span.button.w130 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(130px - 4px) !important;
+  min-width: calc(130px - 4px) !important;
+}
+button.button.w140,
+span.button.w140 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(140px - 4px) !important;
+  min-width: calc(140px - 4px) !important;
+}
+button.button.w150,
+span.button.w150 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(150px - 4px) !important;
+  min-width: calc(150px - 4px) !important;
+}
+button.button.w160,
+span.button.w160 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(160px - 4px) !important;
+  min-width: calc(160px - 4px) !important;
+}
+button.button.w170,
+span.button.w170 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(170px - 4px) !important;
+  min-width: calc(170px - 4px) !important;
+}
+button.button.w180,
+span.button.w180 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(180px - 4px) !important;
+  min-width: calc(180px - 4px) !important;
+}
+button.button.w190,
+span.button.w190 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(190px - 4px) !important;
+  min-width: calc(190px - 4px) !important;
+}
+button.button.w200,
+span.button.w200 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(200px - 4px) !important;
+  min-width: calc(200px - 4px) !important;
+}
+button.button.w210,
+span.button.w210 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(210px - 4px) !important;
+  min-width: calc(210px - 4px) !important;
+}
+button.button.w220,
+span.button.w220 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(220px - 4px) !important;
+  min-width: calc(220px - 4px) !important;
+}
+button.button.w230,
+span.button.w230 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(230px - 4px) !important;
+  min-width: calc(230px - 4px) !important;
+}
+button.button.w240,
+span.button.w240 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(240px - 4px) !important;
+  min-width: calc(240px - 4px) !important;
+}
+button.button.w250,
+span.button.w250 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(250px - 4px) !important;
+  min-width: calc(250px - 4px) !important;
+}
+button.button.w260,
+span.button.w260 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(260px - 4px) !important;
+  min-width: calc(260px - 4px) !important;
+}
+button.button.w270,
+span.button.w270 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(270px - 4px) !important;
+  min-width: calc(270px - 4px) !important;
+}
+button.button.w280,
+span.button.w280 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(280px - 4px) !important;
+  min-width: calc(280px - 4px) !important;
+}
+button.button.w290,
+span.button.w290 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(290px - 4px) !important;
+  min-width: calc(290px - 4px) !important;
+}
+button.button.w300,
+span.button.w300 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(300px - 4px) !important;
+  min-width: calc(300px - 4px) !important;
+}
+button.button.w310,
+span.button.w310 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(310px - 4px) !important;
+  min-width: calc(310px - 4px) !important;
+}
+button.button.w320,
+span.button.w320 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(320px - 4px) !important;
+  min-width: calc(320px - 4px) !important;
+}
+button.button.w330,
+span.button.w330 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(330px - 4px) !important;
+  min-width: calc(330px - 4px) !important;
+}
+button.button.w340,
+span.button.w340 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(340px - 4px) !important;
+  min-width: calc(340px - 4px) !important;
+}
+button.button.w350,
+span.button.w350 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(350px - 4px) !important;
+  min-width: calc(350px - 4px) !important;
+}
+button.button.w360,
+span.button.w360 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(360px - 4px) !important;
+  min-width: calc(360px - 4px) !important;
+}
+button.button.w370,
+span.button.w370 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(370px - 4px) !important;
+  min-width: calc(370px - 4px) !important;
+}
+button.button.w380,
+span.button.w380 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(380px - 4px) !important;
+  min-width: calc(380px - 4px) !important;
+}
+button.button.w390,
+span.button.w390 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(390px - 4px) !important;
+  min-width: calc(390px - 4px) !important;
+}
+button.button.w400,
+span.button.w400 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(400px - 4px) !important;
+  min-width: calc(400px - 4px) !important;
+}
+button.button.w410,
+span.button.w410 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(410px - 4px) !important;
+  min-width: calc(410px - 4px) !important;
+}
+button.button.w420,
+span.button.w420 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(420px - 4px) !important;
+  min-width: calc(420px - 4px) !important;
+}
+button.button.w430,
+span.button.w430 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(430px - 4px) !important;
+  min-width: calc(430px - 4px) !important;
+}
+button.button.w440,
+span.button.w440 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(440px - 4px) !important;
+  min-width: calc(440px - 4px) !important;
+}
+button.button.w450,
+span.button.w450 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(450px - 4px) !important;
+  min-width: calc(450px - 4px) !important;
+}
+button.button.w460,
+span.button.w460 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(460px - 4px) !important;
+  min-width: calc(460px - 4px) !important;
+}
+button.button.w470,
+span.button.w470 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(470px - 4px) !important;
+  min-width: calc(470px - 4px) !important;
+}
+button.button.w480,
+span.button.w480 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(480px - 4px) !important;
+  min-width: calc(480px - 4px) !important;
+}
+button.button.w490,
+span.button.w490 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(490px - 4px) !important;
+  min-width: calc(490px - 4px) !important;
+}
+button.button.w500,
+span.button.w500 {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(500px - 4px) !important;
+  min-width: calc(500px - 4px) !important;
+}
+button.button.w10p,
+span.button.w10p {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(10% - 4px) !important;
+  min-width: calc(10% - 4px) !important;
+}
+button.button.w20p,
+span.button.w20p {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(20% - 4px) !important;
+  min-width: calc(20% - 4px) !important;
+}
+button.button.w30p,
+span.button.w30p {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(30% - 4px) !important;
+  min-width: calc(30% - 4px) !important;
+}
+button.button.w40p,
+span.button.w40p {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(40% - 4px) !important;
+  min-width: calc(40% - 4px) !important;
+}
+button.button.w50p,
+span.button.w50p {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(50% - 4px) !important;
+  min-width: calc(50% - 4px) !important;
+}
+button.button.w60p,
+span.button.w60p {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(60% - 4px) !important;
+  min-width: calc(60% - 4px) !important;
+}
+button.button.w70p,
+span.button.w70p {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(70% - 4px) !important;
+  min-width: calc(70% - 4px) !important;
+}
+button.button.w80p,
+span.button.w80p {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(80% - 4px) !important;
+  min-width: calc(80% - 4px) !important;
+}
+button.button.w90p,
+span.button.w90p {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(90% - 4px) !important;
+  min-width: calc(90% - 4px) !important;
+}
+button.button.w100p,
+span.button.w100p {
+  display: inline-block !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: calc(100% - 4px) !important;
+  min-width: calc(100% - 4px) !important;
+}
+button.button.white,
+span.button.white {
+  color: #000;
+  background: #f7f7f7;
+  border: solid 1px #cacaca;
+}
+button.button.outline,
+span.button.outline {
+  transition: background .3s;
+}
+button.button.white.outline,
+span.button.white.outline {
+  color: #000;
+  background: #fff;
+}
+button.button.white.outline:hover,
+span.button.white.outline:hover {
+  background: #f7f7f7;
+}
+button.button.black,
+span.button.black {
+  color: #fff;
+  border: solid 1px #333;
+  background: #444;
+}
+button.button.black.outline,
+span.button.black.outline {
+  color: #000;
+  background: #fff;
+}
+button.button.black.outline:hover,
+span.button.black.outline:hover {
+  color: #fff;
+  background: #444;
+}
+button.button.gray,
+span.button.gray {
+  color: #fff;
+  border: solid 1px #757575;
+  background: #888;
+}
+button.button.gray.outline,
+span.button.gray.outline {
+  color: #6e6e6e;
+  background: #fff;
+}
+button.button.gray.outline:hover,
+span.button.gray.outline:hover {
+  color: #fff;
+  background: #888;
+}
+button.button.orange,
+span.button.orange {
+  color: #fff;
+  border: solid 1px #f37b25;
+  background: #f78939;
+}
+button.button.orange.outline,
+span.button.orange.outline {
+  color: #f78939;
+  background: #fff;
+}
+button.button.orange.outline:hover,
+span.button.orange.outline:hover {
+  color: #fff;
+  background: #f78939;
+}
+button.button.red,
+span.button.red {
+  color: #fff;
+  border: solid 1px #ff3f3f;
+  background: #ff5252;
+}
+button.button.red.outline,
+span.button.red.outline {
+  color: #ff5252;
+  background: #fff;
+}
+button.button.red.outline:hover,
+span.button.red.outline:hover {
+  color: #fff;
+  background: #ff5252;
+}
+button.button.blue,
+span.button.blue {
+  color: #fff;
+  border: solid 1px #56a8ff;
+  background: #69b2ff;
+}
+button.button.blue.outline,
+span.button.blue.outline {
+  color: #69b2ff;
+  background: #fff;
+}
+button.button.blue.outline:hover,
+span.button.blue.outline:hover {
+  color: #fff;
+  background: #69b2ff;
+}
+button.button.rosy,
+span.button.rosy {
+  color: #fff;
+  border: solid 1px #fd5d70;
+  background: #f16c7c;
+}
+button.button.rosy.outline,
+span.button.rosy.outline {
+  color: #da5867;
+  background: #fff;
+}
+button.button.rosy.outline:hover,
+span.button.rosy.outline:hover {
+  color: #fff;
+  background: #f16c7c;
+}
+button.button.green,
+span.button.green {
+  color: #fff;
+  border: solid 1px #6da91d;
+  background: #7db72f;
+}
+button.button.green.outline,
+span.button.green.outline {
+  color: #64991e;
+  background: #fff;
+}
+button.button.green.outline:hover,
+span.button.green.outline:hover {
+  color: #fff;
+  background: #7db72f;
+}
+button.button.pink,
+span.button.pink {
+  color: #fff;
+  border: solid 1px #ff84b9;
+  background: #ff93c2;
+}
+button.button.pink.outline,
+span.button.pink.outline {
+  color: #f895c2;
+  background: #fff;
+}
+button.button.pink.outline:hover,
+span.button.pink.outline:hover {
+  color: #fff;
+  background: #ff93c2;
+}
+button.button.yellow,
+span.button.yellow {
+  color: #ac4401;
+  border: solid 1px #ded32f;
+  background: #fff450;
+}
+button.button.yellow.outline,
+span.button.yellow.outline {
+  color: #ac4401;
+  background: #fff;
+}
+button.button.yellow.outline:hover,
+span.button.yellow.outline:hover {
+  background: #fff450;
+}
+
+.button-group button,
+.button-group span {
+  margin: 0;
+}
+.button-group button:first-child,
+.button-group span:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.button-group button:last-child,
+.button-group span:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.button-group button:not(:first-child):not(:last-child):not(.dropdown-toggle),
+.button-group span:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+  border-radius: 0;
+}
+
+/*
+==============================================
+                   dialog                     
+==============================================
+*/
+div.popup-dialog {
+  border: 1px solid #383838;
+  position: absolute;
+  background-color: #fff;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  user-select: none;
+}
+div.popup-dialog i.middle {
+  vertical-align: middle;
+}
+div.popup-dialog.rounded {
+  border-radius: 5px;
+}
+div.popup-dialog.shadow {
+  box-shadow: 0 2px 10px 5px rgba(0, 0, 0, 0.5);
+}
+div.popup-dialog > div.dialog-title {
+  background: #fff;
+  height: 40px;
+  line-height: 39px;
+  padding: 0 20px 0 10px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: #000;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  cursor: move;
+  overflow: hidden;
+  border-bottom: 1px solid #b2b2b2;
+  background-color: #f7f7f7;
+}
+div.popup-dialog > div.dialog-title.dialog-title-focus {
+  background-color: #e8e8e8;
+}
+div.popup-dialog.white > div.dialog-title {
+  color: #000;
+  background-color: #fff;
+}
+div.popup-dialog.white > div.dialog-title.dialog-title-focus {
+  background-color: #F7F7F7;
+}
+div.popup-dialog.white-box {
+  background-color: #f7f7f7;
+}
+div.popup-dialog.white-box > div.dialog-title {
+  color: #000;
+  background-color: #f7f7f7;
+  border: none;
+}
+div.popup-dialog.white-box > div.dialog-body {
+  color: #000;
+  background-color: #f7f7f7;
+}
+div.popup-dialog.white-box > div.dialog-buttons {
+  background-color: #f7f7f7;
+}
+div.popup-dialog.black > div.dialog-title {
+  color: #fff;
+  background-color: #333;
+}
+div.popup-dialog.black > div.dialog-title.dialog-title-focus {
+  background-color: #000;
+}
+div.popup-dialog.black-box {
+  background-color: #000;
+}
+div.popup-dialog.black-box > div.dialog-title {
+  color: #fff;
+  background-color: #000;
+  border: none;
+}
+div.popup-dialog.black-box > div.dialog-body {
+  color: #fff;
+  background-color: #000;
+}
+div.popup-dialog.black-box > div.dialog-buttons {
+  background-color: #000;
+}
+div.popup-dialog.blue > div.dialog-title {
+  color: #fff;
+  background-color: #0095cd;
+}
+div.popup-dialog.blue > div.dialog-title.dialog-title-focus {
+  background-color: #0086b7;
+}
+div.popup-dialog.blue-box {
+  background-color: #0086b7;
+}
+div.popup-dialog.blue-box > div.dialog-title {
+  color: #fff;
+  background-color: #0086b7;
+  border: none;
+}
+div.popup-dialog.blue-box > div.dialog-body {
+  color: #fff;
+  background-color: #0086b7;
+}
+div.popup-dialog.blue-box > div.dialog-buttons {
+  background-color: #0086b7;
+}
+div.popup-dialog.red > div.dialog-title {
+  color: #fff;
+  background-color: #d9534f;
+}
+div.popup-dialog.red > div.dialog-title.dialog-title-focus {
+  background-color: #c9302c;
+}
+div.popup-dialog.red-box {
+  background-color: #c9302c;
+}
+div.popup-dialog.red-box > div.dialog-title {
+  color: #fff;
+  background-color: #c9302c;
+  border: none;
+}
+div.popup-dialog.red-box > div.dialog-body {
+  color: #fff;
+  background-color: #c9302c;
+}
+div.popup-dialog.red-box > div.dialog-buttons {
+  background-color: #c9302c;
+}
+div.popup-dialog.orange > div.dialog-title {
+  color: #fff;
+  background-color: #f0ad4e;
+}
+div.popup-dialog.orange > div.dialog-title.dialog-title-focus {
+  background-color: #ec971f;
+}
+div.popup-dialog.orange-box {
+  background-color: #ec971f;
+}
+div.popup-dialog.orange-box > div.dialog-title {
+  color: #fff;
+  background-color: #ec971f;
+  border: none;
+}
+div.popup-dialog.orange-box > div.dialog-body {
+  color: #fff;
+  background-color: #ec971f;
+}
+div.popup-dialog.orange-box > div.dialog-buttons {
+  background-color: #ec971f;
+}
+div.popup-dialog.rosy > div.dialog-title {
+  color: #fff;
+  background-color: #da5867;
+}
+div.popup-dialog.rosy > div.dialog-title.dialog-title-focus {
+  background-color: #ce525f;
+}
+div.popup-dialog.rosy-box {
+  background-color: #ce525f;
+}
+div.popup-dialog.rosy-box > div.dialog-title {
+  color: #fff;
+  background-color: #ce525f;
+  border: none;
+}
+div.popup-dialog.rosy-box > div.dialog-body {
+  color: #fff;
+  background-color: #ce525f;
+}
+div.popup-dialog.rosy-box > div.dialog-buttons {
+  background-color: #ce525f;
+}
+div.popup-dialog.green > div.dialog-title {
+  color: #fff;
+  background-color: #449d44;
+}
+div.popup-dialog.green > div.dialog-title.dialog-title-focus {
+  background-color: #3d893d;
+}
+div.popup-dialog.green-box {
+  background-color: #3d893d;
+}
+div.popup-dialog.green-box > div.dialog-title {
+  color: #fff;
+  background-color: #3d893d;
+  border: none;
+}
+div.popup-dialog.green-box > div.dialog-body {
+  color: #fff;
+  background-color: #3d893d;
+}
+div.popup-dialog.green-box > div.dialog-buttons {
+  background-color: #3d893d;
+}
+div.popup-dialog.pink > div.dialog-title {
+  color: #fff;
+  background-color: #e589b3;
+}
+div.popup-dialog.pink > div.dialog-title.dialog-title-focus {
+  background-color: #d179a0;
+}
+div.popup-dialog.pink-box {
+  background-color: #d179a0;
+}
+div.popup-dialog.pink-box > div.dialog-title {
+  color: #fff;
+  background-color: #d179a0;
+  border: none;
+}
+div.popup-dialog.pink-box > div.dialog-body {
+  color: #fff;
+  background-color: #d179a0;
+}
+div.popup-dialog.pink-box > div.dialog-buttons {
+  background-color: #d179a0;
+}
+div.popup-dialog > div.dialog-body {
+  color: #000;
+  margin: 5px;
+  padding: 0;
+  background-color: #fff;
+  overflow: auto;
+  user-select: text;
+}
+div.popup-dialog > div.dialog-body > div.dialog-content {
+  position: absolute;
+  width: 100%;
+}
+div.popup-dialog > div.dialog-close {
+  position: absolute;
+  top: 12px;
+  right: 7px;
+  width: 16px;
+  height: 16px;
+  background: transparent url("./images/dialog/close.png") no-repeat scroll;
+  cursor: pointer;
+}
+div.popup-dialog > div.dialog-resizer {
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  width: 9px;
+  height: 9px;
+  background: transparent url("./images/dialog/wingrip.png") no-repeat center center;
+  cursor: se-resize;
+}
+div.popup-dialog > div.dialog-buttons {
+  margin: 0 5px 0 5px;
+  padding-top: 3px;
+  height: 45px;
+  line-height: 22px;
+  text-align: center;
+  overflow: hidden;
+}
+div.popup-dialog.bump {
+  animation: do-bump 0.35s ease;
+}
+div.popup-dialog.fadeout {
+  animation: do-fadeout 0.2s linear;
+}
+div.popup-dialog.fadein {
+  animation: do-fadein 0.2s ease;
+}
+div.popup-dialog.zoomin {
+  animation: do-zoomin 0.2s ease;
+}
+
+@keyframes do-bump {
+  0% {
+    transform: scale(1.2, 1.2);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(0.9, 0.9);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+@keyframes do-zoomin {
+  0% {
+    transform: scale(1.5, 1.5);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+@keyframes do-fadein {
+  0% {
+    transform: scale(0.5, 0.5);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+@keyframes do-fadeout {
+  0% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5, 0.5);
+    opacity: 0.1;
+  }
+}
