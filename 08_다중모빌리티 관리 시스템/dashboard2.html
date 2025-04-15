@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<title>자율배송-Mobility Management System</title>
+<link rel="stylesheet" href="css/fontawesome6-all.css">
+<link rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="js/jquery-3.7.0.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script> 
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<!-- JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    $(document).ready(function(){
+        const mySwiper = new Swiper('.swiper-container', {
+            // 옵션 설정
+            direction: 'horizontal',
+            speed: 300,
+            slidesPerView: 1,
+            loop: false,
+            navigation: {
+                nextEl: '.swiper-container .video__btn .swiper-button-next',
+                prevEl: '.swiper-container .video__btn .swiper-button-prev',
+            },
+        });
+    });
+</script>
+</head>
+<body>
+<div class="l-wrapper">
+    <!--상단영역-->
+    <header class="l-header">
+        <div class="d-flex">
+            <div class="top-nav">
+                <a href="">Mobility Management System</a>
+            </div>
+            
+            <div class="top-right">
+                <div class="top-btns">
+                    <button type="button">
+                        <img src="./images/ico_sb_st@2x.png" alt="통계" title="통계">
+                    </button>
+                    <button type="button">
+                        <img src="./images/ico_sb_setting@2x.png" alt="설정" title="설정">
+                    </button>
+                    <button type="button" onclick="fnShowPop('pop_alarm');">
+                        <span class="badge circled bg-danger"></span>
+                        <img src="./images/ico_sb_alarm@2x.png" alt="알림" title="알림">
+                    </button>
+                    <details>
+                        <summary><img src="./images/ico_sb_user@2x.png" alt="user" title="user"></summary>
+                        <ul class="user-area">
+                            <li>
+                                <p class="user-img">
+                                    <img src="./images/ico_sb_user_big.png">
+                                </p>
+                                <div class="user-info">
+                                    <strong class="js-user-name">한정성</strong>
+                                    <span class="js-admin">Super admin</span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#none" onclick="fnShowPop('pop_pwd')">비밀번호 변경</a>
+                            </li>
+                            <li>
+                                <a href="#none">로그아웃</a>
+                            </li>
+                        </ul>
+                    </details>
+                </div>
+                <div class="timer">
+                    <span class="date" id="date" style="pointer-events: none;">
+                        <!-- 2023년 3월 15일 -->
+                        <script>
+                            const options01 = { year: 'numeric', month: 'long', day: 'numeric' };
+                            document.getElementById("date").innerHTML = new Date().toLocaleDateString('ko-KR', options01);
+                        </script>
+                    </span>
+                    <span class="time" id="time" style="pointer-events: none;">
+                        <!-- 15:30 -->
+                        <script>
+                            var options02 = { hour: "numeric", minute: "numeric", hour12: false };
+                            document.getElementById("time").innerHTML = new Date().toLocaleTimeString('ko-KR', options02);
+                        </script>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--//상단영역-->
+    <!--메인-->
+    <main class="l-main">
+        <div class="grid-area">
+            <div class="map-area">
+                <figure class="Cover_figure" style="background-image: url(./images/KakaoMap_20240415_100326.png)"></figure>
+                <div class="map-sort-area">
+                    <ul>
+                        <li>
+                            <div class="box-wh min-w140"><a href="#none" onclick="fnShowPop('pop_deli')">경로 재탐색 : - 05 : 00</a></div>
+                        </li>
+                        <li>
+                            <div class="box-wh min-w252">서울특별시 &nbsp; > &nbsp; 마포구 &nbsp; > &nbsp; 상암동</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="zoom-in-out">
+                    <ul>
+                        <li>
+                            <button type="button" class="zoom_in">
+                                <span class="blind">확대</span>
+                            </button>
+                        <li>
+                            <button type="button" class="zoom_out">
+                                <span class="blind">축소</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="accordion">
+                <!--M1-->
+                <dl>
+                    <dt>
+                        <a href="#" class="on">
+                            <div class="tit">
+                                <span class="name green">M1</span> 
+                                <span class="right-tit">
+                                    <div class="distance">155 km</div>
+                                    <div class="battery cs">
+                                        <span>80%</span>
+                                    </div>
+                                </span>
+                                <span class="right-tit" style="top: 2.5rem;">주행중</span>
+                            </div>
+                            <hr class="line">
+                            <div class="txt">
+                                <span>( Ｐ1_상차지 이동 )</span>  
+                                <span class="text-green">DRIVE</span>
+                            </div>
+                        </a> 
+                    </dt>
+                    <dd style="display: block;">
+                        <div class="mobi-details">
+                            <div class="d-space-between">
+                                <div class="light-arrow">
+                                    <img src="./images/left@2x.png">
+                                    <img src="./images/right@2x.png">
+                                </div>
+                                <div class="car"><img src="./images/ico_mobility_large_01.png"></div>
+                                <div class="s-display">
+                                    <span class="count"><span class="value">125</span>Km/h</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-gruoup bd">
+                            <select class="select w-50">
+                                <option>이동 거점 선택</option>
+                                <option>거점01</option>
+                                <option>거점02</option>
+                                <option>거점03</option>
+                                <option>거점04</option>
+                            </select>
+                            <button class="btn info w-50">재가동</button>
+                        </div>
+                    </dd>
+                </dl>
+                <!--//M1-->
+                
+                <!--M2-->
+                <dl>
+                    <dt>
+                        <a href="#">
+                            <div class="tit">
+                                <span class="name gray">M2</span>
+                                <span class="right-tit">
+                                    <div class="distance">105 km</div>
+                                    <div class="battery cs50">
+                                        <span>50%</span>
+                                    </div>
+                                </span>
+                                <span class="right-tit" style="top: 2.5rem;">주행중</span>
+                            </div>
+                            <hr class="line">
+                            <div class="txt">
+                                <span>( D9_하차지 이동 )</span>
+                                <span class="text-orange">BRAKE</span>  
+                                <!-- <span>1시간 34분 후 충전완료</span> -->
+                            </div>
+                        </a> 
+                    </dt>
+                    <dd>
+                        <div class="mobi-details">
+                            <div class="d-space-between">
+                                <div class="light-arrow">
+                                    <img src="./images/left@2x.png">
+                                    <img src="./images/right@2x.png">
+                                </div>
+                                <div class="car"><img src="./images/ico_mobility_large_01.png"></div>
+                                <div class="s-display">
+                                    <span class="count"><span class="value">125</span>Km/h</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-gruoup">
+                            <!-- <select class="select">
+                                <option>이동 거점 선택</option>
+                                <option>선택01</option>
+                                <option>선택02</option>
+                            </select>
+                            <button class="btn info">재가동</button> -->
+                            <button class="btn red">긴급정지</button>
+                        </div>
+                    </dd>
+                </dl>
+                <!--//M2-->
+                <!--M3-->
+                <dl>
+                    <dt>
+                        <a href="#">
+                            <div class="tit">
+                                <span class="name gray">M3 </span>
+                                <span class="right-tit">
+                                    <span class="distance">41 km</span>
+                                    <div class="battery charge">
+                                        <span>25%</span>
+                                    </div>
+                                </span>
+                                <span class="right-tit" style="top: 2.5rem;">1시간 34분 후 충전완료</span>
+                            </div>
+                            <hr class="line">
+                            <div class="txt">
+                                <span>( 차고지_충전중 ) </span>  
+                                <span class="text-danger">STOP</span>
+                                <!-- <span>1시간 34분 후 충전완료</span> -->
+                            </div>
+                        </a>
+                    </dt>
+                    <dd>
+                        <div class="mobi-details">
+                            <div class="d-space-between">
+                                <div class="light-arrow">
+                                    <img src="./images/left@2x.png">
+                                    <img src="./images/right@2x.png">
+                                </div>
+                                <div class="car"><img src="./images/ico_mobility_large_01.png"></div>
+                                <div class="s-display">
+                                    <span class="count"><span class="value">125</span>Km/h</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-gruoup">
+                            <button class="btn red">긴급정지</button>
+                        </div>
+                    </dd>
+                </dl>
+                <!--//M3-->
+                <!--M4-->
+                <dl>
+                    <dt>
+                        <a href="#">
+                            <div class="tit">
+                                <span class="name gray">M4</span>
+                                <span class="right-tit">
+                                    <div class="battery charge">
+                                        <span>- %</span>
+                                    </div>
+                                </span>
+                                <span class="right-tit" style="top: 2.5rem;">대기중</span>
+                            </div>
+                            <hr class="line">
+                            <div class="txt">
+                                <span>( Disconnecting ) </span>  
+                            </div>
+                        </a>
+                    </dt>
+                    <dd>
+                        <div class="mobi-details">
+                            sfdsf
+                        </div>
+                    </dd>
+                </dl>
+                <!--//M4-->
+            </div>
+        </div>
+        
+        <div class="log-area">
+            <div class="row row-deck">
+                <div class="col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="fs14 mtb-1">통신 로그</h3>
+                            <div class="log-w">   
+                                2024-02-20 16:39:43.205954 
+                                rb request 0ae412b2-e92f-4b18-a89e-b88c479943a7 
+                                [cmd_type:lift] 2024-02-20 16:39:43.172532 rb result_response 0ae412b2-e92f-4b18-a89e-b88c479943a7 [remain_waypoints:] 2024-02-20 16:39:41.118533 rb result_response 5ffd66f3-21ef-4d95-bbcf-1cb5d73fac7c [remain_waypoints:] 2024-02-20 16:39:41.078388 rb feedback 0ae412b2-e92f-4b18-a89e-b88c479943a7 [cur_waypoint:1, cur_pos:x:3, y:46, yaw:0] 2024-02-20 16:39:41.077684 rb feedback 0ae412b2-e92f-4b18-a89e-b88c479943a7 2024-02-20 16:39:41.078388 rb feedback 0ae412b2-e92f-4b18-a89e-b88c479943a7 [cur_waypoint:1, cur_pos:x:3, y:46, yaw:0] 2024-02-20 16:39:41.077684 rb feedback
+                                2024-02-20 16:39:43.205954 
+                                rb request 0ae412b2-e92f-4b18-a89e-b88c479943a7 
+                                [cmd_type:lift] 2024-02-20 16:39:43.172532 rb result_response 0ae412b2-e92f-4b18-a89e-b88c479943a7 [remain_waypoints:] 2024-02-20 16:39:41.118533 rb result_response 5ffd66f3-21ef-4d95-bbcf-1cb5d73fac7c [remain_waypoints:] 2024-02-20 16:39:41.078388 rb feedback 0ae412b2-e92f-4b18-a89e-b88c479943a7 [cur_waypoint:1, cur_pos:x:3, y:46, yaw:0] 2024-02-20 16:39:41.077684 rb feedback 0ae412b2-e92f-4b18-a89e-b88c479943a7 2024-02-20 16:39:41.078388 rb feedback 0ae412b2-e92f-4b18-a89e-b88c479943a7 [cur_waypoint:1, cur_pos:x:3, y:46, yaw:0] 2024-02-20 16:39:41.077684 rb feedback
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="miss-w">
+                                <h3 class="fs14">미션 목록</h3>
+                                <div class="d-flex align-end">
+                                    <span class="fs12 mr-1" style="color: #FBFBF9;">경로 생성 경과 시간 : 2.5 Sec </span>
+                                    <button class="btn refresh">경로 재탐색</button>
+                                </div>
+                            </div>
+                            <div class="table-wrapper">
+                                <table class="table-1">
+                                    <thead>
+                                        <tr>
+                                            <th>순서</th>
+                                            <th>구분</th>
+                                            <th>목적지명</th>
+                                            <th>거리</th>
+                                            <th>예상도착시간</th>
+                                            <th>실제도착시간</th>
+                                            <th>출발(이탈)시간</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>0</td>
+                                            <td>출발</td>
+                                            <td>차고지</td>
+                                            <td>-</td>
+                                            <td>00:00:00</td>
+                                            <td>00:00:00</td>
+                                            <td>09:10:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>상차</td>
+                                            <td>P1</td>
+                                            <td>2.53km</td>
+                                            <td>09:15</td>
+                                            <td>00:00</td>
+                                            <td>00:00:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>상차</td>
+                                            <td>P2</td>
+                                            <td>4.32km</td>
+                                            <td>09:32</td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>하차</td>
+                                            <td>D1</td>
+                                            <td>8.21km</td>
+                                            <td>10:20</td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>상차</td>
+                                            <td>P3</td>
+                                            <td>9.35km</td>
+                                            <td>10:45</td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>하차</td>
+                                            <td>D2</td>
+                                            <td>10.05km</td>
+                                            <td>11:30</td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>하차</td>
+                                            <td>D2</td>
+                                            <td>10.05km</td>
+                                            <td>11:30</td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>하차</td>
+                                            <td>D2</td>
+                                            <td>10.05km</td>
+                                            <td>11:30</td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="video-w">
+                                <h3 class="fs14 mtb-1">영상</h3>
+
+                                <div class="swiper-container" style="overflow: hidden;">
+                                    <div class="video__btn">
+                                        <button type="button" class="swiper-button-prev">Back 
+                                            <span class="sr-only">이전</span>
+                                        </button>
+                                        <div class="tit">Front</div>
+                                        <button type="button" class="swiper-button-next">Left
+                                            <span class="sr-only">다음</span>
+                                        </button>
+                                    </div>
+
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide video__img">Sample Video Area01</div>
+                                        <div class="swiper-slide video__img">Sample Video Area02</div>
+                                        <div class="swiper-slide video__img">Sample Video Area03</div>
+                                        <div class="swiper-slide video__img">Sample Video Area04</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--//메인-->
+</div>
+
+
+<!--비밀번호 변경-->
+<div class="modal-wrapper" id="pop_pwd">
+    <div class="modal small">
+        <div class="header">
+            <h1>비밀번호 변경</h1>
+            <button class="btn btn-close" alt="닫기" onclick="fnHidePop('pop_pwd');"></button>
+        </div>
+        <div class="content">
+            <p class="fs14">보안을 위해 최소 3개월 마다 비밀번호를 변경해주세요.</p>
+            <hr class="line">
+            <div class="input-group mb-0-8 eye">
+                <label class="required input-group-text mt--2">현재 비밀번호</label>
+                <div class="input-input-group">
+                    <input type="password" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                    <small class="form-hint">
+                        ※ 현재 비밀번호를 입력하세요.
+                    </small>
+                </div> 
+            </div>
+            <div class="input-group mb-0-8 mt-2 eye">
+                <label class="required input-group-text">변경 비밀번호</label>
+                <div class="input-input-group">
+                    <input type="password" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                </div> 
+            </div>
+            <div class="input-group mb-0-8 eye">
+                <label class="required input-group-text mt--2">비밀번호 확인</label>
+                <div class="input-input-group">
+                    <input type="password" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                    <small class="form-hint">※ 비밀번호를 다시한번 입력하세요.</small>
+                    <small class="form-hint" style="display: none !important;">※ 비밀번호가 일치하지 않습니다.</small>
+                    <small class="form-hint" style="display: none !important;">※ 비밀번호 변경이 가능합니다.</small>
+                    <!--비밀번호 확인 Input Box 하단에 안내문구 출력
+                        입력전 : 비밀번호를 다시한번 입력하세요.
+                        입력중/비일치 : 비밀번호가 일치하지 않습니다.
+                        일치 : 비밀번호 변경이 가능합니다.-->
+                </div>
+            </div>
+        </div>
+        <div class="btn-gruoup">
+            <button class="btn cancel" onclick="fnHidePop('pop_pwd');">취소</button>
+            <button class="btn basic">변경</button>
+        </div>
+    </div>
+</div>
+
+<!--배송지 설정-->
+<div class="modal-wrapper" id="pop_deli">
+    <div class="modal small">
+        <div class="header">
+            <h1>배송지 설정</h1>
+            <button class="btn btn-close" alt="닫기" onclick="fnHidePop('pop_deli');"></button>
+        </div>
+        <div class="content p-1">
+            <table class="fixedHeader">
+                <colgroup>
+                    <col style="width: 12%;"><col style="width: 20%;"><col style="width: 20%;">
+                    <col style="width: 24%;"><col style="width: 24%;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>순서</th>
+                        <th>구분</th>
+                        <th>목적지명</th>
+                        <th>위도</th>
+                        <th>경도</th>
+                    </tr>
+                </thead>
+            </table>
+            <div class="delivery-tabe">
+                <table>
+                    <colgroup>
+                        <col style="width: 12%;"><col style="width: 20%;"><col style="width: 20%;">
+                        <col style="width: 24%;"><col style="width: 24%;">
+                    </colgroup>
+                    <!-- <thead>
+                        <tr>
+                            <th>순서</th>
+                            <th>구분</th>
+                            <th>목적지명</th>
+                            <th>위도</th>
+                            <th>경도</th>
+                        </tr>
+                    </thead> -->
+                    <tbody>
+                        <tr>
+                            <td rowspan="2">
+                                <label class="styled">
+                                    <input type="checkbox" checked>
+                                    <i></i>
+                                </label>
+                            </td>
+                            <td rowspan="2">배송1</td>
+                            <td>P1</td>
+                            <td>37.54442300900504</td>
+                            <td>127.0561144009585</td>
+                        </tr>
+                        <tr>
+                            <td>D1</td>
+                            <td>37.54442300900504</td>
+                            <td>127.0561144009585</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">
+                                <label class="styled">
+                                    <input type="checkbox">
+                                    <i></i>
+                                </label>
+                            </td>
+                            <td rowspan="2">배송2</td>
+                            <td>P2</td>
+                            <td>37.5444</td>
+                            <td>127.056</td>
+                        </tr>
+                        <tr>
+                            <td>D2</td>
+                            <td>37.5444</td>
+                            <td>127.056</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">
+                                <label class="styled">
+                                    <input type="checkbox">
+                                    <i></i>
+                                </label>
+                            </td>
+                            <td rowspan="2">배송3</td>
+                            <td>P3</td>
+                            <td>37.5444</td>
+                            <td>127.056</td>
+                        </tr>
+                        <tr>
+                            <td>D3</td>
+                            <td>37.5444</td>
+                            <td>127.056</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">
+                                <label class="styled">
+                                    <input type="checkbox">
+                                    <i></i>
+                                </label>
+                            </td>
+                            <td rowspan="2">배송4</td>
+                            <td>P3</td>
+                            <td>37.5444</td>
+                            <td>127.056</td>
+                        </tr>
+                        <tr>
+                            <td>D3</td>
+                            <td>37.5444</td>
+                            <td>127.056</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">
+                                <label class="styled">
+                                    <input type="checkbox">
+                                    <i></i>
+                                </label>
+                            </td>
+                            <td rowspan="2">배송5</td>
+                            <td>P3</td>
+                            <td>37.5444</td>
+                            <td>127.056</td>
+                        </tr>
+                        <tr>
+                            <td>D3</td>
+                            <td>37.5444</td>
+                            <td>127.056</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> 
+        </div>
+        <div class="btn-gruoup m-0">
+            <button class="btn cancel">취소</button>
+            <button class="btn basic">시작</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

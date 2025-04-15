@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="ui_event" content="true" />
+<title>자율배송-알림목록</title>
+<link rel="stylesheet" href="css/fontawesome6-all.css">
+<link rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="js/jquery-3.7.0.min.js"></script>    
+<script type="text/javascript" src="js/script.js"></script> 
+</head>
+<body>
+<div class="l-wrapper">
+    <!--상단영역-->
+    <header class="l-header">
+        <div class="d-flex">
+            <div class="top-nav">
+                <a href="">Mobility Management System</a>
+            </div>
+            
+            <div class="top-right">
+                <div class="top-btns">
+                    <button type="button">
+                        <img src="./images/ico_sb_st@2x.png" alt="통계" title="통계">
+                    </button>
+                    <button type="button">
+                        <img src="./images/ico_sb_setting@2x.png" alt="설정" title="설정">
+                    </button>
+                    <button type="button" onclick="fnShowPop('pop_alarm');">
+                        <span class="badge circled bg-danger"></span>
+                        <img src="./images/ico_sb_alarm@2x.png" alt="알림" title="알림">
+                    </button>
+                    <details>
+                        <summary>
+                            <img src="./images/ico_sb_user@2x.png" alt="user" title="user">
+                        </summary>
+                        <ul class="user-area">
+                            <li>
+                                <p class="user-img">
+                                    <img src="./images/ico_sb_user_big.png">
+                                </p>
+                                <div class="user-info">
+                                    <strong class="js-user-name">홍길동</strong>
+                                    <span class="js-admin">Superadmin</span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#none" onclick="fnShowPop('pop_pwd')">비밀번호 변경</a>
+                            </li>
+                            <li>
+                                <a href="#none" onclick="">로그아웃</a>
+                            </li>
+                        </ul>
+                    </details>
+                </div>
+                <div class="timer">
+                    <span class="date" id="date" style="pointer-events: none;">
+                        <!-- 2023년 3월 15일 -->
+                        <script>
+                            const options01 = { year: 'numeric', month: 'long', day: 'numeric' };
+                            document.getElementById("date").innerHTML = new Date().toLocaleDateString('ko-KR', options01);
+                        </script>
+                    </span>
+                    <span class="time" id="time" style="pointer-events: none;">
+                        <!-- 15:30 -->
+                        <script>
+                            var options02 = { hour: "numeric", minute: "numeric", hour12: false };
+                            document.getElementById("time").innerHTML = new Date().toLocaleTimeString('ko-KR', options02);
+                        </script>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--//상단영역-->
+    <!--본문-->
+    <main class="l-main">
+        <h2 class="page-title">
+            알림 목록
+        </h2>
+        <section class="contents">
+            <form class="search">
+                <table class="styled left fixed mtb-1-5">
+                    <colgroup>
+                        <col width="112"><col>
+                        <col width="112"><col>
+                        <col width="112"><col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>분류</th>
+                            <td>
+                                <select class="select" name="category">
+                                    <option value="">전체</option>
+                                    <option value="battery">배터리</option>
+                                    <option value="robotdisorder">로봇장애</option>
+                                    <option value="system">시스템</option>
+                                </select>
+                            </td>
+                            <th>대상</th>
+                            <td>
+                                <select class="select" name="target">
+                                    <option value="">전체</option>
+                                    <option value="R1">R1</option>
+                                    <option value="R2">R2</option>
+                                    <option value="R3">R3</option>
+                                    <option value="R4">R4</option>
+                                    <option value="R5">R5</option>
+                                    <option value="system">시스템</option>
+                                    <option value="PMS">PMS</option>
+                                </select>
+                            </td>
+                            <th>발생일</th>
+                            <td>
+                                <div class="input-group">
+                                    <input type="date" name="startdate" value="2023-08-09">
+                                    <span>~</span>
+                                    <input type="date" name="lastdate" value="2023-08-09">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>내용</th>
+                            <td colspan="5">
+                                <input type="text" placeholder="입력하세요">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+            <div class="btn-group">
+                <button class="btn secondary init" onclick="settings_code_init()">초기화</button>
+                <button class="btn basic search" onclick="settings_code_search()">검색</button>
+            </div>
+
+            <div class="d-space-between mt-2">
+                <ul class="tab_list">
+                    <li><a href="#" class="on">전체 (<span id="total_rows">10</span>)</a></li>
+                </ul>
+                <select class="select" style="width: 7.2rem;" name="page_size" id="page_size" onchange="setPage()">
+                    <option value="10" selected>10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="40">40</option>
+                    <option value="50">50</option>
+                </select>
+            </div>
+            <div class="mt-0-8">
+                <table class="d-table fixed">
+                    <colgroup>
+                        <col width="80">
+                        <col width="180">
+                        <col width="200">
+                        <col width="180">
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>발생일시</th>
+                            <th>구분</th>
+                            <th>대상</th>
+                            <th>내용</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="urgency">
+                            <td>10</td>
+                            <td>2023.08.15 10:30:25</td>
+                            <td>배터리</td>
+                            <td>R1</td>
+                            <td class="tal">“R1”의 배터리 잔량이 “28”% 입니다. </td>
+                        </tr>
+                        <tr class="urgency">
+                            <td>9</td>
+                            <td>2023.08.15 10:30:25</td>
+                            <td>배터리</td>
+                            <td>R2</td>
+                            <td class="tal">“R2”의 배터리 잔량이 “5”% 입니다. </td>
+                        </tr>
+                        <tr class="urgency">
+                            <td>8</td>
+                            <td>2023.08.15 10:30:25</td>
+                            <td>배터리</td>
+                            <td>R3</td>
+                            <td class="tal">“R3”의 배터리가 방전되었습니다. </td>
+                        </tr>
+                        <tr class="urgency">
+                            <td>7</td>
+                            <td>2023.08.15 10:30:25</td>
+                            <td>로봇장애</td>
+                            <td>R1</td>
+                            <td class="tal">“R1”의 진행방향에 장애물이 감지되어 정지합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>2023.08.15 10:30:25</td>
+                            <td>로봇장애</td>
+                            <td>R2</td>
+                            <td class="tal">“R2”이 다시 이동합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>2023.08.15 10:30:25</td>
+                            <td>로봇장애</td>
+                            <td>R3</td>
+                            <td class="tal">“R2”의 “우측 리프트 이상” 장애가 감지되어 정지합니다. </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>2023.08.15 10:30:25</td>
+                            <td>시스템</td>
+                            <td>시스템</td>
+                            <td class="tal">“Memory”의 사용량을 초과하였습니다.</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>2023.08.15 10:30:25</td>
+                            <td>시스템</td>
+                            <td>시스템</td>
+                            <td class="tal">“PMS 통신 트래픽 이상” 이상 징후가 발견되었습니다.</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>2023.08.15 10:30:25</td>
+                            <td>시스템</td>
+                            <td>Robot</td>
+                            <td class="tal">“Robot”과 통신에서 “mission_request” “수신” 오류가 발생했습니다.</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2023.08.15 10:30:25</td>
+                            <td>배터리</td>
+                            <td>PMS</td>
+                            <td class="tal">“R3”의 배터리 잔량이 “29”% 입니다. </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination">
+                <div class="page-num">
+                    <a href="#" id="first" onclick="setPage('fist')"><img src="./images/ico_2arrow_left@2x.png" title="첫 페이지"></a>
+                    <a href="#" id="prev" onclick="setPage('prev')"><img src="./images/ico_arrow_left@2x.png" title="이전 페이지"></a>
+
+                    <span class="page" name="page" id="page">1</span>
+                    <span class="c-default">of</span>
+                    <span class="total_pages c-default" name="page" id="total_pages">100</span>
+
+                    <a href="#" id="next" onclick="setPage('next')"><img src="./images/ico_arrow_right@2x.png" title="다음 페이지"></a>
+                    <a href="#" id="last" onclick="setPage('last')"><img src="./images/ico_2arrow_right@2x.png" title="마지막 페이지"></a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--//본문-->
+</div>
+
+<!--긴급알림-->
+<div class="alarm-layer" id="pop_alarm">
+    <header class="alarm-head">
+        <div class="inner">긴급알림</div>
+        <button class="btn-close" onclick="fnHidePop('pop_alarm');"></button>
+    </header>
+    <div class="alarm-content">
+        <div class="footer">
+            <button class="btn blue">전체알림보기</button>
+        </div>
+        <ul class="notice">
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M1 ]</strong> 배터리 잔량이 29% 입니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M2 ]</strong> 비상정지 요청으로 정지합니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M3 ]</strong> 경로를 이탈하여 새로운 경로로 안내합니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M4 ]</strong>배터리가 방전되었습니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M5 ]</strong> 경로를 이탈하여 새로운 경로로 안내합니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M1 ]</strong> 배터리 잔량이 29% 입니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M2 ]</strong> 비상정지 요청으로 정지합니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M3 ]</strong> 경로를 이탈하여 새로운 경로로 안내합니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M4 ]</strong>배터리가 방전되었습니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M4 ]</strong>배터리가 방전되었습니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M4 ]</strong>배터리가 방전되었습니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+        </ul>
+        <div class="alarm-none" style="display: none;">
+            <p>긴급알림이 없습니다.</p>
+        </div>
+    </div>
+</div>
+
+<!--비밀번호 변경-->
+<div class="modal-wrapper" id="pop_pwd">
+    <div class="modal small">
+        <div class="header">
+            <h1>비밀번호 변경</h1>
+            <button class="btn btn-close" alt="닫기" onclick="fnHidePop('pop_pwd');"></button>
+        </div>
+        <div class="content">
+            <p class="fs14">보안을 위해 최소 3개월 마다 비밀번호를 변경해주세요.</p>
+            <hr class="line">
+            <div class="input-group mb-0-8 eye">
+                <label class="required input-group-text mt--2">현재 비밀번호</label>
+                <div class="input-input-group">
+                    <input type="password" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                    <small class="form-hint">
+                        ※ 현재 비밀번호를 입력하세요.
+                    </small>
+                </div> 
+            </div>
+            <div class="input-group mb-0-8 mt-2 eye">
+                <label class="required input-group-text">변경 비밀번호</label>
+                <div class="input-input-group">
+                    <input type="password" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                </div> 
+            </div>
+            <div class="input-group mb-0-8 eye">
+                <label class="required input-group-text mt--2">비밀번호 확인</label>
+                <div class="input-input-group">
+                    <input type="password" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                    <small class="form-hint">※ 비밀번호를 다시한번 입력하세요.</small>
+                    <small class="form-hint" style="display: none !important;">※ 비밀번호가 일치하지 않습니다.</small>
+                    <small class="form-hint" style="display: none !important;">※ 비밀번호 변경이 가능합니다.</small>
+                    <!--비밀번호 확인 Input Box 하단에 안내문구 출력
+                        입력전 : 비밀번호를 다시한번 입력하세요.
+                        입력중/비일치 : 비밀번호가 일치하지 않습니다.
+                        일치 : 비밀번호 변경이 가능합니다.-->
+                </div>
+            </div>
+        </div>
+        <div class="btn-group">
+            <button class="btn cancel" onclick="fnHidePop('pop_pwd');">취소</button>
+            <button class="btn basic">변경</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

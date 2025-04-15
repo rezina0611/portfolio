@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="ui_event" content="true" />
+<title>자율배송-Login</title>
+<link rel="stylesheet" href="css/fontawesome6-all.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/login.css">
+<script type="text/javascript" src="js/jquery-3.7.0.min.js"></script>    
+<script type="text/javascript" src="js/script.js"></script> 
+</head>
+<body>
+<div class="l-wrapper">
+    <div class="login-wrapper">
+        <div class="login-box">
+            <div class="login-box-inner">
+                <div class="login-header">
+                    <h4>Mobility Management System (MMS)</h4>
+                </div>
+                <div class="login-body">
+                    <form name="loginForm" method="post" action="#">
+                        <div class="form-group">
+                            <label class="control-label" for="id">
+                                <input type="text" id="id" name="id" placeholder="ID">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="password">
+                                <input type="password" id="password" name="pswd" placeholder="비밀번호를 입력하세요.">
+                            </label>
+                        </div>
+                        <div class="form-group remember d-space-between last">
+                            <label class="styled">
+                                <input type="checkbox" name="remember_me" value="true" checked>
+                                <i>로그인 정보 저장</i>
+                            </label>
+                            <ul class="password">
+                                <li><a href="#none" onclick="fnShowPop('pop_id')">ID 찾기</a></li>
+                                <li><a href="#none" onclick="fnShowPop('pop_reset')">비밀번호 초기화</a></li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn login">로그인</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--ID 찾기 pop-->
+<div class="modal-wrapper" id="pop_id">
+    <div class="modal small">
+        <div class="header">
+            <h1>ID 찾기</h1>
+            <button class="btn btn-close" alt="닫기" onclick="fnHidePop('pop_id');"></button>
+        </div>
+        <div class="content">
+            <div class="input-group mb-0-8">
+                <label class="required input-group-text">이름</label>
+                <input type="text" placeholder="입력하세요">
+            </div>
+            <div class="input-group mb-0-8 eye">
+                <label class="required input-group-text">비밀번호</label>
+                <div class="input-input-group">
+                    <input type="password" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                </div> 
+            </div>
+            <div class="input-group mb-0-8">
+                <label class="required input-group-text mt--2">이메일</label>
+                <div class="input-input-group">
+                    <input type="text" placeholder="입력하세요">
+                    <small class="form-hint">※ 등록된 이메일을 입력하세요.</small>
+                </div>
+            </div>
+        </div>
+        <div class="btn-group">
+            <button class="btn cancel" onclick="fnHidePop('pop_id');">취소</button>
+            <button class="btn basic">확인</button>
+        </div>
+    </div>
+</div>
+
+<!--ID 찾기결과 pop-->
+<div class="modal-wrapper" id="pop_id_result">
+    <div class="modal small">
+        <div class="header">
+            <h1>
+                ID 찾기 결과
+                <button class="btn btn-close" alt="닫기" onclick="fnHidePop('pop_id_result');"></button>
+            </h1>
+        </div>
+        <div class="content">
+            <p>000 회원님 안녕하세요.<br>
+                회원님의 ID는 <span class="text-white fs20">aaaaaaaa</span> 입니다. 
+                <br><br>
+                감사합니다.
+            </p>
+        </div>
+        <div class="btn-group">
+            <button class="btn basic">확인</button>
+        </div>
+    </div>
+</div>
+<!--//ID 찾기결과-->
+
+
+<!--비밀번호 초기화 pop-->
+<div class="modal-wrapper" id="pop_reset">
+    <div class="modal small">
+        <div class="header">
+            <h1>비밀번호 초기화</h1>
+            <button class="btn btn-close" alt="닫기" onclick="fnHidePop('pop_reset');"></button>
+        </div>
+        <div class="content">
+            <p class="fs20">최초 발급된 비밀번호로 초기화 합니다.</p>
+            <hr class="line">
+            <div class="input-group mb-0-8">
+                <label class="required input-group-text">이름</label>
+                <input type="password" placeholder="입력하세요">
+            </div>
+            <div class="input-group mb-0-8">
+                <label class="required input-group-text">ID</label>
+                <input type="password" placeholder="입력하세요">
+            </div>
+            <div class="input-group mb-0-8">
+                <label class="required input-group-text mt--2">이메일</label>
+                <div class="input-input-group">
+                    <input type="password" placeholder="입력하세요">
+                    <small class="form-hint">※ 등록된 이메일을 입력하세요.</small>
+                </div>
+            </div>
+        </div>
+        <div class="btn-group">
+            <button class="btn cancel" onclick="fnHidePop('pop_reset');">취소</button>
+            <button class="btn basic">확인</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

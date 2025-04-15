@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="ui_event" content="true" />
+<title>자율배송-모빌리티 관리</title>
+<link rel="stylesheet" href="css/fontawesome6-all.css">
+<link rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="js/jquery-3.7.0.min.js"></script>    
+<script type="text/javascript" src="js/script.js"></script> 
+</head>
+<body>
+<div class="l-wrapper">
+    <!--상단영역-->
+    <header class="l-header">
+        <div class="d-flex">
+            <div class="top-nav">
+                <a href="">Mobility Management System</a>
+            </div>
+            
+            <div class="top-right">
+                <div class="top-btns">
+                    <button type="button">
+                        <img src="./images/ico_sb_st@2x.png" alt="통계" title="통계">
+                    </button>
+                    <button type="button">
+                        <img src="./images/ico_sb_setting@2x.png" alt="설정" title="설정">
+                    </button>
+                    <button type="button" onclick="fnShowPop('pop_alarm');">
+                        <span class="badge circled bg-danger"></span>
+                        <img src="./images/ico_sb_alarm@2x.png" alt="알림" title="알림">
+                    </button>
+                    <details>
+                        <summary>
+                            <img src="./images/ico_sb_user@2x.png" alt="user" title="user">
+                        </summary>
+                        <ul class="user-area">
+                            <li>
+                                <p class="user-img">
+                                    <img src="./images/ico_sb_user_big.png">
+                                </p>
+                                <div class="user-info">
+                                    <strong class="js-user-name">홍길동</strong>
+                                    <span class="js-admin">Superadmin</span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#none" onclick="fnShowPop('pop_pwd')">비밀번호 변경</a>
+                            </li>
+                            <li>
+                                <a href="#none" onclick="">로그아웃</a>
+                            </li>
+                        </ul>
+                    </details>
+                </div>
+                <div class="timer">
+                    <span class="date" id="date" style="pointer-events: none;">
+                        <!-- 2023년 3월 15일 -->
+                        <script>
+                            const options01 = { year: 'numeric', month: 'long', day: 'numeric' };
+                            document.getElementById("date").innerHTML = new Date().toLocaleDateString('ko-KR', options01);
+                        </script>
+                    </span>
+                    <span class="time" id="time" style="pointer-events: none;">
+                        <!-- 15:30 -->
+                        <script>
+                            var options02 = { hour: "numeric", minute: "numeric", hour12: false };
+                            document.getElementById("time").innerHTML = new Date().toLocaleTimeString('ko-KR', options02);
+                        </script>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--//상단영역-->
+    <!--메인-->
+    <main class="l-main">
+        <div class="tabs">
+            <ul>
+                <li><a href="#">사용자 관리</a></li>
+                <li><a href="#" class="on">모빌리티 관리</a></li>
+            </ul>
+        </div>
+        <h2 class="page-title">
+            모빌리티 관리
+        </h2>
+        <section class="contents">
+            <div class="d-space-between mt-1">
+                <ul class="tab_list">
+                    <li><a href="#" class="on">전체 <span id="total_rows">(10)</span></a></li>
+                    <li><button class="btn basic" onclick="fnShowPop('pop_seq')">모빌리티 노출 순서 변경</button></li>
+                </ul>
+                <div class="d-flex">
+                    <select class="select mr-0-6" style="min-width: 7.2rem;">
+                        <option value="10" selected="">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="40">40</option>
+                        <option value="50">50</option>
+                    </select>
+                    <button class="btn add">
+                        모빌리티 등록
+                    </button>
+                </div>
+            </div>
+            <div class="mt-0-8">
+                <table class="d-table bd-l fixed">
+                    <colgroup>
+                        <col width="80">
+                        <col width="100">
+                        <col width="120">
+                        <col width="130">
+                        <col width="130">
+                        <col width="130">
+                        <col width="130">
+                        <col width="120"><col width=""><col width=""><col width="">
+                        <col width=""><col width=""><col width=""><col width="">
+                        <col width="80">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">No.</th>
+                            <th rowspan="2">사용여부</th>
+                            <th rowspan="2">Mobility명</th>
+                            <th rowspan="2">Mobility ID</th>
+                            <th rowspan="2">IP</th>
+                            <th rowspan="2">서브넷마스크</th>
+                            <th rowspan="2">게이트웨이</th>
+                            <th colspan="8">Mobility  상태 (정상 : 1, 불량 : 0)</th>
+                            <th rowspan="2" class="last-2">삭제</th>
+                        </tr>
+                        <tr>
+                            <th>Connect</th>
+                            <th>GPS</th>
+                            <th>Camera</th>
+                            <th>Radar</th>
+                            <th>Motor</th>
+                            <th>Brake</th>
+                            <th>Lamp</th>
+                            <th>VCU</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>사용</td>
+                            <td><a href="#none" onclick="fnShowPop('pop_mobility_view');">M1</a></td>
+                            <td>62dd98f0-bd8e-11ed-93ab-325096b39f47</td>
+                            <td>192.168.1.001</td>
+                            <td>255.255.255.0</td>
+                            <td>192.168.1.251</td>
+                            <td><span class="text-azure">Connecting</span></td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>사용</td>
+                            <td>M1</td>
+                            <td>62dd98f0-bd8e-11ed-93ab-325096b39f47</td>
+                            <td>192.168.1.001</td>
+                            <td>255.255.255.0</td>
+                            <td>192.168.1.251</td>
+                            <td><span class="text-azure">Connecting</span></td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td><span class="text-danger">0</span></td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>사용</td>
+                            <td>M1</td>
+                            <td>62dd98f0-bd8e-11ed-93ab-325096b39f47</td>
+                            <td>192.168.1.001</td>
+                            <td>255.255.255.0</td>
+                            <td>192.168.1.251</td>
+                            <td><span class="text-azure">Connecting</span></td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td><span class="text-danger">0</span></td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>사용</td>
+                            <td>M1</td>
+                            <td>62dd98f0-bd8e-11ed-93ab-325096b39f47</td>
+                            <td>192.168.1.001</td>
+                            <td>255.255.255.0</td>
+                            <td>192.168.1.251</td>
+                            <td><span class="text-muted">Disconnecting</span></td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td></td>
+                        </tr>
+                        <tr class="gray">
+                            <td>-</td>
+                            <td>사용안함</td>
+                            <td>M5</td>
+                            <td>62dd98f0-bd8e-11ed-93ab-325096b39f47</td>
+                            <td>192.168.1.001</td>
+                            <td>255.255.255.0</td>
+                            <td>192.168.1.251</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>
+                                <button class="btn-delete" title="삭제">
+                                    <img src="./images/ico_trash@2x.png">
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="gray">
+                            <td>-</td>
+                            <td>사용안함</td>
+                            <td>M6</td>
+                            <td>62dd98f0-bd8e-11ed-93ab-325096b39f47</td>
+                            <td>192.168.1.001</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>
+                                <button class="btn-delete" title="삭제">
+                                    <img src="./images/ico_trash@2x.png">
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination">
+                <div class="page-num">
+                    <a href="#" id="first" onclick="setPage('fist')"><img src="./images/ico_2arrow_left@2x.png" title="첫 페이지"></a>
+                    <a href="#" id="prev" onclick="setPage('prev')"><img src="./images/ico_arrow_left@2x.png" title="이전 페이지"></a>
+
+                    <span class="page" name="page" id="page">1</span>
+                    <span class="c-default">of</span>
+                    <span class="total_pages c-default" name="page" id="total_pages">100</span>
+
+                    <a href="#" id="next" onclick="setPage('next')"><img src="./images/ico_arrow_right@2x.png" title="다음 페이지"></a>
+                    <a href="#" id="last" onclick="setPage('last')"><img src="./images/ico_2arrow_right@2x.png" title="마지막 페이지"></a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--//메인-->
+</div>
+
+<!--긴급알림-->
+<div class="alarm-layer" id="pop_alarm">
+    <header class="alarm-head">
+        <div class="inner">긴급알림</div>
+        <button class="btn-close" onclick="fnHidePop('pop_alarm');"></button>
+    </header>
+    <div class="alarm-content">
+        <ul class="notice">
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M1 ]</strong> 배터리 잔량이 29% 입니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M2 ]</strong> 비상정지 요청으로 정지합니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M3 ]</strong> 경로를 이탈하여 새로운 경로로 안내합니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M4 ]</strong>배터리가 방전되었습니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M5 ]</strong> 경로를 이탈하여 새로운 경로로 안내합니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M1 ]</strong> 배터리 잔량이 29% 입니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M2 ]</strong> 비상정지 요청으로 정지합니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M3 ]</strong> 경로를 이탈하여 새로운 경로로 안내합니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M4 ]</strong>배터리가 방전되었습니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M4 ]</strong>배터리가 방전되었습니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M4 ]</strong>배터리가 방전되었습니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+        </ul>
+        <div class="alarm-none" style="display: none;">
+            <p>긴급알림이 없습니다.</p>
+        </div>
+    </div>
+</div>
+
+<!--비밀번호 변경-->
+<div class="modal-wrapper" id="pop_pwd">
+    <div class="modal small">
+        <div class="header">
+            <h1>비밀번호 변경</h1>
+            <button class="btn btn-close" alt="닫기" onclick="fnHidePop('pop_pwd');"></button>
+        </div>
+        <div class="content">
+            <p class="fs14">보안을 위해 최소 3개월 마다 비밀번호를 변경해주세요.</p>
+            <hr class="line">
+            <div class="input-group mb-0-8 eye">
+                <label class="required input-group-text mt--2">현재 비밀번호</label>
+                <div class="input-input-group">
+                    <input type="password" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                    <small class="form-hint">
+                        ※ 현재 비밀번호를 입력하세요.
+                    </small>
+                </div> 
+            </div>
+            <div class="input-group mb-0-8 mt-2 eye">
+                <label class="required input-group-text">변경 비밀번호</label>
+                <div class="input-input-group">
+                    <input type="password" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                </div> 
+            </div>
+            <div class="input-group mb-0-8 eye">
+                <label class="required input-group-text mt--2">비밀번호 확인</label>
+                <div class="input-input-group">
+                    <input type="password" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                    <small class="form-hint">※ 비밀번호를 다시한번 입력하세요.</small>
+                    <small class="form-hint" style="display: none !important;">※ 비밀번호가 일치하지 않습니다.</small>
+                    <small class="form-hint" style="display: none !important;">※ 비밀번호 변경이 가능합니다.</small>
+                    <!--비밀번호 확인 Input Box 하단에 안내문구 출력
+                        입력전 : 비밀번호를 다시한번 입력하세요.
+                        입력중/비일치 : 비밀번호가 일치하지 않습니다.
+                        일치 : 비밀번호 변경이 가능합니다.-->
+                </div>
+            </div>
+        </div>
+        <div class="btn-group">
+            <button class="btn cancel" onclick="fnHidePop('pop_pwd');">취소</button>
+            <button class="btn basic">변경</button>
+        </div>
+    </div>
+</div>
+
+<!--모빌리티노출순서변경-->
+<div class="modal-wrapper" id="pop_seq">
+    <div class="modal wide">
+        <div class="header">
+            <h1>모빌리티 노출 순서 변경</h1>
+            <button class="btn btn-close" alt="닫기" onclick="fnHidePop('pop_seq');"></button>
+        </div>
+        <div class="content">
+            <div class="d-space-between">
+                <div class="col le">
+                    <div class="card no-bor">
+                        <div class="card-header">
+                            <h3 class="card-title">사용중 모빌리티 ( 4 / 4 )</h3>
+                        </div>
+                        <div class="card-body bg">
+                            <div class="table-body" style="height: 22.5rem; overflow-y: auto;">
+                                <table class="styled fixed order" id="row-left">
+                                    <colgroup>
+                                        <col width="70px"><col width="30"><col width="75"><col width="70">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2">노출순서</th>
+                                            <th>모빌리티명</th>
+                                            <th>사용안함</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="btn-group m-0">
+                                                    <button class="ollim" disabled>▲</button>
+                                                    <button class="naelim">▼</button>
+                                                </div>
+                                            </td>
+                                            <td>1</td>
+                                            <td>M1</td>
+                                            <td><button class="btn gray">안 함</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="btn-group m-0">
+                                                    <button class="ollim" onclick="fnMoveUpTR(this); return false;">▲</button>
+                                                    <button class="naelim" onclick="fnMoveDownTR(this); return false;">▼</button>
+                                                </div>
+                                            </td>
+                                            <td>2</td>
+                                            <td>M2</td>
+                                            <td><button class="btn gray" onclick="fndel(this);">안 함</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="btn-group m-0">
+                                                    <button class="ollim" onclick="fnMoveUpTR(this); return false;">▲</button>
+                                                    <button class="naelim" onclick="fnMoveDownTR(this); return false;">▼</button>
+                                                </div>
+                                            </td>
+                                            <td>3</td>
+                                            <td>M3</td>
+                                            <td><button class="btn gray">안 함</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="btn-group m-0">
+                                                    <button class="ollim" onclick="fnMoveUpTR(this); return false;">▲</button>
+                                                    <button class="naelim" onclick="fnMoveDownTR(this); return false;">▼</button>
+                                                </div>
+                                            </td>
+                                            <td>4</td>
+                                            <td>M4</td>
+                                            <td><button class="btn gray" onclick="">안 함</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="arrow">
+                    <img src="./images/arrow_left_big@2x.png">
+                </div>
+                <div class="col ri">
+                    <div class="card no-bor">
+                        <div class="card-header">
+                            <h3 class="card-title">사용안함 모빌리티</h3>
+                        </div>
+                        <div class="card-body bg">
+                            <div class="table-body" style="height: 22.5rem; overflow-y: auto;">
+                                <table class="styled fixed order" id="rowadd">
+                                    <colgroup>
+                                        <col width="80"><col width="50">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>모빌리티 명</th>
+                                            <th>사용</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>M5</td>
+                                            <td><button class="btn gray">사 용</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>M6</td>
+                                            <td><button class="btn gray">사 용</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn-group mt-3">
+            <button class="btn cancel" onclick="fnHidePop('pop_');">취소</button>
+            <button class="btn basic">저장</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

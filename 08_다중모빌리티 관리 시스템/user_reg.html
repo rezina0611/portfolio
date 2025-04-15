@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="ui_event" content="true" />
+<title>자율배송-사용자관리</title>
+<link rel="stylesheet" href="css/fontawesome6-all.css">
+<link rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="js/jquery-3.7.0.min.js"></script>    
+<script type="text/javascript" src="js/script.js"></script> 
+</head>
+<body>
+<div class="l-wrapper">
+    <!--상단영역-->
+    <header class="l-header">
+        <div class="d-flex">
+            <div class="top-nav">
+                <a href="">Mobility Management System</a>
+            </div>
+            
+            <div class="top-right">
+                <div class="top-btns">
+                    <button type="button">
+                        <img src="./images/ico_sb_st@2x.png" alt="통계" title="통계">
+                    </button>
+                    <button type="button">
+                        <img src="./images/ico_sb_setting@2x.png" alt="설정" title="설정">
+                    </button>
+                    <button type="button" onclick="fnShowPop('pop_alarm');">
+                        <span class="badge circled bg-danger"></span>
+                        <img src="./images/ico_sb_alarm@2x.png" alt="알림" title="알림">
+                    </button>
+                    <details>
+                        <summary>
+                            <img src="./images/ico_sb_user@2x.png" alt="user" title="user">
+                        </summary>
+                        <ul class="user-area">
+                            <li>
+                                <p class="user-img">
+                                    <img src="./images/ico_sb_user_big.png">
+                                </p>
+                                <div class="user-info">
+                                    <strong class="js-user-name">홍길동</strong>
+                                    <span class="js-admin">Superadmin</span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#none" onclick="fnShowPop('pop_pwd')">비밀번호 변경</a>
+                            </li>
+                            <li>
+                                <a href="#none" onclick="">로그아웃</a>
+                            </li>
+                        </ul>
+                    </details>
+                </div>
+                <div class="timer">
+                    <span class="date" id="date" style="pointer-events: none;">
+                        <!-- 2023년 3월 15일 -->
+                        <script>
+                            const options01 = { year: 'numeric', month: 'long', day: 'numeric' };
+                            document.getElementById("date").innerHTML = new Date().toLocaleDateString('ko-KR', options01);
+                        </script>
+                    </span>
+                    <span class="time" id="time" style="pointer-events: none;">
+                        <!-- 15:30 -->
+                        <script>
+                            var options02 = { hour: "numeric", minute: "numeric", hour12: false };
+                            document.getElementById("time").innerHTML = new Date().toLocaleTimeString('ko-KR', options02);
+                        </script>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--//상단영역-->
+    <!--메인-->
+    <main class="l-main">
+        <div class="tabs">
+            <ul>
+                <li><a href="#" class="on">사용자 관리</a></li>
+                <li><a href="#">모빌리티 관리</a></li>
+            </ul>
+        </div>
+        <h2 class="page-title">
+            사용자 관리 등록
+        </h2>
+        <section class="contents">
+            <form>
+                <table class="styled left fixed mtb-1-5">
+                    <colgroup>
+                        <col width="112"><col>
+                        <col width="112"><col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th class="required">권한</th>
+                            <td>
+                                <select class="select">
+                                    <option>전체</option>
+                                    <option value="">관리자</option>
+                                    <option value="">운영자</option>
+                                </select>
+                            </td>
+                            <th colspan="2"></th>
+                        </tr>
+                        <tr>
+                            <th class="required">이름</th>
+                            <td>
+                                <input type="text" placeholder="입력하세요">
+                            </td>
+                            <th colspan="2"></th>
+                        </tr>
+                        <tr>
+                            <th class="required">사용자ID</th>
+                            <td>
+                                <div class="input-group">
+                                    <input type="text" name="user-id" class="mr-0-6" value="" placeholder="영문, 숫자, 특수문자 활용 4~10자로 입력하세요.">
+                                    <button type="button" class="btn basic">중복확인</button>
+                                </div>
+                            </td>
+                            <th class="required">이메일</th>
+                            <td>
+                                <input type="text" placeholder="입력하세요">
+                                <span class="text-danger">※ 초기 비밀번호는 이메일 앞자리로 설정됩니다.</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>접속제한</th>
+                            <td colspan="3">
+                                <div class="input-group">
+                                    <label class="skinned-switch">
+                                        <input type="checkbox" checked>
+                                        <span data-on="접속허용" data-off="접속제한"></span>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>비고</th>
+                            <td colspan="3">
+                                <input type="text" placeholder="입력하세요">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+            <div class="btn-group">
+                <button class="btn secondary">취소</button>
+                <button class="btn basic">등록</button>
+            </div>
+        </section>
+    </main>
+    <!--//메인-->
+</div>
+</body>
+</html>

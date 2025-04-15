@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="ui_event" content="true" />
+<title>자율배송-사용자관리</title>
+<link rel="stylesheet" href="css/fontawesome6-all.css">
+<link rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="js/jquery-3.7.0.min.js"></script>    
+<script type="text/javascript" src="js/script.js"></script> 
+</head>
+<body>
+<div class="l-wrapper">
+    <!--상단영역-->
+    <header class="l-header">
+        <div class="d-flex">
+            <div class="top-nav">
+                <a href="">Mobility Management System</a>
+            </div>
+            
+            <div class="top-right">
+                <div class="top-btns">
+                    <button type="button">
+                        <img src="./images/ico_sb_st@2x.png" alt="통계" title="통계">
+                    </button>
+                    <button type="button">
+                        <img src="./images/ico_sb_setting@2x.png" alt="설정" title="설정">
+                    </button>
+                    <button type="button" onclick="fnShowPop('pop_alarm');">
+                        <span class="badge circled bg-danger"></span>
+                        <img src="./images/ico_sb_alarm@2x.png" alt="알림" title="알림">
+                    </button>
+                    <details>
+                        <summary>
+                            <img src="./images/ico_sb_user@2x.png" alt="user" title="user">
+                        </summary>
+                        <ul class="user-area">
+                            <li>
+                                <p class="user-img">
+                                    <img src="./images/ico_sb_user_big.png">
+                                </p>
+                                <div class="user-info">
+                                    <strong class="js-user-name">홍길동</strong>
+                                    <span class="js-admin">Superadmin</span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#none" onclick="fnShowPop('pop_pwd')">비밀번호 변경</a>
+                            </li>
+                            <li>
+                                <a href="#none" onclick="">로그아웃</a>
+                            </li>
+                        </ul>
+                    </details>
+                </div>
+                <div class="timer">
+                    <span class="date" id="date" style="pointer-events: none;">
+                        <!-- 2023년 3월 15일 -->
+                        <script>
+                            const options01 = { year: 'numeric', month: 'long', day: 'numeric' };
+                            document.getElementById("date").innerHTML = new Date().toLocaleDateString('ko-KR', options01);
+                        </script>
+                    </span>
+                    <span class="time" id="time" style="pointer-events: none;">
+                        <!-- 15:30 -->
+                        <script>
+                            var options02 = { hour: "numeric", minute: "numeric", hour12: false };
+                            document.getElementById("time").innerHTML = new Date().toLocaleTimeString('ko-KR', options02);
+                        </script>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--//상단영역-->
+    <!--메인-->
+    <main class="l-main">
+        <div class="tabs">
+            <ul>
+                <li><a href="#" class="on">사용자 관리</a></li>
+                <li><a href="#">모빌리티 관리</a></li>
+            </ul>
+        </div>
+        <h2 class="page-title">
+            사용자 관리 상세
+        </h2>
+        <section class="contents">
+            <form>
+                <table class="styled left fixed mtb-1-5">
+                    <colgroup>
+                        <col width="112"><col>
+                        <col width="112"><col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th class="required">권한</th>
+                            <td>
+                                <select class="select">
+                                    <option>전체</option>
+                                    <option value="" selected>관리자</option>
+                                    <option value="">운영자</option>
+                                </select>
+                            </td>
+                            <th colspan="2"></th>
+                        </tr>
+                        <tr>
+                            <th class="required">이름</th>
+                            <td>
+                                <input type="text" value="홍길동">
+                            </td>
+                            <th colspan="2"></th>
+                        </tr>
+                        <tr>
+                            <th class="required">사용자ID</th>
+                            <td>
+                                <div class="input-group">
+                                    Abcd@#1234
+                                </div>
+                            </td>
+                            <th class="required">이메일</th>
+                            <td>
+                                <input type="text" value="abcd@test.com">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>접속제한</th>
+                            <td colspan="3">
+                                <div class="input-group">
+                                    <label class="skinned-switch">
+                                        <input type="checkbox">
+                                        <span data-on="접속허용" data-off="접속제한"></span>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>비고</th>
+                            <td colspan="3">
+                                <input type="text" value="입력">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+            <div class="btn-group">
+                <button class="btn secondary">취소</button>
+                <button class="btn basic">저장</button>
+            </div>
+        </section>
+    </main>
+    <!--//메인-->
+</div>
+
+<!--긴급알림-->
+<div class="alarm-layer" id="pop_alarm">
+    <header class="alarm-head">
+        <div class="inner">긴급알림</div>
+        <button class="btn-close" onclick="fnHidePop('pop_alarm');"></button>
+    </header>
+    <div class="alarm-content">
+        <ul class="notice">
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M1 ]</strong> 배터리 잔량이 29% 입니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M2 ]</strong> 비상정지 요청으로 정지합니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M3 ]</strong> 경로를 이탈하여 새로운 경로로 안내합니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M4 ]</strong>배터리가 방전되었습니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M5 ]</strong> 경로를 이탈하여 새로운 경로로 안내합니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M1 ]</strong> 배터리 잔량이 29% 입니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M2 ]</strong> 비상정지 요청으로 정지합니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M3 ]</strong> 경로를 이탈하여 새로운 경로로 안내합니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M4 ]</strong>배터리가 방전되었습니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M4 ]</strong>배터리가 방전되었습니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <span>
+                        <strong>[ M4 ]</strong>배터리가 방전되었습니다.
+                    </span>
+                    <p class="date">2024.05.10 15:36:12</p>
+                </a>
+            </li>
+        </ul>
+        <div class="alarm-none" style="display: none;">
+            <p>긴급알림이 없습니다.</p>
+        </div>
+    </div>
+</div>
+
+<!--비밀번호 변경-->
+<div class="modal-wrapper" id="pop_pwd">
+    <div class="modal small">
+        <div class="header">
+            <h1>비밀번호 변경</h1>
+            <button class="btn btn-close" alt="닫기" onclick="fnHidePop('pop_pwd');"></button>
+        </div>
+        <div class="content">
+            <p class="fs14">보안을 위해 최소 3개월 마다 비밀번호를 변경해주세요.</p>
+            <hr class="line">
+            <div class="input-group mb-0-8 eye">
+                <label class="required input-group-text mt--2">현재 비밀번호</label>
+                <div class="input-input-group">
+                    <input type="password" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                    <small class="form-hint">
+                        ※ 현재 비밀번호를 입력하세요.
+                    </small>
+                </div> 
+            </div>
+            <div class="input-group mb-0-8 mt-2 eye">
+                <label class="required input-group-text">변경 비밀번호</label>
+                <div class="input-input-group">
+                    <input type="password" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                </div> 
+            </div>
+            <div class="input-group mb-0-8 eye">
+                <label class="required input-group-text mt--2">비밀번호 확인</label>
+                <div class="input-input-group">
+                    <input type="password" placeholder="입력하세요">
+                    <i class="fa-regular fa-eye-slash eyes"></i>
+                    <small class="form-hint">※ 비밀번호를 다시한번 입력하세요.</small>
+                    <small class="form-hint" style="display: none !important;">※ 비밀번호가 일치하지 않습니다.</small>
+                    <small class="form-hint" style="display: none !important;">※ 비밀번호 변경이 가능합니다.</small>
+                    <!--비밀번호 확인 Input Box 하단에 안내문구 출력
+                        입력전 : 비밀번호를 다시한번 입력하세요.
+                        입력중/비일치 : 비밀번호가 일치하지 않습니다.
+                        일치 : 비밀번호 변경이 가능합니다.-->
+                </div>
+            </div>
+        </div>
+        <div class="btn-group">
+            <button class="btn cancel" onclick="fnHidePop('pop_pwd');">취소</button>
+            <button class="btn basic">변경</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
