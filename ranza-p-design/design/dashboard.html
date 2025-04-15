@@ -1,0 +1,296 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>RANZA</title>
+<link rel="stylesheet" href="css/default.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="l-wrapper">
+    <header class="l-header">
+        <div class="d-flex">
+            <div class="top-nav">
+                <div class="logo">
+                    <a href=""><img src="images/logo.png" alt="로고"></a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="" class="active">모니터링</a></li>
+                        <li><a href="">사용자 관리</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="top-right">
+                <div class="right-end">
+                    <button class="btn ico" id="setting"><img src="./images/ico_setting.png" alt="설정"></button>
+                    <!-- 드롭다운 메뉴 -->
+                    <div id="st-div" class="dropdown">
+                        <ul class="dropdown-menu">
+                            <li><a href="#">사용자 관리</a></li>
+                        </ul>
+                    </div>
+                    <!-- 드롭다운 메뉴 -->
+                    <button class="btn ico"><img src="./images/ico_logout.png" alt="로그아웃"></button>
+                </div>
+                
+                <div class="timer">
+                    <div onclick="test_init();">
+                        <span class="date">2023년 6월 21일</span>
+                    </div>
+                    <div onclick="test_enter();">
+                        <span class="time">15:30</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </header>
+    
+    <main class="l-main">
+ 
+        <div class="grid-area">
+            <div class="grid-map-wrapper" id="border">
+                <canvas id="grid" style="touch-action: none; cursor: inherit;"></canvas>
+            </div>
+            
+            <div class="robots-wrapper">
+                
+                <details class="dropdown body robot">
+                    <summary>
+                        <div class="avatar">
+                            <span class="role">S</span>
+                            <span class="status good"></span>
+                        </div>
+                        <span class="name">Robot 2<span class="status">회전중</span></span>
+                        <div class="battery low">
+                            <span>8%</span>
+                            <span class="tip"></span>
+                        </div>
+                    </summary>
+                    <div class="inner">
+                        <ul>
+                            <li>
+                                <label>상태</label>
+                                <span>대기</span>
+                            </li>
+                            <li>
+                                <label>연결</label>
+                                <span>양호</span>
+                            </li>
+                        </ul>
+                        <div class="btn-area">
+                            <button class="btn ico"><img src="images/ico_task.png" alt=""></button>
+                            <button class="btn basic">대기장소이동</button>
+                            <button class="btn red">긴급정지</button>
+                        </div>
+                    </div>
+                </details>
+                
+                <details class="dropdown body robot">
+                    <summary>
+                        <div class="avatar">
+                            <span class="role">S</span>
+                            <span class="status bad"></span>
+                        </div>
+                        <span class="name">Robot 3<span class="status">대기</span></span>
+                        <div class="battery full">
+                            <span>100%</span>
+                            <span class="tip"></span>
+                        </div>
+                    </summary>
+                    <div class="inner">
+                        <ul>
+                            <!--<li>
+                                <label>상태</label>
+                                <span>대기</span>
+                            </li>-->
+                            <li>
+                                <label>연결</label>
+                                <span>양호</span>
+                            </li>
+                        </ul>
+                        <div class="btn-area">
+                            <button class="btn ico"><img src="images/ico_task.png" alt=""></button>
+                            <button class="btn basic">대기장소이동</button>
+                            <button class="btn red">긴급정지</button>
+                        </div>
+                    </div>
+                </details>
+                
+                <details class="dropdown body robot">
+                    <summary>
+                        <div class="avatar">
+                            <span class="role">S</span>
+                            <span class="status bad"></span>
+                        </div>
+                        <span class="name">Robot 4<span class="status">대기</span></span>
+                        <div class="battery charge">
+                            <span>100%</span>
+                            <span class="tip"></span>
+                        </div>
+                    </summary>
+                    <div class="inner">
+                        <ul>
+                            <!--<li>
+                                <label>상태</label>
+                                <span>대기</span>
+                            </li>-->
+                            <li>
+                                <label>연결</label>
+                                <span>양호</span>
+                            </li>
+                        </ul>
+                        <div class="btn-area">
+                            <button class="btn ico"><img src="images/ico_task.png" alt=""></button>
+                            <button class="btn basic">대기장소이동</button>
+                            <button class="btn red">긴급정지</button>
+                        </div>
+                    </div>
+                </details>
+                
+            </div>
+        </div>
+
+        <div class="log-area">
+            <div class="log-wrapper">
+                <pre class="form-control" id="log">
+fafa
+a
+fafa
+a
+fafa
+a
+fafa
+a
+fafa
+a
+fafa
+a
+fafa
+a
+fafa
+a
+fafa
+a
+fafa
+a
+                </pre>
+                <!--<ul>
+                    <li>
+                        <div class="name-tag">Robot 1</div>
+                        <div class="data">
+                            <span>2023-03-15 15:30:30</span>
+                            <span>A-1</span>
+                            <span>Pick</span>
+                            <span>출차</span>
+                            <span><span class="sucess">성공</span></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="name-tag">Robot 2</div>
+                        <div class="data">
+                            <span>2023-03-15 15:30:30</span>
+                            <span>A-1</span>
+                            <span>Pick</span>
+                            <span>출차</span>
+                            <span><span class="sucess">성공</span></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="name-tag wh">PMS</div>
+                        <div class="data">
+                            <span>전체 11</span>
+                            <span>주차중 3</span>
+                            <span>주차가능 8</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="name-tag">Robot 3</div>
+                        <div class="data">
+                            <span>2023-03-15 15:30:30</span>
+                            <span>A-1</span>
+                            <span>Pick</span>
+                            <span>출차</span>
+                            <span><span class="failed">실패</span>(충돌)</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="name-tag">Robot 4</div>
+                        <div class="data">
+                            <span>2023-03-15 15:30:30</span>
+                            <span>A-1</span>
+                            <span>Pick</span>
+                            <span>출차</span>
+                            <span><span class="failed">실패</span>(충돌)</span>
+                        </div>
+                    </li>
+                </ul>-->
+            </div>
+            <style>
+                .table-1 thead th, 
+                .table-1 tbody td{
+                    width: 25%;
+                }
+            </style>
+            <div class="table-wrapper">
+                <table class="table-1">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>구분</th>
+                            <th>차량번호</th>
+                            <th>상태</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Robot 1</td>
+                            <td>R123456</td>
+                            <td>192.234.000.010</td>
+                            <td>Active</td>
+                        </tr>
+                        <tr>
+                            <td>Robot 2</td>
+                            <td>R123456</td>
+                            <td>192.234.000.010</td>
+                            <td>Active</td>
+                        </tr>
+                        <tr>
+                            <td>Robot 3</td>
+                            <td>R123456</td>
+                            <td>192.234.000.010</td>
+                            <td>Active</td>
+                        </tr>
+                        <tr>
+                            <td>Robot 4</td>
+                            <td>R123456</td>
+                            <td>192.234.000.010</td>
+                            <td>Active</td>
+                        </tr>
+                        <tr>
+                            <td>Robot 5</td>
+                            <td>R123456</td>
+                            <td>192.234.000.010</td>
+                            <td>Active</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="photo-wrapper">
+            </div>
+        </div>
+
+        
+    </main>
+
+
+</div>    
+<script src="js/jquery-3.7.0.min.js"></script>
+<script src="js/sidebar.js"></script>
+    
+</body>
+</html>

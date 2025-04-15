@@ -1,0 +1,292 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>RANZA</title>
+<link rel="stylesheet" href="css/default.css">
+<link rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="js/jquery-3.7.0.min.js"></script>    
+</head>
+
+<body>
+<div class="l-wrapper">
+    <header class="l-header">
+        <div class="d-flex">
+            <div class="top-nav">
+                <div class="logo">
+                    <a href=""><img src="images/logo.png" alt="로고"></a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="">모니터링</a></li>
+                        <li><a href="" class="active">사용자 관리</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="top-right">
+                <div class="right-end">
+                    <button class="btn ico"><img src="./images/ico_logout.png" alt="로그아웃"></button>
+                </div>
+                
+                <div class="timer">
+                    <div onclick="test_init();">
+                        <span class="date">2023년 6월 21일</span>
+                    </div>
+                    <div onclick="test_enter();">
+                        <span class="time">15:30</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </header>
+    
+    <main class="l-main">
+        <section class="l-section">
+            <div class="title-area">
+                <h2>사용자 관리</h2>
+            </div>
+            <div class="search-table">
+                <table class="s-table">
+                    <colgroup>
+                        <col width="132">
+                        <col width="">
+                        <col width="132">
+                        <col width="">
+                        <col width="132">
+                        <col width="">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>권한</th>
+                            <td>
+                                <select name="" autocomplete="off">
+                                    <option value="">전체</option>
+                                    <option value=""></option>
+                                </select>
+                            </td>
+                            <th>이름</th>
+                            <td><input type="text" class="input" placeholder="입력하세요"></td>
+                            <th>사용자 ID</th>
+                            <td><input type="text" class="input" placeholder="입력하세요"></td>
+                        </tr>
+                        <tr>
+                            <th>이메일</th>
+                            <td><input type="text" class="input" placeholder="입력하세요"></td>
+                            <th>비고</th>
+                            <td colspan="3"><input type="text" class="input" placeholder="입력하세요"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btn-area">
+                    <button class="btn cancel">초기화</button>
+                    <button class="btn primary">검색</button>
+                </div>
+            </div>
+            <div class="data-table">
+                <div class="heading">
+                    <h4>사용자 목록 <span class="c-primary">(000)</span></h4>
+                    <div class="table-top-btn">
+                        <button class="btn write modal-write">사용자 등록</button>
+                    </div>
+                </div>
+                <table class="d-table">
+                    <colgroup>
+                        <col width="80">
+                        <col width="160">
+                        <col width="200">
+                        <col width="200">
+                        <col width="360">
+                        <col width="">
+                        <col width="80">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>권한</th>
+                            <th>사용자 ID</th>
+                            <th>이름</th>
+                            <th>이메일</th>
+                            <th>비고</th>
+                            <th>삭제</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>10</td>
+                            <td>관리자</td>
+                            <td><a href="">user1234</a></td>
+                            <td>홍길동</td>
+                            <td>user1234@mail.com</td>
+                            <td></td>
+                            <td class="btn-inner"><button class="btn ico"><img src="images/ico_trash.png" alt="삭제"></button></td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>관리자</td>
+                            <td><a href="">user1234</a></td>
+                            <td>홍길동</td>
+                            <td>user1234@mail.com</td>
+                            <td></td>
+                            <td class="btn-inner"><button class="btn ico"><img src="images/ico_trash.png" alt="삭제"></button></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>관리자</td>
+                            <td><a href="">user1234</a></td>
+                            <td>홍길동</td>
+                            <td>user1234@mail.com</td>
+                            <td></td>
+                            <td class="btn-inner"><button class="btn ico"><img src="images/ico_trash.png" alt="삭제"></button></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>관리자</td>
+                            <td><a href="">user1234</a></td>
+                            <td>홍길동</td>
+                            <td>user1234@mail.com</td>
+                            <td></td>
+                            <td class="btn-inner"><button class="btn ico"><img src="images/ico_trash.png" alt="삭제"></button></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>관리자</td>
+                            <td><a href="">user1234</a></td>
+                            <td>홍길동</td>
+                            <td>user1234@mail.com</td>
+                            <td></td>
+                            <td class="btn-inner"><button class="btn ico"><img src="images/ico_trash.png" alt="삭제"></button></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>관리자</td>
+                            <td><a href="">user1234</a></td>
+                            <td>홍길동</td>
+                            <td>user1234@mail.com</td>
+                            <td></td>
+                            <td class="btn-inner"><button class="btn ico"><img src="images/ico_trash.png" alt="삭제"></button></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>관리자</td>
+                            <td><a href="">user1234</a></td>
+                            <td>홍길동</td>
+                            <td>user1234@mail.com</td>
+                            <td></td>
+                            <td class="btn-inner"><button class="btn ico"><img src="images/ico_trash.png" alt="삭제"></button></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>관리자</td>
+                            <td><a href="">user1234</a></td>
+                            <td>홍길동</td>
+                            <td>user1234@mail.com</td>
+                            <td></td>
+                            <td class="btn-inner"><button class="btn ico"><img src="images/ico_trash.png" alt="삭제"></button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>관리자</td>
+                            <td><a href="">user1234</a></td>
+                            <td>홍길동</td>
+                            <td>user1234@mail.com</td>
+                            <td></td>
+                            <td class="btn-inner"><button class="btn ico"><img src="images/ico_trash.png" alt="삭제"></button></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>관리자</td>
+                            <td><a href="">user1234</a></td>
+                            <td>홍길동</td>
+                            <td>user1234@mail.com</td>
+                            <td></td>
+                            <td class="btn-inner"><button class="btn ico"><img src="images/ico_trash.png" alt="삭제"></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="page-area">
+                    <div class="pagination">
+                        <button class="btn"><img src="images/ico_2arrow_left.png" alt="첫 페이지"></button>
+                        <button class="btn"><img src="images/ico_arrow_left.png" alt="이전 페이지"></button>
+                        <div class="view"><input type="text" placeholder="1"><span>of 10</span></div>
+                        <button class="btn"><img src="images/ico_arrow_right.png" alt="다음 페이지"></button>
+                        <button class="btn"><img src="images/ico_2arrow_right.png" alt="마지막 페이지"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- 팝업 2023-11-28 -->
+    <div class="modal-wrapper" id="pop_zone_detail">
+        <div class="modal small">
+            <div class="header">
+                <h1>사용자 등록<button class="btn btn-close  modal-write"></button>
+                </h1>
+            </div>
+            <div class="content">
+                <input type="hidden" name="data" value="">
+                <form>
+                    <div class="input-group">
+                        <div class="inner-input-group">
+                            <label class="required">권한</label>
+                            <select class="input">
+                                <option value="" selected="">선택하세요</option>
+                                <option value=""></option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="inner-input-group">
+                            <label class="required">이름</label>
+                            <input type="text" class="input" placeholder="입력하세요">
+                        </div>
+                        <div class="inner-input-group">
+                            <label class="required">사용자 ID</label>
+                            <div class="input-btn-group">
+                                <input type="text" class="input" placeholder="입력하세요">
+                                <button type="button" class="btn primary">중복확인</button>
+                            </div>
+                        </div>
+                        <div class="inner-input-group">
+                            <label class="required">이메일</label>
+                            <input type="text" class="input" placeholder="입력하세요">
+                        </div>
+                        <div class="inner-input-group">
+                            <label class="required">비밀번호</label>
+                            <input type="password" class="input" placeholder="입력하세요">
+                        </div>
+                        <div class="inner-input-group">
+                            <label class="required">비밀번호 확인</label>
+                            <input type="password" class="input" placeholder="입력하세요">
+                        </div>
+                        <p class="desc">※ 비밀번호를 다시한번 입력하세요.</p>
+                        <div class="inner-input-group block">
+                            <label>비고</label>
+                            <textarea class="input" rows="4" placeholder="입력하세요"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="d-flex save-btn">
+                <button class="btn cancel modal-write" onclick="">취소</button>
+                <button class="btn primary" onclick="">등록</button>
+            </div>
+        </div>
+    </div>
+    
+    
+</div>
+    
+<script>
+$( document ).ready(function() {
+    $('.modal-write').on('click', function() {
+        $('#pop_zone_detail').toggleClass('open');
+     return false;
+  });
+});  
+</script>    
+    
+</body>
+</html>
