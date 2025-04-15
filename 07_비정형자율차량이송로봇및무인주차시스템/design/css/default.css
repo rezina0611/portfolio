@@ -1,0 +1,237 @@
+@charset "UTF-8";
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap'); */
+
+
+*{margin:0; padding:0;}
+
+/* Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+    font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, main {
+	display: block;
+}
+
+body {
+    line-height: 1;
+}
+ol, ul, li {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: '';content: none;}
+
+a {
+	background-color:transparent;
+    -webkit-text-decoration-skip:objects; 
+	text-decoration: none;
+    color: inherit;
+}
+a:active,a:hover{outline-width:0}
+
+table{
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* 폰트 강조 특성 초기화 */
+address, caption, cite, code, dfn, em, strong, th, var,i {
+    font-style:normal;
+}
+h1,h2,h3,h4,h5,h6 {
+      font-size: inherit;
+      line-height: normal;
+}
+button, 
+input[type="submit"],
+button[type="button"]{
+  cursor:pointer;
+}
+button{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color:transparent;
+}
+input, select, textarea, button {
+    outline: none;
+    border: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+textarea {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-color: transparent;
+    word-break: keep-all;
+    word-wrap: break-word
+}
+textarea {
+    width: 100%;
+    resize: none;
+    font-family: 'Noto Sans KR', sans-serif;
+    /*font-size: 14px;*/
+    display: block;
+}
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: url("../images/ico_arrow_down@2x.png") right 6px center no-repeat;
+	background-size: 1.6rem 1.6rem;
+	-webkit-padding-right: 1.5rem;
+	-moz-padding-right: 1.5rem;
+}
+
+/* IE 10, 11의 네이티브 화살표 숨기기 */
+select::-ms-expand { 
+    display: none;  /*숨겨진 화살표의 영역유지 X */
+}
+input[type="text"]::-ms-clear,
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none;
+}
+/* input number 화살표 제거 Chrome, Safari, Edge, Opera */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+	  -webkit-appearance: none;
+	  margin: 0;
+}
+  
+input[type="checkbox"],
+input[type="radio"] {
+    filter: invert(2%) hue-rotate(5deg) brightness(1.2);
+    transform: scale(1.3);
+    opacity: 0.55;
+}
+/* Firefox */
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+input[type=checkbox]:disabled + i:before,
+input[type=checkbox][disabled] + i:before,
+input[type=checkbox]:disabled + i:after,
+input[type=checkbox][disabled] + i:after,
+input[type=radio]:disabled + i:before,
+input[type=radio][disabled] + i:before,
+input[type=radio]:disabled + i:after,
+input[type=radio][disabled] + i:after {
+    cursor: not-allowed !important;
+}
+input:disabled, input[disabled], input.disabled,
+select:disabled {
+    cursor: not-allowed !important;
+}
+
+input[type=date]::-webkit-clear-button,
+input[type=date]::-webkit-inner-spin-button {
+  display: none;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+  background: transparent;
+  z-index: 1;
+}
+
+input[type=month]::-webkit-clear-button,
+input[type=month]::-webkit-inner-spin-button {
+  display: none;
+}
+
+input[type=month]::-webkit-calendar-picker-indicator {
+  background: transparent;
+  z-index: 1;
+}
+
+*:hover {
+    -webkit-transition: 0.1s linear;
+  -moz-transition: 0.1s linear;
+  -ms-transition: 0.1s linear;
+  -o-transition: 0.1s linear;
+  transition: 0.1s linear;
+}
+
+/*크롬에서 파랑색 배경 없애기*/
+input:-webkit-autofill {
+    /* -webkit-box-shadow: 0 0 0 30px var(--white) inset ; */
+    -webkit-text-fill-color: #fff; 
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+   transition: background-color 5000s ease-in-out 0s;
+}
+   
+
+/*스크롤바 커스텀*/
+*::-webkit-scrollbar {  /* 스크롤바의 너비 */
+    width: 5px;
+    height: 5px;
+}
+*::-webkit-scrollbar-button:start:decrement,
+*::-webkit-scrollbar-button:end:increment {
+    display: block;
+    width: 0;
+    height: 0;
+    background-color: transparent;
+}
+*::-webkit-scrollbar-corner {
+    background: 0 0;
+}
+*::-webkit-scrollbar-thumb {  /*스크롤바 막대에 대한 설정*/
+    border-radius: .4rem;
+    /* background: rgba(227 231 237 / 16%); */
+    background-color: rgba(227, 231, 237, 0.2);
+}
+*::-webkit-scrollbar-track {  /*스크롤바 뒷 배경에 대한 설정*/
+    width: .8rem;
+    /* background-color: transparent; */
+    background: rgba(135, 146, 180, 0.06);
+    border-radius: .5rem;
+}
+
+summary{
+    cursor: pointer; /*마우스를 위로 올렸을때 커서를 손가락모양으로 바꾸기*/
+    outline:none;  /*검정색 외곽라인 없애기*/
+}
+details summary::marker, /*삼각형모양의 특수문자 커스터마이징*/
+details summary::-webkit-details-marker{
+    display: none;
+    content: '';
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,127 @@
+@charset "UTF-8";
+.fz-login-wrap {
+    position: relative;
+    /* background: var(--white); */
+}
+.form-login-w {
+    height: calc(100vh - 40px);
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.form-login-w  img{
+    height: 3.7rem;
+    width: 27.2rem;
+}
+.form-login-w .login-box {
+    width: 346px;
+    display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.form-login-w .login-box .login-header {
+    padding: 1.4rem 0 4rem 0;
+    text-align: center;
+}
+.form-login-w .login-box .login-header h4 {
+    font-size: 1.95rem !important;
+    text-align: center;
+    color: var(--grey5);  /*#BCC3C1*/
+    letter-spacing: -0.8px;
+    font-weight: 500;
+    font: normal normal medium 20px/29px Noto Sans CJK KR;
+}
+.form-login-w .login-box .login-body {
+    color: var(--black);
+    flex: 1;
+    overflow: hidden;
+    min-width: 320px;
+    margin: 0 auto;
+}
+.form-login-w .login-box .login-body form .form-group {
+    margin-bottom: 1.2rem;
+}
+.form-login-w .login-box .login-body form .form-group .form-control{
+    height: 4rem !important;
+}
+.form-login-w .login-box .login-body form .form-group.last{
+    margin-bottom: 2.3rem;
+}
+.form-login-w .login-box .login-body form label.control-label{
+    position: relative;
+    display: block;
+    height: 4rem !important;
+}
+.form-login-w .login-box .login-body form label.styled i{
+    color: var(--grey6);
+    font-size:  1.3rem !important;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+.form-login-w .login-box .login-body form label.control-label i {
+    position: absolute;
+    top: 1.4rem; right: 1rem;
+    color: var(--grey6);
+    font-size: 1.45rem;
+    cursor: pointer;
+}
+.form-login-w .login-box .login-body form label.control-label i img{
+    width: 2rem;
+    height: 2rem;
+}
+.left .form-login-w .login-box .login-body .control-label {
+    width: 100%;
+}
+
+.form-login-w .login-box .login-body button{
+    min-height: 4rem;
+    letter-spacing: 1.4px;
+}
+
+.form-login-w .login-box .login-body .password{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    line-height: 1.8rem;
+}
+.form-login-w .login-box .login-body .password > li {
+    text-align: center;
+    padding: 0;
+}
+.form-login-w .login-box .login-body .password > li > a {
+    font-size: 1.3rem;
+    color: var(--grey6);
+}
+.form-login-w .login-box .login-body .password > li > a:before {
+    content:"|";
+    color:rgba(217, 252, 255, 0.16);  /*rgba(217, 252, 255, 0.16)*/
+    padding: 0 .8rem;
+}
+.form-login-w .login-box .login-body .password > li:first-child a:before {content:"";padding:0;}
+
+.fz-login-wrap .login-footer{
+    background: rgba(217, 252, 255, 0.08);  /*rgba(217, 252, 255, 0.08)*/
+    height: 4rem;
+    text-align: center;
+    padding: 1.1rem 0;
+}
+.fz-login-wrap .login-footer > ul {
+    display: flex;
+    justify-content: center;
+  }
+.fz-login-wrap .login-footer > ul > li {
+    text-align: center;
+    padding: 0 1.5rem;
+}
+.fz-login-wrap .login-footer > ul > li > a {
+    font-size: 1.2rem;
+    color: var(--grey6);
+    letter-spacing: -0.24px;
+}
+  
