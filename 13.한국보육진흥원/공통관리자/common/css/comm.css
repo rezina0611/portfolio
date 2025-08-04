@@ -1,0 +1,245 @@
+@charset "utf-8";
+/* *********************************************
+* Project ===== 
+* FileName === comm.css
+* Author ===== KSB
+* Date ======= 2018-07-06
+* Last ======= 
+********************************************* */
+
+
+/* --------------------------------------------
+ * Common
+/* ------------------------------------------ */
+.reset		{margin:0 !important;padding:0 !important;}
+.none		{display:none !important;}
+.hidden	{visibility:hidden !important;width:0 !important;height:0 !important;font-size:0 !important;line-height:0 !important;position:absolute !important;left:0 !important;top:-999999px !important;}
+
+.nbg		{background-image:none !important;}
+.nbc		{background-color:none !important;}
+.nbo		{border:none !important;}
+
+.clear		{clear:both !important;}
+.normal	{font-weight:normal !important;}
+
+.inblock	{display:inline-block !important;}
+.block	{display:block !important;}
+.inline	{display:inline !important;}
+
+.pr			{position:relative !important;}
+
+
+/* --------------------------------------------
+ * Align
+/* ------------------------------------------ */
+.al		{text-align:left !important;}
+.ac	{text-align:center !important;}
+.ar		{text-align:right !important;}
+.vm	{vertical-align:middle !important;}
+.vt		{vertical-align:top !important;}
+.vb	{vertical-align:bottom !important;}
+.vbs	{vertical-align:baseline !important;}
+
+
+/* --------------------------------------------
+ * Float
+/* ------------------------------------------ */
+.fl	{float:left !important;}
+.fr	{float:right !important;}
+.fn	{float:none !important;}
+
+
+/* --------------------------------------------
+ * Clearfix
+/* ------------------------------------------ */
+/*.cf:after {clear:both;display:block;content:"";}*/
+.clearfix{*zoom:1}.clearfix:after{content:""; display:block; clear:both;}
+
+/* --------------------------------------------
+ * Margin
+/* ------------------------------------------ */
+.mt0 {margin-top:0px !important;} .mt5 {margin-top:5px !important;} .mt10 {margin-top:10px !important;} .mt15 {margin-top:15px !important;} .mt20 {margin-top:20px !important;} .mt25 {margin-top:25px !important;} 
+.mt30 {margin-top:30px !important;} .mt35 {margin-top:35px !important;} .mt40 {margin-top:40px !important;} .mt45 {margin-top:45px !important;} .mt50 {margin-top:50px !important;} .mt55 {margin-top:55px !important;} 
+.mt60 {margin-top:60px !important;}
+.mr0 {margin-right:0px !important;} .mr5 {margin-right:5px !important;} .mr10 {margin-right:10px !important;} .mr15 {margin-right:15px !important;} .mr20 {margin-right:20px !important;} .mr25 {margin-right:25px !important;} 
+.mr30 {margin-right:30px !important;} .mr35 {margin-right:35px !important;} .mr40 {margin-right:40px !important;} .mr45 {margin-right:45px !important;} .mr50 {margin-right:50px !important;} .mr55 {margin-right:55px !important;} 
+.mr60 {margin-right:60px !important;}.mr110 {margin-right:110px !important;}
+.mb0 {margin-bottom:0px !important;} .mb5 {margin-bottom:5px !important;} .mb10 {margin-bottom:10px !important;} .mb15{margin-bottom:15px !important;} .mb20 {margin-bottom:20px !important;} .mb25 {margin-bottom:25px !important;} 
+.mb30 {margin-bottom:30px !important;} .mb35 {margin-bottom:35px !important;} .mb40 {margin-bottom:40px !important;} .mb45 {margin-bottom:45px !important;} .mb50 {margin-bottom:50px !important;} .mb55 {margin-bottom:55px !important;} 
+.mb60 {margin-bottom:60px !important;}
+.ml0 {margin-left:0px !important;} .ml5 {margin-left:5px !important;} .ml10 {margin-left:10px !important;} .ml15{margin-left:15px !important;} .ml20 {margin-left:20px !important;} .ml25 {margin-left:25px !important;} 
+.ml30 {margin-left:30px !important;} .ml35 {margin-left:35px !important;} .ml40 {margin-left:40px !important;} .ml45 {margin-left:45px !important;} .ml50 {margin-left:50px !important;} .ml55 {margin-left:55px !important;} 
+.ml60 {margin-left:60px !important;}.ml110 {margin-left:110px !important;}
+
+
+/* --------------------------------------------
+ * Padding
+/* ------------------------------------------ */
+.pt0 {padding-top:0px !important;} .pt5 {padding-top:5px !important;} .pt10 {padding-top:10px !important;} .pt13 {padding-top:13px !important;}
+.pt15 {padding-top:15px !important;} .pt20 {padding-top:20px !important;} .pt25 {padding-top:25px !important;} .pt30 {padding-top:30px !important;} .pt35 {padding-top:35px !important;} .pt40 {padding-top:40px !important;} .pt45 {padding-top:45px !important;} .pt50 {padding-top:50px !important;} .pt55 {padding-top:55px !important;} .pt60 {padding-top:60px !important;}
+.pr0 {padding-right:0px !important;} .pr5 {padding-right:5px !important;} .pr10 {padding-right:10px !important;} .pr15 {padding-right:15px !important;} .pr20 {padding-right:20px !important;} .pr25 {padding-right:25px !important;} .pr30 {padding-right:30px !important;} .pr35 {padding-right:35px !important;} .pr40 {padding-right:40px !important;} .pr45 {padding-right:45px !important;} .pr50 {padding-right:50px !important;} .pr55 {padding-right:55px !important;} .pr60 {padding-right:60px !important;}
+.pb0 {padding-bottom:0px !important;} .pb5 {padding-bottom:5px !important;} .pb10 {padding-bottom:10px !important;} .pb15{padding-bottom:15px !important;} .pb20 {padding-bottom:20px !important;} .pb25 {padding-bottom:25px !important;} .pb30 {padding-bottom:30px !important;} .pb35 {padding-bottom:35px !important;} .pb40 {padding-bottom:40px !important;} .pb45 {padding-bottom:45px !important;} .pb50 {padding-bottom:50px !important;} .pb55 {padding-bottom:55px !important;} .pb55 {padding-bottom:55px !important;}
+.pl0 {padding-left:0px !important;} .pl5 {padding-left:5px !important;} .pl10 {padding-left:10px !important;} .pl15 {padding-left:15px !important;} .pl20 {padding-left:20px !important;} .pl25 {padding-left:25px !important;} .pl30 {padding-left:30px !important;} .pl35 {padding-left:35px !important;} .pl40 {padding-left:40px !important;} .pl45 {padding-left:45px !important;} .pl50 {padding-left:50px !important;} .pl55 {padding-left:55px !important;} .pl60 {padding-left:60px !important;}
+
+
+/* --------------------------------------------
+/* Custom margin & padding
+/* ------------------------------------------ */
+.ml-37 {margin-left:-37px !important;}
+.ml-56 {margin-left:-56px !important;}
+
+/* --------------------------------------------
+ * Width
+/* ------------------------------------------ */
+.w5{width:5% !important;}
+.w10{width:10% !important;}
+.w15{width:15% !important;}
+.w20{width:20% !important;}
+.w30{width:30% !important;}
+.w40{width:40% !important;}
+.w50 {width:50% !important}
+.w70 {width:70% !important}
+.w90{width:90% !important;}
+.w100 {width:100% !important}
+
+.w140 {width:140px !important}
+.w160 {width:160px !important}
+.w200 {width:200px !important}
+.w310 {width:310px !important}
+.w84 {width:84px !important}
+.w470 {width:470px !important;}
+.w130 {width:130px !important;}
+.w300 {width:300px !important;}
+.w330 {width:330px !important}
+.w540 {width:540px !important}
+.w80 {width:80px !important;}
+.w150 {width:140px !important;}
+.h280 {height:280px !important;}
+.h440 {height:440px !important;}
+.h-at {height:auto !important;}
+
+
+
+/* --------------------------------------------
+ * Font
+/* ------------------------------------------ */
+.fs11 {font-size:11px !important;}
+.fs12 {font-size:12px !important;}
+.fs13 {font-size:13px !important;}
+.fs14 {font-size:14px !important;}
+.fs15 {font-size:15px !important;}
+.fs16 {font-size:16px !important;}
+.fs24 {font-size:24px !important;}
+
+.bold {font-family:NanumGothicBold !important;}
+.fw-bold {font-weight:bold !important;}
+.fw-normal {font-weight:normal !important;}
+.f-du {font-family:dotum !important;}
+.db{display:block !important;}
+.ltsc1 {letter-spacing:-1px;}
+
+/* --------------------------------------------
+ * Form
+/* ------------------------------------------ */
+textarea {overflow-x:hidden;overflow-y:auto;padding:7px 3px 0 12px;line-height:20px;background:#fff;color:#6e6e6e;}
+textarea.txtArea {border:1px solid #ccc;}
+input.intx1 {margin:0;border:1px solid #ccc;padding: 8px 10px 8px;font-size:12px;color:#6e6e6e;height: 12px;line-height: 12px;font-family:'돋움',dotum;}
+
+/* --------------------------------------------
+ * line
+/* ------------------------------------------ */
+.underline {text-decoration:underline !important;}
+
+
+/* --------------------------------------------
+/* background */
+/* ------------------------------------------ */
+.bg-f0f8f8 {background-color:#f0f8f8 !important}
+.bg-violet {background:#5573be !important;}
+
+/* --------------------------------------------
+/* border */
+/* ------------------------------------------ */
+.bt1-ccc {border-top:1px solid #ccc;}
+.bt2-414150 {border-top:2px solid #414150;}
+
+/* --------------------------------------------
+/* description */
+/* ------------------------------------------ */
+p.txt-a1 {padding-left: 11px;color:#222;font-family:'돋움',dotum;background: url(../images/comm/bu/dot-a1.gif) left 6px no-repeat;}
+
+
+/* --------------------------------------------
+/* text color */
+/* ------------------------------------------ */
+.typo-222 {color:#222 !important}
+.typo-888 {color:#888 !important}
+.typo-00b6bd {color:#007878 !important}
+.typo-f48473 {color:#be3c6e;}
+.typo-8298c2 {color:#5573be !important;}
+.typo-ff0000 {color:#ff0000 !important;}
+.typo-6e6e6e {color:#6e6e6e !important;}
+.typo-529595 {color:#529595 !important;}
+.typo-007878 {color:#007878 !important;}
+
+/* --------------------------------------------
+/* text indent */
+/* ------------------------------------------ */
+.ti-5 {text-indent:5px !important}
+.ti-10 {text-indent:10px !important}
+
+/* --------------------------------------------
+/* line-height */
+/* ------------------------------------------ */
+.lh26 {line-height:26px !important;}
+
+/* --------------------------------------------
+/* text ellipsis */
+/* ------------------------------------------ */
+.ellipsis {display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+
+
+
+/* --------------------------------------------
+/* select */
+/* ------------------------------------------ */
+/* Dropdown control */
+.selectBox-dropdown {min-width:70px;position:relative;border:solid 1px #ccc;height: 28px;text-decoration:none;text-align:left;vertical-align:middle;background:#fff;cursor:pointer;font-size:12px;color:#222 !important;padding-right:30px;}
+.selectBox-dropdown .selectBox-label {padding:8px 30px 8px 10px;height:12px;display:inline-block;white-space:nowrap;overflow:hidden;line-height:12px;font-family:'돋움',dotum;color:#6e6e6e;}
+.selectBox-dropdown .selectBox-arrow {position:absolute;top:-1px;right:-1px;width:32px;height:30px;background:url(../images/comm/ico/ico-selectbox.gif) no-repeat 0px 0px;}
+/* Dropdown menu */
+.selectBox-dropdown-menu {position:absolute;z-index:99999;max-height:200px;min-height:1em;border:solid 1px #BBB;background:#FFF;overflow:auto;}
+/* Inline control */
+.selectBox-inline {padding:5px;min-height:50px !important;width:180px !important;border:solid 1px #e8e8e8;background:#FFF;display:inline-block;overflow: auto;}
+.selectBox-inline:focus {border-color: #fb6632;}
+.selectBox-inline li {margin-bottom:3px !important;}
+/* Options */
+.selectBox-options,
+.selectBox-options li,
+.selectBox-options li a {list-style:none;display:block;cursor:default;padding:0;margin:0;font-size:12px;color:#6e6e6e;font-family:'돋움',dotum;}
+.selectBox-options li a {line-height:18px;padding: 2px 10px;white-space:nowrap;overflow:hidden;}
+.selectBox-options li.selectBox-hover a {background-color:#eee;}
+.selectBox-options li.selectBox-disabled a {color:#6e6e6e;background-color:transparent;}
+.selectBox-options li.selectBox-selected a {background-color:#c8def4;}
+.selectBox-options .selectBox-optgroup {color:#666;background:#eee;font-weight:bold;line-height:18px;padding:0 .5em;white-space:nowrap;}
+/* Disabled state */
+.selectBox.selectBox-disabled {color: #6e6e6e !important;}
+.selectBox-dropdown.selectBox-disabled .selectBox-arrow {border-color: #666;}
+.selectBox-inline.selectBox-disabled {color: #6e6e6e !important;}
+.selectBox-inline.selectBox-disabled .selectBox-options a {background-color: transparent !important;}
+
+
+/* --------------------------------------------
+/* input - placeholder */
+/* ------------------------------------------ */
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-moz-placeholder,
+:-ms-input-placeholder,
+.placeholder {color:#6e6e6e !important; }
+
+[placeholder]:focus::-webkit-input-placeholder{color: transparent;}
+[placeholder]:focus::-moz-placeholder{color: transparent;}
+[placeholder]:focus:-moz-placeholder{color: transparent;}
+[placeholder]:focus:-ms-input-placeholder {color: transparent;}
+
