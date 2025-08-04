@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=1200" />
+<link href="../common/css/base.css" rel="stylesheet" type="text/css" />
+<link href="../common/css/comm.css" rel="stylesheet" type="text/css" />
+<link href="../common/css/layout.css" rel="stylesheet" type="text/css" />
+<link href="../common/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script src="../common/js/jquery-1.12.4.min.js" type="text/javascript"></script>
+<script src="../common/js/common.js" type="text/javascript"></script>
+<script src="../common/js/jquery-ui.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+  	$(".left > ul > li > a").click(function(){
+		$(this).next().slideDown(300);
+		$(this).addClass('on');
+		// $(this).next().slideDown(300);
+		$(".left > ul > li > a").not(this).next().slideUp(300);
+		$(".left > ul > li > a").not(this).removeClass('on');
+	});
+  });
+</script>
+<title>한국보육진흥원 SB 관리자</title>
+</head>
+<body>
+	<div id="wrapper">
+		
+		<!-- header -->
+		<div id="header">
+			<div class="header_area">
+				<h1><a href="#none"><img src="../common/images/comm/logo.jpg" alt="한국보육진흥원" /></a></h1>
+				<p class="user_rank">Administrator</p>
+				<ul class="util">
+					<li><strong>홍길동(행정지원팀)님을 환영합니다.</strong></li>
+					<!--<li><a href="#none">정보수정</a></li>-->
+					<li><a href="#none">로그아웃</a></li>
+				</ul>
+			</div>
+			<div class="gnb_area">
+				<ul id="nav">
+					<li><a href="#none" class="active">콘텐츠관리</a></li>
+					<li><a href="#none">게시판관리</a></li>
+					<li><a href="#none">팝업관리</a></li>
+					<li><a href="#none">회원관리</a></li>
+					<li><a href="#none">조직관리</a></li>
+					<li><a href="#none">접속자통계</a></li>
+					<li><a href="#none">시스템관리</a></li>
+					<li><a href="#none">국민소통</a></li>
+					<li><a href="#none">사이버홍보</a></li>
+					<li><a href="#none">주요사업홍보</a></li>
+				</ul>
+			</div>
+		</div>
+		<!--// header -->
+		
+		<!-- container -->
+		<div id="container">
+			<div class="contents">
+				<!--left-->
+				<div class="left">
+					<h2>콘텐츠관리</h2>
+					<ul>
+						<li><a href="#" class="on">콘텐츠관리</a></li>
+	                   
+	                </ul>
+				</div>
+				<!--//left-->
+				<!--sub_cont-->
+				<div class="sub_cont">
+					<h2 class="tit">컨텐츠 관리</h2>
+					<div id="lnb">
+						<a href="#none" class="home"></a>
+						<span class="line"><img src="../common/images/comm/lnb_arrow.gif" alt=">" /></span>
+						<span>컨텐츠 관리</span>
+					</div>
+					<p class="mb5 fs15">* 일반게시판 및 이미지게시판 부분은 제외, 아이프레임으로 연결 금지</p>
+					<div class="register03">
+						<table>
+							<caption>컨텐츠관리 리스트</caption>
+							<thead>
+								<tr>
+									<th scope="col">1Depth</th>
+									<th scope="col">2Depth</th>
+									<th scope="col">3Depth</th>
+									<th scope="col">tab</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td rowspan="6" class="bgf9">KCPI소개</td>
+									<td><a href="#none" onclick="goCmsEditorDetail('1');">인사말</a></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="bgno">
+									<td><a href="#none" onclick="goCmsEditorDetail('2');">설립목적 및 연혁</a></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="bgno">
+									<td><a href="#none" onclick="goCmsEditorDetail('3');">비전 및 전략</a></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="bgno">
+									<td><a href="#none" onclick="goCmsEditorDetail('4');">CI브랜드 로고</a></td>
+									<td><a href="#none" onclick="goCmsEditorDetail('5');">CI브랜드 시그니처</a></td>
+									<td><a href="#none" onclick="goCmsEditorDetail('6');">CI브랜드 적용사례</a></td>
+								</tr>
+								<tr class="bgno">
+									<td><a href="#none">조직도(JSP ONLY)</a></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('7');">찾아오시는 길</a></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td rowspan="11" class="bgf9">주요사업</td>
+									<td rowspan="2">어린이집 평가</td>
+									<td><a href="#none" onclick="goCmsEditorDetail('8');">어린이집 평가 과정운영</a></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('9');">어린이집 평가 후 관리</a></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td rowspan="4">자격검정 및 자격증</td>
+									<td><a href="#none" onclick="goCmsEditorDetail('10');">제도개요 및 교부절차</a></td>
+									<td></td>
+								</tr>
+								<tr>
+									<!--<td><a href="#none">자격검정 및 자격증</a></td>-->
+									<td rowspan="3">자격기준</td>
+									<td><a href="#none" onclick="goCmsEditorDetail('11');">어린이집원장</a></td>
+								</tr>
+								<tr>
+									<!--<td><a href="#none">자격검정 및 자격증</a></td>-->
+									<!--<td>자격기준</td>-->
+									<td><a href="#none" onclick="goCmsEditorDetail('12');">보육교사</a></td>
+								</tr>
+								<tr>
+									<!--<td><a href="#none">자격검정 및 자격증</a></td>-->
+									<!--<td>자격기준</td>-->
+									<td><a href="#none" onclick="goCmsEditorDetail('13');">장애영유아를 위한 보육교사</a></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('14');">보육교직원역량강화</a></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('15');">시간제보육</a></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('63');">국공립어린이집 확충지원</a></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('16');">공공형어린이집 품질관리</a></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('17');">중앙육아종합지원센터</a></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td rowspan="14" class="bgf9">열린경영</td>
+									<td rowspan="4"><a href="#none">경영공시</a></td>
+									<td><a href="#none" onclick="goCmsEditorDetail('18');">통합공시</a></td>
+									<td></td>
+								</tr>
+								<tr>
+									<!--<td><a href="#none">경영공시</a></td>-->
+									<td><a href="#none" onclick="goCmsEditorDetail('19');">업무추진비 사용현황</a></td>
+									<td></td>
+								</tr>
+								<tr>
+									<!--<td><a href="#none">경영공시</a></td>-->
+									<td><a href="#none" onclick="goCmsEditorDetail('20');">기부금모금 및 활용실적</a></td>
+									<td></td>
+								</tr>
+								<tr>
+									<!--<td><a href="#none">경영공시</a></td>-->
+									<td><a href="#none" onclick="goCmsEditorDetail('21');">계약현황</a></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td rowspan="4"><a href="#none">고객만족경영</a></td>
+									<td><a href="#none" onclick="goCmsEditorDetail('22');">고객서비스 현장</a></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('23');">핵심서비스 이행표준</a></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('24');">고객응대서비스 이행표준</a></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('');">기업민원 서비스 보호 헌장</a></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td rowspan="4"><a href="#none">윤리·인권경영</a></td>
+									<td><a href="#none" onclick="goCmsEditorDetail('25');">윤리헌장</a></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('26');">윤리강령</a></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('60');">인권경영헌장</a></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('27');">임직원 행동강령</a></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('28');">클린신고센터</a></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('29');">정보공개 제도안내</a></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class="bgf9" rowspan="2">정보공개</td>
+									<td><a href="#none" onclick="goCmsEditorDetail('30');">공공데이터 개발</a></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('31');">사전정보공표</a></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class="bgf9" rowspan="17">국민소통</td>
+									<td rowspan="2"><a href="#none">질의응답</a></td>
+									<td><a href="#none" onclick="goCmsEditorDetail('32');">보육교직원 자격증 교부</a></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('33');">누리과정</a></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td rowspan="11">자주하는 질문</td>
+									<td rowspan="5">어린이집 평가</td>
+									<td><a href="#none" onclick="goCmsEditorDetail('34');">운영체제</a></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('46');">보육과정 및 상호작용</a></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('47');">보육환경 및 운영관리</a></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('48');">건강·안전</a></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('49');">교직원</a></td>
+								</tr>
+								<tr>
+									<td rowspan="6">보육교직원 보수교육</td>
+									<td><a href="#none" onclick="goCmsEditorDetail('62');">자격증신청</a></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('35');">자격가준 및 제출서류</a></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('37');">자격증 발송 및 반송</a></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('39');">보육교직원 보수교육</a></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('39');">보육교직원 자격증 교부</a></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('41');">온라인교육</a></td>
+									<!--<td><a href="#none"  onclick="goCmsEditorDetail('40');">누리교육</a></td>
+									<td><a href="#none"  onclick="goCmsEditorDetail('41');">온라인교육</a></td>-->
+								</tr>
+								<tr>
+									<td rowspan="2">비전보육인 모임</td>
+									<td></td>
+									<td><a href="#none" onclick="goCmsEditorDetail('42');">비전교육인모임</a></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td><a href="#none" onclick="goCmsEditorDetail('43');">모임개최현황</a></td>
+								</tr>
+								<tr>
+									<td rowspan="2">보육교사/부모자문단</td>
+									<td rowspan="2">보육교사 자문단/부모자문단</td>
+									<td><a href="#none" onclick="goCmsEditorDetail('44');">보육교사자문단</a></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('45');">부모자문단</a></td>
+								</tr>
+								<tr>
+									<td class="bgf9" rowspan="6">사이버홍보</td>
+									<td rowspan="5">보육통계</td>
+									<td rowspan="5">보육통계</td>
+									<td>보육통계(JSP ONLY)</td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('50');">평가인증 현황</a></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('51');">자격증교부 현황</a></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('52');">시간제보육 현황</a></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('53');">공공형어린이집 현황</a></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('54');">협약체결기관</a></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<!--<tr>
+									<td class="bgf9" rowspan="5">교육</td>
+									<td><a href="#none"  onclick="goCmsEditorDetail('57');">어린이집 평가 관련교육</a></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><a href="#none"  onclick="goCmsEditorDetail('58');">보육교직원 역량강화</a></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><a href="#none"  onclick="goCmsEditorDetail('59');">비전교육인 등</a></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><a href="#none"  onclick="goCmsEditorDetail('60');">공공형품질관리 관련 교육</a></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><a href="#none"  onclick="goCmsEditorDetail('61');">마음성장 관련 교육</a></td>
+									<td></td>
+									<td></td>
+								</tr>-->
+								<tr>
+									<td class="bgf9" rowspan="3">이용안내</td>
+									<td>개인정보처리방침(JSP ONLY)</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><a href="#none" onclick="goCmsEditorDetail('56');">이메일무단수집거부</a></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><a href="#none">직원전화번호 - 미사용(조직도)</a></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!--//sub_cont-->
+			</div>
+		</div>
+		<!--// container -->
+		
+		<!-- footer -->
+		<div id="footer">
+			<div class="inner">
+				<div class="address">
+					관리기관 : 서울특별시 용산구 청파로 345, 주연빌딩 3,4,5,6층(서계동) 04303 &nbsp;&nbsp;&nbsp; 대표전화 : 02-6901-0100
+				</div>
+				<div class="foot_copy">Copyright(c) The Office for Korea Childcare Promotion Institute, All Rights Reserved.</div>
+			</div>
+		</div>
+		<!--// footer -->
+	</div>
+</body>
+</html>

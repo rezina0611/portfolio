@@ -1,0 +1,2501 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link href="../common/css/base.css" rel="stylesheet" type="text/css" />
+<link href="../common/css/comm.css" rel="stylesheet" type="text/css" />
+<link href="../common/css/layout.css" rel="stylesheet" type="text/css" />
+<link href="../common/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script src="../common/js/jquery-1.12.4.min.js" type="text/javascript"></script>
+<script src="../common/js/common.js" type="text/javascript"></script>
+<script src="../common/js/jquery-ui.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+  	$(".left > ul > li > a").click(function(){
+		$(this).next().slideToggle(300);
+		$(this).addClass('on');
+		// $(this).next().slideDown(300);
+		$(".left > ul > li > a").not(this).next().slideUp(300);
+		$(".left > ul > li > a").not(this).removeClass('on');
+	});
+  });
+</script>
+<title>한국보육진흥원 SB 관리자</title>
+</head>
+ <body>
+	<div id="wrapper">
+		
+		<!-- header -->
+		<div id="header">
+			<div class="header_area">
+				<h1><a href="#none"><img src="../common/images/comm/logo.jpg" alt="한국보육진흥원" /></a></h1>
+				<p class="user_rank">Administrator</p>
+				<ul class="util">
+					<li><strong>홍길동(행정지원팀)님을 환영합니다.</strong></li>
+					<!--<li><a href="#none">정보수정</a></li>-->
+					<li><a href="#none">로그아웃</a></li>
+				</ul>
+			</div>
+			<div class="gnb_area">
+				<ul id="nav">
+					<li><a href="#none">관리자체크</a></li>
+					<li><a href="#none" class="on">홈페이지</a></li>
+					<li><a href="#none">온라인교육</a></li>
+					<li><a href="#none">비전보육인</a></li>
+					<li><a href="#none">마음성장</a></li>
+					<li><a href="#none">공공형어린이집</a></li>
+				</ul>
+			</div>
+		</div>
+		<!--// header -->
+		
+		<!-- container -->
+		<div id="container">
+			<div class="contents">
+				<!--left-->
+				<div class="left">
+					<h2>홈페이지</h2>
+					<ul>
+						<li><a href="#">콘텐츠관리</a></li>
+	                    <li><a href="#">게시판관리</a>
+	                        <ul>        
+	                            <li><a href="#none">윤리·인권 경영 정보 </a></li> 
+	                            <li><a href="#none">윤리·인권 경영 활동</a></li> 
+	                            <li><a href="#none">사업실명제</a></li>  
+	                        </ul>
+	                    </li>
+	                    <li><a href="#">팝업관리</a>
+	                    	<ul>        
+	                            <li><a href="#none">메인팝업관리</a></li>
+	                        </ul>
+	                    </li>
+	                    <li><a href="#">회원관리</a></li>
+	                    <li><a href="#">조직관리</a></li>
+	                    <li><a href="#">접속자통계</a>
+	                    	<ul>        
+	                            <li><a href="#none">년도별현황</a></li>
+	                            <li><a href="#none">월별현황</a></li>
+	                            <li><a href="#none">일별현황</a></li>
+	                        </ul>
+	                    </li>
+	                    <li><a href="#" class="on">시스템관리</a>
+	                    	<ul>        
+	                            <li><a href="#none">관리자리스트</a></li>
+	                            <li><a href="#none">관리자정보수정</a></li>
+	                            <li><a href="#none">운영자접속IP관리</a></li>
+	                            <li><a href="#none" class="on">관리자 권한 설정</a></li>
+	                        </ul>
+	                    </li>
+	                    <li><a href="#">국민소통</a>
+	                    	<ul>        
+	                            <li><a href="#none">질의응답</a>
+	                            	<ul class="ul03">
+	                            		<li><a href="#none">- 어린이평가</a></li>
+	                            		<li><a href="#none">- 보육교직원보수교육</a></li>
+	                            	</ul>
+	                            </li>
+	                            <li><a href="#none">부모교육</a>
+	                            	<ul class="ul03">
+	                            		<li><a href="#none">- 아이누리교육영상</a></li>
+	                            		<li><a href="#none">- 아이누리교육정보</a></li>
+	                            	</ul>
+	                            </li>
+	                            <li><a href="#none">설문조사</a></li>
+	                            <li><a href="#none">칭찬게시판</a></li>
+	                        </ul>
+	                    </li>
+	                    <li><a href="#">사이버홍보</a>
+	                    	<ul>
+	                    		<li><a href="#none">공지사항</a></li> 
+	                    		<li><a href="#none">보도자료</a>
+	                    			<ul class="ul03">
+	                            		<li><a href="#none">- 진흥원 보도자료</a></li>
+	                            		<li><a href="#none">- 보육관련 보도자료</a></li>
+	                            	</ul>
+	                    		</li>  
+	                    		<li><a href="#none">입찰공고</a></li>
+	                            <li><a href="#none">채용공고</a></li>     
+	                            <li><a href="#none">법령 및 지침</a>
+	                            	<ul class="ul03">
+	                            		<li><a href="#none">- 법령 및 보육사업안내</a></li>
+	                            		<li><a href="#none">- 기타지침</a></li>
+	                            	</ul>
+	                            </li>
+	                            <li><a href="#none">사업관련자료</a>
+	                            	<ul class="ul03">
+	                            		<li><a href="#none">- 어린이집 평가인증 안내</a></li>
+	                            		<li><a href="#none">- 어린이집 평가인증 교육자료</a></li>
+	                            		<li><a href="#none">- 어린이집 평가인증 관련 서식</a></li>
+	                            		<li><a href="#none">- 보육교직원 자격증 서식</a></li>
+	                            		<li><a href="#none">- 보육교직원 자격 기준</a></li>
+	                            		<li><a href="#none">- 보육교직원 자격 기타</a></li>
+	                            		<li><a href="#none">- 공공형어린이집</a></li>
+	                            		<li><a href="#none">- 시간제보육</a></li>
+	                            	</ul>
+	                            </li>
+	                            <li><a href="#none">발간물</a></li>
+	                            <li><a href="#none">보육통계</a></li>
+	                            <li><a href="#none">기관홍보관</a>
+	                            	<ul class="ul03">
+	                            		<li><a href="#none">- 홍보자료</a></li>
+	                            		<li><a href="#none">- 홍보영상</a></li>
+	                            		<li><a href="#none">- 기관갤러리</a></li>
+	                            		<li><a href="#none">- 뉴스레터</a></li>
+	                            	</ul>
+	                            </li>
+	                        </ul>
+	                    </li> 
+	                    <li><a href="#">주요사업 홍보</a></li>
+	                </ul>
+				</div>
+				<!--//left-->
+				<!--sub_cont-->
+				<div class="sub_cont">
+					<h2 class="tit">관리자 권한 설정</h2>
+					<div id="lnb">
+						<a href="#none" class="home">시스템관리</a>
+						<span class="line"><img src="../common/images/comm/lnb_arrow.gif" alt=">" /></span>
+						<span>관리자 권한 설정</span>
+					</div>
+					
+					<form name="bbsListFrame" method="post" action="">
+						<h3 class="tit">권한이 필요한 메뉴 등록</h3>
+						<div class="search_area2">
+							<table>
+								<caption>권한이 필요한 메뉴 등록</caption>
+								<colgroup>
+									<col style="width:9%;">
+									<col style="width:17%;">
+									<col style="width:8%;">
+									<col style="width:20%;">
+									<col style="width:7%;">
+									<col style="width:22%;">
+									<col style="width:7%;">
+									<col style="width:10%;">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">대 메뉴</th>
+										<td>
+											<select class="select_a1" id="gp" name="gp">
+											
+											<option value="M11" >콘텐츠 관리</option>
+											
+											<option value="M1" >게시판관리</option>
+											
+											<option value="M2" >팝업관리</option>
+											
+											<option value="M3" >회원관리</option>
+											
+											<option value="M4" >조직관리</option>
+											
+											<option value="M5" >접속자통계</option>
+											
+											<option value="M6" >시스템관리</option>
+											
+											<option value="M9" >국민소통</option>
+											
+											<option value="M7" >사이버홍보</option>
+
+											<option value="M10" >주요사업홍보</option>
+											
+											</select>
+										</td>
+										<th scope="row">메뉴명</th>
+											<td><input type="text" class="intx w90" id="menuName" name="menuName"  maxlength="250">
+										</td>
+										<th scope="row">URL</th>
+											<td>
+												<input type="text" class="intx w90" name="url" id="url" maxlength="250">
+											</td>
+										<th scope="row">순번</th>
+											<td>
+												<input type="text" class="intx w30" name="menuOrder" id="menuOrder" maxlength="2">
+											</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="btn_box ar">
+							<a href="#none" class="btn_a1 blue">등록</a>
+						</div>
+						<h3 class="tit">관리자 권한 설정 현황 리스트</h3>
+						<table class="register01 mt10">
+							<colgroup>
+								<col style="width:15%;">
+								<col style="width:25%;">
+								<col style="width:15%;">
+								<col style="width:*;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th colspan="2">메뉴명</th>
+									<th>권한관리 삭제</th>
+									<th>접근권한</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>콘텐츠 관리</td>
+									<td>콘텐츠 관리</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('66');">삭제</a></td>
+									<td>
+										<span>
+											<input name="lvList0" class="lvList0" type="checkbox" value="66" id="a0_66"  checked="checked">
+											<label for="a0_66">0</label>
+										</span>
+										
+									    <span>
+											<input name="lvList1" class="lvList1" type="checkbox" value="66" id="a1_66"  checked="checked">
+											<label for="a1_66">1</label>
+										</span>
+									    <span>
+											<input name="lvList2" class="lvList2" type="checkbox" value="66" id="a2_66"  checked="checked">
+											<label for="a2_66">2</label>
+										</span>
+									    <span>
+											<input name="lvList3" class="lvList3" type="checkbox" value="66" id="a3_66" >
+											<label for="a3_66">3</label>
+										</span>
+									    <span>
+											<input name="lvList4" class="lvList4" type="checkbox" value="66" id="a4_66"  checked="checked">
+											<label for="a4_66">4</label>
+										</span>
+									    <span>
+											<input name="lvList5" class="lvList5" type="checkbox" value="66" id="a5_66"  checked="checked">
+											<label for="a5_66">5</label>
+										</span>
+									    <span>
+											<input name="lvList6" class="lvList6" type="checkbox" value="66" id="a6_66"  checked="checked">
+											<label for="a6_66">6</label>
+										</span>
+									    <span>
+											<input name="lvList7" class="lvList7" type="checkbox" value="66" id="a7_66"  checked="checked">
+											<label for="a7_66">7</label>
+										</span>
+									    <span>
+											<input name="lvList8" class="lvList8" type="checkbox" value="66" id="a8_66"  checked="checked">
+											<label for="a8_66">8</label>
+										</span>
+									    <span>
+											<input name="lvList9" class="lvList9" type="checkbox" value="66" id="a9_66"  checked="checked">
+											<label for="a9_66">9</label>
+										</span>
+								    </td>
+							     </tr>
+							     <tr>
+									<td rowspan="3">게시판관리</td>
+									<td>윤리.인권 경영 활동</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('3');">삭제</a></td>
+									<td>
+									<span>
+										<input name="lvList0" class="lvList0" type="checkbox" value="3" id="a0_3"  checked="checked">
+										<label for="a0_3">0</label>
+									</span>
+									
+								    <span>
+										<input name="lvList1" class="lvList1" type="checkbox" value="3" id="a1_3" >
+										<label for="a1_3">1</label>
+									</span>
+								    <span>
+										<input name="lvList2" class="lvList2" type="checkbox" value="3" id="a2_3" >
+										<label for="a2_3">2</label>
+									</span>
+								    <span>
+										<input name="lvList3" class="lvList3" type="checkbox" value="3" id="a3_3" >
+										<label for="a3_3">3</label>
+									</span>
+								    <span>
+										<input name="lvList4" class="lvList4" type="checkbox" value="3" id="a4_3" >
+										<label for="a4_3">4</label>
+									</span>
+								    <span>
+										<input name="lvList5" class="lvList5" type="checkbox" value="3" id="a5_3" >
+										<label for="a5_3">5</label>
+									</span>
+								    <span>
+										<input name="lvList6" class="lvList6" type="checkbox" value="3" id="a6_3" >
+										<label for="a6_3">6</label>
+									</span>
+								    <span>
+										<input name="lvList7" class="lvList7" type="checkbox" value="3" id="a7_3"  checked="checked">
+										<label for="a7_3">7</label>
+									</span>
+								    <span>
+										<input name="lvList8" class="lvList8" type="checkbox" value="3" id="a8_3" >
+										<label for="a8_3">8</label>
+									</span>
+								    <span>
+										<input name="lvList9" class="lvList9" type="checkbox" value="3" id="a9_3" >
+										<label for="a9_3">9</label>
+									</span>
+								    
+								    </td>
+							     </tr>
+
+								<tr>
+									<td>윤리.인권 경영 정보</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('2');">삭제</a></td>
+									<td>
+										<span>
+											<input name="lvList0" class="lvList0" type="checkbox" value="2" id="a0_2"  checked="checked">
+											<label for="a0_2">0</label>
+										</span>
+										
+									    <span>
+											<input name="lvList1" class="lvList1" type="checkbox" value="2" id="a1_2" >
+											<label for="a1_2">1</label>
+										</span>
+									    <span>
+											<input name="lvList2" class="lvList2" type="checkbox" value="2" id="a2_2" >
+											<label for="a2_2">2</label>
+										</span>
+									    <span>
+											<input name="lvList3" class="lvList3" type="checkbox" value="2" id="a3_2" >
+											<label for="a3_2">3</label>
+										</span>
+									    <span>
+											<input name="lvList4" class="lvList4" type="checkbox" value="2" id="a4_2" >
+											<label for="a4_2">4</label>
+										</span>
+									    <span>
+											<input name="lvList5" class="lvList5" type="checkbox" value="2" id="a5_2" >
+											<label for="a5_2">5</label>
+										</span>
+									    <span>
+											<input name="lvList6" class="lvList6" type="checkbox" value="2" id="a6_2" >
+											<label for="a6_2">6</label>
+										</span>
+									    <span>
+											<input name="lvList7" class="lvList7" type="checkbox" value="2" id="a7_2"  checked="checked">
+											<label for="a7_2">7</label>
+										</span>
+									    <span>
+											<input name="lvList8" class="lvList8" type="checkbox" value="2" id="a8_2" >
+											<label for="a8_2">8</label>
+										</span>
+									    <span>
+											<input name="lvList9" class="lvList9" type="checkbox" value="2" id="a9_2" >
+											<label for="a9_2">9</label>
+										</span>
+								    </td>
+							     </tr>
+								
+								 
+								<tr>
+									<td>사업실명제</td><td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('5');">삭제</a></td>
+									<td>
+										<span>
+											<input name="lvList0" class="lvList0" type="checkbox" value="5" id="a0_5"  checked="checked">
+											<label for="a0_5">0</label>
+										</span>
+										
+									    <span>
+											<input name="lvList1" class="lvList1" type="checkbox" value="5" id="a1_5" >
+											<label for="a1_5">1</label>
+										</span>
+									    <span>
+											<input name="lvList2" class="lvList2" type="checkbox" value="5" id="a2_5" >
+											<label for="a2_5">2</label>
+										</span>
+									    <span>
+											<input name="lvList3" class="lvList3" type="checkbox" value="5" id="a3_5" >
+											<label for="a3_5">3</label>
+										</span>
+									    <span>
+											<input name="lvList4" class="lvList4" type="checkbox" value="5" id="a4_5" >
+											<label for="a4_5">4</label>
+										</span>
+									    <span>
+											<input name="lvList5" class="lvList5" type="checkbox" value="5" id="a5_5" >
+											<label for="a5_5">5</label>
+										</span>
+									    <span>
+											<input name="lvList6" class="lvList6" type="checkbox" value="5" id="a6_5"  checked="checked">
+											<label for="a6_5">6</label>
+										</span>
+									    <span>
+											<input name="lvList7" class="lvList7" type="checkbox" value="5" id="a7_5" >
+											<label for="a7_5">7</label>
+										</span>
+									    <span>
+											<input name="lvList8" class="lvList8" type="checkbox" value="5" id="a8_5" >
+											<label for="a8_5">8</label>
+										</span>
+									    <span>
+											<input name="lvList9" class="lvList9" type="checkbox" value="5" id="a9_5" >
+											<label for="a9_5">9</label>
+										</span>
+								    </td>
+							     </tr>
+								 
+								
+								
+								<tr>
+									<td rowspan="1">팝업관리</td>
+									
+									<td>메인팝업관리</td><td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('7');">삭제</a></td>
+									<td>
+									<span>
+										<input name="lvList0" class="lvList0" type="checkbox" value="7" id="a0_7"  checked="checked">
+										<label for="a0_7">0</label>
+									</span>
+									
+								    <span>
+										<input name="lvList1" class="lvList1" type="checkbox" value="7" id="a1_7"  checked="checked">
+										<label for="a1_7">1</label>
+									</span>
+								    <span>
+										<input name="lvList2" class="lvList2" type="checkbox" value="7" id="a2_7"  checked="checked">
+										<label for="a2_7">2</label>
+									</span>
+								    <span>
+										<input name="lvList3" class="lvList3" type="checkbox" value="7" id="a3_7" >
+										<label for="a3_7">3</label>
+									</span>
+								    <span>
+										<input name="lvList4" class="lvList4" type="checkbox" value="7" id="a4_7"  checked="checked">
+										<label for="a4_7">4</label>
+									</span>
+								    <span>
+										<input name="lvList5" class="lvList5" type="checkbox" value="7" id="a5_7"  checked="checked">
+										<label for="a5_7">5</label>
+									</span>
+								    <span>
+										<input name="lvList6" class="lvList6" type="checkbox" value="7" id="a6_7"  checked="checked">
+										<label for="a6_7">6</label>
+									</span>
+								    <span>
+										<input name="lvList7" class="lvList7" type="checkbox" value="7" id="a7_7"  checked="checked">
+										<label for="a7_7">7</label>
+									</span>
+								    <span>
+										<input name="lvList8" class="lvList8" type="checkbox" value="7" id="a8_7"  checked="checked">
+										<label for="a8_7">8</label>
+									</span>
+								    <span>
+										<input name="lvList9" class="lvList9" type="checkbox" value="7" id="a9_7"  checked="checked">
+										<label for="a9_7">9</label>
+									</span>
+								    
+								    </td>
+							     </tr>
+								 
+								
+								
+								<tr>
+									<td>회원관리</td>
+									
+									<td>회원관리</td><td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('8');">삭제</a></td>
+									<td>
+										<span>
+											<input name="lvList0" class="lvList0" type="checkbox" value="8" id="a0_8"  checked="checked">
+											<label for="a0_8">0</label>
+										</span>
+										
+									    <span>
+											<input name="lvList1" class="lvList1" type="checkbox" value="8" id="a1_8" >
+											<label for="a1_8">1</label>
+										</span>
+									    <span>
+											<input name="lvList2" class="lvList2" type="checkbox" value="8" id="a2_8" >
+											<label for="a2_8">2</label>
+										</span>
+									    <span>
+											<input name="lvList3" class="lvList3" type="checkbox" value="8" id="a3_8" >
+											<label for="a3_8">3</label>
+										</span>
+									    <span>
+											<input name="lvList4" class="lvList4" type="checkbox" value="8" id="a4_8" >
+											<label for="a4_8">4</label>
+										</span>
+									    <span>
+											<input name="lvList5" class="lvList5" type="checkbox" value="8" id="a5_8" >
+											<label for="a5_8">5</label>
+										</span>
+									    <span>
+											<input name="lvList6" class="lvList6" type="checkbox" value="8" id="a6_8" >
+											<label for="a6_8">6</label>
+										</span>
+									    <span>
+											<input name="lvList7" class="lvList7" type="checkbox" value="8" id="a7_8" >
+											<label for="a7_8">7</label>
+										</span>
+									    <span>
+											<input name="lvList8" class="lvList8" type="checkbox" value="8" id="a8_8" >
+											<label for="a8_8">8</label>
+										</span>
+									    <span>
+											<input name="lvList9" class="lvList9" type="checkbox" value="8" id="a9_8"  checked="checked">
+											<label for="a9_8">9</label>
+										</span>
+								    </td>
+							     </tr>
+
+								<tr>
+									<td>조직관리</td>
+									<td>조직관리</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('9');">삭제</a></td>
+									<td>
+									<span>
+										<input name="lvList0" class="lvList0" type="checkbox" value="9" id="a0_9"  checked="checked">
+										<label for="a0_9">0</label>
+									</span>
+									
+								    <span>
+										<input name="lvList1" class="lvList1" type="checkbox" value="9" id="a1_9" >
+										<label for="a1_9">1</label>
+									</span>
+								    <span>
+										<input name="lvList2" class="lvList2" type="checkbox" value="9" id="a2_9"  checked="checked">
+										<label for="a2_9">2</label>
+									</span>
+								    <span>
+										<input name="lvList3" class="lvList3" type="checkbox" value="9" id="a3_9" >
+										<label for="a3_9">3</label>
+									</span>
+								    <span>
+										<input name="lvList4" class="lvList4" type="checkbox" value="9" id="a4_9" >
+										<label for="a4_9">4</label>
+									</span>
+								    <span>
+										<input name="lvList5" class="lvList5" type="checkbox" value="9" id="a5_9" >
+										<label for="a5_9">5</label>
+									</span>
+								    <span>
+										<input name="lvList6" class="lvList6" type="checkbox" value="9" id="a6_9" >
+										<label for="a6_9">6</label>
+									</span>
+								    <span>
+										<input name="lvList7" class="lvList7" type="checkbox" value="9" id="a7_9" >
+										<label for="a7_9">7</label>
+									</span>
+								    <span>
+										<input name="lvList8" class="lvList8" type="checkbox" value="9" id="a8_9" >
+										<label for="a8_9">8</label>
+									</span>
+								    <span>
+										<input name="lvList9" class="lvList9" type="checkbox" value="9" id="a9_9" >
+										<label for="a9_9">9</label>
+									</span>
+								    
+								    </td>
+							     </tr>
+								
+								<tr>
+									<td rowspan="3">접속자통계</td>
+									
+									<td>년도별현황</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('10');">삭제</a></td>
+									<td>
+										<span>
+											<input name="lvList0" class="lvList0" type="checkbox" value="10" id="a0_10"  checked="checked">
+											<label for="a0_10">0</label>
+										</span>
+										
+									    <span>
+											<input name="lvList1" class="lvList1" type="checkbox" value="10" id="a1_10"  checked="checked">
+											<label for="a1_10">1</label>
+										</span>
+									    <span>
+											<input name="lvList2" class="lvList2" type="checkbox" value="10" id="a2_10"  checked="checked">
+											<label for="a2_10">2</label>
+										</span>
+									    <span>
+											<input name="lvList3" class="lvList3" type="checkbox" value="10" id="a3_10" >
+											<label for="a3_10">3</label>
+										</span>
+									    <span>
+											<input name="lvList4" class="lvList4" type="checkbox" value="10" id="a4_10" >
+											<label for="a4_10">4</label>
+										</span>
+									    <span>
+											<input name="lvList5" class="lvList5" type="checkbox" value="10" id="a5_10" >
+											<label for="a5_10">5</label>
+										</span>
+									    <span>
+											<input name="lvList6" class="lvList6" type="checkbox" value="10" id="a6_10" >
+											<label for="a6_10">6</label>
+										</span>
+									    <span>
+											<input name="lvList7" class="lvList7" type="checkbox" value="10" id="a7_10" >
+											<label for="a7_10">7</label>
+										</span>
+									    <span>
+											<input name="lvList8" class="lvList8" type="checkbox" value="10" id="a8_10" >
+											<label for="a8_10">8</label>
+										</span>
+									    <span>
+											<input name="lvList9" class="lvList9" type="checkbox" value="10" id="a9_10" >
+											<label for="a9_10">9</label>
+										</span>
+								    
+								    </td>
+							     </tr>
+								 
+								<tr>
+									
+									<td>월별현황</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('11');">삭제</a></td>
+									<td>
+										<span>
+											<input name="lvList0" class="lvList0" type="checkbox" value="11" id="a0_11"  checked="checked">
+											<label for="a0_11">0</label>
+										</span>
+										
+									    <span>
+											<input name="lvList1" class="lvList1" type="checkbox" value="11" id="a1_11"  checked="checked">
+											<label for="a1_11">1</label>
+										</span>
+									    <span>
+											<input name="lvList2" class="lvList2" type="checkbox" value="11" id="a2_11"  checked="checked">
+											<label for="a2_11">2</label>
+										</span>
+									    <span>
+											<input name="lvList3" class="lvList3" type="checkbox" value="11" id="a3_11" >
+											<label for="a3_11">3</label>
+										</span>
+									    <span>
+											<input name="lvList4" class="lvList4" type="checkbox" value="11" id="a4_11" >
+											<label for="a4_11">4</label>
+										</span>
+									    <span>
+											<input name="lvList5" class="lvList5" type="checkbox" value="11" id="a5_11" >
+											<label for="a5_11">5</label>
+										</span>
+									    <span>
+											<input name="lvList6" class="lvList6" type="checkbox" value="11" id="a6_11" >
+											<label for="a6_11">6</label>
+										</span>
+									    <span>
+											<input name="lvList7" class="lvList7" type="checkbox" value="11" id="a7_11" >
+											<label for="a7_11">7</label>
+										</span>
+									    <span>
+											<input name="lvList8" class="lvList8" type="checkbox" value="11" id="a8_11" >
+											<label for="a8_11">8</label>
+										</span>
+									    <span>
+											<input name="lvList9" class="lvList9" type="checkbox" value="11" id="a9_11" >
+											<label for="a9_11">9</label>
+										</span>
+								    
+								    </td>
+							     </tr>
+								 
+								<tr>
+									
+									<td>일별현황</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('12');">삭제</a></td>
+									<td>
+										<span>
+											<input name="lvList0" class="lvList0" type="checkbox" value="12" id="a0_12"  checked="checked">
+											<label for="a0_12">0</label>
+										</span>
+										
+									    <span>
+											<input name="lvList1" class="lvList1" type="checkbox" value="12" id="a1_12"  checked="checked">
+											<label for="a1_12">1</label>
+										</span>
+									    <span>
+											<input name="lvList2" class="lvList2" type="checkbox" value="12" id="a2_12"  checked="checked">
+											<label for="a2_12">2</label>
+										</span>
+									    <span>
+											<input name="lvList3" class="lvList3" type="checkbox" value="12" id="a3_12" >
+											<label for="a3_12">3</label>
+										</span>
+									    <span>
+											<input name="lvList4" class="lvList4" type="checkbox" value="12" id="a4_12" >
+											<label for="a4_12">4</label>
+										</span>
+									    <span>
+											<input name="lvList5" class="lvList5" type="checkbox" value="12" id="a5_12" >
+											<label for="a5_12">5</label>
+										</span>
+									    <span>
+											<input name="lvList6" class="lvList6" type="checkbox" value="12" id="a6_12" >
+											<label for="a6_12">6</label>
+										</span>
+									    <span>
+											<input name="lvList7" class="lvList7" type="checkbox" value="12" id="a7_12" >
+											<label for="a7_12">7</label>
+										</span>
+									    <span>
+											<input name="lvList8" class="lvList8" type="checkbox" value="12" id="a8_12" >
+											<label for="a8_12">8</label>
+										</span>
+									    <span>
+											<input name="lvList9" class="lvList9" type="checkbox" value="12" id="a9_12" >
+											<label for="a9_12">9</label>
+										</span>
+								    </td>
+							     </tr>
+								 
+								
+								
+								<tr>
+									
+									<td rowspan="4">시스템관리</td>
+									
+									<td>관리자리스트</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('13');">삭제</a></td>
+									<td>
+									<span>
+										<input name="lvList0" class="lvList0" type="checkbox" value="13" id="a0_13"  checked="checked">
+										<label for="a0_13">0</label>
+									</span>
+									
+								    <span>
+										<input name="lvList1" class="lvList1" type="checkbox" value="13" id="a1_13"  checked="checked">
+										<label for="a1_13">1</label>
+									</span>
+								    <span>
+										<input name="lvList2" class="lvList2" type="checkbox" value="13" id="a2_13" >
+										<label for="a2_13">2</label>
+									</span>
+								    <span>
+										<input name="lvList3" class="lvList3" type="checkbox" value="13" id="a3_13" >
+										<label for="a3_13">3</label>
+									</span>
+								    <span>
+										<input name="lvList4" class="lvList4" type="checkbox" value="13" id="a4_13" >
+										<label for="a4_13">4</label>
+									</span>
+								    <span>
+										<input name="lvList5" class="lvList5" type="checkbox" value="13" id="a5_13" >
+										<label for="a5_13">5</label>
+									</span>
+								    <span>
+										<input name="lvList6" class="lvList6" type="checkbox" value="13" id="a6_13" >
+										<label for="a6_13">6</label>
+									</span>
+								    <span>
+										<input name="lvList7" class="lvList7" type="checkbox" value="13" id="a7_13" >
+										<label for="a7_13">7</label>
+									</span>
+								    <span>
+										<input name="lvList8" class="lvList8" type="checkbox" value="13" id="a8_13" >
+										<label for="a8_13">8</label>
+									</span>
+								    <span>
+										<input name="lvList9" class="lvList9" type="checkbox" value="13" id="a9_13" >
+										<label for="a9_13">9</label>
+									</span>
+								    
+								    </td>
+							     </tr>
+								 
+								<tr>
+									
+									<td>관리자정보수정</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('14');">삭제</a></td>
+									<td>
+									<span>
+										<input name="lvList0" class="lvList0" type="checkbox" value="14" id="a0_14"  checked="checked">
+										<label for="a0_14">0</label>
+									</span>
+									
+								    <span>
+										<input name="lvList1" class="lvList1" type="checkbox" value="14" id="a1_14" >
+										<label for="a1_14">1</label>
+									</span>
+								    <span>
+										<input name="lvList2" class="lvList2" type="checkbox" value="14" id="a2_14" >
+										<label for="a2_14">2</label>
+									</span>
+								    <span>
+										<input name="lvList3" class="lvList3" type="checkbox" value="14" id="a3_14" >
+										<label for="a3_14">3</label>
+									</span>
+								    <span>
+										<input name="lvList4" class="lvList4" type="checkbox" value="14" id="a4_14" >
+										<label for="a4_14">4</label>
+									</span>
+								    <span>
+										<input name="lvList5" class="lvList5" type="checkbox" value="14" id="a5_14" >
+										<label for="a5_14">5</label>
+									</span>
+								    <span>
+										<input name="lvList6" class="lvList6" type="checkbox" value="14" id="a6_14" >
+										<label for="a6_14">6</label>
+									</span>
+								    <span>
+										<input name="lvList7" class="lvList7" type="checkbox" value="14" id="a7_14" >
+										<label for="a7_14">7</label>
+									</span>
+								    <span>
+										<input name="lvList8" class="lvList8" type="checkbox" value="14" id="a8_14" >
+										<label for="a8_14">8</label>
+									</span>
+								    <span>
+										<input name="lvList9" class="lvList9" type="checkbox" value="14" id="a9_14" >
+										<label for="a9_14">9</label>
+									</span>
+								    
+								    </td>
+							     </tr>
+								 
+								<tr>
+									
+									<td>운영자접속IP관리</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('15');">삭제</a></td>
+									<td>
+									<span>
+										<input name="lvList0" class="lvList0" type="checkbox" value="15" id="a0_15"  checked="checked">
+										<label for="a0_15">0</label>
+									</span>
+									
+								    <span>
+										<input name="lvList1" class="lvList1" type="checkbox" value="15" id="a1_15" >
+										<label for="a1_15">1</label>
+									</span>
+								    <span>
+										<input name="lvList2" class="lvList2" type="checkbox" value="15" id="a2_15" >
+										<label for="a2_15">2</label>
+									</span>
+								    <span>
+										<input name="lvList3" class="lvList3" type="checkbox" value="15" id="a3_15" >
+										<label for="a3_15">3</label>
+									</span>
+								    <span>
+										<input name="lvList4" class="lvList4" type="checkbox" value="15" id="a4_15" >
+										<label for="a4_15">4</label>
+									</span>
+								    <span>
+										<input name="lvList5" class="lvList5" type="checkbox" value="15" id="a5_15" >
+										<label for="a5_15">5</label>
+									</span>
+								    <span>
+										<input name="lvList6" class="lvList6" type="checkbox" value="15" id="a6_15" >
+										<label for="a6_15">6</label>
+									</span>
+								    <span>
+										<input name="lvList7" class="lvList7" type="checkbox" value="15" id="a7_15" >
+										<label for="a7_15">7</label>
+									</span>
+								    <span>
+										<input name="lvList8" class="lvList8" type="checkbox" value="15" id="a8_15" >
+										<label for="a8_15">8</label>
+									</span>
+								    <span>
+										<input name="lvList9" class="lvList9" type="checkbox" value="15" id="a9_15" >
+										<label for="a9_15">9</label>
+									</span>
+								    
+								    </td>
+							     </tr>
+								 
+								<tr>
+									
+									<td>관리자 권한 설정</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('38');">삭제</a></td>
+									<td>
+									<span>
+										<input name="lvList0" class="lvList0" type="checkbox" value="38" id="a0_38"  checked="checked">
+										<label for="a0_38">0</label>
+									</span>
+									
+								    <span>
+										<input name="lvList1" class="lvList1" type="checkbox" value="38" id="a1_38"  checked="checked">
+										<label for="a1_38">1</label>
+									</span>
+								    <span>
+										<input name="lvList2" class="lvList2" type="checkbox" value="38" id="a2_38" >
+										<label for="a2_38">2</label>
+									</span>
+								    <span>
+										<input name="lvList3" class="lvList3" type="checkbox" value="38" id="a3_38" >
+										<label for="a3_38">3</label>
+									</span>
+								    <span>
+										<input name="lvList4" class="lvList4" type="checkbox" value="38" id="a4_38" >
+										<label for="a4_38">4</label>
+									</span>
+								    <span>
+										<input name="lvList5" class="lvList5" type="checkbox" value="38" id="a5_38" >
+										<label for="a5_38">5</label>
+									</span>
+								    <span>
+										<input name="lvList6" class="lvList6" type="checkbox" value="38" id="a6_38" >
+										<label for="a6_38">6</label>
+									</span>
+								    <span>
+										<input name="lvList7" class="lvList7" type="checkbox" value="38" id="a7_38" >
+										<label for="a7_38">7</label>
+									</span>
+								    <span>
+										<input name="lvList8" class="lvList8" type="checkbox" value="38" id="a8_38" >
+										<label for="a8_38">8</label>
+									</span>
+								    <span>
+										<input name="lvList9" class="lvList9" type="checkbox" value="38" id="a9_38" >
+										<label for="a9_38">9</label>
+									</span>
+								    
+								    </td>
+							    </tr>
+
+								<tr>
+									<td rowspan="8" style="background:#fff;">국민소통</td>
+									<td>질의응답</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('34');">삭제</a></td>
+									<td>
+										<span>
+											<input name="lvList0" class="lvList0" type="checkbox" value="34" id="a0_34"  checked="checked">
+											<label for="a0_34">0</label>
+										</span>
+										
+									    <span>
+											<input name="lvList1" class="lvList1" type="checkbox" value="34" id="a1_34"  checked="checked">
+											<label for="a1_34">1</label>
+										</span>
+									    <span>
+											<input name="lvList2" class="lvList2" type="checkbox" value="34" id="a2_34"  checked="checked">
+											<label for="a2_34">2</label>
+										</span>
+									    <span>
+											<input name="lvList3" class="lvList3" type="checkbox" value="34" id="a3_34" >
+											<label for="a3_34">3</label>
+										</span>
+									    <span>
+											<input name="lvList4" class="lvList4" type="checkbox" value="34" id="a4_34"  checked="checked">
+											<label for="a4_34">4</label>
+										</span>
+									    <span>
+											<input name="lvList5" class="lvList5" type="checkbox" value="34" id="a5_34"  checked="checked">
+											<label for="a5_34">5</label>
+										</span>
+									    <span>
+											<input name="lvList6" class="lvList6" type="checkbox" value="34" id="a6_34"  checked="checked">
+											<label for="a6_34">6</label>
+										</span>
+									    <span>
+											<input name="lvList7" class="lvList7" type="checkbox" value="34" id="a7_34"  checked="checked">
+											<label for="a7_34">7</label>
+										</span>
+									    <span>
+											<input name="lvList8" class="lvList8" type="checkbox" value="34" id="a8_34"  checked="checked">
+											<label for="a8_34">8</label>
+										</span>
+									    <span>
+											<input name="lvList9" class="lvList9" type="checkbox" value="34" id="a9_34"  checked="checked">
+											<label for="a9_34">9</label>
+										</span>
+								    </td>
+							     </tr>
+
+							     <tr>
+									
+									<td>부모교육</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('');">삭제</a></td>
+									<td>
+									<span>
+										<input name="lvList0" class="lvList0" type="checkbox" value="143" id="a0_143">
+										<label for="a0_143">0</label>
+									</span>
+									
+								    <span>
+										<input name="lvList1" class="lvList1" type="checkbox" value="143" id="a1_143" >
+										<label for="a1_143">1</label>
+									</span>
+								    <span>
+										<input name="lvList2" class="lvList2" type="checkbox" value="143" id="a2_143" >
+										<label for="a2_143">2</label>
+									</span>
+								    <span>
+										<input name="lvList3" class="lvList3" type="checkbox" value="143" id="a3_143" >
+										<label for="a3_143">3</label>
+									</span>
+								    <span>
+										<input name="lvList4" class="lvList4" type="checkbox" value="143" id="a4_143" >
+										<label for="a4_143">4</label>
+									</span>
+								    <span>
+										<input name="lvList5" class="lvList5" type="checkbox" value="143" id="a5_143" >
+										<label for="a5_143">5</label>
+									</span>
+								    <span>
+										<input name="lvList6" class="lvList6" type="checkbox" value="143" id="a6_143" >
+										<label for="a6_143">6</label>
+									</span>
+								    <span>
+										<input name="lvList7" class="lvList7" type="checkbox" value="143" id="a7_143" >
+										<label for="a7_143">7</label>
+									</span>
+								    <span>
+										<input name="lvList8" class="lvList8" type="checkbox" value="143" id="a8_143" >
+										<label for="a8_143">8</label>
+									</span>
+								    <span>
+										<input name="lvList9" class="lvList9" type="checkbox" value="143" id="a9_143">
+										<label for="a9_143">9</label>
+									</span>
+								    
+								    </td>
+							     </tr>
+							     <tr>
+									
+									<td>아이누리 교육영상</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('999');">삭제</a></td>
+									<td>
+										<span>
+											<input name="lvList0" class="lvList0" type="checkbox" value="999" id="a0_999"  checked="checked">
+											<label for="a0_999">0</label>
+										</span>
+									    <span>
+											<input name="lvList1" class="lvList1" type="checkbox" value="999" id="a1_999" >
+											<label for="a1_999">1</label>
+										</span>
+									    <span>
+											<input name="lvList2" class="lvList2" type="checkbox" value="999" id="a2_999" >
+											<label for="a2_999">2</label>
+										</span>
+									    <span>
+											<input name="lvList3" class="lvList3" type="checkbox" value="999" id="a3_999" >
+											<label for="a3_999">3</label>
+										</span>
+									    <span>
+											<input name="lvList4" class="lvList4" type="checkbox" value="999" id="a4_999" >
+											<label for="a4_999">4</label>
+										</span>
+									    <span>
+											<input name="lvList5" class="lvList5" type="checkbox" value="999" id="a5_999" >
+											<label for="a5_999">5</label>
+										</span>
+									    <span>
+											<input name="lvList6" class="lvList6" type="checkbox" value="999" id="a6_999" >
+											<label for="a6_999">6</label>
+										</span>
+									    <span>
+											<input name="lvList7" class="lvList7" type="checkbox" value="999" id="a7_999" >
+											<label for="a7_999">7</label>
+										</span>
+									    <span>
+											<input name="lvList8" class="lvList8" type="checkbox" value="999" id="a8_999" >
+											<label for="a8_999">8</label>
+										</span>
+									    <span>
+											<input name="lvList9" class="lvList9" type="checkbox" value="999" id="a9_999" >
+											<label for="a9_999">9</label>
+										</span>
+								    
+								   	</td>
+							     </tr>
+							     <tr>
+									<td>아이누리 교육정보(창의/인성교육)</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('998');">삭제</a></td>
+									<td>
+										<span>
+											<input name="lvList0" class="lvList0" type="checkbox" value="998" id="a0_998"  checked="checked">
+											<label for="a0_998">0</label>
+										</span>
+									    <span>
+											<input name="lvList1" class="lvList1" type="checkbox" value="998" id="a1_998" >
+											<label for="a1_998">1</label>
+										</span>
+									    <span>
+											<input name="lvList2" class="lvList2" type="checkbox" value="998" id="a2_998" >
+											<label for="a2_998">2</label>
+										</span>
+									    <span>
+											<input name="lvList3" class="lvList3" type="checkbox" value="998" id="a3_998" >
+											<label for="a3_998">3</label>
+										</span>
+									    <span>
+											<input name="lvList4" class="lvList4" type="checkbox" value="998" id="a4_998" >
+											<label for="a4_998">4</label>
+										</span>
+									    <span>
+											<input name="lvList5" class="lvList5" type="checkbox" value="998" id="a5_998" >
+											<label for="a5_998">5</label>
+										</span>
+									    <span>
+											<input name="lvList6" class="lvList6" type="checkbox" value="998" id="a6_998" >
+											<label for="a6_998">6</label>
+										</span>
+									    <span>
+											<input name="lvList7" class="lvList7" type="checkbox" value="998" id="a7_998" >
+											<label for="a7_998">7</label>
+										</span>
+									    <span>
+											<input name="lvList8" class="lvList8" type="checkbox" value="998" id="a8_998" >
+											<label for="a8_998">8</label>
+										</span>
+									    <span>
+											<input name="lvList9" class="lvList9" type="checkbox" value="998" id="a9_998" >
+											<label for="a9_998">9</label>
+										</span>
+								    </td>
+							    </tr>
+							     <tr>
+									<td>아이누리 교육정보(건강과안전)</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('997');">삭제</a></td>
+									<td>
+										<span>
+											<input name="lvList0" class="lvList0" type="checkbox" value="997" id="a0_997"  checked="checked">
+											<label for="a0_997">0</label>
+										</span>
+									    <span>
+											<input name="lvList1" class="lvList1" type="checkbox" value="997" id="a1_997" >
+											<label for="a1_997">1</label>
+										</span>
+									    <span>
+											<input name="lvList2" class="lvList2" type="checkbox" value="997" id="a2_997" >
+											<label for="a2_997">2</label>
+										</span>
+									    <span>
+											<input name="lvList3" class="lvList3" type="checkbox" value="997" id="a3_997" >
+											<label for="a3_997">3</label>
+										</span>
+									    <span>
+											<input name="lvList4" class="lvList4" type="checkbox" value="997" id="a4_997" >
+											<label for="a4_997">4</label>
+										</span>
+									    <span>
+											<input name="lvList5" class="lvList5" type="checkbox" value="997" id="a5_997" >
+											<label for="a5_997">5</label>
+										</span>
+									    <span>
+											<input name="lvList6" class="lvList6" type="checkbox" value="997" id="a6_997" >
+											<label for="a6_997">6</label>
+										</span>
+									    <span>
+											<input name="lvList7" class="lvList7" type="checkbox" value="997" id="a7_997" >
+											<label for="a7_997">7</label>
+										</span>
+									    <span>
+											<input name="lvList8" class="lvList8" type="checkbox" value="997" id="a8_997" >
+											<label for="a8_997">8</label>
+										</span>
+									    <span>
+											<input name="lvList9" class="lvList9" type="checkbox" value="997" id="a9_997" >
+											<label for="a9_997">9</label>
+										</span>
+								    </td>
+								</tr>
+								<tr>
+									<td>아이누리 교육정보(영유아발달)</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('996');">삭제</a></td>
+									<td>
+										<span>
+											<input name="lvList0" class="lvList0" type="checkbox" value="996" id="a0_996"  checked="checked">
+											<label for="a0_996">0</label>
+										</span>
+									    <span>
+											<input name="lvList1" class="lvList1" type="checkbox" value="996" id="a1_996" >
+											<label for="a1_996">1</label>
+										</span>
+									    <span>
+											<input name="lvList2" class="lvList2" type="checkbox" value="996" id="a2_996" >
+											<label for="a2_996">2</label>
+										</span>
+									    <span>
+											<input name="lvList3" class="lvList3" type="checkbox" value="996" id="a3_996" >
+											<label for="a3_996">3</label>
+										</span>
+									    <span>
+											<input name="lvList4" class="lvList4" type="checkbox" value="996" id="a4_996" >
+											<label for="a4_996">4</label>
+										</span>
+									    <span>
+											<input name="lvList5" class="lvList5" type="checkbox" value="996" id="a5_996" >
+											<label for="a5_996">5</label>
+										</span>
+									    <span>
+											<input name="lvList6" class="lvList6" type="checkbox" value="996" id="a6_996" >
+											<label for="a6_996">6</label>
+										</span>
+									    <span>
+											<input name="lvList7" class="lvList7" type="checkbox" value="996" id="a7_996" >
+											<label for="a7_996">7</label>
+										</span>
+									    <span>
+											<input name="lvList8" class="lvList8" type="checkbox" value="996" id="a8_996" >
+											<label for="a8_996">8</label>
+										</span>
+									    <span>
+											<input name="lvList9" class="lvList9" type="checkbox" value="996" id="a9_996" >
+											<label for="a9_996">9</label>
+										</span>
+								    </td>
+								</tr>
+
+
+							    <tr>
+									
+									<td>설문조사</td><td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('143');">삭제</a></td>
+									<td>
+									<span>
+										<input name="lvList0" class="lvList0" type="checkbox" value="143" id="a0_143"  checked="checked">
+										<label for="a0_143">0</label>
+									</span>
+									
+								    <span>
+										<input name="lvList1" class="lvList1" type="checkbox" value="143" id="a1_143" >
+										<label for="a1_143">1</label>
+									</span>
+								    <span>
+										<input name="lvList2" class="lvList2" type="checkbox" value="143" id="a2_143" >
+										<label for="a2_143">2</label>
+									</span>
+								    <span>
+										<input name="lvList3" class="lvList3" type="checkbox" value="143" id="a3_143" >
+										<label for="a3_143">3</label>
+									</span>
+								    <span>
+										<input name="lvList4" class="lvList4" type="checkbox" value="143" id="a4_143" >
+										<label for="a4_143">4</label>
+									</span>
+								    <span>
+										<input name="lvList5" class="lvList5" type="checkbox" value="143" id="a5_143" >
+										<label for="a5_143">5</label>
+									</span>
+								    <span>
+										<input name="lvList6" class="lvList6" type="checkbox" value="143" id="a6_143" >
+										<label for="a6_143">6</label>
+									</span>
+								    <span>
+										<input name="lvList7" class="lvList7" type="checkbox" value="143" id="a7_143" >
+										<label for="a7_143">7</label>
+									</span>
+								    <span>
+										<input name="lvList8" class="lvList8" type="checkbox" value="143" id="a8_143" >
+										<label for="a8_143">8</label>
+									</span>
+								    <span>
+										<input name="lvList9" class="lvList9" type="checkbox" value="143" id="a9_143"  checked="checked">
+										<label for="a9_143">9</label>
+									</span>
+								    
+								    </td>
+							     </tr>
+								 
+								<tr>
+									
+									<td>칭찬게시판</td><td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('35');">삭제</a></td>
+									<td>
+									<span>
+										<input name="lvList0" class="lvList0" type="checkbox" value="35" id="a0_35"  checked="checked">
+										<label for="a0_35">0</label>
+									</span>
+									
+								    <span>
+										<input name="lvList1" class="lvList1" type="checkbox" value="35" id="a1_35" >
+										<label for="a1_35">1</label>
+									</span>
+								    <span>
+										<input name="lvList2" class="lvList2" type="checkbox" value="35" id="a2_35" >
+										<label for="a2_35">2</label>
+									</span>
+								    <span>
+										<input name="lvList3" class="lvList3" type="checkbox" value="35" id="a3_35" >
+										<label for="a3_35">3</label>
+									</span>
+								    <span>
+										<input name="lvList4" class="lvList4" type="checkbox" value="35" id="a4_35" >
+										<label for="a4_35">4</label>
+									</span>
+								    <span>
+										<input name="lvList5" class="lvList5" type="checkbox" value="35" id="a5_35" >
+										<label for="a5_35">5</label>
+									</span>
+								    <span>
+										<input name="lvList6" class="lvList6" type="checkbox" value="35" id="a6_35" >
+										<label for="a6_35">6</label>
+									</span>
+								    <span>
+										<input name="lvList7" class="lvList7" type="checkbox" value="35" id="a7_35" >
+										<label for="a7_35">7</label>
+									</span>
+								    <span>
+										<input name="lvList8" class="lvList8" type="checkbox" value="35" id="a8_35" >
+										<label for="a8_35">8</label>
+									</span>
+								    <span>
+										<input name="lvList9" class="lvList9" type="checkbox" value="35" id="a9_35"  checked="checked">
+										<label for="a9_35">9</label>
+									</span>
+								    
+								    </td>
+							     </tr>
+								 
+								
+								
+								
+								<tr>
+									<td rowspan="21">사이버홍보</td>
+									<td>공지사항</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('');">삭제</a></td>
+									<td>
+										<span>
+											<input name="lvList0" class="lvList0" type="checkbox" value="" id="a1_34">
+											<label for="a0_34">0</label>
+										</span>
+										
+									    <span>
+											<input name="lvList1" class="lvList1" type="checkbox" value="" id="a1_34" >
+											<label for="a1_34">1</label>
+										</span>
+									    <span>
+											<input name="lvList2" class="lvList2" type="checkbox" value="" id="a2_34" >
+											<label for="a2_34">2</label>
+										</span>
+									    <span>
+											<input name="lvList3" class="lvList3" type="checkbox" value="" id="a3_34" >
+											<label for="a3_34">3</label>
+										</span>
+									    <span>
+											<input name="lvList4" class="lvList4" type="checkbox" value="" id="a4_34" >
+											<label for="a4_34">4</label>
+										</span>
+									    <span>
+											<input name="lvList5" class="lvList5" type="checkbox" value="" id="a5_34" >
+											<label for="a5_34">5</label>
+										</span>
+									    <span>
+											<input name="lvList6" class="lvList6" type="checkbox" value="" id="a6_34" >
+											<label for="a6_34">6</label>
+										</span>
+									    <span>
+											<input name="lvList7" class="lvList7" type="checkbox" value="" id="a7_34" >
+											<label for="a7_34">7</label>
+										</span>
+									    <span>
+											<input name="lvList8" class="lvList8" type="checkbox" value="" id="a8_34" >
+											<label for="a8_34">8</label>
+										</span>
+									    <span>
+											<input name="lvList9" class="lvList9" type="checkbox" value="" id="a9_34" >
+											<label for="a9_34">9</label>
+										</span>
+								    </td>
+							     </tr>
+
+							     <tr>
+									
+									<td>보도자료</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('19');">삭제</a></td>
+									<td>
+									<span>
+										<input name="lvList0" class="lvList0" type="checkbox" value="19" id="a0_19"  checked="checked">
+										<label for="a0_19">0</label>
+									</span>
+									
+								    <span>
+										<input name="lvList1" class="lvList1" type="checkbox" value="19" id="a1_19" >
+										<label for="a1_19">1</label>
+									</span>
+								    <span>
+										<input name="lvList2" class="lvList2" type="checkbox" value="19" id="a2_19" >
+										<label for="a2_19">2</label>
+									</span>
+								    <span>
+										<input name="lvList3" class="lvList3" type="checkbox" value="19" id="a3_19" >
+										<label for="a3_19">3</label>
+									</span>
+								    <span>
+										<input name="lvList4" class="lvList4" type="checkbox" value="19" id="a4_19" >
+										<label for="a4_19">4</label>
+									</span>
+								    <span>
+										<input name="lvList5" class="lvList5" type="checkbox" value="19" id="a5_19" >
+										<label for="a5_19">5</label>
+									</span>
+								    <span>
+										<input name="lvList6" class="lvList6" type="checkbox" value="19" id="a6_19" >
+										<label for="a6_19">6</label>
+									</span>
+								    <span>
+										<input name="lvList7" class="lvList7" type="checkbox" value="19" id="a7_19" >
+										<label for="a7_19">7</label>
+									</span>
+								    <span>
+										<input name="lvList8" class="lvList8" type="checkbox" value="19" id="a8_19" >
+										<label for="a8_19">8</label>
+									</span>
+								    <span>
+										<input name="lvList9" class="lvList9" type="checkbox" value="19" id="a9_19" >
+										<label for="a9_19">9</label>
+									</span>
+								    
+								    </td>
+							     </tr>
+
+								<tr>
+									<td>입찰 공고</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('17');">삭제</a></td>
+									<td>
+										<span>
+											<input name="lvList0" class="lvList0" type="checkbox" value="17" id="a0_17"  checked="checked">
+											<label for="a0_17">0</label>
+										</span>
+										
+									    <span>
+											<input name="lvList1" class="lvList1" type="checkbox" value="17" id="a1_17" >
+											<label for="a1_17">1</label>
+										</span>
+									    <span>
+											<input name="lvList2" class="lvList2" type="checkbox" value="17" id="a2_17" >
+											<label for="a2_17">2</label>
+										</span>
+									    <span>
+											<input name="lvList3" class="lvList3" type="checkbox" value="17" id="a3_17" >
+											<label for="a3_17">3</label>
+										</span>
+									    <span>
+											<input name="lvList4" class="lvList4" type="checkbox" value="17" id="a4_17" >
+											<label for="a4_17">4</label>
+										</span>
+									    <span>
+											<input name="lvList5" class="lvList5" type="checkbox" value="17" id="a5_17" >
+											<label for="a5_17">5</label>
+										</span>
+									    <span>
+											<input name="lvList6" class="lvList6" type="checkbox" value="17" id="a6_17" >
+											<label for="a6_17">6</label>
+										</span>
+									    <span>
+											<input name="lvList7" class="lvList7" type="checkbox" value="17" id="a7_17" >
+											<label for="a7_17">7</label>
+										</span>
+									    <span>
+											<input name="lvList8" class="lvList8" type="checkbox" value="17" id="a8_17" >
+											<label for="a8_17">8</label>
+										</span>
+									    <span>
+											<input name="lvList9" class="lvList9" type="checkbox" value="17" id="a9_17" >
+											<label for="a9_17">9</label>
+										</span>
+								    </td>
+								</tr>
+								<tr>
+									
+									<td>채용공고</td><td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('18');">삭제</a></td>
+									<td>
+									<span>
+										<input name="lvList0" class="lvList0" type="checkbox" value="18" id="a0_18"  checked="checked">
+										<label for="a0_18">0</label>
+									</span>
+									
+								    <span>
+										<input name="lvList1" class="lvList1" type="checkbox" value="18" id="a1_18"  checked="checked">
+										<label for="a1_18">1</label>
+									</span>
+								    <span>
+										<input name="lvList2" class="lvList2" type="checkbox" value="18" id="a2_18" >
+										<label for="a2_18">2</label>
+									</span>
+								    <span>
+										<input name="lvList3" class="lvList3" type="checkbox" value="18" id="a3_18" >
+										<label for="a3_18">3</label>
+									</span>
+								    <span>
+										<input name="lvList4" class="lvList4" type="checkbox" value="18" id="a4_18" >
+										<label for="a4_18">4</label>
+									</span>
+								    <span>
+										<input name="lvList5" class="lvList5" type="checkbox" value="18" id="a5_18" >
+										<label for="a5_18">5</label>
+									</span>
+								    <span>
+										<input name="lvList6" class="lvList6" type="checkbox" value="18" id="a6_18" >
+										<label for="a6_18">6</label>
+									</span>
+								    <span>
+										<input name="lvList7" class="lvList7" type="checkbox" value="18" id="a7_18" >
+										<label for="a7_18">7</label>
+									</span>
+								    <span>
+										<input name="lvList8" class="lvList8" type="checkbox" value="18" id="a8_18" >
+										<label for="a8_18">8</label>
+									</span>
+								    <span>
+										<input name="lvList9" class="lvList9" type="checkbox" value="18" id="a9_18" >
+										<label for="a9_18">9</label>
+									</span>
+								    
+								    </td>
+							    </tr>
+								 
+								<tr>
+									<td>어린이집 평가인증 안내</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('27');">삭제</a></td>
+									<td>
+										<span>
+											<input name="lvList0" class="lvList0" type="checkbox" value="27" id="a0_27"  checked="checked">
+											<label for="a0_27">0</label>
+										</span>
+										
+									    <span>
+											<input name="lvList1" class="lvList1" type="checkbox" value="27" id="a1_27" >
+											<label for="a1_27">1</label>
+										</span>
+									    <span>
+											<input name="lvList2" class="lvList2" type="checkbox" value="27" id="a2_27" >
+											<label for="a2_27">2</label>
+										</span>
+									    <span>
+											<input name="lvList3" class="lvList3" type="checkbox" value="27" id="a3_27" >
+											<label for="a3_27">3</label>
+										</span>
+									    <span>
+											<input name="lvList4" class="lvList4" type="checkbox" value="27" id="a4_27"  checked="checked">
+											<label for="a4_27">4</label>
+										</span>
+									    <span>
+											<input name="lvList5" class="lvList5" type="checkbox" value="27" id="a5_27" >
+											<label for="a5_27">5</label>
+										</span>
+									    <span>
+											<input name="lvList6" class="lvList6" type="checkbox" value="27" id="a6_27" >
+											<label for="a6_27">6</label>
+										</span>
+									    <span>
+											<input name="lvList7" class="lvList7" type="checkbox" value="27" id="a7_27" >
+											<label for="a7_27">7</label>
+										</span>
+									    <span>
+											<input name="lvList8" class="lvList8" type="checkbox" value="27" id="a8_27" >
+											<label for="a8_27">8</label>
+										</span>
+									    <span>
+											<input name="lvList9" class="lvList9" type="checkbox" value="27" id="a9_27" >
+											<label for="a9_27">9</label>
+										</span>
+								    </td>
+							    </tr>
+
+							    <tr>
+									<td>어린이집 평가인증 교육자료</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('28');">삭제</a></td>
+									<td>
+										<span>
+											<input name="lvList0" class="lvList0" type="checkbox" value="28" id="a0_28"  checked="checked">
+											<label for="a0_28">0</label>
+										</span>
+										
+									    <span>
+											<input name="lvList1" class="lvList1" type="checkbox" value="28" id="a1_28" >
+											<label for="a1_28">1</label>
+										</span>
+									    <span>
+											<input name="lvList2" class="lvList2" type="checkbox" value="28" id="a2_28" >
+											<label for="a2_28">2</label>
+										</span>
+									    <span>
+											<input name="lvList3" class="lvList3" type="checkbox" value="28" id="a3_28" >
+											<label for="a3_28">3</label>
+										</span>
+									    <span>
+											<input name="lvList4" class="lvList4" type="checkbox" value="28" id="a4_28"  checked="checked">
+											<label for="a4_28">4</label>
+										</span>
+									    <span>
+											<input name="lvList5" class="lvList5" type="checkbox" value="28" id="a5_28" >
+											<label for="a5_28">5</label>
+										</span>
+									    <span>
+											<input name="lvList6" class="lvList6" type="checkbox" value="28" id="a6_28" >
+											<label for="a6_28">6</label>
+										</span>
+									    <span>
+											<input name="lvList7" class="lvList7" type="checkbox" value="28" id="a7_28" >
+											<label for="a7_28">7</label>
+										</span>
+									    <span>
+											<input name="lvList8" class="lvList8" type="checkbox" value="28" id="a8_28" >
+											<label for="a8_28">8</label>
+										</span>
+									    <span>
+											<input name="lvList9" class="lvList9" type="checkbox" value="28" id="a9_28" >
+											<label for="a9_28">9</label>
+										</span>
+								    </td>
+							     </tr>
+								 
+								<tr>
+									<td>어린이집 평가인증 관련 서식</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('29');">삭제</a></td>
+									<td>
+										<span>
+											<input name="lvList0" class="lvList0" type="checkbox" value="29" id="a0_29"  checked="checked">
+											<label for="a0_29">0</label>
+										</span>
+										
+									    <span>
+											<input name="lvList1" class="lvList1" type="checkbox" value="29" id="a1_29" >
+											<label for="a1_29">1</label>
+										</span>
+									    <span>
+											<input name="lvList2" class="lvList2" type="checkbox" value="29" id="a2_29" >
+											<label for="a2_29">2</label>
+										</span>
+									    <span>
+											<input name="lvList3" class="lvList3" type="checkbox" value="29" id="a3_29" >
+											<label for="a3_29">3</label>
+										</span>
+									    <span>
+											<input name="lvList4" class="lvList4" type="checkbox" value="29" id="a4_29"  checked="checked">
+											<label for="a4_29">4</label>
+										</span>
+									    <span>
+											<input name="lvList5" class="lvList5" type="checkbox" value="29" id="a5_29" >
+											<label for="a5_29">5</label>
+										</span>
+									    <span>
+											<input name="lvList6" class="lvList6" type="checkbox" value="29" id="a6_29" >
+											<label for="a6_29">6</label>
+										</span>
+									    <span>
+											<input name="lvList7" class="lvList7" type="checkbox" value="29" id="a7_29" >
+											<label for="a7_29">7</label>
+										</span>
+									    <span>
+											<input name="lvList8" class="lvList8" type="checkbox" value="29" id="a8_29" >
+											<label for="a8_29">8</label>
+										</span>
+									    <span>
+											<input name="lvList9" class="lvList9" type="checkbox" value="29" id="a9_29" >
+											<label for="a9_29">9</label>
+										</span>  
+								    </td>
+							    </tr>
+
+							    <tr>
+									<td>보육교직원 자격증 서식</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('31');">삭제</a></td>
+									<td>
+										<span>
+											<input name="lvList0" class="lvList0" type="checkbox" value="31" id="a0_31"  checked="checked">
+											<label for="a0_31">0</label>
+										</span>
+										
+									    <span>
+											<input name="lvList1" class="lvList1" type="checkbox" value="31" id="a1_31" >
+											<label for="a1_31">1</label>
+										</span>
+									    <span>
+											<input name="lvList2" class="lvList2" type="checkbox" value="31" id="a2_31" >
+											<label for="a2_31">2</label>
+										</span>
+									    <span>
+											<input name="lvList3" class="lvList3" type="checkbox" value="31" id="a3_31" >
+											<label for="a3_31">3</label>
+										</span>
+									    <span>
+											<input name="lvList4" class="lvList4" type="checkbox" value="31" id="a4_31" >
+											<label for="a4_31">4</label>
+										</span>
+									    <span>
+											<input name="lvList5" class="lvList5" type="checkbox" value="31" id="a5_31" >
+											<label for="a5_31">5</label>
+										</span>
+									    <span>
+											<input name="lvList6" class="lvList6" type="checkbox" value="31" id="a6_31" >
+											<label for="a6_31">6</label>
+										</span>
+									    <span>
+											<input name="lvList7" class="lvList7" type="checkbox" value="31" id="a7_31" >
+											<label for="a7_31">7</label>
+										</span>
+									    <span>
+											<input name="lvList8" class="lvList8" type="checkbox" value="31" id="a8_31" >
+											<label for="a8_31">8</label>
+										</span>
+									    <span>
+											<input name="lvList9" class="lvList9" type="checkbox" value="31" id="a9_31" >
+											<label for="a9_31">9</label>
+										</span>
+								    </td>
+							    </tr>
+
+							    <tr>
+									<td>보육교직원 자격 기준</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('30');">삭제</a></td>
+									<td>
+										<span>
+											<input name="lvList0" class="lvList0" type="checkbox" value="30" id="a0_30"  checked="checked">
+											<label for="a0_30">0</label>
+										</span>
+										
+									    <span>
+											<input name="lvList1" class="lvList1" type="checkbox" value="30" id="a1_30" >
+											<label for="a1_30">1</label>
+										</span>
+									    <span>
+											<input name="lvList2" class="lvList2" type="checkbox" value="30" id="a2_30" >
+											<label for="a2_30">2</label>
+										</span>
+									    <span>
+											<input name="lvList3" class="lvList3" type="checkbox" value="30" id="a3_30" >
+											<label for="a3_30">3</label>
+										</span>
+									    <span>
+											<input name="lvList4" class="lvList4" type="checkbox" value="30" id="a4_30" >
+											<label for="a4_30">4</label>
+										</span>
+									    <span>
+											<input name="lvList5" class="lvList5" type="checkbox" value="30" id="a5_30" >
+											<label for="a5_30">5</label>
+										</span>
+									    <span>
+											<input name="lvList6" class="lvList6" type="checkbox" value="30" id="a6_30" >
+											<label for="a6_30">6</label>
+										</span>
+									    <span>
+											<input name="lvList7" class="lvList7" type="checkbox" value="30" id="a7_30" >
+											<label for="a7_30">7</label>
+										</span>
+									    <span>
+											<input name="lvList8" class="lvList8" type="checkbox" value="30" id="a8_30" >
+											<label for="a8_30">8</label>
+										</span>
+									    <span>
+											<input name="lvList9" class="lvList9" type="checkbox" value="30" id="a9_30" >
+											<label for="a9_30">9</label>
+										</span>
+								    
+								    </td>
+							     </tr>
+
+							    <tr>
+									<td>보육교직원 자격 기준 기타</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('6');">삭제</a></td>
+									<td>
+										<span>
+											<input name="lvList0" class="lvList0" type="checkbox" value="6" id="a0_6"  checked="checked">
+											<label for="a0_6">0</label>
+										</span>
+										
+									    <span>
+											<input name="lvList1" class="lvList1" type="checkbox" value="6" id="a1_6" >
+											<label for="a1_6">1</label>
+										</span>
+									    <span>
+											<input name="lvList2" class="lvList2" type="checkbox" value="6" id="a2_6" >
+											<label for="a2_6">2</label>
+										</span>
+									    <span>
+											<input name="lvList3" class="lvList3" type="checkbox" value="6" id="a3_6" >
+											<label for="a3_6">3</label>
+										</span>
+									    <span>
+											<input name="lvList4" class="lvList4" type="checkbox" value="6" id="a4_6" >
+											<label for="a4_6">4</label>
+										</span>
+									    <span>
+											<input name="lvList5" class="lvList5" type="checkbox" value="6" id="a5_6" >
+											<label for="a5_6">5</label>
+										</span>
+									    <span>
+											<input name="lvList6" class="lvList6" type="checkbox" value="6" id="a6_6"  checked="checked">
+											<label for="a6_6">6</label>
+										</span>
+									    <span>
+											<input name="lvList7" class="lvList7" type="checkbox" value="6" id="a7_6" >
+											<label for="a7_6">7</label>
+										</span>
+									    <span>
+											<input name="lvList8" class="lvList8" type="checkbox" value="6" id="a8_6" >
+											<label for="a8_6">8</label>
+										</span>
+									    <span>
+											<input name="lvList9" class="lvList9" type="checkbox" value="6" id="a9_6" >
+											<label for="a9_6">9</label>
+										</span>
+								    </td>
+							    </tr>
+
+							    <tr>
+									<td>보육자료실</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('33');">삭제</a></td>
+									<td>
+										<span>
+											<input name="lvList0" class="lvList0" type="checkbox" value="33" id="a0_33"  checked="checked">
+											<label for="a0_33">0</label>
+										</span>
+										
+									    <span>
+											<input name="lvList1" class="lvList1" type="checkbox" value="33" id="a1_33"  checked="checked">
+											<label for="a1_33">1</label>
+										</span>
+									    <span>
+											<input name="lvList2" class="lvList2" type="checkbox" value="33" id="a2_33" >
+											<label for="a2_33">2</label>
+										</span>
+									    <span>
+											<input name="lvList3" class="lvList3" type="checkbox" value="33" id="a3_33" >
+											<label for="a3_33">3</label>
+										</span>
+									    <span>
+											<input name="lvList4" class="lvList4" type="checkbox" value="33" id="a4_33" >
+											<label for="a4_33">4</label>
+										</span>
+									    <span>
+											<input name="lvList5" class="lvList5" type="checkbox" value="33" id="a5_33" >
+											<label for="a5_33">5</label>
+										</span>
+									    <span>
+											<input name="lvList6" class="lvList6" type="checkbox" value="33" id="a6_33" >
+											<label for="a6_33">6</label>
+										</span>
+									    <span>
+											<input name="lvList7" class="lvList7" type="checkbox" value="33" id="a7_33" >
+											<label for="a7_33">7</label>
+										</span>
+									    <span>
+											<input name="lvList8" class="lvList8" type="checkbox" value="33" id="a8_33" >
+											<label for="a8_33">8</label>
+										</span>
+									    <span>
+											<input name="lvList9" class="lvList9" type="checkbox" value="33" id="a9_33" >
+											<label for="a9_33">9</label>
+										</span> 
+								    </td>
+							    </tr>
+
+							    <tr>
+									<td>발간물</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('22');">삭제</a></td>
+									<td>
+										<span>
+											<input name="lvList0" class="lvList0" type="checkbox" value="22" id="a0_22"  checked="checked">
+											<label for="a0_22">0</label>
+										</span>
+										
+									    <span>
+											<input name="lvList1" class="lvList1" type="checkbox" value="22" id="a1_22" >
+											<label for="a1_22">1</label>
+										</span>
+									    <span>
+											<input name="lvList2" class="lvList2" type="checkbox" value="22" id="a2_22" >
+											<label for="a2_22">2</label>
+										</span>
+									    <span>
+											<input name="lvList3" class="lvList3" type="checkbox" value="22" id="a3_22" >
+											<label for="a3_22">3</label>
+										</span>
+									    <span>
+											<input name="lvList4" class="lvList4" type="checkbox" value="22" id="a4_22" >
+											<label for="a4_22">4</label>
+										</span>
+									    <span>
+											<input name="lvList5" class="lvList5" type="checkbox" value="22" id="a5_22" >
+											<label for="a5_22">5</label>
+										</span>
+									    <span>
+											<input name="lvList6" class="lvList6" type="checkbox" value="22" id="a6_22" >
+											<label for="a6_22">6</label>
+										</span>
+									    <span>
+											<input name="lvList7" class="lvList7" type="checkbox" value="22" id="a7_22" >
+											<label for="a7_22">7</label>
+										</span>
+									    <span>
+											<input name="lvList8" class="lvList8" type="checkbox" value="22" id="a8_22" >
+											<label for="a8_22">8</label>
+										</span>
+									    <span>
+											<input name="lvList9" class="lvList9" type="checkbox" value="22" id="a9_22" >
+											<label for="a9_22">9</label>
+										</span>
+								    </td>
+							     </tr>
+
+							    <tr>
+									<td>비전보육</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('25');">삭제</a></td>
+									<td>
+										<span>
+											<input name="lvList0" class="lvList0" type="checkbox" value="25" id="a0_25"  checked="checked">
+											<label for="a0_25">0</label>
+										</span>
+										
+									    <span>
+											<input name="lvList1" class="lvList1" type="checkbox" value="25" id="a1_25" >
+											<label for="a1_25">1</label>
+										</span>
+									    <span>
+											<input name="lvList2" class="lvList2" type="checkbox" value="25" id="a2_25" >
+											<label for="a2_25">2</label>
+										</span>
+									    <span>
+											<input name="lvList3" class="lvList3" type="checkbox" value="25" id="a3_25" >
+											<label for="a3_25">3</label>
+										</span>
+									    <span>
+											<input name="lvList4" class="lvList4" type="checkbox" value="25" id="a4_25"  checked="checked">
+											<label for="a4_25">4</label>
+										</span>
+									    <span>
+											<input name="lvList5" class="lvList5" type="checkbox" value="25" id="a5_25" >
+											<label for="a5_25">5</label>
+										</span>
+									    <span>
+											<input name="lvList6" class="lvList6" type="checkbox" value="25" id="a6_25" >
+											<label for="a6_25">6</label>
+										</span>
+									    <span>
+											<input name="lvList7" class="lvList7" type="checkbox" value="25" id="a7_25" >
+											<label for="a7_25">7</label>
+										</span>
+									    <span>
+											<input name="lvList8" class="lvList8" type="checkbox" value="25" id="a8_25" >
+											<label for="a8_25">8</label>
+										</span>
+									    <span>
+											<input name="lvList9" class="lvList9" type="checkbox" value="25" id="a9_25" >
+											<label for="a9_25">9</label>
+										</span>
+								    </td>
+							    </tr>
+
+							    <tr>
+									<td>이슈분석</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('4');">삭제</a></td>
+									<td>
+									<span>
+										<input name="lvList0" class="lvList0" type="checkbox" value="4" id="a0_4" checked="checked">
+										<label for="a0_4">0</label>
+									</span>
+									
+								    <span>
+										<input name="lvList1" class="lvList1" type="checkbox" value="4" id="a1_4">
+										<label for="a1_4">1</label>
+									</span>
+								    <span>
+										<input name="lvList2" class="lvList2" type="checkbox" value="4" id="a2_4">
+										<label for="a2_4">2</label>
+									</span>
+								    <span>
+										<input name="lvList3" class="lvList3" type="checkbox" value="4" id="a3_4">
+										<label for="a3_4">3</label>
+									</span>
+								    <span>
+										<input name="lvList4" class="lvList4" type="checkbox" value="4" id="a4_4">
+										<label for="a4_4">4</label>
+									</span>
+								    <span>
+										<input name="lvList5" class="lvList5" type="checkbox" value="4" id="a5_4">
+										<label for="a5_4">5</label>
+									</span>
+								    <span>
+										<input name="lvList6" class="lvList6" type="checkbox" value="4" id="a6_4">
+										<label for="a6_4">6</label>
+									</span>
+								    <span>
+										<input name="lvList7" class="lvList7" type="checkbox" value="4" id="a7_4" checked="checked">
+										<label for="a7_4">7</label>
+									</span>
+								    <span>
+										<input name="lvList8" class="lvList8" type="checkbox" value="4" id="a8_4">
+										<label for="a8_4">8</label>
+									</span>
+								    <span>
+										<input name="lvList9" class="lvList9" type="checkbox" value="4" id="a9_4">
+										<label for="a9_4">9</label>
+									</span>
+								    
+								    </td>
+							    </tr>
+
+							    <tr>
+									<td>뉴스레터</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('39');">삭제</a></td>
+									<td>
+									<span>
+										<input name="lvList0" class="lvList0" type="checkbox" value="39" id="a0_39"  checked="checked">
+										<label for="a0_39">0</label>
+									</span>
+									
+								    <span>
+										<input name="lvList1" class="lvList1" type="checkbox" value="39" id="a1_39" >
+										<label for="a1_39">1</label>
+									</span>
+								    <span>
+										<input name="lvList2" class="lvList2" type="checkbox" value="39" id="a2_39" >
+										<label for="a2_39">2</label>
+									</span>
+								    <span>
+										<input name="lvList3" class="lvList3" type="checkbox" value="39" id="a3_39" >
+										<label for="a3_39">3</label>
+									</span>
+								    <span>
+										<input name="lvList4" class="lvList4" type="checkbox" value="39" id="a4_39" >
+										<label for="a4_39">4</label>
+									</span>
+								    <span>
+										<input name="lvList5" class="lvList5" type="checkbox" value="39" id="a5_39" >
+										<label for="a5_39">5</label>
+									</span>
+								    <span>
+										<input name="lvList6" class="lvList6" type="checkbox" value="39" id="a6_39" >
+										<label for="a6_39">6</label>
+									</span>
+								    <span>
+										<input name="lvList7" class="lvList7" type="checkbox" value="39" id="a7_39" >
+										<label for="a7_39">7</label>
+									</span>
+								    <span>
+										<input name="lvList8" class="lvList8" type="checkbox" value="39" id="a8_39" >
+										<label for="a8_39">8</label>
+									</span>
+								    <span>
+										<input name="lvList9" class="lvList9" type="checkbox" value="39" id="a9_39" >
+										<label for="a9_39">9</label>
+									</span>
+								    
+								    </td>
+							     </tr>
+								 
+								<tr>
+									
+									<td>브로셔</td><td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('23');">삭제</a></td>
+									<td>
+									<span>
+										<input name="lvList0" class="lvList0" type="checkbox" value="23" id="a0_23"  checked="checked">
+										<label for="a0_23">0</label>
+									</span>
+									
+								    <span>
+										<input name="lvList1" class="lvList1" type="checkbox" value="23" id="a1_23" >
+										<label for="a1_23">1</label>
+									</span>
+								    <span>
+										<input name="lvList2" class="lvList2" type="checkbox" value="23" id="a2_23" >
+										<label for="a2_23">2</label>
+									</span>
+								    <span>
+										<input name="lvList3" class="lvList3" type="checkbox" value="23" id="a3_23" >
+										<label for="a3_23">3</label>
+									</span>
+								    <span>
+										<input name="lvList4" class="lvList4" type="checkbox" value="23" id="a4_23" >
+										<label for="a4_23">4</label>
+									</span>
+								    <span>
+										<input name="lvList5" class="lvList5" type="checkbox" value="23" id="a5_23" >
+										<label for="a5_23">5</label>
+									</span>
+								    <span>
+										<input name="lvList6" class="lvList6" type="checkbox" value="23" id="a6_23" >
+										<label for="a6_23">6</label>
+									</span>
+								    <span>
+										<input name="lvList7" class="lvList7" type="checkbox" value="23" id="a7_23" >
+										<label for="a7_23">7</label>
+									</span>
+								    <span>
+										<input name="lvList8" class="lvList8" type="checkbox" value="23" id="a8_23" >
+										<label for="a8_23">8</label>
+									</span>
+								    <span>
+										<input name="lvList9" class="lvList9" type="checkbox" value="23" id="a9_23" >
+										<label for="a9_23">9</label>
+									</span>
+								    
+								    </td>
+							     </tr>
+								 
+								<tr>
+									
+									<td>리플렛</td><td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('24');">삭제</a></td>
+									<td>
+									<span>
+										<input name="lvList0" class="lvList0" type="checkbox" value="24" id="a0_24"  checked="checked">
+										<label for="a0_24">0</label>
+									</span>
+									
+								    <span>
+										<input name="lvList1" class="lvList1" type="checkbox" value="24" id="a1_24" >
+										<label for="a1_24">1</label>
+									</span>
+								    <span>
+										<input name="lvList2" class="lvList2" type="checkbox" value="24" id="a2_24" >
+										<label for="a2_24">2</label>
+									</span>
+								    <span>
+										<input name="lvList3" class="lvList3" type="checkbox" value="24" id="a3_24" >
+										<label for="a3_24">3</label>
+									</span>
+								    <span>
+										<input name="lvList4" class="lvList4" type="checkbox" value="24" id="a4_24" >
+										<label for="a4_24">4</label>
+									</span>
+								    <span>
+										<input name="lvList5" class="lvList5" type="checkbox" value="24" id="a5_24" >
+										<label for="a5_24">5</label>
+									</span>
+								    <span>
+										<input name="lvList6" class="lvList6" type="checkbox" value="24" id="a6_24" >
+										<label for="a6_24">6</label>
+									</span>
+								    <span>
+										<input name="lvList7" class="lvList7" type="checkbox" value="24" id="a7_24" >
+										<label for="a7_24">7</label>
+									</span>
+								    <span>
+										<input name="lvList8" class="lvList8" type="checkbox" value="24" id="a8_24" >
+										<label for="a8_24">8</label>
+									</span>
+								    <span>
+										<input name="lvList9" class="lvList9" type="checkbox" value="24" id="a9_24" >
+										<label for="a9_24">9</label>
+									</span>
+								    
+								    </td>
+							     </tr>
+								 
+								
+								 
+								<tr>
+									
+									<td>KCPI 영상</td><td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('26');">삭제</a></td>
+									<td>
+									<span>
+										<input name="lvList0" class="lvList0" type="checkbox" value="26" id="a0_26"  checked="checked">
+										<label for="a0_26">0</label>
+									</span>
+									
+								    <span>
+										<input name="lvList1" class="lvList1" type="checkbox" value="26" id="a1_26" >
+										<label for="a1_26">1</label>
+									</span>
+								    <span>
+										<input name="lvList2" class="lvList2" type="checkbox" value="26" id="a2_26" >
+										<label for="a2_26">2</label>
+									</span>
+								    <span>
+										<input name="lvList3" class="lvList3" type="checkbox" value="26" id="a3_26" >
+										<label for="a3_26">3</label>
+									</span>
+								    <span>
+										<input name="lvList4" class="lvList4" type="checkbox" value="26" id="a4_26"  checked="checked">
+										<label for="a4_26">4</label>
+									</span>
+								    <span>
+										<input name="lvList5" class="lvList5" type="checkbox" value="26" id="a5_26" >
+										<label for="a5_26">5</label>
+									</span>
+								    <span>
+										<input name="lvList6" class="lvList6" type="checkbox" value="26" id="a6_26" >
+										<label for="a6_26">6</label>
+									</span>
+								    <span>
+										<input name="lvList7" class="lvList7" type="checkbox" value="26" id="a7_26" >
+										<label for="a7_26">7</label>
+									</span>
+								    <span>
+										<input name="lvList8" class="lvList8" type="checkbox" value="26" id="a8_26" >
+										<label for="a8_26">8</label>
+									</span>
+								    <span>
+										<input name="lvList9" class="lvList9" type="checkbox" value="26" id="a9_26" >
+										<label for="a9_26">9</label>
+									</span>
+								    
+								    </td>
+							     </tr>
+								 
+								<tr>
+									<td>기관갤러리(기관행사)</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('20');">삭제</a></td>
+									<td>
+									<span>
+										<input name="lvList0" class="lvList0" type="checkbox" value="20" id="a0_20"  checked="checked">
+										<label for="a0_20">0</label>
+									</span>
+									
+								    <span>
+										<input name="lvList1" class="lvList1" type="checkbox" value="20" id="a1_20" >
+										<label for="a1_20">1</label>
+									</span>
+								    <span>
+										<input name="lvList2" class="lvList2" type="checkbox" value="20" id="a2_20" >
+										<label for="a2_20">2</label>
+									</span>
+								    <span>
+										<input name="lvList3" class="lvList3" type="checkbox" value="20" id="a3_20" >
+										<label for="a3_20">3</label>
+									</span>
+								    <span>
+										<input name="lvList4" class="lvList4" type="checkbox" value="20" id="a4_20" >
+										<label for="a4_20">4</label>
+									</span>
+								    <span>
+										<input name="lvList5" class="lvList5" type="checkbox" value="20" id="a5_20" >
+										<label for="a5_20">5</label>
+									</span>
+								    <span>
+										<input name="lvList6" class="lvList6" type="checkbox" value="20" id="a6_20" >
+										<label for="a6_20">6</label>
+									</span>
+								    <span>
+										<input name="lvList7" class="lvList7" type="checkbox" value="20" id="a7_20" >
+										<label for="a7_20">7</label>
+									</span>
+								    <span>
+										<input name="lvList8" class="lvList8" type="checkbox" value="20" id="a8_20" >
+										<label for="a8_20">8</label>
+									</span>
+								    <span>
+										<input name="lvList9" class="lvList9" type="checkbox" value="20" id="a9_20" >
+										<label for="a9_20">9</label>
+									</span>
+								    
+								    </td>
+							     </tr>
+								 
+								<tr>
+									
+									<td>기관갤러리(기관교육)</td><td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('21');">삭제</a></td>
+									<td>
+									<span>
+										<input name="lvList0" class="lvList0" type="checkbox" value="21" id="a0_21"  checked="checked">
+										<label for="a0_21">0</label>
+									</span>
+									
+								    <span>
+										<input name="lvList1" class="lvList1" type="checkbox" value="21" id="a1_21" >
+										<label for="a1_21">1</label>
+									</span>
+								    <span>
+										<input name="lvList2" class="lvList2" type="checkbox" value="21" id="a2_21" >
+										<label for="a2_21">2</label>
+									</span>
+								    <span>
+										<input name="lvList3" class="lvList3" type="checkbox" value="21" id="a3_21" >
+										<label for="a3_21">3</label>
+									</span>
+								    <span>
+										<input name="lvList4" class="lvList4" type="checkbox" value="21" id="a4_21" >
+										<label for="a4_21">4</label>
+									</span>
+								    <span>
+										<input name="lvList5" class="lvList5" type="checkbox" value="21" id="a5_21" >
+										<label for="a5_21">5</label>
+									</span>
+								    <span>
+										<input name="lvList6" class="lvList6" type="checkbox" value="21" id="a6_21" >
+										<label for="a6_21">6</label>
+									</span>
+								    <span>
+										<input name="lvList7" class="lvList7" type="checkbox" value="21" id="a7_21" >
+										<label for="a7_21">7</label>
+									</span>
+								    <span>
+										<input name="lvList8" class="lvList8" type="checkbox" value="21" id="a8_21" >
+										<label for="a8_21">8</label>
+									</span>
+								    <span>
+										<input name="lvList9" class="lvList9" type="checkbox" value="21" id="a9_21" >
+										<label for="a9_21">9</label>
+									</span>
+								    
+								    </td>
+							     </tr>
+
+								<tr>
+									<td>전문연구자료</td>
+									<td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('32');">삭제</a></td>
+									<td>
+									<span>
+										<input name="lvList0" class="lvList0" type="checkbox" value="32" id="a0_32"  checked="checked">
+										<label for="a0_32">0</label>
+									</span>
+									
+								    <span>
+										<input name="lvList1" class="lvList1" type="checkbox" value="32" id="a1_32" >
+										<label for="a1_32">1</label>
+									</span>
+								    <span>
+										<input name="lvList2" class="lvList2" type="checkbox" value="32" id="a2_32" >
+										<label for="a2_32">2</label>
+									</span>
+								    <span>
+										<input name="lvList3" class="lvList3" type="checkbox" value="32" id="a3_32" >
+										<label for="a3_32">3</label>
+									</span>
+								    <span>
+										<input name="lvList4" class="lvList4" type="checkbox" value="32" id="a4_32" >
+										<label for="a4_32">4</label>
+									</span>
+								    <span>
+										<input name="lvList5" class="lvList5" type="checkbox" value="32" id="a5_32" >
+										<label for="a5_32">5</label>
+									</span>
+								    <span>
+										<input name="lvList6" class="lvList6" type="checkbox" value="32" id="a6_32" >
+										<label for="a6_32">6</label>
+									</span>
+								    <span>
+										<input name="lvList7" class="lvList7" type="checkbox" value="32" id="a7_32" >
+										<label for="a7_32">7</label>
+									</span>
+								    <span>
+										<input name="lvList8" class="lvList8" type="checkbox" value="32" id="a8_32" >
+										<label for="a8_32">8</label>
+									</span>
+								    <span>
+										<input name="lvList9" class="lvList9" type="checkbox" value="32" id="a9_32" >
+										<label for="a9_32">9</label>
+									</span>
+								    
+								    </td>
+							     </tr>
+								 
+								
+								 
+								
+								 
+								
+
+								 
+								<tr>
+									<td rowspan="2">주요사업홍보관리</td>
+									
+									<td>게시판 항목관리</td><td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('37');">삭제</a></td>
+									<td>
+									<span>
+										<input name="lvList0" class="lvList0" type="checkbox" value="37" id="a0_37"  checked="checked">
+										<label for="a0_37">0</label>
+									</span>
+									
+								    <span>
+										<input name="lvList1" class="lvList1" type="checkbox" value="37" id="a1_37" >
+										<label for="a1_37">1</label>
+									</span>
+								    <span>
+										<input name="lvList2" class="lvList2" type="checkbox" value="37" id="a2_37" >
+										<label for="a2_37">2</label>
+									</span>
+								    <span>
+										<input name="lvList3" class="lvList3" type="checkbox" value="37" id="a3_37" >
+										<label for="a3_37">3</label>
+									</span>
+								    <span>
+										<input name="lvList4" class="lvList4" type="checkbox" value="37" id="a4_37" >
+										<label for="a4_37">4</label>
+									</span>
+								    <span>
+										<input name="lvList5" class="lvList5" type="checkbox" value="37" id="a5_37" >
+										<label for="a5_37">5</label>
+									</span>
+								    <span>
+										<input name="lvList6" class="lvList6" type="checkbox" value="37" id="a6_37" >
+										<label for="a6_37">6</label>
+									</span>
+								    <span>
+										<input name="lvList7" class="lvList7" type="checkbox" value="37" id="a7_37" >
+										<label for="a7_37">7</label>
+									</span>
+								    <span>
+										<input name="lvList8" class="lvList8" type="checkbox" value="37" id="a8_37" >
+										<label for="a8_37">8</label>
+									</span>
+								    <span>
+										<input name="lvList9" class="lvList9" type="checkbox" value="37" id="a9_37"  checked="checked">
+										<label for="a9_37">9</label>
+									</span>
+								    
+								    </td>
+							     </tr>
+								 
+								<tr>
+									
+									<td>주요사업 홍보</td><td><a href="#none" class="btn_ss1 blue" onclick="changeUseYn('cms161');">삭제</a></td>
+									<td>
+									<span>
+										<input name="lvList0" class="lvList0" type="checkbox" value="cms161" id="a0_cms161"  checked="checked">
+										<label for="a0_cms161">0</label>
+									</span>
+									
+								    <span>
+										<input name="lvList1" class="lvList1" type="checkbox" value="cms161" id="a1_cms161" >
+										<label for="a1_cms161">1</label>
+									</span>
+								    <span>
+										<input name="lvList2" class="lvList2" type="checkbox" value="cms161" id="a2_cms161" >
+										<label for="a2_cms161">2</label>
+									</span>
+								    <span>
+										<input name="lvList3" class="lvList3" type="checkbox" value="cms161" id="a3_cms161" >
+										<label for="a3_cms161">3</label>
+									</span>
+								    <span>
+										<input name="lvList4" class="lvList4" type="checkbox" value="cms161" id="a4_cms161" >
+										<label for="a4_cms161">4</label>
+									</span>
+								    <span>
+										<input name="lvList5" class="lvList5" type="checkbox" value="cms161" id="a5_cms161" >
+										<label for="a5_cms161">5</label>
+									</span>
+								    <span>
+										<input name="lvList6" class="lvList6" type="checkbox" value="cms161" id="a6_cms161" >
+										<label for="a6_cms161">6</label>
+									</span>
+								    <span>
+										<input name="lvList7" class="lvList7" type="checkbox" value="cms161" id="a7_cms161" >
+										<label for="a7_cms161">7</label>
+									</span>
+								    <span>
+										<input name="lvList8" class="lvList8" type="checkbox" value="cms161" id="a8_cms161" >
+										<label for="a8_cms161">8</label>
+									</span>
+								    <span>
+										<input name="lvList9" class="lvList9" type="checkbox" value="cms161" id="a9_cms161" >
+										<label for="a9_cms161">9</label>
+									</span>
+								    
+								    </td>
+							     </tr>
+								 
+								 
+								
+								 
+							</tbody>
+						</table>
+						
+						<!-- Paging -->
+						<div id="paging">
+							<a href="#none"><img src="../common/images/comm/btn_arrow_ll.gif" alt="맨 처음" /></a>
+							<a href="#none"><img src="../common/images/comm/btn_arrow_l.gif" alt="이전" /></a>
+							<span>
+								<a href="#none" class="active">1</a>
+								<a href="#none">2</a>
+								<a href="#none">3</a>
+								<a href="#none">4</a>
+								<a href="#none">5</a>
+								<a href="#none">6</a>
+								<a href="#none">7</a>
+								<a href="#none">8</a>
+								<a href="#none">9</a>
+								<a href="#none">10</a>
+							</span>
+							<a href="#none"><img src="../common/images/comm/btn_arrow_r.gif" alt="다음" /></a>
+							<a href="#none"><img src="../common/images/comm/btn_arrow_rr.gif" alt="맨 끝" /></a>
+						</div>
+						<!--// Paging -->
+					</form>
+
+				</div>
+				<!--//sub_cont-->
+			</div>
+		</div>
+		<!--// container -->
+		
+		<!-- footer -->
+		<div id="footer">
+			<div class="inner">
+				<div class="address">
+					관리기관 : 서울특별시 용산구 청파로 345, 주연빌딩 3,4,5,6층(서계동) 04303 &nbsp;&nbsp;&nbsp; 대표전화 : 02-6901-0100
+				</div>
+				<div class="foot_copy">Copyright(c) The Office for Korea Childcare Promotion Institute, All Rights Reserved.</div>
+			</div>
+		</div>
+		<!--// footer -->
+	</div>
+ </body>
+</html>

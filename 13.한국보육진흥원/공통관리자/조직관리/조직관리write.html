@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link href="../common/css/base.css" rel="stylesheet" type="text/css" />
+<link href="../common/css/comm.css" rel="stylesheet" type="text/css" />
+<link href="../common/css/layout.css" rel="stylesheet" type="text/css" />
+<link href="../common/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script src="../common/js/jquery-1.12.4.min.js" type="text/javascript"></script>
+<script src="../common/js/common.js" type="text/javascript"></script>
+<script src="../common/js/jquery-ui.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+  	$(".left > ul > li > a").click(function(){
+		$(this).next().slideToggle(300);
+		$(this).addClass('on');
+		// $(this).next().slideDown(300);
+		$(".left > ul > li > a").not(this).next().slideUp(300);
+		$(".left > ul > li > a").not(this).removeClass('on');
+	});
+  });
+</script>
+<title>한국보육진흥원 SB 관리자</title>
+</head>
+ <body>
+	<div id="wrapper">
+		
+		<!-- header -->
+		<div id="header">
+			<div class="header_area">
+				<h1><a href="#none"><img src="../common/images/comm/logo.jpg" alt="한국보육진흥원" /></a></h1>
+				<p class="user_rank">Administrator</p>
+				<ul class="util">
+					<li><strong>홍길동(행정지원팀)님을 환영합니다.</strong></li>
+					<!--<li><a href="#none">정보수정</a></li>-->
+					<li><a href="#none">로그아웃</a></li>
+				</ul>
+			</div>
+			<div class="gnb_area">
+				<ul id="nav">
+					<li><a href="#none">관리자체크</a></li>
+					<li><a href="#none" class="on">홈페이지</a></li>
+					<li><a href="#none">온라인교육</a></li>
+					<li><a href="#none">비전보육인</a></li>
+					<li><a href="#none">마음성장</a></li>
+					<li><a href="#none">공공형어린이집</a></li>
+				</ul>
+			</div>
+		</div>
+		<!--// header -->
+		
+		<!-- container -->
+		<div id="container">
+			<div class="contents">
+				<!--left-->
+				<div class="left">
+					<h2>홈페이지</h2>
+					<ul>
+						<li><a href="#">콘텐츠관리</a></li>
+	                    <li><a href="#">게시판관리</a>
+	                        <ul>        
+	                            <li><a href="#none">윤리·인권 경영 정보 </a></li> 
+	                            <li><a href="#none">윤리·인권 경영 활동</a></li> 
+	                            <li><a href="#none">사업실명제</a></li>  
+	                        </ul>
+	                    </li>
+	                    <li><a href="#">팝업관리</a>
+	                    	<ul>        
+	                            <li><a href="#none">메인팝업관리</a></li>
+	                        </ul>
+	                    </li>
+	                    <li><a href="#">회원관리</a></li>
+	                    <li><a href="#" class="on">조직관리</a></li>
+	                    <li><a href="#">접속자통계</a>
+	                    	<ul>        
+	                            <li><a href="#none">년도별현황</a></li>
+	                            <li><a href="#none">월별현황</a></li>
+	                            <li><a href="#none">일별현황</a></li>
+	                        </ul>
+	                    </li>
+	                    <li><a href="#">시스템관리</a>
+	                    	<ul>        
+	                            <li><a href="#none">관리자리스트</a></li>
+	                            <li><a href="#none">관리자정보수정</a></li>
+	                            <li><a href="#none">운영자접속IP관리</a></li>
+	                            <li><a href="#none">관리자 권한 설정</a></li>
+	                        </ul>
+	                    </li>
+	                    <li><a href="#">국민소통</a>
+	                    	<ul>        
+	                            <li><a href="#none">질의응답</a>
+	                            	<ul class="ul03">
+	                            		<li><a href="#none">- 어린이평가</a></li>
+	                            		<li><a href="#none">- 보육교직원보수교육</a></li>
+	                            	</ul>
+	                            </li>
+	                            <li><a href="#none">부모교육</a>
+	                            	<ul class="ul03">
+	                            		<li><a href="#none">- 아이누리교육영상</a></li>
+	                            		<li><a href="#none">- 아이누리교육정보</a></li>
+	                            	</ul>
+	                            </li>
+	                            <li><a href="#none">설문조사</a></li>
+	                            <li><a href="#none">칭찬게시판</a></li>
+	                        </ul>
+	                    </li>
+	                    <li><a href="#">사이버홍보</a>
+	                    	<ul>
+	                    		<li><a href="#none">공지사항</a></li> 
+	                    		<li><a href="#none">보도자료</a>
+	                    			<ul class="ul03">
+	                            		<li><a href="#none">- 진흥원 보도자료</a></li>
+	                            		<li><a href="#none">- 보육관련 보도자료</a></li>
+	                            	</ul>
+	                    		</li>  
+	                    		<li><a href="#none">입찰공고</a></li>
+	                            <li><a href="#none">채용공고</a></li>     
+	                            <li><a href="#none">법령 및 지침</a>
+	                            	<ul class="ul03">
+	                            		<li><a href="#none">- 법령 및 보육사업안내</a></li>
+	                            		<li><a href="#none">- 기타지침</a></li>
+	                            	</ul>
+	                            </li>
+	                            <li><a href="#none">사업관련자료</a>
+	                            	<ul class="ul03">
+	                            		<li><a href="#none">- 어린이집 평가인증 안내</a></li>
+	                            		<li><a href="#none">- 어린이집 평가인증 교육자료</a></li>
+	                            		<li><a href="#none">- 어린이집 평가인증 관련 서식</a></li>
+	                            		<li><a href="#none">- 보육교직원 자격증 서식</a></li>
+	                            		<li><a href="#none">- 보육교직원 자격 기준</a></li>
+	                            		<li><a href="#none">- 보육교직원 자격 기타</a></li>
+	                            		<li><a href="#none">- 공공형어린이집</a></li>
+	                            		<li><a href="#none">- 시간제보육</a></li>
+	                            	</ul>
+	                            </li>
+	                            <li><a href="#none">발간물</a></li>
+	                            <li><a href="#none">보육통계</a></li>
+	                            <li><a href="#none">기관홍보관</a>
+	                            	<ul class="ul03">
+	                            		<li><a href="#none">- 홍보자료</a></li>
+	                            		<li><a href="#none">- 홍보영상</a></li>
+	                            		<li><a href="#none">- 기관갤러리</a></li>
+	                            		<li><a href="#none">- 뉴스레터</a></li>
+	                            	</ul>
+	                            </li>
+	                        </ul>
+	                    </li> 
+	                    <li><a href="#">주요사업 홍보</a></li>
+	                </ul>
+				</div>
+				<!--//left-->
+				<!--sub_cont-->
+				<div class="sub_cont">
+					<h2 class="tit">조직관리</h2>
+					<div id="lnb">
+						<a href="#none" class="home">조직관리</a>
+						<span class="line"><img src="../common/images/comm/lnb_arrow.gif" alt=">" /></span>
+						<span>조직관리</span>
+					</div>
+					<form name="bbsListFrame" method="post" action="">
+						<table class="register02">
+							<caption>조직관리 글쓰기</caption>
+							<colgroup>
+								<col style="width:20%;" />
+								<col style="width:*%;" />
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">부서</th>
+									<td>
+										<select name="s_BIZ_CONDITIONS_CD" id="s_BIZ_CONDITIONS_CD" class="select_a1 w30" title="부서 선택해주세요">
+											<option value="0">부서를 선택하세요.</option><option value="282" selected="">경영기획국</option><option value="283">경영기획국</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">팀</th>
+									<td>
+										<select name="s_BIZ_CONDITIONS_CD" id="s_BIZ_CONDITIONS_CD" class="select_a1 w30" title="팀선택헤주세요">
+											<option value="0">팀전체를 선택하세요.</option><option value="282" selected="">경영기획국</option><option value="283">경영기획국</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">이름</th>
+									<td>
+										<label for="name" class="hidden">이름</label><input type="text" class="intx w90" id="name" />
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">직위</th>
+									<td>
+										<label for="spot" class="hidden">직위</label><input type="text" class="intx w90" id="spot" />
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">담당업무</th>
+									<td>
+										<textarea name="eobmu" id="eobmu" cols="30" rows="10" class="intt w90" title="담당업무 입력"></textarea>
+										<br /><span class="pt5 db fs13">(내용은 영문 4000자, 한글은 2000자 까지만 입력하실수 있습니다)</span>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">전화번호</th>
+									<td>
+										<select class="select_a1" id="M_TEL1" name="M_TEL1" title="지역번호 선택">
+											<option value='02' selected>02</option><option value='051'>051</option><option value='053'>053</option><option value='032'>032</option><option value='062'>062</option><option value='042'>042</option><option value='052'>052</option><option value='044'>044</option><option value='031'>031</option><option value='033'>033</option><option value='043'>043</option><option value='041'>041</option><option value='063'>063</option><option value='061'>061</option><option value='054'>054</option><option value='055'>055</option><option value='064'>064</option><option value='070'>070</option>
+										</select>
+										-
+										<input type="text" class="intx" style="width:60px;" id="M_TEL2" name="M_TEL2" maxlength="4" value="" title="가운데 번호를 입력" />
+										-
+										<input type="text" class="intx" style="width:60px;" id="M_TEL3" name="M_TEL3" maxlength="4" value="" title="마지막 번호르 입력" />
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">이메일</th>
+									<td>
+										<input type="text" class="intx w20" id="M_EMAIL1" name="M_EMAIL1" maxlength="50" value="" title="아이디 입력" />
+										&nbsp;@&nbsp;
+										<input type="text" class="intx"  id="M_EMAIL2"  name="M_EMAIL2"  maxlength="30"   value="" style="ime-mode:disabled;" / title="도메인 직접 입력">
+										<select class="select_a1"  name="selectEmail" id="selectEmail" title="도메인 선택">
+											<option value='etc'>직접선택</option><option value='hanmail.net'>hanmail.net</option> <option value='hotmail.com'>hotmail.com</option> <option value='nate.com'>nate.com</option> <option value='yahoo.co.kr'>yahoo.co.kr</option> <option value='empas.com'>empas.com</option> <option value='dreamwiz.com'>dreamwiz.com</option> <option value='freechal.com'>freechal.com</option> <option value='lycos.co.kr'>lycos.co.kr</option> <option value='korea.com'>korea.com</option> <option value='gmail.com'>gmail.com</option> <option value='hanmir.com'>hanmir.com</option> <option value='paran.com'>paran.com</option>
+										</select> 
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">학력</th>
+									<td>
+										<textarea name="haglyeog" id="haglyeog" cols="30" rows="10" class="intt w90" title="학력을 입력해주세요"></textarea>
+										<br /><span class="pt5 db fs13">(내용은 영문 4000자, 한글은 2000자 까지만 입력하실수 있습니다)</span>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">경력</th>
+									<td>
+										<textarea name="career" id="career" cols="30" rows="10" class="intt w90" title="경력을 입력해주세요"></textarea>
+										<br /><span class="pt5 db fs13">(내용은 영문 4000자, 한글은 2000자 까지만 입력하실수 있습니다)</span>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">순서</th>
+									<td>
+										<label for="n" class="hidden">순서</label><input type="text" class="intx w5" id="n" />
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					
+						<!-- btn_area -->
+						<div id="btn_area" class="ar">
+							<a href="#none" class="btn_a1 blue">확인</a>
+							<a href="#none" class="btn_a1">다시입력</a>
+							<a href="#none" class="btn_a1 gray">취소</a>
+						</div>
+						<!-- //btn_area -->
+					</form>
+				</div>
+				<!--//sub_cont-->
+			</div>
+		</div>
+		<!--// container -->
+		
+		<!-- footer -->
+		<div id="footer">
+			<div class="inner">
+				<div class="address">
+					관리기관 : 서울특별시 용산구 청파로 345, 주연빌딩 3,4,5,6층(서계동) 04303 &nbsp;&nbsp;&nbsp; 대표전화 : 02-6901-0100
+				</div>
+				<div class="foot_copy">Copyright(c) The Office for Korea Childcare Promotion Institute, All Rights Reserved.</div>
+			</div>
+		</div>
+		<!--// footer -->
+	</div>
+</body>
+</html>
