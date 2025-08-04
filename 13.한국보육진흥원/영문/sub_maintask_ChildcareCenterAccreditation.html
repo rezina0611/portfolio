@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!--<meta name="viewport" content="width=1200">-->
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<title>Childcare Center Accreditation > Main Task > KCPI</title>
+<meta name="title" content="Korea Childcare Promotion Institute">
+<meta name="description" content="A world where children, parents, and caregivers are happy">
+<meta name="author" content="KCPI"> 
+
+<link rel="stylesheet" type="text/css" href="./common/css/basic.css">
+<link rel="stylesheet" type="text/css" href="./common/css/layout.css">
+<link rel="stylesheet" type="text/css" href="./common/css/sub.css">
+<link rel="stylesheet" type="text/css" href="./common/css/slick.css"/>
+<link rel="shortcut icon" href="./common/img/logo.ico" type="image/x-icon">
+<!--IE8 이하에서 HTML5, CSS3 사용하기 (html5shiv, IE9.js, css3pie)-->
+<!--IE9 보다 낮은 버전을 위한 라이브러리 (IE9.js)-->
+<!--[if lt IE 9]>
+    <script src="./common/js/html5shiv.js"></script>
+    <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<![endif]-->
+<script type="text/javascript" src="./common/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="./common/js/comm.js"></script>
+<script type="text/javascript" src="./common/js/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="./common/js/slick.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		//$(window).scroll(function() {  //스크롤이벤트가 발생하면 
+			var sct = $(window).scrollTop() + parseInt($(window).height() / 2);  // 스크롤이 이동한 값 + 보여지는 창의 높이 $(window).height() 를 실수로 바꿔준다 (parseInt)
+
+			$('.bg_main_00').addClass('on');  // bg_main_00 클래스에 on 클래스 추가 
+
+			$('.section').each( function(){ //선택한 요소을 각 요소마다 반복하면서 순차적으로 콜백함수 실행 
+				var stt = $(this).position().top;  // 각자의 위치 값을 할당
+
+				if(stt < sct){  // 만약 각각의 위치값이  스크롤이 이동한 값 + 윈도우 보여지는 창의 높이길이 보다 작으면 on 클래스 추가
+					$(this).addClass('on');
+            	}else{   // 그렇지 않으면 on 클래스 제거 
+					$(this).removeClass('on');
+				}	
+			});
+		});
+	//});
+</script>
+</head>
+<body>
+<!-- wrapper -->
+<div id="wrapper">
+	<div class="dimed" style="display:none;"></div>
+	<!--header-->
+	<div id="header">
+		<!--inner area-->
+		<div class="inner area">
+			<h1><a href="#none"><img src="./common/img/icon/logo.png" alt="KCPI"></a></h1>
+			<div class="fr mt20">
+				<ul class="aside_menu">
+					<li><a class="icon1" href="#none">HOME</a></li>
+					<li><a class="icon2" href="#none">KOREAN</a></li>
+					<li>
+						<div id="mn-ctrs-btns">
+							<button type="button" class="mn-ctrs-btn" title="클릭하면 메뉴가 열립니다">
+								<span class="blind">전체메뉴열기</span>
+							</button>
+						</div>
+					</li>				
+				</ul>
+			</div>
+		</div>
+		<!--//inner area-->
+		
+		<!--gnavi-->
+		<div id="gnavi">
+			<div class="inner">
+				<span class="menu_close"><a href="javascript:;"><img src="./common/img/icon/closeW.png" alt="모바일 주메뉴 닫기"></a></span>
+				<ul class="gnavi_list">
+					<li class="gnavi"><a href="#none">Home</a></li>
+					<li class="gnavi"><a href="#none">About KCPI</a>
+						<div class="gnavi_depth">
+							<ul>
+								<li><a href="#none">Greetings</a></li>
+								<li><a href="#none">Mission Statement &amp; History</a></li>
+								<li><a href="#none">Vision &amp; Strategy</a></li>
+								<li><a href="#none">Organizational Structure</a></li>
+								<li><a href="#none">Corporate Identity</a></li>
+								<li><a href="#none">Directions to the Office</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="gnavi"><a href="#none">Main Tasks</a>
+						<div class="gnavi_depth">
+							<ul>
+								<li><a href="#none">Childcare Center Accreditation</a></li>
+								<li><a href="#none">Credential &amp; Certificate of Early Childhood Educators</a></li>
+								<li><a href="#none">Empowerment of Early Childhood Educators</a></li>
+								<li><a href="#none">Part-time Educational Childcare Services</a></li>
+								<li><a href="#none">Quality Management of Public Childcare Centers</a></li>
+								<li><a href="#none">Dream Start Support Team</a></li>
+								<li><a href="#none">Central Support Center for Childcare</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="gnavi"><a href="#none">Communication</a>
+						<div class="gnavi_depth">
+							<ul>
+								<li><a href="#none">Online Education</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div id="gnb_bg"></div>
+		</div>
+		<!--//gnavi-->
+		
+	</div>
+	<!--//header-->
+
+	<div id="sub_visual" class="sub2">
+		<div class="title">
+			<h2>About KCPI</h2>
+		</div>
+		<span class="bg"></span>
+	</div>
+
+	<!--container-->
+	<div id="container" class="container">
+		<div class="innerWrap">
+			<!--side-->
+			<div class="side">
+				<h2 class="skip">서브 메뉴</h2>
+				<div class="tit"><strong>Main Task</strong></div>
+				<ul>
+					<li><a href="#none" class="on">Childcare Center <br />Accreditation</a></li>
+					<li><a href="#none">Credential & Certificate <br />of Early Childhood Educators</a></li>
+					<li><a href="#none">Empowerment of Early Childhood Educators</a></li>
+					<li><a href="#none">Part-time Educational Childcare Services</a></li>
+					<li><a href="#none">Quality Management <br />of Public Childcare Centers</a></li>
+					<li><a href="#none">Dream Start Support Team</a></li>
+					<li><a href="#none">Operation of Central Support Center for Childcare</a></li>
+				</ul>
+			</div>
+			<!--//side-->
+			<!--contentWrap-->
+			<div class="contentWrap">
+				<div class="content">
+					<h2 class="skip">본문</h2>
+					<!--sub_head-->
+					<div class="sub_head">
+						<div class="path">
+							<span class="home">HOME</span>
+							Main Task
+							<span class="arrow">&gt;</span> <strong>Childcare Center Accreditation</strong>
+						</div>
+						<div class="sub_title">
+							<h2>Childcare Center Accreditation</h2>
+						</div>
+					</div>
+					<!--//sub_head-->
+					<!--contentBody-->
+					<div class="contentBody">
+						<!--textArea-->
+						<div class="textArea">
+							<h4>Accreditation System</h4>
+							<div class="innerbox clearfix">
+								<div class="left">
+									<p>The system issues the certificate to the childcare center through a fair evaluation process after it self-inspections and improves its quality based on the indicators.</p>
+								</div>
+								<div class="right">
+									<a href="http://kce.kcpi.or.kr/" class="btnMd02" target="_blank" title="새창열림" style="height:0;"><span>http://kce.kcpi.or.kr</span></a>
+								</div>
+							</div>
+						</div>
+						<!--//textArea-->
+						<div class="textArea">
+							<h4>History</h4>
+							<img src="./common/img/comm/cnt4_img.jpg" alt="2004 Establish the legal ground Article 30 of infant Care Act → 2005 Pilot operation → 2006Implement the First indicator → 2010 Implement the Second indicator → 2014 Implement the third Pilot indicator → 2017 Implement the third indicator → 2019 Implement the indicator">
+						</div>
+						<div class="textArea">
+							<h4>Indicator Composition: 4 areas, 21 indicators, 79 items</h4>
+							<div class="tac mt60 mb60">
+								<img src="./common/img/comm/cnt6_img.jpg" alt="Indicator Composition(Educational Childcare Curriculum & Interactions, Educational Childcare Environments & Operating Management, Health - Safety, Staff">
+							</div>
+
+							<h4>Operation Process</h4>
+							<p class="txt-h2">The Accreditation of Childcare Center must Proceeds through 4 Steps</p>
+							<div class="tableStyle01">
+								<table>
+									<caption>Operation Process - 1STEP, 2STEP, 3STEP, 4STEP</caption>
+									<colgroup>
+										<col style="width:15%;">
+										<col style="width:20%;">
+										<col>
+									</colgroup>
+									<tbody>
+										<tr>
+											<th class="borL0" scope="row">1STEP</th>
+											<td class="tal">Check the Participation</td>
+											<td class="tal">Check the basics, self-inspection, and payment of fees</td>
+										</tr>
+										<tr>
+											<th class="borL0" scope="row">2STEP</th>
+											<td class="tal">Evaluation at the Center</td>
+											<td class="tal">Visits by observers in person</td>
+										</tr>
+										<tr>
+											<th class="borL0" scope="row">3STEP</th>
+											<td class="tal">Integrated Evaluation</td>
+											<td class="tal">Decision on accreditation</td>
+										</tr>
+										<tr>
+											<th class="borL0" scope="row">4STEP</th>
+											<td class="tal">Result Announcement</td>
+											<td class="tal">Notification of individual results and public announcement of information</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="textArea">
+							<h4>Accreditation Criteria</h4>
+							<div class="tableScroll">
+								<div class="tableStyle01">
+									<table>
+										<caption>Accreditation Criteria - </caption>
+										<colgroup>
+											<col style="width:25%;">
+											<col style="width:25%;">
+											<col style="width:25%;">
+											<col style="width:25%;">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" class="borL0">Class of Childcare Centers</th>
+												<th scope="col">Accreditation Result</th>
+												<th scope="col">Accreditation Term</th>
+												<th scope="col">Notes</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="borL0">A</td>
+												<td>Approved</td>
+												<td>Four-yea</td>
+												<td>-</td>
+											</tr>
+											<tr>
+												<td class="borL0">B</td>
+												<td>Approved</td>
+												<td>Three-year</td>
+												<td rowspan="2">B, C Class centers may re-apply once within a year</td>
+											</tr>
+											<tr>
+												<td class="borL0">C</td>
+												<td>Approved</td>
+												<td>Two-year</td>
+											</tr>
+											<tr>
+												<td class="borL0">D</td>
+												<td>Approved</td>
+												<td>-</td>
+												<td>D Class centers may re-apply once before public announcement</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="textArea">
+								<h4>Result Announcement</h4>
+								<p>Site for public announcement of integrated information (www.childinfo.go.kr)<br />Open the results of evaluation (class by areas, class of childcare centers, evaluation result paper)</p>
+								<div class="tableScroll">
+									<div class="tableStyle01">
+										<table>
+											<caption>Result Announcement - </caption>
+											<colgroup>
+												<col style="width:30%;">
+												<col style="width:70%;">
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col" class="borL0">Class</th>
+													<th scope="col">Result Announcement</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="borL0">A, B, C Classes</td>
+													<td>Accreditation approved (A, B, C classes)</td>
+												</tr>
+												<tr>
+													<td class="borL0">D Class</td>
+													<td>Disapproved (D class)</td>
+												</tr>
+												<tr>
+													<td class="borL0">Accreditation cancelled,<br />terminated, expired</td>
+													<td>Non-Accreditation (cancelled, terminated, expired)</td>
+												</tr>
+												<tr>
+													<td class="borL0">Non-participant</td>
+													<td>Non-Accreditation (non-applicants of accreditation)</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+
+							<div class="textArea">
+								<h4>Follow-Up Services</h4>
+								<p>KCPI provides supports and services to improve and maintain the approved level of educational childcare services until the expiration date.</p>
+								<div class="tableScroll">
+									<div class="tableStyle01">
+										<table>
+											<caption>Follow-Up Services - Items, Contents</caption>
+											<colgroup>
+												<col style="width:30%;">
+												<col style="width:70%;">
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col" class="borL0">Items</th>
+													<th scope="col">Contents</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="borL0">Annual self-inspection</td>
+													<td>The annual self-inspection of the quality of childcare center and submission of the report</td>
+												</tr>
+												<tr>
+													<td class="borL0">Inspection to confirm</td>
+													<td>Confirm whether the quality of the certified childcare center is maintained or not (surprise visits)</td>
+												</tr>
+												<tr>
+													<td class="borL0">Visit to confirm</td>
+													<td>Confirm whether the quality of the childcare center is maintained when there is a factor <br />(e.g.,change of location, etc.) changing the quality of the center</td>
+												</tr>
+												<tr>
+													<td class="borL0">Cancel the Accreditation & <br />Termination Management</td>
+													<td>Cancellation and termination of accreditation in case of the violation of 「Infant Care Act」, 「The Child Welfare Law」 & 「 Sex of the Child and Youth Protection Act」 administrative disposition the change of representative, etc.</td>
+												</tr>
+												<tr>
+													<td class="borL0">New Director’s Training</td>
+													<td>Compulsive education course in case the director of childcare center is changed</td>
+												</tr>
+												<tr>
+													<td class="borL0">Training on Indicators</td>
+													<td>Provision of information, training on operation system & indicators of accreditation(on-line and off-line)</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div><!--//contentBody-->
+				</div><!--//content-->
+			</div>
+			<!--//contentWrap-->
+		</div>
+	</div>
+	<!--//container-->
+
+	<!--footer-->
+	<div id="footer">
+		<div class="inwrap">
+			<div class="footer_info">
+				<address>Juyeon Bldg. 3~6fl., 345, Cheongpa-ro, Yongsan-gu, Seoul, Republic of Korea&nbsp;&nbsp;|&nbsp;&nbsp;TEL.82-2-6901-0100&nbsp;&nbsp;|&nbsp;&nbsp;FAX.82-2-6901-0141</address>
+				<p class="copy">Copyright© The Ofifice for Korea Childcare Promotion Institute, All Right Reserved</p>
+			</div>
+			<!--footer_links-->
+			<div class="footer_links">
+				<h2 class="skip">Relation Site and Family Site go</h2>
+				<div class="selectbox">
+					<a href="" class="tit">Relation Site</a>
+					<div class="cont_box">
+						<ul>
+							<li><a href="http://www.mohw.go.kr" title="새창열림" target="_blank">MHaW</a></li>
+							<li><a href="http://www.koreaeducare.or.kr" title="새창열림" target="_blank">korea edu-care</a></li>
+					        <li><a href="http://www.kicce.re.kr" title="새창열림" target="_blank">KICCE</a></li>
+					        <li><a href="http://www.korea1391.go.kr" title="새창열림" target="_blank">korea1391</a></li>
+					        <li><a href="http://www.bokjiro.go.kr" title="새창열림" target="_blank">bokjiro</a></li>
+					        <li><a href="http://www.childcare.go.kr" title="새창열림" target="_blank">childcare</a></li>
+					        <li><a href="http://www.ssis.or.kr" title="새창열림" target="_blank">ssis</a></li>
+					        <li><a href="http://www.csia.or.kr" title="새창열림" target="_blank">csia</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="selectbox">
+					<a href="" class="tit">Family Site</a>
+					<div class="cont_box">
+						<ul>
+					        <li><a href="http://kce.kcpi.or.kr" title="새창열림" target="_blank">kcpi</a></li>
+					        <li><a href="http://chrd.childcare.go.kr" title="새창열림" target="_blank">i-sarang</a></li>
+					        <li><a href="http://central.childcare.go.kr" title="새창열림" target="_blank">educare</a></li>
+					        <li><a href="http://info.childcare.go.kr/info/pnis/search/UnitySearchSlL.jsp" title="새창열림" target="_blank">childcare</a></li>
+					        <li><a href="https://www.kcpi.or.kr/thebcc/main" title="새창열림" target="_blank">thebcc</a></li>
+					        <li><a href="https://mindup.kcpi.or.kr" title="새창열림" target="_blank">mindup</a></li>
+					        <li><a href="https://edu.kcpi.or.kr/index.php" title="새창열림" target="_blank">Online Education</a></li>
+				    	</ul>
+				    </div> 
+				</div>
+			</div>
+			<!--//footer_links-->
+		</div>
+	</div>
+	<!--//footer-->
+</div>
+<!-- wrapper -->
+</body>
+</html>

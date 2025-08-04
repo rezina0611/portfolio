@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!--<meta name="viewport" content="width=1200">-->
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<title>Empowerment of Early Childhood Educators > Main Task > KCPI</title>
+<meta name="title" content="Korea Childcare Promotion Institute">
+<meta name="description" content="A world where children, parents, and caregivers are happy">
+<meta name="author" content="KCPI"> 
+
+<link rel="stylesheet" type="text/css" href="./common/css/basic.css">
+<link rel="stylesheet" type="text/css" href="./common/css/layout.css">
+<link rel="stylesheet" type="text/css" href="./common/css/sub.css">
+<link rel="stylesheet" type="text/css" href="./common/css/slick.css"/>
+<link rel="shortcut icon" href="./common/img/logo.ico" type="image/x-icon">
+<!--IE8 이하에서 HTML5, CSS3 사용하기 (html5shiv, IE9.js, css3pie)-->
+<!--IE9 보다 낮은 버전을 위한 라이브러리 (IE9.js)-->
+<!--[if lt IE 9]>
+    <script src="./common/js/html5shiv.js"></script>
+    <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<![endif]-->
+<script type="text/javascript" src="./common/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="./common/js/comm.js"></script>
+<script type="text/javascript" src="./common/js/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="./common/js/slick.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		//$(window).scroll(function() {  //스크롤이벤트가 발생하면 
+			var sct = $(window).scrollTop() + parseInt($(window).height() / 2);  // 스크롤이 이동한 값 + 보여지는 창의 높이 $(window).height() 를 실수로 바꿔준다 (parseInt)
+
+			$('.bg_main_00').addClass('on');  // bg_main_00 클래스에 on 클래스 추가 
+
+			$('.section').each( function(){ //선택한 요소을 각 요소마다 반복하면서 순차적으로 콜백함수 실행 
+				var stt = $(this).position().top;  // 각자의 위치 값을 할당
+
+				if(stt < sct){  // 만약 각각의 위치값이  스크롤이 이동한 값 + 윈도우 보여지는 창의 높이길이 보다 작으면 on 클래스 추가
+					$(this).addClass('on');
+            	}else{   // 그렇지 않으면 on 클래스 제거 
+					$(this).removeClass('on');
+				}	
+			});
+		});
+	//});
+</script>
+</head>
+<body>
+<!-- wrapper -->
+<div id="wrapper">
+	<div class="dimed" style="display:none;"></div>
+	<!--header-->
+	<div id="header">
+		<!--inner area-->
+		<div class="inner area">
+			<h1><a href="#none"><img src="./common/img/icon/logo.png" alt="KCPI"></a></h1>
+			<div class="fr mt20">
+				<ul class="aside_menu">
+					<li><a class="icon1" href="#none">HOME</a></li>
+					<li><a class="icon2" href="#none">KOREAN</a></li>
+					<li>
+						<div id="mn-ctrs-btns">
+							<button type="button" class="mn-ctrs-btn" title="클릭하면 메뉴가 열립니다">
+								<span class="blind">전체메뉴열기</span>
+							</button>
+						</div>
+					</li>				
+				</ul>
+			</div>
+		</div>
+		<!--//inner area-->
+		
+		<!--gnavi-->
+		<div id="gnavi">
+			<div class="inner">
+				<span class="menu_close"><a href="javascript:;"><img src="./common/img/icon/closeW.png" alt="모바일 주메뉴 닫기"></a></span>
+				<ul class="gnavi_list">
+					<li class="gnavi"><a href="#none">Home</a></li>
+					<li class="gnavi"><a href="#none">About KCPI</a>
+						<div class="gnavi_depth">
+							<ul>
+								<li><a href="#none">Greetings</a></li>
+								<li><a href="#none">Mission Statement &amp; History</a></li>
+								<li><a href="#none">Vision &amp; Strategy</a></li>
+								<li><a href="#none">Organizational Structure</a></li>
+								<li><a href="#none">Corporate Identity</a></li>
+								<li><a href="#none">Directions to the Office</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="gnavi"><a href="#none">Main Tasks</a>
+						<div class="gnavi_depth">
+							<ul>
+								<li><a href="#none">Childcare Center Accreditation</a></li>
+								<li><a href="#none">Credential &amp; Certificate of Early Childhood Educators</a></li>
+								<li><a href="#none">Empowerment of Early Childhood Educators</a></li>
+								<li><a href="#none">Part-time Educational Childcare Services</a></li>
+								<li><a href="#none">Quality Management of Public Childcare Centers</a></li>
+								<li><a href="#none">Dream Start Support Team</a></li>
+								<li><a href="#none">Central Support Center for Childcare</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="gnavi"><a href="#none">Communication</a>
+						<div class="gnavi_depth">
+							<ul>
+								<li><a href="#none">Online Education</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div id="gnb_bg"></div>
+		</div>
+		<!--//gnavi-->
+		
+	</div>
+	<!--//header-->
+
+	<div id="sub_visual" class="sub2">
+		<div class="title">
+			<h2>About KCPI</h2>
+		</div>
+		<span class="bg"></span>
+	</div>
+
+	<!--container-->
+	<div id="container" class="container">
+		<div class="innerWrap">
+			<!--side-->
+			<div class="side">
+				<h2 class="skip">서브 메뉴</h2>
+				<div class="tit"><strong>Main Task</strong></div>
+				<ul>
+					<li><a href="#none">Childcare Center <br />Accreditation</a></li>
+					<li><a href="#none">Credential & Certificate <br />of Early Childhood Educators</a></li>
+					<li><a href="#none" class="on">Empowerment of Early Childhood Educators</a></li>
+					<li><a href="#none">Part-time Educational Childcare Services</a></li>
+					<li><a href="#none">Quality Management <br />of Public Childcare Centers</a></li>
+					<li><a href="#none">Dream Start Support Team</a></li>
+					<li><a href="#none">Operation of Central Support Center for Childcare</a></li>
+				</ul>
+			</div>
+			<!--//side-->
+			<!--contentWrap-->
+			<div class="contentWrap">
+				<div class="content">
+					<h2 class="skip">본문</h2>
+					<!--sub_head-->
+					<div class="sub_head">
+						<div class="path">
+							<span class="home">HOME</span>
+							Main Task
+							<span class="arrow">&gt;</span> <strong>Empowerment of Early Childhood Educators</strong>
+						</div>
+						<div class="sub_title">
+							<h2>Empowerment of Early Childhood Educators</h2>
+						</div>
+					</div>
+					<!--//sub_head-->
+					<!--contentBody-->
+					<div class="contentBody">
+						<div class="page_box">KCPI provides tailored education and implements support projects by subject fields for the purpose of empowering the professionalism and performance ability of early childhood educators.</div>
+						<!--textArea-->
+						<div class="textArea">
+							<h4>Character Education and Evaluation of Early Childhood Educators</h4>
+							<p>KCPI aims to build the character of early childhood educators by having the educators, first, make the self-diagnosis of their own characters and participate in character education.</p>
+
+							<div class="btnArea">
+								<a href="https://mindup.kcpi.or.kr/" title="새창열림" target="_blank" class="btnMd01 btnbg4b"><span>Go Directly to the Homepage for Character Education and Evaluation of Early Childhood Educators</span></a>
+							</div>
+
+							<h4>Evaluate the Re-education Programs</h4>
+							<p>KCPI aims to inspect and evaluate the current operating state of institutions which conduct re-education programs for early childhood educators and improve the quality standard of re-education through providing consulting based on the evaluation results. </p>
+
+							<h4>Support for Educational Childcare Services for the Young at Risk</h4>
+							<p>KCPI seeks to establish projects needed in the educational childcare field and provide various educational childcare services in order to improve the quality standard of the childcare services for the young children at risk (the disabled and/or the multicultural).</p>
+							<ul>
+								<li>Develop and distribute the educational childcare programs for the children at risk (the disabled and/or the multicultural). </li>
+								<li>Educate early childhood educators for the children at risk (the disabled and/or the multicultural).</li>
+								<li>Provide one-on-one customized consulting and group consulting of educational childcare programs for the children at risk (the disabled, and/or the multicultural) </li>
+							</ul>
+
+							<h4>Develop and Distribute the Online Educational Contents</h4>
+							<p>Newly developed educational contents involving various demands for educational childcare services will be uploaded and distributed(http://edu.kcpi.or.kr)</p>
+							<ul>
+								<li>Safe educational childcare programs, multicultural childcare services, time-extension type educational childcare services, part-time educational childcare services, etc.</li>
+							</ul>
+							<div class="btnArea">
+								<a href="https://edu.kcpi.or.kr/" title="새창열림" target="_blank" class="btnMd01 btnbg4b"><span>Go Directly to the Homepage of Online Education</span></a>
+							</div>
+						</div>
+						<!--//textArea-->
+					</div><!--//contentBody-->
+				</div><!--//content-->
+			</div>
+			<!--//contentWrap-->
+		</div>
+	</div>
+	<!--//container-->
+
+	<!--footer-->
+	<div id="footer">
+		<div class="inwrap">
+			<div class="footer_info">
+				<address>Juyeon Bldg. 3~6fl., 345, Cheongpa-ro, Yongsan-gu, Seoul, Republic of Korea&nbsp;&nbsp;|&nbsp;&nbsp;TEL.82-2-6901-0100&nbsp;&nbsp;|&nbsp;&nbsp;FAX.82-2-6901-0141</address>
+				<p class="copy">Copyright© The Ofifice for Korea Childcare Promotion Institute, All Right Reserved</p>
+			</div>
+			<div class="footer_links">
+				<div>
+					<div class="selectbox">
+						<label for="groupCompany">Relation Site</label>
+						<select id="selectbox1" name="selectbox1" class="input_select" title="Select relevant site to move" onchange="window.open(value,'_bkank');">
+                            <option selected="selected" value="NO">Relation Site</option>
+                            <option value="http://www.mohw.go.kr/" title="New window open">MHaW</option>
+                            <option value="http://www.koreaeducare.or.kr" title="New window open">korea edu-care</option>
+                            <option value="http://www.kicce.re.kr" title="New window open">KICCE</option>
+                            <option value="http://www.korea1391.go.kr/" title="New window open">korea1391</option>
+                            <option value="http://www.bokjiro.go.kr" title="New window open">bokjiro</option>
+                            <option value="http://www.childcare.go.kr" title="New window open">childcare</option>
+							<option value="http://www.ssis.or.kr" title="New window open">ssis</option>
+							<option value="http://www.csia.or.kr" title="New window open">csia</option>
+                        </select>
+                    </div>
+				</div>
+				<div>
+					<div class="selectbox">
+						<label for="groupCompany">Family Site</label>
+						<select id="selectbox2" name="selectbox2" class="input_select" title="Select Family Site to Move" onchange="window.open(value,'_bkank');">
+                            <option selected="selected" value="NO">Family Site</option>
+							<option value="http://kce.kcpi.or.kr" title="New window open">kce</option>
+							<option value="http://chrd.childcare.go.kr" title="New window open">i-sarang</option>
+							<option value="http://central.childcare.go.kr" title="New window open">educare</option>
+							<option value="http://info.childcare.go.kr/info/pnis/search/UnitySearchSlL.jsp" title="New window open">childcare</option>
+							<option value="https://www.kcpi.or.kr/thebcc/main" title="New window open">thebcc</option>
+							<option value="https://mindup.kcpi.or.kr" title="New window open">mindup</option>
+							<option value="https://edu.kcpi.or.kr/index.php" title="New window open">Online Education</option>
+                        </select>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--//footer-->
+</div>
+<!-- wrapper -->
+</body>
+</html>
