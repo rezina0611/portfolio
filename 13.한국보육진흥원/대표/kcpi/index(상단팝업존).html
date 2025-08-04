@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>한국보육진흥원</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta property="og:title" content="한국보육진흥원">
+<meta property="og:url" content="https://www.kcpi.or.kr/" />
+<meta name="description" content="아이와 부모, 보육인 모두가 행복한 세상이 되도록! 한국보육진흥원이함께 하겠습니다."/>
+<meta name="copyright" content="한국보육진흥원"/>
+<meta name="author" content="DREAMSTART">
+
+<link rel="stylesheet" href="./common/css/base.css"/>
+<link rel="stylesheet" href="./common/css/fullpage.css"/>
+<link rel="shortcut icon" href="./images/logo.ico" type="image/x-icon">
+<link rel="stylesheet" href="./common/css/slick.css"/>
+<link rel="stylesheet" href="./common/css/layout.css"/>
+<link rel="stylesheet" href="./common/css/main.css"/>
+
+<script src="./common/js/jquery-1.12.4.min.js"></script>
+<script src="./common/js/fullpage.min.js"></script>
+<script src="./common/js/slick.js"></script>
+<script src="./common/js/main.js"></script>
+<script src="./common/js/script.js"></script>
+<script src="./common/js/jquery.bxslider.min.js"></script>
+<script src="http://jamesallardice.github.io/Placeholders.js/assets/js/placeholders.min.js"></script>
+<script type="text/javascript">
+	(function ($) {
+	  $(document).ready(function () {
+	    $("input, textarea").placeholder();
+	  });
+	});
+</script>
+<script src="./common/js/slick.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		//팝업존 닫기 클릭했을때  팝업존 클래스가 슬라이드돼엇 닫힘 
+		$('.btn_close').click(function(){
+			$('#headTop_bnr').slideUp(); 
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {  // 문서가 읽히는 것을 확인.
+		//top headTop_bnr
+		$('#headTop_bnr .list').on('init', function(event, slick) {
+			$(this).append('<div class="slick-counter"><span class="current"></span> / <span class="total"></span></div>');
+			$('#headTop_bnr .current').text(slick.currentSlide + 1);
+			$('#headTop_bnr .total').text(slick.slideCount);
+		}).slick({
+			accessibility: true,   //접근성 여부 기본값
+			infinite: true,		//양방향 무한 모션
+			arrows: true,	  // 화살표
+			dots: false,    //페이지 버트(하단에 주로 삽입)
+			slidesToShow: 1,   //화면에 보여질 이미지 갯수
+			slidesToScroll: 1,   //스크롤시 이동할 이미지 갯수
+			swipeToSlide: true,
+			focusOnSelect: true,
+			autoplay: false,   //자동슬라이드
+			autoplaySpeed: 9000,    //다음이미지로 넘어갈 시간 9초
+	    })
+		.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+			$('#headTop_bnr .current').text(nextSlide + 1);
+		});
+	});
+</script>
+
+<!--//반응형 웹 이미지 위에 이미지 링크 걸기 반응형 이미지 맵-->
+<script src="./common/js/jquery.rwdImageMaps.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(e) { $('img[usemap]').rwdImageMaps(); });
+</script>
+<style type="text/css">
+	img[usemap] {border: none; height: auto; max-width: 100%; width: auto;}
+</style>
+<!--<script type="text/javascript">
+	$( document ).ready( function() {
+
+		var jbOffset = $( '#header' ).offset();
+			$( window ).scroll( function() { 
+				if ( $( document ).scrollTop() > jbOffset.top ) { // 화면의 상단 높이와 대상 개체의 높이를 비교.
+					$( '#header' ).addClass( 'fixed' ); // header에 fixed 클래스 추가
+				} 
+				else{ 
+					$( '#header' ).removeClass( 'fixed' ); // header에 fixed 클래스 삭제
+				}
+		});
+
+	});
+</script>-->
+<!--[if lte IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<style type="text/css">
+	#wrap.lay_gnb_fixed{padding-top:0;}
+	#header.lay_fixed{position: fixed;top:0;width: 100%;left:0; z-index:99999;}
+	.lay_gnb_fixed #headTop_bnr{position: absolute;top:-300px;}
+
+	/*@media all and (max-width: 1200px){
+		.lay_gnb_fixed #headTop_bnr{position: fixed;top:0;}
+		#header.lay_fixed{position: fixed;top:110px;width: 100%;left:0; z-index:99999;}
+	}*/
+</style>
+
+</head>
+<body class="pc top_ban_none">
+	<!-- 스킵네비케이션시작 -->
+	<div id="skipnavi">
+		<a href="#fullpage">본문바로가기</a>
+	</div>
+	<!-- 스킵네비케이션시작 -->
+	<div id="wrap">
+		<!-- popup zone -->
+		<div id="headTop_bnr">
+			<div class="bnr_area">
+				<div class="list">
+					<div class="bnr">
+						<p>
+							<a href="#none" target="_self" title="공지사항 페이지로 이동">
+								<img src="./images/main/popupzone_img1.png" alt="코로나-19 상황에 따른 어린이집 장기 미종사자 직무교육 이수 관련안내 공지사항 바로가기" />
+								<!--<map id="#link1" name="#link1">
+									<area shape="rect" alt="공지사항 바로가기" title="공지사항 페이지로 이동" coords="300,135,600,170" href="" target="_self" />
+								</map>-->
+							</a>
+						</p>
+					</div>
+					<div class="bnr">
+						<p>
+							<a href="https://boyuk.eseoul.go.kr/education/Apply.do" target="_blank" title="새창열림"><img src="./images/main/popupzone_img2.png" alt="2020 서울시 어린이집 보육교직원 보수교육 일정안내 교육신청방법: 교육신청 바로가기 클릭 > 교육신청 탭 > 교육과정명 > 원장 사전직무교육 또는 보육교사 일반직무교육(심화과정) 시설명 > 한구보육진흐우언 검색" /></a>
+						</p>
+					</div>
+					<div class="bnr">
+						<p>
+							<img src="./images/main/popupzone_img3.png" usemap="#link3" alt="핑크퐁 X 보건복지부 거리는 멀리 마음은 가까이  유튜브채널 https://youtu.be/LtPoIaR7TNE, 블로그 https://bit.ly/3d9qHvz, 트위터 https://bit.ly/2zBiByn, 페이스북 https://bit.ly/2BbEbdf, 인스타그램 https://bit.ly/2MZhrzI" />
+							<map id="link3" name="link3">
+								<area shape="rect" alt="유튜브채널" title="유튜브채널 새창열림" coords="487,76,710,109" href="https://youtu.be/LtPoIaR7TNE" target="_blank" />
+								<area shape="rect" alt="블로그" title="블로그 새창열림" coords="356,114,524,144" href="https://bit.ly/3d9qHvz" target="_blank" />
+								<area shape="rect" alt="페이스북" title="페이스북 새창열림" coords="358,150,525,179" href="https://bit.ly/2BbEbdf" target="_blank" />
+								<area shape="rect" alt="트위터" title="트위터 새창열림" coords="709,117,863,145" href="https://bit.ly/2zBiByn" target="_blank" /> 
+								<area shape="rect" alt="인스타그램" title="인스타그램 새창열림" coords="709,152,863,181" href="https://bit.ly/2MZhrzI" target="_blank" /> 
+							</map>
+						</p>
+					</div>
+					<div class="bnr">
+						<p>
+							<img src="./images/main/popupzone_img8.png" usemap="#link8" alt="핑크퐁 X 보건복지부 거리 두기 습관송 유튜브채널 https://youtu.be/aiMcVfIQb8g, 블로그 https://bit.ly/3dLuiRD, 트위터 https://bit.ly/2AOWnJl , 페이스북 https://bit.ly/3dJdpHy, 인스타그램 https://bit.ly/37hISht" />
+							<map id="link3" name="link3">
+								<area shape="rect" alt="유튜브채널" title="유튜브채널 새창열림" coords="487,76,710,109" href="https://youtu.be/aiMcVfIQb8g" target="_blank" />
+								<area shape="rect" alt="블로그" title="블로그 새창열림" coords="356,114,524,144" href="https://bit.ly/3dLuiRD" target="_blank" />
+								<area shape="rect" alt="페이스북" title="페이스북 새창열림" coords="358,150,525,179" href="https://bit.ly/3dJdpHy" target="_blank" />
+								<area shape="rect" alt="트위터" title="트위터 새창열림" coords="709,117,863,145" href="https://bit.ly/2AOWnJl" target="_blank" /> 
+								<area shape="rect" alt="인스타그램" title="인스타그램 새창열림" coords="709,152,863,181" href="https://bit.ly/37hISht" target="_blank" /> 
+							</map>
+						</p>
+					</div>
+					<div class="bnr">
+						<p><!--링크없음-->
+							<img src="./images/main/popupzone_img4.png" alt="코로나19예방을 위한 보육교사2급 교육과정 세부 운영방안 안내 코로나 19 예방을 위해 2020학년도 1학기에 한하여 양성교육기관의 대면교과목 및 보육실습을 다음과 같이 운영 가능합니다." />
+						</p>
+					</div>
+					<div class="bnr">
+						<p>
+							<a href="https://central.childcare.go.kr/ccef/job/JobSearchSlPL.jsp?flag=SlPL" target="_blank" title="새창열림"><img src="./images/main/popupzone_img5.png" alt="보건복지부 온종일 활기찬 어린이집을 만들기 위해 20.3월 보육시간이 기본보육과 연장보육으로 개편됩니다." /></a>
+						</p>
+					</div>
+					<div class="bnr">
+						<p>
+							<img src="./images/main/popupzone_img6.png" usemap="#link6" alt="안녕하십니까? 한국보육진흥원입니다. 어린이집의 평가 준비를 지원하고자 2020년 평가 지표 관려 자료를 게시하오니 평가 준비 활용하시기 바랍니다." />
+							<map id="link6" name="link6">
+								<area shape="rect" alt="2020 어린이집 평가 매뉴얼 바로가기" title="2020 어린이집 평가 매뉴얼 바로가기" coords="28,132,296,174" href="#none" target="_self" /><!--자료실 > 사업관련 자료 > 어린이집 평가-->
+								<area shape="rect" alt="2020 어린이집 평가 지료 교육자료 바로가기" title="2020 어린이집 평가 지료 교육자료 바로가기" coords="304,130,604,176" href="#none" target="_self" /><!--자료실 > 사업관련 자료 > 어린이집 평가-->
+								<area shape="rect" alt="평가제 관련 홈페이지 바로가기" title="평가제 관련 홈페이지 새창열림" coords="614,128,835,175" href="http://kce.kcpi.or.kr/" target="_blank" />
+							</map>
+						</p>
+					</div>
+					<div class="bnr">
+						<p>
+							<a href="https://mindup.kcpi.or.kr/" target="_blank" title="새창열림"><img src="./images/main/popupzone_img7.png" alt="보육교직원 마음성장 프로젝트 2020년 교육 open 코로나 바이러스 감염증-19 대응 수칙 준수를 위해 최선의 노력을 다하겠습니다." /></a>
+						</p>
+					</div>
+				</div>
+				<div class="btn">
+					<span class="limit">
+						<span class="inp_redCheck">
+							<input type="checkbox" name="openLimit" id="openLimit" data-seq="top_bnr" onclick="closeTopBanner(this);"/>
+							<label for="openLimit">오늘하루 열지않기</label>
+						</span>
+					</span>
+					<button class="btn_close">팝업존 닫기</button>
+				</div>
+			</div>
+		</div>
+		<!-- //popup zone -->
+
+
+		<!--header-->
+		<div id="header">
+			<!--header_top-->
+			<div class="header_top">
+				<div class="wrap">
+					<!--top_utilwrap-->
+					<div class="top_utilwrap">
+						<div class="svcbtn-box">
+		            		<ul class="member-lnk">
+		            			<li><a href="#none" class="link03" target="_blank" title="새창열림"><span>ENGLISH</span></a></li>
+		            		</ul>
+		            	</div>
+						<div class="top-lnk">
+		            		<a href="#none" class="lnk02" target="_blank" title="한국보육진흥원 블로그 새창열림">NAVER BLOG</a>
+		            		<a href="#none" class="lnk03" target="_blank" title="한국보육진흥원 카카오 새창열림">KAKAO</a>
+		            		<a href="#none" class="lnk04" target="_blank" title="한국보육진흥원 페이스북 새창열림">FACEBOOK</a>
+		            		<a href="#none" class="memmber">회원가입</a>
+		            		<a href="#none" class="icon_bar login">로그인</a>
+		            		<a href="#none" class="icon_bar mail" target="_blank" title="직원메일 새창열림">직원메일</a>
+		            		<!--<a href="#none" class="icon_bar btn_close" title="팝업존닫기">팝업존닫기</a>-->
+		            	</div>
+					</div>
+					<!--//top_utilwrap-->
+				</div>
+			</div>
+			<!--//header_top-->
+			<!--gnb_layout-->
+			<div id="gnb_layout">
+				<div class="gnbArea">
+					<h1><a href="#none"><img src="./images/common/logo.png" alt="한국보육진흥원"/></a></h1>
+					<div class="nav">
+						<ul class="depth1_ul">
+							<li><a href="#none">KCPI 소개</a>
+								<div class="sub_2depth" style="display:none;">
+									<div class="wrap">
+										<div class="item">
+											<div class="gnb-title">
+												<strong>KCPI 소개</strong>
+												<p>한국보육진흥원의 KCPI 소개를 안내합니다.</p>
+											</div>
+											<div class="gnb-depth">
+												<ul class="depth2_ul">
+													<li><a href="sub1_소개_인사말.html" target="_self"><span>인사말</span></a></li>
+													<li><a href="sub1_소개_설립목적및연혁.html" target="_self"><span>설립목적및연혁</span></a></li>
+													<li><a href="sub1_소개_비전및전략.html" target="_self"><span>비전 및 전략</span></a></li>
+													<li><a href="sub1_소개_ci브랜드(로고).html" target="_self"><span>CI브랜드</span></a></li>
+													<li><a href="sub1_소개_조직도.html" target="_self"><span>조직도</span></a></li>
+													<li><a href="sub1_소개_찾오시는길.html" target="_self"><span>찾아오시는길</span></a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="n2"><a href="#none">주요사업</a>
+								<div class="sub_2depth sub" style="display:none;">
+									<div class="wrap">
+										<div class="item">
+											<div class="gnb-title">
+												<strong>주요사업</strong>
+												<p>보육진흥원의 주요사업 안내입니다.</p>
+											</div>
+											<div class="gnb-depth">
+												<ul class="depth2_ul">
+													<li>
+														<a href="#none" target="_self"><span>어린이집 평가</span></a>
+														<ul class="depth3_ul">
+															<li><a href="#none" target="_self"><span>어린이집 평가 과정 운영</span></a></li>
+															<li><a href="#none" target="_self"><span>어린이집 평가 후 관리</span></a></li>
+														</ul>
+													</li>
+													<li>
+														<a href="#none" target="_self"><span>자격제도 및 자격증</span></a>
+														<ul class="depth3_ul">
+															<li><a href="#none" target="_self"><span>제도 개요 및 교부절차</span></a></li>
+															<li><a href="#none" target="_self"><span>자격기준</span></a></li>
+														</ul>
+													</li>
+													<li><a href="#none" target="_self"><span>보육교직원 역량강화</span></a></li>
+													<li><a href="#none" target="_self"><span>시간제교육</span></a></li>
+													<li><a href="#none" target="_self"><span>국공립어린이집 확충지원</span></a></li>
+													<li><a href="#none" target="_self"><span>공공형어린이집품질관리</span></a></li>
+													<li><a href="#none" target="_self"><span>중앙육아종합지원센터</span></a></li>
+													
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li><a href="#none">열린경영</a>
+								<div class="sub_2depth" style="display:none;">
+									<div class="wrap">
+										<div class="item">
+											<div class="gnb-title">
+												<strong>열린경영</strong>
+												<p>한국보육진흥원의 열린경영을 안내합니다.</p>
+											</div>
+											<div class="gnb-depth">
+												<ul class="depth2_ul">
+													<li><a href="#none" target="_self"><span>경영공시</span></a>
+														<ul class="depth3_ul">
+															<li><a href="#none"><span>통합공시</span></a></li>
+															<li><a href="#none"><span>업무추진비 사용현황</span></a></li>
+															<li><a href="#none"><span>기부금모금 및 활용실적</span></a></li>
+															<li><a href="#none"><span>계약현황</span></a></li>
+														</ul>
+													</li>
+													<li><a href="#none" target="_self"><span>고객만족경영</span></a>
+														<ul class="depth3_ul">
+															<li><a href="#none"><span>고객서비스헌장</span></a></li>
+															<li><a href="#none"><span>핵심서비스 이행표준</span></a></li>
+															<li><a href="#none"><span>고객응대서비스 이행표준</span></a></li>
+														</ul>
+													</li>
+													<li><a href="#none" target="_self"><span>윤리경영</span></a>
+														<ul class="depth3_ul">
+															<li><a href="#none"><span>윤리헌장</span></a></li>
+															<li><a href="#none"><span>윤리강령</span></a></li>
+															<li><a href="#none"><span>임직원행동강령</span></a></li>
+															<li><a href="#none"><span>청탁금지법</span></a></li>
+															<li><a href="#none"><span>윤리경영활동소식</span></a></li>
+														</ul>
+													</li>
+													<li><a href="#none" target="_self"><span>클린신고센터</span></a></li>
+													<li><a href="#none" target="_self"><span>정보공개제도안내</span></a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li><a href="#none">정보공개</a>
+								<div class="sub_2depth" style="display:none;">
+									<div class="wrap">
+										<div class="item">
+											<div class="gnb-title">
+												<strong>정보공개</strong>
+												<p>한국보육진흥원의 정보공개를 안내합니다.</p>
+											</div>
+											<div class="gnb-depth">
+												<ul class="depth2_ul">
+													<li><a href="#none" target="_self"><span>공공데이터 개발</span></a></li>
+													<li><a href="#none" target="_self"><span>사전정보공표</span></a></li>
+													<li><a href="#none" target="_self"><span>사업실명제</span></a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li><a href="#none">국민소통</a>
+								<div class="sub_2depth" style="display:none;">
+									<div class="wrap">
+										<div class="item">
+											<div class="gnb-title">
+												<strong>국민소통</strong>
+												<p>한국보육진흥원의 국민소통를 안내합니다.</p>
+											</div>
+											<div class="gnb-depth">
+												<ul class="depth2_ul">
+													<li><a href="#none" target="_self"><span>질의응답</span></a>
+														<ul class="depth3_ul">
+															<li><a href="#none"><span>어린이집 평가</span></a></li>
+															<li><a href="#none"><span>보육교직원 자격증 교부</span></a></li>
+															<li><a href="#none"><span>보육교직원 보수교육</span></a></li>
+															<li><a href="#none"><span>누리과정</span></a></li>
+														</ul>
+													</li>
+													<li><a href="#none" target="_self"><span>자주하는 질문</span></a>
+														<ul class="depth3_ul">
+															<li><a href="#none"><span>어린이집 평가</span></a></li>
+															<li><a href="#none"><span>보육교직원 자격증 교부</span></a></li>
+															<li><a href="#none"><span>보육교직원 보수교육</span></a></li>
+															<li><a href="#none"><span>누리과정</span></a></li>
+														</ul>
+													</li>
+													<li><a href="#none" target="_self"><span>온라인교육</span></a></li>
+													<li><a href="#none" target="_self"><span>비전보육인 모임</span></a></li>
+													<li><a href="#none" target="_self"><span>보육교사/부모자문단</span></a>
+														<ul class="depth3_ul">
+															<li><a href="#none">보육교사자문단/부모자문단</a></li>
+															<li><a href="#none">부모교육</a></li>
+														</ul>
+													</li>
+													<li><a href="#none" target="_self"><span>설문조사</span></a></li>
+													<li><a href="#none" target="_self"><span>칭찬게시판</span></a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="n6"><a href="#none">사이버홍보</a>
+								<div class="sub_2depth" style="display:none;">
+									<div class="wrap">
+										<div class="item">
+											<div class="gnb-title">
+												<strong>사이버홍보</strong>
+												<p>한국보육진흥원의 사이버홍를 안내합니다.</p>
+											</div>
+											<div class="gnb-depth">
+												<ul class="depth2_ul">
+													<li><a href="#none" target="_self"><span>공지사항</span></a></li>
+													<li><a href="#none" target="_self"><span>보도자료</span></a></li>
+													<li><a href="#none" target="_self"><span>입찰공고</span></a></li>
+													<li><a href="#none" target="_self"><span>채용공고</span></a></li>
+													<li><a href="#none" target="_self"><span>법령 및 지침</span></a>
+														<ul class="depth3_ul">
+															<li><a href="#none" target="_self"><span>법령 및 보육사업안내</span></a></li>
+															<li><a href="#none" target="_self"><span>기타지침</span></a></li>
+														</ul>
+													</li>
+													<li><a href="#none" target="_self"><span>사업관련자료</span></a>
+														<ul class="depth3_ul">
+															<li><a href="#none" target="_self"><span>어린이집 평가</span></a></li>
+															<li><a href="#none" target="_self"><span>보육교직원 자격</span></a></li>
+															<li><a href="#none" target="_self"><span>공공형어린이집</span></a></li>
+															<li><a href="#none" target="_self"><span>시간제보육</span></a></li>
+														</ul>
+													</li>
+													<li><a href="#none" target="_self"><span>발간물</span></a>
+														<ul class="depth3_ul">
+															<li><a href="#none" target="_self"><span>비전보육 홍보책자</span></a></li>
+															<li><a href="#none" target="_self"><span>이슈분석 보고서</span></a></li>
+															<li><a href="#none" target="_self"><span>취약보육 프로그램</span></a></li>
+															<li><a href="#none" target="_self"><span>기타 발간물</span></a></li>
+														</ul>
+													</li>
+													<li><a href="#none" target="_self"><span>보육통계</span></a>
+														<ul class="depth3_ul">
+															<li><a href="#none" target="_self"><span>보육통계</span></a></li>
+															<li><a href="#none" target="_self"><span>평가인증 현황</span></a></li>
+															<li><a href="#none" target="_self"><span>자격증교부 현황</span></a></li>
+															<li><a href="#none" target="_self"><span>시간제보육 현황</span></a></li>
+															<li><a href="#none" target="_self"><span>공공형어린이집 현황</span></a></li>
+														</ul>
+													</li>
+													<li><a href="#none" target="_self"><span>기관홍보관</span></a>
+														<ul class="depth3_ul">
+															<li><a href="#none" target="_self"><span>홍보자료</span></a></li>
+															<li><a href="#none" target="_self"><span>홍보영상</span></a></li>
+															<li><a href="#none" target="_self"><span>기관갤러리</span></a></li>
+															<li><a href="#none" target="_self"><span>뉴스게시판</span></a></li>
+														</ul>
+													</li>
+													<li><a href="#none" target="_self"><span>협약체결기관</span></a></li>
+													<li><a href="#none" target="_self"><span>주요사업홍보</span></a>
+														<ul class="depth3_ul">
+															<!--<li><a href="#none" target="_self"><span></span></a></li>-->
+															<li><a href="#none" target="_self"><span>주요사업 홍보관</span></a></li>
+														</ul>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li><a href="#none" class="last">교육</a>
+								<div class="sub_2depth" style="display:none;">
+									<div class="wrap">
+										<div class="item">
+											<div class="gnb-title">
+												<strong>교육</strong>
+												<p>한국보육진흥원의 교육을 안내합니다.</p>
+											</div>
+											<div class="gnb-depth">
+												<ul class="depth2_ul">
+													<li><a href="#none"><span>어린이집 평가 관련교육</span></a></li>
+													<li><a href="#none"><span>보육교직원 역량강화</span></a></li>
+													<li><a href="#none"><span>비전교육인 등</span></a></li>
+													<li><a href="#none"><span>공공형품질관리 관련 교육</span></a></li>
+													<li><a href="#none"><span>마음성장 관련 교육</span></a></li>
+													<li><a href="#none"><span>온라인교육</span></a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<div class="gnbSearchAllmenu">
+							<button type="button" class="search_open">검색영역 열기</button>
+							<button type="button" class="allmenu-open">전체메뉴 열기</button>
+							<button type="button" class="mobile-open">모바일메뉴 열기</button>
+						</div>
+						<div class="total-search">
+						   <div class="searchbox">
+								<h2 class="blind">통합검색</h2>
+								<span class="search-keyword">
+									<label for="total_search_keyword" class="skip">통합검색</label><input id="total_search_keyword" name="total_search_keyword" type="search" onkeyup="enterkey();" placeholder="검색어를 입력해 주세요." title="검색어를 입력해 주세요." value=""  />
+									<button type="button" onclick="$('#searchFrm').submit();">검색</button>
+								</span>
+								<button type="button" class="btn-close">검색창 닫기</button>
+							</div>
+						</div>
+
+						<!--pc 데스크탑에서는 사이트맵-->
+						<div class="allmenu-wrap">
+							<h2 class="blind">전체메뉴</h2>
+							<div class="binds">
+								<ul class="all-nav">
+									<li>
+										<a href="#none" class="first">KCPI 소개</a>
+										<ul class="depth2">
+											<li><a href="#none">인사말</a></li>
+											<li><a href="#none">설립목적및연혁</a></li>
+											<li><a href="#none">비전 및 전략</a></li>
+											<li><a href="#none">CI브랜드</a></li>
+											<li><a href="#none">조직도</a></li>
+											<li><a href="#none">찾아오시는길</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#none" class="on">주요사업</a>
+										<ul class="depth2">
+											<li><a href="#none" class="on">어린이집 평가</a>
+												<ul class="depth3">
+													<li><a href="#none">어린이집 평가 과정 운영</a></li>
+													<li><a href="#none">어린이집 평가 후 관리</a></li>
+												</ul>
+											</li>
+											<li><a href="#none">자격제도 및 자격증</a>
+												<ul class="depth3">
+													<li><a href="#none">제도 개요 및 교부절차</a></li>
+													<li><a href="#none">자격기준</a></li>
+												</ul>
+											</li>
+											<li><a href="#none">보육교직원 역량강화</a></li>
+											<li><a href="#none">시간제교육</a></li>
+											<li><a href="#none">국공립어린이집 확충지원</a></li>
+											<li><a href="#none">공공형어린이집품질관리</a></li>
+											<li><a href="#none">중앙육아종합지원센터</a></li>
+											<!--<li><a href="#none">다함께돌봄 사업지원단</a></li>-->
+										</ul>
+									</li>
+									<li>
+										<a href="#none">열린경영</a>
+										<ul class="depth2">
+											<li><a href="#none">경영공시</a>
+												<ul class="depth3">
+													<li><a href="#none">통합공시</a></li>
+													<li><a href="#none">업무추진비 사용현황</a></li>
+													<li><a href="#none">기부금모금 및 활용실적</a></li>
+													<li><a href="#none">계약현황</a></li>
+												</ul>
+											</li>
+											<li><a href="#none">고객만족경영</a>
+												<ul class="depth3">
+													<li><a href="#none">고객서비스 현장</a></li>
+													<li><a href="#none">핵심서비스 이행표준</a></li>
+													<li><a href="#none">고객응대서비스 이행표준</a></li>
+												</ul>
+											</li>
+											<li><a href="#none">윤리경영</a>
+												<ul class="depth3">
+													<li><a href="#none">윤리헌장</a></li>
+													<li><a href="#none">윤리강령</a></li>
+													<li><a href="#none">임직원행동강령</a></li>
+													<li><a href="#none">청탁금지법</a></li>
+													<li><a href="#none">윤리경영활동소식</a></li>
+												</ul>
+											</li>
+											<li><a href="#none">클린신고센터</a></li>
+											<li><a href="#none">정보공개 제도안내</a></li>	
+										</ul>
+									</li>
+									<li>
+										<a href="#none">정보공개</a>
+										<ul class="depth2">
+											<li><a href="#none">공공데이터개발</a></li>
+											<li><a href="#none">사전정보공표</a></li>
+											<li><a href="#none">사업실명제</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#none">국민소통</a>
+										<ul class="depth2">
+											<li><a href="#none">질의응답</a>
+												<ul class="depth3">
+													<li><a href="#none">어린이집 평가</a></li>
+													<li><a href="#none">보육교직원 자격증 교부</a></li>
+													<li><a href="#none">보육교직원 보수교육</a></li>
+													<li><a href="#none">누리과정</a></li>
+												</ul>
+											</li>
+											<li><a href="#none">자주하는 질문</a>
+												<ul class="depth3">
+													<li><a href="#none">어린이집 평가</a></li>
+													<li><a href="#none">보육교직원 자격증 교부</a></li>
+													<li><a href="#none">보육교직원 보수교육</a></li>
+													<li><a href="#none">누리과정</a></li>
+												</ul>
+											</li>
+											<li><a href="#none">온라인교육</a></li>
+											<li><a href="#none">비전보육인 모임</a></li>
+											<li><a href="#none">보육교사/부모자문단</a>
+												<ul class="depth3">
+													<li><a href="#none">보육교사자문단/부모자문단</a></li>
+													<li><a href="#none">부모교육</a></li>
+												</ul>
+											</li>
+											<li><a href="#none">설문조사</a></li>
+											<li><a href="#none">칭찬게시판</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#none">사이버홍보</a>
+										<ul class="depth2">
+											<li><a href="#none">공지사항</a></li>
+											<li><a href="#none">보도자료</a></li>
+											<li><a href="#none">입찰공고</a></li>
+											<li><a href="#none">채용공고</a></li>
+											<li><a href="#none">법령 및 지침</a>
+												<ul class="depth3">
+													<li><a href="#none">법령 및 보육사업안내</a></li>
+													<li><a href="#none">기타지침</a></li>
+												</ul>
+											</li>
+											<li><a href="#none">사업관련자료</a>
+												<ul class="depth3">
+													<li><a href="#none">어린이집 평가</a></li>
+													<li><a href="#none">보육교직원 자격</a></li>
+													<li><a href="#none">공공형어린이집</a></li>
+													<li><a href="#none">시간제보육</a></li>
+												</ul>
+											</li>
+											<li><a href="#none">발간물</a>
+												<ul class="depth3">
+													<li><a href="#none">비전보육 홍보책자</a></li>
+													<li><a href="#none">이슈분석 보고서</a></li>
+													<li><a href="#none">취약보육 프로그램</a></li>
+													<li><a href="#none">기타 발간물</a></li>
+												</ul>
+											</li>
+											<li><a href="#none">보육통계</a>
+												<ul class="depth3">
+													<li><a href="#none">보육통계</a></li>
+													<li><a href="#none">평가인증 현황</a></li>
+													<li><a href="#none">자격증교부 현황</a></li>
+													<li><a href="#none">시간제보육 현황</a></li>
+													<li><a href="#none">공공형어린이집 현황</a></li>
+												</ul>
+											</li>
+											<li><a href="#none">기관홍보관</a>
+												<ul class="depth3">
+													<li><a href="#none">홍보자료</a></li>
+													<li><a href="#none">홍보영상</a></li>
+													<li><a href="#none">기관갤러리</a></li>
+													<li><a href="#none">뉴스게시판</a></li>
+												</ul>
+											</li>
+											<li><a href="#none">협약체결기관</a></li>
+											<li><a href="#none">주요사업홍보</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#none">교육</a>
+										<ul class="depth2">
+											<li><a href="#none">어린이집 평가 관련교육</a></li>
+											<li><a href="#none">보육교직원 역량강화</a></li>
+											<li><a href="#none">비전교육인 등</a></li>
+											<li><a href="#none">공공형품질관리 관련 교육</a></li>
+											<li><a href="#none">마음성장 관련 교육</a></li>
+											<li><a href="#none">온라인교육</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<button type="button" class="allmenu-close">전체메뉴 닫기</button>
+						</div><!--//allmenu-wrap-->
+
+						<!--mobile-open-->
+						<div class="mobile-wrap">
+							<h2 class="skip">모바일 메뉴</h2>
+							<ul class="link">
+								<li><a href="#none" target="_blank" title="새창이동">ENG</a></li>
+								<li><a href="#none">회원가입</a></li> <!--마이페이지로 노출-->
+								<li><a href="#none">로그인</a></li>  <!--로그인시 로그아웃으로 노출-->
+								<li><a href="#none">직원메일</a></li>
+							</ul>
+							<button class="mobile-close">모바일 메뉴 닫기</button>
+							<ul class="all-nav">
+								<li>
+									<a href="#none">KCPI 소개</a>
+									<ul class="depth2">
+										<li><a href="#none">인사말</a></li>
+										<li><a href="#none">설립목적및연혁</a></li>
+										<li><a href="#none">비전 및 전략</a></li>
+										<li><a href="#none">CI브랜드</a></li>
+										<li><a href="#none">조직도</a></li>
+										<li><a href="#none">찾아오시는길</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#none">주요사업</a>
+									<ul class="depth2">
+										<li><a href="#none">어린이집 평가</a>
+											<ul class="depth3">
+												<li><a href="#none">어린이집 평가 과정 운영</a></li>
+												<li><a href="#none">어린이집 평가 후 관리</a></li>
+											</ul>
+										</li>
+										<li><a href="#none">자격제도 및 자격증</a>
+											<ul class="depth3">
+												<li><a href="#none">제도 개요 및 교부절차</a></li>
+												<li><a href="#none">자격기준</a></li>
+											</ul>
+										</li>
+										<li><a href="#none">보육교직원 역량강화</a></li>
+										<li><a href="#none">시간제교육</a></li>
+										<li><a href="#none">국공립어린이집 확충지원</a></li>
+										<li><a href="#none">공공형어린이집품질관리</a></li>
+										<li><a href="#none">중앙육아종합지원센터</a></li>
+										
+									</ul>
+								</li>
+								<li>
+									<a href="#none">열린경영</a>
+									<ul class="depth2">
+										<li><a href="#none">경영공시</a>
+											<ul class="depth3">
+												<li><a href="#none">통합공시</a></li>
+												<li><a href="#none">업무추진비 사용현황</a></li>
+												<li><a href="#none">기부금모금 및 활용실적</a></li>
+												<li><a href="#none">계약현황</a></li>
+											</ul>
+										</li>
+										<li><a href="#none">고객만족경영</a>
+											<ul class="depth3">
+												<li><a href="#none">고객서비스 현장</a></li>
+												<li><a href="#none">핵심서비스 이행표준</a></li>
+												<li><a href="#none">고객응대서비스 이행표준</a></li>
+											</ul>
+										</li>
+										<li><a href="#none">윤리경영</a>
+											<ul class="depth3">
+												<li><a href="#none">윤리헌장</a></li>
+												<li><a href="#none">윤리강령</a></li>
+												<li><a href="#none">임직원행동강령</a></li>
+												<li><a href="#none">청탁금지법</a></li>
+												<li><a href="#none">윤리경영활동소식</a></li>
+											</ul>
+										</li>
+										<li><a href="#none">클린신고센터</a></li>
+										<li><a href="#none">정보공개 제도안내</a></li>	
+									</ul>
+								</li>
+								<li>
+									<a href="#none">정보공개</a>
+									<ul class="depth2">
+										<li><a href="#none">공공데이터개발</a></li>
+										<li><a href="#none">사전정보공표</a></li>
+										<li><a href="#none">사업실명제</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#none">국민소통</a>
+									<ul class="depth2">
+										<li><a href="#none">질의응답</a>
+											<ul class="depth3">
+												<li><a href="#none">어린이집 평가</a></li>
+												<li><a href="#none">보육교직원 자격증 교부</a></li>
+												<li><a href="#none">보육교직원 보수교육</a></li>
+												<li><a href="#none">누리과정</a></li>
+											</ul>
+										</li>
+										<li><a href="#none">자주하는 질문</a>
+											<ul class="depth3">
+												<li><a href="#none">어린이집 평가</a></li>
+												<li><a href="#none">보육교직원 자격증 교부</a></li>
+												<li><a href="#none">보육교직원 보수교육</a></li>
+												<li><a href="#none">누리과정</a></li>
+											</ul>
+										</li>
+										<li><a href="#none">온라인교육</a></li>
+										<li><a href="#none">비전보육인 모임</a></li>
+										<li><a href="#none">보육교사/부모자문단</a>
+											<ul class="depth3">
+												<li><a href="#none">보육교사자문단/부모자문단</a></li>
+												<li><a href="#none">부모교육</a></li>
+											</ul>
+										</li>
+										<li><a href="#none">설문조사</a></li>
+										<li><a href="#none">칭찬게시판</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#none">사이버홍보</a>
+									<ul class="depth2">
+										<li><a href="#none">공지사항</a></li>
+										<li><a href="#none">보도자료</a></li>
+										<li><a href="#none">입찰공고</a></li>
+										<li><a href="#none">채용공고</a></li>
+										<li><a href="#none">법령 및 지침</a>
+											<ul class="depth3">
+												<li><a href="#none">법령 및 보육사업안내</a></li>
+												<li><a href="#none">기타지침</a></li>
+											</ul>
+										</li>
+										<li><a href="#none">사업관련자료</a>
+											<ul class="depth3">
+												<li><a href="#none">어린이집 평가</a></li>
+												<li><a href="#none">보육교직원 자격</a></li>
+												<li><a href="#none">공공형어린이집</a></li>
+												<li><a href="#none">시간제보육</a></li>
+											</ul>
+										</li>
+										<li><a href="#none">발간물</a>
+											<ul class="depth3">
+												<li><a href="#none">비전보육 홍보책자</a></li>
+												<li><a href="#none">이슈분석 보고서</a></li>
+												<li><a href="#none">취약보육 프로그램</a></li>
+												<li><a href="#none">기타 발간물</a></li>
+											</ul>
+										</li>
+										<li><a href="#none">보육통계</a>
+											<ul class="depth3">
+												<li><a href="#none">보육통계</a></li>
+												<li><a href="#none">평가인증 현황</a></li>
+												<li><a href="#none">자격증교부 현황</a></li>
+												<li><a href="#none">시간제보육 현황</a></li>
+												<li><a href="#none">공공형어린이집 현황</a></li>
+											</ul>
+										</li>
+										<li><a href="#none">기관홍보관</a>
+											<ul class="depth3">
+												<li><a href="#none">홍보자료</a></li>
+												<li><a href="#none">홍보영상</a></li>
+												<li><a href="#none">기관갤러리</a></li>
+												<li><a href="#none">뉴스게시판</a></li>
+											</ul>
+										</li>
+										<li><a href="#none">협약체결기관</a></li>
+										<li><a href="#none">주요사업 홍보</a>
+											<ul class="depth3">
+												<li><a href="#none">주요사업 홍보관</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#none">교육</a>
+									<ul class="depth2">
+										<li><a href="#none">어린이집 평가 관련교육</a></li>
+										<li><a href="#none">보육교직원 역량강화</a></li>
+										<li><a href="#none">비전교육인 등</a></li>
+										<li><a href="#none">공공형품질관리 관련 교육</a></li>
+										<li><a href="#none">마음성장 관련 교육</a></li>
+										<li><a href="#none">온라인교육</a></li>
+									</ul>
+								</li>
+							</ul>
+							<!--모바일 쪽 블로그, 카카오톡, 페이스북-->
+							<div class="top-lnk">
+								<a href="https://blog.naver.com/kcpiorkr" class="lnk02" target="_blank" title="한국보육진흥원 블로그 새창열림">NAVER BLOG</a>
+								<a href="https://accounts.kakao.com/login?continue=https%3A%2F%2Faccounts.kakao.com%2Fweblogin%2Faccount%2Finfo" class="lnk03" target="_blank" title="한국보육진흥원 카카오 새창열림">KAKAO</a>
+								<a href="https://www.facebook.com/pbKCPI/" class="lnk04" target="_blank" title="한국보육진흥원 페이스북 새창열림">FACEBOOK</a>
+							</div>
+						</div>
+						<!--//mobile-open-->
+					</div>
+				</div>
+			</div>
+			<!--//gnb_layout-->
+		</div>
+		<!--//header-->
+
+
+			<ul id="fullpage_nav">
+				<li data-menuanchor="fsection01"><a href="#fsection01" aria-selected="false" aria-controls="section01"><span>HOME</span></a></li>
+				<li data-menuanchor="fsection02"><a href="#fsection02" aria-selected="false" aria-controls="section02"><span>사업안내</span></a></li>
+				<li data-menuanchor="fsection03"><a href="#fsection03" aria-selected="false" aria-controls="section03"><span>알림마당</span></a></li>
+				<li data-menuanchor="fsection04"><a href="#fsection04" aria-selected="false" aria-controls="section04"><span>바로가기</span></a></li>
+			</ul>
+			<!--fullpage-->
+			<div id="fullpage">
+				<!-- section01 -->
+				<div id="section01" class="section fp-auto-height-responsive">
+					<div class="main-title">
+						<img src="./images/main/mvisual_txt.png" alt="아이와 부모,보육인 모두가 행복한 세상이 되도록 한국보육진흥원이 함께 하겠습니다.">
+					</div>
+					<div class="inwrap tac">
+						<div class="sch_all">
+							<form name="totSearch" method="get" onsubmit="">
+			                    <fieldset>
+			                        <legend class="skip">통합검색 박스</legend>
+			                        <div class="search_box">
+			                            <label for="total_search" class="skip">통합검색</label><input type="text" id="total_search" name="schStr" placeholder="통합검색">
+			                            <div class="sch_btn_wrap">
+			                                <button type="submit" class="btn_total_search"><span class="skip">검색</span></button>
+			                            </div>
+			                        </div>
+			                    </fieldset>
+			                </form>
+			            </div>
+					</div>
+				</div>
+				<!-- //section01 -->
+				<!-- section02 -->
+				<div id="section02" class="section fp-auto-height-responsive">
+					<div class="inwrap padding01">
+						<div class="sub_tit">
+		                    <h3 class="tit"><em class="point">사업안내</em> 바로가기</h3>
+		                </div>
+		                <div class="main_service_wrap">
+		                	<!-- service_slide pc-->
+		                	<div class="service_slide only_pc">
+		                		<div class="service_box">
+		                			<div class="cont child_box">
+		                				<p class="tit">어린이집 평가</p>
+		                				<a href="#none" class="service_link" target="_blank">더보기</a>
+		                			</div>
+		                		</div>
+		                		<div class="service_box">
+		                			<div class="cont finance_box">
+		                				<p class="tit">보육교직원 <br/>자격증 교부</p>
+		                				<a href="#none" class="service_link" target="_blank">더보기</a>
+		                			</div>
+		                		</div>
+		                		<div class="service_box">
+		                			<div class="cont evaluate_box">
+		                				<p class="tit">마음성장 프로젝트</p>
+		                				<a href="https://mindup.kcpi.or.kr/" class="service_link" target="_blank" title="새창열림">더보기</a>
+		                			</div>
+		                		</div>
+		                		<div class="service_box">
+		                			<div class="cont commu_box">
+		                				<p class="tit">공공형 품질관리</p>
+		                				<a href="#none" class="service_link" target="_blank">더보기</a>
+		                			</div>
+		                		</div>
+		                		<div class="service_box">
+		                			<div class="cont public_law_box">
+		                				<p class="tit">시간제보육 지원</p>
+		                				<a href="#none" class="service_link" target="_blank">더보기</a>
+		                			</div>
+		                		</div>
+		                		<div class="service_box">
+		                			<div class="cont silver_box">
+		                				<p class="tit">취약보육 지원</p>
+		                				<a href="#none" class="service_link" target="_blank">더보기</a>
+		                			</div>
+		                		</div>
+		                	</div>
+		                	<!-- //service_slide pc -->
+		                	<!-- service_slide mobile -->
+		                	<div class="only_mobile">
+		                		<div class="service_slide">
+		                			<ul class="main_service">
+		                				<li>
+			                				<div class="service_box">
+					                			<div class="cont child_box">
+					                				<p class="tit">어린이집 평가</p>
+					                				<a href="#none" class="service_link" target="_blank">더보기</a>
+					                			</div>
+					                		</div>
+					                		<div class="service_box">
+					                			<div class="cont finance_box">
+					                				<p class="tit">보육교직원 <br/>자격증 교부</p>
+					                				<a href="#none" class="service_link" target="_blank">더보기</a>
+					                			</div>
+					                		</div>
+					                		<div class="service_box">
+					                			<div class="cont evaluate_box">
+					                				<p class="tit">마음성장 <br/>프로젝트</p>
+					                				<a href="#none" class="service_link" target="_blank">더보기</a>
+					                			</div>
+					                		</div>
+					                	</li>
+					                	<li>
+			                				<div class="service_box">
+					                			<div class="cont commu_box">
+					                				<p class="tit">공공형 품질관리</p>
+					                				<a href="#none" class="service_link" target="_blank">더보기</a>
+					                			</div>
+					                		</div>
+					                		<div class="service_box">
+					                			<div class="cont public_law_box">
+					                				<p class="tit">시간제보육 지원</p>
+					                				<a href="#none" class="service_link" target="_blank">더보기</a>
+					                			</div>
+					                		</div>
+					                		<div class="service_box">
+					                			<div class="cont silver_box">
+					                				<p class="tit">취약보육 지원</p>
+					                				<a href="#none" class="service_link" target="_blank">더보기</a>
+					                			</div>
+					                		</div>
+					                	</li>
+		                			</ul>
+		                		</div>
+		                	</div>
+		                	<!-- service_slide mobile -->
+		                </div>
+					</div>
+				</div>
+				<!-- //section03 -->
+				<div id="section03" class="section fp-auto-height-responsive">
+					<div class="inwrap padding01">
+						<div class="sub_tit">
+		                    <h3 class="tit">알림마당</h3>
+		                </div>
+		                <!-- news_slider_wrap -->
+		                <div class="news_slider_wrap">
+		                    <div class="main_webzine news_content">
+		                        <div class="web_con">
+		                            <img src="./images/main/newsCon01.png" alt="한국보육진흥원 공지사항">
+		                            <p class="web_con_tit">공지사항</p>
+		                            <a href="#none" class="btn_more">자세히보기</a>
+		                        </div>
+		                    </div>
+		                    <div class="main_webzine promotion_content">
+		                        <div class="web_con">
+		                            <img src="./images/main/newsCon02.png" alt="한국보육진흥원 보도자료.">
+		                            <p class="web_con_tit">보도자료</p>
+		                            <a href="#none" class="btn_more">자세히보기</a>
+		                        </div>
+		                    </div>
+		                    <div class="main_webzine news_content">
+		                        <div class="web_con">
+		                            <img src="./images/main/newsCon03.png" alt="서울시복지재단 교육신청">
+		                            <p class="web_con_tit">교육신청</p>
+		                            <a href="http://106.10.1.206:8080/" class="btn_more" target="_blank" title="새창열림">자세히보기</a>
+		                        </div>
+		                    </div>
+		                    <div class="main_webzine promotion_content">
+		                        <div class="web_con">
+		                            <img src="./images/main/newsCon04.png" alt="서울시복지재단 Q&A">
+		                            <p class="web_con_tit">Q&A</p>
+		                            <a href="#none" class="btn_more">자세히보기</a>
+		                        </div>
+		                    </div>
+		                </div><!-- //news_slider_wrap -->
+					</div><!--//inwrap padding01-->
+				</div>
+				<!-- //section03 -->
+
+				<!-- section04 -->
+				<div id="section04" class="section main_foundation fp-auto-height-responsive">
+					<div class="inwrap">
+						<!--main_foundation_wrap-->
+						<div class="main_foundation_wrap">
+							<div class="foundation_news">
+								<div class="data_box">
+									<h3>자료실</h3>
+									<ul class="data_list">
+										<li class="mr">
+											<a href="#none" target="_blank">
+												<span class="ico ico1"><em></em></span>
+												법령 및 지침
+											</a>
+										</li>
+										<li class="mr">
+											<a href="#none" target="_blank">
+												<span class="ico ico2"><em></em></span>
+												사업관련 자료
+										</a>
+										</li>
+										<li class="mr">
+											<a href="#none" target="_blank">
+												<span class="ico ico3"><em></em></span>
+												기관발간물
+											</a>
+										</li>
+										<li>
+											<a href="#none" target="_blank">
+												<span class="ico ico4"><em></em></span>
+												보육통계
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="photo_box">
+									<h3>기관동정</h3>
+									<a href="#none">
+				                        <div class="photo"><img src="./images/main/img.jpg" alt="2019년 공공형어린이집 우수사례 공모전 실시 및 안내"></div>
+				                        <div class="pop_mask">
+											<p><strong>2019년 공공형어린이집 우수사례 공모전 실시 및 안내</strong></p>
+										</div>
+				                    </a>
+								</div>
+							</div>
+							<div class="foundation_notice">
+								<div class="call_box">
+									<h3 class="skip">고객상담전화 및 어린이집 이용불편신고센터</h3>
+									<ul>
+										<li class="call1">
+											<div class="telephone1">
+												<h3>고객상담전화</h3>
+												<span>02-1661-5666</span>
+												<p>평일 09:00~18:00 <br>공휴일 휴무</p>
+												<div class="qr">
+													<div class="qr_1"><img src="./images/main/qr_code1.jpg" alt="보육교사자격 QR"><span>보육교사자격</span></div>
+													<div class="qr_1"><img src="./images/main/qr_code2.jpg" alt="어린이집평가 QR"><span>어린이집평가</span></div>
+												</div>
+											</div>
+										</li>
+										<li class="call2">
+											<div class="telephone2">
+												<h3>어린이집이용불편신고센터</h3>
+												<span><span class="smale">국번없이</span> 110,<br />1670-2082</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="popup_box">
+									<h3 class="skip">팝업존</h3>
+									<div class="pop_wrap">
+										<div>
+											<a href="#none"><img src="./images/main/popup_img1.jpg" alt="건강한 내일을 위한 약속 지원대상 생후 6개월 ~12세 어린이 (2007.1.1~209.8.31 출생아)"></a>
+										</div>
+										<div>
+											<a href="#none"><img src="./images/main/popup_img2.jpg" alt="신종 코로나바이러스 감염예방 행동수칙 - 기침 등 호흡기 증상이 있을 경우 마스크 착용, - 외출,의료기관 방물 시 반드시 착용, - 흐르는 물에 30초 이상 손씻기, - 해외여행력을 의료진에게 알리기, - 발열,기침 등 호흡기증상 발생 14일 이내 중국 우한시 방문력이 있는 국민(경우 포함) (예) 우한 출발후 홍콩 체류후 입국) * 질병관리본부 콜센터 1339 또는 영동군보건소 043-740-5611~2"></a>
+										</div>
+										<div>
+											<a href="#none"><img src="./images/main/popup_img3.png" alt="국민참여로 국가예산을 디자인하다 국민참여예산 국민참여예산은 국민이 사업제안 논의, 우선순위 결정 등에 참여함으로써 국민의 의견을 예산에 반영하는 제도입니다. 바로 지금! 국가예산 디자이너가 되어보세요 기획재정부"></a>
+										</div>
+										<div>
+											<a href="#none"><img src="./images/main/popup_img4.png" alt="2020년 3월 1일부터 적용되는 보육교직원 채용 관련 변경사항 안내! 1. 채용 및 임면보고 시, '보수교육 수료증' 반드시 필요! 2. 만2년이상 보육업무 공백이 있는 경우, '장기 미종사자 직무교육' 이수필수! (*만 2년 내에 40시간 이상의 경력 또는 보수교욱 이수이력이 있는 경우 제외)"></a>
+										</div>
+										<div>
+											<a href="#none"><img src="./images/main/popup_img5.png" alt="대국민 혁신성장 정책 아이디어 ucc 공모전 2020.1.1(수) ~ 3.2(월) 18:00까지"></a>
+										</div>
+									</div>
+									<div class="pop_control">                            
+								        <a href="#none" id="popStop" title="일시정지">일시정지</a>
+								        <a href="#none" id="popPlay" title="재생">재생</a>
+								    </div>
+								</div>
+							</div>
+						</div>
+						<!--main_foundation_wrap-->
+					</div><!--//inwrap-->
+				</div>
+				<!-- //section04 -->
+
+				<!--footer_section -->
+				<div id="footer_section" class="section fp-auto-height">
+					 <!-- 배너존 banner_zone -->
+					<div class="banner_zone">
+						<h3 class="skip">KCPI 배너</h3>
+			            <div class="bn_wrap">
+			            	<div><a href="http://www.mohw.go.kr" target="_blank" title="새창열림"><img src="./images/main/banner01.gif" alt="보건복지부" ></a></div>
+			            	<div><a href="http://www.koreaeducare.or.kr" target="_blank" title="새창열림"><img src="./images/main/banner02.gif" alt="한국어린이집총연합회"/></a></div>
+							<div><a href="http://www.kicce.re.kr" target="_blank" title="새창열림"><img src="./images/main/banner03.gif" alt="육아정책연구소"/></a></div>
+							<div><a href="http://www.ncrc.or.kr/" target="_blank" title="새창열림"><img src="./images/main/banner04.gif" alt="아동권리보장원"/></a></div>
+							<div><a href="http://bokjiro.go.kr/nwel/bokjiroMain.do" target="_blank" title="새창열림"><img src="./images/main/banner05.gif" alt="복지IR 함께만드는 복지"/></a></div>
+							<div><a href="http://www.childcare.go.kr" target="_blank" title="새창열림"><img src="./images/main/banner06.gif" alt="아이사랑 임신육아종합포털"/></a></div>
+							<div><a href="http://www.khwis.or.kr/index.do" target="_blank" title="새창열림"><img src="./images/main/banner07.gif" alt="사회보장정보원"/></a></div>
+							<div><a href="http://www.csia.or.kr/" target="_blank" title="새창열림"><img src="./images/main/banner08.gif" alt="어린이집안전공제회"/></a></div>
+							<div><a href="http://kce.kcpi.or.kr/" target="_blank" title="새창열림"><img src="./images/main/banner09.gif" alt="kce 어린이집 평가제"/></a></div>
+							<div><a href="https://central.childcare.go.kr/ccef/main.jsp" target="_blank" title="새창열림"><img src="./images/main/banner10.gif" alt="중앙육아종합지원센터"/></a></div>
+							<div><a href="https://info.childcare.go.kr/info/main.jsp" target="_blank" title="새창열림"><img src="./images/main/banner11.gif" alt="어린이집정보공개포털"/></a></div>
+							<div><a href="https://www.kcpi.or.kr/thebcc/main/" target="_blank" title="새창열림"><img src="./images/main/banner12.gif" alt="공공형어린이집"/></a></div>
+			            </div>
+					</div>
+					<!-- 배너존 banner_zone -->
+
+					<!--footer-->
+					<div id="footer">
+						<div class="inwrap">
+							<div class="footer_nav">
+								<ul>
+									<li><a href="sub9_이용안내_개인정보처리방침.html" class="color1">개인정보처리방침</a></li>
+									<li><a href="sub1_소개_찾오시는길.html">찾아오시는길</a></li>
+									<li><a href="sub9_이용안내_직원전화번호.html">직원전화번호</a></li>
+									<li><a href="sub9_이용안내_이메일무단수집거부.html">이메일주소무단수집거부</a></li>
+								</ul>
+							</div>
+							<div class="footer_info">
+		            			<address>
+		            				<span>서울특별시 용산구 청파로 345, 주연빌딩 3,4,5,6층(서계동)04303 </span>
+		            				<sapn class="bar">대표전화 : 02-6901-0100 </span>
+		            			</address>
+								<p class="copy">Copyright© The Ofifice for Korea Childcare Promotion Institute, All Right Reserved</p>
+							</div>
+							<div class="footer_links">
+								<div> 
+									<div class="selectbox">
+										<label for="groupCompany">관련사이트</label>
+							        	<select name="groupCompany" title="관련사이트 바로가기" id="groupCompany" onchange="window.open(value,'_bkank');">
+									        <option value="">관련사이트 바로가기</option>
+									        <option value="http://www.mohw.go.kr" title="새창열림">보건복지부</option>
+									        <option value="http://www.koreaeducare.or.kr" title="새창열림">한국어린이집총연합회</option>
+									        <option value="http://www.kicce.re.kr" title="새창열림">육아정책연구소</option>
+									        <option value="http://www.korea1391.go.kr" title="새창열림">중앙아동보호전문기관</option>
+									        <option value="http://www.bokjiro.go.kr" title="새창열림">복지로</option>
+									        <option value="http://www.childcare.go.kr" title="새창열림">임신육아종합포털 아이사랑</option>
+									        <option value="http://www.ssis.or.kr" title="새창열림">사회보장정보원</option>
+									        <option value="http://www.csia.or.kr" title="새창열림">어린이집안전공제회</option>
+									    </select> 
+								    </div>
+							    </div>
+							    <div> 
+							        <div class="selectbox">
+								        <label for="relationCompany">패밀리사이트</label>
+								        <select name="relationCompany" title="패밀리사이트 바로가기" id="relationCompany" onchange="window.open(value,'_bkank');">
+									        <option value="">패밀리사이트 바로가기</option>
+									        <option value="http://kce.kcpi.or.kr" title="새창열림">어린이집 평가제</option>
+									        <option value="http://chrd.childcare.go.kr" title="새창열림">보육인력 국가자격증</option>
+									        <option value="http://central.childcare.go.kr" title="새창열림">중앙육아종합지원센터</option>
+									        <option value="http://info.childcare.go.kr/info/pnis/search/UnitySearchSlL.jsp" title="새창열림">어린이집 찾기</option>
+									        <option value="https://www.kcpi.or.kr/thebcc/main" title="새창열림">공공형 어린이집</option>
+									        <option value="https://mindup.kcpi.or.kr" title="새창열림">마음성장</option>
+									        <option value="https://edu.kcpi.or.kr/index.php" title="새창열림">온라인교육</option>
+									    </select> 
+							        </div> 
+							    </div>
+							</div>
+						</div>
+					</div>
+					<!--//footer-->
+				</div>
+				<!--//footer_section -->
+			</div><!--//fullpage-->
+	</div><!--//wrap>
+</body>
+</html>
+
