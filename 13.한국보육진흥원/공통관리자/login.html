@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link href="./common/css/base.css" rel="stylesheet" type="text/css" />
+<link href="./common/css/comm.css" rel="stylesheet" type="text/css" />
+<link href="./common/css/layout.css" rel="stylesheet" type="text/css" />
+<link href="./common/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script src="./common/js/jquery-1.12.4.min.js" type="text/javascript"></script>
+<script src="./common/js/common.js" type="text/javascript"></script>
+<script src="./common/js/jquery-ui.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+  	$(".left > ul > li > a").click(function(){
+		$(this).next().slideToggle(300);
+		$(this).addClass('on');
+		// $(this).next().slideDown(300);
+		$(".left > ul > li > a").not(this).next().slideUp(300);
+		$(".left > ul > li > a").not(this).removeClass('on');
+	});
+  });
+</script>
+<body>
+	<div id="wrap">
+		<!--Login_area-->
+		<div class="Login_area">
+			<div class="Login_w">
+				<form id="frmLogin" action="/" method="post">
+					<!--mem_login_inner-->
+					<div class="mem_login_inner">
+						<h3><img alt="한국보육진흥원" src="./common/images/comm/logo.jpg"></h3>
+						<ul>
+							<li class="li1">
+								<div class="mem_login_img"><img alt="" src="./common/images/comm/Login_img1.png"></div>
+							</li>
+							<li class="li2">
+								<h2>Login as a admin user</h2>
+								<div class="w100">
+									<fieldset>
+										<legend class="hid">로그인 아이디, 비밀번호 입력하세요</legend>
+										<div class="login_infoInput_wrap">
+											<dl class="login_info_id_input">
+												<dt>아이디</dt>
+												<dd><input id="user_id" name="user_id" type="text" maxlenght="10"></dd><!--maxlenght : 입력 가능한 최대 문자 수-->
+											</dl>
+											<dl class="login_info_pw_input">
+												<dt>비밀번호</dt>
+												<dd><input id="user_pwd" name="user_pwd" type="password" maxlenght="10"></dd>
+											</dl>
+										</div>
+									</fieldset>
+								</div>
+								<div class="w100 mt20"><a href="#none" class="btn_login">로그인</a></div>
+							</li>
+						</ul>
+					</div>
+					<!--//mem_login_inner-->	
+				</form>
+			</div>
+		</div>
+		<!--//Login_area-->
+	</div>
+</body>
+</html>
