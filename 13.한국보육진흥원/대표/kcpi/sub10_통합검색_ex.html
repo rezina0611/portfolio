@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title> 한국보육진흥원 통합검색</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta property="og:title" content="한국보육진흥원">
+<meta property="og:url" content="https://www.kcpi.or.kr/" />
+<meta name="description" content="아이와 부모, 보육인 모두가 행복한 세상이 되도록! 한국보육진흥원이함께 하겠습니다."/>
+<meta name="copyright" content="한국보육진흥원"/>
+<meta name="author" content="DREAMSTART">
+
+<link rel="stylesheet" href="./common/css/base.css"/>
+<link rel="stylesheet" href="./common/css/fullpage.css"/>
+<link rel="shortcut icon" href="./images/logo.ico" type="image/x-icon">
+<link rel="stylesheet" href="./common/css/slick.css"/>
+<link rel="stylesheet" href="./common/css/layout.css"/>
+<link rel="stylesheet" href="./common/css/sub.css"/>
+<style type="text/css">
+	hr{visibility:hidden;overflow:hidden;position:absolute;height:0;width:0;font-size:0;}
+	#Search_header {position: relative;z-index: 300; background: url(images/common/header_bg.gif) center top no-repeat #203b82;}
+	#Search_header:before{position:absolute;left:0;bottom:0;display:inline-block;width:100%;height:50px;content:'';background-color:#182f6b;}
+	#Search_header .wrap{padding-bottom:120px;}
+	#Search_header .logo{height:123px; text-align:center;}
+	#Search_header .logo a{display:inline-block; margin-top:36px;}
+	#Search_header .top_box{position:relative;  z-index:11; padding:45px 165px; border:4px solid #4c6096;}
+	#Search_header .top_box .search_box{float:left; position:relative; width:577px;}
+	#Search_header .top_box .search_box .search{position:relative; margin-bottom:15px;}
+	#Search_header .top_box .search_box .search::before {position: absolute;right: -7px;bottom: -7px;display: inline-block; content: '';border-left: 39px solid transparent;border-bottom: 39px solid #65bf11;}
+	#Search_header .top_box .search_box .search form {position: relative;z-index: 11;height: 58px;background-color: #fff;}
+	#Search_header .top_box .search_box .search .check_box {position: absolute;right: -220px;bottom: -50px; display: inline-block;width:160px;}
+	#Search_header .top_box .search_box .search .check_box input[type="checkbox"] {vertical-align: middle;border: 1px solid #fff568;background:transparent; width:14px; height:14px;}
+	#Search_header .top_box .search_box .search .check_box label {display: inline-block;font-size: 15px;line-height: 16px;color: #fff568;vertical-align: middle;}
+	#Search_header .top_box .search_box .search .cont_box{position:relative;display:inline-block;margin-right:15px;}
+	#Search_header .top_box .search_box .search .cont_box label{position:absolute;right:0;top:0;width:25px;height:100%;color:transparent;white-space:nowrap;background:url(images/icon/search_arrow.png) center center no-repeat #fff;overflow:hidden;}
+	#Search_header .top_box .search_box .search .cont_box select{width:130px;height:58px;padding:0 0 0 10px;margin:0;font-size:18px;line-height:58px;color:#000;letter-spacing:-1px;border:none; font-size:15px;}
+	#Search_header .top_box .search_box .search input[type="search"]{width:300px;height:58px;padding:0;margin:0;font-size:15px;line-height:58px;color:#000;border:none;background-color:transparent;}
+	#Search_header .top_box .search_box .search .submit {position: absolute;right: 0;top: 0; display: inline-block; width: 62px;height: 100%;padding: 0;margin: 0;color: transparent;white-space: nowrap;border: none; 
+		                                                background: url(images/icon/search_btn.png) center center no-repeat;overflow: hidden;}
+
+	#Search_header .top_box .search_box .recommendation{position:relative; min-height:32px;}
+	#Search_header .top_box .search_box .recommendation h2{position:absolute; left:0; top:0; display:inline-block; border:2px solid #fff;}
+	#Search_header .top_box .search_box .recommendation h2::before {position: absolute;right: -2px;bottom: -2px;display: inline-block;width: 19px;height: 19px;content: ''; background-color: #203b81;}
+	#Search_header .top_box .search_box .recommendation h2 span{position:relative; z-index:11; display:inline-block; padding:6px; font-size:14px; line-height:16px; color:#fff; font-weight:600;}
+	#Search_header .top_box .search_box .recommendation .contents_box{padding-left:100px;}
+	#Search_header .top_box .search_box .recommendation .contents_box li{float:left; padding:2px 10px;}
+	#Search_header .top_box .search_box .recommendation .contents_box li a{display:inline-block; padding-bottom:5px; font-size:14px; line-height:20px; color:#8eb5e2; border-bottom:1px solid #8291b8}
+
+	#Search_header .top_box .popularity{float:right; position:relative; z-index:20; width:225px;}
+	#Search_header .top_box .popularity button{display:block;padding:0;margin:0;width:225px;height:58px;padding-left:20px;font-size:18px;line-height:58px;color:#fff;text-align:left;background-position:90% center;background-repeat:no-repeat;background-color:#e6702c;}
+	#Search_header .top_box .popularity button span{color:transparent;}
+	#Search_header .top_box .popularity .open{background-image:url(images/icon/popularity_open.png);}
+	#Search_header .top_box .popularity .contents_box{position:absolute;left:0;top:58px;width:100%;height:0;padding:0 25px;background-color:#fff;box-sizing:border-box;transition:all 400ms ease-in-out;overflow:hidden;}
+	#Search_header .top_box .popularity .contents_box.on{height:370px;border:1px solid #b3b3b3;border-top:none;}
+	#Search_header .top_box .popularity .contents_box h2{padding:22px 0 15px;font-size:15px;line-height:18px;color:#3e3131;font-weight:400;}
+	#Search_header .top_box .popularity .contents_box ul{padding-bottom:15px;}
+	#Search_header .top_box .popularity .contents_box .tit{position:absolute;right:25px;top:18px;display:inline-block;width:38px;padding:5px 0 6px;font-size:12px;line-height:13px;color:#7f7f7f;text-align:center;border:1px solid #e0e0e0;border-bottom:1px solid #c5c5c5;border-right:1px solid #c5c5c5;background-color:#f9f9f9;}
+	#Search_header .top_box .popularity .contents_box .active .tit{font-weight:600;background-color:#fff;}
+	#Search_header .top_box .popularity .contents_box .active .tit:before{position:absolute;left:50%;bottom:-5px;display:inline-block;width:9px;height:5px;margin-left:-4px;content:'';background:url(images/icon/popularity_on.png) center center no-repeat;}
+	#Search_header .top_box .popularity .contents_box .dep1:first-child .tit{right:64px;}
+	#Search_header .top_box .popularity .contents_box .tabcontent{position:relative;}
+	#Search_header .top_box .popularity .contents_box .tabcontent ul{padding:0;}
+	#Search_header .top_box .popularity .contents_box .tabcontent li{padding-bottom:10px;}
+	#Search_header .top_box .popularity .contents_box .tabcontent li a{position:relative;display:block;min-height:20px;padding-left:25px;color:#666;}
+	#Search_header .top_box .popularity .contents_box .tabcontent li .nums{position:absolute;left:0;top:0;display:inline-block;width:20px;padding:3px 0 5px;font-size:12px;line-height:12px;color:#fff;text-align:center;background-color:#898989;}
+	#Search_header .top_box .popularity .contents_box .tabcontent li:first-child .nums,	
+	#Search_header .top_box .popularity .contents_box .tabcontent li:nth-child(2) .nums,
+	#Search_header .top_box .popularity .contents_box .tabcontent li:nth-child(3) .nums,
+	#Search_header .top_box .popularity .contents_box .tabcontent li:nth-child(4) .nums,
+	#Search_header .top_box .popularity .contents_box .tabcontent li:nth-child(5) .nums{background-color:#319e02;}
+	#Search_header .top_box .popularity .contents_box .tabcontent li .cont{display:block;padding-right:30px;font-size:14px;line-height:20px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
+	#Search_header .top_box .popularity .contents_box .tabcontent li .state{position:absolute;right:0;top:4px;display:inline-block;width:20px;font-size:12px;line-height:12px;text-align:center;}
+	#Search_header .top_box .popularity .contents_box .tabcontent li .state.new{top:6px;font-size:10px;color:#ed1c24;font-family:'돋움';}
+	#Search_header .top_box .popularity .contents_box .tabcontent li .state.up{text-align:right;background:url(images/icon/popularity_up.png) left 4px no-repeat;}
+	#Search_header .top_box .popularity .contents_box .tabcontent li .state.down{text-align:right;background:url(images/icon/popularity_down.png) left 4px no-repeat;}
+	#Search_header .top_box .popularity .close{visibility:hidden;opacity:0;position:absolute;left:0;top:0;background-image:url(images/icon/popularity_close.png);background-position:89% center;transition:all 400ms ease-in-out;}
+	#Search_header .top_box .popularity .close.on{visibility:visible;opacity:1;}
+
+	#Search_header .division_box {position: absolute;left: 0;bottom: 0;width: 100%;}
+	#Search_header .division_box .dep1{float:left; position:relative;}
+	#Search_header .division_box .tit{display:block;width:145px;padding:16px 0 16px 20px;font-size:17px;line-height:18px;color:#fff;border-right:1px solid #3f5282;background-image:url(images/icon/division_off.png);background-position:85% center;background-repeat:no-repeat;}
+	#Search_header .division_box .open{z-index:11;}
+	#Search_header .division_box .tit.on{background-image:url(images/icon/division_on.png);}
+	#Search_header .division_box .dep1:first-child .tit{border-left:1px solid #3f5282;}
+	#Search_header .division_box .dep2{display:none;position:absolute;left:0;top:50px;width:100%;padding:15px 20px;border:1px solid #dcdcdc;background-color:#fafafa;box-sizing:border-box;}
+	#Search_header .division_box .dep2 li{padding-top:10px;}
+	#Search_header .division_box .dep2 li:first-child{padding:0;}
+	#Search_header .division_box .dep2 li a{display:block;padding:10px 0;font-size:15px;line-height:16px;color:#333;text-align:center;background-color:#fff;transition:all 300ms ease-in-out;}
+	#Search_header .division_box .dep2 li a:hover{color:#fff;background-color:#213c84;}
+	#Search_header .division_box .dep2 .cont_box label{display:block;padding:10px 0 5px 5px;font-size:15px;line-height:18px;color:#3e3e3e;}
+	#Search_header .division_box .dep2 .cont_box .cont{position:relative;display:block;height:36px;background-color:#fff;}
+	#Search_header .division_box .dep2 .cont_box input[type="text"]{width:60%;height:36px;padding:0 0 0 5px;margin:0;font-size:12px;line-height:36px;color:#3e3e3e;vertical-align:middle;border:none;background:transparent;}
+	#Search_header .division_box .dep2 .cont_box button{position:absolute;right:5px;top:50%;display:inline-block;width:24px;height:20px;padding:0;margin:-10px 0 0;color:transparent;white-space:nowrap;background:url(images/icon/ico_division.png) center center no-repeat;}
+	#Search_header .division_box .dep2 input[type="submit"]{display:block;width:100%;height:36px;margin:5px 0 0;font-size:15px;line-height:16px;color:#fff;text-align:center;border:none;background-color:#3e3e3e;}
+
+
+
+	#lnb .wrap{padding:55px 0 40px;}
+	#lnb li{position:relative;z-index:10;float:left;width:16.6%;height:54px;margin:-1px 0 0 -1px;line-height:54px;text-align:center;vertical-align:middle;border:solid 1px #d3d3d3;border-bottom:2px solid #2b4380;background:#f9fafc;box-sizing:border-box;}
+	#lnb li:first-child{width:17%;}
+	#lnb li:hover{z-index:11;border:1px solid #2b4380;background-color:#fff;}
+	#lnb li.on,#lnb li.on:hover{z-index:11;border:solid 2px #2b4380;border-bottom:2px solid #fff;background-color:#fff;}
+	#lnb li.on:before,#lnb li.on:hover:before{position:absolute;left:-2px;top:0;width:2px;height:100%;content:'';background-color:#4db210;}
+	#lnb li.on:after,#lnb li.on:hover:after{position:absolute;left:-2px;top:-2px;width:55px;height:2px;content:'';background-color:#4db210;}
+	#lnb li:hover{z-index:11;border:solid 1px #2b4380;border-bottom:2px solid #2b4380;}
+	#lnb li a{display:inline-block;width:98%;padding:0 1%;font-size:17px;line-height:54px;color:#363636;text-align:center;vertical-align:middle;letter-spacing:-1px;}
+	#lnb li a:before{position:absolute;left:0;top:0;display:inline-block;width:100%;height:100%;content:'';background:transparent;}
+	#lnb li.on a,#lnb li a:hover,#lnb li a:focus,#lnb li:hover a{color:#2b4380;}
+	#lnb li.on a{font-weight:600;}
+
+	.srch_results{padding:0 0 35px;font-size:24px;line-height:30px;color:#000;text-align:center;letter-spacing:-1px;}
+	.srch_results .results_txt{font-size:28px;font-weight:600;}
+	.srch_results strong{color:#ff3600;font-weight:600;}
+
+	.srch_tab{padding:6px;margin-bottom:30px;background:url(images/icon/srch_tab_bg.gif) repeat;}
+	.srch_tab .box_wrap{padding:25px 3% 20px;letter-spacing:-1px;background:#fff;}
+	.srch_tab .box_wrap span{display:inline-block; font-size:14px;}
+	.srch_tab h2{padding-bottom:15px;font-size:16px;line-height:20px;color:#252525;font-weight:600;}
+	.srch_tab li{float:left;margin:0 35px 10px 0; width:16%;}
+	.srch_tab li a{position:relative;display:block;padding-left:11px;font-size:14px;line-height:17px;color:#494949;}
+	.srch_tab li a:before{position:absolute;left:0;top:17px;display:inline-block;width:3px;height:5px;content:'';background:url(images/icon/srch_tab_bu.png) center center no-repeat;}
+
+	.para_box{padding-bottom:25px;margin-bottom:35px;border-bottom:1px dashed #d8d8d8;}
+	.para_box h2{padding:0 0 20px 0;font-size:20px;line-height:22px;color:#000;font-weight:600;}
+	.para_box h2 span{color:#ff3600;}
+	.para_box .cont_box{padding-bottom:15px;}
+	.para_box .directory li{padding-top:5px;}
+	.para_box .directory li:first-child{padding-top:0;}
+	.para_box .directory li a{position:relative;display:inline-block;padding-left:15px;font-size:15px;color:#000;}
+	.para_box .directory li a:before{position:absolute;left:0;top:10px;display:inline-block;width:5px;height:1px;content:'';background-color:#000;}
+	.para_box .directory li a span{color:#ff3600;}
+	.para_box .tit_box{padding:15px 0 0;font-size:17px;color:#000;}
+	.para_box .tit_box:first-child{padding-top:0;}
+	.para_box .tit_box .new_win{font-size:17px;line-height:20px;color:#000;}
+	.para_box .tit_box .new_win span{display:inline-block;margin-right:5px;color:#23459c;}
+	.para_box .tit_box .self{position:relative;display:inline-block;margin-left:10px;font-size:14px;color:#464646;vertical-align:top;border-bottom:1px solid #000;}
+	.para_box .tit_box .self:after{display:inline-block;vertical-align:middle;width:21px;height:17px;margin-left:5px;content:'';background:url(images/icon/ico_self.png) center center no-repeat;}
+	.para_box .tit_box .date{margin-left:10px;font-size:13px;color:#7f7f7f;vertical-align:middle;}
+	.para_box .cont{font-size:14px;color:#464646;}
+	.para_box .cont .con{}
+	.para_box .cont .url{color:#a5a5a5;}
+
+	.para_box .tit_box .new_win span span.word{display:inline !important;margin:0 !important;padding:0 !important;color:#3A7F12 !important;font-weight:600;}
+
+	.para_box .list_box{position:relative;min-height:100px;padding:15px 0 15px 175px;}
+	.para_box .list_box .img_box{position:absolute;left:0;top:0;width:154px;height:98px;line-height:0;border:1px solid #b6b6b6;}
+	.para_box .list_box .img_box img{width:100%;height:100%;}
+	.more_box{text-align:right;}
+	.more_box a{display:inline-block;padding:10px 22px;font-size:15px;line-height:18px;color:#222;font-weight:600;text-align:center;border:1px solid #000;transition:all 300ms ease-in-out;}
+	.more_box a:hover{color:#fff;background-color:#000;}
+
+	@media only screen and (max-width:1200px){
+		#Search_header .top_box{padding:45px 60px;}
+		#Search_header .top_box .search_box .search .check_box{right:-180px;}
+	}
+	@media only screen and (max-width:1000px){
+		#Search_header .top_box{padding:45px 30px;}
+		#Search_header .top_box .search_box{width:450px;}
+		#Search_header .top_box .search_box .search input[type="search"]{width:50%;}
+		#Search_header .top_box .search_box .search .check_box{right:-140px;}
+		}
+	@media only screen and (max-width:800px){
+		#Search_header .wrap{padding-bottom:80px;}
+		#Search_header .top_box{padding:55px 5% 45px;}
+		#Search_header .top_box .search_box{float:none;width:100%;padding-bottom:30px;}
+		#Search_header .top_box .search_box .search .check_box{bottom:65px;right:0;}
+		#Search_header .top_box .search_box .search input[type="search"]{width:50%;}
+		#Search_header .top_box .popularity{float:none;width:100%;}
+		#Search_header .top_box .popularity button{width:100%;}
+		#Search_header .division_box .dep1{width:33.3%;}
+		#Search_header .division_box .tit{width:auto;}
+
+		.para_box .list_box{padding-top:5px;}
+
+		#lnb li{width:100% !important;border-bottom:1px solid #d3d3d3;}
+		#lnb li.on,#lnb li.on:hover{border-bottom:1px solid #d3d3d3;}
+		#lnb li:hover{border-bottom:1px solid #d3d3d3;}
+	}
+
+	@media only screen and (max-width:480px){
+		#Search_header:before{display:none;}
+		#Search_header .wrap{padding-bottom:0;}
+		#Search_header .top_box{padding:40px 3% 30px;}
+		#Search_header .top_box .search_box .search .check_box{bottom:60px;}
+		#Search_header .top_box .search_box .search .cont_box{margin-right:10px;}
+		#Search_header .top_box .search_box .search .cont_box select{width:105px;padding-left:5px;font-size:16px;}
+		#Search_header .top_box .search_box .search input[type="search"]{width:45%;font-size:16px;}
+		#Search_header .division_box{position:static;background-color:#182f6b;}
+		#Search_header .division_box .dep1{float:none;width:100%;border:none;}
+		#Search_header .division_box .tit{border:none;border-bottom:1px solid #3f5282;}
+
+		.para_box .list_box{padding-left:0;}
+		.para_box .list_box .img_box{position:static;width:50%;height:auto;margin:0 auto 10px;}
+	}
+
+	@media only screen and (max-width:500px){
+		#lnb li{float:none;width:100% !important;margin-left:0;}
+	}
+
+
+	@media only screen and (max-width:640px){
+		.srch_tab li{width:50%;margin-right:0;}
+		.para_box h2{padding-left:2%;}
+		.para_box .directory{padding-left:2%;}
+		.para_box .tit_box{padding:10px 2% 0;}
+		.para_box .cont{padding:0 2%;}
+		.para_box .list_box{margin-left:2%;padding-left:130px;}
+		.para_box .list_box .img_box{width:120px;height:75px;}
+		.more_box{padding-right:2%;}
+	}
+
+}
+
+</style>
+
+<script src="./common/js/jquery-1.12.4.min.js"></script>
+<script src="./common/js/fullpage.min.js"></script>
+<script src="./common/js/slick.js"></script>
+<script src="./common/js/main.js"></script>
+<script src="./common/js/script.js"></script>
+<script src="./common/js/jquery.bxslider.min.js"></script>
+<script src="http://jamesallardice.github.io/Placeholders.js/assets/js/placeholders.min.js"></script>
+<script type="text/javascript">
+	(function ($) {
+	  $(document).ready(function () {
+	    $("input, textarea").placeholder();
+	  });
+	});
+</script>
+<script src="./common/js/slick.js"></script>
+<script type="text/javascript">
+	// 탭메뉴 공통적으로 사용
+function tabOn(tab,num,img){
+	var $tab,$tab_btn;
+	var tabid=tab,n=num-1,btn_img=img;
+
+	$tab=$(tabid+'> ul > li');
+	$tab_btn = $(tabid+'> ul > li > a');
+	$tab_btn.siblings().hide();
+	$tab.eq(n).addClass('active');
+	$tab.eq(n).children('a').siblings().show();
+
+	if(btn_img=='img'){
+		var btn=$tab.eq(n).children('a').find("img");
+		btn.attr("src",btn.attr("src").replace("_off","_on"));
+	};
+
+	$tab_btn.on("click",function(event){
+		var realTarget=$(this).attr('href');
+
+		if(realTarget!="#"){
+			return
+		};
+		if(btn_img=='img'){
+			for(var i=0;i<$tab.size();i++){
+				var btn = $tab.eq(i).children('a').find("img");
+				btn.attr("src",btn.attr("src").replace("_on","_off"));
+			};
+			var active = $(this).parent().attr('class');
+			if(active!='active'){
+				var btn_img_off=$(this).find('img')[0];
+				btn_img_off.src= btn_img_off.src.replace('_off','_on');
+			};
+		};
+		$tab_btn.siblings().hide();
+		$tab_btn.parent().removeClass('active');
+		$(this).siblings().show();
+		$(this).parent().addClass('active');
+		event.preventDefault();
+	});
+};
+function tabOrg(tabid,a,img) {
+	var $tab, $tab_btn,$obj,$obj_view;
+	var tabid = tabid, num = a, btn_img = img;
+
+	$tab = $(tabid+' .tab_item  > li');
+	$tab_btn = $(tabid+' .tab_item > li > a');
+	$obj = $(tabid+' .tab_obj');
+	$obj_view = $(tabid+' .tab_obj.n'+num);
+
+	$tab.eq(num-1).addClass('active');
+	$obj_view.show();
+
+	if(btn_img =='img'){
+		var btn = $tab.eq(num-1).children('a').find("img");
+		btn.attr("src",btn.attr("src").replace("_off","_on"));
+	}
+
+	$tab.bind("click",function(event){
+		if(btn_img =='img'){
+			for(var i=0;i<$tab.size();i++){
+				var btn = $tab.eq(i).children('a').find("img");
+				btn.attr("src",btn.attr("src").replace("_on","_off"));
+			}
+			var active = $(this).parent().attr('class');
+			if(active != 'active'){
+				var btn_img_off = $(this).find('img')[0];
+				btn_img_off.src =  btn_img_off.src.replace('_off','_on');
+			}
+		}
+
+		var this_eq = $tab.index( $(this) );
+		$tab.removeClass('active');
+		$tab.eq(this_eq).addClass('active');
+
+		$obj.hide();
+		$(tabid+' .tab_obj.n'+(this_eq+1)).show();
+
+		event.preventDefault ();
+	});
+};
+
+$(function(){
+	//
+	$('.popularity .open').on('click',function(){
+		$('.popularity .contents_box,.popularity .close').addClass('on');
+	});
+	$('.popularity .close').on('click',function(){
+		$('.popularity .contents_box,.popularity .close').removeClass('on');
+	});
+	$('.division_box .tit').on('click',function(event){
+		var $target=$(event.target);
+		
+		if($target.is('.on')){
+			$('.division_box .dep1').removeClass('open').find('.tit').removeClass('on').next('.dep2').slideUp(300);
+		}else{
+			$('.division_box .dep1').removeClass('open').find('.tit').removeClass('on').next('.dep2').slideUp(300);
+			$(this).parents('.dep1').addClass('open').find('.tit').addClass('on').next('.dep2').slideDown(300);
+		};	
+		return false;
+	});
+	$('.division_box .dep1:last-child li:last-child a').on('focusout',function(){
+		$('.division_box .dep1').removeClass('open').find('.tit').removeClass('on').next('.dep2').slideUp(300);
+	});
+});
+</script>
+<!--[if lte IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body class="pc top_ban_none">
+<!-- 스킵네비케이션시작 -->
+<div id="skipnavi">
+	<a href="#body_layout">본문 바로가기</a>
+	<a href="#gnb_layout">대메뉴 바로가기</a>
+</div>
+<!-- 스킵네비케이션시작 -->
+<!--wrap-->
+<div id="wrap">
+	<!--Search_header-->
+	<div id="Search_header">
+		<div class="wrap clearfix">
+			<h1 class="logo"><a href="./search.jsp"><img src="images/common/logo_search.png" alt="군포시 통합검색 로고"></a></h1>
+			<div class="top_box clearfix">
+				<div class="search_box">
+					<div class="search">
+						<h2 class="skip">검색</h2>
+						<form id="searchfrm" name="searchfrm" method="post" action="search.jsp" class="clearfix">
+	                    	<input type="hidden" id="paging" name="paging" value="1">
+							<input type="hidden" id="sort" name="sort" value="recent">
+	                    	<input type="hidden" id="area" name="area" value="ALL">
+	                    	<input type="hidden" id="page_move" name="page_move" value="1">
+							<input type="hidden" id="searchGroup" name="searchGroup" value="ALL">
+	                    	<input type="hidden" id="range" name="range" value="A">
+	                    	<input type="hidden" id="start_dd1" name="start_dd1" value="">
+	                    	<input type="hidden" id="end_dd1" name="end_dd1" value="">
+	                    	<input type="hidden" id="searchTermList" name="searchTermList" value="">
+	                        <fieldset>
+	                            <legend>통합검색</legend>
+	                            <span class="check_box">
+	                            	<input type="checkbox" name="total_check" id="total_check" title="결과 내 재검색" value="re_search">
+	                            	<label for="total_check">결과 내 재검색</label>
+	                            </span>
+	                            <span class="cont_box">
+	                                <label for="total_sel">검색 분류 선택</label>
+	                                <select name="name" id="total_sel" title="검색 분류 선택">
+	                                    <option value="ALL" selected="selected">통합검색</option>
+	                                    <option value="MENU">메뉴검색</option>
+	                                    <option value="BBS">게시판</option>
+	                                    <option value="MEMBER">직원/업무</option>
+	                                    <option value="WEB">웹페이지</option>
+	                                    <option value="TOUR">문화관광</option>
+	                                </select>
+	                            </span>
+	                            <label for="total_search" class="skip">검색어 입력</label>
+	                            <input type="search" name="total_search" id="total_search" placeholder="검색어를 입력하세요" onkeypress="onKeyDown();" value="군포">
+	                            <a href="javascript:search();" onkeydown="onKeyDown();" class="submit"><!--<input type="submit" value="검색" />--></a>
+		                	</fieldset>
+		                    <a href="javascript:search();" onkeydown="onKeyDown();" class="submit"></a>
+		            	</form>
+					</div>
+					<a href="javascript:search();" onkeydown="onKeyDown();" class="submit"></a>
+					<div class="recommendation">
+						<a href="javascript:search();" onkeydown="onKeyDown();" class="submit">
+		                    <h2><span>추천검색어</span></h2>
+		                </a>
+		                <div class="contents_box"><a href="javascript:search();" onkeydown="onKeyDown();" class="submit"></a>
+		                	<ul class="clearfix">
+		                		<a href="javascript:search();" onkeydown="onKeyDown();" class="submit"><!-- 추천 검색어 5개 --></a>
+		                		<li><a href="javascript:search();" onkeydown="onKeyDown();" class="submit"></a><a href="javascript:hotsearch('군포시');">군포시</a></li>
+		                        <li><a href="javascript:hotsearch('전화번호 안내');">전화번호 안내</a></li>
+		                        <li><a href="javascript:hotsearch('철쭉');">철쭉</a></li>
+		                        <li><a href="javascript:hotsearch('반월호수');">반월호수</a></li>
+		                        <li><a href="javascript:hotsearch('수리산');">수리산</a></li>
+		                        <li><a href="javascript:hotsearch('보건소');">보건소</a></li>
+		                        <li><a href="javascript:hotsearch('도서관');">도서관</a></li>
+	                        </ul>
+	                    </div>
+					</div>
+				</div>
+				<div class="popularity">
+					<button class="open">인기검색어<span>열기</span></button>
+					<div class="contents_box">
+						<h2>인기검색어</h2>
+						<ul class="clearfix">
+							<li class="dep1 active">
+								<a href="#" class="tit">일간</a>
+								<div class="tabcontent" style="display:block;">
+									<ul>
+										<li>
+											<a href="javascript:hotsearch('마스크')">
+												<span class="nums">1</span>
+												<span class="cont">마스크</span>
+												<span class="state">-</span>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:hotsearch('마스크')">
+												<span class="nums">2</span>
+												<span class="cont">마스크</span>
+												<span class="state">-</span>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:hotsearch('마스크')">
+												<span class="nums">3</span>
+												<span class="cont">마스크</span>
+												<span class="state">-</span>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:hotsearch('마스크')">
+												<span class="nums">4</span>
+												<span class="cont">마스크</span>
+												<span class="state">-</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="dep1">
+								<a href="#" class="tit">주간</a>
+								<div class="tabcontent" style="display:none;">
+									<ul>
+										<li>
+											<a href="javascript:hotsearch('마스크')">
+												<span class="nums">1</span>
+												<span class="cont">군포시</span>
+												<span class="state">-</span>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:hotsearch('코로나')">
+												<span class="nums">2</span>
+												<span class="cont">코로나</span>
+												<span class="state new">new</span>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:hotsearch('마스크')">
+												<span class="nums">3</span>
+												<span class="cont">마스크</span>
+												<span class="state">-</span>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:hotsearch('전화번호안내')">
+												<span class="nums">4</span>
+												<span class="cont">전화번호안내</span>
+												<span class="state">-</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<button class="close">인기검색어 <span>닫기</span></button>
+				</div>
+			</div>
+			<div class="division_box">
+				<ul>
+					<li class="dep1"><a href="" class="tit">최신순</a>
+		                <div class="dep2">
+		                    <ul>
+			                    <li><a href="javascript:sort('recent');">최신순</a></li>
+			                    <li><a href="javascript:sort('weight')">정확도</a></li>
+		                    </ul>
+		                </div>
+		            </li>
+		            <li class="dep1"><a href="" class="tit">기간</a>
+		            	<div class="dep2">
+		                    <ul>
+			                    <li><a href="#none" onclick="javascript:setDate('A');">전체</a></li>
+			                    <li><a href="#none" onclick="javascript:setDate('W');">1주</a></li>
+			                    <li><a href="#none" onclick="javascript:setDate('M');">1개월</a></li>
+			                    <li><a href="#none" onclick="javascript:setDate('Y');">1년</a></li>
+		                    </ul>
+		                    
+		                    <fieldset>
+		                        <legend>기간별 검색</legend>
+		                        <div class="cont_box">
+		                            <label for="start_date">시작일</label>
+		                            <div class="cont">
+		                                <input type="text" name="start_dd" id="start_dd" title="시작일 선택" value="" onclick="getCalendar(document.getElementById('start_dd'));">
+		                                <button onclick="getCalendar(document.getElementById('start_dd'));">시작일 선택</button>
+		                            </div>
+		                        </div>
+		                        <div class="cont_box">
+		                            <label for="end_date">종료일</label>
+		                            <div class="cont">
+		                                <input type="text" name="end_dd" id="end_dd" title="종료일 선택" value="" onclick="getCalendar(document.getElementById('end_dd'));">
+		                                <button onclick="getCalendar(document.getElementById('end_dd'));">종료일 선택</button>
+		                            </div>
+		                        </div>
+		                        
+		                        <input type="submit" value="검색" onclick="javascript:apply();">
+		                    </fieldset>
+		                </div>
+		            </li>
+		            <li class="dep1"><a href="" class="tit">전체</a>
+		            	<div class="dep2">
+		                    <ul>
+		                    <li><a href="javascript:area('ALL');">전체</a></li>
+		                    <li><a href="javascript:area('TITLE');">제목</a></li>
+		                    <li><a href="javascript:area('CONTENT');">내용</a></li>
+		                    </ul>
+		                </div>
+		            </li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--//Search_header-->
+	<nav>
+		<h2 class="skip">주메뉴</h2>
+		<div id="lnb">
+			<div class="wrap">
+				<ul class="clearfix">
+		            <li class="on">
+		            	<a href="javascript:selectCate('ALL');">통합검색</a>
+		            </li>
+		            <li>
+		            	<a href="javascript:selectCate('MENU');">메뉴검색</a>
+		            </li>
+		            <li>
+		            	<a href="javascript:selectCate('BBS');">게시판</a>
+		            </li>
+		            <li>
+		            	<a href="javascript:selectCate('MEMBER');">직원/업무</a>
+		            </li>
+		            <li>
+		            	<a href="javascript:selectCate('WEB');">웹페이지</a>
+		            </li>
+		            <li>
+		            	<a href="javascript:selectCate('TOUR');">문화관광</a>
+		            </li>
+		        </ul>
+			</div>
+		</div>
+	</nav>
+	<hr>
+	<!--container-->
+	<div id="container" class="container">
+		<div id="contents" class="wrap">
+			<!-- 검색어 있을경우 -->
+			<div class="srch_results">
+		        <span class="results_txt">'코로나'</span>에 대한 통합검색 결과 <strong>총 155</strong>건이 검색되었습니다.
+		    </div>
+		    <!-- 검색어 있을경우 -->
+		    <div class="srch_tab">
+		        <div class="box_wrap">
+		            <h2>통합검색 (총 155건)</h2>
+		            <ul class="clearfix">
+		            <li><a href="#n" onclick="javascript:selectCate('MENU');">메뉴검색 (<span class="word">1,745</span>)</a></li>
+		            <li><a href="#n" onclick="javascript:selectCate('BBS');">게시판 (<span class="word">53,529</span>)</a></li>
+		            <li><a href="#n" onclick="javascript:selectCate('MEMBER');">직원/업무 (<span class="word">1,223</span>)</a></li>
+		            <li><a href="#n" onclick="javascript:selectCate('WEB');">웹페이지 (<span class="word">1,684</span>)</a></li>
+		            <li><a href="#n" onclick="javascript:selectCate('TOUR');">문화관광 (<span class="word">1,694</span>)</a></li>
+		            </ul>
+		        </div>
+		    </div>
+		    <div class="para_box">
+		    	<h2>메뉴검색 결과 (총<span>1</span>건)</h2>
+		    	<div class="cont_box">
+		    		<div class="tit_box">
+		    			<a href="http://www.gunpo.go.kr/www/sub.do?key=1006530" target="_blank" title="새창" class="new_win">
+							<span>
+								<span class="word">코로나</span> 19 신고대상 - http://www.gunpo.go.kr/www/sub.do?key=1006530
+							</span>
+						</a>
+						<a href="http://www.gunpo.go.kr/www/sub.do?key=1006530" class="self">현재창에서</a>
+		    		</div>
+		    		<div class="cont">
+						<p class="con">군포시청 &gt; 분야별정보 &gt; 재난안전 &gt; 코로나19 비상대책 &gt; 코로나 19 신고대상</p>
+					</div>
+		    	</div>
+		    	<div class="more_box"><a href="javascript:selectCate('MENU');">더보기</a></div>
+		    </div>
+		    <div class="para_box">
+		    	<h2>게시판 결과 (총<span>2</span>건)</h2>
+		    	<div class="cont_box">
+		    		<div class="tit_box">
+		    			<a href="http://www.gunpo.go.kr/www/sub.do?key=1006530" target="_blank" title="새창" class="new_win">
+							<span>
+								<span class="word">코로나</span> 19 신고대상 - http://www.gunpo.go.kr/www/sub.do?key=1006530
+							</span>
+						</a>
+						<a href="http://www.gunpo.go.kr/www/sub.do?key=1006530" class="self">현재창에서</a>
+						<span class="date">2020-02-29</span>
+		    		</div>
+		    		<div class="cont">
+						<p class="con">2020. 2. 28. 21:00 기준 군포시 <span class="word">코로나</span>19 상황을 보고합니다.</p>
+						<p class="con">군포시청 &gt; 분야별정보 &gt; 재난안전 &gt; 코로나19 비상대책 &gt; 이슈 브리핑 &gt; 이슈 브리핑</p>
+					</div>
+					<div class="tit_box">
+		    			<a href="http://www.gunpo.go.kr/www/sub.do?key=1006530" target="_blank" title="새창" class="new_win">
+							<span>
+								<span class="word">코로나</span> 19 신고대상 - http://www.gunpo.go.kr/www/sub.do?key=1006530
+							</span>
+						</a>
+						<a href="http://www.gunpo.go.kr/www/sub.do?key=1006530" class="self">현재창에서</a>
+						<span class="date">2020-02-29</span>
+		    		</div>
+		    		<div class="cont">
+						<p class="con">2020. 2. 28. 21:00 기준 군포시 <span class="word">코로나</span>19 상황을 보고합니다.</p>
+						<p class="con">군포시청 &gt; 분야별정보 &gt; 재난안전 &gt; 코로나19 비상대책 &gt; 이슈 브리핑 &gt; 이슈 브리핑</p>
+					</div>
+		    	</div>
+		    	<div class="more_box"><a href="javascript:selectCate('BBS');">더보기</a></div>
+		    </div>
+		    <div class="para_box">
+		    	<h2>직원업무 결과 (총<span>1,223</span>건)</h2>
+		    	<div class="cont_box">
+		    		<div class="tit_box">
+		    			<a href="http://www.gunpo.go.kr/www/sub.do?key=1006530" target="_blank" title="새창" class="new_win">
+							<span>
+								<span class="word">코로나</span> 19 신고대상 - http://www.gunpo.go.kr/www/sub.do?key=1006530
+							</span>
+						</a>
+						<a href="http://www.gunpo.go.kr/www/sub.do?key=1006530" class="self">현재창에서</a>
+						<span class="date">2020-02-29</span>
+		    		</div>
+		    		<div class="cont">
+						<p class="con">2020. 2. 28. 21:00 기준 군포시 <span class="word">코로나</span>19 상황을 보고합니다.</p>
+						<p class="con">군포시청 &gt; 분야별정보 &gt; 재난안전 &gt; 코로나19 비상대책 &gt; 이슈 브리핑 &gt; 이슈 브리핑</p>
+					</div>
+					<div class="tit_box">
+		    			<a href="http://www.gunpo.go.kr/www/sub.do?key=1006530" target="_blank" title="새창" class="new_win">
+							<span>
+								<span class="word">코로나</span> 19 신고대상 - http://www.gunpo.go.kr/www/sub.do?key=1006530
+							</span>
+						</a>
+						<a href="http://www.gunpo.go.kr/www/sub.do?key=1006530" class="self">현재창에서</a>
+						<span class="date">2020-02-29</span>
+		    		</div>
+		    		<div class="cont">
+						<p class="con">2020. 2. 28. 21:00 기준 군포시 <span class="word">코로나</span>19 상황을 보고합니다.</p>
+						<p class="con">군포시청 &gt; 분야별정보 &gt; 재난안전 &gt; 코로나19 비상대책 &gt; 이슈 브리핑 &gt; 이슈 브리핑</p>
+					</div>
+		    	</div>
+		    	<div class="more_box"><a href="javascript:selectCate('BBS');">더보기</a></div>
+		    </div>
+		    <div class="para_box">
+		    	<h2>웹페이지 결과 (총<span>1,684</span>건)</h2>
+		    	<div class="cont_box">
+		    		<div class="tit_box">
+		    			<a href="http://www.gunpo.go.kr/www/sub.do?key=1006530" target="_blank" title="새창" class="new_win">
+							<span>
+								<span class="word">코로나</span> 19 신고대상 - http://www.gunpo.go.kr/www/sub.do?key=1006530
+							</span>
+						</a>
+						<a href="http://www.gunpo.go.kr/www/sub.do?key=1006530" class="self">현재창에서</a>
+						<span class="date">2020-02-29</span>
+		    		</div>
+		    		<div class="cont">
+						<p class="con">2020. 2. 28. 21:00 기준 군포시 <span class="word">코로나</span>19 상황을 보고합니다.</p>
+						<p class="con">군포시청 &gt; 분야별정보 &gt; 재난안전 &gt; 코로나19 비상대책 &gt; 이슈 브리핑 &gt; 이슈 브리핑</p>
+					</div>
+					<div class="tit_box">
+		    			<a href="http://www.gunpo.go.kr/www/sub.do?key=1006530" target="_blank" title="새창" class="new_win">
+							<span>
+								<span class="word">코로나</span> 19 신고대상 - http://www.gunpo.go.kr/www/sub.do?key=1006530
+							</span>
+						</a>
+						<a href="http://www.gunpo.go.kr/www/sub.do?key=1006530" class="self">현재창에서</a>
+						<span class="date">2020-02-29</span>
+		    		</div>
+		    		<div class="cont">
+						<p class="con">2020. 2. 28. 21:00 기준 군포시 <span class="word">코로나</span>19 상황을 보고합니다.</p>
+						<p class="con">군포시청 &gt; 분야별정보 &gt; 재난안전 &gt; 코로나19 비상대책 &gt; 이슈 브리핑 &gt; 이슈 브리핑</p>
+					</div>
+		    	</div>
+		    	<div class="more_box"><a href="javascript:selectCate('MENU');">더보기</a></div>
+		    </div>
+		    <div class="para_box">
+		    	<h2>문화관광 결과 (총<span>1,684</span>건)</h2>
+		    	<div class="cont_box">
+		    		<div class="tit_box">
+		    			<a href="http://www.gunpo.go.kr/www/sub.do?key=1006530" target="_blank" title="새창" class="new_win">
+							<span>
+								<span class="word">코로나</span> 19 신고대상 - http://www.gunpo.go.kr/www/sub.do?key=1006530
+							</span>
+						</a>
+						<a href="http://www.gunpo.go.kr/www/sub.do?key=1006530" class="self">현재창에서</a>
+						<span class="date">2020-02-29</span>
+		    		</div>
+		    		<div class="cont">
+						<p class="con">2020. 2. 28. 21:00 기준 군포시 <span class="word">코로나</span>19 상황을 보고합니다.</p>
+						<p class="con">군포시청 &gt; 분야별정보 &gt; 재난안전 &gt; 코로나19 비상대책 &gt; 이슈 브리핑 &gt; 이슈 브리핑</p>
+					</div>
+					<div class="tit_box">
+		    			<a href="http://www.gunpo.go.kr/www/sub.do?key=1006530" target="_blank" title="새창" class="new_win">
+							<span>
+								<span class="word">코로나</span> 19 신고대상 - http://www.gunpo.go.kr/www/sub.do?key=1006530
+							</span>
+						</a>
+						<a href="http://www.gunpo.go.kr/www/sub.do?key=1006530" class="self">현재창에서</a>
+						<span class="date">2020-02-29</span>
+		    		</div>
+		    		<div class="cont">
+						<p class="con">2020. 2. 28. 21:00 기준 군포시 <span class="word">코로나</span>19 상황을 보고합니다.</p>
+						<p class="con">군포시청 &gt; 분야별정보 &gt; 재난안전 &gt; 코로나19 비상대책 &gt; 이슈 브리핑 &gt; 이슈 브리핑</p>
+					</div>
+		    	</div>
+		    	<div class="more_box"><a href="javascript:selectCate('MENU');">더보기</a></div>
+		    </div>
+		</div>
+	</div>
+	<!--//container-->
+
+	<!--footer-->
+	<div id="footer" style="min-height:180px !important;">
+		<div class="inwrap">
+			<div class="footer_nav">
+				<ul>
+					<li><a href="#none" class="color1">개인정보처리방침</a></li>
+					<li><a href="#none">찾아오시는길</a></li>
+					<li><a href="#none">직원전화번호</a></li>
+					<li><a href="#none">이메일주소무단수집거부</a></li>
+				</ul>
+			</div>
+			<div class="footer_info">
+    			<address>서울특별시 용산구 청파로 345, 주연빌딩 3,4,5,6층(서계동)04303 &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; 대표전화 : 02-6901-0100 </address>
+				<p class="copy">Copyright© The Ofifice for Korea Childcare Promotion Institute, All Right Reserved</p>
+			</div>
+			<div class="footer_links">
+				<div> 
+					<div class="selectbox">
+						<label for="groupCompany">관련사이트</label>
+			        	<select name="groupCompany" title="관련사이트 바로가기" id="groupCompany" onchange="window.open(value,'_bkank');">
+					        <option value="">관련사이트 바로가기</option>
+					        <option value="http://www.mohw.go.kr" title="새창열림">보건복지부</option>
+					        <option value="http://www.koreaeducare.or.kr" title="새창열림">한국어린이집총연합회</option>
+					        <option value="http://www.kicce.re.kr" title="새창열림">육아정책연구소</option>
+					        <option value="http://www.korea1391.go.kr" title="새창열림">중앙아동보호전문기관</option>
+					        <option value="http://www.bokjiro.go.kr" title="새창열림">복지로</option>
+					        <option value="http://www.childcare.go.kr" title="새창열림">임신육아종합포털 아이사랑</option>
+					        <option value="http://www.ssis.or.kr" title="새창열림">사회보장정보원</option>
+					        <option value="http://www.csia.or.kr" title="새창열림">어린이집안전공제회</option>
+					    </select> 
+				    </div>
+			    </div>
+			    <div> 
+			        <div class="selectbox">
+				        <label for="relationCompany">패밀리사이트</label>
+				        <select name="relationCompany" title="패밀리사이트 바로가기" id="relationCompany" onchange="window.open(value,'_bkank');">
+					        <option value="">패밀리사이트 바로가기</option>
+					        <option value="http://kce.kcpi.or.kr" title="새창열림">어린이집 평가제</option>
+					        <option value="http://chrd.childcare.go.kr" title="새창열림">보육인력 국가자격증</option>
+					        <option value="http://central.childcare.go.kr" title="새창열림">중앙육아종합지원센터</option>
+					        <option value="http://info.childcare.go.kr/info/pnis/search/UnitySearchSlL.jsp" title="새창열림">어린이집 찾기</option>
+					        <option value="https://www.kcpi.or.kr/thebcc/main" title="새창열림">공공형 어린이집</option>
+					        <option value="https://mindup.kcpi.or.kr" title="새창열림">마음성장</option>
+					        <option value="https://edu.kcpi.or.kr/index.php" title="새창열림">온라인교육</option>
+					    </select> 
+			        </div> 
+			    </div>
+			</div>
+		</div>
+	</div>
+	<!--//footer-->
+</div>
+<!--//wrap-->
+</body>
+</html>
+
