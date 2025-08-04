@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link href="../common/css/base.css" rel="stylesheet" type="text/css" />
+<link href="../common/css/comm.css" rel="stylesheet" type="text/css" />
+<link href="../common/css/layout.css" rel="stylesheet" type="text/css" />
+<link href="../common/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script src="../common/js/jquery-1.12.4.min.js" type="text/javascript"></script>
+<script src="../common/js/common.js" type="text/javascript"></script>
+<script src="../common/js/jquery-ui.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+  	$(".left > ul > li > a").click(function(){
+		$(this).next().slideToggle(300);
+		$(this).addClass('on');
+		// $(this).next().slideDown(300);
+		$(".left > ul > li > a").not(this).next().slideUp(300);
+		$(".left > ul > li > a").not(this).removeClass('on');
+	});
+  });
+</script>
+<script>
+	$( function() {
+		$( "#datepicker01" ).datepicker({
+		  showOn: "button",
+		  buttonImage: "../common/images/comm/ico_calender.gif",
+		  buttonImageOnly: true,
+		  buttonText: "Select date"
+	});
+	});
+	$( function() {
+		$( "#datepicker02" ).datepicker({
+		  showOn: "button",
+		  buttonImage: "../common/images/comm/ico_calender.gif",
+		  buttonImageOnly: true,
+		  buttonText: "Select date"
+	});
+	});
+	$( function() {
+		$( "#datepicker03" ).datepicker({
+		  showOn: "button",
+		  buttonImage: "../common/images/comm/ico_calender.gif",
+		  buttonImageOnly: true,
+		  buttonText: "Select date"
+	});
+	});
+</script>
+<title>한국보육진흥원 SB 관리자</title>
+</head>
+<body>
+	<div id="wrapper">
+		<!-- header -->
+		<div id="header">
+			<div class="header_area">
+				<h1><a href="#none"><img src="../common/images/comm/logo.jpg" alt="한국보육진흥원" /></a></h1>
+				<p class="user_rank">Administrator</p>
+				<ul class="util">
+					<li><strong>홍길동(행정지원팀)님을 환영합니다.</strong></li>
+					<!--<li><a href="#none">정보수정</a></li>-->
+					<li><a href="#none">로그아웃</a></li>
+				</ul>
+			</div>
+			<div class="gnb_area">
+				<ul id="nav">
+					<li><a href="#none">관리자체크</a></li>
+					<li><a href="#none" class="on">홈페이지</a></li>
+					<li><a href="#none">온라인교육</a></li>
+					<li><a href="#none">비전보육인</a></li>
+					<li><a href="#none">마음성장</a></li>
+					<li><a href="#none">공공형어린이집</a></li>
+				</ul>
+			</div>
+		</div>
+		<!--// header -->
+		
+		<!-- container -->
+		<div id="container">
+			<div class="contents">
+				<!--left-->
+				<div class="left">
+					<h2>홈페이지</h2>
+					<ul>
+						<li><a href="#">콘텐츠관리</a></li>
+	                    <li><a href="#">게시판관리</a>
+	                        <ul>        
+	                            <li><a href="#none">윤리·인권 경영 정보 </a></li> 
+	                            <li><a href="#none">윤리·인권 경영 활동</a></li> 
+	                            <li><a href="#none">사업실명제</a></li>  
+	                        </ul>
+	                    </li>
+	                    <li><a href="#">팝업관리</a>
+	                    	<ul>        
+	                            <li><a href="#none">메인팝업관리</a></li>
+	                        </ul>
+	                    </li>
+	                    <li><a href="#">회원관리</a></li>
+	                    <li><a href="#">조직관리</a></li>
+	                    <li><a href="#">접속자통계</a>
+	                    	<ul>        
+	                            <li><a href="#none">년도별현황</a></li>
+	                            <li><a href="#none">월별현황</a></li>
+	                            <li><a href="#none">일별현황</a></li>
+	                        </ul>
+	                    </li>
+	                    <li><a href="#">시스템관리</a>
+	                    	<ul>        
+	                            <li><a href="#none">관리자리스트</a></li>
+	                            <li><a href="#none">관리자정보수정</a></li>
+	                            <li><a href="#none">운영자접속IP관리</a></li>
+	                            <li><a href="#none">관리자 권한 설정</a></li>
+	                        </ul>
+	                    </li>
+	                    <li><a href="#" class="on">국민소통</a>
+	                    	<ul>        
+	                            <li><a href="#none">질의응답</a>
+	                            	<ul class="ul03">
+	                            		<li><a href="#none">- 어린이평가</a></li>
+	                            		<li><a href="#none">- 보육교직원보수교육</a></li>
+	                            	</ul>
+	                            </li>
+	                            <li><a href="#none">부모교육</a>
+	                            	<ul class="ul03">
+	                            		<li><a href="#none">- 아이누리교육영상</a></li>
+	                            		<li><a href="#none">- 아이누리교육정보</a></li>
+	                            	</ul>
+	                            </li>
+	                            <li><a href="#none" class="on">- 설문조사</a></li>
+	                            <li><a href="#none">- 칭찬게시판</a></li>
+	                        </ul>
+	                    </li>
+	                    <li><a href="#">사이버홍보</a>
+	                    	<ul>
+	                    		<li><a href="#none">공지사항</a></li> 
+	                    		<li><a href="#none">보도자료</a>
+	                    			<ul class="ul03">
+	                            		<li><a href="#none">- 진흥원 보도자료</a></li>
+	                            		<li><a href="#none">- 보육관련 보도자료</a></li>
+	                            	</ul>
+	                    		</li>  
+	                    		<li><a href="#none">입찰공고</a></li>
+	                            <li><a href="#none">채용공고</a></li>     
+	                            <li><a href="#none">법령 및 지침</a>
+	                            	<ul class="ul03">
+	                            		<li><a href="#none">- 법령 및 보육사업안내</a></li>
+	                            		<li><a href="#none">- 기타지침</a></li>
+	                            	</ul>
+	                            </li>
+	                            <li><a href="#none">사업관련자료</a>
+	                            	<ul class="ul03">
+	                            		<li><a href="#none">- 어린이집 평가인증 안내</a></li>
+	                            		<li><a href="#none">- 어린이집 평가인증 교육자료</a></li>
+	                            		<li><a href="#none">- 어린이집 평가인증 관련 서식</a></li>
+	                            		<li><a href="#none">- 보육교직원 자격증 서식</a></li>
+	                            		<li><a href="#none">- 보육교직원 자격 기준</a></li>
+	                            		<li><a href="#none">- 보육교직원 자격 기타</a></li>
+	                            		<li><a href="#none">- 공공형어린이집</a></li>
+	                            		<li><a href="#none">- 시간제보육</a></li>
+	                            	</ul>
+	                            </li>
+	                            <li><a href="#none">발간물</a></li>
+	                            <li><a href="#none">보육통계</a></li>
+	                            <li><a href="#none">기관홍보관</a>
+	                            	<ul class="ul03">
+	                            		<li><a href="#none">- 홍보자료</a></li>
+	                            		<li><a href="#none">- 홍보영상</a></li>
+	                            		<li><a href="#none">- 기관갤러리</a></li>
+	                            		<li><a href="#none">- 뉴스레터</a></li>
+	                            	</ul>
+	                            </li>
+	                        </ul>
+	                    </li> 
+	                    <li><a href="#">주요사업 홍보</a></li>
+	                </ul>
+				</div>
+				<!--//left-->
+				<!--sub_cont-->
+				<div class="sub_cont">
+					<h2 class="tit">설문조사</h2>
+					<div id="lnb">
+						<a href="#none" class="home">참여마당관리</a>
+						<span class="line"><img src="../common/images/comm/lnb_arrow.gif" alt=">" /></span>
+						<span>설문조사</span>
+					</div>
+					<form name="bbsListFrame" method="post" action="">
+						<!--<p class="mb5 fs15">설문조사 뷰화면</p>-->
+						<h3 class="tit">설문결과</h3>
+						<table class="register02">
+							<caption>설문조사 뷰화면</caption>
+							<colgroup>
+								<col style="width:20%;" />
+								<col style="width:*%;" />
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">설문명</th>
+									<td>
+										홈페이지 설문도 조사
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">설문기간</th>
+									<td>
+										2020.05.29 ~ 2020.12.31
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">참여인원</th>
+									<td>
+	                                    16명
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">개요 및 내용</th>
+									<td>
+										주민설문조사<br />
+										본 설문은 호암직동행정복지센터 청사 신축과 관련하여 청사에 대한 주민 의견을 청취하여 청사 신축에 반영하기 위함이며, 
+										신종 코로나바이러스감염증 확산 차단을 위하여 부득이 설문조사로 대체하게 되었음을 양해하여 주시기 바랍니다.<br />
+										※ 참고자료:호암직동행정복지센터 신축예정 현황<br />
+										[문의사항 : 호암직동행정복지센터 총무팀장 김영철(043-850-2491)]
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						
+						<table class="register01 mt30">
+							<caption>설문문제 및 보기</caption>
+							<colgroup>
+						        <col width="10%">
+						        <col width="10%">
+						        <col width="70%">
+						        <col width="10%">
+						    </colgroup>
+							<thead class="th">
+						        <tr>
+						            <th scope="col">번호</th>
+						            <th colspan="2" scope="col">질문 및 도표</th>
+						            <th scope="col">비율</th>
+						        </tr>
+						    </thead>
+							<tbody>
+								<tr class="bgno">
+						            <td scope="row" rowspan="2">문항1</td>
+						            <td class="al poll_list fw" colspan="3">귀하의 성별은 무엇입니까?</td>
+						        </tr>
+						        <tr class="bgno">
+						            <td>남</td>
+						            <td>
+						                <div class="progress_bar bar_green">
+						                    <div style="width:50%">50%</div>
+						                </div>
+						            </td>
+						            <td class="bd_right">50%</td>
+						        </tr>
+						        <tr class="bgno">
+						            <td scope="row" rowspan="6">문항2</td>
+						            <td class="al poll_list fw" colspan="3">한국보육진흥원 홈페이지 이용 만족도는 어떻게 생각하시나요?</td>
+						        </tr>
+						        <tr class="bgno">
+									<td>매우만족</td>
+									<td>
+										<div class="progress_bar  bar_green">
+											<div style="width:45.88%">45.88%</div>
+										</div>
+									</td>
+									<td class="bd_right">45.88%</td>
+								</tr>
+								<tr class="bgno">
+									<td>만족</td>
+									<td>
+										<div class="progress_bar  bar_green">
+											<div style="width:15.29%">15.29%</div>
+										</div>
+									</td>
+									<td class="bd_right">15.29%</td>
+								</tr>
+								<tr class="bgno">
+									<td>보통</td>
+									<td>
+										<div class="progress_bar  bar_green">
+											<div style="width:10.58%">10.58%</div>
+										</div>
+									</td>
+									<td class="bd_right">10.58%</td>
+								</tr>
+								<tr class="bgno">
+									<td>불만</td>
+									<td>
+										<div class="progress_bar  bar_green">
+											<div style="width:10.58%">10.58%</div>
+										</div>
+									</td>
+									<td class="bd_right">10.58%</td>
+								</tr>
+								<tr class="bgno">
+									<td>매우불만</td>
+									<td>
+										<div class="progress_bar  bar_green">
+											<div style="width:5.88%">5.88%</div>
+										</div>
+									</td>
+									<td class="bd_right">5.88%</td>
+								</tr>
+						        <tr class="bgno">
+						            <td scope="row" rowspan="6">문항3</td>
+						            <td class="al poll_list fw" colspan="3">한국보육진흥원 홈페이지 이용 만족도는 어떻게 생각하시나요?</td>
+						        </tr>
+						        <tr class="bgno">
+									<td>매우만족</td>
+									<td>
+										<div class="progress_bar  bar_green">
+											<div style="width:45.88%">45.88%</div>
+										</div>
+									</td>
+									<td class="bd_right">45.88%</td>
+								</tr>
+								<tr class="bgno">
+									<td>만족</td>
+									<td>
+										<div class="progress_bar  bar_green">
+											<div style="width:15.29%">15.29%</div>
+										</div>
+									</td>
+									<td class="bd_right">15.29%</td>
+								</tr>
+								<tr class="bgno">
+									<td>보통</td>
+									<td>
+										<div class="progress_bar  bar_green">
+											<div style="width:10.58%">10.58%</div>
+										</div>
+									</td>
+									<td class="bd_right">10.58%</td>
+								</tr>
+								<tr class="bgno">
+									<td>불만</td>
+									<td>
+										<div class="progress_bar  bar_green">
+											<div style="width:10.58%">10.58%</div>
+										</div>
+									</td>
+									<td class="bd_right">10.58%</td>
+								</tr>
+								<tr class="bgno">
+									<td>매우불만</td>
+									<td>
+										<div class="progress_bar  bar_green">
+											<div style="width:5.88%">5.88%</div>
+										</div>
+									</td>
+									<td class="bd_right">5.88%</td>
+								</tr>
+								<tr class="bgno">
+						            <td scope="row">문항4</td>
+						            <td class="al fw poll_list" colspan="3">품질관리 컨설팅 진행과정에 변경하거나 추가해야 할 사항이 있다면 그 사하오가 이유를 구체적으로 기재해주시기 바랍니다. (주관식 직접기재)<br />
+						            	<a href="#none" id="layerpopup" class="btn_ss1 management">답변보기</a></td>
+						        </tr>
+						        <!--<tr>
+						            <td class="al poll_list" colspan="3">현재 주민자치센터에서는 요가, 기타, 라인댄스 등 프로그램을 운영하고 있습니다. 청사 신축시 프로그램 소음 등의 문제로 주민자치센터를 별동으로 신축 하는데, 추가적으로 필요한 시설이 있으면 알려주세요</td>
+						        </tr>-->
+						        <tr>
+						            <td scope="row" rowspan="6">문항5</td>
+						            <td class="al poll_list fw" colspan="3">품질관리 컨설팅 참여 후 원장님의 어린이집 운영·관리 능력이 향상되었다고 생각하십니까?</td>
+						        </tr>
+						        <tr class="bgno">
+									<td>매우그렇다</td>
+									<td>
+										<div class="progress_bar  bar_green">
+											<div style="width:45.88%">45.88%</div>
+										</div>
+									</td>
+									<td class="bd_right">45.88%</td>
+								</tr>
+								<tr class="bgno">
+									<td>그렇다</td>
+									<td>
+										<div class="progress_bar  bar_green">
+											<div style="width:15.29%">15.29%</div>
+										</div>
+									</td>
+									<td class="bd_right">15.29%</td>
+								</tr>
+								<tr class="bgno">
+									<td>보통이다</td>
+									<td>
+										<div class="progress_bar  bar_green">
+											<div style="width:10.58%">10.58%</div>
+										</div>
+									</td>
+									<td class="bd_right">10.58%</td>
+								</tr>
+								<tr class="bgno">
+									<td>그렇지 않다</td>
+									<td>
+										<div class="progress_bar  bar_green">
+											<div style="width:10.58%">10.58%</div>
+										</div>
+									</td>
+									<td class="bd_right">10.58%</td>
+								</tr>
+								<tr class="bgno">
+									<td>전혀 그렇지 않다</td>
+									<td>
+										<div class="progress_bar  bar_green">
+											<div style="width:5.88%">5.88%</div>
+										</div>
+									</td>
+									<td class="bd_right">5.88%</td>
+								</tr>
+								<tr class="bgno">
+						            <td scope="row">문항6</td>
+						            <td class="al fw poll_list" colspan="3">4번 문항에 4,5로 답한 경우만 응답) 그렇지 않다고 생각하신 이유는 무엇입니까? (해당 없을 경울 '해당없음; 입력)<br />
+						            	<a href="#none" id="layerpopup" class="btn_ss1 management">답변보기</a></td>
+						        </tr>
+							</tbody>
+						</table>
+
+						<!-- btn_area -->
+						<div id="btn_area" class="ac">
+							<a href="#none" class="btn_a1 blue">확인</a>
+						</div>
+						<!-- //btn_area -->
+					</form>
+				</div>
+				<!--//sub_cont-->
+			</div>
+		</div>
+		<!--// container -->
+		
+		<!-- footer -->
+		<div id="footer">
+			<div class="inner">
+				<div class="address">
+					관리기관 : 서울특별시 용산구 청파로 345, 주연빌딩 3,4,5,6층(서계동) 04303 &nbsp;&nbsp;&nbsp; 대표전화 : 02-6901-0100
+				</div>
+				<div class="foot_copy">Copyright(c) The Office for Korea Childcare Promotion Institute, All Rights Reserved.</div>
+			</div>
+		</div>
+		<!--// footer -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(document).on("click", ".btn_del", function() { 
+				    $(this).parent().parent().remove(); 
+				});  
+
+				$(document).on("click", "#layerpopup", function() { 
+					$("#layer_pop").css("display", "block"); 
+				});
+
+			});
+		</script>
+		<!-- popup -->
+		<div id="layer_pop" style="display: none;">
+			<form name="WITHDRAW_FORM" method="post">
+			<input name="s_SEQ_NO_R010" id="s_SEQ_NO_R010" type="hidden" value="269">
+				<div class="layer_sec">
+					<!-- pop_ctn -->
+					<div class="pop_ctn">
+						<h3 class="mt0">설문조사 결과화면 주관식답변보기</h3>
+						<div class="popup_contant">
+							<table class="register02">
+								<caption>게시판 생성</caption>
+								<colgroup>
+									<col style="width: 20%;">
+									<col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">질문4</th>
+										<td>
+											품질관리 컨설팅 진행과정에 변경하거나 추가해야 할 사항이 있다면 그 사하오가 이유를 구체적으로 기재해주시기 바랍니다.
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">질문답변</th>
+										<td>
+											<textarea name="content" class="intt w90" id="content" style="height: auto;" rows="5">현재 너무나 만족스럽게 하고 있습니다.</textarea>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">질문답변</th>
+										<td>
+											<textarea name="content" class="intt w90" id="content" style="height: auto;" rows="5">fdggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg</textarea>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">질문답변</th>
+										<td>
+											<textarea name="content" class="intt w90" id="content" style="height: auto;" rows="5">fdggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg</textarea>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">질문답변</th>
+										<td>
+											<textarea name="content" class="intt w90" id="content" style="height: auto;" rows="5">fdggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg</textarea>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">질문답변</th>
+										<td>
+											<textarea name="content" class="intt w90" id="content" style="height: auto;" rows="5">해당없음</textarea>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="ac" id="btn_area">
+								<a class="btn_a1 blue" href="#none">확인</a>
+								<a class="btn_a1 gray" href="#none">취소</a>
+							</div>
+						</div>
+					</div>
+					<!--// pop_ctn -->
+					<a class="pop_close" onclick="$('#layer_pop').attr('style', 'display:none;');" href="#none"><img alt="닫기" src="../common/images/comm/pop_close_board.gif"></a>
+				</div>
+				<div class="dimm"></div>
+			</form>
+		</div>
+		<!-- popup -->
+	</div>
+</body>
+</html>
