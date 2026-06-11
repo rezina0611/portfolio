@@ -1,2 +1,0 @@
-# Ranza P Design
-
